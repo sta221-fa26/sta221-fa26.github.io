@@ -1,0 +1,43 @@
+---
+title: "STA 221 - Regression Analysis: Theory and Applications"
+subtitle: "Fall 2026 - Dr. Maria Tackett"
+navbar: false
+---
+
+# Overview
+
+In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.
+
+Topics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.
+
+## Pre-requisites
+
+Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.
+
+# Class meetings
+
+**See Canvas for class meeting times and location.**
+
+# Teaching team
+
+### Instructor
+
+[Dr. Maria Tackett](https://maria-tackett.netlify.app) (she/her) is an Associate Professor of the Practice and the Director of Undergraduate Studies in the Department of Statistical Science at Duke University. Her research focuses on inclusive pedagogy and instructors' motivation to implement inclusive teaching practices in their courses. She also works on curriculum design and develops instructional materials for high school and university-level statistics and data science courses.
+
+**Office hours time and location on Canvas.**
+
+## Teaching assistants
+
+|               |          |
+|---------------|----------|
+| **Name**      | **Role** |
+| Ishrit Gupta  | TBD      |
+| Arnav Meduri  | TBD      |
+| Shane Rybacki | TBD      |
+| Franklin Zhou | TBD      |
+
+**Office hours times and locations on Canvas.**
+
+# License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png){alt="Creative Commons License" style="border-width:0"}</a><br />All content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.

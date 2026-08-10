@@ -1,0 +1,15 @@
+---
+title: "Lab 02"
+subtitle: ""
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+format: html
+---
+
+<br> 
+
+To be posted. 

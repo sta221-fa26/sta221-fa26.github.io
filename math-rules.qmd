@@ -1,0 +1,93 @@
+---
+title: Math rules
+---
+
+This page contains mathematical rules we'll use in this course that may be beyond what is covered in a linear algebra course.
+
+## Matrix calculus
+
+### Derivative of $\mathbf{x}^\mathsf{T}\mathbf{z}$
+
+Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{z}$ be a $k \times 1$ vector, such that $\mathbf{z}$ is not a function of $\mathbf{x}$ . The derivative of $\mathbf{x}^\mathsf{T}\mathbf{z}$ with respect to $\mathbf{x}$ is
+
+$$
+\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}
+$$
+
+<hr>
+
+### Derivative of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$
+
+Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$ . The derivative of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
+
+$$
+\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
+$$
+
+If $\mathbf{A}$ is symmetric, then
+
+$$
+(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
+$$
+
+<hr>
+
+## Derivative of $\mathbf{x}^\mathsf{T}\mathbf{x}$
+
+Let $\mathbf{x}$ be a $k \times 1$ vector, then
+
+$$
+\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{x} = 2\mathbf{x}
+$$
+
+## Expected value & Variance
+
+### Expected value of $\mathbf{Az} + \mathbf{C}$
+
+Let $\mathbf{A}$ be an $n \times k$ matrix of constants, $\mathbf{C}$ a $n \times 1$ vector of constants, and $\mathbf{z}$ a $k \times 1$ vector of random variables. Then
+
+$$
+E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
+$$
+
+<hr>
+
+### Expected value of $\mathbf{AXA}\mathsf{^T}$
+
+Let $\mathbf{A}$ be an $n\times k$ matrix of constants and $\mathbf{X}$ a $k \times k$ matrix. Then
+
+$$
+E(\mathbf{AXA}^\mathsf{T}) = \mathbf{A}E(\mathbf{X})\mathbf{A}^\mathsf{T}
+$$
+
+<hr>
+
+### Variance of vector $\mathbf{z}$
+
+Let $\mathbf{z}$ be a $k \times 1$ vector of random variables. Then
+
+$$
+Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
+$$
+
+### Univariate normal distribution
+
+Let $X$ be a random variable, such that $X \sim N(\mu, \sigma^2)$. Then the probability density function is
+
+$$P(X = x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(x - \mu)^2}\Big\}$$
+
+### Multivariate normal distribution
+
+Let $\mathbf{z}$ be a $p \times 1$ vector of random variables, such that $\mathbf{z}$ follows a multivariate normal distribution with mean $\boldsymbol{\mu}$ and variance $\boldsymbol{\Sigma}$. Then the probability density function of $\mathbf{z}$ is
+
+$$f(\mathbf{z}) = \frac{1}{(2\pi)^{p/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\Big\{-\frac{1}{2}(\mathbf{z} - \boldsymbol{\mu})^\mathsf{T}\boldsymbol{\Sigma}^{-1}(\mathbf{z}- \boldsymbol{\mu})\Big\}$$
+
+### Bernoulli distribution
+
+Let $X$ be a random variable that takes values 0 or 1. Then, the probability mass function is
+
+$$
+p(x) = \pi^x(1-\pi)^{1-x}
+$$
+
+such that $0 \leq \pi \leq 1$

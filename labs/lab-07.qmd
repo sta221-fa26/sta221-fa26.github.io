@@ -1,0 +1,15 @@
+---
+title: "Lab 07"
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+format: html
+bibliography: references.bib
+---
+
+<br> 
+
+To be posted. 

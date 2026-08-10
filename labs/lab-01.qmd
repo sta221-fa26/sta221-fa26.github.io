@@ -1,0 +1,13 @@
+---
+title: "Lab 01"
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+  message: false
+format: html
+---
+
+<br> 
+
+To be posted. 
