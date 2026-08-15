@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Maria Tackett">
+<meta name="dcterms.date" content="2026-08-25">
+
+<title>Welcome to STA 221! – STA 221 - Fall 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d5c138656980d20101dad17b9e7497c0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Welcome to STA 221!</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta221-fa26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-chat-dots-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/101204">
+            Ed Discussion
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458">
+            Office hours
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-check-square-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/announcements">
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.gradescope.com/courses/1347048">
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/gradebook">
+            Gradebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-r-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-stats-experience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 05: Statistics experience</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 00</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 07</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tips + resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://forms.cloud.microsoft/r/ksZvHWmz0f" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture recording request</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math rules</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a>
+  <ul class="collapse">
+  <li><a href="#meet-prof.-tackett" id="toc-meet-prof.-tackett" class="nav-link" data-scroll-target="#meet-prof.-tackett">Meet Prof.&nbsp;Tackett!</a></li>
+  <li><a href="#meet-the-teaching-assistants-tas" id="toc-meet-the-teaching-assistants-tas" class="nav-link" data-scroll-target="#meet-the-teaching-assistants-tas">Meet the Teaching Assistants (TAs)!</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
+  </ul></li>
+  <li><a href="#introduction-to-sta-221" id="toc-introduction-to-sta-221" class="nav-link" data-scroll-target="#introduction-to-sta-221">Introduction to STA 221</a>
+  <ul class="collapse">
+  <li><a href="#data-science-workflow" id="toc-data-science-workflow" class="nav-link" data-scroll-target="#data-science-workflow">Data science workflow</a></li>
+  <li><a href="#what-is-regression-analysis" id="toc-what-is-regression-analysis" class="nav-link" data-scroll-target="#what-is-regression-analysis">What is regression analysis?</a></li>
+  <li><a href="#linear-regression-in-practice" id="toc-linear-regression-in-practice" class="nav-link" data-scroll-target="#linear-regression-in-practice">Linear regression in practice</a></li>
+  <li><a href="#example-reading-harry-potter-maybe-update-example" id="toc-example-reading-harry-potter-maybe-update-example" class="nav-link" data-scroll-target="#example-reading-harry-potter-maybe-update-example">Example: Reading Harry Potter (maybe update example?)</a></li>
+  <li><a href="#example-reading-harry-potter" id="toc-example-reading-harry-potter" class="nav-link" data-scroll-target="#example-reading-harry-potter">Example: Reading Harry Potter</a></li>
+  <li><a href="#logistic-regression-in-practice" id="toc-logistic-regression-in-practice" class="nav-link" data-scroll-target="#logistic-regression-in-practice">Logistic regression in practice</a></li>
+  <li><a href="#example-ai-mentions" id="toc-example-ai-mentions" class="nav-link" data-scroll-target="#example-ai-mentions">Example: AI mentions</a></li>
+  </ul></li>
+  <li><a href="#sta-221" id="toc-sta-221" class="nav-link" data-scroll-target="#sta-221">STA 221</a>
+  <ul class="collapse">
+  <li><a href="#what-is-sta-221" id="toc-what-is-sta-221" class="nav-link" data-scroll-target="#what-is-sta-221">What is STA 221?</a></li>
+  <li><a href="#course-learning-objectives" id="toc-course-learning-objectives" class="nav-link" data-scroll-target="#course-learning-objectives">Course learning objectives</a></li>
+  <li><a href="#course-topics" id="toc-course-topics" class="nav-link" data-scroll-target="#course-topics">Course topics</a></li>
+  </ul></li>
+  <li><a href="#course-overview" id="toc-course-overview" class="nav-link" data-scroll-target="#course-overview">Course overview</a>
+  <ul class="collapse">
+  <li><a href="#course-toolkit" id="toc-course-toolkit" class="nav-link" data-scroll-target="#course-toolkit">Course toolkit</a></li>
+  <li><a href="#computing-toolkit" id="toc-computing-toolkit" class="nav-link" data-scroll-target="#computing-toolkit">Computing toolkit</a></li>
+  <li><a href="#classroom-community" id="toc-classroom-community" class="nav-link" data-scroll-target="#classroom-community">Classroom community</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
+  <li><a href="#syllabus-activity" id="toc-syllabus-activity" class="nav-link" data-scroll-target="#syllabus-activity">Syllabus activity</a></li>
+  <li><a href="#syllabus-activity-assignments" id="toc-syllabus-activity-assignments" class="nav-link" data-scroll-target="#syllabus-activity-assignments">Syllabus activity assignments</a></li>
+  <li><a href="#syllabus-activity-report-out" id="toc-syllabus-activity-report-out" class="nav-link" data-scroll-target="#syllabus-activity-report-out">Syllabus activity report out</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#five-tips-for-success-in-sta-221" id="toc-five-tips-for-success-in-sta-221" class="nav-link" data-scroll-target="#five-tips-for-success-in-sta-221">Five tips for success in STA 221</a></li>
+  </ul></li>
+  <li><a href="#questions---make-a-wooclap-activity" id="toc-questions---make-a-wooclap-activity" class="nav-link" data-scroll-target="#questions---make-a-wooclap-activity">Questions? - MAKE A WOOCLAP ACTIVITY</a></li>
+  <li><a href="#toolkit-for-a-reproducible-workflow" id="toc-toolkit-for-a-reproducible-workflow" class="nav-link" data-scroll-target="#toolkit-for-a-reproducible-workflow">Toolkit for a reproducible workflow</a>
+  <ul class="collapse">
+  <li><a href="#reproducibility-checklist" id="toc-reproducibility-checklist" class="nav-link" data-scroll-target="#reproducibility-checklist">Reproducibility checklist</a></li>
+  <li><a href="#why-is-reproducibility-important" id="toc-why-is-reproducibility-important" class="nav-link" data-scroll-target="#why-is-reproducibility-important">Why is reproducibility important?</a></li>
+  <li><a href="#toolkit" id="toc-toolkit" class="nav-link" data-scroll-target="#toolkit">Toolkit</a></li>
+  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
+  <li><a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide">RStudio IDE</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#quarto-1" id="toc-quarto-1" class="nav-link" data-scroll-target="#quarto-1">Quarto</a></li>
+  <li><a href="#how-will-we-use-quarto" id="toc-how-will-we-use-quarto" class="nav-link" data-scroll-target="#how-will-we-use-quarto">How will we use Quarto?</a></li>
+  </ul></li>
+  <li><a href="#version-control-with-git-and-github" id="toc-version-control-with-git-and-github" class="nav-link" data-scroll-target="#version-control-with-git-and-github">Version control with git and GitHub</a>
+  <ul class="collapse">
+  <li><a href="#what-is-versioning" id="toc-what-is-versioning" class="nav-link" data-scroll-target="#what-is-versioning">What is versioning?</a></li>
+  <li><a href="#what-is-versioning-1" id="toc-what-is-versioning-1" class="nav-link" data-scroll-target="#what-is-versioning-1">What is versioning?</a></li>
+  <li><a href="#why-do-we-need-version-control" id="toc-why-do-we-need-version-control" class="nav-link" data-scroll-target="#why-do-we-need-version-control">Why do we need version control?</a></li>
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">git and GitHub</a></li>
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="01-welcome.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Welcome to STA 221!</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Prof.&nbsp;Maria Tackett </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 25, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="welcome" class="level1">
+<h1>Welcome!</h1>
+<section id="meet-prof.-tackett" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="meet-prof.-tackett">Meet Prof.&nbsp;Tackett!</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Education and career journey
+<ul class="incremental">
+<li>BS in Math and MS in Statistics from University of Tennessee</li>
+<li>Statistician at Capital One</li>
+<li>PhD in Statistics from University of Virginia</li>
+<li>Associate Professor of the Practice, Department of Statistical Science at Duke</li>
+</ul></li>
+<li>Work focuses on statistics education and inclusive teaching practices</li>
+<li>Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County</li>
+<li>Mom of 3.5-year-old twins 🙂 (and one grumpy cat)</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="meet-the-teaching-assistants-tas" class="level2">
+<h2 class="anchored" data-anchor-id="meet-the-teaching-assistants-tas">Meet the Teaching Assistants (TAs)!</h2>
+<p>[UPDATE]</p>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<ul>
+<li><p>Introduction to the course</p></li>
+<li><p>Syllabus activity</p></li>
+<li><p>Reproducibility</p></li>
+</ul>
+</section>
+</section>
+<section id="introduction-to-sta-221" class="level1 page-columns page-full">
+<h1>Introduction to STA 221</h1>
+<section id="data-science-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-workflow">Data science workflow</h2>
+<p>[UPDATE GRAPH]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/data-science-workflow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://intro-regression.github.io">Introduction to Regression Analysis</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-regression-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-regression-analysis">What is regression analysis?</h2>
+<div>
+<blockquote class="blockquote">
+<p><em>In <a href="https://en.wikipedia.org/wiki/Statistical_model" title="Statistical model">statistical modeling</a>, <strong>regression analysis</strong> is a statistical method for <a href="https://en.wikipedia.org/wiki/Estimation_theory" title="Estimation theory">estimating</a> the relationship between a <a href="https://en.wikipedia.org/wiki/Dependent_variable" title="Dependent variable">dependent variable</a> (often called the outcome or response variable, or a label in machine learning parlance) and one or more <a href="https://en.wikipedia.org/wiki/Independent_variable" title="Independent variable">independent variables</a> (often called regressors, predictors, covariates, explanatory variables or features).<sup><a href="https://en.wikipedia.org/wiki/Regression_analysis#cite_note-1">[1]</a><a href="https://en.wikipedia.org/wiki/Regression_analysis#cite_note-2">[2]</a></sup></em></p>
+</blockquote>
+<p>Source: Wikipedia (January 2026)</p>
+</div>
+</section>
+<section id="linear-regression-in-practice" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="linear-regression-in-practice">Linear regression in practice</h2>
+<p>[UPDATE IMAGE]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/harry-potter-regression.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://canvas.duke.edu/courses/73984/files?preview=4295020">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></div></section>
+<section id="example-reading-harry-potter-maybe-update-example" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="example-reading-harry-potter-maybe-update-example">Example: Reading Harry Potter (maybe update example?)</h2>
+<p>[UPDATE IMAGE]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/harry-potter-graph.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://canvas.duke.edu/courses/73984/files?preview=4295020">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></div></section>
+<section id="example-reading-harry-potter" class="level2">
+<h2 class="anchored" data-anchor-id="example-reading-harry-potter">Example: Reading Harry Potter</h2>
+<p><span class="math display">\[
+\text{Lookups} = \beta_0 + \beta_1 ~ \text{Page Number} + \epsilon
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; x_1 \\
+1 &amp; x_2 \\
+\vdots &amp; \vdots \\
+1 &amp; x_n
+\end{bmatrix}
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\end{bmatrix} +  \begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n
+\end{bmatrix}
+\]</span></p>
+</section>
+<section id="logistic-regression-in-practice" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="logistic-regression-in-practice">Logistic regression in practice</h2>
+<p>Pew Research Center conducted the 2025 <a href="https://www.pewresearch.org/data-labs/2025/05/23/what-web-browsing-data-tells-us-about-how-ai-appears-online/">What Web Browsing Data Tells Us About How AI Appears Online</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-93809062.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Source: <a href="https://www.pewresearch.org/data-labs/2025/05/23/what-web-browsing-data-tells-us-about-how-ai-appears-online/">Pew Research</a></figcaption>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="small">
+<p><a href="https://www.pewresearch.org/data-labs/2025/05/23/what-web-browsing-data-tells-us-about-how-ai-appears-online/">Chapekis, A., Lieb, A., Shah, S., Smith, A. (2025) What Web Browsing Data Tells Us about How AI Appears Online. Pew Research Center.https://www.pewresearch.org/data-labs/2025/05/23/what-web-browsing-data-tells-us-about-how-ai-appears-online/</a></p>
+</div>
+</div></div></section>
+<section id="example-ai-mentions" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-mentions">Example: AI mentions</h2>
+<p>Researchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-598876154.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Source: Pew Research Center</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<p><span class="math display">\[
+\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}
+\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="sta-221" class="level1">
+<h1>STA 221</h1>
+<section id="what-is-sta-221" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-sta-221">What is STA 221?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/sta221-pillars.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Application plus theory"></p>
+</figure>
+</div>
+<p><br></p>
+<p><strong>Prerequisites:</strong> Introductory statistics or probability course <u><strong>and</strong></u> linear algebra</p>
+<p><strong>Recommended corequisite:</strong> Probability course</p>
+</section>
+<section id="course-learning-objectives" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="course-learning-objectives">Course learning objectives</h2>
+<p>By the end of the semester, you will be able to…</p>
+<ul>
+<li>analyze data to explore real-world multivariable relationships.</li>
+<li>fit, interpret, and draw conclusions from linear and logistic regression models.</li>
+<li>implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.</li>
+<li>explain the mathematical foundations of linear and logistic regression.</li>
+<li>effectively communicate statistical results to a general audience.</li>
+<li>assess the ethical considerations and implications of analysis decisions.</li>
+</ul>
+</section>
+<section id="course-topics" class="level2 small">
+<h2 class="small anchored" data-anchor-id="course-topics">Course topics</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="fragment" data-fragment-index="1">
+<section id="linear-regression" class="level3" style="color: #993399">
+<h3 style="color: #993399" class="anchored" data-anchor-id="linear-regression">Linear regression</h3>
+<ul>
+<li>Coefficient estimation and interpretation</li>
+<li>Prediction</li>
+<li>Model evaluation</li>
+<li>Matrix representation of regression</li>
+<li>Model conditions and diagnostics</li>
+<li>Model selection</li>
+<li>Types of predictors</li>
+<li>Properties of estimators</li>
+</ul>
+</section>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="fragment" data-fragment-index="2">
+<section id="logistic-regression" class="level3" style="color: #993399">
+<h3 style="color: #993399" class="anchored" data-anchor-id="logistic-regression">Logistic regression</h3>
+<ul>
+<li>Coefficient estimation and interpretation</li>
+<li>Prediction</li>
+<li>Model evaluation</li>
+<li>Inference</li>
+</ul>
+</section>
+</div>
+<div class="fragment" data-fragment-index="3">
+<section id="special-topics" class="level3" style="color: #993399">
+<h3 style="color: #993399" class="anchored" data-anchor-id="special-topics">Special topics</h3>
+<p><br></p>
+</section>
+</div>
+<div class="fragment" data-fragment-index="4">
+<section id="general-topics" class="level3" style="color: #993399">
+<h3 style="color: #993399" class="anchored" data-anchor-id="general-topics">General topics</h3>
+<ul>
+<li>Computing using R and GitHub</li>
+<li>Presenting statistical results</li>
+<li>Collaboration and teamwork</li>
+<li>Ethics</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="course-overview" class="level1">
+<h1>Course overview</h1>
+<section id="course-toolkit" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="course-toolkit">Course toolkit</h2>
+<ul>
+<li><strong>Website</strong>: <a href="https://sta221-fa26.github.io" class="uri">https://sta221-fa26.github.io</a>
+<ul>
+<li>Central hub for the course!</li>
+<li><strong>Tour of the website</strong></li>
+</ul></li>
+<li><strong>Canvas</strong>: <a href="https://canvas.duke.edu/courses/84458" class="uri">https://canvas.duke.edu/courses/84458</a>
+<ul>
+<li>Gradebook</li>
+<li>Office hours</li>
+<li>Announcements</li>
+<li>Gradescope</li>
+<li>Ed Discussion</li>
+</ul></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/sta221-fa26" class="uri">https://github.com/sta221-fa26</a>
+<ul>
+<li>Distribute assignments</li>
+<li>Platform for version control and collaboration</li>
+</ul></li>
+</ul>
+</section>
+<section id="computing-toolkit" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="computing-toolkit">Computing toolkit</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/rstudio.png" class="quarto-figure quarto-figure-center figure-img" style="width:5.61in;height:1.6in" alt="RStudio logo"></p>
+</figure>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><p>All analyses using R, a statistical programming language</p></li>
+<li><p>Write reproducible reports in Quarto</p></li>
+<li><p>Access RStudio through <a href="https://cmgr.oit.duke.edu/containers">STA 221 Docker Containers</a></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/github.png" class="quarto-figure quarto-figure-center figure-img" style="width:5.61in;height:1.6in" alt="GitHub logo"></p>
+</figure>
+</div>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><p>Access assignments</p></li>
+<li><p>Facilitates version control and collaboration</p></li>
+<li><p>All work in <a href="https://github.com/sta221-sp26">STA 221 course organization</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="classroom-community" class="level2">
+<h2 class="anchored" data-anchor-id="classroom-community">Classroom community</h2>
+<div class="small">
+<p>It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.</p>
+<ul>
+<li><p>If you have a name that differs from those that appear in your official Duke records, please let me know.</p></li>
+<li><p>Please let me know your preferred pronouns, if you are comfortable sharing.</p></li>
+<li><p>If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.</p></li>
+<li><p>I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.</p></li>
+</ul>
+</div>
+</section>
+<section id="accessibility" class="level2">
+<h2 class="anchored" data-anchor-id="accessibility">Accessibility</h2>
+<ul>
+<li><p>The <a href="https://access.duke.edu/students">Student Disability Access Office (SDAO)</a> is available to ensure that students are able to engage with their courses and related assignments.</p></li>
+<li><p>If you have documented accommodations from SDAO, please send the documentation as soon as possible.</p></li>
+<li><p>I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know.</p></li>
+</ul>
+</section>
+<section id="syllabus-activity" class="level2">
+<h2 class="anchored" data-anchor-id="syllabus-activity">Syllabus activity</h2>
+<p>[UPDATE - ONLY ONE GROUP PER SECTION. MAYBE UPDATED THE SECTIONS. DO 6 - 10]</p>
+<div class="question">
+<ol type="1">
+<li>Introduce yourselves.</li>
+<li>Read the portion of the syllabus assigned to your group.</li>
+<li>Discuss the key points and questions you my have with your neighbors.</li>
+<li>We’ll ask for volunteers to share a summary with the class.</li>
+</ol>
+</div>
+</section>
+<section id="syllabus-activity-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="syllabus-activity-assignments">Syllabus activity assignments</h2>
+<ul>
+<li><p>Groups 1 &amp; 2: <a href="https://sta221-sp26.github.io/syllabus.html#lectures-and-labs">What to expect in lectures and labs</a></p></li>
+<li><p>Groups 3 &amp; 4: <a href="https://sta221-sp26.github.io/syllabus.html#teams">Teams</a></p></li>
+<li><p>Groups 5 &amp; 6: <a href="https://sta221-sp26.github.io/syllabus.html#labs">Labs</a> and <a href="https://sta221-sp26.github.io/syllabus.html#homework">homework</a></p></li>
+<li><p>Groups 7 &amp; 8: <a href="https://sta221-sp26.github.io/syllabus.html#exams">Exams</a> and <a href="https://sta221-sp26.github.io/syllabus.html#project">final project</a></p></li>
+<li><p>Groups 9 &amp; 10: <a href="https://sta221-sp26.github.io/syllabus.html#academic-honesty">Academic honesty</a></p></li>
+<li><p>Groups 11 &amp; 12: <a href="https://sta221-sp26.github.io/syllabus.html#academic-honesty">Late work policy</a> and <a href="https://sta221-sp26.github.io/syllabus.html#waiver-for-extenuating-circumstances">waiver for extenuating circumstances</a></p></li>
+<li><p>Groups 13 &amp; 14: <a href="https://sta221-sp26.github.io/syllabus.html#attendance-policy">Attendance</a> and <a href="https://sta221-sp26.github.io/syllabus.html#lecture-recording-request">lecture recording request</a></p></li>
+</ul>
+</section>
+<section id="syllabus-activity-report-out" class="level2">
+<h2 class="anchored" data-anchor-id="syllabus-activity-report-out">Syllabus activity report out</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Groups 1 &amp; 2: <a href="https://sta221-sp26.github.io/syllabus.html#lectures-and-labs">What to expect in lectures and labs</a></p></li>
+<li><p>Groups 3 &amp; 4: <a href="https://sta221-sp26.github.io/syllabus.html#teams">Teams</a></p></li>
+<li><p>Groups 5 &amp; 6: <a href="https://sta221-sp26.github.io/syllabus.html#labs">Labs</a> and <a href="https://sta221-sp26.github.io/syllabus.html#homework">homework</a></p></li>
+<li><p>Groups 7 &amp; 8: <a href="https://sta221-sp26.github.io/syllabus.html#exams">Exams</a> and <a href="https://sta221-sp26.github.io/syllabus.html#project">final project</a></p></li>
+<li><p>Groups 9 &amp; 10: <a href="https://sta221-sp26.github.io/syllabus.html#academic-honesty">Academic honesty</a></p></li>
+<li><p>Groups 11 &amp; 12: <a href="https://sta221-sp26.github.io/syllabus.html#academic-honesty">Late work policy</a> and <a href="https://sta221-sp26.github.io/syllabus.html#waiver-for-extenuating-circumstances">waiver for extenuating circumstances</a></p></li>
+<li><p>Groups 13 &amp; 14: <a href="https://sta221-sp26.github.io/syllabus.html#attendance-policy">Attendance</a> and <a href="https://sta221-sp26.github.io/syllabus.html#lecture-recording-request">lecture recording request</a></p></li>
+</ul>
+</div>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Homework</td>
+<td>15%</td>
+</tr>
+<tr class="even">
+<td>Labs</td>
+<td>10%</td>
+</tr>
+<tr class="odd">
+<td>Exam 01</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Exam 02</td>
+<td>20%</td>
+</tr>
+<tr class="odd">
+<td>Final Exam</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Final project</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="five-tips-for-success-in-sta-221" class="level2">
+<h2 class="anchored" data-anchor-id="five-tips-for-success-in-sta-221">Five tips for success in STA 221</h2>
+<ol type="1">
+<li><p>Complete all prepare readings and tasks before class.</p></li>
+<li><p>Actively participate and engage in lectures and labs.</p></li>
+<li><p>Ask questions frequently during lecture, in office hours, on Ed Discussion, and among your classmates.</p></li>
+<li><p>Complete all homework and labs, asking yourself “why” questions as you go through the steps to complete each exercise.</p></li>
+<li><p>Stay current with the course material, as each new concept builds on previous ones.</p></li>
+</ol>
+</section>
+</section>
+<section id="questions---make-a-wooclap-activity" class="level1">
+<h1>Questions? - MAKE A WOOCLAP ACTIVITY</h1>
+</section>
+<section id="toolkit-for-a-reproducible-workflow" class="level1">
+<h1>Toolkit for a reproducible workflow</h1>
+<section id="reproducibility-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-checklist">Reproducibility checklist</h2>
+<div class="question">
+<p>What does it mean for an analysis to be reproducible?</p>
+</div>
+<p>. . .</p>
+<p><strong>Near term goals</strong>:</p>
+<p>✔️ Can the tables and figures be exactly reproduced from the code and data?</p>
+<p>✔️ Does the code actually do what you think it does?</p>
+<p>✔️ In addition to what was done, is it clear <em>why</em> it was done?</p>
+<p>. . .</p>
+<p><strong>Long term goals</strong>:</p>
+<p>✔️ Can the code be used for other data?</p>
+<p>✔️ Can you extend the code to do other things?</p>
+</section>
+<section id="why-is-reproducibility-important" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-reproducibility-important">Why is reproducibility important?</h2>
+<ul>
+<li><p>Results produced are more reliable and trustworthy <span class="citation" data-cites="ostblom2022">(<a href="#ref-ostblom2022" role="doc-biblioref">Ostblom and Timbers 2022</a>)</span></p></li>
+<li><p>Facilitates more effective collaboration <span class="citation" data-cites="ostblom2022">(<a href="#ref-ostblom2022" role="doc-biblioref">Ostblom and Timbers 2022</a>)</span></p></li>
+<li><p>Contributing to science, which builds and organizes knowledge in terms of testable hypotheses <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span></p></li>
+<li><p>Possible to identify and correct errors or biases in the analysis process <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span></p></li>
+</ul>
+</section>
+<section id="toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="toolkit">Toolkit</h2>
+<ul>
+<li><p><strong>Scriptability</strong> <span class="math inline">\(\rightarrow\)</span> R</p></li>
+<li><p><strong>Literate programming</strong> (code, narrative, output in one place) <span class="math inline">\(\rightarrow\)</span> Quarto</p></li>
+<li><p><strong>Version control</strong> <span class="math inline">\(\rightarrow\)</span> Git / GitHub</p></li>
+</ul>
+</section>
+<section id="r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-and-rstudio">R and RStudio</h2>
+<ul>
+<li><p>R is a statistical programming language</p></li>
+<li><p>RStudio is a convenient interface for R (an integrated development environment, IDE)</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/r_vs_rstudio_1.png" class="img-fluid figure-img"></p>
+<figcaption>Source: <a href="https://moderndive.com/">Statistical Inference via Data Science</a></figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="rstudio-ide" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-ide">RStudio IDE</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/rstudio-panes.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<ul>
+<li><p>Fully reproducible reports – the analysis is run from the beginning each time you render</p></li>
+<li><p>Code goes in chunks and narrative goes outside of chunks</p></li>
+<li><p>Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)</p></li>
+</ul>
+</section>
+<section id="quarto-1" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-1">Quarto</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="how-will-we-use-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="how-will-we-use-quarto">How will we use Quarto?</h2>
+<ul>
+<li><p>Every application exercise and assignment is written in a Quarto document</p></li>
+<li><p>You’ll have a template Quarto document to start with</p></li>
+<li><p>The amount of scaffolding in the template will decrease over the semester</p></li>
+</ul>
+</section>
+</section>
+<section id="version-control-with-git-and-github" class="level1">
+<h1>Version control with git and GitHub</h1>
+<section id="what-is-versioning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-versioning">What is versioning?</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/lego-steps.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="what-is-versioning-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-versioning-1">What is versioning?</h2>
+<p>with human readable messages</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/lego-steps-commit-messages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="why-do-we-need-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-need-version-control">Why do we need version control?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/phd_comics_vc.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Provides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. <span class="citation" data-cites="ostblom2022">(<a href="#ref-ostblom2022" role="doc-biblioref">Ostblom and Timbers 2022</a>)</span></p>
+</div>
+</div>
+</section>
+<section id="git-and-github" class="level2">
+<h2 class="anchored" data-anchor-id="git-and-github">git and GitHub</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01/git-github.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li><strong>git</strong> is a version control system – like “Track Changes” features from Microsoft Word.</li>
+<li><strong>GitHub</strong> is the home for your git-based projects on the internet (like DropBox but much better).</li>
+<li>There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.</li>
+</ul>
+</section>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
+<ul>
+<li><p>Complete <a href="../prepare/prepare-lec02.html">Lecture 02 Prepare</a></p></li>
+<li><p>Review <a href="https://sta221-fa26.github.io/syllabus">syllabus</a></p></li>
+<li><p>Complete Get to Know You Survey</p></li>
+<li><p>Complete <a href="../labs/lab-00.html">Lab 00</a></p></li>
+<li><p>Office hours start Monday, August 31 (see schedule on Canvas homepage)</p></li>
+</ul>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <span>“Telling Stories with Data,”</span> June. <a href="https://doi.org/10.1201/9781003229407">https://doi.org/10.1201/9781003229407</a>.
+</div>
+<div id="ref-ostblom2022" class="csl-entry" role="listitem">
+Ostblom, Joel, and Tiffany Timbers. 2022. <span>“Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.”</span> <em>Journal of Statistics and Data Science Education</em> 30 (3): 241–50. <a href="https://doi.org/10.1080/26939169.2022.2074922">https://doi.org/10.1080/26939169.2022.2074922</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sta221-fa26\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2026, Maria Tackett</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
