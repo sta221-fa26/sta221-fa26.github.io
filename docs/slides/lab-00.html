@@ -9,9 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
-  <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <meta name="dcterms.date" content="2026-01-20">
-  <title>STA 221 - Fall 2026 – SLR: Matrix representation</title>
+  <meta name="dcterms.date" content="2026-08-24">
+  <title>STA 221 - Fall 2026 – Welcome to STA 221 labs!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -124,377 +123,62 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
-<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">SLR: Matrix representation</h1>
+  <h1 class="title">Welcome to STA 221 labs!</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Prof.&nbsp;Maria Tackett 
-</div>
-</div>
 </div>
 
-  <p class="date">January 20, 2026</p>
+  <p class="date">August 24, 2026</p>
 </section>
-<section id="announcements" class="slide level2">
-<h2>Announcements</h2>
+<section id="meet-your-tas" class="slide level2">
+<h2>Meet your TAs!</h2>
+
+<img data-src="images/hello-sticker.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%" alt="Sticker that says &quot;Hello my name is&quot;"></section>
+<section id="meet-your-classmates" class="slide level2">
+<h2>Meet your classmates!</h2>
+<div class="question">
 <ul>
-<li><p>Lab 01 due on <strong>TODAY at 11:59pm</strong></p>
-<ul>
-<li>Push work to GitHub repo</li>
-<li>Submit final PDF on Gradescope + mark pages for each question</li>
-</ul></li>
-<li><p>HW 01 released today - <strong>due Thursday, January 29 at 11:59pm</strong></p>
-<ul>
-<li>Note: AI Disclosure</li>
-</ul></li>
+<li><p>Get into groups of 2 or 3</p></li>
+<li><p>Introduce yourself: Name, year, major (or academic interest), a highlight from summer break or something you’re looking forward to this semester</p></li>
+<li><p>Introduce your partner to the class</p></li>
 </ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_5d41a57e" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+</div>
+</div>
 </section>
-<section id="topics" class="slide level2">
-<h2>Topics</h2>
+<section id="what-to-expect-in-lab" class="slide level2">
+<h2>What to expect in lab</h2>
 <ul>
-<li>Matrix representation of least-squares regression
+<li><p>Introduction to the lab assignment (~ 5 minutes)</p></li>
+<li><p>Review lecture content, as needed (~ 10 minutes)</p></li>
+<li><p>Complete the lab assignment</p>
 <ul>
-<li>Model form</li>
-<li>Least square estimate</li>
-<li>Predicted (fitted) values</li>
-<li>Residuals</li>
+<li>Submit to to Gradescope starting with Lab 01</li>
 </ul></li>
-<li>Geometry of least-squares regression</li>
 </ul>
 </section>
 <section>
-<section id="matrix-representation-of-least-squares-regression" class="title-slide slide level1 center">
-<h1>Matrix representation of least-squares regression</h1>
+<section id="any-questions" class="title-slide slide level1 center">
+<h1>Any questions?</h1>
 
 </section>
-<section id="slr-statistical-model-population" class="slide level2 midi">
-<h2>SLR: Statistical model (population)</h2>
-<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>.</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1 X + \epsilon\]</span></p>
+<section id="todays-lab" class="slide level2 midi">
+<h2>Today’s lab</h2>
+<p>The rest of the today’s lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.</p>
+<p>We will demonstrate the steps to set up computing and interact with RStudio and GitHub.</p>
 <p><br></p>
-<ul>
-<li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\beta_0\)</span>: Population (true) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\epsilon\)</span>: Error terms centered at 0 with variance <span class="math inline">\(\sigma^2_{\epsilon}\)</span></li>
-</ul>
-</section>
-<section id="slr-in-matrix-form" class="slide level2">
-<h2>SLR in matrix form</h2>
-<p>The simple linear regression model can be represented using vectors and matrices as</p>
-<div class="equation">
-<p><span class="math display">\[
-\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}
-\]</span></p>
-</div>
-<ul>
-<li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
-<li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for predictors + intercept)</p></li>
-<li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Vector of model coefficients</p></li>
-<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms centered at <span class="math inline">\(\mathbf{0}\)</span> with variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span></p></li>
-</ul>
-</section>
-<section id="slr-in-matrix-form-1" class="slide level2">
-<h2>SLR in matrix form</h2>
-<p><span class="math display">\[
-\underbrace{
-\begin{bmatrix}
-y_1 \\
-\vdots \\
-y_n
-\end{bmatrix} }_
-{\mathbf{y}} \hspace{3mm}
-=
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-1 &amp;x_1 \\
-\vdots &amp;  \vdots \\
-1 &amp;  x_n
-\end{bmatrix}
-}_{\mathbf{X}}
-\hspace{2mm}
-\underbrace{
-\begin{bmatrix}
-\beta_0 \\
-\beta_1
-\end{bmatrix}
-}_{\boldsymbol{\beta}}
-\hspace{3mm}
-+
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-\epsilon_1 \\
-\vdots\\
-\epsilon_n
-\end{bmatrix}
-}_\boldsymbol{\epsilon}
-\]</span></p>
-<p><br></p>
-<div class="question">
-<p>What are the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, and <span class="math inline">\(\boldsymbol{\epsilon}\)</span>?</p>
-</div>
-</section>
-<section id="find-least-squares-estimator-for-boldsymbolbeta" class="slide level2">
-<h2>Find least-squares estimator for <span class="math inline">\(\boldsymbol{\beta}\)</span></h2>
-<p><strong>Goal</strong>: Find estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}\)</span> that minimizes the sum of squares <span class="math display">\[
-\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})
-\]</span></p>
-</section>
-<section id="gradient" class="slide level2 midi" data-background-color="#ccddeb">
-<h2>Gradient</h2>
-<p>Let <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}\)</span>be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(f(\mathbf{x})\)</span> be a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<div class="fragment">
-<p>Then the <strong>gradient</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
-\]</span></p>
-</div>
-</section>
-<section id="property-1-derivative-of-inner-product" class="slide level2" data-background-color="#ccddeb">
-<h2>Property 1: Derivative of inner product</h2>
-<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector, such that <span class="math inline">\(\mathbf{z}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
-<p><br>
-</p>
-<p>The derivative of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}
-\]</span></p>
-</section>
-<section id="property-1-derivative-of-inner-product-1" class="slide level2 midi" data-background-color="#ccddeb">
-<h2>Property 1: Derivative of inner product</h2>
-<span class="math display">\[\begin{aligned}
-\mathbf{x}^\mathsf{T}\mathbf{z} &amp;= \class{fragment}{\begin{bmatrix}x_1 &amp; x_2 &amp; \dots &amp;x_k\end{bmatrix}
-\begin{bmatrix}z_1 \\ z_2 \\ \vdots \\z_k\end{bmatrix}} \\[10pt]
-&amp;\class{fragment}{= x_1z_1 + x_2z_2 + \dots + x_kz_k} \\
-&amp;\class{fragment}{= \sum_{i=1}^k x_iz_i}
-\end{aligned}\]</span>
-<p><br></p>
-<p>(This is equivalent to <span class="math inline">\(\mathbf{z}^\mathsf{T}\mathbf{x}\)</span>)</p>
-</section>
-<section id="property-1-derivative-of-inner-product-2" class="slide level2 midi" data-background-color="#ccddeb">
-<h2>Property 1: Derivative of inner product</h2>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm}\mathbf{x}^\mathsf{T}\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_k}\end{bmatrix}}  
-= \class{fragment}{\begin{bmatrix}\frac{\partial}{\partial x_1} (x_1z_1 + x_2z_2 + \dots + x_kz_k) \\ \frac{\partial}{\partial x_2} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\\ \vdots \\ \frac{\partial}{\partial x_k} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\end{bmatrix}}
-= \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}
-\]</span></p>
-</section>
-<section id="property-2-derivative-of-quadratic-form" class="slide level2 midi" data-background-color="#ccddeb">
-<h2>Property 2: Derivative of quadratic form</h2>
-<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .<br>
-</p>
-<p>Then the derivative of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
-\]</span></p>
-<p><br>
-</p>
-<p>If <span class="math inline">\(\mathbf{A}\)</span> is symmetric, then</p>
-<p><span class="math display">\[
-(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
-\]</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>See <a href="https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf">The Matrix Cookbook</a> for more on matrix operations.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="find-the-least-squares-estimator" class="slide level2">
-<h2>Find the least-squares estimator</h2>
-<p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes</p>
-<p><span class="math display">\[
-\begin{aligned}
-\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&amp;= (\mathbf{y}^\mathsf{T} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T})(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
-&amp;=\mathbf{y}^\mathsf{T}\mathbf{y} - \mathbf{y}^\mathsf{T}\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}\\[10pt]
-&amp;=\mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="find-the-least-squares-estimator-1" class="slide level2">
-<h2>Find the least squares estimator</h2>
-<p><span class="math display">\[\begin{aligned}
-\frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&amp; = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}
-\]</span><br></p>
-<p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that satisfies</p>
-<p><span class="math display">\[
--2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
-\]</span></p>
-<div class="equation">
-<p><span class="math display">\[\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}\]</span></p>
-</div>
-</section></section>
-<section>
-<section id="did-we-find-a-minimum" class="title-slide slide level1 center">
-<h1>Did we find a minimum?</h1>
-
-</section>
-<section id="hessian-matrix" class="slide level2" data-background-color="#ccddeb">
-<h2>Hessian matrix</h2>
-<p>The <strong>Hessian</strong> matrix is a square matrix of partial second derivatives</p>
-<p><span class="math display">\[
-\frac{\partial^2 f}{\partial \mathbf{x}^2}  = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} &amp; \frac{\partial^2f}{\partial x_1 \partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_1\partial x_k} \\
-\frac{\partial^2f}{\partial\ x_2 \partial x_1} &amp; \frac{\partial^2f}{\partial x_2^2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_2 \partial x_k} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-\frac{\partial^2f}{\partial x_k\partial x_1} &amp; \frac{\partial^2f}{\partial x_k\partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
-\]</span></p>
-</section>
-<section id="using-the-hessian-matrix" class="slide level2" data-background-color="add8e6">
-<h2>Using the Hessian matrix</h2>
-<p>If the Hessian matrix is…</p>
-<ul>
-<li><p>positive-definite, then we have found a minimum.</p></li>
-<li><p>negative-definite, then we have found a maximum.</p></li>
-<li><p>neither positive or negative-definite, then we have found a saddle point</p></li>
-</ul>
-</section>
-<section id="did-we-find-a-minimum-1" class="slide level2">
-<h2>Did we find a minimum?</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial^2}{\partial \boldsymbol{\beta}^2} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \frac{\partial}{\partial \boldsymbol{\beta}} (-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&amp;{=-2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{y}) + 2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta})} \\[10pt]
-&amp;{= 2 \mathbf{X}^\mathsf{T}\mathbf{X}}
-\end{aligned}
-\]</span></p>
-<div class="question">
-<p>Show that <span class="math inline">\(2\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite in HW 01.</p>
-</div>
-</section>
-<section id="positive-semi-definite-matrices" class="slide level2 midi" data-background-color="#ccddeb">
-<h2>Positive (semi-)definite matrices</h2>
-<p>A matrix <span class="math inline">\(\mathbf{A}\)</span> is <strong>positive definite</strong> if</p>
-<p><span class="math display">\[
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} &gt; 0 \hspace{8mm} \text{for all } \mathbf{x} \neq \mathbf{0}
-\]</span></p>
-<p><br></p>
-<p>A matrix <span class="math inline">\(\mathbf{A}\)</span> is <strong>positive semi-definite</strong> if</p>
-<p><span class="math display">\[
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} \geq 0 \hspace{8mm} \text{for all } \mathbf{x}
-\]</span></p>
-<p><br></p>
-<p>Equivalently:</p>
-<ul>
-<li><span class="math inline">\(\mathbf{A}\)</span> is positive definitive if all eigenvalues are positive</li>
-<li><span class="math inline">\(\mathbf{A}\)</span> is positive semi-definite if all eigenvalues are non-negative.</li>
-</ul>
-</section></section>
-<section>
-<section id="geometry-of-least-squares-regression" class="title-slide slide level1 center">
-<h1>Geometry of least-squares regression</h1>
-
-</section>
-<section id="geometry-of-least-squares-regression-1" class="slide level2">
-<h2>Geometry of least-squares regression</h2>
-<ul>
-<li class="fragment"><p>Let <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> be the <strong>column space</strong> of <span class="math inline">\(\mathbf{X}\)</span>: the set all possible linear combinations (span) of the columns of <span class="math inline">\(\mathbf{X}\)</span></p></li>
-<li class="fragment"><p>The vector of responses <span class="math inline">\(\mathbf{y}\)</span> is not in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>.</p></li>
-<li class="fragment"><p><strong>Goal:</strong> Find another vector <span class="math inline">\(\mathbf{z} = \mathbf{X}\mathbf{\boldsymbol{\beta}}\)</span> that is in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> and is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>.</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\mathbf{z}\)</span> is a <strong>projection</strong> of <span class="math inline">\(\mathbf{y}\)</span> onto <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> .</li>
-</ul></li>
-</ul>
-</section>
-<section id="geometry-of-least-squares-regression-2" class="slide level2">
-<h2>Geometry of least-squares regression</h2>
-<ul>
-<li class="fragment"><p>For any <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>, the vector <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{Xb}\)</span> is the difference between <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\boldsymbol{\beta}\)</span>.</p>
-<ul>
-<li class="fragment">We want to find <span class="math inline">\(\boldsymbol{\beta}\)</span> such that <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>, i.e, we want to minimize the difference <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}\)</span></li>
-</ul></li>
-<li class="fragment"><p>This distance is minimized when <span class="math inline">\(\mathbf{e}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span></p></li>
-</ul>
-</section>
-<section id="geometry-of-least-squares-regression-3" class="slide level2">
-<h2>Geometry of least-squares regression</h2>
-<ul>
-<li><p><strong>Note:</strong> If <span class="math inline">\(\mathbf{A}\)</span>, an <span class="math inline">\(n \times k\)</span> matrix, is orthogonal to an <span class="math inline">\(n \times 1\)</span> vector <span class="math inline">\(\mathbf{c}\)</span>, then <span class="math inline">\(\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}\)</span></p></li>
-<li><p>Therefore, we have <span class="math inline">\(\mathbf{X}^\mathsf{T}\boldsymbol{\epsilon} = \mathbf{0}\)</span> , and thus</p>
-<p><span class="math display">\[
-\mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{0}
-\]</span></p></li>
-</ul>
-<div class="question">
-<p>Find <span class="math inline">\(\boldsymbol{\beta}\)</span> that satisfies this equation.</p>
-</div>
-</section>
-<section id="predicted-fitted-values" class="slide level2">
-<h2>Predicted (fitted) values</h2>
-<p>Now that we have <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, let’s predict values of <span class="math inline">\(\mathbf{y}\)</span> using the model</p>
-<p><span class="math display">\[
-\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}
-\]</span></p>
-<div class="fragment">
-<div class="equation">
-<p><strong>Hat matrix</strong>: <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\)</span></p>
-</div>
-</div>
-</section>
-<section id="hat-matrix" class="slide level2">
-<h2>Hat matrix</h2>
-<ul>
-<li><p><span class="math inline">\(\hat{\mathbf{y}} = \mathbf{Hy}\)</span>, so <span class="math inline">\(\mathbf{H}\)</span> is a projection of <span class="math inline">\(\mathbf{y}\)</span> onto <span class="math inline">\(\mathbf{X}\boldsymbol{\beta}\)</span></p></li>
-<li><p>Properties of <span class="math inline">\(\mathbf{H}\)</span>, a projection matrix</p>
-<ul>
-<li><p><span class="math inline">\(\mathbf{H}\)</span> is symmetric (<span class="math inline">\(\mathbf{H}^\mathsf{T} = \mathbf{H}\)</span>)</p></li>
-<li><p><span class="math inline">\(\mathbf{H}\)</span> is idempotent (<span class="math inline">\(\mathbf{H}^2 = \mathbf{H}\)</span>)</p></li>
-<li><p>If <span class="math inline">\(\mathbf{v}\)</span> in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>, then <span class="math inline">\(\mathbf{Hv} = \mathbf{v}\)</span></p></li>
-<li><p>If <span class="math inline">\(\mathbf{v}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>, then <span class="math inline">\(\mathbf{Hv} = \mathbf{0}\)</span></p></li>
-</ul></li>
-</ul>
-<div class="question">
-<p>Show these properties in HW 01 and HW 02.</p>
-</div>
-</section>
-<section id="residuals" class="slide level2">
-<h2>Residuals</h2>
-<p>Recall that the residuals are the difference between the observed and predicted values</p>
-<p><span class="math display">\[
-\begin{aligned}
-\mathbf{e} &amp;= \mathbf{y} - \hat{\mathbf{y}}\\[10pt]
-&amp;\class{fragment}{ = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}} \\[10pt]
-&amp;\class{fragment}{ = \mathbf{y} - \mathbf{H}\mathbf{y}} \\[20pt]
-\class{fragment}{\color{#993399}{\mathbf{e}}} &amp;\class{fragment}{\color{#993399}{=(\mathbf{I} - \mathbf{H})\mathbf{y}}} \\[10pt]
-\end{aligned}
-\]</span></p>
-</section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
-<ul>
-<li><p>Introduced matrix representation for simple linear regression</p>
-<ul>
-<li>Model form</li>
-<li>Least square estimate</li>
-<li>Predicted (fitted) values</li>
-<li>Residuals</li>
-</ul></li>
-<li><p>Introduced the geometric interpretation of least-squares regression</p></li>
-</ul>
-</section>
-<section id="for-next-class" class="slide level2">
-<h2>For next class</h2>
-<ul>
-<li><p>Multiple linear regression</p></li>
-<li><p>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></p></li>
-</ul>
+<p>🔗 <a href="https://sta221-fa26.github.io/labs/lab-00.html" class="uri">https://sta221-fa26.github.io/labs/lab-00.html</a></p>
 
 
 </section></section>
@@ -502,7 +186,7 @@ y_n
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-sp26.github.io">🔗 sta221-sp26.github.io</a></p>
+<p><a href="https://sta221-fa26.github.io">🔗 sta221-fa26.github.io</a></p>
 </div>
 </div></div>
 
@@ -690,7 +374,7 @@ y_n
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

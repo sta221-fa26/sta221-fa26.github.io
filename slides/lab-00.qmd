@@ -1,0 +1,64 @@
+---
+title: "Welcome to STA 221 labs!"
+date: "08-24-2026"
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+---
+
+## Meet your TAs!
+
+![](images/hello-sticker.jpeg){fig-alt="Sticker that says \"Hello my name is\"" fig-align="center" width="80%"}
+
+## Meet your classmates!
+
+::: question
+- Get into groups of 2 or 3
+
+- Introduce yourself: Name, year, major (or academic interest), a highlight from summer break or something you're looking forward to this semester
+
+- Introduce your partner to the class
+:::
+
+```{r}
+#| echo: false 
+
+countdown::countdown(minutes  = 4)
+```
+
+## What to expect in lab
+
+- Introduction to the lab assignment (\~ 5 minutes)
+
+- Review lecture content, as needed (\~ 10 minutes)
+
+- Complete the lab assignment
+
+  - Submit to to Gradescope starting with Lab 01
+
+# Any questions?
+
+## Today's lab {.midi}
+
+The rest of the today's lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.
+
+We will demonstrate the steps to set up computing and interact with RStudio and GitHub.
+
+<br>
+
+🔗 <https://sta221-fa26.github.io/labs/lab-00.html>

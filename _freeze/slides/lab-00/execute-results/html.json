@@ -1,0 +1,22 @@
+{
+  "hash": "7135d8385367715550a8ac3bd7387f4b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome to STA 221 labs!\"\ndate: \"08-24-2026\"\ndate-format: \"MMMM DD, YYYY\"\nfooter: \"[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs:\n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\n---\n\n## Meet your TAs!\n\n![](images/hello-sticker.jpeg){fig-alt=\"Sticker that says \\\"Hello my name is\\\"\" fig-align=\"center\" width=\"80%\"}\n\n## Meet your classmates!\n\n::: question\n- Get into groups of 2 or 3\n\n- Introduce yourself: Name, year, major (or academic interest), a highlight from summer break or something you're looking forward to this semester\n\n- Introduce your partner to the class\n:::\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n```{=html}\n<countdown-timer class=\"countdown\" id=\"timer_5d41a57e\" minutes=\"4\" seconds=\"0\" update-every=\"1\" tabindex=\"0\" style=\"right:0;bottom:0;\"></countdown-timer>\n```\n\n:::\n:::\n\n\n## What to expect in lab\n\n- Introduction to the lab assignment (\\~ 5 minutes)\n\n- Review lecture content, as needed (\\~ 10 minutes)\n\n- Complete the lab assignment\n\n  - Submit to to Gradescope starting with Lab 01\n\n# Any questions?\n\n## Today's lab {.midi}\n\nThe rest of the today's lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.\n\nWe will demonstrate the steps to set up computing and interact with RStudio and GitHub.\n\n<br>\n\n🔗 <https://sta221-fa26.github.io/labs/lab-00.html>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../site_libs/countdown-0.6.0/countdown.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/countdown-0.6.0/countdown.js\"></script>\n"
+      ],
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
