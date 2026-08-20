@@ -411,8 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#update-the-quarto-document" id="toc-update-the-quarto-document" class="nav-link" data-scroll-target="#update-the-quarto-document">Update the Quarto document</a></li>
   <li><a href="#commit-and-push-changes-to-github" id="toc-commit-and-push-changes-to-github" class="nav-link" data-scroll-target="#commit-and-push-changes-to-github">Commit and push changes to GitHub</a></li>
   </ul></li>
-  <li><a href="#submit-github-username" id="toc-submit-github-username" class="nav-link" data-scroll-target="#submit-github-username">Submit GitHub username</a></li>
-  <li><a href="#sta-221-student-survey" id="toc-sta-221-student-survey" class="nav-link" data-scroll-target="#sta-221-student-survey">STA 221 Student Survey</a></li>
+  <li><a href="#sta-221-get-to-know-you-survey" id="toc-sta-221-get-to-know-you-survey" class="nav-link" data-scroll-target="#sta-221-get-to-know-you-survey">STA 221 Get to Know You Survey</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -448,7 +447,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Please complete all tasks before leaving lab today.</p>
+<p>Complete all tasks by the end of lab.</p>
 </div>
 </div>
 <section id="introduction" class="level1">
@@ -560,13 +559,15 @@ Note
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For example, mine would be</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Maria Tackett"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"maria.tackett@duke.edu"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"maria.tackett@duke.edu"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>It may look like nothing happened but you are now ready interact between GitHub and RStudio!</p>
 </section>
@@ -578,7 +579,7 @@ Note
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <ol type="1">
-<li><p>Click here to create your individual <code>lab-00</code> repo: <a href="https://classroom.github.com/a/TiUOgn-X" class="uri">https://classroom.github.com/a/TiUOgn-X</a></p></li>
+<li><p>Click here to create your individual <code>lab-00</code> repo: <a href="https://classroom.github.com/a/TiUOgn-X" class="uri">https://classroom.github.com/a/TiUOgn-X</a> <strong>[UPDATE LINK]</strong></p></li>
 <li><p>Click to open your <code>lab-00</code> repo.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <em>File</em> → <em>New Project</em> → <em>Version Control</em> → <em>Git</em>.</p></li>
@@ -614,17 +615,25 @@ Note
 <li><p>Now that you have made an update and committed this change, click <strong>Push</strong> to send the changes to GitHub.</p></li>
 <li><p>Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p></li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="submit-github-username" class="level1">
-<h1>Submit GitHub username</h1>
-<p>Use the link below to submit your GitHub username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub.</p>
-<p>🔗 <a href="https://forms.office.com/r/zfdLPcVdum" class="uri">https://forms.office.com/r/zfdLPcVdum</a></p>
-</section>
-<section id="sta-221-student-survey" class="level1">
-<h1>STA 221 Student Survey</h1>
+<section id="sta-221-get-to-know-you-survey" class="level1">
+<h1>STA 221 Get to Know You Survey</h1>
 <p>Use the link below to complete the STA 221 Get to Know You Survey. This survey will help me learn more about you, your interests, and your previous statistics and computing experience. I will also use the survey to form lab teams.</p>
-<p>🔗 <a href="https://forms.office.com/r/jH9C7hSWZG" class="uri">https://forms.office.com/r/jH9C7hSWZG</a></p>
+<p>🔗 <a href="https://forms.cloud.microsoft/r/c31ik7gm06" class="uri">https://forms.cloud.microsoft/r/c31ik7gm06</a></p>
 
 
 </section>

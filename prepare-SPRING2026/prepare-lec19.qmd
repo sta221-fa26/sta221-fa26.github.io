@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 19: LR - Prediction"
+---
+
+<br>
+
+📖 Read [Sections 12.3 - 12.5](https://intro-regression.github.io/12-logistic-prediction.html#prediction-and-classification)
+
+💻 Computing reference - [Section 12.6](https://intro-regression.github.io/12-logistic-prediction.html#prediction-and-classification)

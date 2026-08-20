@@ -1,0 +1,414 @@
+---
+title: "SLR: Model evaluation"
+author: "Prof. Maria Tackett"
+date: "01-15-2026"
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 03-slr-model-evaluation-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+
+library(countdown)
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+```
+
+## Announcements {.midi}
+
+-   No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday
+    -   See Canvas for full office hours schedule
+
+# Questions from last class?
+
+## Topics
+
+-   Predict the response given a value of the predictor
+-   Use R to conduct exploratory data analysis and fit a model
+-   Evaluate models using RMSE and $R^2$
+-   Use analysis of variance to partition variability in the response variable
+
+## Computing set up
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling (includes broom, yardstick, and other packages)
+library(knitr)       # for pretty tables
+library(patchwork)   # arrange plots
+
+# set default theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Data: Life expectancy in 140 countries
+
+```{r}
+#| echo: false
+library(readxl)
+
+life_exp <- read_excel("data/life-expectancy-data.xlsx") |> 
+  rename(life_exp = `Life_expectancy_at_birth`, 
+         income_inequality = `Income_inequality_Gini_coefficient`) |>
+  mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"), 
+         education = factor(education, levels = c("Low", "High")))
+```
+
+The data set comes from @zarulli2021 who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data) and [World Health Organization](https://apps.who.int/nha/database/).
+
+The data are avaialable in [life-expectancy-data.csv](https://intro-regression.github.io/data/life-expectancy-data.csv). There are `r nrow(life_exp)` countries (observations) in the data set.
+
+<br>
+
+**Goal: Use the income inequality in a country to understand variability in the life expectancy.**
+
+::: aside
+[Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) for the original research paper.
+:::
+
+## Variables
+
+::: incremental
+-   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+
+-   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
+:::
+
+## Univariate exploratory data analysis
+
+```{r univariate}
+#| echo: false
+p1 <- ggplot(data = life_exp, aes(x = life_exp))  + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 3) + 
+  labs(x = "Life expectancy (in years)", 
+       y = "Count")
+
+p2 <- ggplot(data = life_exp, aes(x = income_inequality))  + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 3) + 
+  labs(x = "Income inequality (Gini coefficient)", 
+       y = "Count") 
+
+p1 + p2
+```
+
+## Bivariate exploratory data analysis
+
+```{r bivariate}
+#| echo: false
+#| out-width: 80%
+p1 <- ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, color = "steelblue") +
+  labs(x = "Income inequality (Gini coefficient)", 
+      y  = "Life expectancy (in years)", 
+      title = "Income inequality versus life expectancy")
+p1 
+```
+
+# Application exercise
+
+::: appex
+📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html)
+
+Complete Part 1.
+:::
+
+## Clone repo + start new RStudio project  {.small}
+
+-   Go to the course organization. Click on the repo with the prefix `ae-01`. It contains the starter documents you need to complete the AE.
+
+    -   If you do not see an `ae-01` repo, use this link to create one: <https://classroom.github.com/a/jWbwQU1r>
+
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you’ll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+
+-   In RStudio, go to *File* → *New Project* → *Version Control* → *Git*.
+
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*.
+
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+-   Click `ae-01.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the AE.
+
+# Model evaluation
+
+We fit a model but is it any good?
+
+## Two statistics
+
+-   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+
+. . .
+
+::: question
+What indicates a good model fit? Higher or lower RMSE? Higher or lower $R^2$?
+:::
+
+## RMSE
+
+$$
+RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
+$$
+
+. . .
+
+::: incremental
+-   Ranges between 0 (perfect predictor) and infinity (terrible predictor)
+
+-   Same units as the response variable
+
+-   The value of RMSE is more useful for comparing across models than evaluating a single model
+:::
+
+# ANOVA and $R^2$
+
+## ANOVA {#analysis-of-variance-anova}
+
+**Analysis of Variance (ANOVA)**: Technique to partition variability in $Y$ by the sources of variability
+
+<br>
+
+![](images/clipboard-3964457409.png)
+
+## Total variability (Response)
+
+```{r}
+#| echo: false
+#| fig-width: 10
+
+ggplot(data = life_exp, aes(x = life_exp)) +
+   geom_histogram(fill = "#407E99", color = "black", binwidth =2) + 
+  labs(x = "Life expectancy (in years))") 
+
+```
+
+```{r}
+#| echo: false
+
+life_exp |>
+  summarise(Min = min(life_exp), Median = median(life_exp), Max = max(life_exp), Mean = mean(life_exp), Std.Dev = sd(life_exp)) |>
+  kable(digits =3)
+
+```
+
+## Partition sources of variability in `life_exp`
+
+```{r}
+#| echo: false
+mean_y <- mean(life_exp$life_exp)
+
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+  geom_point(alpha = 0.5) + 
+  geom_hline(yintercept = mean_y, color = "#407E99") +
+  labs(x = "Income inequality (Gini coefficient)",
+       y = "Life expectancy (in years )") +
+  annotate("text", x = 45, y = 73, label = latex2exp::TeX("$\\bar{y}$"), color = "#407E99", size = 6) 
+```
+
+## Total variability (Response)
+
+```{r}
+#| echo: false
+mean_y <- mean(life_exp$life_exp)
+
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+  geom_point(alpha = 0.5) + 
+  geom_hline(yintercept = mean_y, color = "#407E99") +
+  labs(x = "Income inequality (Gini coefficient)",
+       y = "Life expectancy (in years )") +
+   geom_segment(aes(x=income_inequality, xend=income_inequality, y=life_exp, yend=mean_y), color = "#407E99", linewidth = 1) +
+  annotate("text", x = 45, y = 73, label = latex2exp::TeX("$\\bar{y}$"), color = "#407E99", size = 6) 
+```
+
+$$\text{Sum of Squares Total (SST)} = \sum_{i=1}^n(y_i - \bar{y})^2 = (n-1)s_y^2$$
+
+## Explained variability (Model)
+
+```{r}
+#| echo: false
+mean_y <- mean(life_exp$life_exp)
+life_exp_fit <- lm(life_exp ~ income_inequality, data = life_exp)
+
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+  geom_point(alpha = 0.5) + 
+  geom_hline(yintercept = mean_y, color = "#407E99") +
+   geom_smooth(method = "lm", se = FALSE, color = "#993399") +
+  geom_segment(aes(x=income_inequality, xend=income_inequality, y=mean_y, yend=predict(life_exp_fit)), color = "#993399", size = 1) +
+  labs(x = "Income inequality (Gini coefficient)",
+       y = "Life expectancy (in years )") +
+  annotate("text", x = 45, y = 73, label = latex2exp::TeX("$\\bar{y}$"), color = "#407E99", size = 6)  + 
+  annotate("text", x = 45, y = 53, label = latex2exp::TeX("$\\hat{\\mu}_y$"), color = "#993399", size = 6)
+
+
+```
+
+$$\text{Sum of Squares Model (SSM)} = \sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2$$
+
+------------------------------------------------------------------------
+
+## Unexplained variability (Residuals)
+
+```{r}
+#| echo: false
+mean_y <- mean(life_exp$life_exp)
+
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+  geom_point(alpha = 0.5) + 
+  geom_hline(yintercept = mean_y, color = "#407E99") +
+   geom_smooth(method = "lm", se = FALSE, color = "#993399") +
+  geom_segment(aes(x=income_inequality, xend=income_inequality, y = life_exp, yend=predict(life_exp_fit)), color = "#8BB174") +
+  labs(x = "Income inequality (Gini coefficient)",
+       y = "Life expectancy (in years )") +
+  annotate("text", x = 45, y = 73, label = latex2exp::TeX("$\\bar{y}$"), color = "#407E99", size = 6)  + 
+  annotate("text", x = 45, y = 53, label = latex2exp::TeX("$\\hat{\\mu}_y$"), color = "#993399", size = 6)
+```
+
+$$\text{Sum of Squares Residuals (SSR)} = \sum_{i = 1}^{n}(y_i - \hat{y}_i)^2$$
+
+## Sum of Squares
+
+<br>
+
+$$
+\begin{aligned}
+\color{#407E99}{SST} \hspace{5mm}&= &\color{#993399}{SSM} &\hspace{5mm} +  &\color{#8BB174}{SSR} \\[10pt]
+\color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&= &\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &\hspace{5mm}+ &\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
+\end{aligned}
+$$
+
+::: aside
+[Click here](sum-of-squares.html) to see why this equality holds.
+:::
+
+## $R^2$
+
+The **coefficient of determination** $R^2$ is the proportion of variation in the response, $Y$, that is explained by the regression model
+
+<br>
+
+$$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
+
+<br>
+
+::: question
+What is the range of $R^2$? Does $R^2$ have units?
+:::
+
+## Interpreting $R^2$ {.smaller}
+
+```{r}
+#| echo: false
+
+life_exp_fit_rsq <- round(glance(life_exp_fit)$r.squared, 3) * 100
+
+```
+
+::: question
+The $R^2$ of the model of life expectancy and income inequality is `r life_exp_fit_rsq`%. Which of the following is the correct interpretation of this value?
+
+a.  A country's income inequality correctly predicts `r life_exp_fit_rsq`% of its life expectancy.
+b.  `r life_exp_fit_rsq`% of the variability in life expectancy can be explained by income inequality.
+c.  `r life_exp_fit_rsq`% of the variability in income inequality can be explained by life expectancy.
+d.  `r life_exp_fit_rsq`% of the time a country's life expectancy can be predicted by its income inequality.
+:::
+
+# Using R
+
+## Augmented data frame
+
+Use the `augment()` function from the **broom** package to add columns for predicted values, residuals, and other observation-level model statistics
+
+. . .
+
+```{r}
+life_exp_aug <- augment(life_exp_fit)
+life_exp_aug
+```
+
+## Finding RMSE in R
+
+Use the `rmse()` function from the **yardstick** package (part of **tidymodels**)
+
+```{r}
+#| echo: true
+rmse(life_exp_aug, truth = life_exp, estimate = .fitted)
+```
+
+## Finding $R^2$ in R
+
+Use the `rsq()` function from the **yardstick** package (part of **tidymodels**)
+
+```{r}
+#| echo: true
+rsq(life_exp_aug, truth = life_exp, estimate = .fitted)
+```
+
+<br>
+
+. . .
+
+Alternatively, use `glance()` to construct a single row summary of the model fit, including $R^2$:
+
+```{r}
+#| echo: true
+
+glance(life_exp_fit)$r.squared
+```
+
+# Application exercise
+
+::: appex
+📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html)
+
+Complete Part 2.
+:::
+
+## Recap
+
+-   Used R to conduct exploratory data analysis and fit a model
+
+-   Evaluated models using RMSE and $R^2$
+
+-   Used analysis of variance to partition variability in the response variable
+
+## Next class
+
+-   Matrix representation of simple linear regression
+-   Complete [Lecture 04 prepare](../prepare/prepare-lec04.html)
+
+## References

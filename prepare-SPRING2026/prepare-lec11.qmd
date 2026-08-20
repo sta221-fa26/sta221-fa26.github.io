@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 11:  Model conditions + diagnostics"
+---
+
+<br>
+
+📖 Read [Chapter 6](https://intro-regression.github.io/06-slr-conditions.html)
+
+📖 Read [Section 8.5](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-conditions-diagnositics)

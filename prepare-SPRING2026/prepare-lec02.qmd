@@ -1,0 +1,22 @@
+---
+title: "Prepare for Lecture 02"
+subtitle: "Simple linear regression"
+---
+
+<br>
+
+**Required**
+
+📖 Read [Chapter 1](https://intro-regression.github.io/01-intro)
+
+📖 Read Sections [4.1 - 4.6](https://intro-regression.github.io/04-slr)
+
+<br>
+
+**Optional computing introduction/ review**
+
+📖 Read [GitHub for supporting, reusing, contributing, and failing safely](https://openscapes.org/blog/2022-05-27-github-illustrated-series/)
+
+🎥 Watch [Meet the Toolkit: R + RStudio](https://warpwire.duke.edu/w/7WsIAA/)
+
+🎥 Watch [Meet the Toolkit: Quarto](https://warpwire.duke.edu/w/62sIAA/)

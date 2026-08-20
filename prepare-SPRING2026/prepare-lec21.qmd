@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 21: LR - Inference"
+---
+
+<br>
+
+📖 Read [Section 11.5.2](https://intro-regression.github.io/11-logistic.html#sec-logistic-inf-theory)
+
+📖 Read [Section 11.6](https://intro-regression.github.io/11-logistic.html#sec-logistic-conditions)

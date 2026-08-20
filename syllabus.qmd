@@ -14,13 +14,13 @@ See Canvas for class meeting times and locations.
 
 ### Teaching team
 
-| Name                | Role       |
-|---------------------|------------|
-| Prof. Maria Tackett | Instructor |
-| Ishrit Gupta        | TBD        |
-| Arnav Meduri        | TBD        |
-| Shane Rybacki       | TBD        |
-| Franklin Zhou       | TBD        |
+| Name                | Role          |
+|---------------------|---------------|
+| Prof. Maria Tackett | Instructor    |
+| Ishrit Gupta        | Lab 01 helper |
+| Arnav Meduri        | Lab 02 helper |
+| Shane Rybacki       | Lab 01 leader |
+| Franklin Zhou       | Lab 02 leader |
 
 **Office hours times and locations on Canvas.**
 
@@ -62,7 +62,7 @@ Furthermore, I would like to create a learning environment for my students that 
 - If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.
 - I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.
 
-### Pronouns
+### Personal pronouns
 
 Using pronouns can help foster a respectful campus environment where all community members can thrive. Sharing pronouns is always optional for members of the Duke community. If you would like to share yours, you can update them in DukeHub. You can learn more at the [DukeHub & Zoom Tutorials](https://students.duke.edu/belonging/icr/csgd/pronouns/dukehub-zoom/).
 
@@ -128,7 +128,7 @@ You will be assessed based on the following components: labs, homework, exams, a
 
 In labs, you will apply the concepts discussed in lecture to a variety of data analysis scenarios, with a focus on the computation and communication. Most lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment. You are expected to use the team's Git repository in the course's GitHub organization as the central platform for collaboration. Commits to this repository will be used as a metric of each team member's relative contribution for each lab, and there will be periodic peer evaluation on the team collaboration. Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and submitted for grading in Gradescope.
 
-*Labs will be graded based on completion and workflow. The lowest lab grade will be dropped at the end of the semester.*
+*Labs must be turned in by the end of the lab session. No late work is accepted and there are no make up assignments. Labs will be graded based on completion and accuracy. The lowest two lab grades will be dropped at the end of the semester.*
 
 ### Homework
 
@@ -136,11 +136,11 @@ In homework, you will apply what you've learned during lecture and lab to comple
 
 One homework assignment will be dedicated to a ***statistics experience***. The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities. As you complete these experiences, the goal is to consider how the material you're learning in the course connects with society more broadly.
 
-*The lowest homework grade will be dropped at the end of the semester.*
+*Homework will be graded based on the accuracy of selected questions and computing workflow. The lowest homework grade will be dropped at the end of the semester.*
 
 ### Exams
 
-There will be two midterm exams and one final exam in this course. Each midterm exam will include a closed-note in-class component and an open-note take-home component. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. The exams will focus on both conceptual understanding of the applied and mathematical content and application through analysis and computational tasks. The final exam will be a cumulative closed-note in-class exam during the final exam period set by the university. The final exam will be completed on paper (no computing) and will focus on applied and mathematical content. The content on each exam will be based on the content in reading assignments, lectures, labs, and homework. More detail about the exams will be given during the semester.
+There will be two midterm exams and one final exam in this course. Each exam will be in-class and closed-note. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. The exams will focus on both conceptual understanding of the applied and mathematical content. The final exam will be a cumulative closed-note in-class exam during the final exam period set by the university. The content on each exam will be based on the content in reading assignments, lectures, labs, and homework. More detail about the exams will be given during the semester.
 
 There are no make-up exams. If you miss Exam 01 or Exam 02 due to a reason documented by a Dean's Excuse, the final exam score will replace the missed exam score. If you miss the final exam due to a reason documented by a Dean's Excuse, you will receive an "Incomplete" in the course and take the final exam at a later date.
 
@@ -148,7 +148,13 @@ For students who take all three exams <!--# need to update this to say in-class 
 
 ### Project
 
-The purpose of the final project is to apply what you've learned to analyze a data-driven research question of your choice. The project will be completed with your lab teams, and each team will present their work through a written report and presentation. More information about the project will be provided during the semester. You can learn more on the [Project](project.qmd) page.
+The purpose of the final project is to apply what you've learned to analyze a data-driven research question of your choice. The project will be completed with your lab teams, and each team will present their work through a write up and presentation. More information about the project will be provided during the semester. You can learn more on the [Project](project.qmd) page.
+
+### Participation
+
+Attending lecture and being actively engaged are important to help you be successful in the course. Attendance and participation will be tracked by turning in some deliverable during lecture (e.g., responding to an online poll question, minute paper, etc.). **There are 26 lectures this semester (this does not include exam days).** You must participate in at least 18 lectures to get full credit on the participation component of the final course grade. Otherwise, the participation component of the final course grade is calculated as the percentage of lectures you attended and submitted the deliverable.
+
+*There are no make ups for the participation activities.*
 
 ## Grading
 
@@ -158,12 +164,13 @@ The final course grade will be calculated as follows:
 
 | Category      | Percentage |
 |---------------|------------|
-| Homework      | 15%        |
+| Participation | 5%         |
+| Homework      | 10%        |
 | Labs          | 10%        |
+| Final project | 15%        |
 | Exam 01       | 20%        |
 | Exam 02       | 20%        |
 | Final Exam    | 20%        |
-| Final project | 15%        |
 
 </center>
 
@@ -188,15 +195,21 @@ The final letter grade will be determined based on the following thresholds:
 | D-           | 60 - 62.99         |
 | F            | \< 60              |
 
+::: callout-important
+This course is graded only and cannot be taken for S/U.
+:::
+
 </center>
 
 ## Course policies
 
 ### Duke Community Standard
 
-All students must adhere to the [Duke Community Standard(DCS)](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
+Duke is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, respect, and accountability. Members of this community commit to reflect upon and uphold these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
 
-To uphold the Duke Community Standard, students agree:
+The university has high expectations for students' scholarship and conduct. In accepting admission, students indicate their willingness to subscribe to and be governed by the rules and regulations of the university, which flow from the  [Duk Community Standard (DCS)](https://dukecommunitystandard.students.duke.edu/).
+
+> To uphold the Duke Community Standard:
 
 > - I will not lie, cheat, or steal in my academic endeavors;
 > - I will conduct myself honorably in all my endeavors;and
@@ -218,7 +231,7 @@ To uphold the Duke Community Standard, students agree:
 
 - **Reusing code**: Unless explicitly stated otherwise, you may make use of online resources (e.g. StackOverflow) for coding examples on assignments. If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
 
-- **Use of artificial intelligence (AI)**: You should treat AI tools, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:[^2] (1) *Cognitive dimension:* Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate---rather than hinder---learning. (2) *Ethical dimension***:** Students using AI should be transparent about their use and make sure it aligns with academic integrity.
+- **UPDATE THIS use of artificial intelligence (AI)**: You should treat AI tools, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:[^2] (1) *Cognitive dimension:* Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate---rather than hinder---learning. (2) *Ethical dimension***:** Students using AI should be transparent about their use and make sure it aligns with academic integrity.
 
   - **AI tools for code:** You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) for citing AI-generated content.
 
@@ -228,13 +241,13 @@ To uphold the Duke Community Standard, students agree:
 
 If you are unsure if the use of a particular resource complies with the academic honesty policy, please ask a member of the teaching team.
 
-Regardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one's own work, following proper citation of sources, adhering to guidance around group work projects,and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at [conduct\@duke.edu](mailto:conduct@duke.edu).
+Regardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including but not limited to the [academic integrity policy](https://dukecommunitystandard.students.duke.edu/policies/)  (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at [conduct\@duke.edu](mailto:conduct@duke.edu).
 
 ### Late work policy
 
-The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. *Note that the lowest homework and lab assignment will be dropped to accommodate such circumstances.*
+The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. *Note that the lowest homework and two lowest ab assignments will be dropped to accommodate such circumstances.*
 
-- There is no late work permitted on lab assignments. These are graded for completion, so a lab assignment will be graded as "Not complete" if it is submitted after the deadline.
+- There is no late work permitted on lab assignments.
 
 - Homework may be submitted up to 2 days late. There will be a 5% deduction for each 24-hour period the assignment is late.
 
@@ -256,9 +269,9 @@ Regrade requests must be submitted on Gradescope within a week of when an assign
 
 ### Attendance policy
 
-Every student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. Lecture recordings are available upon request for students who have an excused absence. See the [Lecture recording request] policy for more detail. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture.
+Every student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. Lecture recordings are available upon request for students who have an excused absence. See the [Lecture recording request] policy for more detail. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. There are no make ups for the participation points if you miss a lecture.
 
-Labs are dedicated to completing the lab assignment and collaborating with your lab team. If you miss a lab session, make sure to communicate with your lab TA and teammates about how you can make up your contribution. If you know you're going to miss a lab session and you're feeling well enough to do so, notify your lab TA and teammates ahead of time.
+\[UPDATE THIS!\] Labs are dedicated to completing the lab assignment and collaborating with your lab team. If you miss a lab session, make sure to communicate with your lab TA and teammates about how you can make up your contribution. If you know you're going to miss a lab session and you're feeling well enough to do so, notify your lab TA and teammates ahead of time.
 
 More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
 
@@ -266,7 +279,7 @@ More details on Trinity attendance policies are available [here](https://trinity
 
 Lectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture's video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as incapacitation forms, Dean's excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
 
-🔗 <https://forms.cloud.microsoft/r/ksZvHWmz0f>
+🔗 <https://forms.cloud.microsoft/r/ksZvHWmz0f> **UPDATE THIS**
 
 About one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.
 
@@ -274,7 +287,7 @@ About one week before each exam, the class recordings will be available to all s
 
 ### Academic accommodations
 
-If you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: [sdao\@duke.edu](mailto:sdao@duke.edu) or [access.duke.edu](https://access.duke.edu).
+If you are a student who requires academic accommodations or the use of auxiliary aids and services for this class, it is your responsibility to initiate a request with the Student Disability Access Office (SDAO). The SDAO will evaluate the request with requited documentation, recommend appropriate accommodations, and prepare a verification letter dated in the current academic term in which the request is being made. Please note that accommodations are not retroactive, and accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information at  [sdao\@duke.edu](mailto:sdao@duke.edu) or visit  [access.duke.edu/students](https://access.duke.edu/students/){.uri}.
 
 ### **Religious accommodations**
 

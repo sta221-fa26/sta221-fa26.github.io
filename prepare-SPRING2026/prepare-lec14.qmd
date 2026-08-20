@@ -1,0 +1,7 @@
+---
+title: "Prepare for Lecture 14: Maximum likelihood estimation"
+---
+
+<br>
+
+📖 Read [Appendix A.8](https://intro-regression.github.io/appendix-linear.html#sec-appendix-linear-mle)

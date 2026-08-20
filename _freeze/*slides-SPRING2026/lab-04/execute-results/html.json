@@ -1,0 +1,19 @@
+{
+  "hash": "3790161919f0a23c51cde15d04706169",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 04\"\nsubtitle: \"Exam 01 Review\"\ndate: \"02-13-2026\"\ndate-format: \"MMM DD, YYYY\"\nfooter: \"[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\nbibliography: references.bib\n---\n\n# Welcome\n\n## Reminders\n\n-   Exam 01 will be during lecture on Tuesday, February 17\n\n-   Exam 01 take home will be released Tuesday and is due Thursday, February 19 at 9am\n\n-   Next week:\n\n    -   No office hours Tuesday - Wednesday\n\n    -   Ed Discussion will be read-only Tuesday - Thursday morning\n\n## Today's lab: Exam 01 review\n\nThis lab is a review for Exam 01. **It is due on Sunday, February 15 at 11:59pm.** Solutions will be released Monday morning.\n\n🔗 [sta221-sp26.github.io/labs/lab-04.html](https://sta221-sp26.github.io/labs/lab-04.html)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

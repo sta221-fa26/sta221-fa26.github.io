@@ -1,0 +1,19 @@
+{
+  "hash": "6b973a3d24bbed50178c8b760cd1c2ce",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 05\"\nsubtitle: \"Expanding multiple linear regression\"\ndate: \"02-27-2026\"\ndate-format: \"MMM DD, YYYY\"\nfooter: \"[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\nbibliography: references.bib\n---\n\n# Welcome\n\n## Today's lab\n\n-   Mid-semester survey\n-   Lab 05: Expanding multiple linear regression\n\n## Mid-semester feedback\n\n-   **Purpose**: To give the teaching team feedback on what is working well (or not as well) in helping you learn the course content\n\n-   The feedback is **anonymous**\n\n-   Please take a few minutes to fill it out during lab today\n\n**The teaching team appreciates your feedback!**\n\n🔗 <https://duke.qualtrics.com/jfe/form/SV_8l7HtpcwUODh93g>\n\n## Lab 05: Expanding multiple linear regression\n\nThis lab focuses on\n\n-   modeling complex data using variable transformations, categorical predictors and interactions, and various model specifications.\n\n-   evaluating model diagnostics and conditions.\n\n🔗 [sta221-sp26.github.io/labs/lab-05.html](https://sta221-sp26.github.io/labs/lab-05.html)\n\n## Reminder: Tips for working on a team\n\n-   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\n\n-   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\n\n-   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hash": "6768937b0b8fe61b6d83cc52c5c6b5cf",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Project: Research Topics\"\ndate: \"02-06-2026\"\ndate-format: \"MMM DD, YYYY\"\nfooter: \"[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\nbibliography: references.bib\n---\n\n## Today's agenda\n\n-   AE 03 (Part 1)\n-   Final project - research topics\n\n## AE 03\n\n::: appex\n📋 [sta221-sp26.github.io/ae/ae-03-inference](../ae/ae-03-inference.html)\n\n**Part 1**\n:::\n\n## Final team project {.midi}\n\n-   **Goal**: Use the methods from STA 221 to analyze data and answer a research question developed by your team\n\n-   **Primary deliverables:**\n\n    1.  an in-person presentation about the exploratory data analysis and initial modeling\n\n    2.  a written, reproducible report detailing your analysis and results\n\n    3.  a GitHub repository containing all work from the project\n\n-   There are periodic project milestones throughout the semester to help you work towards these deliverables\n\n## Today's focus: Research topics {.midi}\n\n-   **Goals:** Identify three potential research topics your team is interested in investigating and draft research questions.\n\n-   You do [**not**]{.underline} need to have a data set at this point\n\n-   You can discuss the topics you put in the Get to Know You survey to help generate ideas\n\n-   **Submission**: All work for the project will be submitted in your team’s project GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow typically used in practice.\n\n    -   There is no Gradescope submission.\n\n🔗 <https://sta221-sp26.github.io/project>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

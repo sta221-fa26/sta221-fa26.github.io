@@ -1,0 +1,7 @@
+---
+title: "Prepare for Lecture 17: Ridge regression"
+---
+
+<br>
+
+No prepare assignment

@@ -1,0 +1,11 @@
+---
+title: "Prepare for Lecture 18: Logistic regression"
+---
+
+<br>
+
+📖 Read [Sections 11.1 - 11.4](https://intro-regression.github.io/11-logistic.html)
+
+📖 Read [Section 12.3.1](https://intro-regression.github.io/12-logistic-prediction.html#sec-logistic-prediction)
+
+💻 Computing reference - [Section 11.7.1](https://intro-regression.github.io/11-logistic.html#fitting-a-logistic-model)

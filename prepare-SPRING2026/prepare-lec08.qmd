@@ -1,0 +1,11 @@
+---
+title: "Prepare for Lecture 08: Inference - Normal assumption"
+---
+
+<br>
+
+📖 Read [Sections 5.8.1 -5.8.2](https://intro-regression.github.io/appendix-linear.html#sec-assumptions-matrix)
+
+📖 Read [Section 8.4.1](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-inf-foundation)
+
+📖 Read [Appendix A.6](https://intro-regression.github.io/appendix-linear.html#sec-beta-dist-matrix)

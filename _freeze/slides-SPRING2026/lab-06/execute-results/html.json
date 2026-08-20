@@ -1,0 +1,19 @@
+{
+  "hash": "75382eac6f86ba9e5f6363bacde9b9e2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 06\"\nsubtitle: \"Maximum likelihood estimation\"\ndate: \"2024-11-18\"\ndate-format: \"MMM DD, YYYY\"\nfooter: \"[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs:\n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\nbibliography: references.bib\n---\n\n# Welcome\n\n## Goals\n\n-   Project milestones\n-   Lab 06: Logistic regression\n\n## Upcoming project milestones\n\n-   Next week's lab: Project work day\n-   December 2 (Monday after Thanksgiving break): Project draft due at 10am + peer review in lab\n-   December 6: Deadline for Round 1 submission (optional)\n-   December 12: Final report + organized GitHub repo due\n\nSee [project instructions](https://sta221-fa24.netlify.app/project#presentation) for more detail.\n\n## Lab 06: Logistic regression\n\nThis lab focuses on\n\n-   fitting and interpreting logistic regression models\n\n-   using the logistic regression model for classification\n\n-   evaluating model fit using testing data\n\n🔗 <https://sta221-fa24.netlify.app/labs/lab-06>\n\n## Reminder: Tips for working on a team\n\n-   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\n\n-   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\n\n-   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

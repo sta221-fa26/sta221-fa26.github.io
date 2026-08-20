@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 12: Multicollinearity"
+---
+
+<br>
+
+📖 Read [Section 8.5.3](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-multicollinearity)
+
+📖 Read [Appendix A.7](https://intro-regression.github.io/appendix-linear.html#sec-multicollinearity-matrix)

@@ -1,0 +1,5 @@
+---
+title: "Prepare for Lecture 15: Properties of estimators"
+---
+
+No prepare assignment

@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 16: Model selection"
+---
+
+<br>
+
+📖 Read [Sections 10.1 - 10.2](https://intro-regression.github.io/10-model-eval.html)
+
+📖 Read [Section 10.4](https://intro-regression.github.io/10-model-eval.html#sec-training-testing)

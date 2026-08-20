@@ -28,13 +28,13 @@ Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 2
 
 ## Teaching assistants
 
-|               |          |
-|---------------|----------|
-| **Name**      | **Role** |
-| Ishrit Gupta  | TBD      |
-| Arnav Meduri  | TBD      |
-| Shane Rybacki | TBD      |
-| Franklin Zhou | TBD      |
+|               |               |
+|---------------|---------------|
+| **Name**      | **Role**      |
+| Ishrit Gupta  | Lab 01 helper |
+| Arnav Meduri  | Lab 02 helper |
+| Shane Rybacki | Lab 01 leader |
+| Franklin Zhou | Lab 02 leader |
 
 **Office hours times and locations on Canvas.**
 

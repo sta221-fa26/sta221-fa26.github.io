@@ -1,0 +1,11 @@
+---
+title: "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals"
+---
+
+<br>
+
+📖 Read [Section 5.5](https://intro-regression.github.io/05-slr-inference.html#sec-hypothesis-test-overview)
+
+📖 Read [Section 5.8.3 - 5.8.4](https://intro-regression.github.io/05-slr-inference.html#sec-slr-inf-clt-hypothesis-test)
+
+📖 Read [Section 8.4.2 - 8.4.3](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-hypothesis-test)

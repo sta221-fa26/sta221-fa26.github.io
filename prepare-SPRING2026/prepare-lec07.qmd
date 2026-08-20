@@ -1,0 +1,11 @@
+---
+title: "Prepare for Lecture 07: Inference for regression"
+---
+
+<br>
+
+📖 Read [Sections 5.1 - 5.3](https://intro-regression.github.io/05-slr-inference.html)
+
+📖 Read [Section 8.4.1](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-inf-foundation)
+
+📖 Read [Appendix A.5](https://intro-regression.github.io/appendix-linear.html#sec-assumptions-matrix)

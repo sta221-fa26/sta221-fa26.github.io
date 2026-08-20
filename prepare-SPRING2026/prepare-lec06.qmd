@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 06: Types of predictors"
+---
+
+<br>
+
+📖 Read [Sections 7.4](https://intro-regression.github.io/07-mlr.html#sec-mlr-interpret)
+
+📖 Read [Sections 7.6 - 7.7](https://intro-regression.github.io/07-mlr.html#sec-other-predictors)

@@ -1,0 +1,7 @@
+---
+title: "Prepare for Lecture 13: Variable transformations"
+---
+
+<br>
+
+📖 Read [Chapter 9](https://intro-regression.github.io/09-mlr-transformations.html)

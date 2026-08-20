@@ -1,0 +1,7 @@
+---
+title: "Prepare for Lecture 20: LR - Model selection"
+---
+
+<br>
+
+📖 Read [Section 12.5](https://intro-regression.github.io/12-logistic-prediction.html#sec-logistic-model-eval)
