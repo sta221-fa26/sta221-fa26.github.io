@@ -16,7 +16,7 @@ Complete all tasks by the end of lab.
 
 The goal of today's lab is to briefly introduce you to the computing tools we'll use in the course, set up your computing access, and complete the STA 221 Get to Know You survey.
 
-# Computing setup
+# Part 1: Computing setup
 
 ## RStudio
 
@@ -100,7 +100,7 @@ usethis::use_git_config(
 
 It may look like nothing happened but you are now ready interact between GitHub and RStudio!
 
-# Update document and push changes to GitHub
+# Part 2: Update document and push changes to GitHub
 
 Complete the short exercise to make sure RStudio and GitHub are correctly configured and you are able to send work between the two platforms. You are encouraged to follow along as your TA demonstrates the steps.
 
@@ -162,7 +162,7 @@ Write 1 - 2 observations from the plot. Render the document. You will see your r
 You will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.
 :::
 
-# STA 221 Get to Know You Survey
+# Part 3: STA 221 Get to Know You Survey
 
 Use the link below to complete the STA 221 Get to Know You Survey. This survey will help me learn more about you, your interests, and your previous statistics and computing experience. I will also use the survey to form lab teams.
 
