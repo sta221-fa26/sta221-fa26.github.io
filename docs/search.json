@@ -1025,7 +1025,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nSep 14\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nSep 28\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nOct 26\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 2\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 9\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 10\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 17\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nFinal exam review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n7\nM\nOct 5\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nOct 26\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n11\nM\nNov 2\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 9\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 10\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due\n\n\n13\nM\nNov 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 17\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nFinal exam review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW: Statistics experience due\n\n\nExam period\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
@@ -1108,209 +1108,132 @@
     ]
   },
   {
-    "objectID": "hw/hw-stats-experience.html",
-    "href": "hw/hw-stats-experience.html",
-    "title": "HW 05: Statistics Experience",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 05: Statistics experience"
-    ]
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec01.html",
-    "href": "prepare-SPRING2026/prepare-lec01.html",
-    "title": "Prepare for Lecture 01",
-    "section": "",
-    "text": "📖 Read the syllabus"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec03.html",
-    "href": "prepare-SPRING2026/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model evaluation",
-    "section": "",
-    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec16.html",
-    "href": "prepare-SPRING2026/prepare-lec16.html",
-    "title": "Prepare for Lecture 16: Model selection",
-    "section": "",
-    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec06.html",
-    "href": "prepare-SPRING2026/prepare-lec06.html",
-    "title": "Prepare for Lecture 06: Types of predictors",
-    "section": "",
-    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec13.html",
-    "href": "prepare-SPRING2026/prepare-lec13.html",
-    "title": "Prepare for Lecture 13: Variable transformations",
-    "section": "",
-    "text": "📖 Read Chapter 9"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec11.html",
-    "href": "prepare-SPRING2026/prepare-lec11.html",
-    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
-    "section": "",
-    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec04.html",
-    "href": "prepare-SPRING2026/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
-    "section": "",
-    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec21.html",
-    "href": "prepare-SPRING2026/prepare-lec21.html",
-    "title": "Prepare for Lecture 21: LR - Inference",
-    "section": "",
-    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec08.html",
-    "href": "prepare-SPRING2026/prepare-lec08.html",
-    "title": "Prepare for Lecture 08: Inference - Normal assumption",
-    "section": "",
-    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec22.html",
-    "href": "prepare-SPRING2026/prepare-lec22.html",
-    "title": "Prepare for Lecture 22: Ethics",
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "HW 05",
     "section": "",
     "text": "To be posted."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec19.html",
-    "href": "prepare-SPRING2026/prepare-lec19.html",
-    "title": "Prepare for Lecture 19: LR - Prediction",
+    "objectID": "prepare-SPRING2026/prepare-lec14.html",
+    "href": "prepare-SPRING2026/prepare-lec14.html",
+    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
     "section": "",
-    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
+    "text": "📖 Read Appendix A.8"
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html",
-    "href": "labs/lab-04-DRAFT.html",
-    "title": "Lab 04: Exam 01 Review",
+    "objectID": "prepare-SPRING2026/prepare-lec15.html",
+    "href": "prepare-SPRING2026/prepare-lec15.html",
+    "title": "Prepare for Lecture 15: Properties of estimators",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "No prepare assignment"
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
-    "href": "labs/lab-04-DRAFT.html#exercise-1",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
-    "href": "labs/lab-04-DRAFT.html#exercise-2",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
-    "href": "labs/lab-04-DRAFT.html#exercise-3",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
-    "href": "labs/lab-04-DRAFT.html#exercise-4",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
-    "href": "labs/lab-04-DRAFT.html#exercise-5",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
-    "href": "labs/lab-04-DRAFT.html#exercise-6",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#footnotes",
-    "href": "labs/lab-04-DRAFT.html#footnotes",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "prepare-SPRING2026/prepare-lec17.html",
+    "href": "prepare-SPRING2026/prepare-lec17.html",
+    "title": "Prepare for Lecture 17: Ridge regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "No prepare assignment"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec02.html",
+    "href": "prepare-SPRING2026/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
+    "section": "",
+    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec12.html",
+    "href": "prepare-SPRING2026/prepare-lec12.html",
+    "title": "Prepare for Lecture 12: Multicollinearity",
+    "section": "",
+    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec07.html",
+    "href": "prepare-SPRING2026/prepare-lec07.html",
+    "title": "Prepare for Lecture 07: Inference for regression",
+    "section": "",
+    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec05.html",
+    "href": "prepare-SPRING2026/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: Multiple linear regression",
+    "section": "",
+    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec09.html",
+    "href": "prepare-SPRING2026/prepare-lec09.html",
+    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
+    "section": "",
+    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec20.html",
+    "href": "prepare-SPRING2026/prepare-lec20.html",
+    "title": "Prepare for Lecture 20: LR - Model selection",
+    "section": "",
+    "text": "📖 Read Section 12.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec18.html",
+    "href": "prepare-SPRING2026/prepare-lec18.html",
+    "title": "Prepare for Lecture 18: Logistic regression",
+    "section": "",
+    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 07"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "To be posted.",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 04"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
     "crumbs": [
-      "Labs",
-      "Lab 01"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 06"
     ]
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 03"
+      "Lab 05"
     ]
   },
   {
@@ -1391,126 +1314,210 @@
     ]
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 03"
     ]
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 06"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
     "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Labs",
+      "Lab 01"
     ]
   },
   {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Labs",
+      "Lab 04"
     ]
   },
   {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Labs",
+      "Lab 07"
     ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec18.html",
-    "href": "prepare-SPRING2026/prepare-lec18.html",
-    "title": "Prepare for Lecture 18: Logistic regression",
+    "objectID": "labs/lab-04-DRAFT.html",
+    "href": "labs/lab-04-DRAFT.html",
+    "title": "Lab 04: Exam 01 Review",
     "section": "",
-    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec20.html",
-    "href": "prepare-SPRING2026/prepare-lec20.html",
-    "title": "Prepare for Lecture 20: LR - Model selection",
-    "section": "",
-    "text": "📖 Read Section 12.5"
+    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec09.html",
-    "href": "prepare-SPRING2026/prepare-lec09.html",
-    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
-    "section": "",
-    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
+    "href": "labs/lab-04-DRAFT.html#exercise-1",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec05.html",
-    "href": "prepare-SPRING2026/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: Multiple linear regression",
-    "section": "",
-    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
+    "href": "labs/lab-04-DRAFT.html#exercise-2",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec07.html",
-    "href": "prepare-SPRING2026/prepare-lec07.html",
-    "title": "Prepare for Lecture 07: Inference for regression",
-    "section": "",
-    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
+    "href": "labs/lab-04-DRAFT.html#exercise-3",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec12.html",
-    "href": "prepare-SPRING2026/prepare-lec12.html",
-    "title": "Prepare for Lecture 12: Multicollinearity",
-    "section": "",
-    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
+    "href": "labs/lab-04-DRAFT.html#exercise-4",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec02.html",
-    "href": "prepare-SPRING2026/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
-    "section": "",
-    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
+    "href": "labs/lab-04-DRAFT.html#exercise-5",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec17.html",
-    "href": "prepare-SPRING2026/prepare-lec17.html",
-    "title": "Prepare for Lecture 17: Ridge regression",
-    "section": "",
-    "text": "No prepare assignment"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
+    "href": "labs/lab-04-DRAFT.html#exercise-6",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec15.html",
-    "href": "prepare-SPRING2026/prepare-lec15.html",
-    "title": "Prepare for Lecture 15: Properties of estimators",
-    "section": "",
-    "text": "No prepare assignment"
+    "objectID": "labs/lab-04-DRAFT.html#footnotes",
+    "href": "labs/lab-04-DRAFT.html#footnotes",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec14.html",
-    "href": "prepare-SPRING2026/prepare-lec14.html",
-    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "objectID": "prepare-SPRING2026/prepare-lec19.html",
+    "href": "prepare-SPRING2026/prepare-lec19.html",
+    "title": "Prepare for Lecture 19: LR - Prediction",
     "section": "",
-    "text": "📖 Read Appendix A.8"
+    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec22.html",
+    "href": "prepare-SPRING2026/prepare-lec22.html",
+    "title": "Prepare for Lecture 22: Ethics",
+    "section": "",
+    "text": "To be posted."
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec08.html",
+    "href": "prepare-SPRING2026/prepare-lec08.html",
+    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "section": "",
+    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec21.html",
+    "href": "prepare-SPRING2026/prepare-lec21.html",
+    "title": "Prepare for Lecture 21: LR - Inference",
+    "section": "",
+    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec04.html",
+    "href": "prepare-SPRING2026/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec11.html",
+    "href": "prepare-SPRING2026/prepare-lec11.html",
+    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
+    "section": "",
+    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec13.html",
+    "href": "prepare-SPRING2026/prepare-lec13.html",
+    "title": "Prepare for Lecture 13: Variable transformations",
+    "section": "",
+    "text": "📖 Read Chapter 9"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec06.html",
+    "href": "prepare-SPRING2026/prepare-lec06.html",
+    "title": "Prepare for Lecture 06: Types of predictors",
+    "section": "",
+    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec16.html",
+    "href": "prepare-SPRING2026/prepare-lec16.html",
+    "title": "Prepare for Lecture 16: Model selection",
+    "section": "",
+    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec03.html",
+    "href": "prepare-SPRING2026/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
+    "section": "",
+    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec01.html",
+    "href": "prepare-SPRING2026/prepare-lec01.html",
+    "title": "Prepare for Lecture 01",
+    "section": "",
+    "text": "📖 Read the syllabus"
+  },
+  {
+    "objectID": "hw/hw-stats-experience.html",
+    "href": "hw/hw-stats-experience.html",
+    "title": "HW 05: Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 05: Statistics experience"
+    ]
   },
   {
     "objectID": "hw/hw-04.html",
