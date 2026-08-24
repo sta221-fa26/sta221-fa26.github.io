@@ -42,7 +42,7 @@ bibliography: references.bib
 
 ------------------------------------------------------------------------
 
-## Teaching Assistants 
+## Teaching Assistants
 
 **Lab 01**
 
@@ -82,17 +82,17 @@ Find 1–2 people near you and introduce yourselves.
 
 ## Data science workflow
 
-![Source: [Introduction to Regression Analysis](https://intro-regression.github.io)](images/01/data-science-workflow.png){alt="Source: Introduction to Regression Analysis" fig-align="center" width="80%"}
+![Source: Introduction to Regression Analysis](images/01/data-science-workflow.png){fig-align="center" width="80%"}
 
-## Participation
+## Your turn!
 
-![](images/august-25-qrcode.png){fig-align="center"}
+::: question
+What word or phrase comes to mind when you hear the terms "regression analysis" or "regression models"?
+:::
 
-<center>
+![](images/august-25-qrcode.png){fig-align="center" width="40%"}
 
-<https://app.wooclap.com/YYUCQAC>
-
-</center>
+<center><https://app.wooclap.com/YYUCQAC></center>
 
 ## What is regression analysis?
 
@@ -172,7 +172,6 @@ Researchers used logistic regression to classify online articles in which AI was
 :::
 
 ::: {.column width="30%"}
-
 $$\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}$$
 :::
 :::::
@@ -185,9 +184,9 @@ $$\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}$$
 
 <br>
 
-**Prerequisites:** Introductory statistics or probability course [**and**]{.underline} linear algebra
+**Prerequisites:** Introductory statistics or probability [**and**]{.underline} linear algebra
 
-**Recommended corequisite:** Probability course
+**Recommended corequisite:** Probability
 
 ## Course learning objectives {.midi}
 
@@ -247,10 +246,11 @@ By the end of the semester, you will be able to...
 
 # Course overview
 
-## Course toolkit {.midi}
+## Course toolkit
 
 - **Website**: <https://sta221-fa26.github.io>
   - Central hub for the course!
+
   - **Tour of the website**
 - **Canvas**: <https://canvas.duke.edu/courses/84458>
   - Gradebook
@@ -258,11 +258,15 @@ By the end of the semester, you will be able to...
   - Announcements
   - Gradescope
   - Ed Discussion
+
+## Course toolkit
+
 - **GitHub:** <https://github.com/sta221-fa26>
   - Distribute assignments
+
   - Platform for version control and collaboration
 - **Textbook:** *Introduction to Regression Analysis: A Data Science Approach*
-  -  <https://intro-regression.github.io>
+  - <https://intro-regression.github.io>
 
 ## Computing toolkit {.midi}
 
@@ -296,21 +300,65 @@ By the end of the semester, you will be able to...
 :::::
 :::::::::
 
-## Lectures 
+## Participation (5%)
 
-- Attendance
+- Get the most out of lecture by completing prepare reading before class, attending lecture, and actively participating
 
-- Lecture recoridng request
+- Participation tracked via poll question(s) in each lecture
 
-## Labs
+  - Graded for completion, not correctness
 
-## Homework 
+  - *Complete poll in 18 out of 26 lectures for full credit in the final course grade*
 
-## Exams
+- Be prepared to take handwritten notes during lecture. There will also be periodic hands-on computing exercises.
 
-## Final project
+- May [request lecture recording](https://sta221-fa26.github.io/syllabus.html#lecture-recording-request) for excused absences
 
-## Grading 
+## Labs (10%)
+
+- Complete hands-on data analysis exercises focused on computing and communication.
+
+- Work on labs in teams and each student will submit lab individually
+
+- Labs graded based on attendance, completion, and correctness on two randomly selected exercises.
+
+- Labs are due at the end of class. There is no late work or make ups.
+
+  - *Two lowest lab grades dropped at the end of the semester.*
+
+## Homework (10%) {.midi}
+
+- Use what you've learned in lecture and lab to complete applied data analysis exercises and conceptual exercises focused on mathematical derivations
+
+- Homework graded based on correctness for one randomly selected conceptual exercise, one randomly selected analysis exercise, and workflow
+
+  - *Lowest homework dropped at the end of the semester*
+
+- Homework may be submitted up to two days late with late deduction
+
+  - One-time waiver \[ADD LINK\] to submit a homework late without deduction
+
+- One homework is the *Statistics Experience* - do something related to statistics/ data science outside of the classroom
+
+## Exams (20% each)
+
+- Two in-class midterm exams  + one in-class final exam
+
+- Exams are a combination of multiple choice, true/false, short answer, and derivations
+
+  - Some questions based on homework and labs
+
+- No make-up exams. Final exam grade used to replaced mid-term exam missed due to reason documented by Dean's Excuse
+
+## Final project (15%)
+
+- Work in teams to apply what you've learned in the course to analyze a research question of your choice
+
+- Project will start around Week 5 of the semester with periodic milestones throughout the semester
+
+- Final deliverables: Write up + presentation
+
+## Grading
 
 | Category      | Percentage |
 |---------------|------------|
@@ -323,6 +371,26 @@ By the end of the semester, you will be able to...
 | Final exam    | 20%        |
 
 ## AI in this course
+
+**Guiding principles for working with AI\*:**
+
+- **Cognitive dimension:** Working with AI should not reduce your ability to think clearly.
+
+- **Ethical dimension:** Students using AI should be transparent about their use and make sure it aligns with academic integrity policy
+
+## AI in this course
+
+**Using AI in this course:**
+
+- ✅ AI tools for code with attribution for substantial AI generated code
+- ✅ AI tools for editing
+- ✅ AI tools for learning
+- ❌ No AI tools for narrative or derivations:
+- ❌ No AI tools for in-class work
+
+::: aside
+\*From *P[olicies related to ChatGPT and other AI Tools](https://docs.google.com/document/d/1WpCeTyiWCPQ9MNCsFeKMDQLSTsg1oKfNIH6MzoSFXqQ/preview?tab=t.0#heading=h.q2sz3kbqy68j)* by Joel Gladd, Ph.D
+:::
 
 ## Classroom community
 
@@ -346,13 +414,15 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 - I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don't hesitate to let me know.
 
-|     |
-|-----|
-|     |
+## Your turn!
 
-## Participate
+::: question
+What has helped you succeed in previous math and statistics courses?
+:::
 
-\[what has helped you be successful in your previous courses\]
+![](images/august-25-qrcode.png){fig-align="center" width="40%"}
+
+<center><https://app.wooclap.com/YYUCQAC></center>
 
 ## Five tips for success in STA 221
 
@@ -366,9 +436,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 5.  Stay current with the course material, as each new concept builds on previous ones.
 
-## Participate
-
-What has helped you be successful in your previous math / statistics courses.?
+# Questions about the course?
 
 # Toolkit for a reproducible workflow
 
@@ -398,13 +466,19 @@ What does it mean for an analysis to be reproducible?
 
 ## Why is reproducibility important?
 
-- Results produced are more reliable and trustworthy [@ostblom2022]
+- Results produced are more reliable and trustworthy\*
 
-- Facilitates more effective collaboration [@ostblom2022]
+- Facilitates more effective collaboration\*
 
-- Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
+- Contributing to science, which builds and organizes knowledge in terms of testable hypotheses\*\*
 
-- Possible to identify and correct errors or biases in the analysis process [@alexander2023]
+- Possible to identify and correct errors or biases in the analysis process\*\*
+
+::: aside
+\* @ostblom2022
+
+\*\* @alexander2023
+:::
 
 ## Toolkit
 
@@ -491,8 +565,6 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 - Complete [Lecture 02 Prepare](../prepare/prepare-lec02.html)
 
 - Review [syllabus](https://sta221-fa26.github.io/syllabus)
-
-- Complete Get to Know You Survey
 
 - Complete [Lab 00](../labs/lab-00.html)
 

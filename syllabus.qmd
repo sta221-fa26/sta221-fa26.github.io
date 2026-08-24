@@ -207,7 +207,7 @@ This course is graded only and cannot be taken for S/U.
 
 Duke is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, respect, and accountability. Members of this community commit to reflect upon and uphold these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
 
-The university has high expectations for students' scholarship and conduct. In accepting admission, students indicate their willingness to subscribe to and be governed by the rules and regulations of the university, which flow from the  Duke[ Community Standard (DCS)](https://dukecommunitystandard.students.duke.edu/).
+The university has high expectations for students' scholarship and conduct. In accepting admission, students indicate their willingness to subscribe to and be governed by the rules and regulations of the university, which flow from the  Duke[Community Standard (DCS)](https://dukecommunitystandard.students.duke.edu/).
 
 > To uphold the Duke Community Standard:
 
@@ -231,9 +231,9 @@ The university has high expectations for students' scholarship and conduct. In 
 
 - **Reusing code**: Unless explicitly stated otherwise, you may make use of online resources (e.g. StackOverflow) for coding examples on assignments. If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
 
-<!-- -->
+- 
 
-- **Use of generative artificial intelligence (AI)**: You should treat AI tools, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:^[2](https://sta221-sp26.github.io/syllabus.html#fn2)^ (1) *Cognitive dimension:* Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) *Ethical dimension***:** Students using AI should be transparent about their use and make sure it aligns with academic integrity.
+- **Use of generative artificial intelligence (AI)**: You should treat AI tools, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course[^2]:(1) *Cognitive dimension:* Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) *Ethical dimension***:** Students using AI should be transparent about their use and make sure it aligns with academic integrity.
 
   - **✅ AI tools for code:** You may use AI for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use [these guidelines](https://guides.library.duke.edu/citing/AI) for citing AI-generated content. The citation should include the name and version of the model you're using.
 
@@ -246,6 +246,9 @@ The university has high expectations for students' scholarship and conduct. In 
   - ❌ **No AI tools for in-class work:** Unless explicitly stated otherwise, AI is not permitted for in-class assignments, including labs and in-class exams.
 
     In general, you may use AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.
+
+[^2]:
+    1.  These guiding principles are based on [*Course Policies related to ChatGPT and other AI Tools*](https://docs.google.com/document/d/1WpCeTyiWCPQ9MNCsFeKMDQLSTsg1oKfNIH6MzoSFXqQ/preview) developed by Joel Gladd, Ph.D.
 
 If you are unsure if the use of a particular resource complies with the academic honesty policy, please ask a member of the teaching team.
 
@@ -263,7 +266,7 @@ The due dates for assignments are there to help you keep up with the course mate
 
 - The late work policy for the project will be provided with the project instructions.
 
-### Waiver for extenuating circumstances
+### One-time late waiver 
 
 If there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email me at [maria.tackett\@duke.edu](maria.tackett@duke.edu) [**before the deadline**]{.underline} to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. *This waiver may only be used once in the semester, so only use it for a truly extenuating circumstance.*
 
