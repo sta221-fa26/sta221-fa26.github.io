@@ -30,53 +30,79 @@ bibliography: references.bib
 ## Meet Prof. Tackett! {.midi}
 
 ::: incremental
--   Education and career journey
-    -   BS in Math and MS in Statistics from University of Tennessee
-    -   Statistician at Capital One
-    -   PhD in Statistics from University of Virginia
-    -   Associate Professor of the Practice, Department of Statistical Science at Duke
--   Work focuses on statistics education and inclusive teaching practices
--   Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County
--   Mom of 3.5-year-old twins 🙂 (and one grumpy cat)
+- Education and career journey
+  - BS in Math and MS in Statistics from University of Tennessee
+  - Statistician at Capital One
+  - PhD in Statistics from University of Virginia
+  - Associate Professor of the Practice, Department of Statistical Science at Duke
+- Work focuses on statistics education and inclusive teaching practices
+- Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County
+- Mom of 3.5-year-old twins 🙂 (and one grumpy cat)
 :::
 
 ------------------------------------------------------------------------
 
-## Meet the Teaching Assistants (TAs)!
+## Teaching Assistants 
 
-[UPDATE]
+**Lab 01**
 
+- Shane Rybacki (PhD)
 
+- Ishrit Gupta (UG)
+
+**Lab 02**
+
+- Franklin Zhou (MS)
+
+- Arnav Meduri (UG)
+
+## Introduce yourself
+
+::: question
+Find 1–2 people near you and introduce yourselves.
+
+- Year in school
+
+- Where you're from
+
+- What you're reading, watching, or listening to right now
+
+**Bonus**: Find one thing you have in common (besides being Duke students!)
+:::
 
 ## Topics
 
--   Introduction to the course
+- Introduction to the course
 
--   Syllabus activity
+- Syllabus activity
 
--   Reproducibility
+- Reproducibility
 
 # Introduction to STA 221
 
 ## Data science workflow
 
-[UPDATE GRAPH]
+![Source: [Introduction to Regression Analysis](https://intro-regression.github.io)](images/01/data-science-workflow.png){alt="Source: Introduction to Regression Analysis" fig-align="center" width="80%"}
 
-![Source: [Introduction to Regression Analysis](https://intro-regression.github.io)](images/01/data-science-workflow.png){fig-align="center" width="80%"}
+## Participation
+
+![](images/august-25-qrcode.png){fig-align="center"}
+
+<center>
+
+<https://app.wooclap.com/YYUCQAC>
+
+</center>
 
 ## What is regression analysis?
 
-<div>
-
+::: {}
 > *In [statistical modeling](https://en.wikipedia.org/wiki/Statistical_model "Statistical model"), **regression analysis** is a statistical method for [estimating](https://en.wikipedia.org/wiki/Estimation_theory "Estimation theory") the relationship between a [dependent variable](https://en.wikipedia.org/wiki/Dependent_variable "Dependent variable") (often called the outcome or response variable, or a label in machine learning parlance) and one or more [independent variables](https://en.wikipedia.org/wiki/Independent_variable "Independent variable") (often called regressors, predictors, covariates, explanatory variables or features).^[\[1\]](https://en.wikipedia.org/wiki/Regression_analysis#cite_note-1)[\[2\]](https://en.wikipedia.org/wiki/Regression_analysis#cite_note-2)^*
 
 Source: Wikipedia (January 2026)
-
-</div>
+:::
 
 ## Linear regression in practice
-
-[UPDATE IMAGE]
 
 ![](images/01/harry-potter-regression.png){fig-align="center" width="60%"}
 
@@ -84,15 +110,11 @@ Source: Wikipedia (January 2026)
 [Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/73984/files?preview=4295020)
 :::
 
-## Example: Reading Harry Potter (maybe update example?)
-
-[UPDATE IMAGE]
+## Example: Reading Harry Potter
 
 ![](images/01/harry-potter-graph.png){fig-align="center" width="65%"}
 
-$$
-\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
-$$
+$$\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}$$
 
 ::: aside
 [Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/73984/files?preview=4295020)
@@ -100,16 +122,13 @@ $$
 
 ## Example: Reading Harry Potter
 
-$$
-\text{Lookups} = \beta_0 + \beta_1 ~ \text{Page Number} + \epsilon
-$$
+$$\text{Lookups} = \beta_0 + \beta_1 ~ \text{Page Number} + \epsilon$$
 
 <br>
 
 . . .
 
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
 y_1 \\
 y_2 \\
 \vdots \\
@@ -129,8 +148,7 @@ y_n
 \epsilon_2 \\
 \vdots \\
 \epsilon_n
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 ## Logistic regression in practice
 
@@ -154,9 +172,8 @@ Researchers used logistic regression to classify online articles in which AI was
 :::
 
 ::: {.column width="30%"}
-$$
-\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}
-$$
+
+$$\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}$$
 :::
 :::::
 
@@ -176,12 +193,12 @@ $$
 
 By the end of the semester, you will be able to...
 
--   analyze data to explore real-world multivariable relationships.
--   fit, interpret, and draw conclusions from linear and logistic regression models.
--   implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.
--   explain the mathematical foundations of linear and logistic regression.
--   effectively communicate statistical results to a general audience.
--   assess the ethical considerations and implications of analysis decisions.
+- analyze data to explore real-world multivariable relationships.
+- fit, interpret, and draw conclusions from linear and logistic regression models.
+- implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.
+- explain the mathematical foundations of linear and logistic regression.
+- effectively communicate statistical results to a general audience.
+- assess the ethical considerations and implications of analysis decisions.
 
 ## Course topics {.small}
 
@@ -190,14 +207,14 @@ By the end of the semester, you will be able to...
 ::: {.fragment fragment-index="1"}
 ### Linear regression {style="color: #993399"}
 
--   Coefficient estimation and interpretation
--   Prediction
--   Model evaluation
--   Matrix representation of regression
--   Model conditions and diagnostics
--   Model selection
--   Types of predictors
--   Properties of estimators
+- Coefficient estimation and interpretation
+- Prediction
+- Model evaluation
+- Matrix representation of regression
+- Model conditions and diagnostics
+- Model selection
+- Types of predictors
+- Properties of estimators
 :::
 ::::
 
@@ -205,10 +222,10 @@ By the end of the semester, you will be able to...
 ::: {.fragment fragment-index="2"}
 ### Logistic regression {style="color: #993399"}
 
--   Coefficient estimation and interpretation
--   Prediction
--   Model evaluation
--   Inference
+- Coefficient estimation and interpretation
+- Prediction
+- Model evaluation
+- Inference
 :::
 
 ::: {.fragment fragment-index="3"}
@@ -220,10 +237,10 @@ By the end of the semester, you will be able to...
 ::: {.fragment fragment-index="4"}
 ### General topics {style="color: #993399"}
 
--   Computing using R and GitHub
--   Presenting statistical results
--   Collaboration and teamwork
--   Ethics
+- Computing using R and GitHub
+- Presenting statistical results
+- Collaboration and teamwork
+- Ethics
 :::
 ::::::
 :::::::::
@@ -232,18 +249,20 @@ By the end of the semester, you will be able to...
 
 ## Course toolkit {.midi}
 
--   **Website**: <https://sta221-fa26.github.io>
-    -   Central hub for the course!
-    -   **Tour of the website**
--   **Canvas**: <https://canvas.duke.edu/courses/84458>
-    -   Gradebook
-    -   Office hours
-    -   Announcements
-    -   Gradescope
-    -   Ed Discussion
--   **GitHub:** <https://github.com/sta221-fa26>
-    -   Distribute assignments
-    -   Platform for version control and collaboration
+- **Website**: <https://sta221-fa26.github.io>
+  - Central hub for the course!
+  - **Tour of the website**
+- **Canvas**: <https://canvas.duke.edu/courses/84458>
+  - Gradebook
+  - Office hours
+  - Announcements
+  - Gradescope
+  - Ed Discussion
+- **GitHub:** <https://github.com/sta221-fa26>
+  - Distribute assignments
+  - Platform for version control and collaboration
+- **Textbook:** *Introduction to Regression Analysis: A Data Science Approach*
+  -  <https://intro-regression.github.io>
 
 ## Computing toolkit {.midi}
 
@@ -254,11 +273,11 @@ By the end of the semester, you will be able to...
 :::
 
 ::: {.fragment fragment-index="2"}
--   All analyses using R, a statistical programming language
+- All analyses using R, a statistical programming language
 
--   Write reproducible reports in Quarto
+- Write reproducible reports in Quarto
 
--   Access RStudio through [STA 221 Docker Containers](https://cmgr.oit.duke.edu/containers)
+- Access RStudio through [STA 221 Docker Containers](https://cmgr.oit.duke.edu/containers)
 :::
 :::::
 
@@ -268,92 +287,72 @@ By the end of the semester, you will be able to...
 :::
 
 ::: {.fragment fragment-index="3"}
--   Access assignments
+- Access assignments
 
--   Facilitates version control and collaboration
+- Facilitates version control and collaboration
 
--   All work in [STA 221 course organization](https://github.com/sta221-sp26)
+- All work in [STA 221 course organization](https://github.com/sta221-fa26)
 :::
 :::::
 :::::::::
+
+## Lectures 
+
+- Attendance
+
+- Lecture recoridng request
+
+## Labs
+
+## Homework 
+
+## Exams
+
+## Final project
+
+## Grading 
+
+| Category      | Percentage |
+|---------------|------------|
+| Participation | 5%         |
+| Homework      | 10%        |
+| Labs          | 10%        |
+| Final project | 15%        |
+| Exam 01       | 20%        |
+| Exam 02       | 20%        |
+| Final exam    | 20%        |
+
+## AI in this course
 
 ## Classroom community
 
 ::: small
 It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
 
--   If you have a name that differs from those that appear in your official Duke records, please let me know.
+- If you have a name that differs from those that appear in your official Duke records, please let me know.
 
--   Please let me know your preferred pronouns, if you are comfortable sharing.
+- Please let me know your preferred pronouns, if you are comfortable sharing.
 
--   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
+- If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
 
--   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+- I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.
 :::
 
 ## Accessibility
 
--   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
+- The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
 
--   If you have documented accommodations from SDAO, please send the documentation as soon as possible.
+- If you have documented accommodations from SDAO, please send the documentation as soon as possible.
 
--   I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+- I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don't hesitate to let me know.
 
-## Syllabus activity 
+|     |
+|-----|
+|     |
 
-[UPDATE - ONLY ONE GROUP PER SECTION. MAYBE UPDATED THE SECTIONS. DO 6 - 10]
+## Participate
 
-::: question
-1.  Introduce yourselves.
-2.  Read the portion of the syllabus assigned to your group.
-3.  Discuss the key points and questions you my have with your neighbors.
-4.  We'll ask for volunteers to share a summary with the class.
-:::
-
-## Syllabus activity assignments
-
--   Groups 1 & 2: [What to expect in lectures and labs](https://sta221-sp26.github.io/syllabus.html#lectures-and-labs)
-
--   Groups 3 & 4: [Teams](https://sta221-sp26.github.io/syllabus.html#teams)
-
--   Groups 5 & 6: [Labs](https://sta221-sp26.github.io/syllabus.html#labs) and [homework](https://sta221-sp26.github.io/syllabus.html#homework)
-
--   Groups 7 & 8: [Exams](https://sta221-sp26.github.io/syllabus.html#exams) and [final project](https://sta221-sp26.github.io/syllabus.html#project)
-
--   Groups 9 & 10: [Academic honesty](https://sta221-sp26.github.io/syllabus.html#academic-honesty)
-
--   Groups 11 & 12: [Late work policy](https://sta221-sp26.github.io/syllabus.html#academic-honesty) and [waiver for extenuating circumstances](https://sta221-sp26.github.io/syllabus.html#waiver-for-extenuating-circumstances)
-
--   Groups 13 & 14: [Attendance](https://sta221-sp26.github.io/syllabus.html#attendance-policy) and [lecture recording request](https://sta221-sp26.github.io/syllabus.html#lecture-recording-request)
-
-## Syllabus activity report out
-
-::: incremental
--   Groups 1 & 2: [What to expect in lectures and labs](https://sta221-sp26.github.io/syllabus.html#lectures-and-labs)
-
--   Groups 3 & 4: [Teams](https://sta221-sp26.github.io/syllabus.html#teams)
-
--   Groups 5 & 6: [Labs](https://sta221-sp26.github.io/syllabus.html#labs) and [homework](https://sta221-sp26.github.io/syllabus.html#homework)
-
--   Groups 7 & 8: [Exams](https://sta221-sp26.github.io/syllabus.html#exams) and [final project](https://sta221-sp26.github.io/syllabus.html#project)
-
--   Groups 9 & 10: [Academic honesty](https://sta221-sp26.github.io/syllabus.html#academic-honesty)
-
--   Groups 11 & 12: [Late work policy](https://sta221-sp26.github.io/syllabus.html#academic-honesty) and [waiver for extenuating circumstances](https://sta221-sp26.github.io/syllabus.html#waiver-for-extenuating-circumstances)
-
--   Groups 13 & 14: [Attendance](https://sta221-sp26.github.io/syllabus.html#attendance-policy) and [lecture recording request](https://sta221-sp26.github.io/syllabus.html#lecture-recording-request)
-:::
-
-## Grading
-
-| Category      | Percentage |
-|---------------|------------|
-| Homework      | 15%        |
-| Labs          | 10%        |
-| Exam 01       | 20%        |
-| Exam 02       | 20%        |
-| Final Exam    | 20%        |
-| Final project | 15%        |
+\[what has helped you be successful in your previous courses\]
 
 ## Five tips for success in STA 221
 
@@ -367,7 +366,9 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 5.  Stay current with the course material, as each new concept builds on previous ones.
 
-# Questions? - MAKE A WOOCLAP ACTIVITY
+## Participate
+
+What has helped you be successful in your previous math / statistics courses.?
 
 # Toolkit for a reproducible workflow
 
@@ -397,27 +398,27 @@ What does it mean for an analysis to be reproducible?
 
 ## Why is reproducibility important?
 
--   Results produced are more reliable and trustworthy [@ostblom2022]
+- Results produced are more reliable and trustworthy [@ostblom2022]
 
--   Facilitates more effective collaboration [@ostblom2022]
+- Facilitates more effective collaboration [@ostblom2022]
 
--   Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
+- Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
 
--   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
+- Possible to identify and correct errors or biases in the analysis process [@alexander2023]
 
 ## Toolkit
 
--   **Scriptability** $\rightarrow$ R
+- **Scriptability** $\rightarrow$ R
 
--   **Literate programming** (code, narrative, output in one place) $\rightarrow$ Quarto
+- **Literate programming** (code, narrative, output in one place) $\rightarrow$ Quarto
 
--   **Version control** $\rightarrow$ Git / GitHub
+- **Version control** $\rightarrow$ Git / GitHub
 
 ## R and RStudio
 
--   R is a statistical programming language
+- R is a statistical programming language
 
--   RStudio is a convenient interface for R (an integrated development environment, IDE)
+- RStudio is a convenient interface for R (an integrated development environment, IDE)
 
 ![Source: [Statistical Inference via Data Science](https://moderndive.com/)](images/01/r_vs_rstudio_1.png){fig-align="center"}
 
@@ -429,11 +430,11 @@ What does it mean for an analysis to be reproducible?
 
 ## Quarto
 
--   Fully reproducible reports -- the analysis is run from the beginning each time you render
+- Fully reproducible reports -- the analysis is run from the beginning each time you render
 
--   Code goes in chunks and narrative goes outside of chunks
+- Code goes in chunks and narrative goes outside of chunks
 
--   Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)
+- Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)
 
 ## Quarto
 
@@ -441,11 +442,11 @@ What does it mean for an analysis to be reproducible?
 
 ## How will we use Quarto?
 
--   Every application exercise and assignment is written in a Quarto document
+- Every application exercise and assignment is written in a Quarto document
 
--   You'll have a template Quarto document to start with
+- You'll have a template Quarto document to start with
 
--   The amount of scaffolding in the template will decrease over the semester
+- The amount of scaffolding in the template will decrease over the semester
 
 # Version control with git and GitHub
 
@@ -481,20 +482,20 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 
 ![](images/01/git-github.png){fig-align="center"}
 
--   **git** is a version control system -- like "Track Changes" features from Microsoft Word.
--   **GitHub** is the home for your git-based projects on the internet (like DropBox but much better).
--   There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
+- **git** is a version control system -- like "Track Changes" features from Microsoft Word.
+- **GitHub** is the home for your git-based projects on the internet (like DropBox but much better).
+- There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
 
 ## Before next class
 
--   Complete [Lecture 02 Prepare](../prepare/prepare-lec02.html)
+- Complete [Lecture 02 Prepare](../prepare/prepare-lec02.html)
 
--   Review [syllabus](https://sta221-fa26.github.io/syllabus)
+- Review [syllabus](https://sta221-fa26.github.io/syllabus)
 
--   Complete Get to Know You Survey 
+- Complete Get to Know You Survey
 
--   Complete [Lab 00](../labs/lab-00.html)
+- Complete [Lab 00](../labs/lab-00.html)
 
--   Office hours start Monday, August 31 (see schedule on Canvas homepage)
+- Office hours start Monday, August 31 (see schedule on Canvas homepage)
 
 ## References

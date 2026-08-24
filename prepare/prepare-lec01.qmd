@@ -1,0 +1,8 @@
+---
+title: "Prepare for Lecture 01"
+subtitle: "Welcome to STA 221!"
+---
+
+<br>
+
+📖 Read the [syllabus](../syllabus.html)

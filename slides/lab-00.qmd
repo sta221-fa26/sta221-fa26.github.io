@@ -49,7 +49,7 @@ countdown::countdown(minutes  = 4)
 
 - Complete the lab assignment
 
-  - Submit to to Gradescope starting with Lab 01
+  - Submit to Gradescope starting with Lab 01
 
 # Any questions?
 

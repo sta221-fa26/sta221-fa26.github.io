@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 04: SLR - Matrix representation"
+---
+
+<br>
+
+📖 Read [Appendices A.2 - A.3](https://intro-regression.github.io/appendix-linear.html#sec-mlr-matrix)
+
+<!--# add some linear algebra review?-->

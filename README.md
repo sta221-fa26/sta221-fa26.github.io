@@ -4,8 +4,8 @@
 
 ## Colors
 
--   primary color: #407E99
--   main accent: #871d89
+- primary color: #005587
+- main accent: #2B8282
 
 ## Attribution
 
@@ -13,4 +13,4 @@ This website is design is based on the [STA 210 Spring 2022 website](https://sta
 
 <hr>
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"`{=html}<img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a></br>All content on this website is licensed under a` <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">`{=html}Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+\<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"`{=html}<img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a></br>All content on this website is licensed under a` <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">\`{=html}Creative Commons Attribution-NonCommercial 4.0 International License</a>.

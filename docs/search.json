@@ -1025,7 +1025,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
@@ -1084,6 +1084,20 @@
       "Computing",
       "R resources"
     ]
+  },
+  {
+    "objectID": "prepare/prepare-lec01.html",
+    "href": "prepare/prepare-lec01.html",
+    "title": "Prepare for Lecture 01",
+    "section": "",
+    "text": "📖 Read the syllabus"
+  },
+  {
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
+    "section": "",
+    "text": "📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
     "objectID": "hw/hw-02.html",
@@ -1542,6 +1556,20 @@
     ]
   },
   {
+    "objectID": "prepare/prepare-lec04.html",
+    "href": "prepare/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "📖 Read Appendices A.2 - A.3"
+  },
+  {
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
+    "section": "",
+    "text": "📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
     "objectID": "support.html",
     "href": "support.html",
     "title": "Support",
@@ -1671,7 +1699,7 @@
     "href": "slides/lab-00.html#what-to-expect-in-lab",
     "title": "Welcome to STA 221 labs!",
     "section": "What to expect in lab",
-    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 minutes)\nReview lecture content, as needed (~ 10 minutes)\nComplete the lab assignment\n\nSubmit to to Gradescope starting with Lab 01"
+    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 minutes)\nReview lecture content, as needed (~ 10 minutes)\nComplete the lab assignment\n\nSubmit to Gradescope starting with Lab 01"
   },
   {
     "objectID": "slides/lab-00.html#todays-lab",
@@ -1685,7 +1713,7 @@
     "href": "slides/01-welcome-notes.html",
     "title": "Welcome to STA 221!",
     "section": "",
-    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)\n\n\n\n\n\n\n[UPDATE]\n\n\n\n\nIntroduction to the course\nSyllabus activity\nReproducibility"
+    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)\n\n\n\n\n\n\nLab 01\n\nShane Rybacki (PhD)\nIshrit Gupta (UG)\n\nLab 02\n\nFranklin Zhou (MS)\nArnav Meduri (UG)\n\n\n\n\n\nFind 1–2 people near you and introduce yourselves.\n\nYear in school\nWhere you’re from\nWhat you’re reading, watching, or listening to right now\n\nBonus: Find one thing you have in common (besides being Duke students!)\n\n\n\n\n\nIntroduction to the course\nSyllabus activity\nReproducibility"
   },
   {
     "objectID": "slides/01-welcome-notes.html#meet-prof.-tackett",
@@ -1695,11 +1723,18 @@
     "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
   },
   {
-    "objectID": "slides/01-welcome-notes.html#meet-the-teaching-assistants-tas",
-    "href": "slides/01-welcome-notes.html#meet-the-teaching-assistants-tas",
+    "objectID": "slides/01-welcome-notes.html#teaching-assistants",
+    "href": "slides/01-welcome-notes.html#teaching-assistants",
     "title": "Welcome to STA 221!",
     "section": "",
-    "text": "[UPDATE]"
+    "text": "Lab 01\n\nShane Rybacki (PhD)\nIshrit Gupta (UG)\n\nLab 02\n\nFranklin Zhou (MS)\nArnav Meduri (UG)"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#introduce-yourself",
+    "href": "slides/01-welcome-notes.html#introduce-yourself",
+    "title": "Welcome to STA 221!",
+    "section": "",
+    "text": "Find 1–2 people near you and introduce yourselves.\n\nYear in school\nWhere you’re from\nWhat you’re reading, watching, or listening to right now\n\nBonus: Find one thing you have in common (besides being Duke students!)"
   },
   {
     "objectID": "slides/01-welcome-notes.html#topics",
@@ -1713,7 +1748,14 @@
     "href": "slides/01-welcome-notes.html#data-science-workflow",
     "title": "Welcome to STA 221!",
     "section": "Data science workflow",
-    "text": "Data science workflow\n[UPDATE GRAPH]\n\n\n\nSource: Introduction to Regression Analysis"
+    "text": "Data science workflow\n\n\n\nSource: Introduction to Regression Analysis"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#participation",
+    "href": "slides/01-welcome-notes.html#participation",
+    "title": "Welcome to STA 221!",
+    "section": "Participation",
+    "text": "Participation\n\n\n\n\n\n\nhttps://app.wooclap.com/YYUCQAC"
   },
   {
     "objectID": "slides/01-welcome-notes.html#what-is-regression-analysis",
@@ -1727,21 +1769,21 @@
     "href": "slides/01-welcome-notes.html#linear-regression-in-practice",
     "title": "Welcome to STA 221!",
     "section": "Linear regression in practice",
-    "text": "Linear regression in practice\n[UPDATE IMAGE]\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
-  },
-  {
-    "objectID": "slides/01-welcome-notes.html#example-reading-harry-potter-maybe-update-example",
-    "href": "slides/01-welcome-notes.html#example-reading-harry-potter-maybe-update-example",
-    "title": "Welcome to STA 221!",
-    "section": "Example: Reading Harry Potter (maybe update example?)",
-    "text": "Example: Reading Harry Potter (maybe update example?)\n[UPDATE IMAGE]\n\n\n\n\n\n\\[\n\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\n\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+    "text": "Linear regression in practice\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
   },
   {
     "objectID": "slides/01-welcome-notes.html#example-reading-harry-potter",
     "href": "slides/01-welcome-notes.html#example-reading-harry-potter",
     "title": "Welcome to STA 221!",
     "section": "Example: Reading Harry Potter",
-    "text": "Example: Reading Harry Potter\n\\[\n\\text{Lookups} = \\beta_0 + \\beta_1 ~ \\text{Page Number} + \\epsilon\n\\]\n\n. . .\n\\[\n\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\n\\]"
+    "text": "Example: Reading Harry Potter\n\n\n\n\n\n\\[\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#example-reading-harry-potter-1",
+    "href": "slides/01-welcome-notes.html#example-reading-harry-potter-1",
+    "title": "Welcome to STA 221!",
+    "section": "Example: Reading Harry Potter",
+    "text": "Example: Reading Harry Potter\n\\[\\text{Lookups} = \\beta_0 + \\beta_1 ~ \\text{Page Number} + \\epsilon\\]\n\n. . .\n\\[\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/01-welcome-notes.html#logistic-regression-in-practice",
@@ -1755,7 +1797,7 @@
     "href": "slides/01-welcome-notes.html#example-ai-mentions",
     "title": "Welcome to STA 221!",
     "section": "Example: AI mentions",
-    "text": "Example: AI mentions\nResearchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.\n\n\n\n\n\nSource: Pew Research Center\n\n\n\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]"
+    "text": "Example: AI mentions\nResearchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.\n\n\n\n\n\nSource: Pew Research Center\n\n\n\n\\[\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\\]"
   },
   {
     "objectID": "slides/01-welcome-notes.html#what-is-sta-221",
@@ -1783,7 +1825,7 @@
     "href": "slides/01-welcome-notes.html#course-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa26\n\nDistribute assignments\nPlatform for version control and collaboration"
+    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa26\n\nDistribute assignments\nPlatform for version control and collaboration\n\nTextbook: Introduction to Regression Analysis: A Data Science Approach\n\nhttps://intro-regression.github.io"
   },
   {
     "objectID": "slides/01-welcome-notes.html#computing-toolkit",
@@ -1791,6 +1833,55 @@
     "title": "Welcome to STA 221!",
     "section": "Computing toolkit",
     "text": "Computing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 221 Docker Containers\n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 221 course organization"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#lectures",
+    "href": "slides/01-welcome-notes.html#lectures",
+    "title": "Welcome to STA 221!",
+    "section": "Lectures",
+    "text": "Lectures\n\nAttendance\nLecture recoridng request"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#labs",
+    "href": "slides/01-welcome-notes.html#labs",
+    "title": "Welcome to STA 221!",
+    "section": "Labs",
+    "text": "Labs"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#homework",
+    "href": "slides/01-welcome-notes.html#homework",
+    "title": "Welcome to STA 221!",
+    "section": "Homework",
+    "text": "Homework"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#exams",
+    "href": "slides/01-welcome-notes.html#exams",
+    "title": "Welcome to STA 221!",
+    "section": "Exams",
+    "text": "Exams"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#final-project",
+    "href": "slides/01-welcome-notes.html#final-project",
+    "title": "Welcome to STA 221!",
+    "section": "Final project",
+    "text": "Final project"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#grading",
+    "href": "slides/01-welcome-notes.html#grading",
+    "title": "Welcome to STA 221!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nHomework\n10%\n\n\nLabs\n10%\n\n\nFinal project\n15%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nFinal exam\n20%"
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#ai-in-this-course",
+    "href": "slides/01-welcome-notes.html#ai-in-this-course",
+    "title": "Welcome to STA 221!",
+    "section": "AI in this course",
+    "text": "AI in this course"
   },
   {
     "objectID": "slides/01-welcome-notes.html#classroom-community",
@@ -1807,32 +1898,11 @@
     "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nIf you have documented accommodations from SDAO, please send the documentation as soon as possible.\nI am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
   },
   {
-    "objectID": "slides/01-welcome-notes.html#syllabus-activity",
-    "href": "slides/01-welcome-notes.html#syllabus-activity",
+    "objectID": "slides/01-welcome-notes.html#participate",
+    "href": "slides/01-welcome-notes.html#participate",
     "title": "Welcome to STA 221!",
-    "section": "Syllabus activity",
-    "text": "Syllabus activity\n[UPDATE - ONLY ONE GROUP PER SECTION. MAYBE UPDATED THE SECTIONS. DO 6 - 10]\n\n\nIntroduce yourselves.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions you my have with your neighbors.\nWe’ll ask for volunteers to share a summary with the class."
-  },
-  {
-    "objectID": "slides/01-welcome-notes.html#syllabus-activity-assignments",
-    "href": "slides/01-welcome-notes.html#syllabus-activity-assignments",
-    "title": "Welcome to STA 221!",
-    "section": "Syllabus activity assignments",
-    "text": "Syllabus activity assignments\n\nGroups 1 & 2: What to expect in lectures and labs\nGroups 3 & 4: Teams\nGroups 5 & 6: Labs and homework\nGroups 7 & 8: Exams and final project\nGroups 9 & 10: Academic honesty\nGroups 11 & 12: Late work policy and waiver for extenuating circumstances\nGroups 13 & 14: Attendance and lecture recording request"
-  },
-  {
-    "objectID": "slides/01-welcome-notes.html#syllabus-activity-report-out",
-    "href": "slides/01-welcome-notes.html#syllabus-activity-report-out",
-    "title": "Welcome to STA 221!",
-    "section": "Syllabus activity report out",
-    "text": "Syllabus activity report out\n\n\nGroups 1 & 2: What to expect in lectures and labs\nGroups 3 & 4: Teams\nGroups 5 & 6: Labs and homework\nGroups 7 & 8: Exams and final project\nGroups 9 & 10: Academic honesty\nGroups 11 & 12: Late work policy and waiver for extenuating circumstances\nGroups 13 & 14: Attendance and lecture recording request"
-  },
-  {
-    "objectID": "slides/01-welcome-notes.html#grading",
-    "href": "slides/01-welcome-notes.html#grading",
-    "title": "Welcome to STA 221!",
-    "section": "Grading",
-    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n15%\n\n\nLabs\n10%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nFinal Exam\n20%\n\n\nFinal project\n15%"
+    "section": "Participate",
+    "text": "Participate\n[what has helped you be successful in your previous courses]"
   },
   {
     "objectID": "slides/01-welcome-notes.html#five-tips-for-success-in-sta-221",
@@ -1840,6 +1910,13 @@
     "title": "Welcome to STA 221!",
     "section": "Five tips for success in STA 221",
     "text": "Five tips for success in STA 221\n\nComplete all prepare readings and tasks before class.\nActively participate and engage in lectures and labs.\nAsk questions frequently during lecture, in office hours, on Ed Discussion, and among your classmates.\nComplete all homework and labs, asking yourself “why” questions as you go through the steps to complete each exercise.\nStay current with the course material, as each new concept builds on previous ones."
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#participate-1",
+    "href": "slides/01-welcome-notes.html#participate-1",
+    "title": "Welcome to STA 221!",
+    "section": "Participate",
+    "text": "Participate\nWhat has helped you be successful in your previous math / statistics courses.?"
   },
   {
     "objectID": "slides/01-welcome-notes.html#reproducibility-checklist",
@@ -1940,11 +2017,18 @@
     "text": "Meet Prof. Tackett!\n\nEducation and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
   },
   {
-    "objectID": "slides/01-welcome.html#meet-the-teaching-assistants-tas",
-    "href": "slides/01-welcome.html#meet-the-teaching-assistants-tas",
+    "objectID": "slides/01-welcome.html#teaching-assistants",
+    "href": "slides/01-welcome.html#teaching-assistants",
     "title": "Welcome to STA 221!",
-    "section": "Meet the Teaching Assistants (TAs)!",
-    "text": "Meet the Teaching Assistants (TAs)!\n[UPDATE]"
+    "section": "Teaching Assistants",
+    "text": "Teaching Assistants\nLab 01\n\nShane Rybacki (PhD)\nIshrit Gupta (UG)\n\nLab 02\n\nFranklin Zhou (MS)\nArnav Meduri (UG)"
+  },
+  {
+    "objectID": "slides/01-welcome.html#introduce-yourself",
+    "href": "slides/01-welcome.html#introduce-yourself",
+    "title": "Welcome to STA 221!",
+    "section": "Introduce yourself",
+    "text": "Introduce yourself\n\nFind 1–2 people near you and introduce yourselves.\n\nYear in school\nWhere you’re from\nWhat you’re reading, watching, or listening to right now\n\nBonus: Find one thing you have in common (besides being Duke students!)"
   },
   {
     "objectID": "slides/01-welcome.html#topics",
@@ -1958,7 +2042,14 @@
     "href": "slides/01-welcome.html#data-science-workflow",
     "title": "Welcome to STA 221!",
     "section": "Data science workflow",
-    "text": "Data science workflow\n[UPDATE GRAPH]\n\nSource: Introduction to Regression Analysis"
+    "text": "Data science workflow\n\nSource: Introduction to Regression Analysis"
+  },
+  {
+    "objectID": "slides/01-welcome.html#participation",
+    "href": "slides/01-welcome.html#participation",
+    "title": "Welcome to STA 221!",
+    "section": "Participation",
+    "text": "Participation\n\n\nhttps://app.wooclap.com/YYUCQAC"
   },
   {
     "objectID": "slides/01-welcome.html#what-is-regression-analysis",
@@ -1972,21 +2063,21 @@
     "href": "slides/01-welcome.html#linear-regression-in-practice",
     "title": "Welcome to STA 221!",
     "section": "Linear regression in practice",
-    "text": "Linear regression in practice\n[UPDATE IMAGE]\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
-  },
-  {
-    "objectID": "slides/01-welcome.html#example-reading-harry-potter-maybe-update-example",
-    "href": "slides/01-welcome.html#example-reading-harry-potter-maybe-update-example",
-    "title": "Welcome to STA 221!",
-    "section": "Example: Reading Harry Potter (maybe update example?)",
-    "text": "Example: Reading Harry Potter (maybe update example?)\n[UPDATE IMAGE]\n\n\n\n\n\n\\[\n\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\n\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+    "text": "Linear regression in practice\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
   },
   {
     "objectID": "slides/01-welcome.html#example-reading-harry-potter",
     "href": "slides/01-welcome.html#example-reading-harry-potter",
     "title": "Welcome to STA 221!",
     "section": "Example: Reading Harry Potter",
-    "text": "Example: Reading Harry Potter\n\\[\n\\text{Lookups} = \\beta_0 + \\beta_1 ~ \\text{Page Number} + \\epsilon\n\\]\n\n\n\\[\n\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\n\\]"
+    "text": "Example: Reading Harry Potter\n\n\n\n\n\n\\[\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+  },
+  {
+    "objectID": "slides/01-welcome.html#example-reading-harry-potter-1",
+    "href": "slides/01-welcome.html#example-reading-harry-potter-1",
+    "title": "Welcome to STA 221!",
+    "section": "Example: Reading Harry Potter",
+    "text": "Example: Reading Harry Potter\n\\[\\text{Lookups} = \\beta_0 + \\beta_1 ~ \\text{Page Number} + \\epsilon\\]\n\n\n\\[\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/01-welcome.html#logistic-regression-in-practice",
@@ -2000,7 +2091,7 @@
     "href": "slides/01-welcome.html#example-ai-mentions",
     "title": "Welcome to STA 221!",
     "section": "Example: AI mentions",
-    "text": "Example: AI mentions\nResearchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.\n\n\n\n\n\nSource: Pew Research Center\n\n\n\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]"
+    "text": "Example: AI mentions\nResearchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.\n\n\n\n\n\nSource: Pew Research Center\n\n\n\n\\[\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\\]"
   },
   {
     "objectID": "slides/01-welcome.html#what-is-sta-221",
@@ -2028,7 +2119,7 @@
     "href": "slides/01-welcome.html#course-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa26\n\nDistribute assignments\nPlatform for version control and collaboration"
+    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa26\n\nDistribute assignments\nPlatform for version control and collaboration\n\nTextbook: Introduction to Regression Analysis: A Data Science Approach\n\nhttps://intro-regression.github.io"
   },
   {
     "objectID": "slides/01-welcome.html#computing-toolkit",
@@ -2036,6 +2127,55 @@
     "title": "Welcome to STA 221!",
     "section": "Computing toolkit",
     "text": "Computing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 221 Docker Containers\n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 221 course organization"
+  },
+  {
+    "objectID": "slides/01-welcome.html#lectures",
+    "href": "slides/01-welcome.html#lectures",
+    "title": "Welcome to STA 221!",
+    "section": "Lectures",
+    "text": "Lectures\n\nAttendance\nLecture recoridng request"
+  },
+  {
+    "objectID": "slides/01-welcome.html#labs",
+    "href": "slides/01-welcome.html#labs",
+    "title": "Welcome to STA 221!",
+    "section": "Labs",
+    "text": "Labs"
+  },
+  {
+    "objectID": "slides/01-welcome.html#homework",
+    "href": "slides/01-welcome.html#homework",
+    "title": "Welcome to STA 221!",
+    "section": "Homework",
+    "text": "Homework"
+  },
+  {
+    "objectID": "slides/01-welcome.html#exams",
+    "href": "slides/01-welcome.html#exams",
+    "title": "Welcome to STA 221!",
+    "section": "Exams",
+    "text": "Exams"
+  },
+  {
+    "objectID": "slides/01-welcome.html#final-project",
+    "href": "slides/01-welcome.html#final-project",
+    "title": "Welcome to STA 221!",
+    "section": "Final project",
+    "text": "Final project"
+  },
+  {
+    "objectID": "slides/01-welcome.html#grading",
+    "href": "slides/01-welcome.html#grading",
+    "title": "Welcome to STA 221!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nHomework\n10%\n\n\nLabs\n10%\n\n\nFinal project\n15%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nFinal exam\n20%"
+  },
+  {
+    "objectID": "slides/01-welcome.html#ai-in-this-course",
+    "href": "slides/01-welcome.html#ai-in-this-course",
+    "title": "Welcome to STA 221!",
+    "section": "AI in this course",
+    "text": "AI in this course"
   },
   {
     "objectID": "slides/01-welcome.html#classroom-community",
@@ -2052,32 +2192,11 @@
     "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nIf you have documented accommodations from SDAO, please send the documentation as soon as possible.\nI am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
   },
   {
-    "objectID": "slides/01-welcome.html#syllabus-activity",
-    "href": "slides/01-welcome.html#syllabus-activity",
+    "objectID": "slides/01-welcome.html#participate",
+    "href": "slides/01-welcome.html#participate",
     "title": "Welcome to STA 221!",
-    "section": "Syllabus activity",
-    "text": "Syllabus activity\n[UPDATE - ONLY ONE GROUP PER SECTION. MAYBE UPDATED THE SECTIONS. DO 6 - 10]\n\n\nIntroduce yourselves.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions you my have with your neighbors.\nWe’ll ask for volunteers to share a summary with the class."
-  },
-  {
-    "objectID": "slides/01-welcome.html#syllabus-activity-assignments",
-    "href": "slides/01-welcome.html#syllabus-activity-assignments",
-    "title": "Welcome to STA 221!",
-    "section": "Syllabus activity assignments",
-    "text": "Syllabus activity assignments\n\nGroups 1 & 2: What to expect in lectures and labs\nGroups 3 & 4: Teams\nGroups 5 & 6: Labs and homework\nGroups 7 & 8: Exams and final project\nGroups 9 & 10: Academic honesty\nGroups 11 & 12: Late work policy and waiver for extenuating circumstances\nGroups 13 & 14: Attendance and lecture recording request"
-  },
-  {
-    "objectID": "slides/01-welcome.html#syllabus-activity-report-out",
-    "href": "slides/01-welcome.html#syllabus-activity-report-out",
-    "title": "Welcome to STA 221!",
-    "section": "Syllabus activity report out",
-    "text": "Syllabus activity report out\n\nGroups 1 & 2: What to expect in lectures and labs\nGroups 3 & 4: Teams\nGroups 5 & 6: Labs and homework\nGroups 7 & 8: Exams and final project\nGroups 9 & 10: Academic honesty\nGroups 11 & 12: Late work policy and waiver for extenuating circumstances\nGroups 13 & 14: Attendance and lecture recording request"
-  },
-  {
-    "objectID": "slides/01-welcome.html#grading",
-    "href": "slides/01-welcome.html#grading",
-    "title": "Welcome to STA 221!",
-    "section": "Grading",
-    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n15%\n\n\nLabs\n10%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nFinal Exam\n20%\n\n\nFinal project\n15%"
+    "section": "Participate",
+    "text": "Participate\n[what has helped you be successful in your previous courses]"
   },
   {
     "objectID": "slides/01-welcome.html#five-tips-for-success-in-sta-221",
@@ -2085,6 +2204,13 @@
     "title": "Welcome to STA 221!",
     "section": "Five tips for success in STA 221",
     "text": "Five tips for success in STA 221\n\nComplete all prepare readings and tasks before class.\nActively participate and engage in lectures and labs.\nAsk questions frequently during lecture, in office hours, on Ed Discussion, and among your classmates.\nComplete all homework and labs, asking yourself “why” questions as you go through the steps to complete each exercise.\nStay current with the course material, as each new concept builds on previous ones."
+  },
+  {
+    "objectID": "slides/01-welcome.html#participate-1",
+    "href": "slides/01-welcome.html#participate-1",
+    "title": "Welcome to STA 221!",
+    "section": "Participate",
+    "text": "Participate\nWhat has helped you be successful in your previous math / statistics courses.?"
   },
   {
     "objectID": "slides/01-welcome.html#reproducibility-checklist",
