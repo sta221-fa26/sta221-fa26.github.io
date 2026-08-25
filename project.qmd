@@ -8,13 +8,17 @@ library(knitr)
 library(broom)
 ```
 
-<br> 
+## Project milestones
 
-To be posted. 
+- **Proposal:** due Tuesday, September 29
 
-<!-- ## Project milestones -->
+- **Exploratory data analysis:** due Thursday, October 29
 
-<!-- <!--# add the peer review issue template to the initial project repos--> 
+- **Presentation + Presentation comments:** Monday, November 23 in lab
+
+- **Draft report + Peer review:** Monday, November 30 in lab
+
+- **Final write up  + Project repo:** due Friday, December 4
 
 <!-- [Research topics](#research-topics) due Tuesday February 10 -->
 
@@ -37,7 +41,9 @@ To be posted.
 <!-- Choose the data based on your group's interests or work you all have done in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way. -->
 
 <!-- ::: callout-important -->
+
 <!-- **All analyses must be done in RStudio using Quarto and GitHub, and your analysis and written report must be reproducible.** -->
+
 <!-- ::: -->
 
 <!-- ### Logistics -->
@@ -55,9 +61,11 @@ To be posted.
 <!-- ## Research topics {#research-topics} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Write your responses in `research-topics.qmd` in your team's project GitHub repo. Push both the `.qmd` and rendered `.pdf` to GitHub by the deadline, **Tuesday, February 10 at 11:59pm**. There is no Gradescope submission. -->
+
 <!-- ::: -->
 
 <!-- The goal of this milestone is to discuss topics and develop potential research questions your team is interested in exploring for the project. You are only developing ideas at this point; you do not need to have a data set identified right now. -->
@@ -65,9 +73,13 @@ To be posted.
 <!-- Develop three potential research topics. Include the following for <u><b></b>each</b></u> of the three topics: -->
 
 <!-- 1.  A brief description of the topic -->
+
 <!-- 2.  A statement about your motivation for investigating this topic -->
+
 <!-- 3.  The potential audience(s), i.e., who might be most interested in this research? For example: policymakers, researchers, industry professionals, the general public, etc. -->
+
 <!-- 4.  Two or three potential research questions you could analyze about this topic. *(Note: These are draft questions at this point. These questions may change in the next step of the project as you learn more about the data.)* -->
+
 <!-- 5.  Ideas about the type of data you might use to answer this question or potential data sets you're interested in using. (*Note: The goal is to generate ideas at this point, so it is fine if you have not identified any particular data set at this point.)* -->
 
 <!-- **AI Disclosure:** Provide a brief description of how your team used AI (if at all) to complete the research topics milestone. If you used AI, include the name and version of the AI tool(s) used. If you did not use AI, you can state "We did not use AI to complete this milestone." *Note: AI use will not negatively affect your grade, provided it is accurately disclosed and in alignment with the course's academic honesty policy.* -->
@@ -91,17 +103,21 @@ To be posted.
 <!-- ## Project proposal {#project-proposal} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Write your narrative and analysis for Sections 1 - 4 in the `proposal.qmd` file in your team's GitHub repo. Put the data set and the data dictionary in the `data` folder in the repo. Push the `qmd` and rendered `pdf` documents to GitHub by the deadline, **Tuesday, February 24 at 11:59pm.** -->
 
 <!-- There is no Gradescope submission. -->
+
 <!-- ::: -->
 
 <!-- The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research topics. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-sp25.netlify.app/project-tips) page as a starting point. -->
 
 <!-- ::: callout-important -->
+
 <!-- You must use the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback. -->
+
 <!-- ::: -->
 
 <!-- The data set must meet the following criteria: -->
@@ -123,6 +139,7 @@ To be posted.
 <!-- - May not be data that has previously been used in any course materials, or any derivation of data that has been used in course materials. -->
 
 <!-- ::: callout-warning -->
+
 <!-- ### Types of data sets to avoid -->
 
 <!-- - Data that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc. -->
@@ -130,6 +147,7 @@ To be posted.
 <!-- - Data sets in which there is no information about how the data were originally collected -->
 
 <!-- - Data sets in which there are missing or unclear definitions about the observations and/or variables -->
+
 <!-- ::: -->
 
 <!-- **Ask a member of the teaching team if you're unsure whether your data set meets the criteria.** -->
@@ -139,7 +157,9 @@ To be posted.
 <!-- ### Section 1: Introduction -->
 
 <!-- ::: callout-tip -->
+
 <!-- Reuse and iterate on the work from the Research Topics milestone. -->
+
 <!-- ::: -->
 
 <!-- - An introduction to the subject matter you're investigating (citing any relevant literature) -->
@@ -193,9 +213,11 @@ To be posted.
 <!-- ## Exploratory data analysis {#eda} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the `.qmd` and rendered `.pdf` documents to GitHub by **Thursday, March 19 at 11:59pm.** -->
+
 <!-- ::: -->
 
 <!-- The purpose of this milestone is to begin exploring the data and receive early feedback on your data and analysis. You will submit a draft of the early sections of the report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results. -->
@@ -207,7 +229,9 @@ To be posted.
 <!-- This section includes an introduction to the project motivation, background, data, and research question. Additionally, comment on any known limitations, missingness, or measurement concerns that may impact the interpretation of your analysis and results. -->
 
 <!-- ::: callout-tip -->
+
 <!-- Reuse and iterate on the work from the previous milestones. -->
+
 <!-- ::: -->
 
 <!-- ### Exploratory data analysis -->
@@ -219,7 +243,9 @@ To be posted.
 <!-- - Exploratory data analysis of the response variable and key predictor variables. This includes visualizations, summary statistics, and narrative. Focus on 4 - 6 key predictors that are most relevant to your research question. You may explore additional variables, as appropriate, but prioritize depth over breadth. -->
 
 <!--   - Univariate EDA of the response and key predictor variables -->
+
 <!--   - Bivariate EDA of the response and key predictor variables -->
+
 <!--   - Visualizations exploring at least one potential interaction effect -->
 
 <!-- For each visualization and/or set of summary statistics, briefly describe what you learn about the distribution of the variable or relationship between variables. Additionally, comment on how the observations from the EDA may inform your modeling decisions (e.g., use of transformations, quadratic effects, interactions effects, etc.) -->
@@ -229,14 +255,21 @@ To be posted.
 <!-- The anticipated length with code, warnings, and messages suppressed in the rendered `pdf` is about 5 - 7 pages. It is OK to be over this page limit at this stage in the project. -->
 
 <!-- ::: callout-tip -->
+
 <!-- Include the code below in the YAML to suppress code, messages, and warnings in the rendered pdf. -->
 
 <!-- ``` r -->
+
 <!-- execute: -->
+
 <!--   echo: false -->
+
 <!--   message: false -->
+
 <!--   warning: false -->
+
 <!-- ``` -->
+
 <!-- ::: -->
 
 <!-- The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis. -->
@@ -252,6 +285,7 @@ To be posted.
 <!-- ## Presentation {#presentation} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Presentations will take place during lab on March 27. The slides must be submitted by the start of lab. We will use the classroom computer for presentations. -->
@@ -263,6 +297,7 @@ To be posted.
 <!-- - Put the URL to your slides in the `README` of the `presentation` folder. If you share the URL, please make sure permissions are set so Prof. Tackett can view the slides. -->
 
 <!-- **There is no make up work for the presentation.** -->
+
 <!-- ::: -->
 
 <!-- Your team will do an in-person presentation that summarizes and showcases the work you've done on the project thus far. Because the presentations will take place while you're still working on the project, it will also be an opportunity to receive feedback on your project as well as provide feedback to other teams. Through the presentation, you will introduce the subject matter and research question, showcase key results from the exploratory data analysis, and discuss your proposed modeling strategy. You are not required (or even expected!) to have modeling results. The presentation should be supported by slides that serve as a brief visual aid to the presentation. The presentation and slides will be graded for content accuracy and clarity. -->
@@ -304,6 +339,7 @@ To be posted.
 <!-- ## Presentation comments {#presentation-comments} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Presentation comments must be submitted through the feedback form by the end of your lab session. -->
@@ -311,6 +347,7 @@ To be posted.
 <!-- See the Canvas announcement the day before presentations for your feedback assignments and link to the feedback form. -->
 
 <!-- **There is no make up work for the presentation comments.** -->
+
 <!-- ::: -->
 
 <!-- You will provide feedback on two teams' presentations. Please provide all scores and comments by the end of the lab session. There will be a few minutes between each presentation to submit scores and comments. -->
@@ -322,9 +359,11 @@ To be posted.
 <!-- ## Draft report {#draft-report} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Write your draft report in the `written-report.qmd` file in your team's GitHub repo. Push the `.qmd` and rendered `.pdf` documents to GitHub **before the start of your lab section on** **April 10**. -->
+
 <!-- ::: -->
 
 <!-- The purpose of the draft and peer review is to give you an opportunity to receive early feedback on your analysis. Therefore, the draft and peer review will focus primarily on the exploratory data analysis, modeling, and initial interpretations. -->
@@ -354,9 +393,11 @@ To be posted.
 <!-- ## Peer review {#peer-review} -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Submission -->
 
 <!-- Write the peer review in the `Peer Review` issue in your assigned teams' GitHub repos by **April 11 at 11:59pm.** -->
+
 <!-- ::: -->
 
 <!-- Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo before the start of their lab session on the day of the peer review lab. During lab, your team will have the opportunity to review and provide quality feedback to two other teams. -->
@@ -366,9 +407,11 @@ To be posted.
 <!-- #### Steps for peer review -->
 
 <!-- ::: callout-important -->
+
 <!-- ## Peer review assignments -->
 
 <!-- Go to the Canvas announcement to see which teams' projects your team is reviewing. You'll spend about 30 minutes reviewing each project. -->
+
 <!-- ::: -->
 
 <!-- - When you get to lab, you should have access to the GitHub repos for the teams you're reviewing. In GitHub, search the repositories for `project`, and you should see the repos for the projects you're reviewing. You will be able to read the files in the repo and post issues, but you cannot push changes to the repo. You will have access to the repo until the deadline for the peer review. -->
@@ -408,9 +451,11 @@ To be posted.
 <!-- ## Written report {#written-report} -->
 
 <!-- ::: callout-important -->
+
 <!-- The written report must be completed in the `written-report.qmd` file and must be reproducible. All team members' contributions will be evaluated, in part, based on the commit history in the GitHub repo. -->
 
 <!-- Make sure all code, warnings, and messages are suppressed in the final written report. The final written report is due **April 22 at 11:59pm**. This means he report in `written-report.qmd` and the rendered PDF should be pushed to the GitHub repo by **April 22 at 11:59pm**. -->
+
 <!-- ::: -->
 
 <!-- Below are general details about the final written report. -->
@@ -474,11 +519,17 @@ To be posted.
 <!-- Did you use an LLM / Generative AI tool to complete the project? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste [**all**]{.underline} statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI. -->
 
 <!-- - We didn’t use an LLM / Generative AI tool. -->
+
 <!-- - We asked it to clarify criteria. -->
+
 <!-- - We asked it clarifying questions to better understand a concept. -->
+
 <!-- - We asked it to help write code to complete a part of the project. -->
+
 <!-- - We gave it our code and asked it to help us fix it. -->
+
 <!-- - We asked it about an error or why code would do something we didn’t want. -->
+
 <!-- - Other:\_\_\_\_\_\_ -->
 
 <!-- ## Reproducibility + organization {#reproducibility-organization} -->
@@ -520,14 +571,23 @@ To be posted.
 <!-- The grade breakdown is as follows: -->
 
 <!-- | Total                          | 100 pts | -->
+
 <!-- |--------------------------------|---------| -->
+
 <!-- | Research topics                | 5 pts   | -->
+
 <!-- | Project proposal               | 10 pts  | -->
+
 <!-- | Exploratory data analysis      | 15 pts  | -->
+
 <!-- | Presentation                   | 10 pts  | -->
+
 <!-- | Presentation comments          | 2 pts   | -->
+
 <!-- | Draft report + peer review     | 15 pts  | -->
+
 <!-- | Written report                 | 40 pts  | -->
+
 <!-- | Reproducibility + organization | 3 pts   | -->
 
 <!-- ## Late work policy -->

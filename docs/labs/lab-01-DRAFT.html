@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 01: Computing + linear algebra review – STA 221 - Spring 2026</title>
+<title>Lab 01: Computing + linear algebra review – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d5c138656980d20101dad17b9e7497c0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2351f2a23443e02c1e899d4f650bcecc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -164,20 +164,39 @@ window.Quarto = {
       <img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/sta221-sp26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/sta221-fa26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
-    <a href="https://edstem.org/us/courses/90766" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-dots-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-check-square-fill"></i></a>
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-chat-dots-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/73984">
-            Canvas
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/101204">
+            Ed Discussion
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.gradescope.com/courses/1209604">
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458">
+            Office hours
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-check-square-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/announcements">
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.gradescope.com/courses/1347048">
             Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/gradebook">
+            Gradebook
             </a>
           </li>
       </ul>
@@ -279,8 +298,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/stats-experience.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics experience</span></a>
+  <a href="../hw/hw-stats-experience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 05: Statistics experience</span></a>
   </div>
 </li>
       </ul>
@@ -375,8 +394,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://forms.office.com/r/RW2TTPrsQq" class="sidebar-item-text sidebar-link">
+  <a href="https://forms.cloud.microsoft/r/ksZvHWmz0f" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture recording request</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math rules</span></a>
   </div>
 </li>
     </ul>
@@ -395,7 +420,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
-  <li><a href="#clone-the-repo-start-new-rstudio-project" id="toc-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#clone-the-repo-start-new-rstudio-project">Clone the repo + start new RStudio project</a></li>
+  <li><a href="#find-your-team-for-this-weeks-lab" id="toc-find-your-team-for-this-weeks-lab" class="nav-link" data-scroll-target="#find-your-team-for-this-weeks-lab">Find your team for this week’s lab</a></li>
+  <li><a href="#clone-the-repo-start-new-rstudio-project---update" id="toc-clone-the-repo-start-new-rstudio-project---update" class="nav-link" data-scroll-target="#clone-the-repo-start-new-rstudio-project---update">Clone the repo + start new RStudio project - UPDATE!</a></li>
   <li><a href="#r-and-r-studio" id="toc-r-and-r-studio" class="nav-link" data-scroll-target="#r-and-r-studio">R and R Studio</a></li>
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
@@ -423,16 +449,10 @@ window.Quarto = {
   <li><a href="#more-linear-algebra" id="toc-more-linear-algebra" class="nav-link" data-scroll-target="#more-linear-algebra">More Linear Algebra</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul></li>
-  <li><a href="#matrix-calculus" id="toc-matrix-calculus" class="nav-link" data-scroll-target="#matrix-calculus">Matrix calculus</a>
-  <ul class="collapse">
-  <li><a href="#definition-of-gradient" id="toc-definition-of-gradient" class="nav-link" data-scroll-target="#definition-of-gradient">Definition of gradient</a></li>
-  <li><a href="#gradient-of-mathbfxtopmathbfz" id="toc-gradient-of-mathbfxtopmathbfz" class="nav-link" data-scroll-target="#gradient-of-mathbfxtopmathbfz">Gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{z}\)</span></a></li>
-  <li><a href="#gradient-of-mathbfxtopmathbfamathbfx" id="toc-gradient-of-mathbfxtopmathbfamathbfx" class="nav-link" data-scroll-target="#gradient-of-mathbfxtopmathbfamathbfx">Gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{A}\mathbf{x}\)</span></a></li>
-  </ul></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading-10pts" id="toc-grading-10pts" class="nav-link" data-scroll-target="#grading-10pts">Grading (10pts)</a></li>
+  <li><a href="#grading-30pts" id="toc-grading-30pts" class="nav-link" data-scroll-target="#grading-30pts">Grading (30pts)</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -466,16 +486,18 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Tuesday, January 20 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<p>This lab is due at the end of your lab session on <strong>August 31.</strong> Be sure to complete the following by the end of your lab:</p>
 <ul>
-<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
-<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+<li>Push final <code>.qmd</code> and <code>.pdf</code> files to your GitHub repo</li>
+<li>Submit final <code>.pdf</code> file on Gradescope</li>
 </ul>
+<p><strong>No late work is accepted for labs.</strong></p>
 </div>
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>This lab will walk through a computing workflow and review some of the linear algebra concepts that we will use in the course. The main goal is to establish a computing and mathematical foundation that we will build upon throughout the semester.</p>
+<p><strong>You will work with a randomly selected team on this lab. You will discuss the teammates but complete the lab in your individual lab repo and submit your lab on Gradescope.</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -503,7 +525,6 @@ Tip
 <p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
 </div>
 </div>
-<p>To make versioning simpler, this lab is an individual assignment. In the future, you’ll learn about collaborating on GitHub and producing a single lab report with your lab team. For now, we’ll concentrate on getting the basics down.</p>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
 <p>By the end of the lab, you will…</p>
@@ -518,8 +539,11 @@ Tip
 </section>
 <section id="getting-started" class="level1">
 <h1>Getting Started</h1>
-<section id="clone-the-repo-start-new-rstudio-project" class="level2">
-<h2 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo + start new RStudio project</h2>
+<section id="find-your-team-for-this-weeks-lab" class="level2">
+<h2 class="anchored" data-anchor-id="find-your-team-for-this-weeks-lab">Find your team for this week’s lab</h2>
+</section>
+<section id="clone-the-repo-start-new-rstudio-project---update" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project---update">Clone the repo + start new RStudio project - UPDATE!</h2>
 <ul>
 <li>Go to the course organization at <a href="https://github.com/sta221-sp26">github.com/sta221-sp26</a> organization on GitHub.</li>
 <li>Click on the repo with the prefix <strong>lab-01</strong>. It contains the starter documents you need to complete the lab.</li>
@@ -714,7 +738,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In your `<code>lab-01.qmd`</code> document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.</p>
+<p>In your <code>lab-01.qmd</code> document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.</p>
 <p>Also note that the code chunk has a label: <code>glimpse-data</code>. Labeling your code chunks is not required, but it is good practice and highly encouraged.</p>
 </div>
 </div>
@@ -722,7 +746,7 @@ Note
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <p>We begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.</p>
-<p>When we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have <strong>an informative title</strong> and <strong>informative axis labels</strong>.</p>
+<p>When we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have <strong>informative axis labels</strong> along with <strong>an informative title or caption.</strong></p>
 <p>Fill in the code below to visualize the distribution of <code>price_usd</code>, the price in US dollars.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ikea, <span class="fu">aes</span>(<span class="at">x =</span> _____)) <span class="sc">+</span></span>
@@ -734,8 +758,7 @@ Note
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Use the visualization to describe the distribution of price. In your narrative, include descriptions of the shape, approximate center, approximate spread, and any presence of outliers. Briefly explain why the median is more representative of the center of this distribution than the mean.</p>
-<p><em>Note: You may compute summary statistics to more precisely describe the center and spread.</em></p>
+<p>Briefly explain why the median is more representative of the center of the distribution of <code>price_usd</code> than the mean.</p>
 <div class="render-commit-push">
 <p>This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g.&nbsp;“Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.</p>
 </div>
@@ -793,12 +816,11 @@ Important
 <div class="callout-body-container callout-body">
 <p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.<br>
 <br>
-<strong>Put any relevant R code in the Quarto document. You may write the answers and show any associated work for conceptual exercises by hand or type them in your Quarto document using LaTex</strong></p>
+<strong>Put any relevant R code in the Quarto document. You may write the answers and show any associated work for conceptual exercises by hand or type them in your Quarto document using LaTex.</strong></p>
 </div>
 </div>
 <p>Let</p>
-<p><span class="math display">\[
-A = \begin{bmatrix}
+<p><span class="math display">\[A = \begin{bmatrix}
 1 &amp; 2\\
 3 &amp; 4\\
 5 &amp; 6\end{bmatrix},
@@ -812,15 +834,12 @@ C = \begin{bmatrix}
 1 &amp; 4\\
 2 &amp; 5\\
 3 &amp; 6\end{bmatrix}
-\qquad
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{X} = \begin{bmatrix}
+\qquad\]</span></p>
+<p><span class="math display">\[\mathbf{X} = \begin{bmatrix}
 x_{11} &amp; x_{12}&amp; \dots &amp; x_{1p}\\
 x_{21} &amp; x_{22}&amp; \dots &amp; x_{2p}\\
 \vdots &amp; \vdots&amp; \ddots &amp; \vdots\\
-x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}
-\]</span></p>
+x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}\]</span></p>
 <section id="exercise-6" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>Write the dimensions of the following matrices:</p>
@@ -829,7 +848,7 @@ x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}
 <li><p><span class="math inline">\(B\)</span></p></li>
 <li><p><span class="math inline">\(A^\top\)</span></p></li>
 <li><p><span class="math inline">\(\mathbf{X}\)</span></p></li>
-<li><p><span class="math inline">\(\mathbf{X}^\top\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></p></li>
 </ol>
 </section>
 <section id="exercise-7" class="level2">
@@ -932,19 +951,13 @@ Warning
 <h2 class="anchored" data-anchor-id="more-linear-algebra">More Linear Algebra</h2>
 <p>Recall the definition of linear dependence:</p>
 <p>A sequence of vectors <span class="math inline">\(\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}\)</span> is said to be <em>linearly dependent</em> if there exists a series of scalars <span class="math inline">\(a_1, a_2, \dots, a_p\)</span>, not all zero, such that</p>
-<p><span class="math display">\[
-a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}
-\]</span> Further, matrix <span class="math inline">\(\mathbf{X}\)</span> has full column rank if all of its columns are linearly independent.</p>
+<p><span class="math display">\[a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}\]</span> Further, matrix <span class="math inline">\(\mathbf{X}\)</span> has full column rank if all of its columns are linearly independent.</p>
 <p>For example, the following matrix is not full rank,</p>
-<p><span class="math display">\[
-\mathbf{X} = \begin{bmatrix}
+<p><span class="math display">\[\mathbf{X} = \begin{bmatrix}
 1 &amp; 2 &amp; 3\\
 1 &amp; 1 &amp; 2
-\end{bmatrix}
-\]</span> since, letting letting <span class="math inline">\(\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}\)</span>, and letting <span class="math inline">\(a_1 = 1\)</span>, <span class="math inline">\(a_2 = 1\)</span>, and <span class="math inline">\(a_3 = -1\)</span>, we have:</p>
-<p><span class="math display">\[
-a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end{bmatrix} + \begin{bmatrix}2\\1 \end{bmatrix} - \begin{bmatrix}3\\2 \end{bmatrix} = \mathbf{0}.
-\]</span></p>
+\end{bmatrix}\]</span> since, letting letting <span class="math inline">\(\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}\)</span>, and letting <span class="math inline">\(a_1 = 1\)</span>, <span class="math inline">\(a_2 = 1\)</span>, and <span class="math inline">\(a_3 = -1\)</span>, we have:</p>
+<p><span class="math display">\[a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end{bmatrix} + \begin{bmatrix}2\\1 \end{bmatrix} - \begin{bmatrix}3\\2 \end{bmatrix} = \mathbf{0}.\]</span></p>
 </section>
 <section id="exercise-10" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
@@ -970,42 +983,6 @@ a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end
 \end{bmatrix}\]</span></li>
 </ol>
 <hr>
-</section>
-</section>
-<section id="matrix-calculus" class="level1">
-<h1>Matrix calculus</h1>
-<p>This section contains some additional definitions and properties that we’ll use throughout this semester. There are no exercises to submit for this section.</p>
-<section id="definition-of-gradient" class="level3">
-<h3 class="anchored" data-anchor-id="definition-of-gradient">Definition of gradient</h3>
-<p>Let <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}\)</span>be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(f(\mathbf{x})\)</span> be a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<p>Then <span class="math inline">\(\nabla_\mathbf{x}f\)</span>, the <strong>gradient</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\nabla_\mathbf{x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
-\]</span></p>
-<p>For example, if <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1\\x_2\end{bmatrix}\)</span> and <span class="math inline">\(f(\mathbf{x}) = x_1^2 + x_1x_2 + x_2^2\)</span>, then <span class="math inline">\(\nabla_\mathbf{x}f = \begin{bmatrix}2x_1 + x_2\\ x_1 + 2x_2\end{bmatrix}\)</span>.</p>
-</section>
-<section id="gradient-of-mathbfxtopmathbfz" class="level3">
-<h3 class="anchored" data-anchor-id="gradient-of-mathbfxtopmathbfz">Gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{z}\)</span></h3>
-<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector, such that <span class="math inline">\(\mathbf{z}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
-<p>The gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\top\mathbf{z} = \mathbf{z}
-\]</span></p>
-</section>
-<section id="gradient-of-mathbfxtopmathbfamathbfx" class="level3">
-<h3 class="anchored" data-anchor-id="gradient-of-mathbfxtopmathbfamathbfx">Gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{A}\mathbf{x}\)</span></h3>
-<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
-<p>Then the gradient of <span class="math inline">\(\mathbf{x}^\top\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\top\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\top \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\top)\mathbf{x}
-\]</span></p>
-<p>If <span class="math inline">\(\mathbf{A}\)</span> is symmetric, then</p>
-<p><span class="math display">\[
-(\mathbf{A} + \mathbf{A}^\top)\mathbf{x} = 2\mathbf{A}\mathbf{x}
-\]</span></p>
-<p>In particular, given an <span class="math inline">\(n\times p\)</span> matrix <span class="math inline">\(\mathbf{M}\)</span>, <span class="math inline">\(\mathbf{M^\top M}\)</span> is symmetric, so <span class="math display">\[
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\top\mathbf{M^\top M}\mathbf{x} = 2 \mathbf{M^\top M} \mathbf{x}.
-\]</span></p>
 <div class="render-commit-push">
 <p>You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that <u>all</u> documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.</p>
 </div>
@@ -1025,7 +1002,7 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>Remember – you must turn in a PDF file to Gradescope by the end of your lab session.</p>
 <p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
 <p>Instructions to combine PDFs:</p>
 <ul>
@@ -1037,14 +1014,14 @@ Warning
 </div>
 <p>To submit your assignment:</p>
 <ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/73984">STA 221 Canvas site.</a></p></li>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
 <li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
-<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+<li><p>Mark the pages for the <em>“Exercises”</em> question.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with “Attendance + Completion”.</p></li>
 </ul>
 </section>
-<section id="grading-10pts" class="level1">
-<h1>Grading (10pts)</h1>
+<section id="grading-30pts" class="level1">
+<h1>Grading (30pts)</h1>
 <p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
 <table class="caption-top table">
 <thead>
@@ -1055,32 +1032,23 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td>Completion</td>
+<td>Attendance + submitting lab</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Computing review exercise</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Linear algebra review exercise</td>
 <td>8</td>
 </tr>
 <tr class="even">
 <td>Workflow &amp; formatting</td>
-<td>2</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Completion:</strong> Points will be awarded for completion based on the following:</p>
-<ul>
-<li><p>8pts: Complete 10 exercises</p></li>
-<li><p>7 pts: Complete 8 - 9 exercises:</p></li>
-<li><p>6 pts: Complete 6 - 7 exercises</p></li>
-<li><p>5 pts: Complete 4 - 5 exercises</p></li>
-<li><p>4 pts: Complete 2 - 3 exercises</p></li>
-<li><p>0 pts: Complete &lt; 2 exercises</p></li>
-</ul>
-<p><strong>Workflow &amp; formatting</strong></p>
-<p>Each assignment will have a portion associated with “Workflow &amp; formatting”. This grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
-<ul>
-<li><p>2 pts: Meet all criteria</p></li>
-<li><p>1 pt: Meet some criteria</p></li>
-<li><p>0 pt: Meet no criteria</p></li>
-</ul>
-<p>Everyone will receive 2 points for “Workflow &amp; formatting” on this lab. You will receive feedback about how well your submission satisfies the “Workflow &amp; formatting” criteria, so you know what to expect for grading in future assignments.</p>
 <hr>
 <p><em>This assignment was written in collaboration with Kat Husar, a PhD student in Statistical Science at Duke University.</em></p>
 
@@ -1161,7 +1129,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sta221-sp26\.github\.io");
+        var filterRegex = new RegExp("https:\/\/sta221-fa26\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1496,7 +1464,7 @@ Warning
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

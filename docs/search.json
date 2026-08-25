@@ -1025,7 +1025,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
@@ -1251,6 +1251,186 @@
     ]
   },
   {
+    "objectID": "labs/lab-01-DRAFT.html",
+    "href": "labs/lab-01-DRAFT.html",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "",
+    "text": "ImportantDue date\n\n\n\nThis lab is due at the end of your lab session on August 31. Be sure to complete the following by the end of your lab:\n\nPush final .qmd and .pdf files to your GitHub repo\nSubmit final .pdf file on Gradescope\n\nNo late work is accepted for labs."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#learning-goals",
+    "href": "labs/lab-01-DRAFT.html#learning-goals",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nRecall some basic matrix operations and linear algebra rules\nBe familiar with the data analysis workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nRecall some basic matrix operations and linear algebra rules"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#find-your-team-for-this-weeks-lab",
+    "href": "labs/lab-01-DRAFT.html#find-your-team-for-this-weeks-lab",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Find your team for this week’s lab",
+    "text": "Find your team for this week’s lab"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project---update",
+    "href": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project---update",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Clone the repo + start new RStudio project - UPDATE!",
+    "text": "Clone the repo + start new RStudio project - UPDATE!\n\nGo to the course organization at github.com/sta221-sp26 organization on GitHub.\nClick on the repo with the prefix lab-01. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#r-and-r-studio",
+    "href": "labs/lab-01-DRAFT.html#r-and-r-studio",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "R and R Studio",
+    "text": "R and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.qmd) file."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#yaml",
+    "href": "labs/lab-01-DRAFT.html#yaml",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "YAML",
+    "text": "YAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#committing-changes",
+    "href": "labs/lab-01-DRAFT.html#committing-changes",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Committing changes",
+    "text": "Committing changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#push-changes",
+    "href": "labs/lab-01-DRAFT.html#push-changes",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Push changes",
+    "text": "Push changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#instructions",
+    "href": "labs/lab-01-DRAFT.html#instructions",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Instructions",
+    "text": "Instructions\nWrite all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically render your Quarto document to produce the updated PDF, commit the changes in the Git pane, and push the updated files to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+)."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-1",
+    "href": "labs/lab-01-DRAFT.html#exercise-1",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nViewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the glimpse function to see a summary of the ikea data set.\nHow many observations are in the ikea data set? How many variables?\n\nglimpse(ikea)\n\n\n\n\n\n\n\nNote\n\n\n\nIn your lab-01.qmd document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.\nAlso note that the code chunk has a label: glimpse-data. Labeling your code chunks is not required, but it is good practice and highly encouraged."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-2",
+    "href": "labs/lab-01-DRAFT.html#exercise-2",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWe begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.\nWhen we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have informative axis labels along with an informative title or caption.\nFill in the code below to visualize the distribution of price_usd, the price in US dollars.\n\nggplot(data = ikea, aes(x = _____)) +\n  geom_histogram() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-3",
+    "href": "labs/lab-01-DRAFT.html#exercise-3",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nBriefly explain why the median is more representative of the center of the distribution of price_usd than the mean.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-4",
+    "href": "labs/lab-01-DRAFT.html#exercise-4",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\nHow many observations are in the ikea_sub data frame? How many variables?\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for the remainder of lab."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-5",
+    "href": "labs/lab-01-DRAFT.html#exercise-5",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels and an informative title. Use the visualization to describe the relationship between the two variables.\nThen, recreate your visualization, but now adding color based on furniture category. Comment on your observations from this visualization.\nNote: Show both visualizations in the response.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-6",
+    "href": "labs/lab-01-DRAFT.html#exercise-6",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nWrite the dimensions of the following matrices:\n\n\\(A\\)\n\\(B\\)\n\\(A^\\top\\)\n\\(\\mathbf{X}\\)\n\\(\\mathbf{X}^\\top\\mathbf{X}\\)"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-7",
+    "href": "labs/lab-01-DRAFT.html#exercise-7",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 7",
+    "text": "Exercise 7\ni. Which of the following is a proper matrix multiplication operation? Explain why.\n\n\\(A\\times C\\)\n\\(A\\times B\\)\n\\(A^\\top \\times B\\)\n\\(B \\times A\\)\n\\(B^\\top \\times C\\)\n\\(B\\times B\\)\n\nii. Perform the multiplication you chose in part (i)."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#matrix-operations-in-r",
+    "href": "labs/lab-01-DRAFT.html#matrix-operations-in-r",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Matrix operations in R",
+    "text": "Matrix operations in R\nR has built in matrix tools such as addition, multiplication, transpose, etc. We will now practice using these tools to review some matrix properties.\nWe first begin by creating matrices using matrix() function. We provide elements of our matrices as the data argument and specify how many rows our matrices have. byrow = TRUE allows us to fill the matrix by row.\n\nA &lt;- matrix(data = c(1, 2,\n                     3, 4,\n                     5, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nB &lt;- matrix(data = c(1, 1, 1, 1, \n                     0, 1, 2, 3), \n            nrow = 2,\n            byrow = TRUE)\n\nC &lt;-  matrix(data = c(1, 4,\n                      2, 5,\n                      3, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nYou can learn more about matrix() function by typing ?matrix in console."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-8",
+    "href": "labs/lab-01-DRAFT.html#exercise-8",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 8",
+    "text": "Exercise 8\ni. To perform addition or subtraction, we can simply use a + or - operators.\n\n# Add A and C\nA + C\n\n     [,1] [,2]\n[1,]    2    6\n[2,]    5    9\n[3,]    8   12\n\n\nUsing R, find \\(C + A\\). Is addition commutative (i.e. does \\(A + C = C + A\\))? Show the work to support your response.\nii. In R, we have to use a special matrix multiplication operator, %*% .\n\n# multiply A and B\nA %*% B\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    5    7\n[2,]    3    7   11   15\n[3,]    5   11   17   23\n\n\nDoes the output match your answer to Exercise 7 (ii)? What happens if you try to multiply \\(B\\times A\\) in R?\n\n\n\n\n\n\nWarning\n\n\n\nMatrix multiplication is not commutative! Matrix multiplication satisfies left and right distributivity: \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} = \\mathbf{A}\\mathbf{C} + \\mathbf{B}\\mathbf{C}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) = \\mathbf{A}\\mathbf{B} + \\mathbf{A}\\mathbf{C}\\), but the order here matters. \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} \\neq \\mathbf{C}\\mathbf{A} +\\mathbf{C} \\mathbf{B}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) \\neq \\mathbf{B}\\mathbf{A} + \\mathbf{C}\\mathbf{A}\\). Pay attention to the order and dimensions of matrices.\n\n\niii. In this class, we will work a lot with matrix transposes. You can transpose a matrix in R by applying t() function.\n\n# transpose A\nt(A)\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\nFind \\(B^\\top \\times A^\\top\\) using R. How is your answer compare to the result of \\(A\\times B\\) you found in previous part?\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 6 - 8”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-9",
+    "href": "labs/lab-01-DRAFT.html#exercise-9",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nLet \\(\\mathbf a = \\begin{bmatrix}a_1 \\\\ \\vdots \\\\ a_n\\end{bmatrix}\\) and \\(\\mathbf b = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_n\\end{bmatrix}\\). Recall, \\[\\mathbf{a}^\\top \\mathbf{a} = \\sum_{i=1}^n a_i^2.\\]\nWrite \\((\\mathbf{a} - \\mathbf{b})^\\top (\\mathbf{a} - \\mathbf{b})\\) using summation notation."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#more-linear-algebra",
+    "href": "labs/lab-01-DRAFT.html#more-linear-algebra",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "More Linear Algebra",
+    "text": "More Linear Algebra\nRecall the definition of linear dependence:\nA sequence of vectors \\(\\mathbf{x_1}, \\mathbf{x_2}, \\dots, \\mathbf{x_p}\\) is said to be linearly dependent if there exists a series of scalars \\(a_1, a_2, \\dots, a_p\\), not all zero, such that\n\\[a_1 \\mathbf{x_1} + a_2 \\mathbf{x_2} + \\dots + a_p \\mathbf{x_p} = \\mathbf{0}\\] Further, matrix \\(\\mathbf{X}\\) has full column rank if all of its columns are linearly independent.\nFor example, the following matrix is not full rank,\n\\[\\mathbf{X} = \\begin{bmatrix}\n1 & 2 & 3\\\\\n1 & 1 & 2\n\\end{bmatrix}\\] since, letting letting \\(\\mathbf{x_1} = \\begin{bmatrix}1\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_2} = \\begin{bmatrix}2\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_3} = \\begin{bmatrix}3\\\\2 \\end{bmatrix}\\), and letting \\(a_1 = 1\\), \\(a_2 = 1\\), and \\(a_3 = -1\\), we have:\n\\[a_1 \\mathbf{x_1} + a_2\\mathbf{x_2} + a_3\\mathbf{x_3} =  \\begin{bmatrix}1\\\\1 \\end{bmatrix} + \\begin{bmatrix}2\\\\1 \\end{bmatrix} - \\begin{bmatrix}3\\\\2 \\end{bmatrix} = \\mathbf{0}.\\]"
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#exercise-10",
+    "href": "labs/lab-01-DRAFT.html#exercise-10",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nFor each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients \\(a\\)’s).\n\n\\[\\begin{bmatrix}\n1 & 0 & 0\\\\\n1 & 1 & 0\\\\\n1 & 1 & 0\\\\\n1 & 0 & 1\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n0 & 0 & 1\\\\\n1 & 0 & 0\\\\\n1 & 0 & 0\\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n1 & 0 & 0 & 1\\\\\n1 & 1 & 0 & 0\\\\\n1 & 1 & 0 & 0\\\\\n1 & 0 & 1 & 0\n\\end{bmatrix}\\]\n\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
     "objectID": "labs/lab-00.html",
     "href": "labs/lab-00.html",
     "title": "Lab 00: Getting started",
@@ -1325,39 +1505,6 @@
     "crumbs": [
       "Labs",
       "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
     ]
   },
   {
@@ -1713,14 +1860,14 @@
     "href": "slides/01-welcome-notes.html",
     "title": "Welcome to STA 221!",
     "section": "",
-    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)\n\n\n\n\n\n\nLab 01\n\nShane Rybacki (PhD)\nIshrit Gupta (UG)\n\nLab 02\n\nFranklin Zhou (MS)\nArnav Meduri (UG)\n\n\n\n\n\nFind 1–2 people near you and introduce yourselves.\n\nYear in school\nWhere you’re from\nWhat you’re reading, watching, or listening to right now\n\nBonus: Find one thing you have in common (besides being Duke students!)\n\n\n\n\n\nIntroduction to the course\nSyllabus activity\nReproducibility"
+    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nDirector of Undergraduate Studies and Associate Professor of the Practice (Office: Old Chem 118B)\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)\n\n\n\n\n\n\nLab 01\n\nShane Rybacki (PhD)\nIshrit Gupta (UG)\n\nLab 02\n\nFranklin Zhou (MS)\nArnav Meduri (UG)\n\n\n\n\n\nFind 1–2 people near you and introduce yourselves.\n\nYear in school\nWhere you’re from\nWhat you’re reading, watching, or listening to right now\n\nBonus: Find one thing you have in common (besides being Duke students!)\n\n\n\n\n\nIntroduction to the course\nSyllabus activity\nReproducibility"
   },
   {
     "objectID": "slides/01-welcome-notes.html#meet-prof.-tackett",
     "href": "slides/01-welcome-notes.html#meet-prof.-tackett",
     "title": "Welcome to STA 221!",
     "section": "",
-    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
+    "text": "Education and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nDirector of Undergraduate Studies and Associate Professor of the Practice (Office: Old Chem 118B)\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
   },
   {
     "objectID": "slides/01-welcome-notes.html#teaching-assistants",
@@ -1825,7 +1972,7 @@
     "href": "slides/01-welcome-notes.html#course-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion"
+    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion (Class discussion forum)"
   },
   {
     "objectID": "slides/01-welcome-notes.html#course-toolkit-1",
@@ -1846,35 +1993,35 @@
     "href": "slides/01-welcome-notes.html#participation-5",
     "title": "Welcome to STA 221!",
     "section": "Participation (5%)",
-    "text": "Participation (5%)\n\nGet the most out of lecture by completing prepare reading before class, attending lecture, and actively participating\nParticipation tracked via poll question(s) in each lecture\n\nGraded for completion, not correctness\nComplete poll in 18 out of 26 lectures for full credit in the final course grade\n\nBe prepared to take handwritten notes during lecture. There will also be periodic hands-on computing exercises.\nMay request lecture recording for excused absences"
+    "text": "Participation (5%)\n\n\nGet the most out of lecture by completing prepare reading before class, attending lecture, and actively participating\nParticipation tracked via poll question(s) in each lecture\n\nGraded for completion, not correctness\nComplete poll in 18 out of 26 lectures for full credit in the final course grade\n\nBe prepared to take handwritten notes during lecture. There will also be periodic hands-on computing exercises.\nMay request lecture recording for excused absences"
   },
   {
     "objectID": "slides/01-welcome-notes.html#labs-10",
     "href": "slides/01-welcome-notes.html#labs-10",
     "title": "Welcome to STA 221!",
     "section": "Labs (10%)",
-    "text": "Labs (10%)\n\nComplete hands-on data analysis exercises focused on computing and communication.\nWork on labs in teams and each student will submit lab individually\nLabs graded based on attendance, completion, and correctness on two randomly selected exercises.\nLabs are due at the end of class. There is no late work or make ups.\n\nTwo lowest lab grades dropped at the end of the semester."
+    "text": "Labs (10%)\n\n\nComplete hands-on data analysis exercises focused on computing and communication.\nWork on labs in teams and each student will submit lab individually\nLabs graded based on attendance, submitting the lab on time, and correctness on two randomly selected exercises.\nLabs are due at the end of class. There is no late work or make ups.\n\nTwo lowest lab grades dropped at the end of the semester."
   },
   {
     "objectID": "slides/01-welcome-notes.html#homework-10",
     "href": "slides/01-welcome-notes.html#homework-10",
     "title": "Welcome to STA 221!",
     "section": "Homework (10%)",
-    "text": "Homework (10%)\n\nUse what you’ve learned in lecture and lab to complete applied data analysis exercises and conceptual exercises focused on mathematical derivations\nHomework graded based on correctness for one randomly selected conceptual exercise, one randomly selected analysis exercise, and workflow\n\nLowest homework dropped at the end of the semester\n\nHomework may be submitted up to two days late with late deduction\n\nOne-time waiver [ADD LINK] to submit a homework late without deduction\n\nOne homework is the Statistics Experience - do something related to statistics/ data science outside of the classroom"
+    "text": "Homework (10%)\n\n\nUse what you’ve learned in lecture and lab to complete applied data analysis exercises and conceptual exercises focused on mathematical derivations\nHomework graded based on correctness for one randomly selected conceptual exercise, one randomly selected analysis exercise, and workflow\n\nLowest homework dropped at the end of the semester\n\nHomework may be submitted up to two days late with late deduction\n\nOne-time waiver to submit a homework late with no deduction\n\nOne homework is the Statistics Experience - do something related to statistics/ data science outside of the classroom"
   },
   {
     "objectID": "slides/01-welcome-notes.html#exams-20-each",
     "href": "slides/01-welcome-notes.html#exams-20-each",
     "title": "Welcome to STA 221!",
     "section": "Exams (20% each)",
-    "text": "Exams (20% each)\n\nTwo in-class midterm exams + one in-class final exam\nExams are a combination of multiple choice, true/false, short answer, and derivations\n\nSome questions based on homework and labs\n\nNo make-up exams. Final exam grade used to replaced mid-term exam missed due to reason documented by Dean’s Excuse"
+    "text": "Exams (20% each)\n\n\nTwo in-class midterm exams + one in-class final exam\nExams are a combination of multiple choice, true/false, short answer, and derivations\n\nSome questions based on homework and labs\n\nNo make-up exams. Final exam grade used to replaced mid-term exam missed due to reason documented by Dean’s Excuse"
   },
   {
     "objectID": "slides/01-welcome-notes.html#final-project-15",
     "href": "slides/01-welcome-notes.html#final-project-15",
     "title": "Welcome to STA 221!",
     "section": "Final project (15%)",
-    "text": "Final project (15%)\n\nWork in teams to apply what you’ve learned in the course to analyze a research question of your choice\nProject will start around Week 5 of the semester with periodic milestones throughout the semester\nFinal deliverables: Write up + presentation"
+    "text": "Final project (15%)\n\n\nWork in teams to apply what you’ve learned in the course to analyze a research question of your choice\nProject will start around Week 5 of the semester with periodic milestones throughout the semester\nFinal deliverables: Write up + presentation"
   },
   {
     "objectID": "slides/01-welcome-notes.html#grading",
@@ -1888,14 +2035,14 @@
     "href": "slides/01-welcome-notes.html#ai-in-this-course",
     "title": "Welcome to STA 221!",
     "section": "AI in this course",
-    "text": "AI in this course\nGuiding principles for working with AI*:\n\nCognitive dimension: Working with AI should not reduce your ability to think clearly.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity policy"
+    "text": "AI in this course\nGuiding principles for working with AI*:\n\nCognitive dimension: Working with AI should not reduce your ability to think clearly.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity policy\n\n\n\n*From Policies related to ChatGPT and other AI Tools by Joel Gladd, Ph.D"
   },
   {
     "objectID": "slides/01-welcome-notes.html#ai-in-this-course-1",
     "href": "slides/01-welcome-notes.html#ai-in-this-course-1",
     "title": "Welcome to STA 221!",
     "section": "AI in this course",
-    "text": "AI in this course\nUsing AI in this course:\n\n✅ AI tools for code with attribution for substantial AI generated code\n✅ AI tools for editing\n✅ AI tools for learning\n❌ No AI tools for narrative or derivations:\n❌ No AI tools for in-class work\n\n\n\n*From Policies related to ChatGPT and other AI Tools by Joel Gladd, Ph.D"
+    "text": "AI in this course\nUsing AI in this course:\n\n✅ AI tools for code with attribution for substantial AI generated code\n✅ AI tools for editing\n✅ AI tools for learning\n❌ No AI tools for narrative or derivations:\n❌ No AI tools for in-class work"
   },
   {
     "objectID": "slides/01-welcome-notes.html#classroom-community",
@@ -2014,14 +2161,14 @@
     "href": "slides/01-welcome-notes.html#before-next-class",
     "title": "Welcome to STA 221!",
     "section": "Before next class",
-    "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview syllabus\nComplete Lab 00\nOffice hours start Monday, August 31 (see schedule on Canvas homepage)"
+    "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview syllabus\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\nComplete Lab 00 (if you haven’t already)\nOffice hours start Monday, August 31 (see schedule on Canvas homepage)\n\nPlease let me know if you need to schedule at time to meet this week"
   },
   {
     "objectID": "slides/01-welcome.html#meet-prof.-tackett",
     "href": "slides/01-welcome.html#meet-prof.-tackett",
     "title": "Welcome to STA 221!",
     "section": "Meet Prof. Tackett!",
-    "text": "Meet Prof. Tackett!\n\nEducation and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssociate Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
+    "text": "Meet Prof. Tackett!\n\nEducation and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nDirector of Undergraduate Studies and Associate Professor of the Practice (Office: Old Chem 118B)\n\nWork focuses on statistics education and inclusive teaching practices\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 3.5-year-old twins 🙂 (and one grumpy cat)"
   },
   {
     "objectID": "slides/01-welcome.html#teaching-assistants",
@@ -2126,7 +2273,7 @@
     "href": "slides/01-welcome.html#course-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion"
+    "text": "Course toolkit\n\nWebsite: https://sta221-fa26.github.io\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/84458\n\nGradebook\nOffice hours\nAnnouncements\nGradescope\nEd Discussion (Class discussion forum)"
   },
   {
     "objectID": "slides/01-welcome.html#course-toolkit-1",
@@ -2154,14 +2301,14 @@
     "href": "slides/01-welcome.html#labs-10",
     "title": "Welcome to STA 221!",
     "section": "Labs (10%)",
-    "text": "Labs (10%)\n\nComplete hands-on data analysis exercises focused on computing and communication.\nWork on labs in teams and each student will submit lab individually\nLabs graded based on attendance, completion, and correctness on two randomly selected exercises.\nLabs are due at the end of class. There is no late work or make ups.\n\nTwo lowest lab grades dropped at the end of the semester."
+    "text": "Labs (10%)\n\nComplete hands-on data analysis exercises focused on computing and communication.\nWork on labs in teams and each student will submit lab individually\nLabs graded based on attendance, submitting the lab on time, and correctness on two randomly selected exercises.\nLabs are due at the end of class. There is no late work or make ups.\n\nTwo lowest lab grades dropped at the end of the semester."
   },
   {
     "objectID": "slides/01-welcome.html#homework-10",
     "href": "slides/01-welcome.html#homework-10",
     "title": "Welcome to STA 221!",
     "section": "Homework (10%)",
-    "text": "Homework (10%)\n\nUse what you’ve learned in lecture and lab to complete applied data analysis exercises and conceptual exercises focused on mathematical derivations\nHomework graded based on correctness for one randomly selected conceptual exercise, one randomly selected analysis exercise, and workflow\n\nLowest homework dropped at the end of the semester\n\nHomework may be submitted up to two days late with late deduction\n\nOne-time waiver [ADD LINK] to submit a homework late without deduction\n\nOne homework is the Statistics Experience - do something related to statistics/ data science outside of the classroom"
+    "text": "Homework (10%)\n\nUse what you’ve learned in lecture and lab to complete applied data analysis exercises and conceptual exercises focused on mathematical derivations\nHomework graded based on correctness for one randomly selected conceptual exercise, one randomly selected analysis exercise, and workflow\n\nLowest homework dropped at the end of the semester\n\nHomework may be submitted up to two days late with late deduction\n\nOne-time waiver to submit a homework late with no deduction\n\nOne homework is the Statistics Experience - do something related to statistics/ data science outside of the classroom"
   },
   {
     "objectID": "slides/01-welcome.html#exams-20-each",
@@ -2189,14 +2336,14 @@
     "href": "slides/01-welcome.html#ai-in-this-course",
     "title": "Welcome to STA 221!",
     "section": "AI in this course",
-    "text": "AI in this course\nGuiding principles for working with AI*:\n\nCognitive dimension: Working with AI should not reduce your ability to think clearly.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity policy"
+    "text": "AI in this course\nGuiding principles for working with AI*:\n\nCognitive dimension: Working with AI should not reduce your ability to think clearly.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity policy\n\n\n\n*From Policies related to ChatGPT and other AI Tools by Joel Gladd, Ph.D"
   },
   {
     "objectID": "slides/01-welcome.html#ai-in-this-course-1",
     "href": "slides/01-welcome.html#ai-in-this-course-1",
     "title": "Welcome to STA 221!",
     "section": "AI in this course",
-    "text": "AI in this course\nUsing AI in this course:\n\n✅ AI tools for code with attribution for substantial AI generated code\n✅ AI tools for editing\n✅ AI tools for learning\n❌ No AI tools for narrative or derivations:\n❌ No AI tools for in-class work\n\n\n\n*From Policies related to ChatGPT and other AI Tools by Joel Gladd, Ph.D"
+    "text": "AI in this course\nUsing AI in this course:\n\n✅ AI tools for code with attribution for substantial AI generated code\n✅ AI tools for editing\n✅ AI tools for learning\n❌ No AI tools for narrative or derivations:\n❌ No AI tools for in-class work"
   },
   {
     "objectID": "slides/01-welcome.html#classroom-community",
@@ -2315,7 +2462,7 @@
     "href": "slides/01-welcome.html#before-next-class",
     "title": "Welcome to STA 221!",
     "section": "Before next class",
-    "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview syllabus\nComplete Lab 00\nOffice hours start Monday, August 31 (see schedule on Canvas homepage)"
+    "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview syllabus\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\nComplete Lab 00 (if you haven’t already)\nOffice hours start Monday, August 31 (see schedule on Canvas homepage)\n\nPlease let me know if you need to schedule at time to meet this week"
   },
   {
     "objectID": "slides/01-welcome.html#references",
@@ -2737,7 +2884,18 @@
     "href": "project.html",
     "title": "Final project",
     "section": "",
-    "text": "To be posted.",
+    "text": "Proposal: due Tuesday, September 29\nExploratory data analysis: due Thursday, October 29\nPresentation + Presentation comments: Monday, November 23 in lab\nDraft report + Peer review: Monday, November 30 in lab\nFinal write up + Project repo: due Friday, December 4",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#project-milestones",
+    "href": "project.html#project-milestones",
+    "title": "Final project",
+    "section": "",
+    "text": "Proposal: due Tuesday, September 29\nExploratory data analysis: due Thursday, October 29\nPresentation + Presentation comments: Monday, November 23 in lab\nDraft report + Peer review: Monday, November 30 in lab\nFinal write up + Project repo: due Friday, December 4",
     "crumbs": [
       "Project",
       "Instructions"
