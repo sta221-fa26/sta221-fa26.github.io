@@ -30,20 +30,15 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements \[UPDATE\] {.midi}
+## Announcements  {.midi}
 
-- Complete [Lab 00](../labs/lab-00.html)
-
-- Office hours start this week
-
-  - See Canvas homepage for times and locations
-  - Allison's office hours start January 20
-
-- Introduction to R workshops at Duke library (see Friday's Canvas announcement for details)
-
-- Triangle Sports Analytics Competition: <https://triangle-sports.github.io/>
-
-  - See [Ed Discussion](https://edstem.org/us/courses/90766/discussion/7506153) for full announcement
+- Complete [Lab 00](../labs/lab-00.html) if you have not done so
+- Accept GitHub invite (check your email or see the invite at <https://github.com/sta221-fa26>)
+  - Need to be in course organization to access Lab 01
+- Office hours start next week (see schedule on Canvas home page)
+- Lab 01 on Monday
+  - Attendance is part of grade
+  - Computing + hand written linear algebra exercises
 
 # Questions from last class?
 
@@ -82,11 +77,11 @@ knitr::opts_chunk$set(
 
 ![Source: Introduction to Regression Analysis: A Data Science Approach](images/02/data-science-workflow.png){fig-align="center"}
 
-## Movie scores \[UPDATE - ADD ARTICLE TO CANVAS\]
+## Movie scores 
 
 ::::: columns
 ::: {.column width="70%"}
-- Data behind the FiveThirtyEight (now defunct) story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](https://fivethirtyeight.com/features/fandango-movies-ratings/)\[UPDATE LINK\]
+- Data behind the FiveThirtyEight (now defunct) story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](https://web.archive.org/web/20230526120734/https://fivethirtyeight.com/features/fandango-movies-ratings/?amp)
 - Data originally from the `fandango` data frame in **fivethirtyeight** package. Available in [`movie-scores.csv`](https://intro-regression.github.io/data/movie-scores.csv)
 - Contains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores
 :::
@@ -162,33 +157,29 @@ p <- ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_s
 p
 ```
 
-## Why fit a line? \[MAKE WOOCLAP POLL FOR INFERENCE\]
-
-We fit a line to accomplish one or both of the following:
-
-<br>
-
-. . .
+## Why fit a line? 
 
 ::: {style="color: #799100"}
 **Prediction**
 :::
 
 ::: question
-What is an example of a prediction question for this data set?
+What is an example of a prediction question for the movie scores data set?
 :::
 
-<br>
-
-. . .
+## Your turn! Why fit a line?
 
 ::: {style="color : #799100"}
 **Inference**
 :::
 
 ::: question
-What is an example of an inference question for this data set?
+What is an example of an inference question for the movie scores data set?
 :::
+
+![](images/august-27-qrcode.png){fig-align="center" width="45%"}
+
+<center>[app.wooclap.com/NNKYSFL](https://app.wooclap.com/NNKYSFL)</center>
 
 ## Terminology
 
@@ -418,33 +409,23 @@ $$\begin{aligned}\bar{x} = 60.8493 & \hspace{15mm} \bar{y} = 63.8767 \hspace{15m
 \hat{\beta}_0 &= 63.8767 - 0.5187 \times 60.8493 \\[8pt]
 &= \mathbf{32.3142}\end{aligned}$$
 
-## Interpretation \[UPDATE to WOOCLAP\]
+## Your turn! Interpret the slope
 
-::::: panel-tabset
-## Question
-
-:::: appex
-::: midi
-Submit your answers to the following questions on Ed Discussion:
-
-- The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?
-
-- 32.314 is the predicted mean audience score for what type of movies?
+::: question
+The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?
 :::
-::::
 
-## Submit
+![](images/august-27-qrcode.png){fig-align="center" width="45%"}
 
-```{=html}
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/90766/discussion/7506084" width="100%"></iframe>
-```
-:::::
+<center>[app.wooclap.com/NNKYSFL](https://app.wooclap.com/NNKYSFL)</center>
 
-🔗 <https://edstem.org/us/courses/90766/discussion/7506084>
+## Interpret the intercept
 
-## Does it make sense to interpret the intercept?
+::: question
+32.314 is the predicted mean audience score for what type of movies?
+:::
 
-. . .
+## Is the intercept meaningful? 
 
 ✅ **The intercept is meaningful in the context of the data if**
 
@@ -452,9 +433,9 @@ Submit your answers to the following questions on Ed Discussion:
 
 - there are values near zero in the observed data.
 
-. . .
+<br>
 
-🛑 Otherwise, the intercept may not be meaningful!
+🛑 Otherwise, the intercept does not have a meaningful interpretation!
 
 # Prediction
 
@@ -468,19 +449,19 @@ Submit your answers to the following questions on Ed Discussion:
 ::: {.column width="65%"}
 The 2026 movie *The Odyssey* has critics score of 94% on [Rotten Tomatoes](https://www.rottentomatoes.com/m/the_odyssey_2026)\*.
 
-. . .
-
 According to this model, what is the predicted audience score?
-
-. . .
 
 $$\begin{aligned}\widehat{\text{audience}} &= 32.314 + 0.519 \times \text{critics} \\&= 32.314 + 0.519 \times 94 \\&= \mathbf{81.1}\end{aligned}$$
 :::
 :::::
 
-::: aside
-\*score on 8/25/26.
+. . .
+
+::: question
+The actual audience score is 97%. What is the residual? What type of factors are included the residual?
 :::
+
+<small> \*score on 8/25/26</small>
 
 # Linear regression in R
 
@@ -569,8 +550,8 @@ predict(movie_fit, more_new_movies)
 
 - Complete [Lecture 03 prepare](../prepare/prepare-lec03.html) on model evaluation
 - Accept GitHub invite (check your email or see the invite at <https://github.com/sta221-fa26>)
-  - Need to be in course organization to access lab
-- Office hours start Monday (see schedule on Canvas home page)
+  - Need to be in course organization to access Lab 01
+- Office hours start next week (see schedule on Canvas home page)
 - Lab 01 on Monday
   - Attendance is part of grade
   - Computing + hand written linear algebra exercises

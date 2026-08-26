@@ -542,7 +542,7 @@
     "href": "slides/02-slr.html#announcements",
     "title": "Simple linear regression",
     "section": "Announcements",
-    "text": "Announcements\n\nComplete Lab 00\nOffice hours start this week\n\nSee Canvas homepage for times and locations\nAllison’s office hours start January 20\n\nIntroduction to R workshops at Duke library (see Friday’s Canvas announcement for details)\nTriangle Sports Analytics Competition: https://triangle-sports.github.io/\n\nSee Ed Discussion for full announcement"
+    "text": "Announcements\n\nComplete Lab 00 if you have not done so\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access Lab 01\n\nOffice hours start next week (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   },
   {
     "objectID": "slides/02-slr.html#topics",
@@ -570,7 +570,7 @@
     "href": "slides/02-slr.html#movie-scores",
     "title": "Simple linear regression",
     "section": "Movie scores",
-    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
+    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight (now defunct) story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
   },
   {
     "objectID": "slides/02-slr.html#data-overview",
@@ -605,7 +605,14 @@
     "href": "slides/02-slr.html#why-fit-a-line",
     "title": "Simple linear regression",
     "section": "Why fit a line?",
-    "text": "Why fit a line?\nWe fit a line to accomplish one or both of the following:\n\n\n\nPrediction\n\n\nWhat is an example of a prediction question for this data set?\n\n\n\n\n\nInference\n\n\nWhat is an example of an inference question for this data set?"
+    "text": "Why fit a line?\n\nPrediction\n\n\nWhat is an example of a prediction question for the movie scores data set?"
+  },
+  {
+    "objectID": "slides/02-slr.html#your-turn-why-fit-a-line",
+    "href": "slides/02-slr.html#your-turn-why-fit-a-line",
+    "title": "Simple linear regression",
+    "section": "Your turn! Why fit a line?",
+    "text": "Your turn! Why fit a line?\n\nInference\n\n\nWhat is an example of an inference question for the movie scores data set?\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
     "objectID": "slides/02-slr.html#terminology",
@@ -678,11 +685,11 @@
     "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[\\begin{aligned}e_i = \\text{observed} - \\text{predicted}\n&= y_i - \\hat{y}_i \\\\\n&= y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1x_i)\\end{aligned}\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
   },
   {
-    "objectID": "slides/02-slr.html#least-squares-estimator-of-hatbeta_0",
-    "href": "slides/02-slr.html#least-squares-estimator-of-hatbeta_0",
+    "objectID": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
+    "href": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
     "title": "Simple linear regression",
-    "section": "Least-squares estimator of \\(\\hat{\\beta}_0\\)",
-    "text": "Least-squares estimator of \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
+    "section": "Least-squares estimator \\(\\hat{\\beta}_0\\)",
+    "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
   },
   {
     "objectID": "slides/02-slr.html#properties-of-least-squares-regression",
@@ -696,35 +703,42 @@
     "href": "slides/02-slr.html#estimating-the-slope",
     "title": "Simple linear regression",
     "section": "Estimating the slope",
-    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\&= \\mathbf{0.5187}\\end{aligned}\\]"
+    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\[8pt]&= \\mathbf{0.5187}\\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr.html#estimating-the-intercept",
     "href": "slides/02-slr.html#estimating-the-intercept",
     "title": "Simple linear regression",
     "section": "Estimating the intercept",
-    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n\n\\[\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= \\mathbf{32.3142}\\end{aligned}\\]"
+    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n\n\\[\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\[8pt]\n&= \\mathbf{32.3142}\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/02-slr.html#interpretation",
-    "href": "slides/02-slr.html#interpretation",
+    "objectID": "slides/02-slr.html#your-turn-interpret-the-slope",
+    "href": "slides/02-slr.html#your-turn-interpret-the-slope",
     "title": "Simple linear regression",
-    "section": "Interpretation",
-    "text": "Interpretation\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/90766/discussion/7506084"
+    "section": "Your turn! Interpret the slope",
+    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
-    "objectID": "slides/02-slr.html#does-it-make-sense-to-interpret-the-intercept",
-    "href": "slides/02-slr.html#does-it-make-sense-to-interpret-the-intercept",
+    "objectID": "slides/02-slr.html#interpret-the-intercept",
+    "href": "slides/02-slr.html#interpret-the-intercept",
     "title": "Simple linear regression",
-    "section": "Does it make sense to interpret the intercept?",
-    "text": "Does it make sense to interpret the intercept?\n\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n\n\n🛑 Otherwise, the intercept may not be meaningful!"
+    "section": "Interpret the intercept",
+    "text": "Interpret the intercept\n\n32.314 is the predicted mean audience score for what type of movies?"
   },
   {
-    "objectID": "slides/02-slr.html#making-a-prediction",
-    "href": "slides/02-slr.html#making-a-prediction",
+    "objectID": "slides/02-slr.html#is-the-intercept-meaningful",
+    "href": "slides/02-slr.html#is-the-intercept-meaningful",
     "title": "Simple linear regression",
-    "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]"
+    "section": "Is the intercept meaningful?",
+    "text": "Is the intercept meaningful?\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n\n🛑 Otherwise, the intercept does not have a meaningful interpretation!"
+  },
+  {
+    "objectID": "slides/02-slr.html#prediction-1",
+    "href": "slides/02-slr.html#prediction-1",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n\nThe actual audience score is 97%. What is the residual? What type of factors are included the residual?\n\n *score on 8/25/26"
   },
   {
     "objectID": "slides/02-slr.html#fit-the-model",
@@ -748,11 +762,11 @@
     "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
   },
   {
-    "objectID": "slides/02-slr.html#prediction-1",
-    "href": "slides/02-slr.html#prediction-1",
+    "objectID": "slides/02-slr.html#alternative-tidymodels-syntax",
+    "href": "slides/02-slr.html#alternative-tidymodels-syntax",
     "title": "Simple linear regression",
-    "section": "Prediction",
-    "text": "Prediction\n\n\n\n\n\nImage from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes* According to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n\n*score on 8/25/26."
+    "section": "Alternative: tidymodels syntax",
+    "text": "Alternative: tidymodels syntax\n\nmovies_fit &lt;- linear_reg() |&gt;\n  fit(audience_score ~ critics_score, data = movie_scores)\n\ntidy(movies_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
   },
   {
     "objectID": "slides/02-slr.html#prediction-2",
@@ -762,6 +776,13 @@
     "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 94)\npredict(movie_fit, new_movie)\n\n       1 \n81.07123"
   },
   {
+    "objectID": "slides/02-slr.html#prediction-3",
+    "href": "slides/02-slr.html#prediction-3",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24, 70, 94))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 81.07123"
+  },
+  {
     "objectID": "slides/02-slr.html#recap",
     "href": "slides/02-slr.html#recap",
     "title": "Simple linear regression",
@@ -769,25 +790,25 @@
     "text": "Recap\n\nDescribed how regression is used to understand the relationship between multiple variables\nUsed least squares to estimate the slope and intercept\nInterpreted the slope and intercept for simple linear regression\nPredicted the response given a value of the predictor"
   },
   {
-    "objectID": "slides/02-slr.html#next-time",
-    "href": "slides/02-slr.html#next-time",
+    "objectID": "slides/02-slr.html#before-next-class",
+    "href": "slides/02-slr.html#before-next-class",
     "title": "Simple linear regression",
-    "section": "Next time",
-    "text": "Next time\n\nModel assessment for simple linear regression\n\nComplete Lecture 03 prepare\n\nIn-class activity on Thursday\n\nBring fully-charged laptop / device to access RStudio container"
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 03 prepare on model evaluation\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access Lab 01\n\nOffice hours start next week (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   },
   {
     "objectID": "slides/02-slr-notes.html",
     "href": "slides/02-slr-notes.html",
     "title": "Simple linear regression",
     "section": "",
-    "text": "Complete Lab 00\nOffice hours start this week\n\nSee Canvas homepage for times and locations\nAllison’s office hours start January 20\n\nIntroduction to R workshops at Duke library (see Friday’s Canvas announcement for details)\nTriangle Sports Analytics Competition: https://triangle-sports.github.io/\n\nSee Ed Discussion for full announcement"
+    "text": "Complete Lab 00 if you have not done so\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access Lab 01\n\nOffice hours start next week (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   },
   {
     "objectID": "slides/02-slr-notes.html#announcements",
     "href": "slides/02-slr-notes.html#announcements",
     "title": "Simple linear regression",
     "section": "",
-    "text": "Complete Lab 00\nOffice hours start this week\n\nSee Canvas homepage for times and locations\nAllison’s office hours start January 20\n\nIntroduction to R workshops at Duke library (see Friday’s Canvas announcement for details)\nTriangle Sports Analytics Competition: https://triangle-sports.github.io/\n\nSee Ed Discussion for full announcement"
+    "text": "Complete Lab 00 if you have not done so\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access Lab 01\n\nOffice hours start next week (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   },
   {
     "objectID": "slides/02-slr-notes.html#topics",
@@ -801,7 +822,7 @@
     "href": "slides/02-slr-notes.html#computing-set-up",
     "title": "Simple linear regression",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)        # for data wrangling\nlibrary(broom)            # for formatting regression output\nlibrary(knitr)            # for formatting tables\nlibrary(patchwork)        # for arranging graphs\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 16))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)        # for data wrangling\nlibrary(tidymodels)        # to format output\nlibrary(knitr)            # for formatting tables\nlibrary(patchwork)        # for arranging graphs\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 14))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
   },
   {
     "objectID": "slides/02-slr-notes.html#data-science-workflow",
@@ -815,7 +836,7 @@
     "href": "slides/02-slr-notes.html#movie-scores",
     "title": "Simple linear regression",
     "section": "Movie scores",
-    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
+    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight (now defunct) story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
   },
   {
     "objectID": "slides/02-slr-notes.html#data-overview",
@@ -829,14 +850,14 @@
     "href": "slides/02-slr-notes.html#univariate-exploratory-data-analysis-eda",
     "title": "Simple linear regression",
     "section": "Univariate exploratory data analysis (EDA)",
-    "text": "Univariate exploratory data analysis (EDA)\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com."
+    "text": "Univariate exploratory data analysis (EDA)\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com.\n\n\nCode\np1 &lt;- ggplot(data = movie_scores, mapping = aes(x = critics_score)) +\n  geom_histogram(fill = \"steelblue\", color = \"black\", binwidth = 6) + \n  labs(x = \"Critics Score\")\n\np2 &lt;- ggplot(data = movie_scores, mapping = aes(x = audience_score)) +\n  geom_histogram(fill = \"steelblue\", color = \"black\", binwidth = 6) + \n  labs(x = \"Audience Score\")\n\np1 + p2"
   },
   {
     "objectID": "slides/02-slr-notes.html#bivariate-eda",
     "href": "slides/02-slr-notes.html#bivariate-eda",
     "title": "Simple linear regression",
     "section": "Bivariate EDA",
-    "text": "Bivariate EDA"
+    "text": "Bivariate EDA\n\n\nCode\nggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)) +\n  geom_point(alpha = 0.5) + \n  labs(x = \"Critics Score\" , \n       y = \"Audience Score\",\n       title = \"Audience vs. critics score\",\n       subtitle = \"146 movies rated on rottentomatoes.com\")"
   },
   {
     "objectID": "slides/02-slr-notes.html#bivariate-eda-1",
@@ -850,7 +871,14 @@
     "href": "slides/02-slr-notes.html#why-fit-a-line",
     "title": "Simple linear regression",
     "section": "Why fit a line?",
-    "text": "Why fit a line?\nWe fit a line to accomplish one or both of the following:\n\n. . .\n\nPrediction\n\n\nWhat is an example of a prediction question for this data set?\n\n\n. . .\n\nInference\n\n\nWhat is an example of an inference question for this data set?"
+    "text": "Why fit a line?\n\nPrediction\n\n\nWhat is an example of a prediction question for the movie scores data set?"
+  },
+  {
+    "objectID": "slides/02-slr-notes.html#your-turn-why-fit-a-line",
+    "href": "slides/02-slr-notes.html#your-turn-why-fit-a-line",
+    "title": "Simple linear regression",
+    "section": "Your turn! Why fit a line?",
+    "text": "Your turn! Why fit a line?\n\nInference\n\n\nWhat is an example of an inference question for the movie scores data set?\n\n\n\n\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
     "objectID": "slides/02-slr-notes.html#terminology",
@@ -892,7 +920,7 @@
     "href": "slides/02-slr-notes.html#slr-statistical-model-population",
     "title": "Simple linear regression",
     "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a (simple) linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\n. . .\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms with mean 0 and variance \\(\\sigma^2_{\\epsilon}\\)"
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response variable, \\(Y\\), and a single quantitative predictor variable, \\(X\\), we can use a (simple) linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\n. . .\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms with mean 0 and variance \\(\\sigma^2_{\\epsilon}\\)"
   },
   {
     "objectID": "slides/02-slr-notes.html#slr-regression-equation-sample",
@@ -913,63 +941,70 @@
     "href": "slides/02-slr-notes.html#residuals",
     "title": "Simple linear regression",
     "section": "Residuals",
-    "text": "Residuals\n\n\n\n\n\n\n\n\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]"
+    "text": "Residuals\nGiven the data \\((x_1, y_1), (x_2, y_2), \\ldots, (x_n, y_n)\\)\n\n\n\n\n\n\n\n\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]\n\n\n\n\n\nHow can we use the residuals to find the line that “best fits” the data?"
   },
   {
     "objectID": "slides/02-slr-notes.html#least-squares-line",
     "href": "slides/02-slr-notes.html#least-squares-line",
     "title": "Simple linear regression",
     "section": "Least squares line",
-    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[\\begin{aligned}e_i = \\text{observed} - \\text{predicted}\n&= y_i - \\hat{y}_i \\\\\n&= y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1x_i)\\end{aligned}\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
   },
   {
-    "objectID": "slides/02-slr-notes.html#least-squares-estimator-of-hatbeta_0",
-    "href": "slides/02-slr-notes.html#least-squares-estimator-of-hatbeta_0",
+    "objectID": "slides/02-slr-notes.html#least-squares-estimator-hatbeta_0",
+    "href": "slides/02-slr-notes.html#least-squares-estimator-hatbeta_0",
     "title": "Simple linear regression",
-    "section": "Least-squares estimator of \\(\\hat{\\beta}_0\\)",
-    "text": "Least-squares estimator of \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
+    "section": "Least-squares estimator \\(\\hat{\\beta}_0\\)",
+    "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
   },
   {
     "objectID": "slides/02-slr-notes.html#properties-of-least-squares-regression",
     "href": "slides/02-slr-notes.html#properties-of-least-squares-regression",
     "title": "Simple linear regression",
     "section": "Properties of least squares regression",
-    "text": "Properties of least squares regression\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and \\(X\\) values are uncorrelated"
+    "text": "Properties of least squares regression\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
   },
   {
     "objectID": "slides/02-slr-notes.html#estimating-the-slope",
     "href": "slides/02-slr-notes.html#estimating-the-slope",
     "title": "Simple linear regression",
     "section": "Estimating the slope",
-    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n. . .\n\\[\n\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\&= \\mathbf{0.5187}\\end{aligned}\n\\]"
+    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n. . .\n\\[\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\[8pt]&= \\mathbf{0.5187}\\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr-notes.html#estimating-the-intercept",
     "href": "slides/02-slr-notes.html#estimating-the-intercept",
     "title": "Simple linear regression",
     "section": "Estimating the intercept",
-    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n. . .\n\\[\n\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= \\mathbf{32.3142}\\end{aligned}\n\\]"
+    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n. . .\n\\[\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\[8pt]\n&= \\mathbf{32.3142}\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/02-slr-notes.html#interpretation",
-    "href": "slides/02-slr-notes.html#interpretation",
+    "objectID": "slides/02-slr-notes.html#your-turn-interpret-the-slope",
+    "href": "slides/02-slr-notes.html#your-turn-interpret-the-slope",
     "title": "Simple linear regression",
-    "section": "Interpretation",
-    "text": "Interpretation\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/90766/discussion/7506084"
+    "section": "Your turn! Interpret the slope",
+    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n\n\n\n\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
-    "objectID": "slides/02-slr-notes.html#does-it-make-sense-to-interpret-the-intercept",
-    "href": "slides/02-slr-notes.html#does-it-make-sense-to-interpret-the-intercept",
+    "objectID": "slides/02-slr-notes.html#interpret-the-intercept",
+    "href": "slides/02-slr-notes.html#interpret-the-intercept",
     "title": "Simple linear regression",
-    "section": "Does it make sense to interpret the intercept?",
-    "text": "Does it make sense to interpret the intercept?\n. . .\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n. . .\n🛑 Otherwise, the intercept may not be meaningful!"
+    "section": "Interpret the intercept",
+    "text": "Interpret the intercept\n\n32.314 is the predicted mean audience score for what type of movies?"
   },
   {
-    "objectID": "slides/02-slr-notes.html#making-a-prediction",
-    "href": "slides/02-slr-notes.html#making-a-prediction",
+    "objectID": "slides/02-slr-notes.html#is-the-intercept-meaningful",
+    "href": "slides/02-slr-notes.html#is-the-intercept-meaningful",
     "title": "Simple linear regression",
-    "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]"
+    "section": "Is the intercept meaningful?",
+    "text": "Is the intercept meaningful?\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n\n🛑 Otherwise, the intercept does not have a meaningful interpretation!"
+  },
+  {
+    "objectID": "slides/02-slr-notes.html#prediction-1",
+    "href": "slides/02-slr-notes.html#prediction-1",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n. . .\n\nThe actual audience score is 97%. What is the residual? What type of factors are included the residual?\n\n *score on 8/25/26"
   },
   {
     "objectID": "slides/02-slr-notes.html#fit-the-model",
@@ -983,7 +1018,7 @@
     "href": "slides/02-slr-notes.html#tidy-results",
     "title": "Simple linear regression",
     "section": "Tidy results",
-    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic  p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)     32.3      2.34        13.8 4.03e-28\n2 critics_score    0.519    0.0345      15.0 2.70e-31"
+    "text": "Tidy results\nUse the tidy() function from the broom package (part of the tidymodels package) to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic  p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)     32.3      2.34        13.8 4.03e-28\n2 critics_score    0.519    0.0345      15.0 2.70e-31"
   },
   {
     "objectID": "slides/02-slr-notes.html#format-results",
@@ -993,18 +1028,25 @@
     "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
   },
   {
-    "objectID": "slides/02-slr-notes.html#prediction-1",
-    "href": "slides/02-slr-notes.html#prediction-1",
+    "objectID": "slides/02-slr-notes.html#alternative-tidymodels-syntax",
+    "href": "slides/02-slr-notes.html#alternative-tidymodels-syntax",
     "title": "Simple linear regression",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+    "section": "Alternative: tidymodels syntax",
+    "text": "Alternative: tidymodels syntax\n\nmovies_fit &lt;- linear_reg() |&gt;\n  fit(audience_score ~ critics_score, data = movie_scores)\n\ntidy(movies_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
   },
   {
     "objectID": "slides/02-slr-notes.html#prediction-2",
     "href": "slides/02-slr-notes.html#prediction-2",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 94)\npredict(movie_fit, new_movie)\n\n       1 \n81.07123"
+  },
+  {
+    "objectID": "slides/02-slr-notes.html#prediction-3",
+    "href": "slides/02-slr-notes.html#prediction-3",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24, 70, 94))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 81.07123"
   },
   {
     "objectID": "slides/02-slr-notes.html#recap",
@@ -1014,11 +1056,11 @@
     "text": "Recap\n\nDescribed how regression is used to understand the relationship between multiple variables\nUsed least squares to estimate the slope and intercept\nInterpreted the slope and intercept for simple linear regression\nPredicted the response given a value of the predictor"
   },
   {
-    "objectID": "slides/02-slr-notes.html#next-time",
-    "href": "slides/02-slr-notes.html#next-time",
+    "objectID": "slides/02-slr-notes.html#before-next-class",
+    "href": "slides/02-slr-notes.html#before-next-class",
     "title": "Simple linear regression",
-    "section": "Next time",
-    "text": "Next time\n\nModel assessment for simple linear regression\n\nComplete Lecture 03 prepare\n\nIn-class activity on Thursday\n\nBring fully-charged laptop / device to access RStudio container"
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 03 prepare on model evaluation\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access Lab 01\n\nOffice hours start next week (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   },
   {
     "objectID": "slides/lab-01.html#todays-lab",
@@ -1871,7 +1913,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
@@ -2949,68 +2991,5 @@
       "Project",
       "Instructions"
     ]
-  },
-  {
-    "objectID": "slides/02-slr.html#announcements-update",
-    "href": "slides/02-slr.html#announcements-update",
-    "title": "Simple linear regression",
-    "section": "Announcements [UPDATE]",
-    "text": "Announcements [UPDATE]\n\nComplete Lab 00\nOffice hours start this week\n\nSee Canvas homepage for times and locations\nAllison’s office hours start January 20\n\nIntroduction to R workshops at Duke library (see Friday’s Canvas announcement for details)\nTriangle Sports Analytics Competition: https://triangle-sports.github.io/\n\nSee Ed Discussion for full announcement"
-  },
-  {
-    "objectID": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
-    "href": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
-    "title": "Simple linear regression",
-    "section": "Least-squares estimator \\(\\hat{\\beta}_0\\)",
-    "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
-  },
-  {
-    "objectID": "slides/02-slr.html#interpretation-update-to-wooclap",
-    "href": "slides/02-slr.html#interpretation-update-to-wooclap",
-    "title": "Simple linear regression",
-    "section": "Interpretation [UPDATE to WOOCLAP]",
-    "text": "Interpretation [UPDATE to WOOCLAP]\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n32.314 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/90766/discussion/7506084"
-  },
-  {
-    "objectID": "slides/02-slr.html#movie-scores-update---add-article-to-canvas",
-    "href": "slides/02-slr.html#movie-scores-update---add-article-to-canvas",
-    "title": "Simple linear regression",
-    "section": "Movie scores [UPDATE - ADD ARTICLE TO CANVAS]",
-    "text": "Movie scores [UPDATE - ADD ARTICLE TO CANVAS]\n\n\n\nData behind the FiveThirtyEight (now defunct) story Be Suspicious Of Online Movie Ratings, Especially Fandango’s[UPDATE LINK]\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
-  },
-  {
-    "objectID": "slides/02-slr.html#univariate-exploratory-data-analysis-eda-update-binwidth",
-    "href": "slides/02-slr.html#univariate-exploratory-data-analysis-eda-update-binwidth",
-    "title": "Simple linear regression",
-    "section": "Univariate exploratory data analysis (EDA) [UPDATE BINWIDTH]",
-    "text": "Univariate exploratory data analysis (EDA) [UPDATE BINWIDTH]\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com."
-  },
-  {
-    "objectID": "slides/02-slr.html#why-fit-a-line-make-wooclap-poll-for-inference",
-    "href": "slides/02-slr.html#why-fit-a-line-make-wooclap-poll-for-inference",
-    "title": "Simple linear regression",
-    "section": "Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]",
-    "text": "Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]\nWe fit a line to accomplish one or both of the following:\n\n\n\nPrediction\n\n\nWhat is an example of a prediction question for this data set?\n\n\n\n\n\nInference\n\n\nWhat is an example of an inference question for this data set?"
-  },
-  {
-    "objectID": "slides/02-slr.html#alternative-tidymodels-syntax",
-    "href": "slides/02-slr.html#alternative-tidymodels-syntax",
-    "title": "Simple linear regression",
-    "section": "Alternative: tidymodels syntax",
-    "text": "Alternative: tidymodels syntax\n\nmovies_fit &lt;- linear_reg() |&gt;\n  fit(audience_score ~ critics_score, data = movie_scores)\n\ntidy(movies_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
-  },
-  {
-    "objectID": "slides/02-slr.html#prediction-3",
-    "href": "slides/02-slr.html#prediction-3",
-    "title": "Simple linear regression",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24, 70, 94))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 81.07123"
-  },
-  {
-    "objectID": "slides/02-slr.html#before-next-class",
-    "href": "slides/02-slr.html#before-next-class",
-    "title": "Simple linear regression",
-    "section": "Before next class",
-    "text": "Before next class\n\nComplete Lecture 03 prepare on model evaluation\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access lab\n\nOffice hours start Monday (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   }
 ]

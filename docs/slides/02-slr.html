@@ -209,19 +209,19 @@ Prof.&nbsp;Maria Tackett
 
   <p class="date">August 27, 2026</p>
 </section>
-<section id="announcements-update" class="slide level2 midi">
-<h2>Announcements [UPDATE]</h2>
+<section id="announcements" class="slide level2 midi">
+<h2>Announcements</h2>
 <ul>
-<li><p>Complete <a href="../labs/lab-00.html">Lab 00</a></p></li>
-<li><p>Office hours start this week</p>
+<li>Complete <a href="../labs/lab-00.html">Lab 00</a> if you have not done so</li>
+<li>Accept GitHub invite (check your email or see the invite at <a href="https://github.com/sta221-fa26" class="uri">https://github.com/sta221-fa26</a>)
 <ul>
-<li>See Canvas homepage for times and locations</li>
-<li>Allison’s office hours start January 20</li>
+<li>Need to be in course organization to access Lab 01</li>
 </ul></li>
-<li><p>Introduction to R workshops at Duke library (see Friday’s Canvas announcement for details)</p></li>
-<li><p>Triangle Sports Analytics Competition: <a href="https://triangle-sports.github.io/" class="uri">https://triangle-sports.github.io/</a></p>
+<li>Office hours start next week (see schedule on Canvas home page)</li>
+<li>Lab 01 on Monday
 <ul>
-<li>See <a href="https://edstem.org/us/courses/90766/discussion/7506153">Ed Discussion</a> for full announcement</li>
+<li>Attendance is part of grade</li>
+<li>Computing + hand written linear algebra exercises</li>
 </ul></li>
 </ul>
 </section>
@@ -265,12 +265,12 @@ Prof.&nbsp;Maria Tackett
 <h2>Data science workflow</h2>
 
 <img data-src="images/02/data-science-workflow.png" class="r-stretch quarto-figure-center"><p class="caption">Source: Introduction to Regression Analysis: A Data Science Approach</p></section>
-<section id="movie-scores-update---add-article-to-canvas" class="slide level2">
-<h2>Movie scores [UPDATE - ADD ARTICLE TO CANVAS]</h2>
+<section id="movie-scores" class="slide level2">
+<h2>Movie scores</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li>Data behind the FiveThirtyEight (now defunct) story <a href="https://fivethirtyeight.com/features/fandango-movies-ratings/"><em>Be Suspicious Of Online Movie Ratings, Especially Fandango’s</em></a>[UPDATE LINK]</li>
+<li>Data behind the FiveThirtyEight (now defunct) story <a href="https://web.archive.org/web/20230526120734/https://fivethirtyeight.com/features/fandango-movies-ratings/?amp"><em>Be Suspicious Of Online Movie Ratings, Especially Fandango’s</em></a></li>
 <li>Data originally from the <code>fandango</code> data frame in <strong>fivethirtyeight</strong> package. Available in <a href="https://intro-regression.github.io/data/movie-scores.csv"><code>movie-scores.csv</code></a></li>
 <li>Contains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores</li>
 </ul>
@@ -336,27 +336,27 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p><strong>Goal</strong>: Fit a line to describe the relationship between the critics score and audience score.</p>
 
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="why-fit-a-line-make-wooclap-poll-for-inference" class="slide level2">
-<h2>Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]</h2>
-<p>We fit a line to accomplish one or both of the following:</p>
-<p><br></p>
-<div class="fragment">
+<section id="why-fit-a-line" class="slide level2">
+<h2>Why fit a line?</h2>
 <div style="color: #799100">
 <p><strong>Prediction</strong></p>
 </div>
 <div class="question">
-<p>What is an example of a prediction question for this data set?</p>
+<p>What is an example of a prediction question for the movie scores data set?</p>
 </div>
-<p><br></p>
-</div>
-<div class="fragment">
+</section>
+<section id="your-turn-why-fit-a-line" class="slide level2">
+<h2>Your turn! Why fit a line?</h2>
 <div style="color : #799100">
 <p><strong>Inference</strong></p>
 </div>
 <div class="question">
-<p>What is an example of an inference question for this data set?</p>
+<p>What is an example of an inference question for the movie scores data set?</p>
 </div>
-</div>
+
+<img data-src="images/august-27-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:45.0%"><center>
+<a href="https://app.wooclap.com/NNKYSFL">app.wooclap.com/NNKYSFL</a>
+</center>
 </section>
 <section id="terminology" class="slide level2">
 <h2>Terminology</h2>
@@ -479,6 +479,8 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <section class="slide level2">
 
 <p><br></p>
+<p><br></p>
+<p><br></p>
 <div class="question">
 <p>How can we use the residuals to find the line that “best fits” the data?</p>
 </div>
@@ -524,7 +526,7 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p><span class="math display">\[\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}\]</span></p>
 <p><br></p>
 <div class="fragment">
-<p><span class="math display">\[\begin{aligned} s_X = 30.1688  \hspace{15mm} &amp;s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\&amp;= \mathbf{0.5187}\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned} s_X = 30.1688  \hspace{15mm} &amp;s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\[8pt]&amp;= \mathbf{0.5187}\end{aligned}\]</span></p>
 </div>
 </section>
 <section id="estimating-the-intercept" class="slide level2">
@@ -533,45 +535,35 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p><br></p>
 <div class="fragment">
 <p><span class="math display">\[\begin{aligned}\bar{x} = 60.8493 &amp; \hspace{15mm} \bar{y} = 63.8767 \hspace{15mm} \hat{\beta}_1 = 0.5187 \\[10pt]
-\hat{\beta}_0 &amp;= 63.8767 - 0.5187 \times 60.8493 \\
+\hat{\beta}_0 &amp;= 63.8767 - 0.5187 \times 60.8493 \\[8pt]
 &amp;= \mathbf{32.3142}\end{aligned}\]</span></p>
 </div>
 </section>
-<section id="interpretation-update-to-wooclap" class="slide level2">
-<h2>Interpretation [UPDATE to WOOCLAP]</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Submit</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="appex">
-<div class="midi">
-<p>Submit your answers to the following questions on Ed Discussion:</p>
-<ul>
-<li><p>The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?</p></li>
-<li><p>32.314 is the predicted mean audience score for what type of movies?</p></li>
-</ul>
+<section id="your-turn-interpret-the-slope" class="slide level2">
+<h2>Your turn! Interpret the slope</h2>
+<div class="question">
+<p>The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?</p>
 </div>
-</div>
-</div>
-<div id="tabset-1-2">
-<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/90766/discussion/7506084" width="100%"></iframe>
-</div>
-</div>
-</div>
-<p>🔗 <a href="https://edstem.org/us/courses/90766/discussion/7506084" class="uri">https://edstem.org/us/courses/90766/discussion/7506084</a></p>
+
+<img data-src="images/august-27-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:45.0%"><center>
+<a href="https://app.wooclap.com/NNKYSFL">app.wooclap.com/NNKYSFL</a>
+</center>
 </section>
-<section id="does-it-make-sense-to-interpret-the-intercept" class="slide level2">
-<h2>Does it make sense to interpret the intercept?</h2>
-<div class="fragment">
+<section id="interpret-the-intercept" class="slide level2">
+<h2>Interpret the intercept</h2>
+<div class="question">
+<p>32.314 is the predicted mean audience score for what type of movies?</p>
+</div>
+</section>
+<section id="is-the-intercept-meaningful" class="slide level2">
+<h2>Is the intercept meaningful?</h2>
 <p>✅ <strong>The intercept is meaningful in the context of the data if</strong></p>
 <ul>
 <li><p>the predictor can feasibly take values equal to or near zero, or</p></li>
 <li><p>there are values near zero in the observed data.</p></li>
 </ul>
-</div>
-<div class="fragment">
-<p>🛑 Otherwise, the intercept may not be meaningful!</p>
-</div>
+<p><br></p>
+<p>🛑 Otherwise, the intercept does not have a meaningful interpretation!</p>
 </section></section>
 <section>
 <section id="prediction" class="title-slide slide level1 center">
@@ -581,21 +573,25 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <section id="prediction-1" class="slide level2">
 <h2>Prediction</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/02/odyssey.jpeg"></p>
-<figcaption>Image from Rotten Tomatoes</figcaption>
+<figcaption><small> Image from Rotten Tomatoes</small></figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
-<p>The 2026 movie <em>The Odyssey</em> has critics score of 94% on <a href="https://www.rottentomatoes.com/m/the_odyssey_2026">Rotten Tomatoes</a>* According to this model, what is the predicted audience score?</p>
+</div><div class="column" style="width:65%;">
+<p>The 2026 movie <em>The Odyssey</em> has critics score of 94% on <a href="https://www.rottentomatoes.com/m/the_odyssey_2026">Rotten Tomatoes</a>*.</p>
+<p>According to this model, what is the predicted audience score?</p>
 <p><span class="math display">\[\begin{aligned}\widehat{\text{audience}} &amp;= 32.314 + 0.519 \times \text{critics} \\&amp;= 32.314 + 0.519 \times 94 \\&amp;= \mathbf{81.1}\end{aligned}\]</span></p>
 </div></div>
-
-<aside><div>
-<p>*score on 8/25/26.</p>
-</div></aside></section></section>
+<div class="fragment">
+<div class="question">
+<p>The actual audience score is 97%. What is the residual? What type of factors are included the residual?</p>
+</div>
+<p><small> *score on 8/25/26</small></p>
+</div>
+</section></section>
 <section>
 <section id="linear-regression-in-r" class="title-slide slide level1 center">
 <h1>Linear regression in R</h1>
@@ -758,9 +754,9 @@ Coefficients:
 <li>Complete <a href="../prepare/prepare-lec03.html">Lecture 03 prepare</a> on model evaluation</li>
 <li>Accept GitHub invite (check your email or see the invite at <a href="https://github.com/sta221-fa26" class="uri">https://github.com/sta221-fa26</a>)
 <ul>
-<li>Need to be in course organization to access lab</li>
+<li>Need to be in course organization to access Lab 01</li>
 </ul></li>
-<li>Office hours start Monday (see schedule on Canvas home page)</li>
+<li>Office hours start next week (see schedule on Canvas home page)</li>
 <li>Lab 01 on Monday
 <ul>
 <li>Attendance is part of grade</li>
