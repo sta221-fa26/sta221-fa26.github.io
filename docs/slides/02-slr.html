@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <meta name="dcterms.date" content="2026-01-13">
+  <meta name="dcterms.date" content="2026-08-27">
   <title>STA 221 - Fall 2026 – Simple linear regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -207,10 +207,10 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">January 13, 2026</p>
+  <p class="date">August 27, 2026</p>
 </section>
-<section id="announcements" class="slide level2 midi">
-<h2>Announcements</h2>
+<section id="announcements-update" class="slide level2 midi">
+<h2>Announcements [UPDATE]</h2>
 <ul>
 <li><p>Complete <a href="../labs/lab-00.html">Lab 00</a></p></li>
 <li><p>Office hours start this week</p>
@@ -244,12 +244,12 @@ Prof.&nbsp;Maria Tackett
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)        <span class="co"># for data wrangling</span></span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(broom)            <span class="co"># for formatting regression output</span></span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)        <span class="co"># to format output</span></span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(knitr)            <span class="co"># for formatting tables</span></span>
 <span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)        <span class="co"># for arranging graphs</span></span>
 <span id="cb1-6"><a></a></span>
 <span id="cb1-7"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-8"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
+<span id="cb1-8"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>))</span>
 <span id="cb1-9"><a></a></span>
 <span id="cb1-10"><a></a><span class="co"># set default figure parameters for knitr</span></span>
 <span id="cb1-11"><a></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
@@ -265,12 +265,12 @@ Prof.&nbsp;Maria Tackett
 <h2>Data science workflow</h2>
 
 <img data-src="images/02/data-science-workflow.png" class="r-stretch quarto-figure-center"><p class="caption">Source: Introduction to Regression Analysis: A Data Science Approach</p></section>
-<section id="movie-scores" class="slide level2">
-<h2>Movie scores</h2>
+<section id="movie-scores-update---add-article-to-canvas" class="slide level2">
+<h2>Movie scores [UPDATE - ADD ARTICLE TO CANVAS]</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li>Data behind the FiveThirtyEight story <a href="https://fivethirtyeight.com/features/fandango-movies-ratings/"><em>Be Suspicious Of Online Movie Ratings, Especially Fandango’s</em></a></li>
+<li>Data behind the FiveThirtyEight (now defunct) story <a href="https://fivethirtyeight.com/features/fandango-movies-ratings/"><em>Be Suspicious Of Online Movie Ratings, Especially Fandango’s</em></a>[UPDATE LINK]</li>
 <li>Data originally from the <code>fandango</code> data frame in <strong>fivethirtyeight</strong> package. Available in <a href="https://intro-regression.github.io/data/movie-scores.csv"><code>movie-scores.csv</code></a></li>
 <li>Contains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores</li>
 </ul>
@@ -300,19 +300,44 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <section id="univariate-exploratory-data-analysis-eda" class="slide level2 midi">
 <h2>Univariate exploratory data analysis (EDA)</h2>
 <p>The data set contains the “Tomatometer” score (<strong><code>critics_score</code></strong>) and audience score (<strong><code>audience_score</code></strong>) for 146 movies rated on rottentomatoes.com.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> movie_scores, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> critics_score)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">binwidth =</span> <span class="dv">6</span>) <span class="sc">+</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Critics Score"</span>)</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> movie_scores, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> audience_score)) <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">binwidth =</span> <span class="dv">6</span>) <span class="sc">+</span> </span>
+<span id="cb4-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Audience Score"</span>)</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
+</div>
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> movie_scores, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> critics_score, <span class="at">y =</span> audience_score)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Critics Score"</span> , </span>
+<span id="cb5-4"><a></a>       <span class="at">y =</span> <span class="st">"Audience Score"</span>,</span>
+<span id="cb5-5"><a></a>       <span class="at">title =</span> <span class="st">"Audience vs. critics score"</span>,</span>
+<span id="cb5-6"><a></a>       <span class="at">subtitle =</span> <span class="st">"146 movies rated on rottentomatoes.com"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
+</div>
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-eda-1" class="slide level2">
 <h2>Bivariate EDA</h2>
 <p><strong>Goal</strong>: Fit a line to describe the relationship between the critics score and audience score.</p>
 
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="why-fit-a-line" class="slide level2">
-<h2>Why fit a line?</h2>
+<section id="why-fit-a-line-make-wooclap-poll-for-inference" class="slide level2">
+<h2>Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]</h2>
 <p>We fit a line to accomplish one or both of the following:</p>
 <p><br></p>
 <div class="fragment">
@@ -418,7 +443,7 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 </section>
 <section id="slr-statistical-model-population" class="slide level2 midi">
 <h2>SLR: Statistical model (population)</h2>
-<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a (<strong>simple) linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
+<p>When we have a quantitative response variable, <span class="math inline">\(Y\)</span>, and a single quantitative predictor variable, <span class="math inline">\(X\)</span>, we can use a (<strong>simple) linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
 <div class="fragment">
 <ul>
 <li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
@@ -447,16 +472,25 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="residuals" class="slide level2">
 <h2>Residuals</h2>
+<p>Given the data <span class="math inline">\((x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\)</span></p>
 
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{residual} = \text{observed} - \text{predicted} = y_i - \hat{y}_i\]</span></p>
+</section>
+<section class="slide level2">
+
+<p><br></p>
+<div class="question">
+<p>How can we use the residuals to find the line that “best fits” the data?</p>
+</div>
 </section>
 <section id="least-squares-line" class="slide level2">
 <h2>Least squares line</h2>
 <ul>
 <li>The residual for the <span class="math inline">\(i^{th}\)</span> observation is</li>
 </ul>
-<p><span class="math display">\[e_i = \text{observed} - \text{predicted}
-= y_i - \hat{y}_i\]</span></p>
+<p><span class="math display">\[\begin{aligned}e_i = \text{observed} - \text{predicted}
+&amp;= y_i - \hat{y}_i \\
+&amp;= y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)\end{aligned}\]</span></p>
 <ul>
 <li>The <strong>sum of squared residuals</strong> is</li>
 </ul>
@@ -465,8 +499,8 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <li>The <strong>Ordinary Least Squares (OLS) line</strong> is the one that minimizes the sum of squared residuals</li>
 </ul>
 </section>
-<section id="least-squares-estimator-of-hatbeta_0" class="slide level2">
-<h2>Least-squares estimator of <span class="math inline">\(\hat{\beta}_0\)</span></h2>
+<section id="least-squares-estimator-hatbeta_0" class="slide level2">
+<h2>Least-squares estimator <span class="math inline">\(\hat{\beta}_0\)</span></h2>
 
 <aside><div>
 <p><a href="https://intro-regression.github.io/appendix-linear.html#sec-least-sq-math">Click here</a> for full details on estimating <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> .</p>
@@ -482,7 +516,7 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <li class="fragment"><p>The regression line goes through the center of mass point, the coordinates corresponding to mean <span class="math inline">\(X\)</span> and mean <span class="math inline">\(Y\)</span>: <span class="math inline">\(\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}\)</span></p></li>
 <li class="fragment"><p>The slope has the same sign as the correlation coefficient: <span class="math inline">\(\hat{\beta}_1 = r \frac{s_Y}{s_X}\)</span></p></li>
 <li class="fragment"><p>The sum of the residuals is approximately zero: <span class="math inline">\(\sum_{i = 1}^n e_i \approx 0\)</span></p></li>
-<li class="fragment"><p>The residuals and <span class="math inline">\(X\)</span> values are uncorrelated</p></li>
+<li class="fragment"><p>The residuals and values of the predictor variable are uncorrelated</p></li>
 </ul>
 </section>
 <section id="estimating-the-slope" class="slide level2">
@@ -490,9 +524,7 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p><span class="math display">\[\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}\]</span></p>
 <p><br></p>
 <div class="fragment">
-<p><span class="math display">\[
-\begin{aligned} s_X = 30.1688  \hspace{15mm} &amp;s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\&amp;= \mathbf{0.5187}\end{aligned}
-\]</span></p>
+<p><span class="math display">\[\begin{aligned} s_X = 30.1688  \hspace{15mm} &amp;s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\&amp;= \mathbf{0.5187}\end{aligned}\]</span></p>
 </div>
 </section>
 <section id="estimating-the-intercept" class="slide level2">
@@ -500,15 +532,13 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p><span class="math display">\[\large{\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}}\]</span></p>
 <p><br></p>
 <div class="fragment">
-<p><span class="math display">\[
-\begin{aligned}\bar{x} = 60.8493 &amp; \hspace{15mm} \bar{y} = 63.8767 \hspace{15mm} \hat{\beta}_1 = 0.5187 \\[10pt]
+<p><span class="math display">\[\begin{aligned}\bar{x} = 60.8493 &amp; \hspace{15mm} \bar{y} = 63.8767 \hspace{15mm} \hat{\beta}_1 = 0.5187 \\[10pt]
 \hat{\beta}_0 &amp;= 63.8767 - 0.5187 \times 60.8493 \\
-&amp;= \mathbf{32.3142}\end{aligned}
-\]</span></p>
+&amp;= \mathbf{32.3142}\end{aligned}\]</span></p>
 </div>
 </section>
-<section id="interpretation" class="slide level2">
-<h2>Interpretation</h2>
+<section id="interpretation-update-to-wooclap" class="slide level2">
+<h2>Interpretation [UPDATE to WOOCLAP]</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Submit</a></li></ul>
 <div class="tab-content">
@@ -517,8 +547,8 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <div class="midi">
 <p>Submit your answers to the following questions on Ed Discussion:</p>
 <ul>
-<li><p>The slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?</p></li>
-<li><p>32.3142 is the predicted mean audience score for what type of movies?</p></li>
+<li><p>The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?</p></li>
+<li><p>32.314 is the predicted mean audience score for what type of movies?</p></li>
 </ul>
 </div>
 </div>
@@ -548,15 +578,24 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <h1>Prediction</h1>
 
 </section>
-<section id="making-a-prediction" class="slide level2">
-<h2>Making a prediction</h2>
-<p>Suppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?</p>
-<span class="math display">\[\begin{aligned}
-\widehat{\text{audience}} &amp;= 32.3142 + 0.5187 \times \text{critics} \\
-&amp;= 32.3142 + 0.5187 \times 70 \\
-&amp;= \mathbf{68.6232}
-\end{aligned}\]</span>
-</section></section>
+<section id="prediction-1" class="slide level2">
+<h2>Prediction</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/02/odyssey.jpeg"></p>
+<figcaption>Image from Rotten Tomatoes</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p>The 2026 movie <em>The Odyssey</em> has critics score of 94% on <a href="https://www.rottentomatoes.com/m/the_odyssey_2026">Rotten Tomatoes</a>* According to this model, what is the predicted audience score?</p>
+<p><span class="math display">\[\begin{aligned}\widehat{\text{audience}} &amp;= 32.314 + 0.519 \times \text{critics} \\&amp;= 32.314 + 0.519 \times 94 \\&amp;= \mathbf{81.1}\end{aligned}\]</span></p>
+</div></div>
+
+<aside><div>
+<p>*score on 8/25/26.</p>
+</div></aside></section></section>
 <section>
 <section id="linear-regression-in-r" class="title-slide slide level1 center">
 <h1>Linear regression in R</h1>
@@ -567,8 +606,8 @@ $ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79,
 <p>Use the <code>lm()</code> function to fit a linear regression model</p>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
-<span id="cb4-2"><a></a>movie_fit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb6-2"><a></a>movie_fit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -582,11 +621,11 @@ Coefficients:
 </section>
 <section id="tidy-results" class="slide level2">
 <h2>Tidy results</h2>
-<p>Use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the model output</p>
+<p>Use the <code>tidy()</code> function from the <strong>broom</strong> package (part of the <strong>tidymodels</strong> package) to “tidy” the model output</p>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
-<span id="cb6-2"><a></a><span class="fu">tidy</span>(movie_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb8-2"><a></a><span class="fu">tidy</span>(movie_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   term          estimate std.error statistic  p.value
@@ -602,9 +641,9 @@ Coefficients:
 <p><br></p>
 <div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
-<span id="cb8-2"><a></a><span class="fu">tidy</span>(movie_fit) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb10-2"><a></a><span class="fu">tidy</span>(movie_fit) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -637,31 +676,70 @@ Coefficients:
 </div>
 </div>
 </section>
-<section id="prediction-1" class="slide level2">
-<h2>Prediction</h2>
-<p>Use the <code>predict()</code> function to calculate predictions for new observations</p>
-<p><br></p>
-<p><strong>Single observation</strong></p>
+<section id="alternative-tidymodels-syntax" class="slide level2">
+<h2>Alternative: tidymodels syntax</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>new_movie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="dv">70</span>)</span>
-<span id="cb9-2"><a></a><span class="fu">predict</span>(movie_fit, new_movie)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       1 
-68.62297 </code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>movies_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">fit</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="fu">tidy</span>(movies_fit) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">32.316</td>
+<td style="text-align: right;">2.343</td>
+<td style="text-align: right;">13.795</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">critics_score</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">15.028</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
 <section id="prediction-2" class="slide level2">
 <h2>Prediction</h2>
-<p>Use the <code>predict()</code> function to calculate predictions for new observations</p>
+<p>Use the <code>predict()</code> function to compute predictions for new observations</p>
+<p><br></p>
+<p><strong>Single observation</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>new_movie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="dv">94</span>)</span>
+<span id="cb12-2"><a></a><span class="fu">predict</span>(movie_fit, new_movie)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+81.07123 </code></pre>
+</div>
+</div>
+</section>
+<section id="prediction-3" class="slide level2">
+<h2>Prediction</h2>
+<p>Use the <code>predict()</code> function to compute predictions for new observations</p>
 <p><br></p>
 <p><strong>Multiple observations</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>more_new_movies <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">70</span>, <span class="dv">85</span>))</span>
-<span id="cb11-2"><a></a><span class="fu">predict</span>(movie_fit, more_new_movies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>more_new_movies <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">70</span>, <span class="dv">94</span>))</span>
+<span id="cb14-2"><a></a><span class="fu">predict</span>(movie_fit, more_new_movies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1        2        3 
-44.76379 68.62297 76.40313 </code></pre>
+44.76379 68.62297 81.07123 </code></pre>
 </div>
 </div>
 </section>
@@ -674,16 +752,19 @@ Coefficients:
 <li>Predicted the response given a value of the predictor</li>
 </ul>
 </section>
-<section id="next-time" class="slide level2">
-<h2>Next time</h2>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
 <ul>
-<li><p>Model assessment for simple linear regression</p>
+<li>Complete <a href="../prepare/prepare-lec03.html">Lecture 03 prepare</a> on model evaluation</li>
+<li>Accept GitHub invite (check your email or see the invite at <a href="https://github.com/sta221-fa26" class="uri">https://github.com/sta221-fa26</a>)
 <ul>
-<li>Complete <a href="../prepare/prepare-lec03.html">Lecture 03 prepare</a></li>
+<li>Need to be in course organization to access lab</li>
 </ul></li>
-<li><p>In-class activity on Thursday</p>
+<li>Office hours start Monday (see schedule on Canvas home page)</li>
+<li>Lab 01 on Monday
 <ul>
-<li>Bring fully-charged laptop / device to access RStudio container</li>
+<li>Attendance is part of grade</li>
+<li>Computing + hand written linear algebra exercises</li>
 </ul></li>
 </ul>
 
@@ -693,7 +774,7 @@ Coefficients:
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-sp26.github.io">🔗 sta221-sp26.github.io</a></p>
+<p><a href="https://sta221-fa26.github.io">🔗 sta221-fa26.github.io</a></p>
 </div>
 </div></div>
 

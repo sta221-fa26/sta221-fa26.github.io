@@ -556,7 +556,7 @@
     "href": "slides/02-slr.html#computing-set-up",
     "title": "Simple linear regression",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)        # for data wrangling\nlibrary(broom)            # for formatting regression output\nlibrary(knitr)            # for formatting tables\nlibrary(patchwork)        # for arranging graphs\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 16))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)        # for data wrangling\nlibrary(tidymodels)        # to format output\nlibrary(knitr)            # for formatting tables\nlibrary(patchwork)        # for arranging graphs\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 14))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
   },
   {
     "objectID": "slides/02-slr.html#data-science-workflow",
@@ -584,14 +584,14 @@
     "href": "slides/02-slr.html#univariate-exploratory-data-analysis-eda",
     "title": "Simple linear regression",
     "section": "Univariate exploratory data analysis (EDA)",
-    "text": "Univariate exploratory data analysis (EDA)\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com."
+    "text": "Univariate exploratory data analysis (EDA)\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com.\n\n\nCode\np1 &lt;- ggplot(data = movie_scores, mapping = aes(x = critics_score)) +\n  geom_histogram(fill = \"steelblue\", color = \"black\", binwidth = 6) + \n  labs(x = \"Critics Score\")\n\np2 &lt;- ggplot(data = movie_scores, mapping = aes(x = audience_score)) +\n  geom_histogram(fill = \"steelblue\", color = \"black\", binwidth = 6) + \n  labs(x = \"Audience Score\")\n\np1 + p2"
   },
   {
     "objectID": "slides/02-slr.html#bivariate-eda",
     "href": "slides/02-slr.html#bivariate-eda",
     "title": "Simple linear regression",
     "section": "Bivariate EDA",
-    "text": "Bivariate EDA"
+    "text": "Bivariate EDA\n\n\nCode\nggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)) +\n  geom_point(alpha = 0.5) + \n  labs(x = \"Critics Score\" , \n       y = \"Audience Score\",\n       title = \"Audience vs. critics score\",\n       subtitle = \"146 movies rated on rottentomatoes.com\")"
   },
   {
     "objectID": "slides/02-slr.html#bivariate-eda-1",
@@ -647,7 +647,7 @@
     "href": "slides/02-slr.html#slr-statistical-model-population",
     "title": "Simple linear regression",
     "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a (simple) linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms with mean 0 and variance \\(\\sigma^2_{\\epsilon}\\)"
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response variable, \\(Y\\), and a single quantitative predictor variable, \\(X\\), we can use a (simple) linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms with mean 0 and variance \\(\\sigma^2_{\\epsilon}\\)"
   },
   {
     "objectID": "slides/02-slr.html#slr-regression-equation-sample",
@@ -668,14 +668,14 @@
     "href": "slides/02-slr.html#residuals",
     "title": "Simple linear regression",
     "section": "Residuals",
-    "text": "Residuals\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]"
+    "text": "Residuals\nGiven the data \\((x_1, y_1), (x_2, y_2), \\ldots, (x_n, y_n)\\)\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]"
   },
   {
     "objectID": "slides/02-slr.html#least-squares-line",
     "href": "slides/02-slr.html#least-squares-line",
     "title": "Simple linear regression",
     "section": "Least squares line",
-    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[\\begin{aligned}e_i = \\text{observed} - \\text{predicted}\n&= y_i - \\hat{y}_i \\\\\n&= y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1x_i)\\end{aligned}\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
   },
   {
     "objectID": "slides/02-slr.html#least-squares-estimator-of-hatbeta_0",
@@ -689,21 +689,21 @@
     "href": "slides/02-slr.html#properties-of-least-squares-regression",
     "title": "Simple linear regression",
     "section": "Properties of least squares regression",
-    "text": "Properties of least squares regression\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and \\(X\\) values are uncorrelated"
+    "text": "Properties of least squares regression\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
   },
   {
     "objectID": "slides/02-slr.html#estimating-the-slope",
     "href": "slides/02-slr.html#estimating-the-slope",
     "title": "Simple linear regression",
     "section": "Estimating the slope",
-    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\n\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\&= \\mathbf{0.5187}\\end{aligned}\n\\]"
+    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\&= \\mathbf{0.5187}\\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr.html#estimating-the-intercept",
     "href": "slides/02-slr.html#estimating-the-intercept",
     "title": "Simple linear regression",
     "section": "Estimating the intercept",
-    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n\n\\[\n\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= \\mathbf{32.3142}\\end{aligned}\n\\]"
+    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n\n\\[\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= \\mathbf{32.3142}\\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr.html#interpretation",
@@ -738,7 +738,7 @@
     "href": "slides/02-slr.html#tidy-results",
     "title": "Simple linear regression",
     "section": "Tidy results",
-    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic  p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)     32.3      2.34        13.8 4.03e-28\n2 critics_score    0.519    0.0345      15.0 2.70e-31"
+    "text": "Tidy results\nUse the tidy() function from the broom package (part of the tidymodels package) to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic  p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)     32.3      2.34        13.8 4.03e-28\n2 critics_score    0.519    0.0345      15.0 2.70e-31"
   },
   {
     "objectID": "slides/02-slr.html#format-results",
@@ -752,14 +752,14 @@
     "href": "slides/02-slr.html#prediction-1",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+    "text": "Prediction\n\n\n\n\n\nImage from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes* According to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n\n*score on 8/25/26."
   },
   {
     "objectID": "slides/02-slr.html#prediction-2",
     "href": "slides/02-slr.html#prediction-2",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 94)\npredict(movie_fit, new_movie)\n\n       1 \n81.07123"
   },
   {
     "objectID": "slides/02-slr.html#recap",
@@ -1021,233 +1021,482 @@
     "text": "Next time\n\nModel assessment for simple linear regression\n\nComplete Lecture 03 prepare\n\nIn-class activity on Thursday\n\nBring fully-charged laptop / device to access RStudio container"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "slides/lab-01.html#todays-lab",
+    "href": "slides/lab-01.html#todays-lab",
+    "title": "Lab 01",
+    "section": "Today’s lab",
+    "text": "Today’s lab\nTopics\n\nData wrangling and visualizations in R\nReview linear algebra concepts\n\nNotes\n\nPut all responses for computing questions in your lab-01 Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope."
+  },
+  {
+    "objectID": "slides/lab-01.html#tips-for-working-on-lab",
+    "href": "slides/lab-01.html#tips-for-working-on-lab",
+    "title": "Lab 01",
+    "section": "Tips for working on lab",
+    "text": "Tips for working on lab\n\nLabs are due at the end of your lab session. There is no late work or make ups accepted for lab.\n\nPush final changes to GitHub\nSubmit the PDF of your work on gradescope.\n\nThe lab will be graded based on attendance, submitting the lab, workflow & formatting, and correctness of 2 randomly selected questions.\n\nFor today’s lab, we will grade one randomly selected question from the computing review and one from the linear algebra review."
+  },
+  {
+    "objectID": "slides/lab-01.html#workflow-and-formatting",
+    "href": "slides/lab-01.html#workflow-and-formatting",
+    "title": "Lab 01",
+    "section": "Workflow and formatting",
+    "text": "Workflow and formatting\nPart of the lab grade is for “workflow and formatting” assessing the reproducible workflow and document format. This includes\n\nHaving at least 3 informative commit messages (practicing version control)\n\nThere are markers in Lab 01 to help you incorporate version control in your workflow\n\nThe PDF is neatly organized document with clear exercise headings and readable code and narrative\nThe name (first and last), teammates’ names, and date are updated at the top of the document."
+  },
+  {
+    "objectID": "slides/lab-01.html#linear-algebra-review",
+    "href": "slides/lab-01.html#linear-algebra-review",
+    "title": "Lab 01",
+    "section": "Linear algebra review",
+    "text": "Linear algebra review"
+  },
+  {
+    "objectID": "slides/lab-01.html#when-youre-done-with-lab",
+    "href": "slides/lab-01.html#when-youre-done-with-lab",
+    "title": "Lab 01",
+    "section": "When you’re done with lab",
+    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit your final PDF to Gradescope\n\nCombine the rendered Quarto document and handwritten math work into a single PDF document if needed.\nAccess Gradescope through the course Canvas site\nMark the page(s) associated with each exercise\nMark the first page for “Attendance + submitting lab” and “Workflow & formatting”"
+  },
+  {
+    "objectID": "slides/lab-01.html#getting-started",
+    "href": "slides/lab-01.html#getting-started",
+    "title": "Lab 01",
+    "section": "Getting started",
+    "text": "Getting started\nAsk your TA if\n\nYou do not have a lab-01 repo in the GitHub course organization: github.com/sta221-fa26\nYou need help cloning the repo and starting a new RStudio project\n\n🔗 sta221-fa26.github.io/labs/lab-01.html"
+  },
+  {
+    "objectID": "slides/lab-01.html#reminder-to-submit-your-lab",
+    "href": "slides/lab-01.html#reminder-to-submit-your-lab",
+    "title": "Lab 01",
+    "section": "Reminder to submit your lab",
+    "text": "Reminder to submit your lab\n[Countdown timer?]"
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "To access computing resources for the regression analysis courses offered by the Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on Reserve STA221 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA221 under My reservations to access the RStudio instance you’ll use for the course.",
     "crumbs": [
-      "Schedule"
+      "Computing",
+      "Access"
     ]
   },
   {
-    "objectID": "computing-r-resources.html",
-    "href": "computing-r-resources.html",
-    "title": "Resources for learning R",
+    "objectID": "support.html",
+    "href": "support.html",
+    "title": "Support",
     "section": "",
-    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
+    "text": "We expect everyone will have questions at some point in the semester, so we want to make sure you can identify when that is and feel comfortable seeking help.",
     "crumbs": [
-      "Computing",
-      "R resources"
+      "Support"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#in-depth-introduction",
-    "href": "computing-r-resources.html#in-depth-introduction",
-    "title": "Resources for learning R",
-    "section": "In-depth introduction",
-    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.\nClick here for instructions to register for Coursera for free as a Duke student",
+    "objectID": "support.html#lectures-and-labs",
+    "href": "support.html#lectures-and-labs",
+    "title": "Support",
+    "section": "Lectures and labs",
+    "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
     "crumbs": [
-      "Computing",
-      "R resources"
+      "Support"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#in-depth-review",
-    "href": "computing-r-resources.html#in-depth-review",
-    "title": "Resources for learning R",
-    "section": "In-depth review",
-    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "objectID": "support.html#office-hours",
+    "href": "support.html#office-hours",
+    "title": "Support",
+    "section": "Office hours",
+    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on Canvas to ask questions about the course content and assignments. A lot of questions are most effectively answered through conversation, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of the teaching team’s office hours on Canvas.",
     "crumbs": [
-      "Computing",
-      "R resources"
+      "Support"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#short-review",
-    "href": "computing-r-resources.html#short-review",
-    "title": "Resources for learning R",
-    "section": "Short review",
-    "text": "Short review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
+    "objectID": "support.html#ed-discussion",
+    "href": "support.html#ed-discussion",
+    "title": "Support",
+    "section": "Ed Discussion",
+    "text": "Ed Discussion\nOutside of class and office hours, any general questions about course content or assignments should be posted on Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on Ed Discussion before adding a new question. If you know the answer to a question that is posted, I encourage you to respond!",
     "crumbs": [
-      "Computing",
-      "R resources"
+      "Support"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#additional-resources",
-    "href": "computing-r-resources.html#additional-resources",
-    "title": "Resources for learning R",
-    "section": "Additional resources",
-    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops at Duke by Duke Center for Data and Visualization Sciences",
+    "objectID": "support.html#email",
+    "href": "support.html#email",
+    "title": "Support",
+    "section": "Email",
+    "text": "Email\nIf you have questions about personal matters that are not appropriate for the class discussion forum (e.g. illness, accommodations, etc.), you may me at maria.tackett@duke.edu. When you email me, please include “STA 221” in the subject line. Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday afternoon - Sunday.",
     "crumbs": [
-      "Computing",
-      "R resources"
+      "Support"
     ]
   },
   {
-    "objectID": "prepare/prepare-lec01.html",
-    "href": "prepare/prepare-lec01.html",
+    "objectID": "support.html#academic-support",
+    "href": "support.html#academic-support",
+    "title": "Support",
+    "section": "Academic support",
+    "text": "Academic support\nThe Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, presentation skills, public speaking, and more. ARC services are available free to all Duke undergraduate students studying any discipline. Learn more:\n\nLearning Consultations – time management, study strategies, learning preferences, and more\nVOICE Lab – strengthen public speaking, practice presentations, and more\n\nYou can contact the Academic Resource Center by phone at (919) 684-5917, by email at theARC@duke.edu, or by visiting arc.duke.edu.",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "support.html#mental-health-and-wellbeing-resources",
+    "href": "support.html#mental-health-and-wellbeing-resources",
+    "title": "Support",
+    "section": "Mental health and wellbeing resources",
+    "text": "Mental health and wellbeing resources\n\nDukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can contact the DukeReach team at dukereach@duke.edu and/or submit a referral at support.students.duke.edu. \nCounseling and Psychological Services (CAPS) offers counseling services to Duke students including virtual appointments, and referrals in the community. You do not need an appointment for an initial assessment. You may walk in or call 919-660-1000 to get started. Hours: Monday-Friday 9:00am - 4:00pm. After hours counseling services are available at no additional cost to students, you can call: 919-660-1000 Option 2.\nTimelyCare (formerly known as Blue Devils Care) is an online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.\nDuke Student Health offers a wide range of healthcare services for all Duke students, many of which are covered by the student health fee. To make an appointment call (919) 681-9355. Hours: Monday - Friday, 8am - 4:30pm, Thursday 9am - 4:30pm. Closed from 12-12:30 each day.",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "support.html#technology-accommodations",
+    "href": "support.html#technology-accommodations",
+    "title": "Support",
+    "section": "Technology accommodations",
+    "text": "Technology accommodations\nHighly aided students who have limited access to computers may request loaner laptops through the DukeLIFE Technology Assistance Program. Please note that supplies are limited.\nNote that we will be using Duke’s computational resources in this course. These resources are freely available to you. As long as your computer can connect to the internet and open a browser window, you can perform the necessary computing for this course. All software we use is open-source and/or freely available.",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "support.html#course-materials-costs",
+    "href": "support.html#course-materials-costs",
+    "title": "Support",
+    "section": "Course materials costs",
+    "text": "Course materials costs\nThere are no costs associated with this course. All readings will come from freely available, open resources (open-source textbooks, journal articles, etc.).",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "support.html#assistance-with-zoom-or-canvas",
+    "href": "support.html#assistance-with-zoom-or-canvas",
+    "title": "Support",
+    "section": "Assistance with Zoom or Canvas",
+    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
+    "section": "",
+    "text": "📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare/prepare-lec04.html",
+    "href": "prepare/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "📖 Read Appendices A.2 - A.3"
+  },
+  {
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-stats-experience.html",
+    "href": "hw/hw-stats-experience.html",
+    "title": "HW 05: Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 05: Statistics experience"
+    ]
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec01.html",
+    "href": "prepare-SPRING2026/prepare-lec01.html",
     "title": "Prepare for Lecture 01",
     "section": "",
     "text": "📖 Read the syllabus"
   },
   {
-    "objectID": "prepare/prepare-lec02.html",
-    "href": "prepare/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
+    "objectID": "prepare-SPRING2026/prepare-lec03.html",
+    "href": "prepare-SPRING2026/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
     "section": "",
-    "text": "📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "prepare-SPRING2026/prepare-lec16.html",
+    "href": "prepare-SPRING2026/prepare-lec16.html",
+    "title": "Prepare for Lecture 16: Model selection",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
+    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "prepare-SPRING2026/prepare-lec06.html",
+    "href": "prepare-SPRING2026/prepare-lec06.html",
+    "title": "Prepare for Lecture 06: Types of predictors",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
+    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
   },
   {
-    "objectID": "hw/hw-05.html",
-    "href": "hw/hw-05.html",
-    "title": "HW 05",
+    "objectID": "prepare-SPRING2026/prepare-lec13.html",
+    "href": "prepare-SPRING2026/prepare-lec13.html",
+    "title": "Prepare for Lecture 13: Variable transformations",
+    "section": "",
+    "text": "📖 Read Chapter 9"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec11.html",
+    "href": "prepare-SPRING2026/prepare-lec11.html",
+    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
+    "section": "",
+    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec04.html",
+    "href": "prepare-SPRING2026/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec21.html",
+    "href": "prepare-SPRING2026/prepare-lec21.html",
+    "title": "Prepare for Lecture 21: LR - Inference",
+    "section": "",
+    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec08.html",
+    "href": "prepare-SPRING2026/prepare-lec08.html",
+    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "section": "",
+    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec22.html",
+    "href": "prepare-SPRING2026/prepare-lec22.html",
+    "title": "Prepare for Lecture 22: Ethics",
     "section": "",
     "text": "To be posted."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec14.html",
-    "href": "prepare-SPRING2026/prepare-lec14.html",
-    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "objectID": "prepare-SPRING2026/prepare-lec19.html",
+    "href": "prepare-SPRING2026/prepare-lec19.html",
+    "title": "Prepare for Lecture 19: LR - Prediction",
     "section": "",
-    "text": "📖 Read Appendix A.8"
+    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec15.html",
-    "href": "prepare-SPRING2026/prepare-lec15.html",
-    "title": "Prepare for Lecture 15: Properties of estimators",
+    "objectID": "labs/lab-04-DRAFT.html",
+    "href": "labs/lab-04-DRAFT.html",
+    "title": "Lab 04: Exam 01 Review",
     "section": "",
-    "text": "No prepare assignment"
+    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec17.html",
-    "href": "prepare-SPRING2026/prepare-lec17.html",
-    "title": "Prepare for Lecture 17: Ridge regression",
-    "section": "",
-    "text": "No prepare assignment"
+    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec02.html",
-    "href": "prepare-SPRING2026/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
-    "section": "",
-    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
+    "href": "labs/lab-04-DRAFT.html#exercise-1",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec12.html",
-    "href": "prepare-SPRING2026/prepare-lec12.html",
-    "title": "Prepare for Lecture 12: Multicollinearity",
-    "section": "",
-    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
+    "href": "labs/lab-04-DRAFT.html#exercise-2",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec07.html",
-    "href": "prepare-SPRING2026/prepare-lec07.html",
-    "title": "Prepare for Lecture 07: Inference for regression",
-    "section": "",
-    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
+    "href": "labs/lab-04-DRAFT.html#exercise-3",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec05.html",
-    "href": "prepare-SPRING2026/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: Multiple linear regression",
-    "section": "",
-    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
+    "href": "labs/lab-04-DRAFT.html#exercise-4",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec09.html",
-    "href": "prepare-SPRING2026/prepare-lec09.html",
-    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
-    "section": "",
-    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
+    "href": "labs/lab-04-DRAFT.html#exercise-5",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec20.html",
-    "href": "prepare-SPRING2026/prepare-lec20.html",
-    "title": "Prepare for Lecture 20: LR - Model selection",
-    "section": "",
-    "text": "📖 Read Section 12.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
+    "href": "labs/lab-04-DRAFT.html#exercise-6",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec18.html",
-    "href": "prepare-SPRING2026/prepare-lec18.html",
-    "title": "Prepare for Lecture 18: Logistic regression",
-    "section": "",
-    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+    "objectID": "labs/lab-04-DRAFT.html#footnotes",
+    "href": "labs/lab-04-DRAFT.html#footnotes",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 06"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting started",
+    "section": "",
+    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
     ]
   },
   {
@@ -1398,433 +1647,233 @@
     "text": "Exercise 10\nFor each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients \\(a\\)’s).\n\n\\[\\begin{bmatrix}\n1 & 0 & 0\\\\\n1 & 1 & 0\\\\\n1 & 1 & 0\\\\\n1 & 0 & 1\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n0 & 0 & 1\\\\\n1 & 0 & 0\\\\\n1 & 0 & 0\\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n1 & 0 & 0 & 1\\\\\n1 & 1 & 0 & 0\\\\\n1 & 1 & 0 & 0\\\\\n1 & 0 & 1 & 0\n\\end{bmatrix}\\]\n\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
   },
   {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 01"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 06"
     ]
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "To be posted.",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 03"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting started",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 00"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
     "crumbs": [
-      "Labs",
-      "Lab 00"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting started",
-    "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "prepare-SPRING2026/prepare-lec18.html",
+    "href": "prepare-SPRING2026/prepare-lec18.html",
+    "title": "Prepare for Lecture 18: Logistic regression",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
+    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
   },
   {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "prepare-SPRING2026/prepare-lec20.html",
+    "href": "prepare-SPRING2026/prepare-lec20.html",
+    "title": "Prepare for Lecture 20: LR - Model selection",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 07"
-    ]
+    "text": "📖 Read Section 12.5"
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html",
-    "href": "labs/lab-04-DRAFT.html",
-    "title": "Lab 04: Exam 01 Review",
+    "objectID": "prepare-SPRING2026/prepare-lec09.html",
+    "href": "prepare-SPRING2026/prepare-lec09.html",
+    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
-    "href": "labs/lab-04-DRAFT.html#exercise-1",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
-    "href": "labs/lab-04-DRAFT.html#exercise-2",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
-    "href": "labs/lab-04-DRAFT.html#exercise-3",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
-    "href": "labs/lab-04-DRAFT.html#exercise-4",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
-    "href": "labs/lab-04-DRAFT.html#exercise-5",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
-    "href": "labs/lab-04-DRAFT.html#exercise-6",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#footnotes",
-    "href": "labs/lab-04-DRAFT.html#footnotes",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec19.html",
-    "href": "prepare-SPRING2026/prepare-lec19.html",
-    "title": "Prepare for Lecture 19: LR - Prediction",
+    "objectID": "prepare-SPRING2026/prepare-lec05.html",
+    "href": "prepare-SPRING2026/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: Multiple linear regression",
     "section": "",
-    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
+    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec22.html",
-    "href": "prepare-SPRING2026/prepare-lec22.html",
-    "title": "Prepare for Lecture 22: Ethics",
+    "objectID": "prepare-SPRING2026/prepare-lec07.html",
+    "href": "prepare-SPRING2026/prepare-lec07.html",
+    "title": "Prepare for Lecture 07: Inference for regression",
+    "section": "",
+    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec12.html",
+    "href": "prepare-SPRING2026/prepare-lec12.html",
+    "title": "Prepare for Lecture 12: Multicollinearity",
+    "section": "",
+    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec02.html",
+    "href": "prepare-SPRING2026/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
+    "section": "",
+    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec17.html",
+    "href": "prepare-SPRING2026/prepare-lec17.html",
+    "title": "Prepare for Lecture 17: Ridge regression",
+    "section": "",
+    "text": "No prepare assignment"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec15.html",
+    "href": "prepare-SPRING2026/prepare-lec15.html",
+    "title": "Prepare for Lecture 15: Properties of estimators",
+    "section": "",
+    "text": "No prepare assignment"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec14.html",
+    "href": "prepare-SPRING2026/prepare-lec14.html",
+    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "section": "",
+    "text": "📖 Read Appendix A.8"
+  },
+  {
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "HW 05",
     "section": "",
     "text": "To be posted."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec08.html",
-    "href": "prepare-SPRING2026/prepare-lec08.html",
-    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
     "section": "",
-    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec21.html",
-    "href": "prepare-SPRING2026/prepare-lec21.html",
-    "title": "Prepare for Lecture 21: LR - Inference",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
-    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec04.html",
-    "href": "prepare-SPRING2026/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
     "section": "",
-    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec11.html",
-    "href": "prepare-SPRING2026/prepare-lec11.html",
-    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
-    "section": "",
-    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec13.html",
-    "href": "prepare-SPRING2026/prepare-lec13.html",
-    "title": "Prepare for Lecture 13: Variable transformations",
-    "section": "",
-    "text": "📖 Read Chapter 9"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec06.html",
-    "href": "prepare-SPRING2026/prepare-lec06.html",
-    "title": "Prepare for Lecture 06: Types of predictors",
-    "section": "",
-    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec16.html",
-    "href": "prepare-SPRING2026/prepare-lec16.html",
-    "title": "Prepare for Lecture 16: Model selection",
-    "section": "",
-    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec03.html",
-    "href": "prepare-SPRING2026/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model evaluation",
-    "section": "",
-    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec01.html",
-    "href": "prepare-SPRING2026/prepare-lec01.html",
+    "objectID": "prepare/prepare-lec01.html",
+    "href": "prepare/prepare-lec01.html",
     "title": "Prepare for Lecture 01",
     "section": "",
     "text": "📖 Read the syllabus"
   },
   {
-    "objectID": "hw/hw-stats-experience.html",
-    "href": "hw/hw-stats-experience.html",
-    "title": "HW 05: Statistics Experience",
+    "objectID": "computing-r-resources.html",
+    "href": "computing-r-resources.html",
+    "title": "Resources for learning R",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 05: Statistics experience"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "prepare/prepare-lec04.html",
-    "href": "prepare/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
-    "section": "",
-    "text": "📖 Read Appendices A.2 - A.3"
-  },
-  {
-    "objectID": "prepare/prepare-lec03.html",
-    "href": "prepare/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model evaluation",
-    "section": "",
-    "text": "📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "support.html",
-    "href": "support.html",
-    "title": "Support",
-    "section": "",
-    "text": "We expect everyone will have questions at some point in the semester, so we want to make sure you can identify when that is and feel comfortable seeking help.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#lectures-and-labs",
-    "href": "support.html#lectures-and-labs",
-    "title": "Support",
-    "section": "Lectures and labs",
-    "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#office-hours",
-    "href": "support.html#office-hours",
-    "title": "Support",
-    "section": "Office hours",
-    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on Canvas to ask questions about the course content and assignments. A lot of questions are most effectively answered through conversation, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of the teaching team’s office hours on Canvas.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#ed-discussion",
-    "href": "support.html#ed-discussion",
-    "title": "Support",
-    "section": "Ed Discussion",
-    "text": "Ed Discussion\nOutside of class and office hours, any general questions about course content or assignments should be posted on Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on Ed Discussion before adding a new question. If you know the answer to a question that is posted, I encourage you to respond!",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#email",
-    "href": "support.html#email",
-    "title": "Support",
-    "section": "Email",
-    "text": "Email\nIf you have questions about personal matters that are not appropriate for the class discussion forum (e.g. illness, accommodations, etc.), you may me at maria.tackett@duke.edu. When you email me, please include “STA 221” in the subject line. Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday afternoon - Sunday.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#academic-support",
-    "href": "support.html#academic-support",
-    "title": "Support",
-    "section": "Academic support",
-    "text": "Academic support\nThe Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, presentation skills, public speaking, and more. ARC services are available free to all Duke undergraduate students studying any discipline. Learn more:\n\nLearning Consultations – time management, study strategies, learning preferences, and more\nVOICE Lab – strengthen public speaking, practice presentations, and more\n\nYou can contact the Academic Resource Center by phone at (919) 684-5917, by email at theARC@duke.edu, or by visiting arc.duke.edu.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#mental-health-and-wellbeing-resources",
-    "href": "support.html#mental-health-and-wellbeing-resources",
-    "title": "Support",
-    "section": "Mental health and wellbeing resources",
-    "text": "Mental health and wellbeing resources\n\nDukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can contact the DukeReach team at dukereach@duke.edu and/or submit a referral at support.students.duke.edu. \nCounseling and Psychological Services (CAPS) offers counseling services to Duke students including virtual appointments, and referrals in the community. You do not need an appointment for an initial assessment. You may walk in or call 919-660-1000 to get started. Hours: Monday-Friday 9:00am - 4:00pm. After hours counseling services are available at no additional cost to students, you can call: 919-660-1000 Option 2.\nTimelyCare (formerly known as Blue Devils Care) is an online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.\nDuke Student Health offers a wide range of healthcare services for all Duke students, many of which are covered by the student health fee. To make an appointment call (919) 681-9355. Hours: Monday - Friday, 8am - 4:30pm, Thursday 9am - 4:30pm. Closed from 12-12:30 each day.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#technology-accommodations",
-    "href": "support.html#technology-accommodations",
-    "title": "Support",
-    "section": "Technology accommodations",
-    "text": "Technology accommodations\nHighly aided students who have limited access to computers may request loaner laptops through the DukeLIFE Technology Assistance Program. Please note that supplies are limited.\nNote that we will be using Duke’s computational resources in this course. These resources are freely available to you. As long as your computer can connect to the internet and open a browser window, you can perform the necessary computing for this course. All software we use is open-source and/or freely available.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#course-materials-costs",
-    "href": "support.html#course-materials-costs",
-    "title": "Support",
-    "section": "Course materials costs",
-    "text": "Course materials costs\nThere are no costs associated with this course. All readings will come from freely available, open resources (open-source textbooks, journal articles, etc.).",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#assistance-with-zoom-or-canvas",
-    "href": "support.html#assistance-with-zoom-or-canvas",
-    "title": "Support",
-    "section": "Assistance with Zoom or Canvas",
-    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access computing resources for the regression analysis courses offered by the Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on Reserve STA221 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA221 under My reservations to access the RStudio instance you’ll use for the course.",
+    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
     "crumbs": [
       "Computing",
-      "Access"
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-introduction",
+    "href": "computing-r-resources.html#in-depth-introduction",
+    "title": "Resources for learning R",
+    "section": "In-depth introduction",
+    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.\nClick here for instructions to register for Coursera for free as a Duke student",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-review",
+    "href": "computing-r-resources.html#in-depth-review",
+    "title": "Resources for learning R",
+    "section": "In-depth review",
+    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#short-review",
+    "href": "computing-r-resources.html#short-review",
+    "title": "Resources for learning R",
+    "section": "Short review",
+    "text": "Short review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#additional-resources",
+    "href": "computing-r-resources.html#additional-resources",
+    "title": "Resources for learning R",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops at Duke by Duke Center for Data and Visualization Sciences",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "crumbs": [
+      "Schedule"
     ]
   },
   {
@@ -2900,5 +2949,68 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/02-slr.html#announcements-update",
+    "href": "slides/02-slr.html#announcements-update",
+    "title": "Simple linear regression",
+    "section": "Announcements [UPDATE]",
+    "text": "Announcements [UPDATE]\n\nComplete Lab 00\nOffice hours start this week\n\nSee Canvas homepage for times and locations\nAllison’s office hours start January 20\n\nIntroduction to R workshops at Duke library (see Friday’s Canvas announcement for details)\nTriangle Sports Analytics Competition: https://triangle-sports.github.io/\n\nSee Ed Discussion for full announcement"
+  },
+  {
+    "objectID": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
+    "href": "slides/02-slr.html#least-squares-estimator-hatbeta_0",
+    "title": "Simple linear regression",
+    "section": "Least-squares estimator \\(\\hat{\\beta}_0\\)",
+    "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
+  },
+  {
+    "objectID": "slides/02-slr.html#interpretation-update-to-wooclap",
+    "href": "slides/02-slr.html#interpretation-update-to-wooclap",
+    "title": "Simple linear regression",
+    "section": "Interpretation [UPDATE to WOOCLAP]",
+    "text": "Interpretation [UPDATE to WOOCLAP]\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n32.314 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/90766/discussion/7506084"
+  },
+  {
+    "objectID": "slides/02-slr.html#movie-scores-update---add-article-to-canvas",
+    "href": "slides/02-slr.html#movie-scores-update---add-article-to-canvas",
+    "title": "Simple linear regression",
+    "section": "Movie scores [UPDATE - ADD ARTICLE TO CANVAS]",
+    "text": "Movie scores [UPDATE - ADD ARTICLE TO CANVAS]\n\n\n\nData behind the FiveThirtyEight (now defunct) story Be Suspicious Of Online Movie Ratings, Especially Fandango’s[UPDATE LINK]\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
+  },
+  {
+    "objectID": "slides/02-slr.html#univariate-exploratory-data-analysis-eda-update-binwidth",
+    "href": "slides/02-slr.html#univariate-exploratory-data-analysis-eda-update-binwidth",
+    "title": "Simple linear regression",
+    "section": "Univariate exploratory data analysis (EDA) [UPDATE BINWIDTH]",
+    "text": "Univariate exploratory data analysis (EDA) [UPDATE BINWIDTH]\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com."
+  },
+  {
+    "objectID": "slides/02-slr.html#why-fit-a-line-make-wooclap-poll-for-inference",
+    "href": "slides/02-slr.html#why-fit-a-line-make-wooclap-poll-for-inference",
+    "title": "Simple linear regression",
+    "section": "Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]",
+    "text": "Why fit a line? [MAKE WOOCLAP POLL FOR INFERENCE]\nWe fit a line to accomplish one or both of the following:\n\n\n\nPrediction\n\n\nWhat is an example of a prediction question for this data set?\n\n\n\n\n\nInference\n\n\nWhat is an example of an inference question for this data set?"
+  },
+  {
+    "objectID": "slides/02-slr.html#alternative-tidymodels-syntax",
+    "href": "slides/02-slr.html#alternative-tidymodels-syntax",
+    "title": "Simple linear regression",
+    "section": "Alternative: tidymodels syntax",
+    "text": "Alternative: tidymodels syntax\n\nmovies_fit &lt;- linear_reg() |&gt;\n  fit(audience_score ~ critics_score, data = movie_scores)\n\ntidy(movies_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
+  },
+  {
+    "objectID": "slides/02-slr.html#prediction-3",
+    "href": "slides/02-slr.html#prediction-3",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to compute predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24, 70, 94))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 81.07123"
+  },
+  {
+    "objectID": "slides/02-slr.html#before-next-class",
+    "href": "slides/02-slr.html#before-next-class",
+    "title": "Simple linear regression",
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 03 prepare on model evaluation\nAccept GitHub invite (check your email or see the invite at https://github.com/sta221-fa26)\n\nNeed to be in course organization to access lab\n\nOffice hours start Monday (see schedule on Canvas home page)\nLab 01 on Monday\n\nAttendance is part of grade\nComputing + hand written linear algebra exercises"
   }
 ]

@@ -1,9 +1,9 @@
 ---
 title: "Simple linear regression"
 author: "Prof. Maria Tackett"
-date: "01-13-2026"
+date: "08-27-2026"
 date-format: "MMMM DD, YYYY"
-footer: "[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
@@ -30,29 +30,29 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements {.midi}
+## Announcements \[UPDATE\] {.midi}
 
--   Complete [Lab 00](../labs/lab-00.html)
+- Complete [Lab 00](../labs/lab-00.html)
 
--   Office hours start this week
+- Office hours start this week
 
-    -   See Canvas homepage for times and locations
-    -   Allison's office hours start January 20
+  - See Canvas homepage for times and locations
+  - Allison's office hours start January 20
 
--   Introduction to R workshops at Duke library (see Friday's Canvas announcement for details)
+- Introduction to R workshops at Duke library (see Friday's Canvas announcement for details)
 
--   Triangle Sports Analytics Competition: <https://triangle-sports.github.io/>
+- Triangle Sports Analytics Competition: <https://triangle-sports.github.io/>
 
-    -   See [Ed Discussion](https://edstem.org/us/courses/90766/discussion/7506153) for full announcement
+  - See [Ed Discussion](https://edstem.org/us/courses/90766/discussion/7506153) for full announcement
 
 # Questions from last class?
 
 ## Topics
 
--   How regression is used to understand the relationship between multiple variables
--   Least squares estimation for the slope and intercept
--   Interpret the slope and intercept
--   Predict the response given a value of the predictor
+- How regression is used to understand the relationship between multiple variables
+- Least squares estimation for the slope and intercept
+- Interpret the slope and intercept
+- Predict the response given a value of the predictor
 
 ## Computing set up
 
@@ -61,12 +61,12 @@ bibliography: references.bib
 
 # load packages
 library(tidyverse)        # for data wrangling
-library(broom)            # for formatting regression output
+library(tidymodels)        # to format output
 library(knitr)            # for formatting tables
 library(patchwork)        # for arranging graphs
 
 # set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 14))
 
 # set default figure parameters for knitr
 knitr::opts_chunk$set(
@@ -82,13 +82,13 @@ knitr::opts_chunk$set(
 
 ![Source: Introduction to Regression Analysis: A Data Science Approach](images/02/data-science-workflow.png){fig-align="center"}
 
-## Movie scores
+## Movie scores \[UPDATE - ADD ARTICLE TO CANVAS\]
 
 ::::: columns
 ::: {.column width="70%"}
--   Data behind the FiveThirtyEight story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](https://fivethirtyeight.com/features/fandango-movies-ratings/)
--   Data originally from the `fandango` data frame in **fivethirtyeight** package. Available in [`movie-scores.csv`](https://intro-regression.github.io/data/movie-scores.csv)
--   Contains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores
+- Data behind the FiveThirtyEight (now defunct) story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](https://fivethirtyeight.com/features/fandango-movies-ratings/)\[UPDATE LINK\]
+- Data originally from the `fandango` data frame in **fivethirtyeight** package. Available in [`movie-scores.csv`](https://intro-regression.github.io/data/movie-scores.csv)
+- Contains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores
 :::
 
 ::: {.column width="30%"}
@@ -117,15 +117,15 @@ glimpse(movie_scores)
 The data set contains the "Tomatometer" score (**`critics_score`**) and audience score (**`audience_score`**) for 146 movies rated on rottentomatoes.com.
 
 ```{r}
-#| echo: false
 #| fig-align: center
+#| code-fold: true
 
 p1 <- ggplot(data = movie_scores, mapping = aes(x = critics_score)) +
-  geom_histogram(fill = "steelblue", color = "black") + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 6) + 
   labs(x = "Critics Score")
 
 p2 <- ggplot(data = movie_scores, mapping = aes(x = audience_score)) +
-  geom_histogram(fill = "steelblue", color = "black") + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 6) + 
   labs(x = "Audience Score")
 
 p1 + p2
@@ -134,8 +134,8 @@ p1 + p2
 ## Bivariate EDA
 
 ```{r}
-#| echo: false
 #| fig-align: center
+#| code-fold: true
 ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)) +
   geom_point(alpha = 0.5) + 
   labs(x = "Critics Score" , 
@@ -162,7 +162,7 @@ p <- ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_s
 p
 ```
 
-## Why fit a line?
+## Why fit a line? \[MAKE WOOCLAP POLL FOR INFERENCE\]
 
 We fit a line to accomplish one or both of the following:
 
@@ -194,9 +194,9 @@ What is an example of an inference question for this data set?
 
 ::::: columns
 ::: {.column width="30%"}
--   **Response,** $Y$: variable describing the outcome of interest
+- **Response,** $Y$: variable describing the outcome of interest
 
--   **Predictor,** $X$: variable we use to help understand the variability in the response
+- **Predictor,** $X$: variable we use to help understand the variability in the response
 :::
 
 ::: {.column width="70%"}
@@ -274,33 +274,33 @@ ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)
 
 ## Determine $f(X)$
 
--   **Goal**: Determine $f(X)$
+- **Goal**: Determine $f(X)$
 
--   How do we determine $f(X)$
+- How do we determine $f(X)$
 
-    -   Make an assumption about the functional form $f(X)$ (parametric model)
+  - Make an assumption about the functional form $f(X)$ (parametric model)
 
-    -   Use the data to fit a model based on that form
+  - Use the data to fit a model based on that form
 
 # Simple linear regression (SLR)
 
 ## SLR: Statistical model (population) {.midi}
 
-When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a (**simple) linear regression** model to describe the relationship between $Y$ and $X$. $$Y = \beta_0 + \beta_1X + \epsilon$$
+When we have a quantitative response variable, $Y$, and a single quantitative predictor variable, $X$, we can use a (**simple) linear regression** model to describe the relationship between $Y$ and $X$. $$Y = \beta_0 + \beta_1X + \epsilon$$
 
 . . .
 
--   $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
--   $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
--   $\epsilon$: Error terms with mean 0 and variance $\sigma^2_{\epsilon}$
+- $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
+- $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
+- $\epsilon$: Error terms with mean 0 and variance $\sigma^2_{\epsilon}$
 
 ## SLR: Regression equation (sample)
 
 $$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$
 
--   $\hat{\beta}_1$: Estimated (sample) slope of the relationship between $X$ and $Y$
--   $\hat{\beta}_0$: Estimated (sample) intercept of the relationship between $X$ and $Y$
--   No error term!
+- $\hat{\beta}_1$: Estimated (sample) slope of the relationship between $X$ and $Y$
+- $\hat{\beta}_0$: Estimated (sample) intercept of the relationship between $X$ and $Y$
+- No error term!
 
 . . .
 
@@ -325,6 +325,8 @@ ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)
 
 ## Residuals
 
+Given the data $(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)$
+
 ```{r}
 #| echo: false
 #| fig-align: center
@@ -339,20 +341,33 @@ ggplot(data = movie_scores, mapping = aes(x = critics_score,y = audience_score))
 
 $$\text{residual} = \text{observed} - \text{predicted} = y_i - \hat{y}_i$$
 
+---
+
+<br>
+
+<br>
+
+<br>
+
+::: question
+How can we use the residuals to find the line that "best fits" the data?
+:::
+
 ## Least squares line
 
--   The residual for the $i^{th}$ observation is
+- The residual for the $i^{th}$ observation is
 
-$$e_i = \text{observed} - \text{predicted}
-= y_i - \hat{y}_i$$
+$$\begin{aligned}e_i = \text{observed} - \text{predicted}
+&= y_i - \hat{y}_i \\
+&= y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)\end{aligned}$$
 
--   The **sum of squared residuals** is
+- The **sum of squared residuals** is
 
 $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
--   The **Ordinary Least Squares (OLS) line** is the one that minimizes the sum of squared residuals
+- The **Ordinary Least Squares (OLS) line** is the one that minimizes the sum of squared residuals
 
-## Least-squares estimator of $\hat{\beta}_0$
+## Least-squares estimator $\hat{\beta}_0$
 
 ::: aside
 [Click here](https://intro-regression.github.io/appendix-linear.html#sec-least-sq-math) for full details on estimating $\hat{\beta}_0$ and $\hat{\beta}_1$ .
@@ -372,13 +387,13 @@ ybar <- round(mean(movie_scores$audience_score),4)
 ## Properties of least squares regression
 
 ::: incremental
--   The regression line goes through the center of mass point, the coordinates corresponding to mean $X$ and mean $Y$: $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$
+- The regression line goes through the center of mass point, the coordinates corresponding to mean $X$ and mean $Y$: $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$
 
--   The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
+- The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
 
--   The sum of the residuals is approximately zero: $\sum_{i = 1}^n e_i \approx 0$
+- The sum of the residuals is approximately zero: $\sum_{i = 1}^n e_i \approx 0$
 
--   The residuals and $X$ values are uncorrelated
+- The residuals and values of the predictor variable are uncorrelated
 :::
 
 ## Estimating the slope
@@ -389,9 +404,7 @@ $$\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}$$
 
 . . .
 
-$$
-\begin{aligned} s_X = 30.1688  \hspace{15mm} &s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &= 0.7814 \times \frac{20.0244}{30.1688} \\&= \mathbf{0.5187}\end{aligned}
-$$
+$$\begin{aligned} s_X = 30.1688  \hspace{15mm} &s_Y =  20.0244 \hspace{15mm} r  = 0.7814 \\[10pt]\hat{\beta}_1  &= 0.7814 \times \frac{20.0244}{30.1688} \\[8pt]&= \mathbf{0.5187}\end{aligned}$$
 
 ## Estimating the intercept
 
@@ -401,13 +414,11 @@ $$\large{\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}}$$
 
 . . .
 
-$$
-\begin{aligned}\bar{x} = 60.8493 & \hspace{15mm} \bar{y} = 63.8767 \hspace{15mm} \hat{\beta}_1 = 0.5187 \\[10pt]
-\hat{\beta}_0 &= 63.8767 - 0.5187 \times 60.8493 \\
-&= \mathbf{32.3142}\end{aligned}
-$$
+$$\begin{aligned}\bar{x} = 60.8493 & \hspace{15mm} \bar{y} = 63.8767 \hspace{15mm} \hat{\beta}_1 = 0.5187 \\[10pt]
+\hat{\beta}_0 &= 63.8767 - 0.5187 \times 60.8493 \\[8pt]
+&= \mathbf{32.3142}\end{aligned}$$
 
-## Interpretation
+## Interpretation \[UPDATE to WOOCLAP\]
 
 ::::: panel-tabset
 ## Question
@@ -416,9 +427,9 @@ $$
 ::: midi
 Submit your answers to the following questions on Ed Discussion:
 
--   The slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?
+- The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?
 
--   32.3142 is the predicted mean audience score for what type of movies?
+- 32.314 is the predicted mean audience score for what type of movies?
 :::
 ::::
 
@@ -437,9 +448,9 @@ Submit your answers to the following questions on Ed Discussion:
 
 ✅ **The intercept is meaningful in the context of the data if**
 
--   the predictor can feasibly take values equal to or near zero, or
+- the predictor can feasibly take values equal to or near zero, or
 
--   there are values near zero in the observed data.
+- there are values near zero in the observed data.
 
 . . .
 
@@ -447,15 +458,29 @@ Submit your answers to the following questions on Ed Discussion:
 
 # Prediction
 
-## Making a prediction
+## Prediction 
 
-Suppose that a movie has a critics score of 70. According to this model, what is the movie's predicted audience score?
+::::: columns
+::: {.column width="35%"}
+![<small> Image from Rotten Tomatoes</small>](images/02/odyssey.jpeg){fig-align="center"}
+:::
 
-\begin{aligned}
-\widehat{\text{audience}} &= 32.3142 + 0.5187 \times \text{critics} \\
-&= 32.3142 + 0.5187 \times 70 \\
-&= \mathbf{68.6232}
-\end{aligned}
+::: {.column width="65%"}
+The 2026 movie *The Odyssey* has critics score of 94% on [Rotten Tomatoes](https://www.rottentomatoes.com/m/the_odyssey_2026)\*.
+
+. . .
+
+According to this model, what is the predicted audience score?
+
+. . .
+
+$$\begin{aligned}\widehat{\text{audience}} &= 32.314 + 0.519 \times \text{critics} \\&= 32.314 + 0.519 \times 94 \\&= \mathbf{81.1}\end{aligned}$$
+:::
+:::::
+
+::: aside
+\*score on 8/25/26.
+:::
 
 # Linear regression in R
 
@@ -472,7 +497,7 @@ movie_fit
 
 ## Tidy results
 
-Use the `tidy()` function from the **broom** R package to "tidy" the model output
+Use the `tidy()` function from the **broom** package (part of the **tidymodels** package) to "tidy" the model output
 
 <br>
 
@@ -488,56 +513,64 @@ Use the `kable()` function from the **knitr** package to neatly format the resul
 
 <br>
 
-<div>
-
+::: {}
 ```{r}
 #| code-line-numbers: "|2,3"
 movie_fit <- lm(audience_score ~ critics_score, data = movie_scores)
 tidy(movie_fit) |>
   kable(digits = 3)
 ```
+:::
 
-</div>
+## Alternative: tidymodels syntax
+
+```{r}
+movies_fit <- linear_reg() |>
+  fit(audience_score ~ critics_score, data = movie_scores)
+
+tidy(movies_fit) |>
+  kable(digits = 3)
+```
 
 ## Prediction
 
-Use the `predict()` function to calculate predictions for new observations
+Use the `predict()` function to compute predictions for new observations
 
 <br>
 
 **Single observation**
 
 ```{r}
-new_movie <- tibble(critics_score = 70)
+new_movie <- tibble(critics_score = 94)
 predict(movie_fit, new_movie)
 ```
 
 ## Prediction
 
-Use the `predict()` function to calculate predictions for new observations
+Use the `predict()` function to compute predictions for new observations
 
 <br>
 
 **Multiple observations**
 
 ```{r}
-more_new_movies <- tibble(critics_score = c(24,70, 85))
+more_new_movies <- tibble(critics_score = c(24, 70, 94))
 predict(movie_fit, more_new_movies)
 ```
 
 ## Recap
 
--   Described how regression is used to understand the relationship between multiple variables
--   Used least squares to estimate the slope and intercept
--   Interpreted the slope and intercept for simple linear regression
--   Predicted the response given a value of the predictor
+- Described how regression is used to understand the relationship between multiple variables
+- Used least squares to estimate the slope and intercept
+- Interpreted the slope and intercept for simple linear regression
+- Predicted the response given a value of the predictor
 
-## Next time
+## Before next class
 
--   Model assessment for simple linear regression
-
-    -   Complete [Lecture 03 prepare](../prepare/prepare-lec03.html)
-
--   In-class activity on Thursday
-
-    -   Bring fully-charged laptop / device to access RStudio container
+- Complete [Lecture 03 prepare](../prepare/prepare-lec03.html) on model evaluation
+- Accept GitHub invite (check your email or see the invite at <https://github.com/sta221-fa26>)
+  - Need to be in course organization to access lab
+- Office hours start Monday (see schedule on Canvas home page)
+- Lab 01 on Monday
+  - Attendance is part of grade
+  - Computing + hand written linear algebra exercises

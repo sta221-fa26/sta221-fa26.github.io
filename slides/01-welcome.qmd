@@ -349,7 +349,7 @@ By the end of the semester, you will be able to...
 ## Exams (20% each)
 
 ::: incremental
-- Two in-class midterm exams  + one in-class final exam
+- Two in-class midterm exams + one in-class final exam
 
 - Exams are a combination of multiple choice, true/false, short answer, and derivations
 

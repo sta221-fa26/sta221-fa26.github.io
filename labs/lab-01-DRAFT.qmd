@@ -47,7 +47,7 @@ By the end of the lab, you will...
 
 # Getting Started
 
-## Find your team for this week's lab 
+## Find your team for this week's lab
 
 ## Clone the repo + start new RStudio project - UPDATE!
 
@@ -125,7 +125,7 @@ ikea <- read_csv("data/ikea.csv")
 The variable definitions from TidyTuesday are as follows:
 
 | variable | class | description |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | item_id | double | item id which can be used later to merge with other IKEA data frames |
 | name | character | the commercial name of items |
 | category | character | the furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,...) |
@@ -381,16 +381,14 @@ Recall the definition of linear dependence:
 
 A sequence of vectors $\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}$ is said to be *linearly dependent* if there exists a series of scalars $a_1, a_2, \dots, a_p$, not all zero, such that
 
-$$a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}$$
-Further, matrix $\mathbf{X}$ has full column rank if all of its columns are linearly independent.
+$$a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}$$ Further, matrix $\mathbf{X}$ has full column rank if all of its columns are linearly independent.
 
 For example, the following matrix is not full rank,
 
 $$\mathbf{X} = \begin{bmatrix}
 1 & 2 & 3\\
 1 & 1 & 2
-\end{bmatrix}$$
-since, letting letting $\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}$, $\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}$, $\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}$, and letting $a_1 = 1$, $a_2 = 1$, and $a_3 = -1$, we have:
+\end{bmatrix}$$ since, letting letting $\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}$, $\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}$, $\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}$, and letting $a_1 = 1$, $a_2 = 1$, and $a_3 = -1$, we have:
 
 $$a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end{bmatrix} + \begin{bmatrix}2\\1 \end{bmatrix} - \begin{bmatrix}3\\2 \end{bmatrix} = \mathbf{0}.$$
 
