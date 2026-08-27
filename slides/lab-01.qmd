@@ -26,13 +26,21 @@ knitr:
 
 **Topics**
 
-- Data wrangling and visualizations in R
-
 - Review linear algebra concepts
+
+- Data wrangling and visualizations in R
 
 **Notes**
 
 - Put all responses for computing questions in your `lab-01` Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope.
+
+## Find your teammates!
+
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=jpOT9e&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0) to see your teammates for Lab 01.
+
+- Discuss the lab questions with your teammates
+
+- Everyone write up the team's responses and submit your own Lab 01
 
 ## Tips for working on lab {.midi}
 
@@ -40,25 +48,23 @@ knitr:
 
   - Push final changes to GitHub
 
-  - Submit the PDF of your work on gradescope.
+  - Submit the PDF of your work in Gradescope.
 
 - The lab will be graded based on attendance, submitting the lab, workflow & formatting, and correctness of 2 randomly selected questions.
 
-  - For today's lab, we will grade one randomly selected question from the computing review and one from the linear algebra review.
+  - For today's lab, we will grade one randomly selected question from the linear algebra review and one from the computing review.
 
 ## Workflow and formatting
 
-Part of the lab grade is for “workflow and formatting” assessing the reproducible workflow and document format. This includes
+Part of the lab grade is for “workflow & formatting” assessing the reproducible workflow and document format. This includes
 
-- Having at least 3 informative commit messages (practicing version control)
+- Having at least 2 informative commit messages (practicing version control)
 
   - There are markers in Lab 01 to help you incorporate version control in your workflow
 
 - The PDF is neatly organized document with clear exercise headings and readable code and narrative
 
 - The name (first and last), teammates' names, and date are updated at the top of the document.
-
-## Linear algebra review
 
 ## **When you’re done with lab**
 
@@ -72,7 +78,7 @@ Part of the lab grade is for “workflow and formatting” assessing the reprodu
 
   - Mark the page(s) associated with each exercise
 
-  - Mark the first page for "Attendance + submitting lab" and "Workflow & formatting"
+  - Mark the first page for "Attendance & submitting lab" and "Workflow & formatting"
 
 ## Getting started
 
@@ -86,4 +92,8 @@ Ask your TA if
 
 ## Reminder to submit your lab
 
-\[Countdown timer?\]
+<br>
+
+::: callout-important
+Be sure to submit your lab to Gradescope before leaving today!
+:::

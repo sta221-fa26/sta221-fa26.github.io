@@ -29,7 +29,7 @@ This lab is due at the end of your lab session on **August 31.** Be sure to comp
 
 This lab will review some of the linear algebra concepts and the computing workflow we'll use in this course. The main goal is to establish a computing and mathematical foundation that we will build upon throughout the semester.
 
-**You will work with a randomly selected team on this lab. You will discuss the teammates but complete the lab in your individual lab repo and submit your lab on Gradescope.**
+**You will work on this lab with a randomly assigned team. You will discuss the lab with your teammates but complete it in your individual lab repo and submit your lab on Gradescope.**
 
 ## Learning goals
 
@@ -61,19 +61,19 @@ By the end of the lab, you will...
 
 <details>
 
-### R and R Studio
+### R and RStudio
 
 Below are the components of the RStudio IDE.
 
 ![](images/rstudio-panes.png){fig-alt="Screenshot of RStudio IDE" fig-align="center"}
 
-Below are the components of an Quarto (`.qmd`) file.
+Below are the components of a Quarto (`.qmd`) file.
 
 ![](images/quarto.png){fig-alt="Screenshot of Quarto document and rendered PDF." fig-align="center"}
 
 ### YAML
 
-The top portion of your Quarto file (between the three dashed lines) is called **YAML**. It stands for "YAML Ain't Markup Language". It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+The top portion of your Quarto file (between the three dashed lines) is called **YAML**. It stands for "YAML Ain't Markup Language". It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains metadata about your document.
 
 ::: callout-important
 Open the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.
@@ -91,13 +91,13 @@ You don't have to commit after every change, as this would get quite tedious. Yo
 
 In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.
 
-Now let's make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you're good to go!
-
 ### Push changes
 
 Now that you have made an update and committed this change, it's time to push these changes to your repo on GitHub.
 
-In order to push your changes to GitHub, you must have **staged** your **commit** to be pushed. click on **Push**.
+You must **commit** your changes before they can be pushed. When you're ready, click **Push** to send your changes to your GitHub repo.
+
+Now let's make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you're good to go!
 
 </details>
 
@@ -200,19 +200,19 @@ A sequence of vectors $\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}$ is said 
 
 $$a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}$$ Further, matrix $\mathbf{X}$ has full column rank if all of its columns are linearly independent.
 
-For example, the following matrix is not full rank,
+For example, the following matrix is not full column rank,
 
 $$\mathbf{X} = \begin{bmatrix}
 1 & 2 & 3\\
 1 & 1 & 2
-\end{bmatrix}$$ since, letting letting $\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}$, $\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}$, $\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}$, and letting $a_1 = 1$, $a_2 = 1$, and $a_3 = -1$, we have:
+\end{bmatrix}$$ since, letting $\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}$, $\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}$, $\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}$, and letting $a_1 = 1$, $a_2 = 1$, and $a_3 = -1$, we have:
 
 $$a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end{bmatrix} + \begin{bmatrix}2\\1 \end{bmatrix} - \begin{bmatrix}3\\2 \end{bmatrix} = \mathbf{0}.$$
 :::
 
 ### Exercise 6
 
-For each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients $a$'s).
+For each of the following matrices, state whether it is full column rank. If not full column rank, show why (find corresponding coefficients $a$'s).
 
 a.  
 
@@ -256,9 +256,9 @@ library(tidyverse)
 library(knitr)
 ```
 
-## Data: Ikea furniture 
+## Data: IKEA furniture 
 
-Today's data is all about [Ikea](https://www.ikea.com/) furniture. The data was obtained from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) data collection. **The goal** **of the analysis is to explore the costs based on the width and type of furniture sold at the store.**
+Today's data is all about [IKEA](https://www.ikea.com/) furniture. The data was obtained from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) data collection. **The goal** **of the analysis is to explore the relationship between price, width, and category, for furniture sold at IKEA.**
 
 Use the code below to read in the data.
 
@@ -280,7 +280,7 @@ See the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master
 ::: callout-important
 ## Instructions
 
-The applied exercises are focused on use the methods from the course to analyze data and answer questions about real-world phenomena.
+The applied exercises are focused on using the methods from the course to analyze data and answer questions about real-world phenomena.
 
 **All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.**
 
@@ -288,7 +288,7 @@ Write all narrative using complete sentences and include informative axis labels
 :::
 
 ::: callout-tip
-Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
+Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is to start a new line after every pipe (`|>`) and plus sign (`+`).
 :::
 
 ## Exercise 7
@@ -313,7 +313,7 @@ ggplot(data = ikea, aes(x = _____)) +
 Briefly explain why the median is more representative of the center of the distribution of `price_usd` than the mean.
 
 ::: render-commit-push
-This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 7 - 8"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Check the box next to each file in the git pane, commit them with an informative commit message (e.g. "Completed exercises 7 - 8"), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.
 :::
 
 ## Exercise 9
@@ -329,7 +329,7 @@ ikea_sub <- ikea |>
                        "_____"))
 ```
 
-Now, run the code below to remove observations that have that have a missing value for at least one of `width` or `price_usd`.
+Now, run the code below to remove observations that have a missing value for at least one of `width` or `price_usd`.
 
 ```{r}
 #| eval: false
@@ -339,7 +339,7 @@ ikea_sub <- ikea_sub |>
 
 a.  How many observations are in the `ikea_sub` data frame? How many variables?
 
-b.   Dropping all observations that has any missing data is called a **complete case analysis*.*** What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?
+b.   Dropping all observations that have missing values for one or more variables used in this analysis is called a **complete-case analysis*.*** What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?
 
 ## Exercise 10
 
@@ -347,17 +347,19 @@ b.   Dropping all observations that has any missing data is called a **complete 
 Use the `ikea_sub` data frame for this exercise.
 :::
 
-a.  Create a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
+a.  Create a visualization of the relationship between the width and price of IKEA furniture in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
 
 b.  Then, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.
 
 ::: render-commit-push
-You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.
+You’re done and ready to submit your work! render, commit, and push all remaining changes. Check the box next to each file in the git pane, commit them with an informative commit message (e.g. "Done with Lab 01!"), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.
+
+The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.
 :::
 
 # Submission
 
-You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.
+You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.
 
 ::: callout-warning
 Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
@@ -397,6 +399,8 @@ This lab will be graded based on completion and workflow & formatting. The point
 | Workflow & formatting                   | 4      |
 
 ------------------------------------------------------------------------
+
+We will grade one randomly selected linear algebra exercise and one randomly selected computing exercise.
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 2 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.
 

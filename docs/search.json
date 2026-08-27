@@ -1067,35 +1067,35 @@
     "href": "slides/lab-01.html#todays-lab",
     "title": "Lab 01",
     "section": "Today’s lab",
-    "text": "Today’s lab\nTopics\n\nData wrangling and visualizations in R\nReview linear algebra concepts\n\nNotes\n\nPut all responses for computing questions in your lab-01 Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope."
+    "text": "Today’s lab\nTopics\n\nReview linear algebra concepts\nData wrangling and visualizations in R\n\nNotes\n\nPut all responses for computing questions in your lab-01 Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope."
+  },
+  {
+    "objectID": "slides/lab-01.html#find-your-teammates",
+    "href": "slides/lab-01.html#find-your-teammates",
+    "title": "Lab 01",
+    "section": "Find your teammates!",
+    "text": "Find your teammates!\nClick here to see your teammates for Lab 01.\n\nDiscuss the lab questions with your teammates\nEveryone write up the team’s responses and submit your own Lab 01"
   },
   {
     "objectID": "slides/lab-01.html#tips-for-working-on-lab",
     "href": "slides/lab-01.html#tips-for-working-on-lab",
     "title": "Lab 01",
     "section": "Tips for working on lab",
-    "text": "Tips for working on lab\n\nLabs are due at the end of your lab session. There is no late work or make ups accepted for lab.\n\nPush final changes to GitHub\nSubmit the PDF of your work on gradescope.\n\nThe lab will be graded based on attendance, submitting the lab, workflow & formatting, and correctness of 2 randomly selected questions.\n\nFor today’s lab, we will grade one randomly selected question from the computing review and one from the linear algebra review."
+    "text": "Tips for working on lab\n\nLabs are due at the end of your lab session. There is no late work or make ups accepted for lab.\n\nPush final changes to GitHub\nSubmit the PDF of your work in Gradescope.\n\nThe lab will be graded based on attendance, submitting the lab, workflow & formatting, and correctness of 2 randomly selected questions.\n\nFor today’s lab, we will grade one randomly selected question from the linear algebra review and one from the computing review."
   },
   {
     "objectID": "slides/lab-01.html#workflow-and-formatting",
     "href": "slides/lab-01.html#workflow-and-formatting",
     "title": "Lab 01",
     "section": "Workflow and formatting",
-    "text": "Workflow and formatting\nPart of the lab grade is for “workflow and formatting” assessing the reproducible workflow and document format. This includes\n\nHaving at least 3 informative commit messages (practicing version control)\n\nThere are markers in Lab 01 to help you incorporate version control in your workflow\n\nThe PDF is neatly organized document with clear exercise headings and readable code and narrative\nThe name (first and last), teammates’ names, and date are updated at the top of the document."
-  },
-  {
-    "objectID": "slides/lab-01.html#linear-algebra-review",
-    "href": "slides/lab-01.html#linear-algebra-review",
-    "title": "Lab 01",
-    "section": "Linear algebra review",
-    "text": "Linear algebra review"
+    "text": "Workflow and formatting\nPart of the lab grade is for “workflow & formatting” assessing the reproducible workflow and document format. This includes\n\nHaving at least 2 informative commit messages (practicing version control)\n\nThere are markers in Lab 01 to help you incorporate version control in your workflow\n\nThe PDF is neatly organized document with clear exercise headings and readable code and narrative\nThe name (first and last), teammates’ names, and date are updated at the top of the document."
   },
   {
     "objectID": "slides/lab-01.html#when-youre-done-with-lab",
     "href": "slides/lab-01.html#when-youre-done-with-lab",
     "title": "Lab 01",
     "section": "When you’re done with lab",
-    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit your final PDF to Gradescope\n\nCombine the rendered Quarto document and handwritten math work into a single PDF document if needed.\nAccess Gradescope through the course Canvas site\nMark the page(s) associated with each exercise\nMark the first page for “Attendance + submitting lab” and “Workflow & formatting”"
+    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit your final PDF to Gradescope\n\nCombine the rendered Quarto document and handwritten math work into a single PDF document if needed.\nAccess Gradescope through the course Canvas site\nMark the page(s) associated with each exercise\nMark the first page for “Attendance & submitting lab” and “Workflow & formatting”"
   },
   {
     "objectID": "slides/lab-01.html#getting-started",
@@ -1109,7 +1109,7 @@
     "href": "slides/lab-01.html#reminder-to-submit-your-lab",
     "title": "Lab 01",
     "section": "Reminder to submit your lab",
-    "text": "Reminder to submit your lab\n[Countdown timer?]"
+    "text": "Reminder to submit your lab\n\n\n\n\n\n\n\nImportant\n\n\nBe sure to submit your lab to Gradescope before leaving today!"
   },
   {
     "objectID": "computing-access.html",
@@ -1567,7 +1567,7 @@
     "href": "labs/lab-01-DRAFT.html#using-rstudio-github",
     "title": "Lab 01: Linear algebra + computing review",
     "section": "Using RStudio + GitHub",
-    "text": "Using RStudio + GitHub\n\n\nR and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.qmd) file.\n\n\n\n\n\n\n\nYAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.\n\n\n\n\nCommitting changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\nPush changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push."
+    "text": "Using RStudio + GitHub\n\n\nR and RStudio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of a Quarto (.qmd) file.\n\n\n\n\n\n\n\nYAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains metadata about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.\n\n\n\n\nCommitting changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\n\n\nPush changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nYou must commit your changes before they can be pushed. When you’re ready, click Push to send your changes to your GitHub repo.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#packages",
@@ -1577,25 +1577,11 @@
     "text": "Packages\nWe will use the following packages for this part of the lab.\n\nlibrary(tidyverse) \nlibrary(knitr)"
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#data-ikea-furniture-remove-variables-we-dont-use-in-the-lab",
-    "href": "labs/lab-01-DRAFT.html#data-ikea-furniture-remove-variables-we-dont-use-in-the-lab",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Data: Ikea furniture [remove variables we dont use in the lab]",
-    "text": "Data: Ikea furniture [remove variables we dont use in the lab]\nToday’s data is all about Ikea furniture. The data was obtained from the TidyTuesday data collection.\nUse the code below to read in the data.\n\nikea &lt;- read_csv(\"data/ikea.csv\")\n\nWe will use the following variables in this analysis:\n\ncategory: The furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,…)\nwidth: Width of the item (in centimeters)\nprice_usd: The price in US dollars as it was shown on the website in April 2020 (when the data were pulled)\n\nSee the TidyTuesday page for the full codebook."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#instructions-update-to-match-format-of-conceptual-exercises",
-    "href": "labs/lab-01-DRAFT.html#instructions-update-to-match-format-of-conceptual-exercises",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Instructions [update to match format of conceptual exercises]",
-    "text": "Instructions [update to match format of conceptual exercises]\n[UPDATE: ADD COMMIT MARKERS]\nWrite all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically render your Quarto document to produce the updated PDF, commit the changes in the Git pane, and push the updated files to GitHub.\nGoal: The goal is to understand the expected costs for different types of furniture and how the cost is expected to change based on width.\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+)."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-6",
-    "href": "labs/lab-01-DRAFT.html#exercise-6",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nViewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the glimpse function to see a summary of the ikea data set.\nHow many observations are in the ikea data set? How many variables?\n\nglimpse(ikea)\n\n\n\n\n\n\n\nNote\n\n\n\nIn your lab-01.qmd document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.\nAlso note that the code chunk has a label: glimpse-data. Labeling your code chunks is not required, but it is good practice and highly encouraged."
+    "objectID": "labs/lab-01-DRAFT.html#data-ikea-furniture",
+    "href": "labs/lab-01-DRAFT.html#data-ikea-furniture",
+    "title": "Lab 01: Linear algebra + computing review",
+    "section": "Data: IKEA furniture",
+    "text": "Data: IKEA furniture\nToday’s data is all about IKEA furniture. The data was obtained from the TidyTuesday data collection. The goal of the analysis is to explore the relationship between price, width, and category, for furniture sold at IKEA.\nUse the code below to read in the data.\n\nikea &lt;- read_csv(\"data/ikea.csv\")\n\nWe will use the following variables in this analysis:\n\ncategory: The furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,…)\nwidth: Width of the item (in centimeters)\nprice_usd: The price in US dollars as it was shown on the website in April 2020 (when the data were pulled)\n\nSee the TidyTuesday page for the full codebook.\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises are focused on using the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.\n\n\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is to start a new line after every pipe (|&gt;) and plus sign (+)."
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-7",
@@ -1609,35 +1595,21 @@
     "href": "labs/lab-01-DRAFT.html#exercise-8",
     "title": "Lab 01: Linear algebra + computing review",
     "section": "Exercise 8",
-    "text": "Exercise 8\nBriefly explain why the median is more representative of the center of the distribution of price_usd than the mean.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 7 - 8”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+    "text": "Exercise 8\nBriefly explain why the median is more representative of the center of the distribution of price_usd than the mean.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Check the box next to each file in the git pane, commit them with an informative commit message (e.g. “Completed exercises 7 - 8”), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty."
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-9",
     "href": "labs/lab-01-DRAFT.html#exercise-9",
     "title": "Lab 01: Linear algebra + computing review",
     "section": "Exercise 9",
-    "text": "Exercise 9\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\n\nHow many observations are in the ikea_sub data frame? How many variables?\nDropping all observations that has any missing data is called a complete case analysis. What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?"
+    "text": "Exercise 9\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\n\nHow many observations are in the ikea_sub data frame? How many variables?\nDropping all observations that have missing values for one or more variables used in this analysis is called a complete-case analysis. What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?"
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-10-1",
-    "href": "labs/lab-01-DRAFT.html#exercise-10-1",
-    "title": "Lab 01: Computing + linear algebra review",
+    "objectID": "labs/lab-01-DRAFT.html#exercise-10",
+    "href": "labs/lab-01-DRAFT.html#exercise-10",
+    "title": "Lab 01: Linear algebra + computing review",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for this exercise."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#part-a",
-    "href": "labs/lab-01-DRAFT.html#part-a",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "part a",
-    "text": "part a\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding #| fig-cap: \"Write caption here\" as a code-chunk option."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#part-b",
-    "href": "labs/lab-01-DRAFT.html#part-b",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "part b",
-    "text": "part b\nThen, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
+    "text": "Exercise 10\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for this exercise.\n\n\n\nCreate a visualization of the relationship between the width and price of IKEA furniture in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding #| fig-cap: \"Write caption here\" as a code-chunk option.\nThen, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. Check the box next to each file in the git pane, commit them with an informative commit message (e.g. “Done with Lab 01!”), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.\nThe PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
   },
   {
     "objectID": "labs/lab-05.html",
@@ -2942,26 +2914,5 @@
       "Project",
       "Instructions"
     ]
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-10",
-    "href": "labs/lab-01-DRAFT.html#exercise-10",
-    "title": "Lab 01: Linear algebra + computing review",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for this exercise.\n\n\n\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding #| fig-cap: \"Write caption here\" as a code-chunk option.\nThen, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-11",
-    "href": "labs/lab-01-DRAFT.html#exercise-11",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 11",
-    "text": "Exercise 11\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for this exercise."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#data-ikea-furniture",
-    "href": "labs/lab-01-DRAFT.html#data-ikea-furniture",
-    "title": "Lab 01: Linear algebra + computing review",
-    "section": "Data: Ikea furniture",
-    "text": "Data: Ikea furniture\nToday’s data is all about Ikea furniture. The data was obtained from the TidyTuesday data collection. The goal of the analysis is to explore the costs based on the width and type of furniture sold at the store.\nUse the code below to read in the data.\n\nikea &lt;- read_csv(\"data/ikea.csv\")\n\nWe will use the following variables in this analysis:\n\ncategory: The furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,…)\nwidth: Width of the item (in centimeters)\nprice_usd: The price in US dollars as it was shown on the website in April 2020 (when the data were pulled)\n\nSee the TidyTuesday page for the full codebook.\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises are focused on use the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.\n\n\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+)."
   }
 ]
