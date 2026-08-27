@@ -6,4 +6,18 @@ title: "Prepare for Lecture 04: SLR - Matrix representation"
 
 📖 Read [Appendices A.2 - A.3](https://intro-regression.github.io/appendix-linear.html#sec-mlr-matrix)
 
-<!--# add some linear algebra review?-->
+**Optional review linear algebra concepts** (as needed)
+
+- Matrices and vectors: \[[slides](https://218.pages.oit.duke.edu/lessons/matvec.pdf)\]\[[video](https://youtu.be/3uNbT8X7zGo)\]
+
+- Matrix-Vector products: \[[slides](https://218.pages.oit.duke.edu/lessons/mvprod.pdf)\]\[[video](https://youtu.be/-095IM1GU5U)\]
+
+- Matrix multiplication: \[[slides](https://218.pages.oit.duke.edu/lessons/mmult.pdf)\]\[[video](https://youtu.be/4_3z7DE4580)\]
+
+- Vector geometry: \[[slides](https://218.pages.oit.duke.edu/lessons/vgeom.pdf)\]\[[video](https://youtu.be/HAgVUqbnBWM)\]
+
+- Nonsignular matrices: \[[slides](https://218.pages.oit.duke.edu/lessons/nonsing.pdf)\]\[[video](https://youtu.be/GCc2_G8TK0s)\]
+
+::: callout-note
+All linear algebra review materials from [Math 218: Matrices and Vectors (Spring 2026)](https://www.bfitz.xyz/courses/218s26/) taught by Dr. Brian Fitzpatrick at Duke University.
+:::

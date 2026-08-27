@@ -1234,7 +1234,7 @@
     "href": "prepare/prepare-lec04.html",
     "title": "Prepare for Lecture 04: SLR - Matrix representation",
     "section": "",
-    "text": "📖 Read Appendices A.2 - A.3"
+    "text": "📖 Read Appendices A.2 - A.3\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\nNonsignular matrices: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Spring 2026) taught by Dr. Brian Fitzpatrick at Duke University."
   },
   {
     "objectID": "hw/hw-03.html",
