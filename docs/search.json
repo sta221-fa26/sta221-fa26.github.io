@@ -626,7 +626,7 @@
     "href": "slides/02-slr.html#regression-model",
     "title": "Simple linear regression",
     "section": "Regression model",
-    "text": "Regression model\nA regression model is a function that describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{f(X)} + \\epsilon \\\\[8pt]\n& = \\color{black}{E(Y|X)} + \\epsilon \\end{aligned}\\]"
+    "text": "Regression model\nA regression model describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{f(X)} + \\epsilon \\\\[8pt]\n& = \\color{black}{E(Y|X)} + \\epsilon \\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr.html#regression-model-1",
@@ -647,7 +647,7 @@
     "href": "slides/02-slr.html#determine-fx",
     "title": "Simple linear regression",
     "section": "Determine \\(f(X)\\)",
-    "text": "Determine \\(f(X)\\)\n\nGoal: Determine \\(f(X)\\)\nHow do we determine \\(f(X)\\)\n\nMake an assumption about the functional form \\(f(X)\\) (parametric model)\nUse the data to fit a model based on that form"
+    "text": "Determine \\(f(X)\\)\n\nGoal: Determine \\(f(X)\\)\nHow do we determine \\(f(X)\\)?\n\nMake an assumption about the functional form \\(f(X)\\) (parametric model)\nUse the data to fit a model based on that form"
   },
   {
     "objectID": "slides/02-slr.html#slr-statistical-model-population",
@@ -692,11 +692,11 @@
     "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
   },
   {
-    "objectID": "slides/02-slr.html#properties-of-least-squares-regression",
-    "href": "slides/02-slr.html#properties-of-least-squares-regression",
+    "objectID": "slides/02-slr.html#properties-of-ols",
+    "href": "slides/02-slr.html#properties-of-ols",
     "title": "Simple linear regression",
-    "section": "Properties of least squares regression",
-    "text": "Properties of least squares regression\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
+    "section": "Properties of OLS",
+    "text": "Properties of OLS\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean of \\(X\\) and mean of \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
   },
   {
     "objectID": "slides/02-slr.html#estimating-the-slope",
@@ -717,14 +717,14 @@
     "href": "slides/02-slr.html#your-turn-interpret-the-slope",
     "title": "Simple linear regression",
     "section": "Your turn! Interpret the slope",
-    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n\n\n\napp.wooclap.com/NNKYSFL"
+    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519. Which of the following is the best interpretation of this value?\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
     "objectID": "slides/02-slr.html#interpret-the-intercept",
     "href": "slides/02-slr.html#interpret-the-intercept",
     "title": "Simple linear regression",
     "section": "Interpret the intercept",
-    "text": "Interpret the intercept\n\n32.314 is the predicted mean audience score for what type of movies?"
+    "text": "Interpret the intercept\n\nThe intercept is 32.314. It is the predicted mean audience score for what type of movies?"
   },
   {
     "objectID": "slides/02-slr.html#is-the-intercept-meaningful",
@@ -738,7 +738,7 @@
     "href": "slides/02-slr.html#prediction-1",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n\nThe actual audience score is 97%. What is the residual? What type of factors are included the residual?\n\n *score on 8/25/26"
+    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n\nThe actual audience score is 97%. What is the residual? What type of factors are accounted for in the residual?\n\n *score on 8/25/26"
   },
   {
     "objectID": "slides/02-slr.html#fit-the-model",
@@ -892,7 +892,7 @@
     "href": "slides/02-slr-notes.html#regression-model",
     "title": "Simple linear regression",
     "section": "Regression model",
-    "text": "Regression model\nA regression model is a function that describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{f(X)} + \\epsilon \\\\[8pt]\n& = \\color{black}{E(Y|X)} + \\epsilon \\end{aligned}\\]"
+    "text": "Regression model\nA regression model describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{f(X)} + \\epsilon \\\\[8pt]\n& = \\color{black}{E(Y|X)} + \\epsilon \\end{aligned}\\]"
   },
   {
     "objectID": "slides/02-slr-notes.html#regression-model-1",
@@ -913,7 +913,7 @@
     "href": "slides/02-slr-notes.html#determine-fx",
     "title": "Simple linear regression",
     "section": "Determine \\(f(X)\\)",
-    "text": "Determine \\(f(X)\\)\n\nGoal: Determine \\(f(X)\\)\nHow do we determine \\(f(X)\\)\n\nMake an assumption about the functional form \\(f(X)\\) (parametric model)\nUse the data to fit a model based on that form"
+    "text": "Determine \\(f(X)\\)\n\nGoal: Determine \\(f(X)\\)\nHow do we determine \\(f(X)\\)?\n\nMake an assumption about the functional form \\(f(X)\\) (parametric model)\nUse the data to fit a model based on that form"
   },
   {
     "objectID": "slides/02-slr-notes.html#slr-statistical-model-population",
@@ -958,11 +958,11 @@
     "text": "Least-squares estimator \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
   },
   {
-    "objectID": "slides/02-slr-notes.html#properties-of-least-squares-regression",
-    "href": "slides/02-slr-notes.html#properties-of-least-squares-regression",
+    "objectID": "slides/02-slr-notes.html#properties-of-ols",
+    "href": "slides/02-slr-notes.html#properties-of-ols",
     "title": "Simple linear regression",
-    "section": "Properties of least squares regression",
-    "text": "Properties of least squares regression\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean \\(X\\) and mean \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
+    "section": "Properties of OLS",
+    "text": "Properties of OLS\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to mean of \\(X\\) and mean of \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and values of the predictor variable are uncorrelated"
   },
   {
     "objectID": "slides/02-slr-notes.html#estimating-the-slope",
@@ -983,14 +983,14 @@
     "href": "slides/02-slr-notes.html#your-turn-interpret-the-slope",
     "title": "Simple linear regression",
     "section": "Your turn! Interpret the slope",
-    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?\n\n\n\n\n\n\n\napp.wooclap.com/NNKYSFL"
+    "text": "Your turn! Interpret the slope\n\nThe slope of the model for predicting audience score from critics score is 0.519. Which of the following is the best interpretation of this value?\n\n\n\n\n\n\n\napp.wooclap.com/NNKYSFL"
   },
   {
     "objectID": "slides/02-slr-notes.html#interpret-the-intercept",
     "href": "slides/02-slr-notes.html#interpret-the-intercept",
     "title": "Simple linear regression",
     "section": "Interpret the intercept",
-    "text": "Interpret the intercept\n\n32.314 is the predicted mean audience score for what type of movies?"
+    "text": "Interpret the intercept\n\nThe intercept is 32.314. It is the predicted mean audience score for what type of movies?"
   },
   {
     "objectID": "slides/02-slr-notes.html#is-the-intercept-meaningful",
@@ -1004,7 +1004,7 @@
     "href": "slides/02-slr-notes.html#prediction-1",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n. . .\n\nThe actual audience score is 97%. What is the residual? What type of factors are included the residual?\n\n *score on 8/25/26"
+    "text": "Prediction\n\n\n\n\n\n Image from Rotten Tomatoes\n\n\n\nThe 2026 movie The Odyssey has critics score of 94% on Rotten Tomatoes*.\nAccording to this model, what is the predicted audience score?\n\\[\\begin{aligned}\\widehat{\\text{audience}} &= 32.314 + 0.519 \\times \\text{critics} \\\\&= 32.314 + 0.519 \\times 94 \\\\&= \\mathbf{81.1}\\end{aligned}\\]\n\n\n. . .\n\nThe actual audience score is 97%. What is the residual? What type of factors are accounted for in the residual?\n\n *score on 8/25/26"
   },
   {
     "objectID": "slides/02-slr-notes.html#fit-the-model",
@@ -1556,137 +1556,88 @@
     "text": "Learning goals\nBy the end of the lab, you will…\n\nRecall some basic matrix operations and linear algebra rules\nBe familiar with the data analysis workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nRecall some basic matrix operations and linear algebra rules"
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#find-your-team-for-this-weeks-lab",
-    "href": "labs/lab-01-DRAFT.html#find-your-team-for-this-weeks-lab",
+    "objectID": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project",
+    "href": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project",
     "title": "Lab 01: Computing + linear algebra review",
-    "section": "Find your team for this week’s lab",
-    "text": "Find your team for this week’s lab"
+    "section": "Clone the repo + start new RStudio project",
+    "text": "Clone the repo + start new RStudio project\n\n\nGo to the course organization at github.com/sta221-fa26 organization on GitHub.\nClick on the repo with the prefix lab-01. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project---update",
-    "href": "labs/lab-01-DRAFT.html#clone-the-repo-start-new-rstudio-project---update",
+    "objectID": "labs/lab-01-DRAFT.html#using-rstudio-github",
+    "href": "labs/lab-01-DRAFT.html#using-rstudio-github",
     "title": "Lab 01: Computing + linear algebra review",
-    "section": "Clone the repo + start new RStudio project - UPDATE!",
-    "text": "Clone the repo + start new RStudio project - UPDATE!\n\nGo to the course organization at github.com/sta221-sp26 organization on GitHub.\nClick on the repo with the prefix lab-01. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
+    "section": "Using RStudio + GitHub",
+    "text": "Using RStudio + GitHub\n\n\nR and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.qmd) file.\n\n\n\n\n\n\n\nYAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.\n\n\n\n\nCommitting changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\nPush changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push."
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#r-and-r-studio",
-    "href": "labs/lab-01-DRAFT.html#r-and-r-studio",
+    "objectID": "labs/lab-01-DRAFT.html#packages",
+    "href": "labs/lab-01-DRAFT.html#packages",
     "title": "Lab 01: Computing + linear algebra review",
-    "section": "R and R Studio",
-    "text": "R and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.qmd) file."
+    "section": "Packages",
+    "text": "Packages\nWe will use the following packages for this part of the lab.\n\nlibrary(tidyverse) \nlibrary(knitr)"
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#yaml",
-    "href": "labs/lab-01-DRAFT.html#yaml",
+    "objectID": "labs/lab-01-DRAFT.html#data-ikea-furniture-remove-variables-we-dont-use-in-the-lab",
+    "href": "labs/lab-01-DRAFT.html#data-ikea-furniture-remove-variables-we-dont-use-in-the-lab",
     "title": "Lab 01: Computing + linear algebra review",
-    "section": "YAML",
-    "text": "YAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document."
+    "section": "Data: Ikea furniture [remove variables we dont use in the lab]",
+    "text": "Data: Ikea furniture [remove variables we dont use in the lab]\nToday’s data is all about Ikea furniture. The data was obtained from the TidyTuesday data collection.\nUse the code below to read in the data.\n\nikea &lt;- read_csv(\"data/ikea.csv\")\n\nThe variable definitions from TidyTuesday are as follows:\n\n\n\n\n\n\n\n\nvariable\nclass\ndescription\n\n\n\n\nitem_id\ndouble\nitem id which can be used later to merge with other IKEA data frames\n\n\nname\ncharacter\nthe commercial name of items\n\n\ncategory\ncharacter\nthe furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,…)\n\n\nsellable_online\nlogical\nSellable online TRUE or FALSE\n\n\nlink\ncharacter\nthe web link of the item\n\n\nother_colors\ncharacter\nif other colors are available for the item, or just one color as displayed in the website (Boolean)\n\n\nshort_description\ncharacter\na brief description of the item\n\n\ndesigner\ncharacter\nThe name of the designer who designed the item. this is extracted from the full_description column.\n\n\ndepth\ndouble\nDepth of the item in centimeters\n\n\nheight\ndouble\nHeight of the item in centimeters\n\n\nwidth\ndouble\nWidth of the item in centimeters\n\n\nprice_usd\ndouble\nthe current price in US dollars as it is shown in the website by 4/20/2020\n\n\n\nGoal: The goal is to understand the expected costs for different types of furniture and how the cost is expected to change based on width."
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#committing-changes",
-    "href": "labs/lab-01-DRAFT.html#committing-changes",
+    "objectID": "labs/lab-01-DRAFT.html#instructions-update-to-match-format-of-conceptual-exercises",
+    "href": "labs/lab-01-DRAFT.html#instructions-update-to-match-format-of-conceptual-exercises",
     "title": "Lab 01: Computing + linear algebra review",
-    "section": "Committing changes",
-    "text": "Committing changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#push-changes",
-    "href": "labs/lab-01-DRAFT.html#push-changes",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Push changes",
-    "text": "Push changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#instructions",
-    "href": "labs/lab-01-DRAFT.html#instructions",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Instructions",
-    "text": "Instructions\nWrite all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically render your Quarto document to produce the updated PDF, commit the changes in the Git pane, and push the updated files to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+)."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-1",
-    "href": "labs/lab-01-DRAFT.html#exercise-1",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nViewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the glimpse function to see a summary of the ikea data set.\nHow many observations are in the ikea data set? How many variables?\n\nglimpse(ikea)\n\n\n\n\n\n\n\nNote\n\n\n\nIn your lab-01.qmd document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.\nAlso note that the code chunk has a label: glimpse-data. Labeling your code chunks is not required, but it is good practice and highly encouraged."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-2",
-    "href": "labs/lab-01-DRAFT.html#exercise-2",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nWe begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.\nWhen we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have informative axis labels along with an informative title or caption.\nFill in the code below to visualize the distribution of price_usd, the price in US dollars.\n\nggplot(data = ikea, aes(x = _____)) +\n  geom_histogram() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")"
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-3",
-    "href": "labs/lab-01-DRAFT.html#exercise-3",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nBriefly explain why the median is more representative of the center of the distribution of price_usd than the mean.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-4",
-    "href": "labs/lab-01-DRAFT.html#exercise-4",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\nHow many observations are in the ikea_sub data frame? How many variables?\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for the remainder of lab."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-5",
-    "href": "labs/lab-01-DRAFT.html#exercise-5",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels and an informative title. Use the visualization to describe the relationship between the two variables.\nThen, recreate your visualization, but now adding color based on furniture category. Comment on your observations from this visualization.\nNote: Show both visualizations in the response.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+    "section": "Instructions [update to match format of conceptual exercises]",
+    "text": "Instructions [update to match format of conceptual exercises]\n[UPDATE: ADD COMMIT MARKERS]\nWrite all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically render your Quarto document to produce the updated PDF, commit the changes in the Git pane, and push the updated files to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+)."
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-6",
     "href": "labs/lab-01-DRAFT.html#exercise-6",
     "title": "Lab 01: Computing + linear algebra review",
     "section": "Exercise 6",
-    "text": "Exercise 6\nWrite the dimensions of the following matrices:\n\n\\(A\\)\n\\(B\\)\n\\(A^\\top\\)\n\\(\\mathbf{X}\\)\n\\(\\mathbf{X}^\\top\\mathbf{X}\\)"
+    "text": "Exercise 6\nViewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the glimpse function to see a summary of the ikea data set.\nHow many observations are in the ikea data set? How many variables?\n\nglimpse(ikea)\n\n\n\n\n\n\n\nNote\n\n\n\nIn your lab-01.qmd document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.\nAlso note that the code chunk has a label: glimpse-data. Labeling your code chunks is not required, but it is good practice and highly encouraged."
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-7",
     "href": "labs/lab-01-DRAFT.html#exercise-7",
     "title": "Lab 01: Computing + linear algebra review",
     "section": "Exercise 7",
-    "text": "Exercise 7\ni. Which of the following is a proper matrix multiplication operation? Explain why.\n\n\\(A\\times C\\)\n\\(A\\times B\\)\n\\(A^\\top \\times B\\)\n\\(B \\times A\\)\n\\(B^\\top \\times C\\)\n\\(B\\times B\\)\n\nii. Perform the multiplication you chose in part (i)."
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#matrix-operations-in-r",
-    "href": "labs/lab-01-DRAFT.html#matrix-operations-in-r",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "Matrix operations in R",
-    "text": "Matrix operations in R\nR has built in matrix tools such as addition, multiplication, transpose, etc. We will now practice using these tools to review some matrix properties.\nWe first begin by creating matrices using matrix() function. We provide elements of our matrices as the data argument and specify how many rows our matrices have. byrow = TRUE allows us to fill the matrix by row.\n\nA &lt;- matrix(data = c(1, 2,\n                     3, 4,\n                     5, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nB &lt;- matrix(data = c(1, 1, 1, 1, \n                     0, 1, 2, 3), \n            nrow = 2,\n            byrow = TRUE)\n\nC &lt;-  matrix(data = c(1, 4,\n                      2, 5,\n                      3, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nYou can learn more about matrix() function by typing ?matrix in console."
+    "text": "Exercise 7\nWe begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.\nWhen we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have informative axis labels along with an informative title or caption.\nFill in the code below to visualize the distribution of price_usd, the price in US dollars.\n\nggplot(data = ikea, aes(x = _____)) +\n  geom_histogram() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")"
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-8",
     "href": "labs/lab-01-DRAFT.html#exercise-8",
     "title": "Lab 01: Computing + linear algebra review",
     "section": "Exercise 8",
-    "text": "Exercise 8\ni. To perform addition or subtraction, we can simply use a + or - operators.\n\n# Add A and C\nA + C\n\n     [,1] [,2]\n[1,]    2    6\n[2,]    5    9\n[3,]    8   12\n\n\nUsing R, find \\(C + A\\). Is addition commutative (i.e. does \\(A + C = C + A\\))? Show the work to support your response.\nii. In R, we have to use a special matrix multiplication operator, %*% .\n\n# multiply A and B\nA %*% B\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    5    7\n[2,]    3    7   11   15\n[3,]    5   11   17   23\n\n\nDoes the output match your answer to Exercise 7 (ii)? What happens if you try to multiply \\(B\\times A\\) in R?\n\n\n\n\n\n\nWarning\n\n\n\nMatrix multiplication is not commutative! Matrix multiplication satisfies left and right distributivity: \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} = \\mathbf{A}\\mathbf{C} + \\mathbf{B}\\mathbf{C}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) = \\mathbf{A}\\mathbf{B} + \\mathbf{A}\\mathbf{C}\\), but the order here matters. \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} \\neq \\mathbf{C}\\mathbf{A} +\\mathbf{C} \\mathbf{B}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) \\neq \\mathbf{B}\\mathbf{A} + \\mathbf{C}\\mathbf{A}\\). Pay attention to the order and dimensions of matrices.\n\n\niii. In this class, we will work a lot with matrix transposes. You can transpose a matrix in R by applying t() function.\n\n# transpose A\nt(A)\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\nFind \\(B^\\top \\times A^\\top\\) using R. How is your answer compare to the result of \\(A\\times B\\) you found in previous part?\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 6 - 8”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
+    "text": "Exercise 8\nBriefly explain why the median is more representative of the center of the distribution of price_usd than the mean.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
   },
   {
     "objectID": "labs/lab-01-DRAFT.html#exercise-9",
     "href": "labs/lab-01-DRAFT.html#exercise-9",
     "title": "Lab 01: Computing + linear algebra review",
     "section": "Exercise 9",
-    "text": "Exercise 9\nLet \\(\\mathbf a = \\begin{bmatrix}a_1 \\\\ \\vdots \\\\ a_n\\end{bmatrix}\\) and \\(\\mathbf b = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_n\\end{bmatrix}\\). Recall, \\[\\mathbf{a}^\\top \\mathbf{a} = \\sum_{i=1}^n a_i^2.\\]\nWrite \\((\\mathbf{a} - \\mathbf{b})^\\top (\\mathbf{a} - \\mathbf{b})\\) using summation notation."
+    "text": "Exercise 9\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\na. How many observations are in the ikea_sub data frame? How many variables\nb. Dropping all observations that has any missing data is called a complete case analysis. What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?"
   },
   {
-    "objectID": "labs/lab-01-DRAFT.html#more-linear-algebra",
-    "href": "labs/lab-01-DRAFT.html#more-linear-algebra",
-    "title": "Lab 01: Computing + linear algebra review",
-    "section": "More Linear Algebra",
-    "text": "More Linear Algebra\nRecall the definition of linear dependence:\nA sequence of vectors \\(\\mathbf{x_1}, \\mathbf{x_2}, \\dots, \\mathbf{x_p}\\) is said to be linearly dependent if there exists a series of scalars \\(a_1, a_2, \\dots, a_p\\), not all zero, such that\n\\[a_1 \\mathbf{x_1} + a_2 \\mathbf{x_2} + \\dots + a_p \\mathbf{x_p} = \\mathbf{0}\\] Further, matrix \\(\\mathbf{X}\\) has full column rank if all of its columns are linearly independent.\nFor example, the following matrix is not full rank,\n\\[\\mathbf{X} = \\begin{bmatrix}\n1 & 2 & 3\\\\\n1 & 1 & 2\n\\end{bmatrix}\\] since, letting letting \\(\\mathbf{x_1} = \\begin{bmatrix}1\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_2} = \\begin{bmatrix}2\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_3} = \\begin{bmatrix}3\\\\2 \\end{bmatrix}\\), and letting \\(a_1 = 1\\), \\(a_2 = 1\\), and \\(a_3 = -1\\), we have:\n\\[a_1 \\mathbf{x_1} + a_2\\mathbf{x_2} + a_3\\mathbf{x_3} =  \\begin{bmatrix}1\\\\1 \\end{bmatrix} + \\begin{bmatrix}2\\\\1 \\end{bmatrix} - \\begin{bmatrix}3\\\\2 \\end{bmatrix} = \\mathbf{0}.\\]"
-  },
-  {
-    "objectID": "labs/lab-01-DRAFT.html#exercise-10",
-    "href": "labs/lab-01-DRAFT.html#exercise-10",
+    "objectID": "labs/lab-01-DRAFT.html#exercise-10-1",
+    "href": "labs/lab-01-DRAFT.html#exercise-10-1",
     "title": "Lab 01: Computing + linear algebra review",
     "section": "Exercise 10",
-    "text": "Exercise 10\nFor each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients \\(a\\)’s).\n\n\\[\\begin{bmatrix}\n1 & 0 & 0\\\\\n1 & 1 & 0\\\\\n1 & 1 & 0\\\\\n1 & 0 & 1\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n0 & 0 & 1\\\\\n1 & 0 & 0\\\\\n1 & 0 & 0\\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n1 & 0 & 0 & 1\\\\\n1 & 1 & 0 & 0\\\\\n1 & 1 & 0 & 0\\\\\n1 & 0 & 1 & 0\n\\end{bmatrix}\\]\n\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
+    "text": "Exercise 10\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for this exercise."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#part-a",
+    "href": "labs/lab-01-DRAFT.html#part-a",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "part a",
+    "text": "part a\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding #| fig-cap: \"Write caption here\" as a code-chunk option."
+  },
+  {
+    "objectID": "labs/lab-01-DRAFT.html#part-b",
+    "href": "labs/lab-01-DRAFT.html#part-b",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "part b",
+    "text": "part b\nThen, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo."
   },
   {
     "objectID": "labs/lab-05.html",

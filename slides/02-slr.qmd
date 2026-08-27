@@ -201,7 +201,7 @@ p
 
 ## Regression model
 
-A **regression model** is a function that describes the relationship between the response, $Y$, and the predictor, $X$.
+A **regression model** describes the relationship between the response, $Y$, and the predictor, $X$.
 
 \begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
 &= \color{black}{f(X)} + \epsilon \\[8pt]
@@ -267,7 +267,7 @@ ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)
 
 - **Goal**: Determine $f(X)$
 
-- How do we determine $f(X)$
+- How do we determine $f(X)$?
 
   - Make an assumption about the functional form $f(X)$ (parametric model)
 
@@ -375,10 +375,10 @@ ybar <- round(mean(movie_scores$audience_score),4)
 
 # Slope and intercept
 
-## Properties of least squares regression
+## Properties of OLS
 
 ::: incremental
-- The regression line goes through the center of mass point, the coordinates corresponding to mean $X$ and mean $Y$: $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$
+- The regression line goes through the center of mass point, the coordinates corresponding to mean of $X$ and mean of $Y$: $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$
 
 - The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
 
@@ -412,7 +412,7 @@ $$\begin{aligned}\bar{x} = 60.8493 & \hspace{15mm} \bar{y} = 63.8767 \hspace{15m
 ## Your turn! Interpret the slope
 
 ::: question
-The slope of the model for predicting audience score from critics score is 0.519 . Which of the following is the best interpretation of this value?
+The slope of the model for predicting audience score from critics score is 0.519. Which of the following is the best interpretation of this value?
 :::
 
 ![](images/august-27-qrcode.png){fig-align="center" width="45%"}
@@ -422,7 +422,7 @@ The slope of the model for predicting audience score from critics score is 0.519
 ## Interpret the intercept
 
 ::: question
-32.314 is the predicted mean audience score for what type of movies?
+The intercept is 32.314. It is the predicted mean audience score for what type of movies?
 :::
 
 ## Is the intercept meaningful? 
@@ -458,7 +458,7 @@ $$\begin{aligned}\widehat{\text{audience}} &= 32.314 + 0.519 \times \text{critic
 . . .
 
 ::: question
-The actual audience score is 97%. What is the residual? What type of factors are included the residual?
+The actual audience score is 97%. What is the residual? What type of factors are accounted for in the residual?
 :::
 
 <small> \*score on 8/25/26</small>
