@@ -1,5 +1,5 @@
 ---
-title: "Lab 01: Computing + linear algebra review"
+title: "Lab 01: Linear algebra + computing review"
 execute:
   freeze: auto
   echo: true
@@ -139,51 +139,51 @@ x_{n1} & x_{n2}& \dots & x_{np}\\\end{bmatrix}$$
 
 Write the dimensions of the following matrices:
 
-i.  $A$
+a.  $\mathbf{A}$
 
-ii. $B$
+b.  $\mathbf{B}$
 
-iii. $A^\top$
+c.  $\mathbf{A}^\top$
 
-iv. $\mathbf{X}$
+d.  $\mathbf{X}$
 
-v.  $\mathbf{X}^\top\mathbf{X}$
+e.  $\mathbf{X}^\top\mathbf{X}$
 
 ### Exercise 2
 
-i\. Which of the following is a proper matrix multiplication operation? Explain why.
+a.  Which of the following is a proper matrix multiplication operation? Explain why.
 
-(a) $A\times C$
+    i.  $\mathbf{A}\times \mathbf{C}$
 
-(b) $A\times B$
+    ii. $\mathbf{A}\times \mathbf{B}$
 
-(c) $A^\top \times B$
+    iii. $\mathbf{A}^\top \times \mathbf{B}$
 
-(d) $B \times A$
+    iv. $\mathbf{B} \times \mathbf{A}$
 
-(e) $B^\top \times C$
+    v.  $\mathbf{B}^\top \times \mathbf{C}$
 
-(f) $B\times B$
+    vi. $\mathbf{B}\times \mathbf{B}$
 
-ii\. Perform the multiplication you chose in part (i).
+b.  Perform the multiplication you chose in part (a).
 
 ### Exercise 3
 
 For each of the following, indicate whether the statement is true or false. If true, state the property of matrix addition/ multiplication that is being applied. If false, explain why.
 
-i\. $\mathbf{A} + \mathbf{C} = \mathbf{C} + \mathbf{A}$
+a.  $\mathbf{A} + \mathbf{C} = \mathbf{C} + \mathbf{A}$
 
-ii\. $(\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{AB} + \mathbf{CB}$
+b.  $(\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{AB} + \mathbf{CB}$
 
-iii\. $(\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{BA} + \mathbf{BC}$
+c.  $(\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{BA} + \mathbf{BC}$
 
 ### Exercise 4
 
 State whether each of the following matrices is nonsingular (i.e., invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.
 
-i\. $\mathbf{X}$
+a.  $\mathbf{X}$
 
-ii\. $\mathbf{X}^\mathsf{T}\mathbf{X}$
+b.  $\mathbf{X}^\mathsf{T}\mathbf{X}$
 
 ### Exercise 5
 
@@ -214,7 +214,7 @@ $$a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \e
 
 For each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients $a$'s).
 
-i.  
+a.  
 
     \begin{bmatrix}
     1 & 0 & 0\\
@@ -223,7 +223,7 @@ i.
     1 & 0 & 1
     \end{bmatrix}
 
-ii. 
+b.  
 
     \begin{bmatrix}
     0 & 0 & 1\\
@@ -232,14 +232,14 @@ ii.
     0 & 1 & 0
     \end{bmatrix}
 
-iii. 
+c.  
 
-     \begin{bmatrix}
-     1 & 0 & 0 & 1\\
-     1 & 1 & 0 & 0\\
-     1 & 1 & 0 & 0\\
-     1 & 0 & 1 & 0
-     \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 & 0 & 1\\
+    1 & 1 & 0 & 0\\
+    1 & 1 & 0 & 0\\
+    1 & 0 & 1 & 0
+    \end{bmatrix}
 
 <hr>
 
@@ -256,9 +256,9 @@ library(tidyverse)
 library(knitr)
 ```
 
-## Data: Ikea furniture \[remove variables we dont use in the lab\]
+## Data: Ikea furniture 
 
-Today's data is all about [Ikea](https://www.ikea.com/) furniture. The data was obtained from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) data collection.
+Today's data is all about [Ikea](https://www.ikea.com/) furniture. The data was obtained from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) data collection. **The goal** **of the analysis is to explore the costs based on the width and type of furniture sold at the store.**
 
 Use the code below to read in the data.
 
@@ -277,39 +277,21 @@ We will use the following variables in this analysis:
 
 See the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) page for the full codebook.
 
-------------------------------------------------------------------------
+::: callout-important
+## Instructions
 
-## Instructions \[update to match format of conceptual exercises\]
+The applied exercises are focused on use the methods from the course to analyze data and answer questions about real-world phenomena.
 
-**\[UPDATE: ADD COMMIT MARKERS\]**
+**All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.**
 
-Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically **render** your Quarto document to produce the updated PDF, **commit** the changes in the Git pane, and **push** the updated files to GitHub.
-
-**Goal**: The goal is to understand the expected costs for different types of furniture and how the cost is expected to change based on width.
+Write all narrative using complete sentences and include informative axis labels / titles on visualizations.
+:::
 
 ::: callout-tip
 Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
 :::
 
 ## Exercise 7
-
-Viewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the `glimpse` function to see a summary of the `ikea` data set.
-
-How many observations are in the `ikea` data set? How many variables?
-
-```{r}
-#| eval: false
-#| label: glimpse-data
-glimpse(ikea)
-```
-
-::: callout-note
-In your `lab-01.qmd` document you'll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.
-
-Also note that the code chunk has a label: `glimpse-data`. Labeling your code chunks is not required, but it is good practice and highly encouraged.
-:::
-
-## Exercise 8
 
 We begin each regression analysis with exploratory data analysis (EDA) to help us "get to know" the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.
 
@@ -326,15 +308,15 @@ ggplot(data = ikea, aes(x = _____)) +
        title = "_____")
 ```
 
-## Exercise 9
+## Exercise 8
 
 Briefly explain why the median is more representative of the center of the distribution of `price_usd` than the mean.
 
 ::: render-commit-push
-This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 1 - 3"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 7 - 8"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
 :::
 
-## Exercise 10
+## Exercise 9
 
 In this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, `Sofas & armchairs` and `Bookcases & shelving units`, since these may be types of furniture most useful to furnish an office.
 
@@ -355,27 +337,19 @@ ikea_sub <- ikea_sub |>
   drop_na(width, price_usd)
 ```
 
-a\. How many observations are in the `ikea_sub` data frame? How many variables
+a.  How many observations are in the `ikea_sub` data frame? How many variables?
 
-b\. Dropping all observations that has any missing data is called a **complete case analysis*.*** What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?
+b.   Dropping all observations that has any missing data is called a **complete case analysis*.*** What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?
 
-## Exercise 11
+## Exercise 10
 
 ::: callout-important
 Use the `ikea_sub` data frame for this exercise.
 :::
 
-## part a
+a.  Create a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
 
-Create a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
-
-## part b
-
-Then, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.
-
-::: render-commit-push
-This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 4 - 5"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
-:::
+b.  Then, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.
 
 ::: render-commit-push
 You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.
@@ -401,27 +375,31 @@ Instructions to combine PDFs:
 - Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
 :::
 
-To submit your assignment:
+**To submit your assignment:**
 
 - Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/84458)
 
 - Click on the assignment, and you’ll be prompted to submit it.
 
-- Mark the pages for the *"Exercises"* question.
+- Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.
 
-- Select the first page of your .PDF submission to be associated with "Attendance + Completion".
+- Select the first page of your .PDF submission to be associated with "Attendance & submitting lab" and "Workflow & formatting"
 
 # Grading (30pts)
 
 This lab will be graded based on completion and workflow & formatting. The point breakdown is as follows:
 
-| Component                      | Points |
-|--------------------------------|--------|
-| Attendance + submitting lab    | 10     |
-| Computing review exercise      | 8      |
-| Linear algebra review exercise | 8      |
-| Workflow & formatting          | 4      |
+| Component                               | Points |
+|-----------------------------------------|--------|
+| Attendance & submitting lab             | 10     |
+| Selected linear algebra review exercise | 8      |
+| Selected computing review exercise      | 8      |
+| Workflow & formatting                   | 4      |
 
 ------------------------------------------------------------------------
+
+The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 2 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.
+
+# Acknowledgements
 
 *This assignment was written in collaboration with Kat Husar, a PhD student in Statistical Science at Duke University.*
