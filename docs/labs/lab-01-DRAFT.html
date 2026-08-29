@@ -629,7 +629,7 @@ C = \begin{bmatrix}
 x_{11} &amp; x_{12}&amp; \dots &amp; x_{1p}\\
 x_{21} &amp; x_{22}&amp; \dots &amp; x_{2p}\\
 \vdots &amp; \vdots&amp; \ddots &amp; \vdots\\
-x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}\]</span></p>
+x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix} \hspace{8mm} \text{sucht that }n \neq p\]</span></p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <p>Write the dimensions of the following matrices:</p>
@@ -667,7 +667,7 @@ x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}\]</span></p>
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>State whether each of the following matrices is nonsingular (i.e., invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.</p>
+<p>State whether each of the following matrices is singular (not invertible) or nonsingular (invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.</p>
 <ol type="a">
 <li><p><span class="math inline">\(\mathbf{X}\)</span></p></li>
 <li><p><span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span></p></li>
@@ -689,7 +689,7 @@ x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix}\]</span></p>
 <div class="callout-body-container callout-body">
 <p>Recall the definition of linear dependence:</p>
 <p>A sequence of vectors <span class="math inline">\(\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}\)</span> is said to be <em>linearly dependent</em> if there exists a series of scalars <span class="math inline">\(a_1, a_2, \dots, a_p\)</span>, not all zero, such that</p>
-<p><span class="math display">\[a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}\]</span> Further, matrix <span class="math inline">\(\mathbf{X}\)</span> has full column rank if all of its columns are linearly independent.</p>
+<p><span class="math display">\[a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}\]</span> Further, matrix <span class="math inline">\(\mathbf{X}\)</span> has full column rank if all of its columns are <u>linearly independent.</u></p>
 <p>For example, the following matrix is not full column rank,</p>
 <p><span class="math display">\[\mathbf{X} = \begin{bmatrix}
 1 &amp; 2 &amp; 3\\
@@ -800,7 +800,7 @@ Tip
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<p>In this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, <code>Sofas &amp; armchairs</code> and <code>Bookcases &amp; shelving units</code>, since these may be types of furniture most useful to furnish an office.</p>
+<p>We’ll focus the analysis on two categories: <code>Sofas &amp; armchairs</code> and <code>Bookcases &amp; shelving units</code>.</p>
 <p>Fill in the code below to create a new data frame called <code>ikea_sub</code> that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ikea_sub <span class="ot">&lt;-</span> ikea <span class="sc">|&gt;</span></span>
@@ -814,7 +814,7 @@ Tip
 </div>
 <ol type="a">
 <li><p>How many observations are in the <code>ikea_sub</code> data frame? How many variables?</p></li>
-<li><p>Dropping all observations that have missing values for one or more variables used in this analysis is called a <strong>complete-case analysis<em>.</em></strong> What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?</p></li>
+<li><p>Dropping all observations that have missing values for one or more variables used in this analysis is called a <strong>complete-case analysis<em>.</em></strong> What is an advantage of using this approach to deal with the missing data in this analysis? What is a disadvantage of using this approach to deal with the missing data in this analysis?</p></li>
 </ol>
 </section>
 <section id="exercise-10" class="level2">
@@ -833,8 +833,8 @@ Important
 </div>
 </div>
 <ol type="a">
-<li><p>Create a visualization of the relationship between the width and price of IKEA furniture in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding <code>#| fig-cap: "Write caption here"</code> as a code-chunk option.</p></li>
-<li><p>Then, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.</p></li>
+<li><p>Create a visualization of the relationship between the width and price of IKEA furniture. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can write the caption by adding <code>#| fig-cap: "Write caption here"</code> as a code-chunk option.</p></li>
+<li><p>Make another visualization of the relationship between width and price, such that the color and shape of the poitns are based on the furniture category. Write a short caption describing what you observe from the graph.</p></li>
 </ol>
 <div class="render-commit-push">
 <p>You’re done and ready to submit your work! render, commit, and push all remaining changes. Check the box next to each file in the git pane, commit them with an informative commit message (e.g.&nbsp;“Done with Lab 01!”), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.</p>

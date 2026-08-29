@@ -133,7 +133,7 @@ $$\mathbf{X} = \begin{bmatrix}
 x_{11} & x_{12}& \dots & x_{1p}\\
 x_{21} & x_{22}& \dots & x_{2p}\\
 \vdots & \vdots& \ddots & \vdots\\
-x_{n1} & x_{n2}& \dots & x_{np}\\\end{bmatrix}$$
+x_{n1} & x_{n2}& \dots & x_{np}\\\end{bmatrix} \hspace{8mm} \text{sucht that }n \neq p$$
 
 ### Exercise 1
 
@@ -179,7 +179,7 @@ c.  $(\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{BA} + \mathbf{BC}$
 
 ### Exercise 4
 
-State whether each of the following matrices is nonsingular (i.e., invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.
+State whether each of the following matrices is singular (not invertible) or nonsingular (invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.
 
 a.  $\mathbf{X}$
 
@@ -198,7 +198,7 @@ Recall the definition of linear dependence:
 
 A sequence of vectors $\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}$ is said to be *linearly dependent* if there exists a series of scalars $a_1, a_2, \dots, a_p$, not all zero, such that
 
-$$a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}$$ Further, matrix $\mathbf{X}$ has full column rank if all of its columns are linearly independent.
+$$a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}$$ Further, matrix $\mathbf{X}$ has full column rank if all of its columns are [linearly independent.]{.underline}
 
 For example, the following matrix is not full column rank,
 
@@ -256,7 +256,7 @@ library(tidyverse)
 library(knitr)
 ```
 
-## Data: IKEA furniture 
+## Data: IKEA furniture
 
 Today's data is all about [IKEA](https://www.ikea.com/) furniture. The data was obtained from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md) data collection. **The goal** **of the analysis is to explore the relationship between price, width, and category, for furniture sold at IKEA.**
 
@@ -318,7 +318,7 @@ This is a good place to render, commit, and push changes to your lab-01 repo on 
 
 ## Exercise 9
 
-In this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, `Sofas & armchairs` and `Bookcases & shelving units`, since these may be types of furniture most useful to furnish an office.
+We’ll focus the analysis on two categories: `Sofas & armchairs` and `Bookcases & shelving units`.
 
 Fill in the code below to create a new data frame called `ikea_sub` that only includes the furniture categories of interest. We're assigning this subsetted data frame to an object with a new name, so we don't overwrite the original data.
 
@@ -339,7 +339,7 @@ ikea_sub <- ikea_sub |>
 
 a.  How many observations are in the `ikea_sub` data frame? How many variables?
 
-b.   Dropping all observations that have missing values for one or more variables used in this analysis is called a **complete-case analysis*.*** What is an advantage of this approach to dealing with missing data for this analysis? What is a disadvantage for using this approach for dealing with missing data in this analysis?
+b.  Dropping all observations that have missing values for one or more variables used in this analysis is called a **complete-case analysis*.*** What is an advantage of using this approach to deal with the missing data in this analysis? What is a disadvantage of using this approach to deal with the missing data in this analysis?
 
 ## Exercise 10
 
@@ -347,9 +347,9 @@ b.   Dropping all observations that have missing values for one or more variable
 Use the `ikea_sub` data frame for this exercise.
 :::
 
-a.  Create a visualization of the relationship between the width and price of IKEA furniture in the two categories of interest. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can add the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
+a.  Create a visualization of the relationship between the width and price of IKEA furniture. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can write the caption by adding `#| fig-cap: "Write caption here"` as a code-chunk option.
 
-b.  Then, recreate your visualization, but such that the color and shape are based on the furniture category. Write a short caption describing what you observe from the graph.
+b.  Make another visualization of the relationship between width and price, such that the color and shape of the poitns are based on the furniture category. Write a short caption describing what you observe from the graph.
 
 ::: render-commit-push
 You’re done and ready to submit your work! render, commit, and push all remaining changes. Check the box next to each file in the git pane, commit them with an informative commit message (e.g. "Done with Lab 01!"), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.

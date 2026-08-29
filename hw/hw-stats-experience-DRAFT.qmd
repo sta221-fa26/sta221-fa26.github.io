@@ -86,7 +86,7 @@ A few guidelines:
 
 ✅ Include the link to your GitHub repo in the slide summarizing your experience.
 
-## Category 6: Coding out Loud
+### Category 7: Coding out Loud
 
 Watch an episode of Coding out loud and work through the project A few guidelines:
 
@@ -128,6 +128,16 @@ You can find the Quarto documents for current scholars in the data base in the C
 ✅ Make a pull request to the CURV GitHub repo to add the `.qmd` file for your suggested scholar, [**OR**]{.underline} open an issue with a link to the `.qmd` file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.
 
 ✅ Include the URL to your pull request or issue in your one-slide reflection.
+
+### Category 9: Choose your own adventure! 
+
+Perhaps you're interested in doing a data-driven project or another activity that doesn't seem to fit in one of the previous categories. If so, you can create your own statistics experience!
+
+Reach out to Professor Tackett with the following information about your experience.
+
+- What is the topic and project or activity?
+
+- What final product will you turn in from this project or activity?
 
 ## Part 2: Reflect on your experience
 
