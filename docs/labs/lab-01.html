@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 01 – STA 221 - Fall 2026</title>
+<title>Lab 01: Linear algebra + computing review – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -347,15 +411,56 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#clone-the-repo-start-new-rstudio-project" id="toc-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#clone-the-repo-start-new-rstudio-project">Clone the repo + start new RStudio project</a></li>
+  <li><a href="#using-rstudio-github" id="toc-using-rstudio-github" class="nav-link" data-scroll-target="#using-rstudio-github">Using RStudio + GitHub</a>
+  <ul class="collapse">
+  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
+  <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">Push changes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-1-linear-algebra-review" id="toc-part-1-linear-algebra-review" class="nav-link" data-scroll-target="#part-1-linear-algebra-review">Part 1: Linear Algebra Review</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  </ul></li>
+  <li><a href="#part-2-computing-review" id="toc-part-2-computing-review" class="nav-link" data-scroll-target="#part-2-computing-review">Part 2: Computing Review</a>
+  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data-ikea-furniture" id="toc-data-ikea-furniture" class="nav-link" data-scroll-target="#data-ikea-furniture">Data: IKEA furniture</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-30pts" id="toc-grading-30pts" class="nav-link" data-scroll-target="#grading-30pts">Grading (30pts)</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-01.html">Lab 01</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 01</h1>
+<h1 class="title">Lab 01: Linear algebra + computing review</h1>
 </div>
 
 
@@ -372,10 +477,444 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab is due at the end of your lab session on <strong>August 31.</strong> Be sure to complete the following by the end of your lab:</p>
+<ul>
+<li>Push final <code>.qmd</code> and <code>.pdf</code> files to your GitHub repo</li>
+<li>Submit final <code>.pdf</code> file on Gradescope</li>
+</ul>
+<p><strong>No late work is accepted for labs.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Teammates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=jpOT9e&amp;nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0">Click here</a> to find your teammates for this week’s lab.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This lab will review some of the linear algebra concepts and the computing workflow we’ll use in this course. The main goal is to establish a computing and mathematical foundation that we will build upon throughout the semester.</p>
+<p><strong>You will work on this lab with a randomly assigned team. You will discuss the lab with your teammates but complete it in your individual lab repo and submit your lab on Gradescope.</strong></p>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Review linear algebra concepts and matrix operations</li>
+<li>Be familiar with the data analysis workflow using RStudio and GitHub</li>
+<li>Gain practice writing a reproducible report using Quarto</li>
+<li>Practice version control using GitHub</li>
+</ul>
+</section>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<section id="clone-the-repo-start-new-rstudio-project" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo + start new RStudio project</h2>
+<details>
+<ul>
+<li>Go to the course organization at <a href="https://github.com/sta221-fa26">github.com/sta221-fa26</a> organization on GitHub.</li>
+<li>Click on the repo with the prefix <strong>lab-01</strong>. It contains the starter documents you need to complete the lab.</li>
+<li>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.
+<ul>
+<li>See the <a href="lab-00.html">Lab 00 instructions</a> if you have not set up the SSH key or configured git.</li>
+</ul></li>
+<li>In RStudio, go to <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New Project</em> <span class="math inline">\(\rightarrow\)</span> <em>Version Control</em> <span class="math inline">\(\rightarrow\)</span> <em>Git</em>.</li>
+<li>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</li>
+<li>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</li>
+<li>Click <code>lab-01.qmd</code> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</li>
+</ul>
+</details>
+</section>
+<section id="using-rstudio-github" class="level2">
+<h2 class="anchored" data-anchor-id="using-rstudio-github">Using RStudio + GitHub</h2>
+<details>
+<section id="r-and-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="r-and-rstudio">R and RStudio</h3>
+<p>Below are the components of the RStudio IDE.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio-panes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Screenshot of RStudio IDE"></p>
+</figure>
+</div>
+<p>Below are the components of a Quarto (<code>.qmd</code>) file.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Screenshot of Quarto document and rendered PDF."></p>
+</figure>
+</div>
+</section>
+<section id="yaml" class="level3">
+<h3 class="anchored" data-anchor-id="yaml">YAML</h3>
+<p>The top portion of your Quarto file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains metadata about your document.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.</p>
+</div>
+</div>
+</section>
+<section id="committing-changes" class="level3">
+<h3 class="anchored" data-anchor-id="committing-changes">Committing changes</h3>
+<p>Now, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.</p>
+<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
+<p>If you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the <strong>Commit message</strong> box. Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p>
+<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration.</p>
+<p>In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
+</section>
+<section id="push-changes" class="level3">
+<h3 class="anchored" data-anchor-id="push-changes">Push changes</h3>
+<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
+<p>You must <strong>commit</strong> your changes before they can be pushed. When you’re ready, click <strong>Push</strong> to send your changes to your GitHub repo.</p>
+<p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p>
+</section></details>
+</section>
+</section>
+
+<section id="part-1-linear-algebra-review" class="level1">
+<h1>Part 1: Linear Algebra Review</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work on exercises that require multiple steps to solve and derivations.<br>
+<br>
+<strong>You may write the answers and show any associated work for conceptual exercises by hand or type them in your Quarto document using LaTex.</strong></p>
+</div>
+</div>
+<p>Let</p>
+<p><span class="math display">\[A = \begin{bmatrix}
+1 &amp; 2\\
+3 &amp; 4\\
+5 &amp; 6\end{bmatrix},
+\qquad
+B = \begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 3
+\end{bmatrix},
+\qquad
+C = \begin{bmatrix}
+1 &amp; 4\\
+2 &amp; 5\\
+3 &amp; 6\end{bmatrix}
+\qquad\]</span></p>
+<p><span class="math display">\[\mathbf{X} = \begin{bmatrix}
+x_{11} &amp; x_{12}&amp; \dots &amp; x_{1p}\\
+x_{21} &amp; x_{22}&amp; \dots &amp; x_{2p}\\
+\vdots &amp; \vdots&amp; \ddots &amp; \vdots\\
+x_{n1} &amp; x_{n2}&amp; \dots &amp; x_{np}\\\end{bmatrix} \hspace{8mm} \text{sucht that }n \neq p\]</span></p>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Write the dimensions of the following matrices:</p>
+<ol type="a">
+<li><p><span class="math inline">\(\mathbf{A}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{B}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{A}^\top\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{X}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></p></li>
+</ol>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<ol type="a">
+<li><p>Which of the following is a proper matrix multiplication operation? Explain why.</p>
+<ol type="i">
+<li><p><span class="math inline">\(\mathbf{A}\times \mathbf{C}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{A}\times \mathbf{B}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{A}^\top \times \mathbf{B}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{B} \times \mathbf{A}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{B}^\top \times \mathbf{C}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{B}\times \mathbf{B}\)</span></p></li>
+</ol></li>
+<li><p>Perform the multiplication you chose in part (a).</p></li>
+</ol>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>For each of the following, indicate whether the statement is true or false. If true, state the property of matrix addition/ multiplication that is being applied. If false, explain why.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\mathbf{A} + \mathbf{C} = \mathbf{C} + \mathbf{A}\)</span></p></li>
+<li><p><span class="math inline">\((\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{AB} + \mathbf{CB}\)</span></p></li>
+<li><p><span class="math inline">\((\mathbf{A} + \mathbf{C})\mathbf{B} = \mathbf{BA} + \mathbf{BC}\)</span></p></li>
+</ol>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>State whether each of the following matrices is singular (not invertible) or nonsingular (invertible). Explain your response. If there is not enough information, state what other information you need to definitively answer.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\mathbf{X}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span></p></li>
+</ol>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Let <span class="math inline">\(\mathbf a = \begin{bmatrix}a_1 \\ \vdots \\ a_n\end{bmatrix}\)</span> and <span class="math inline">\(\mathbf b = \begin{bmatrix}b_1 \\ \vdots \\ b_n\end{bmatrix}\)</span>. Recall, <span class="math display">\[\mathbf{a}^\top \mathbf{a} = \sum_{i=1}^n a_i^2.\]</span></p>
+<p>Write <span class="math inline">\((\mathbf{a} - \mathbf{b})^\top (\mathbf{a} - \mathbf{b})\)</span> using summation notation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Review: linear dependence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall the definition of linear dependence:</p>
+<p>A sequence of vectors <span class="math inline">\(\mathbf{x_1}, \mathbf{x_2}, \dots, \mathbf{x_p}\)</span> is said to be <em>linearly dependent</em> if there exists a series of scalars <span class="math inline">\(a_1, a_2, \dots, a_p\)</span>, not all zero, such that</p>
+<p><span class="math display">\[a_1 \mathbf{x_1} + a_2 \mathbf{x_2} + \dots + a_p \mathbf{x_p} = \mathbf{0}\]</span> Further, matrix <span class="math inline">\(\mathbf{X}\)</span> has full column rank if all of its columns are <u>linearly independent.</u></p>
+<p>For example, the following matrix is not full column rank,</p>
+<p><span class="math display">\[\mathbf{X} = \begin{bmatrix}
+1 &amp; 2 &amp; 3\\
+1 &amp; 1 &amp; 2
+\end{bmatrix}\]</span> since, letting <span class="math inline">\(\mathbf{x_1} = \begin{bmatrix}1\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_2} = \begin{bmatrix}2\\1 \end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{x_3} = \begin{bmatrix}3\\2 \end{bmatrix}\)</span>, and letting <span class="math inline">\(a_1 = 1\)</span>, <span class="math inline">\(a_2 = 1\)</span>, and <span class="math inline">\(a_3 = -1\)</span>, we have:</p>
+<p><span class="math display">\[a_1 \mathbf{x_1} + a_2\mathbf{x_2} + a_3\mathbf{x_3} =  \begin{bmatrix}1\\1 \end{bmatrix} + \begin{bmatrix}2\\1 \end{bmatrix} - \begin{bmatrix}3\\2 \end{bmatrix} = \mathbf{0}.\]</span></p>
+</div>
+</div>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>For each of the following matrices, state whether it is full column rank. If not full column rank, show why (find corresponding coefficients <span class="math inline">\(a\)</span>’s).</p>
+<ol type="a">
+<li><span class="math display">\[\begin{bmatrix}
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1
+\end{bmatrix}\]</span></li>
+<li><span class="math display">\[\begin{bmatrix}
+0 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{bmatrix}\]</span></li>
+<li><span class="math display">\[\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 1\\
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}\]</span></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-2-computing-review" class="level1">
+<h1>Part 2: Computing Review</h1>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>We will use the following packages for this part of the lab.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-ikea-furniture" class="level2">
+<h2 class="anchored" data-anchor-id="data-ikea-furniture">Data: IKEA furniture</h2>
+<p>Today’s data is all about <a href="https://www.ikea.com/">IKEA</a> furniture. The data was obtained from the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md">TidyTuesday</a> data collection. <strong>The goal</strong> <strong>of the analysis is to explore the relationship between price, width, and category, for furniture sold at IKEA.</strong></p>
+<p>Use the code below to read in the data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ikea <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ikea.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We will use the following variables in this analysis:</p>
+<ul>
+<li><p><code>category</code>: The furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,…)</p></li>
+<li><p><code>width</code>: Width of the item (in centimeters)</p></li>
+<li><p><code>price_usd</code>: The price in US dollars as it was shown on the website in April 2020 (when the data were pulled)</p></li>
+</ul>
+<p>See the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/readme.md">TidyTuesday</a> page for the full codebook.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises are focused on using the methods from the course to analyze data and answer questions about real-world phenomena.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.</strong></p>
+<p>Write all narrative using complete sentences and include informative axis labels / titles on visualizations.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is to start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
+</div>
+</div>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>We begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.</p>
+<p>When we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have <strong>informative axis labels</strong> along with <strong>an informative title or caption.</strong></p>
+<p>Fill in the code below to visualize the distribution of <code>price_usd</code>, the price in US dollars.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ikea, <span class="fu">aes</span>(<span class="at">x =</span> _____)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"_____"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"_____"</span>, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"_____"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Briefly explain why the median is more representative of the center of the distribution of <code>price_usd</code> than the mean.</p>
+<div class="render-commit-push">
+<p>This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Check the box next to each file in the git pane, commit them with an informative commit message (e.g.&nbsp;“Completed exercises 7 - 8”), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>We’ll focus the analysis on two categories: <code>Sofas &amp; armchairs</code> and <code>Bookcases &amp; shelving units</code>.</p>
+<p>Fill in the code below to create a new data frame called <code>ikea_sub</code> that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ikea_sub <span class="ot">&lt;-</span> ikea <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(_____ <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">"_____"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"_____"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, run the code below to remove observations that have a missing value for at least one of <code>width</code> or <code>price_usd</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ikea_sub <span class="ot">&lt;-</span> ikea_sub <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(width, price_usd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li><p>How many observations are in the <code>ikea_sub</code> data frame? How many variables?</p></li>
+<li><p>Dropping all observations that have missing values for one or more variables used in this analysis is called a <strong>complete-case analysis<em>.</em></strong> What is an advantage of using this approach to deal with the missing data in this analysis? What is a disadvantage of using this approach to deal with the missing data in this analysis?</p></li>
+</ol>
+</section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the <code>ikea_sub</code> data frame for this exercise.</p>
+</div>
+</div>
+<ol type="a">
+<li><p>Create a visualization of the relationship between the width and price of IKEA furniture. Include informative axis labels. Write a figure caption that briefly describes what you observe about the relationship between the two variables. You can write the caption by adding <code>#| fig-cap: "Write caption here"</code> as a code-chunk option.</p></li>
+<li><p>Make another visualization of the relationship between width and price, such that the color and shape of the poitns are based on the furniture category. Write a short caption describing what you observe from the graph.</p></li>
+</ol>
+<div class="render-commit-push">
+<p>You’re done and ready to submit your work! render, commit, and push all remaining changes. Check the box next to each file in the git pane, commit them with an informative commit message (e.g.&nbsp;“Done with Lab 01!”), then click Push to send the changes to your GitHub repo. After you push the changes, the Git pane in RStudio should be empty.</p>
+<p>The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.</p>
+</div>
+</section>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to Gradescope by the end of your lab session.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p></li>
+<li><p>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></p></li>
+</ul>
+</div>
+</div>
+<p><strong>To submit your assignment:</strong></p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with “Attendance &amp; submitting lab” and “Workflow &amp; formatting”</p></li>
+</ul>
+</section>
+<section id="grading-30pts" class="level1">
+<h1>Grading (30pts)</h1>
+<p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance &amp; submitting lab</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Selected linear algebra review exercise</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Selected computing review exercise</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>We will grade one randomly selected linear algebra exercise and one randomly selected computing exercise.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 2 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
+</section>
+<section id="acknowledgements" class="level1">
+<h1>Acknowledgements</h1>
+<p><em>This assignment was written in collaboration with Kat Husar, a PhD student in Statistical Science at Duke University.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -798,7 +1337,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
