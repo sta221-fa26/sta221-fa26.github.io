@@ -30,7 +30,7 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements  {.midi}
+## Announcements {.midi}
 
 - Complete [Lab 00](../labs/lab-00.html) if you have not done so
 - Accept GitHub invite (check your email or see the invite at <https://github.com/sta221-fa26>)
@@ -77,7 +77,7 @@ knitr::opts_chunk$set(
 
 ![Source: Introduction to Regression Analysis: A Data Science Approach](images/02/data-science-workflow.png){fig-align="center"}
 
-## Movie scores 
+## Movie scores
 
 ::::: columns
 ::: {.column width="70%"}
@@ -157,7 +157,7 @@ p <- ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_s
 p
 ```
 
-## Why fit a line? 
+## Why fit a line?
 
 ::: {style="color: #799100"}
 **Prediction**
@@ -332,7 +332,7 @@ ggplot(data = movie_scores, mapping = aes(x = critics_score,y = audience_score))
 
 $$\text{residual} = \text{observed} - \text{predicted} = y_i - \hat{y}_i$$
 
----
+------------------------------------------------------------------------
 
 <br>
 
@@ -425,7 +425,7 @@ The slope of the model for predicting audience score from critics score is 0.519
 The intercept is 32.314. It is the predicted mean audience score for what type of movies?
 :::
 
-## Is the intercept meaningful? 
+## Is the intercept meaningful?
 
 ✅ **The intercept is meaningful in the context of the data if**
 
@@ -439,7 +439,7 @@ The intercept is 32.314. It is the predicted mean audience score for what type o
 
 # Prediction
 
-## Prediction 
+## Prediction
 
 ::::: columns
 ::: {.column width="35%"}

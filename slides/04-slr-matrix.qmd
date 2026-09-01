@@ -47,23 +47,23 @@ knitr::opts_chunk$set(
 
 ## Announcements
 
--   Lab 01 due on **TODAY at 11:59pm**
+- Lab 01 due on **TODAY at 11:59pm**
 
-    -   Push work to GitHub repo
-    -   Submit final PDF on Gradescope + mark pages for each question
+  - Push work to GitHub repo
+  - Submit final PDF on Gradescope + mark pages for each question
 
--   HW 01 released today - **due Thursday, January 29 at 11:59pm**
+- HW 01 released today - **due Thursday, January 29 at 11:59pm**
 
-    -   Note: AI Disclosure
+  - Note: AI Disclosure
 
 ## Topics
 
--   Matrix representation of least-squares regression
-    -   Model form
-    -   Least square estimate
-    -   Predicted (fitted) values
-    -   Residuals
--   Geometry of least-squares regression
+- Matrix representation of least-squares regression
+  - Model form
+  - Least square estimate
+  - Predicted (fitted) values
+  - Residuals
+- Geometry of least-squares regression
 
 # Matrix representation of least-squares regression
 
@@ -75,32 +75,30 @@ $$Y = \beta_0 + \beta_1 X + \epsilon$$
 
 <br>
 
--   $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
--   $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
--   $\epsilon$: Error terms centered at 0 with variance $\sigma^2_{\epsilon}$
+- $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
+- $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
+- $\epsilon$: Error terms centered at 0 with variance $\sigma^2_{\epsilon}$
 
 ## SLR in matrix form
 
 The simple linear regression model can be represented using vectors and matrices as
 
 ::: equation
-$$
-\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}
-$$
+
+$$\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}$$
 :::
 
--   $\mathbf{y}$ : Vector of responses
+- $\mathbf{y}$ : Vector of responses
 
--   $\mathbf{X}$: Design matrix (columns for predictors + intercept)
+- $\mathbf{X}$: Design matrix (columns for predictors + intercept)
 
--   $\boldsymbol{\beta}$: Vector of model coefficients
+- $\boldsymbol{\beta}$: Vector of model coefficients
 
--   $\boldsymbol{\epsilon}$: Vector of error terms centered at $\mathbf{0}$ with variance $\sigma^2_{\epsilon}\mathbf{I}$
+- $\boldsymbol{\epsilon}$: Vector of error terms centered at $\mathbf{0}$ with variance $\sigma^2_{\epsilon}\mathbf{I}$
 
 ## SLR in matrix form
 
-$$
-\underbrace{
+$$\underbrace{
 \begin{bmatrix}
 y_1 \\
 \vdots \\
@@ -132,8 +130,7 @@ y_n
 \vdots\\
 \epsilon_n
 \end{bmatrix}
-}_\boldsymbol{\epsilon}
-$$
+}_\boldsymbol{\epsilon}$$
 
 <br>
 
@@ -143,9 +140,8 @@ What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and
 
 ## Find least-squares estimator for $\boldsymbol{\beta}$
 
-**Goal**: Find estimator $\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}$ that minimizes the sum of squares $$
-\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})
-$$
+**Goal**: Find estimator $\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}$ that minimizes the sum of squares
+$$\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$$
 
 ## Gradient {.midi background-color="#ccddeb"}
 
@@ -155,8 +151,7 @@ Let $\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}$be a $k
 
 Then the **gradient** of $f$ with respect to $\mathbf{x}$ is
 
-$$\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
-$$
+$$\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}$$
 
 ## Property 1: Derivative of inner product {background-color="#ccddeb"}
 
@@ -166,9 +161,7 @@ Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{z}$ be a $k \times 1$ vec
 
 The derivative of $\mathbf{x}^\mathsf{T}\mathbf{z}$ with respect to $\mathbf{x}$ is
 
-$$
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}
-$$
+$$\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}$$
 
 ## Property 1: Derivative of inner product {.midi background-color="#ccddeb"}
 
@@ -185,11 +178,9 @@ $$
 
 ## Property 1: Derivative of inner product {.midi background-color="#ccddeb"}
 
-$$
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm}\mathbf{x}^\mathsf{T}\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_k}\end{bmatrix}}  
+$$\frac{\partial}{\partial \mathbf{x}}\hspace{1mm}\mathbf{x}^\mathsf{T}\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_k}\end{bmatrix}}  
 = \class{fragment}{\begin{bmatrix}\frac{\partial}{\partial x_1} (x_1z_1 + x_2z_2 + \dots + x_kz_k) \\ \frac{\partial}{\partial x_2} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\\ \vdots \\ \frac{\partial}{\partial x_k} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\end{bmatrix}}
- = \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}
-$$
+ = \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}$$
 
 ## Property 2: Derivative of quadratic form {.midi background-color="#ccddeb"}
 
@@ -197,17 +188,13 @@ Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a $k \times k$ mat
 
 Then the derivative of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
 
-$$
-\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
-$$
+$$\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}$$
 
 \
 
 If $\mathbf{A}$ is symmetric, then
 
-$$
-(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
-$$
+$$(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}$$
 
 ::: callout-note
 See [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for more on matrix operations.
@@ -217,28 +204,24 @@ See [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook
 
 Find $\hat{\boldsymbol{\beta}}$ that minimizes
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &= (\mathbf{y}^\mathsf{T} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T})(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
 &=\mathbf{y}^\mathsf{T}\mathbf{y} - \mathbf{y}^\mathsf{T}\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}\\[10pt]
 &=\mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ## Find the least squares estimator
 
 $$\begin{aligned}
 \frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
  & = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
- \end{aligned}
-$$<br>
+ \end{aligned}$$
+<br>
 
 Find $\hat{\boldsymbol{\beta}}$ that satisfies
 
-$$
--2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
-$$
+$$-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}$$
 
 ::: equation
 $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}$$
@@ -250,32 +233,28 @@ $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\m
 
 The **Hessian** matrix is a square matrix of partial second derivatives
 
-$$
-\frac{\partial^2 f}{\partial \mathbf{x}^2}  = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2f}{\partial x_1\partial x_k} \\ 
+$$\frac{\partial^2 f}{\partial \mathbf{x}^2}  = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2f}{\partial x_1\partial x_k} \\ 
 \frac{\partial^2f}{\partial\ x_2 \partial x_1} & \frac{\partial^2f}{\partial x_2^2} & \dots & \frac{\partial^2f}{\partial x_2 \partial x_k} \\
 \vdots & \vdots & \ddots & \vdots \\ 
-\frac{\partial^2f}{\partial x_k\partial x_1} & \frac{\partial^2f}{\partial x_k\partial x_2} & \dots & \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
-$$
+\frac{\partial^2f}{\partial x_k\partial x_1} & \frac{\partial^2f}{\partial x_k\partial x_2} & \dots & \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}$$
 
 ## Using the Hessian matrix {background-color="add8e6"}
 
 If the Hessian matrix is...
 
--   positive-definite, then we have found a minimum.
+- positive-definite, then we have found a minimum.
 
--   negative-definite, then we have found a maximum.
+- negative-definite, then we have found a maximum.
 
--   neither positive or negative-definite, then we have found a saddle point
+- neither positive or negative-definite, then we have found a saddle point
 
 ## Did we find a minimum?
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \frac{\partial^2}{\partial \boldsymbol{\beta}^2} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= \frac{\partial}{\partial \boldsymbol{\beta}} (-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &{=-2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{y}) + 2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta})} \\[10pt]
  &{= 2 \mathbf{X}^\mathsf{T}\mathbf{X}}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ::: question
 Show that $2\mathbf{X}^\mathsf{T}\mathbf{X}$ is positive definite in HW 01.
@@ -285,58 +264,52 @@ Show that $2\mathbf{X}^\mathsf{T}\mathbf{X}$ is positive definite in HW 01.
 
 A matrix $\mathbf{A}$ is **positive definite** if
 
-$$
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} > 0 \hspace{8mm} \text{for all } \mathbf{x} \neq \mathbf{0}
-$$
+$$\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} > 0 \hspace{8mm} \text{for all } \mathbf{x} \neq \mathbf{0}$$
 
 <br>
 
 A matrix $\mathbf{A}$ is **positive semi-definite** if
 
-$$
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} \geq 0 \hspace{8mm} \text{for all } \mathbf{x}
-$$
+$$\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} \geq 0 \hspace{8mm} \text{for all } \mathbf{x}$$
 
 <br>
 
 Equivalently:
 
--   $\mathbf{A}$ is positive definitive if all eigenvalues are positive
--   $\mathbf{A}$ is positive semi-definite if all eigenvalues are non-negative.
+- $\mathbf{A}$ is positive definitive if all eigenvalues are positive
+- $\mathbf{A}$ is positive semi-definite if all eigenvalues are non-negative.
 
 # Geometry of least-squares regression
 
 ## Geometry of least-squares regression
 
 ::: incremental
--   Let $\text{Col}(\mathbf{X})$ be the **column space** of $\mathbf{X}$: the set all possible linear combinations (span) of the columns of $\mathbf{X}$
+- Let $\text{Col}(\mathbf{X})$ be the **column space** of $\mathbf{X}$: the set all possible linear combinations (span) of the columns of $\mathbf{X}$
 
--   The vector of responses $\mathbf{y}$ is not in $\text{Col}(\mathbf{X})$.
+- The vector of responses $\mathbf{y}$ is not in $\text{Col}(\mathbf{X})$.
 
--   **Goal:** Find another vector $\mathbf{z} = \mathbf{X}\mathbf{\boldsymbol{\beta}}$ that is in $\text{Col}(\mathbf{X})$ and is as close as possible to $\mathbf{y}$.
+- **Goal:** Find another vector $\mathbf{z} = \mathbf{X}\mathbf{\boldsymbol{\beta}}$ that is in $\text{Col}(\mathbf{X})$ and is as close as possible to $\mathbf{y}$.
 
-    -   $\mathbf{z}$ is a **projection** of $\mathbf{y}$ onto $\text{Col}(\mathbf{X})$ .
+  - $\mathbf{z}$ is a **projection** of $\mathbf{y}$ onto $\text{Col}(\mathbf{X})$ .
 :::
 
 ## Geometry of least-squares regression
 
 ::: incremental
--   For any $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ in $\text{Col}(\mathbf{X})$, the vector $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{Xb}$ is the difference between $\mathbf{y}$ and $\mathbf{X}\boldsymbol{\beta}$.
+- For any $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ in $\text{Col}(\mathbf{X})$, the vector $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{Xb}$ is the difference between $\mathbf{y}$ and $\mathbf{X}\boldsymbol{\beta}$.
 
-    -   We want to find $\boldsymbol{\beta}$ such that $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ is as close as possible to $\mathbf{y}$, i.e, we want to minimize the difference $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}$
+  - We want to find $\boldsymbol{\beta}$ such that $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ is as close as possible to $\mathbf{y}$, i.e, we want to minimize the difference $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}$
 
--   This distance is minimized when $\mathbf{e}$ is orthogonal to $\text{Col}(\mathbf{X})$
+- This distance is minimized when $\mathbf{e}$ is orthogonal to $\text{Col}(\mathbf{X})$
 :::
 
 ## Geometry of least-squares regression
 
--   **Note:** If $\mathbf{A}$, an $n \times k$ matrix, is orthogonal to an $n \times 1$ vector $\mathbf{c}$, then $\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}$
+- **Note:** If $\mathbf{A}$, an $n \times k$ matrix, is orthogonal to an $n \times 1$ vector $\mathbf{c}$, then $\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}$
 
--   Therefore, we have $\mathbf{X}^\mathsf{T}\boldsymbol{\epsilon} = \mathbf{0}$ , and thus
+- Therefore, we have $\mathbf{X}^\mathsf{T}\boldsymbol{\epsilon} = \mathbf{0}$ , and thus
 
-    $$
-    \mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{0}
-    $$
+  $$\mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{0}$$
 
 ::: question
 Find $\boldsymbol{\beta}$ that satisfies this equation.
@@ -346,9 +319,7 @@ Find $\boldsymbol{\beta}$ that satisfies this equation.
 
 Now that we have $\hat{\boldsymbol{\beta}}$, let's predict values of $\mathbf{y}$ using the model
 
-$$
-\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}
-$$
+$$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}$$
 
 . . .
 
@@ -358,17 +329,17 @@ $$
 
 ## Hat matrix
 
--   $\hat{\mathbf{y}} = \mathbf{Hy}$, so $\mathbf{H}$ is a projection of $\mathbf{y}$ onto $\mathbf{X}\boldsymbol{\beta}$
+- $\hat{\mathbf{y}} = \mathbf{Hy}$, so $\mathbf{H}$ is a projection of $\mathbf{y}$ onto $\mathbf{X}\boldsymbol{\beta}$
 
--   Properties of $\mathbf{H}$, a projection matrix
+- Properties of $\mathbf{H}$, a projection matrix
 
-    -   $\mathbf{H}$ is symmetric ($\mathbf{H}^\mathsf{T} = \mathbf{H}$)
+  - $\mathbf{H}$ is symmetric ($\mathbf{H}^\mathsf{T} = \mathbf{H}$)
 
-    -   $\mathbf{H}$ is idempotent ($\mathbf{H}^2 = \mathbf{H}$)
+  - $\mathbf{H}$ is idempotent ($\mathbf{H}^2 = \mathbf{H}$)
 
-    -   If $\mathbf{v}$ in $\text{Col}(\mathbf{X})$, then $\mathbf{Hv} = \mathbf{v}$
+  - If $\mathbf{v}$ in $\text{Col}(\mathbf{X})$, then $\mathbf{Hv} = \mathbf{v}$
 
-    -   If $\mathbf{v}$ is orthogonal to $\text{Col}(\mathbf{X})$, then $\mathbf{Hv} = \mathbf{0}$
+  - If $\mathbf{v}$ is orthogonal to $\text{Col}(\mathbf{X})$, then $\mathbf{Hv} = \mathbf{0}$
 
 ::: question
 Show these properties in HW 01 and HW 02.
@@ -378,28 +349,26 @@ Show these properties in HW 01 and HW 02.
 
 Recall that the residuals are the difference between the observed and predicted values
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \mathbf{e} &= \mathbf{y} - \hat{\mathbf{y}}\\[10pt]
 &\class{fragment}{ = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}} \\[10pt]
 &\class{fragment}{ = \mathbf{y} - \mathbf{H}\mathbf{y}} \\[20pt]
 \class{fragment}{\color{#993399}{\mathbf{e}}} &\class{fragment}{\color{#993399}{=(\mathbf{I} - \mathbf{H})\mathbf{y}}} \\[10pt]
-\end{aligned}
-$$
+\end{aligned}$$
 
 ## Recap
 
--   Introduced matrix representation for simple linear regression
+- Introduced matrix representation for simple linear regression
 
-    -   Model form
-    -   Least square estimate
-    -   Predicted (fitted) values
-    -   Residuals
+  - Model form
+  - Least square estimate
+  - Predicted (fitted) values
+  - Residuals
 
--   Introduced the geometric interpretation of least-squares regression
+- Introduced the geometric interpretation of least-squares regression
 
 ## For next class
 
--   Multiple linear regression
+- Multiple linear regression
 
--   Complete [Lecture 05 prepare](../prepare/prepare-lec05.html)
+- Complete [Lecture 05 prepare](../prepare/prepare-lec05.html)

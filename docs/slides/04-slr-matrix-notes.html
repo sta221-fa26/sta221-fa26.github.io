@@ -496,9 +496,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="slr-in-matrix-form">SLR in matrix form</h2>
 <p>The simple linear regression model can be represented using vectors and matrices as</p>
 <div class="equation">
-<p><span class="math display">\[
-\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}
-\]</span></p>
+<p><span class="math display">\[\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}\]</span></p>
 </div>
 <ul>
 <li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
@@ -509,8 +507,7 @@ window.Quarto = {
 </section>
 <section id="slr-in-matrix-form-1" class="level2">
 <h2 class="anchored" data-anchor-id="slr-in-matrix-form-1">SLR in matrix form</h2>
-<p><span class="math display">\[
-\underbrace{
+<p><span class="math display">\[\underbrace{
 \begin{bmatrix}
 y_1 \\
 \vdots \\
@@ -542,8 +539,7 @@ y_n
 \vdots\\
 \epsilon_n
 \end{bmatrix}
-}_\boldsymbol{\epsilon}
-\]</span></p>
+}_\boldsymbol{\epsilon}\]</span></p>
 <p><br></p>
 <div class="question">
 <p>What are the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, and <span class="math inline">\(\boldsymbol{\epsilon}\)</span>?</p>
@@ -551,17 +547,14 @@ y_n
 </section>
 <section id="find-least-squares-estimator-for-boldsymbolbeta" class="level2">
 <h2 class="anchored" data-anchor-id="find-least-squares-estimator-for-boldsymbolbeta">Find least-squares estimator for <span class="math inline">\(\boldsymbol{\beta}\)</span></h2>
-<p><strong>Goal</strong>: Find estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}\)</span> that minimizes the sum of squares <span class="math display">\[
-\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})
-\]</span></p>
+<p><strong>Goal</strong>: Find estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}\)</span> that minimizes the sum of squares <span class="math display">\[\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\]</span></p>
 </section>
 <section id="gradient" class="level2 midi" data-background-color="#ccddeb">
 <h2 class="midi anchored" data-background-color="#ccddeb" data-anchor-id="gradient">Gradient</h2>
 <p>Let <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}\)</span>be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(f(\mathbf{x})\)</span> be a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
 <p>. . .</p>
 <p>Then the <strong>gradient</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
-\]</span></p>
+<p><span class="math display">\[\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}\]</span></p>
 </section>
 <section id="property-1-derivative-of-inner-product" class="level2" data-background-color="#ccddeb">
 <h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="property-1-derivative-of-inner-product">Property 1: Derivative of inner product</h2>
@@ -569,9 +562,7 @@ y_n
 <p><br>
 </p>
 <p>The derivative of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}
-\]</span></p>
+<p><span class="math display">\[\frac{\partial}{\partial \mathbf{x}}\hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{z}^\mathsf{T}\mathbf{x} =  \mathbf{z}\]</span></p>
 </section>
 <section id="property-1-derivative-of-inner-product-1" class="level2 midi" data-background-color="#ccddeb">
 <h2 class="midi anchored" data-background-color="#ccddeb" data-anchor-id="property-1-derivative-of-inner-product-1">Property 1: Derivative of inner product</h2>
@@ -586,26 +577,20 @@ y_n
 </section>
 <section id="property-1-derivative-of-inner-product-2" class="level2 midi" data-background-color="#ccddeb">
 <h2 class="midi anchored" data-background-color="#ccddeb" data-anchor-id="property-1-derivative-of-inner-product-2">Property 1: Derivative of inner product</h2>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}}\hspace{1mm}\mathbf{x}^\mathsf{T}\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_k}\end{bmatrix}}  
+<p><span class="math display">\[\frac{\partial}{\partial \mathbf{x}}\hspace{1mm}\mathbf{x}^\mathsf{T}\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^\mathsf{T}\mathbf{z}}{\partial x_k}\end{bmatrix}}  
 = \class{fragment}{\begin{bmatrix}\frac{\partial}{\partial x_1} (x_1z_1 + x_2z_2 + \dots + x_kz_k) \\ \frac{\partial}{\partial x_2} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\\ \vdots \\ \frac{\partial}{\partial x_k} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\end{bmatrix}}
-= \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}
-\]</span></p>
+= \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}\]</span></p>
 </section>
 <section id="property-2-derivative-of-quadratic-form" class="level2 midi" data-background-color="#ccddeb">
 <h2 class="midi anchored" data-background-color="#ccddeb" data-anchor-id="property-2-derivative-of-quadratic-form">Property 2: Derivative of quadratic form</h2>
 <p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .<br>
 </p>
 <p>Then the derivative of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<p><span class="math display">\[
-\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
-\]</span></p>
+<p><span class="math display">\[\frac{\partial}{\partial \mathbf{x}} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}\]</span></p>
 <p><br>
 </p>
 <p>If <span class="math inline">\(\mathbf{A}\)</span> is symmetric, then</p>
-<p><span class="math display">\[
-(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
-\]</span></p>
+<p><span class="math display">\[(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -623,26 +608,21 @@ Note
 <section id="find-the-least-squares-estimator" class="level2">
 <h2 class="anchored" data-anchor-id="find-the-least-squares-estimator">Find the least-squares estimator</h2>
 <p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &amp;= (\mathbf{y}^\mathsf{T} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T})(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
 &amp;=\mathbf{y}^\mathsf{T}\mathbf{y} - \mathbf{y}^\mathsf{T}\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}\\[10pt]
 &amp;=\mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </section>
 <section id="find-the-least-squares-estimator-1" class="level2">
 <h2 class="anchored" data-anchor-id="find-the-least-squares-estimator-1">Find the least squares estimator</h2>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &amp; = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}
-\]</span><br></p>
+\end{aligned}\]</span> <br></p>
 <p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that satisfies</p>
-<p><span class="math display">\[
--2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
-\]</span></p>
+<p><span class="math display">\[-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}\]</span></p>
 <div class="equation">
 <p><span class="math display">\[\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}\]</span></p>
 </div>
@@ -653,12 +633,10 @@ Note
 <section id="hessian-matrix" class="level2" data-background-color="#ccddeb">
 <h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="hessian-matrix">Hessian matrix</h2>
 <p>The <strong>Hessian</strong> matrix is a square matrix of partial second derivatives</p>
-<p><span class="math display">\[
-\frac{\partial^2 f}{\partial \mathbf{x}^2}  = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} &amp; \frac{\partial^2f}{\partial x_1 \partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_1\partial x_k} \\
+<p><span class="math display">\[\frac{\partial^2 f}{\partial \mathbf{x}^2}  = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} &amp; \frac{\partial^2f}{\partial x_1 \partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_1\partial x_k} \\
 \frac{\partial^2f}{\partial\ x_2 \partial x_1} &amp; \frac{\partial^2f}{\partial x_2^2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_2 \partial x_k} \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-\frac{\partial^2f}{\partial x_k\partial x_1} &amp; \frac{\partial^2f}{\partial x_k\partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
-\]</span></p>
+\frac{\partial^2f}{\partial x_k\partial x_1} &amp; \frac{\partial^2f}{\partial x_k\partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}\]</span></p>
 </section>
 <section id="using-the-hessian-matrix" class="level2" data-background-color="add8e6">
 <h2 data-background-color="add8e6" class="anchored" data-anchor-id="using-the-hessian-matrix">Using the Hessian matrix</h2>
@@ -671,13 +649,11 @@ Note
 </section>
 <section id="did-we-find-a-minimum-1" class="level2">
 <h2 class="anchored" data-anchor-id="did-we-find-a-minimum-1">Did we find a minimum?</h2>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \frac{\partial^2}{\partial \boldsymbol{\beta}^2} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \frac{\partial}{\partial \boldsymbol{\beta}} (-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &amp;{=-2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{y}) + 2\frac{\partial}{\partial \boldsymbol{\beta}} (\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta})} \\[10pt]
 &amp;{= 2 \mathbf{X}^\mathsf{T}\mathbf{X}}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <div class="question">
 <p>Show that <span class="math inline">\(2\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite in HW 01.</p>
 </div>
@@ -685,14 +661,10 @@ Note
 <section id="positive-semi-definite-matrices" class="level2 midi" data-background-color="#ccddeb">
 <h2 class="midi anchored" data-background-color="#ccddeb" data-anchor-id="positive-semi-definite-matrices">Positive (semi-)definite matrices</h2>
 <p>A matrix <span class="math inline">\(\mathbf{A}\)</span> is <strong>positive definite</strong> if</p>
-<p><span class="math display">\[
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} &gt; 0 \hspace{8mm} \text{for all } \mathbf{x} \neq \mathbf{0}
-\]</span></p>
+<p><span class="math display">\[\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} &gt; 0 \hspace{8mm} \text{for all } \mathbf{x} \neq \mathbf{0}\]</span></p>
 <p><br></p>
 <p>A matrix <span class="math inline">\(\mathbf{A}\)</span> is <strong>positive semi-definite</strong> if</p>
-<p><span class="math display">\[
-\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} \geq 0 \hspace{8mm} \text{for all } \mathbf{x}
-\]</span></p>
+<p><span class="math display">\[\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} \geq 0 \hspace{8mm} \text{for all } \mathbf{x}\]</span></p>
 <p><br></p>
 <p>Equivalently:</p>
 <ul>
@@ -733,9 +705,7 @@ Note
 <ul>
 <li><p><strong>Note:</strong> If <span class="math inline">\(\mathbf{A}\)</span>, an <span class="math inline">\(n \times k\)</span> matrix, is orthogonal to an <span class="math inline">\(n \times 1\)</span> vector <span class="math inline">\(\mathbf{c}\)</span>, then <span class="math inline">\(\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}\)</span></p></li>
 <li><p>Therefore, we have <span class="math inline">\(\mathbf{X}^\mathsf{T}\boldsymbol{\epsilon} = \mathbf{0}\)</span> , and thus</p>
-<p><span class="math display">\[
-\mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{0}
-\]</span></p></li>
+<p><span class="math display">\[\mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{0}\]</span></p></li>
 </ul>
 <div class="question">
 <p>Find <span class="math inline">\(\boldsymbol{\beta}\)</span> that satisfies this equation.</p>
@@ -744,9 +714,7 @@ Note
 <section id="predicted-fitted-values" class="level2">
 <h2 class="anchored" data-anchor-id="predicted-fitted-values">Predicted (fitted) values</h2>
 <p>Now that we have <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, let’s predict values of <span class="math inline">\(\mathbf{y}\)</span> using the model</p>
-<p><span class="math display">\[
-\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}
-\]</span></p>
+<p><span class="math display">\[\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}\]</span></p>
 <p>. . .</p>
 <div class="equation">
 <p><strong>Hat matrix</strong>: <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\)</span></p>
@@ -771,14 +739,12 @@ Note
 <section id="residuals" class="level2">
 <h2 class="anchored" data-anchor-id="residuals">Residuals</h2>
 <p>Recall that the residuals are the difference between the observed and predicted values</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \mathbf{e} &amp;= \mathbf{y} - \hat{\mathbf{y}}\\[10pt]
 &amp;\class{fragment}{ = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}} \\[10pt]
 &amp;\class{fragment}{ = \mathbf{y} - \mathbf{H}\mathbf{y}} \\[20pt]
 \class{fragment}{\color{#993399}{\mathbf{e}}} &amp;\class{fragment}{\color{#993399}{=(\mathbf{I} - \mathbf{H})\mathbf{y}}} \\[10pt]
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>

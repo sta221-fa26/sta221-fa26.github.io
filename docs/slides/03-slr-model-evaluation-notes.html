@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
-<meta name="dcterms.date" content="2026-01-15">
+<meta name="dcterms.date" content="2026-09-01">
 
 <title>SLR: Model evaluation – STA 221 - Fall 2026</title>
 <style>
@@ -437,20 +437,40 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#questions-from-last-class" id="toc-questions-from-last-class" class="nav-link" data-scroll-target="#questions-from-last-class">Questions from last class?</a>
+  <li><a href="#lab-01" id="toc-lab-01" class="nav-link" data-scroll-target="#lab-01">Lab 01</a></li>
+  <li><a href="#github-questionnaire" id="toc-github-questionnaire" class="nav-link" data-scroll-target="#github-questionnaire">GitHub questionnaire</a>
+  <ul class="collapse">
+  <li><a href="#github-questionnaire-1" id="toc-github-questionnaire-1" class="nav-link" data-scroll-target="#github-questionnaire-1">GitHub questionnaire</a></li>
+  <li><a href="#github-questionnaire-2" id="toc-github-questionnaire-2" class="nav-link" data-scroll-target="#github-questionnaire-2">GitHub questionnaire</a></li>
+  </ul></li>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computing-set-up" id="toc-computing-set-up" class="nav-link" data-scroll-target="#computing-set-up">Computing set up</a></li>
+  </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a>
+  <ul class="collapse">
+  <li><a href="#data-movie-scores" id="toc-data-movie-scores" class="nav-link" data-scroll-target="#data-movie-scores">Data: Movie scores</a></li>
+  <li><a href="#simple-linear-regression-model" id="toc-simple-linear-regression-model" class="nav-link" data-scroll-target="#simple-linear-regression-model">Simple linear regression model</a></li>
+  </ul></li>
+  <li><a href="#linear-regression-in-r" id="toc-linear-regression-in-r" class="nav-link" data-scroll-target="#linear-regression-in-r">Linear regression in R</a>
+  <ul class="collapse">
+  <li><a href="#fit-the-model" id="toc-fit-the-model" class="nav-link" data-scroll-target="#fit-the-model">Fit the model</a></li>
+  <li><a href="#tidy-results" id="toc-tidy-results" class="nav-link" data-scroll-target="#tidy-results">Tidy results</a></li>
+  <li><a href="#format-results" id="toc-format-results" class="nav-link" data-scroll-target="#format-results">Format results</a></li>
+  <li><a href="#alternative-tidymodels-syntax" id="toc-alternative-tidymodels-syntax" class="nav-link" data-scroll-target="#alternative-tidymodels-syntax">Alternative: tidymodels syntax</a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">Prediction</a></li>
+  <li><a href="#prediction-1" id="toc-prediction-1" class="nav-link" data-scroll-target="#prediction-1">Prediction</a></li>
+  </ul></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model evaluation</a>
+  <ul class="collapse">
   <li><a href="#data-life-expectancy-in-140-countries" id="toc-data-life-expectancy-in-140-countries" class="nav-link" data-scroll-target="#data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#univariate-exploratory-data-analysis" id="toc-univariate-exploratory-data-analysis" class="nav-link" data-scroll-target="#univariate-exploratory-data-analysis">Univariate exploratory data analysis</a></li>
   <li><a href="#bivariate-exploratory-data-analysis" id="toc-bivariate-exploratory-data-analysis" class="nav-link" data-scroll-target="#bivariate-exploratory-data-analysis">Bivariate exploratory data analysis</a></li>
   </ul></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
-  <li><a href="#clone-repo-start-new-rstudio-project" id="toc-clone-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#clone-repo-start-new-rstudio-project">Clone repo + start new RStudio project</a></li>
-  </ul></li>
-  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model evaluation</a>
+  <li><a href="#application-exercise-1" id="toc-application-exercise-1" class="nav-link" data-scroll-target="#application-exercise-1">Application exercise</a></li>
+  <li><a href="#model-evaluation-1" id="toc-model-evaluation-1" class="nav-link" data-scroll-target="#model-evaluation-1">Model evaluation</a>
   <ul class="collapse">
   <li><a href="#two-statistics" id="toc-two-statistics" class="nav-link" data-scroll-target="#two-statistics">Two statistics</a></li>
   <li><a href="#rmse" id="toc-rmse" class="nav-link" data-scroll-target="#rmse">RMSE</a></li>
@@ -473,10 +493,10 @@ window.Quarto = {
   <li><a href="#finding-rmse-in-r" id="toc-finding-rmse-in-r" class="nav-link" data-scroll-target="#finding-rmse-in-r">Finding RMSE in R</a></li>
   <li><a href="#finding-r2-in-r" id="toc-finding-r2-in-r" class="nav-link" data-scroll-target="#finding-r2-in-r">Finding <span class="math inline">\(R^2\)</span> in R</a></li>
   </ul></li>
-  <li><a href="#application-exercise-1" id="toc-application-exercise-1" class="nav-link" data-scroll-target="#application-exercise-1">Application exercise</a>
+  <li><a href="#application-exercise-2" id="toc-application-exercise-2" class="nav-link" data-scroll-target="#application-exercise-2">Application exercise</a>
   <ul class="collapse">
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
-  <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class">Next class</a></li>
+  <li><a href="#recap-1" id="toc-recap-1" class="nav-link" data-scroll-target="#recap-1">Recap</a></li>
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -504,7 +524,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 15, 2026</p>
+      <p class="date">September 01, 2026</p>
     </div>
   </div>
   
@@ -519,18 +539,55 @@ window.Quarto = {
 <section id="announcements" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li>No office hours Mon, Jan 20 - Martin Luther King, Jr.&nbsp;Holiday
+<li>Office hours start this week
 <ul>
-<li>See Canvas for full office hours schedule</li>
+<li>See Canvas for schedule</li>
+</ul></li>
+<li>Matrix representation of regression on Thursday
+<ul>
+<li>See <a href="../prepare/prepare-lec04.html">Lecture 04 prepare</a> for linear algebra resources</li>
 </ul></li>
 </ul>
 </section>
-<section id="questions-from-last-class" class="level1 page-columns page-full">
-<h1>Questions from last class?</h1>
+<section id="lab-01" class="level2">
+<h2 class="anchored" data-anchor-id="lab-01">Lab 01</h2>
+<ul>
+<li><p>The TAs let me know that a lot of groups did not finish the lab; we will take this into account when grading this lab.</p>
+<ul>
+<li>I will also take this into account for future labs</li>
+</ul></li>
+<li><p>You must attend the lab section you’re enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof.&nbsp;Tackett)</p></li>
+<li><p><strong>Any questions about the lab?</strong></p></li>
+</ul>
+</section>
+<section id="github-questionnaire" class="level1 midi">
+<h1 class="midi">GitHub questionnaire</h1>
+<section id="github-questionnaire-1" class="level2">
+<h2 class="anchored" data-anchor-id="github-questionnaire-1">GitHub questionnaire</h2>
+<p>Researchers from ETH Zurich are testing an instrument to measure students’ understanding of git. They have validated the instrument and are doing wider classroom testing.</p>
+<p>Please take a few minutes to take the questionnaire.</p>
+<p>🔗 <a href="https://descil.eu.qualtrics.com/jfe/form/SV_009i9vNAXthu4m2?sr=Tm2s" class="uri">https://descil.eu.qualtrics.com/jfe/form/SV_009i9vNAXthu4m2?sr=Tm2s</a></p>
+<p>If you finish early, clone the <strong>ae-01</strong> and work on Part 1 of the application exercise.</p>
+</section>
+<section id="github-questionnaire-2" class="level2">
+<h2 class="anchored" data-anchor-id="github-questionnaire-2">GitHub questionnaire</h2>
+<ul>
+<li>This is completely voluntary and your answers do not count for a grade.</li>
+<li>Give your best effort.</li>
+<li>Not knowing the answer is totally fine (it is likely you will not know the answer to some questions). If you are unsure, choose the answer that seems the most convincing.</li>
+<li>Even if you do not consent for your responses to be used for research, please take the questionnaire. I will receive the anonymous responses to help inform the computing in this course.</li>
+</ul>
+</section>
+</section>
+<section id="application-exercise" class="level1">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="../ae/ae-01-model-evaluation.html">sta221-fa26.github.io/ae/ae-01-model-evaluation.html</a></p>
+<p>Complete Part 1.</p>
+</div>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
-<li>Predict the response given a value of the predictor</li>
 <li>Use R to conduct exploratory data analysis and fit a model</li>
 <li>Evaluate models using RMSE and <span class="math inline">\(R^2\)</span></li>
 <li>Use analysis of variance to partition variability in the response variable</li>
@@ -549,11 +606,190 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
+</section>
+<section id="recap" class="level1">
+<h1>Recap</h1>
+<section id="data-movie-scores" class="level2">
+<h2 class="anchored" data-anchor-id="data-movie-scores">Data: Movie scores</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 146 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): film
+dbl (3): year, critics_score, audience_score
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-linear-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="simple-linear-regression-model">Simple linear regression model</h2>
+<p><span class="math display">\[\text{audience\_score} = 32.314 + 0.519 \times \text{critics\_score}\]</span></p>
+<p><strong>Slope</strong>: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.</p>
+<p><strong>Intercept</strong>: The expected audience score for a movie with a critics score of 0 points is 32.314 points.</p>
+</section>
+</section>
+<section id="linear-regression-in-r" class="level1">
+<h1>Linear regression in R</h1>
+<section id="fit-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="fit-the-model">Fit the model</h2>
+<p>Use the <code>lm()</code> function to fit a linear regression model</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>movie_fit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = audience_score ~ critics_score, data = movie_scores)
+
+Coefficients:
+  (Intercept)  critics_score  
+      32.3155         0.5187  </code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-results" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-results">Tidy results</h2>
+<p>Use the <code>tidy()</code> function from the <strong>broom</strong> package (part of the <strong>tidymodels</strong> package) to “tidy” the model output</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">tidy</span>(movie_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term          estimate std.error statistic  p.value
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)     32.3      2.34        13.8 4.03e-28
+2 critics_score    0.519    0.0345      15.0 2.70e-31</code></pre>
+</div>
+</div>
+</section>
+<section id="format-results" class="level2">
+<h2 class="anchored" data-anchor-id="format-results">Format results</h2>
+<p>Use the <code>kable()</code> function from the <strong>knitr</strong> package to neatly format the results</p>
+<p><br></p>
+<div>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">tidy</span>(movie_fit) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">32.316</td>
+<td style="text-align: right;">2.343</td>
+<td style="text-align: right;">13.795</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">critics_score</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">15.028</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="alternative-tidymodels-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-tidymodels-syntax">Alternative: tidymodels syntax</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>movies_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(audience_score <span class="sc">~</span> critics_score, <span class="at">data =</span> movie_scores)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(movies_fit) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">32.316</td>
+<td style="text-align: right;">2.343</td>
+<td style="text-align: right;">13.795</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">critics_score</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">15.028</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="prediction" class="level2">
+<h2 class="anchored" data-anchor-id="prediction">Prediction</h2>
+<p>Use the <code>predict()</code> function to compute predictions for new observations</p>
+<p><br></p>
+<p><strong>Single observation</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_movie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="dv">94</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(movie_fit, new_movie)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+81.07123 </code></pre>
+</div>
+</div>
+</section>
+<section id="prediction-1" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-1">Prediction</h2>
+<p>Use the <code>predict()</code> function to compute predictions for new observations</p>
+<p><br></p>
+<p><strong>Multiple observations</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>more_new_movies <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics_score =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">70</span>, <span class="dv">94</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(movie_fit, more_new_movies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1        2        3 
+44.76379 68.62297 81.07123 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="model-evaluation" class="level1 page-columns page-full">
+<h1>Model evaluation</h1>
 <section id="data-life-expectancy-in-140-countries" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</h2>
 <p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#ref-zarulli2021" role="doc-biblioref">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
-<p>The data are avaialable in <a href="https://intro-regression.github.io/data/life-expectancy-data.csv">life-expectancy-data.csv</a>. There are 140 countries (observations) in the data set.</p>
-<p><br></p>
+<p>The data are available in <a href="https://intro-regression.github.io/data/life-expectancy-data.csv">life-expectancy-data.csv</a>. There are 140 countries (observations) in the data set.</p>
 <p><strong>Goal: Use the income inequality in a country to understand variability in the life expectancy.</strong></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
@@ -574,7 +810,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/univariate-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/univariate-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -583,38 +819,27 @@ window.Quarto = {
 <section id="bivariate-exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="bivariate-exploratory-data-analysis">Bivariate exploratory data analysis</h2>
 <div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/bivariate-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/bivariate-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="application-exercise" class="level1">
+<section id="application-exercise-1" class="level1">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html">sta221-sp26.github.io/ae/ae-01-model-evaluation.html</a></p>
+<p>📋 <a href="../ae/ae-01-model-evaluation.html">sta221-sp26.github.io/ae/ae-01-model-evaluation.html</a></p>
 <p>Complete Part 1.</p>
 </div>
-<section id="clone-repo-start-new-rstudio-project" class="level2 small">
-<h2 class="small anchored" data-anchor-id="clone-repo-start-new-rstudio-project">Clone repo + start new RStudio project</h2>
-<ul>
-<li><p>Go to the course organization. Click on the repo with the prefix <code>ae-01</code>. It contains the starter documents you need to complete the AE.</p>
-<ul>
-<li>If you do not see an <code>ae-01</code> repo, use this link to create one: <a href="https://classroom.github.com/a/jWbwQU1r" class="uri">https://classroom.github.com/a/jWbwQU1r</a></li>
-</ul></li>
-<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
-<li><p>In RStudio, go to <em>File</em> → <em>New Project</em> → <em>Version Control</em> → <em>Git</em>.</p></li>
-<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>.</p></li>
-<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
-<li><p>Click <code>ae-01.qmd</code> to open the template Quarto file. This is where you will write up your code and narrative for the AE.</p></li>
-</ul>
 </section>
-</section>
-<section id="model-evaluation" class="level1">
+<section id="model-evaluation-1" class="level1">
 <h1>Model evaluation</h1>
 <p>We fit a model but is it any good?</p>
 <section id="two-statistics" class="level2">
@@ -630,9 +855,7 @@ window.Quarto = {
 </section>
 <section id="rmse" class="level2">
 <h2 class="anchored" data-anchor-id="rmse">RMSE</h2>
-<p><span class="math display">\[
-RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
-\]</span></p>
+<p><span class="math display">\[RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}\]</span></p>
 <p>. . .</p>
 <div class="incremental">
 <ul class="incremental">
@@ -657,7 +880,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -693,7 +916,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -705,7 +928,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -715,10 +938,17 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="explained-variability-model" class="level2">
 <h2 class="anchored" data-anchor-id="explained-variability-model">Explained variability (Model)</h2>
 <div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -729,10 +959,13 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="unexplained-variability-residuals" class="level2">
 <h2 class="anchored" data-anchor-id="unexplained-variability-residuals">Unexplained variability (Residuals)</h2>
 <div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-slr-model-evaluation_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="03-slr-model-evaluation_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -742,12 +975,10 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="sum-of-squares" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sum-of-squares">Sum of Squares</h2>
 <p><br></p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \color{#407E99}{SST} \hspace{5mm}&amp;= &amp;\color{#993399}{SSM} &amp;\hspace{5mm} +  &amp;\color{#8BB174}{SSR} \\[10pt]
 \color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&amp;= &amp;\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &amp;\hspace{5mm}+ &amp;\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p><a href="sum-of-squares.html">Click here</a> to see why this equality holds.</p>
@@ -765,14 +996,16 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="interpreting-r2" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="interpreting-r2">Interpreting <span class="math inline">\(R^2\)</span></h2>
 <div class="question">
-<p>The <span class="math inline">\(R^2\)</span> of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?</p>
-<ol type="a">
-<li>A country’s income inequality correctly predicts 70% of its life expectancy.</li>
-<li>70% of the variability in life expectancy can be explained by income inequality.</li>
-<li>70% of the variability in income inequality can be explained by life expectancy.</li>
-<li>70% of the time a country’s life expectancy can be predicted by its income inequality.</li>
-</ol>
+<p>The <span class="math inline">\(R^2\)</span> of the model of life expectancy and income inequality is 70%. What is the correct interpretation of this value?</p>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/september-01-code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+<center>
+<a href="https://app.wooclap.com/LBZLGMP" class="uri">https://app.wooclap.com/LBZLGMP</a>
+</center>
 </section>
 </section>
 <section id="using-r" class="level1">
@@ -782,8 +1015,8 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
 <p>. . .</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>life_exp_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(life_exp_fit)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>life_exp_aug</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>life_exp_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(life_exp_fit)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>life_exp_aug</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 140 × 8
    life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid
@@ -806,7 +1039,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <h2 class="anchored" data-anchor-id="finding-rmse-in-r">Finding RMSE in R</h2>
 <p>Use the <code>rmse()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmse</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmse</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -819,7 +1052,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <h2 class="anchored" data-anchor-id="finding-r2-in-r">Finding <span class="math inline">\(R^2\)</span> in R</h2>
 <p>Use the <code>rsq()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsq</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsq</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -831,31 +1064,30 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p>. . .</p>
 <p>Alternatively, use <code>glance()</code> to construct a single row summary of the model fit, including <span class="math inline">\(R^2\)</span>:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(life_exp_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(life_exp_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7003831</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="application-exercise-1" class="level1">
+<section id="application-exercise-2" class="level1">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html">sta221-sp26.github.io/ae/ae-01-model-evaluation.html</a></p>
+<p>📋 <a href="../ae/ae-01-model-evaluation.html">sta221-fa26.github.io/ae/ae-01-model-evaluation.html</a></p>
 <p>Complete Part 2.</p>
 </div>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<section id="recap-1" class="level2">
+<h2 class="anchored" data-anchor-id="recap-1">Recap</h2>
 <ul>
 <li><p>Used R to conduct exploratory data analysis and fit a model</p></li>
 <li><p>Evaluated models using RMSE and <span class="math inline">\(R^2\)</span></p></li>
 <li><p>Used analysis of variance to partition variability in the response variable</p></li>
 </ul>
 </section>
-<section id="next-class" class="level2">
-<h2 class="anchored" data-anchor-id="next-class">Next class</h2>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
 <ul>
-<li>Matrix representation of simple linear regression</li>
 <li>Complete <a href="../prepare/prepare-lec04.html">Lecture 04 prepare</a></li>
 </ul>
 </section>
@@ -872,44 +1104,6 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
 </div>
 </div></section></div></main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

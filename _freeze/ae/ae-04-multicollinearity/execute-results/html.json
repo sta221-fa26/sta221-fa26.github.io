@@ -1,0 +1,15 @@
+{
+  "hash": "e8eaa5f13a328070bfceba9765853fcb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AE 04: Multicollinearity\"\ndate: \"February 24, 2026\"\neditor: visual\n---\n\n::: callout-important\nGo to the [course GitHub organization](https://github.com/sta221-sp26) and locate your `ae-04` repo to get started.\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF\n```\n:::\n\n\n# Introduction\n\nThe Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station. The data were collected from by [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.\n\nWe will use the following variables in this analysis:\n\n**Response**\n\n-   `volume` estimated number of trail users that day (number of breaks recorded)\n\n**Predictors**\n\n-   `hightemp` daily high temperature (in degrees Fahrenheit)\n\n-   `avgtemp` average of daily low and daily high temperature (in degrees Fahrenheit)\n\n-   `season` one of “Fall”, “Spring”, or “Summer”\n\n-   `precip` measure of precipitation (in inches)\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrail_trail <- read_csv(\"data/rail_trail.csv\")\n```\n:::\n\n\n# Part 1\n\n## Exercise 1\n\n-   Fit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\n\n-   Are there any coefficients that may be not what you expected?\n\n## Exercise 2\n\nUse the formula\n\n$$\nVIF_j = \\frac{1}{1 - R^2_j} \n$$\n\nto calculate the VIF for `avgtemp`.\n\n## Exercise 3\n\nBased on the VIF from the previous exercise, does `avgtemp` have a linear dependency with one or more other predictors? Explain.\n\n## Exercise 4\n\n-   Use the `vif` function to compute VIF for all the predictors in Exercise 1.\n\n-   Are there predictors with near-linear dependencies? If so, which ones?\n\n# Part 2\n\n## Exercise 5\n\nLet's address the issue of multicollinearity. Choose a strategy to address the multicollinearity. Apply it, then use relevant statistics to select a final model.\n\n# Wrapping up\n\n::: callout-important\nOnce you've completed the AE:\n\n-   Render the document to produce the PDF with all of your work from today's class.\n-   Push all your work to your AE repo on GitHub. You're done! 🎉\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

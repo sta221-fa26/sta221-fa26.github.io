@@ -18,19 +18,19 @@
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation.html</loc>
-    <lastmod>2026-01-14T17:40:34.299Z</lastmod>
+    <lastmod>2026-09-01T00:28:21.944Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation-notes.html</loc>
-    <lastmod>2026-01-14T17:40:34.299Z</lastmod>
+    <lastmod>2026-09-01T00:28:21.944Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/02-slr.html</loc>
-    <lastmod>2026-08-27T15:10:08.528Z</lastmod>
+    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/02-slr-notes.html</loc>
-    <lastmod>2026-08-27T15:10:08.528Z</lastmod>
+    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/lab-01.html</loc>
@@ -43,6 +43,18 @@
   <url>
     <loc>https://sta221-fa26.github.io/support.html</loc>
     <lastmod>2026-08-21T01:40:12.120Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-04-multicollinearity.html</loc>
+    <lastmod>2026-02-24T01:38:48.866Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-01-model-evaluation.html</loc>
+    <lastmod>2026-09-01T00:29:36.565Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-06-exam-02-review.html</loc>
+    <lastmod>2026-04-09T13:48:27.660Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/prepare/prepare-lec03.html</loc>
@@ -217,6 +229,18 @@
     <lastmod>2026-01-13T18:34:54.429Z</lastmod>
   </url>
   <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-03-inference.html</loc>
+    <lastmod>2026-02-05T04:27:05.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-05-model-selection.html</loc>
+    <lastmod>2026-03-17T02:38:13.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/ae/ae-02-mlr.html</loc>
+    <lastmod>2026-01-26T14:21:01.937Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta221-fa26.github.io/computing-r-resources.html</loc>
     <lastmod>2026-08-15T20:00:41.113Z</lastmod>
   </url>
@@ -238,11 +262,11 @@
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/04-slr-matrix-notes.html</loc>
-    <lastmod>2026-01-19T21:24:35.206Z</lastmod>
+    <lastmod>2026-09-01T00:30:51.100Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/slides/04-slr-matrix.html</loc>
-    <lastmod>2026-01-19T21:24:35.206Z</lastmod>
+    <lastmod>2026-09-01T00:30:51.100Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/math-rules.html</loc>

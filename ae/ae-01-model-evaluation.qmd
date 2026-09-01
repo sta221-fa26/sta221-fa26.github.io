@@ -1,0 +1,105 @@
+---
+title: "AE 01: Model evaluation"
+subtitle: "Income inequality, healthcare expenditure, and life expectancy"
+date: "September 1, 2026"
+editor: visual
+toc: true
+execute: 
+  message: false
+  warning: false
+bibliography: references.bib
+---
+
+::: callout-important
+Go to the [course GitHub organization](https://github.com/sta221-fa26) and locate your `ae-01` repo to get started.
+
+Render, commit, and push your responses to GitHub. This is good practice for the workflow you will use in assignments.
+
+The AEs are for practice only. They are not graded.
+:::
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels) 
+library(knitr) 
+```
+
+# Data
+
+The data set comes from @zarulli2021 who analyze the effects of a country's healthcare expenditure and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data) and [World Health Organization](https://apps.who.int/nha/database/).
+
+- `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+
+- `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
+
+- `health_expend`: Per capita current spending on on healthcare good sand services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar ([from the World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952))
+
+- `health_pct_gdp`: Spending on healthcare goods and services, expressed as a percentage of GDP. It excludes capital health expenditures such as buildings, machinery, information technology and stocks of vaccines for emergency or outbreaks (from @zarulli2021).
+
+```{r}
+#| label: load-data
+
+life_exp_data <- read_csv("data/life_exp.csv")
+
+```
+
+# Part 1
+
+## Exercise 1
+
+Fit a model using income equality to understand variability in life expectancy. Neatly display the results using 3 decimal places.
+
+```{r}
+#| label: ex-1
+
+# add code here
+
+```
+
+## Exercise 2
+
+- Interpret the slope in the context of the data.
+
+- Does the intercept have a meaningful interpretation? If so, interpret it in the context of the data. Otherwise, explain why not.
+
+# Part 2
+
+We now want to understand the relationship between a country's healthcare expenditure and its life expectancy. The data set contains two measures for healthcare expenditure: `health_expend` and `health_pct_gdp`.
+
+## Exercise 3
+
+Fit a model using `health_expend` to understand variability in `life_exp`. Compute $R^2$ and $RMSE$ for this model.
+
+```{r}
+#| label: ex-3
+
+# add code here
+
+```
+
+- Interpret $R^2$ in the context of the data.
+
+- Interpret $RMSE$ in the context for the data.
+
+## Exercise 4
+
+Which measure of healthcare expenditure would you choose as a predictor of life expectancy - `health_expend` or `health_pct_gdp`? Briefly explain, using $R^2$ and/or $RMSE$ to support your choice.
+
+```{r}
+#| label: ex-4
+
+# add code here
+
+```
+
+# Wrapping up
+
+::: callout-important
+Once you've completed the AE:
+
+- Render the document to produce the PDF with all of your work from today's class.
+- Push all your work to your AE repo on GitHub. You're done! 🎉
+:::

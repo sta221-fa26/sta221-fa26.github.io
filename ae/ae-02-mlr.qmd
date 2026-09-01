@@ -1,0 +1,174 @@
+---
+title: "AE 02: Multiple linear regression"
+subtitle: "Peer-to-peer lending"
+date: "January 27. 2026"
+editor: visual
+---
+
+::: callout-important
+This AE will be completed through code chunks in the [lecture slides](../slides/06-predictor-types.html).
+:::
+
+# Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)   
+library(tidymodels)   
+library(openintro)    
+library(knitr)       
+```
+
+# Data
+
+Today's data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the `loan50` data frame in the **openintro** R package.
+
+We will focus on the following variables:
+
+-   `annual_income_th`: Annual income (in \$1000s)
+-   `debt_to_income`: Debt-to-income ratio, i.e. the percentage of a borrower's total debt divided by their total income
+-   `verified_income`: Whether borrower's income source and amount have been verified (`Not Verified`, `Source Verified`, `Verified`)
+-   `interest_rate`: Interest rate for the loan
+
+The goal of this analysis is to use the annual income, debt-to-income ratio, and income verification to understand variability in the interest rate on the loan.
+
+We'll start with data prep to rescale annual income to \$1000's and recode `verified_income` to fix an issue with the underlying data.
+
+```{r}
+#| label: data-prep
+
+loan50 <- loan50 |>
+   mutate(annual_income_th = annual_income / 1000, 
+          verified_income = 
+            case_when(verified_income == "Not Verified" ~ "Not Verified",
+                      verified_income == "Source Verified" ~ "Source Verified",
+                      verified_income == "Verified" ~ "Verified"),
+          verified_income = as_factor(verified_income)
+   )                    
+```
+
+```{r}
+#| label: glimpse-data
+
+glimpse(loan50)
+```
+
+# Part 1
+
+## Exercise 1
+
+We'll start by fitting a model in which we include all levels of `verified_income`.
+
+-   Fit a model using `debt_to_income`, `annual_income_th`, and the indicator variables created below to predict `interest_rate`.
+
+-   What do you notice about the model output? Why did this happen?
+
+```{r}
+#| label: make-indicators
+
+loan50 <- loan50 |>
+  mutate(
+    not_verified = factor(if_else(verified_income == "Not Verified", 1, 0)),
+    source_verified = factor(if_else(verified_income == "Source Verified", 1, 0)),
+    verified = factor(if_else(verified_income == "Verified", 1, 0))
+  )
+```
+
+```{r}
+#| label: fit-model-all-indicators 
+
+# add code here
+
+```
+
+## Exercise 2
+
+Now let's take a look at the design matrix for the model with predictors `debt_to_income`, `annual_income_th`, and `verified_income`.
+
+How does R choose the baseline level by default?
+
+```{r}
+#| label: ex-1
+
+## add code here
+
+```
+
+## Exercise 3
+
+What is the intercept for individuals with
+
+-   Not verified income?
+
+-   Source verified income?
+
+-   Verified income?
+
+# Part 2
+
+## Exercise 4
+
+Fit the model with the predictors `debt_to_income`, `annual_income_th`, `verified_income` , and the interaction between `annual_income_th` and `verified_income`.
+
+Neatly display the model results using 3 digits.
+
+```{r}
+#| label: ex-2
+
+# add code here
+
+```
+
+## Exercise 5
+
+-   Write the estimated regression equation for the people with `Not Verified` income.
+
+-   Write the estimated regression equation for people with `Verified` income.
+
+## Exercise 6
+
+In general, how do
+
+-   indicators for categorical predictors impact the model equation?
+
+-   interaction terms impact the model equation?
+
+# LaTex
+
+Sometimes, you will need to include mathematical notation in your document. There are two ways you can display mathematics in your document:
+
+**Inline:** Your mathematics will display within the line of text.
+
+-   Use `$` to start and end your LaTex syntax. You can also use the menu: *Insert -\> LaTex Math -\> Inline Math*.
+
+-   *Example*: The text `The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$` produces\
+
+    The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
+
+\
+**Displayed:** Your mathematics will display outside the line of text
+
+-   Use a `$$` to start and end your LaTex syntax. You can also use the menu: *Insert -\> LaTex Math -\> Display Math*.
+
+-   *Example*: The text `The estimated regression equation is $$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$$`produces\
+
+    The estimated regression equation is
+
+$$
+\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}
+$$
+
+::: callout-tip
+[Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a quick reference of LaTex code.
+:::
+
+# Submission
+
+::: callout-important
+To submit the AE:
+
+-   Render the document to produce the PDF with all of your work from today's class.
+-   Push all your work to your AE repo on GitHub. You're done! 🎉
+:::

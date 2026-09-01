@@ -1,9 +1,9 @@
 ---
 title: "SLR: Model evaluation"
 author: "Prof. Maria Tackett"
-date: "01-15-2026"
+date: "09-01-2026"
 date-format: "MMMM DD, YYYY"
-footer: "[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
@@ -47,17 +47,53 @@ knitr::opts_chunk$set(
 
 ## Announcements {.midi}
 
--   No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday
-    -   See Canvas for full office hours schedule
+- Office hours start this week
+  - See Canvas for schedule
+- Matrix representation of regression on Thursday
+  - See [Lecture 04 prepare](../prepare/prepare-lec04.html) for linear algebra resources
 
-# Questions from last class?
+## Lab 01
+
+- The TAs let me know that a lot of groups did not finish the lab; we will take this into account when grading this lab.
+
+  - I will also take this into account for future labs
+
+- You must attend the lab section you're enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)
+
+- **Any questions about the lab?**
+
+# GitHub questionnaire {.midi}
+
+## GitHub questionnaire
+
+Researchers from ETH Zurich are testing an instrument to measure students' understanding of git. They have validated the instrument and are doing wider classroom testing.
+
+Please take a few minutes to take the questionnaire.
+
+🔗 <https://descil.eu.qualtrics.com/jfe/form/SV_009i9vNAXthu4m2?sr=Tm2s>
+
+If you finish early, clone the **ae-01** and work on Part 1 of the application exercise.
+
+## GitHub questionnaire
+
+- This is completely voluntary and your answers do not count for a grade.
+- Give your best effort.
+- Not knowing the answer is totally fine (it is likely you will not know the answer to some questions). If you are unsure, choose the answer that seems the most convincing.
+- Even if you do not consent for your responses to be used for research, please take the questionnaire. I will receive the anonymous responses to help inform the computing in this course.
+
+# Application exercise
+
+::: appex
+📋 [sta221-fa26.github.io/ae/ae-01-model-evaluation.html](../ae/ae-01-model-evaluation.html)
+
+Complete Part 1.
+:::
 
 ## Topics
 
--   Predict the response given a value of the predictor
--   Use R to conduct exploratory data analysis and fit a model
--   Evaluate models using RMSE and $R^2$
--   Use analysis of variance to partition variability in the response variable
+- Use R to conduct exploratory data analysis and fit a model
+- Evaluate models using RMSE and $R^2$
+- Use analysis of variance to partition variability in the response variable
 
 ## Computing set up
 
@@ -75,13 +111,120 @@ library(patchwork)   # arrange plots
 ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
+# Recap
+
+## Data: Movie scores 
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+movie_scores <- read_csv("https://intro-regression.github.io/data/movie-scores.csv")
+
+p <- ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_score)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(x = "Critics Score" , 
+       y = "Audience Score",
+       title = "Audience vs. critics score",
+       subtitle = "146 movies rated on rottentomatoes.com")
+
+p
+```
+
+## Simple linear regression model 
+
+$$\text{audience\_score} = 32.314 + 0.519 \times \text{critics\_score}$$
+
+**Slope**: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.
+
+**Intercept**: The expected audience score for a movie with a critics score of 0 points is 32.314 points.
+
+# Linear regression in R
+
+## Fit the model
+
+Use the `lm()` function to fit a linear regression model
+
+<br>
+
+```{r}
+movie_fit <- lm(audience_score ~ critics_score, data = movie_scores)
+movie_fit
+```
+
+## Tidy results
+
+Use the `tidy()` function from the **broom** package (part of the **tidymodels** package) to "tidy" the model output
+
+<br>
+
+```{r}
+#| code-line-numbers: "|2"
+movie_fit <- lm(audience_score ~ critics_score, data = movie_scores)
+tidy(movie_fit)
+```
+
+## Format results
+
+Use the `kable()` function from the **knitr** package to neatly format the results
+
+<br>
+
+::: {}
+```{r}
+#| code-line-numbers: "|2,3"
+movie_fit <- lm(audience_score ~ critics_score, data = movie_scores)
+tidy(movie_fit) |>
+  kable(digits = 3)
+```
+:::
+
+## Alternative: tidymodels syntax
+
+```{r}
+movies_fit <- linear_reg() |>
+  fit(audience_score ~ critics_score, data = movie_scores)
+
+tidy(movies_fit) |>
+  kable(digits = 3)
+```
+
+## Prediction
+
+Use the `predict()` function to compute predictions for new observations
+
+<br>
+
+**Single observation**
+
+```{r}
+new_movie <- tibble(critics_score = 94)
+predict(movie_fit, new_movie)
+```
+
+## Prediction
+
+Use the `predict()` function to compute predictions for new observations
+
+<br>
+
+**Multiple observations**
+
+```{r}
+more_new_movies <- tibble(critics_score = c(24, 70, 94))
+predict(movie_fit, more_new_movies)
+```
+
+# Model evaluation 
+
 ## Data: Life expectancy in 140 countries
 
 ```{r}
 #| echo: false
 library(readxl)
 
-life_exp <- read_excel("data/life-expectancy-data.xlsx") |> 
+life_exp_data <- read_excel("data/life-expectancy-data.xlsx") |> 
   rename(life_exp = `Life_expectancy_at_birth`, 
          income_inequality = `Income_inequality_Gini_coefficient`) |>
   mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"), 
@@ -90,9 +233,7 @@ life_exp <- read_excel("data/life-expectancy-data.xlsx") |>
 
 The data set comes from @zarulli2021 who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data) and [World Health Organization](https://apps.who.int/nha/database/).
 
-The data are avaialable in [life-expectancy-data.csv](https://intro-regression.github.io/data/life-expectancy-data.csv). There are `r nrow(life_exp)` countries (observations) in the data set.
-
-<br>
+The data are available in [life-expectancy-data.csv](https://intro-regression.github.io/data/life-expectancy-data.csv). There are `r nrow(life_exp_data)` countries (observations) in the data set.
 
 **Goal: Use the income inequality in a country to understand variability in the life expectancy.**
 
@@ -103,21 +244,21 @@ The data are avaialable in [life-expectancy-data.csv](https://intro-regression.g
 ## Variables
 
 ::: incremental
--   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+- `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
 
--   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
+- `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
 :::
 
 ## Univariate exploratory data analysis
 
 ```{r univariate}
 #| echo: false
-p1 <- ggplot(data = life_exp, aes(x = life_exp))  + 
+p1 <- ggplot(data = life_exp_data, aes(x = life_exp))  + 
   geom_histogram(fill = "steelblue", color = "black", binwidth = 3) + 
   labs(x = "Life expectancy (in years)", 
        y = "Count")
 
-p2 <- ggplot(data = life_exp, aes(x = income_inequality))  + 
+p2 <- ggplot(data = life_exp_data, aes(x = income_inequality))  + 
   geom_histogram(fill = "steelblue", color = "black", binwidth = 3) + 
   labs(x = "Income inequality (Gini coefficient)", 
        y = "Count") 
@@ -130,7 +271,7 @@ p1 + p2
 ```{r bivariate}
 #| echo: false
 #| out-width: 80%
-p1 <- ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) + 
+p1 <- ggplot(data = life_exp_data, aes(x = income_inequality, y = life_exp)) + 
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE, color = "steelblue") +
   labs(x = "Income inequality (Gini coefficient)", 
@@ -142,26 +283,10 @@ p1
 # Application exercise
 
 ::: appex
-📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html)
+📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](../ae/ae-01-model-evaluation.html)
 
 Complete Part 1.
 :::
-
-## Clone repo + start new RStudio project  {.small}
-
--   Go to the course organization. Click on the repo with the prefix `ae-01`. It contains the starter documents you need to complete the AE.
-
-    -   If you do not see an `ae-01` repo, use this link to create one: <https://classroom.github.com/a/jWbwQU1r>
-
--   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you’ll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
-
--   In RStudio, go to *File* → *New Project* → *Version Control* → *Git*.
-
--   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*.
-
--   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
-
--   Click `ae-01.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the AE.
 
 # Model evaluation
 
@@ -169,9 +294,9 @@ We fit a model but is it any good?
 
 ## Two statistics
 
--   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+- **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
 
--   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+- **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
 
 . . .
 
@@ -181,18 +306,16 @@ What indicates a good model fit? Higher or lower RMSE? Higher or lower $R^2$?
 
 ## RMSE
 
-$$
-RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
-$$
+$$RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}$$
 
 . . .
 
 ::: incremental
--   Ranges between 0 (perfect predictor) and infinity (terrible predictor)
+- Ranges between 0 (perfect predictor) and infinity (terrible predictor)
 
--   Same units as the response variable
+- Same units as the response variable
 
--   The value of RMSE is more useful for comparing across models than evaluating a single model
+- The value of RMSE is more useful for comparing across models than evaluating a single model
 :::
 
 # ANOVA and $R^2$
@@ -211,7 +334,7 @@ $$
 #| echo: false
 #| fig-width: 10
 
-ggplot(data = life_exp, aes(x = life_exp)) +
+ggplot(data = life_exp_data, aes(x = life_exp)) +
    geom_histogram(fill = "#407E99", color = "black", binwidth =2) + 
   labs(x = "Life expectancy (in years))") 
 
@@ -220,7 +343,7 @@ ggplot(data = life_exp, aes(x = life_exp)) +
 ```{r}
 #| echo: false
 
-life_exp |>
+life_exp_data |>
   summarise(Min = min(life_exp), Median = median(life_exp), Max = max(life_exp), Mean = mean(life_exp), Std.Dev = sd(life_exp)) |>
   kable(digits =3)
 
@@ -230,9 +353,9 @@ life_exp |>
 
 ```{r}
 #| echo: false
-mean_y <- mean(life_exp$life_exp)
+mean_y <- mean(life_exp_data$life_exp)
 
-ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+ggplot(data = life_exp_data, aes(x = income_inequality, y = life_exp)) +
   geom_point(alpha = 0.5) + 
   geom_hline(yintercept = mean_y, color = "#407E99") +
   labs(x = "Income inequality (Gini coefficient)",
@@ -244,9 +367,9 @@ ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
 
 ```{r}
 #| echo: false
-mean_y <- mean(life_exp$life_exp)
+mean_y <- mean(life_exp_data$life_exp)
 
-ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+ggplot(data = life_exp_data, aes(x = income_inequality, y = life_exp)) +
   geom_point(alpha = 0.5) + 
   geom_hline(yintercept = mean_y, color = "#407E99") +
   labs(x = "Income inequality (Gini coefficient)",
@@ -261,10 +384,10 @@ $$\text{Sum of Squares Total (SST)} = \sum_{i=1}^n(y_i - \bar{y})^2 = (n-1)s_y^2
 
 ```{r}
 #| echo: false
-mean_y <- mean(life_exp$life_exp)
-life_exp_fit <- lm(life_exp ~ income_inequality, data = life_exp)
+mean_y <- mean(life_exp_data$life_exp)
+life_exp_fit <- lm(life_exp ~ income_inequality, data = life_exp_data)
 
-ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+ggplot(data = life_exp_data, aes(x = income_inequality, y = life_exp)) +
   geom_point(alpha = 0.5) + 
   geom_hline(yintercept = mean_y, color = "#407E99") +
    geom_smooth(method = "lm", se = FALSE, color = "#993399") +
@@ -285,9 +408,9 @@ $$\text{Sum of Squares Model (SSM)} = \sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2$$
 
 ```{r}
 #| echo: false
-mean_y <- mean(life_exp$life_exp)
+mean_y <- mean(life_exp_data$life_exp)
 
-ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
+ggplot(data = life_exp_data, aes(x = income_inequality, y = life_exp)) +
   geom_point(alpha = 0.5) + 
   geom_hline(yintercept = mean_y, color = "#407E99") +
    geom_smooth(method = "lm", se = FALSE, color = "#993399") +
@@ -304,12 +427,10 @@ $$\text{Sum of Squares Residuals (SSR)} = \sum_{i = 1}^{n}(y_i - \hat{y}_i)^2$$
 
 <br>
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \color{#407E99}{SST} \hspace{5mm}&= &\color{#993399}{SSM} &\hspace{5mm} +  &\color{#8BB174}{SSR} \\[10pt]
 \color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&= &\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &\hspace{5mm}+ &\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ::: aside
 [Click here](sum-of-squares.html) to see why this equality holds.
@@ -329,7 +450,7 @@ $$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting $R^2$ {.smaller}
+## Interpreting $R^2$  {.smaller}
 
 ```{r}
 #| echo: false
@@ -339,13 +460,12 @@ life_exp_fit_rsq <- round(glance(life_exp_fit)$r.squared, 3) * 100
 ```
 
 ::: question
-The $R^2$ of the model of life expectancy and income inequality is `r life_exp_fit_rsq`%. Which of the following is the correct interpretation of this value?
-
-a.  A country's income inequality correctly predicts `r life_exp_fit_rsq`% of its life expectancy.
-b.  `r life_exp_fit_rsq`% of the variability in life expectancy can be explained by income inequality.
-c.  `r life_exp_fit_rsq`% of the variability in income inequality can be explained by life expectancy.
-d.  `r life_exp_fit_rsq`% of the time a country's life expectancy can be predicted by its income inequality.
+The $R^2$ of the model of life expectancy and income inequality is `r life_exp_fit_rsq`%. What is the correct interpretation of this value?
 :::
+
+![](images/september-01-code.png){fig-align="center" width="35%"}
+
+<center><https://app.wooclap.com/LBZLGMP></center>
 
 # Using R
 
@@ -393,22 +513,21 @@ glance(life_exp_fit)$r.squared
 # Application exercise
 
 ::: appex
-📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](https://sta221-sp26.github.io/ae/ae-01-model-evaluation.html)
+📋 [sta221-fa26.github.io/ae/ae-01-model-evaluation.html](../ae/ae-01-model-evaluation.html)
 
 Complete Part 2.
 :::
 
 ## Recap
 
--   Used R to conduct exploratory data analysis and fit a model
+- Used R to conduct exploratory data analysis and fit a model
 
--   Evaluated models using RMSE and $R^2$
+- Evaluated models using RMSE and $R^2$
 
--   Used analysis of variance to partition variability in the response variable
+- Used analysis of variance to partition variability in the response variable
 
-## Next class
+## Before next class
 
--   Matrix representation of simple linear regression
--   Complete [Lecture 04 prepare](../prepare/prepare-lec04.html)
+- Complete [Lecture 04 prepare](../prepare/prepare-lec04.html)
 
 ## References
