@@ -58,6 +58,8 @@ knitr::opts_chunk$set(
 
 - You must attend the lab section you're enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)
 
+- Lab 01 Key posted in Canvas
+
 - **Any questions about the lab?**
 
 # GitHub questionnaire {.midi}
