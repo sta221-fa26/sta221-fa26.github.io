@@ -199,7 +199,7 @@
     "href": "slides/03-slr-model-evaluation.html#lab-01",
     "title": "SLR: Model evaluation",
     "section": "Lab 01",
-    "text": "Lab 01\n\nThe TAs let me know that a lot of groups did not finish the lab; we will take this into account when grading this lab.\n\nI will also take this into account for future labs\n\nYou must attend the lab section you’re enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)\nAny questions about the lab?"
+    "text": "Lab 01\n\nThe TAs let me know that some groups did not finish the lab; we will take this into account when grading this lab.\nYou must attend the lab section you’re enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)\nAny questions about the lab?"
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#github-questionnaire-1",
@@ -234,14 +234,14 @@
     "href": "slides/03-slr-model-evaluation.html#data-movie-scores",
     "title": "SLR: Model evaluation",
     "section": "Data: Movie scores",
-    "text": "Data: Movie scores\n\n\nRows: 146 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): film\ndbl (3): year, critics_score, audience_score\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Data: Movie scores"
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#simple-linear-regression-model",
     "href": "slides/03-slr-model-evaluation.html#simple-linear-regression-model",
     "title": "SLR: Model evaluation",
     "section": "Simple linear regression model",
-    "text": "Simple linear regression model\n\\[\\text{audience\\_score} = 32.314 + 0.519 \\times \\text{critics\\_score}\\]\nSlope: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.\nIntercept: The expected audience score for a movie with a critics score of 0 points is 32.314 points."
+    "text": "Simple linear regression model\n\\[\\text{audience_score} = 32.314 + 0.519 \\times \\text{critics_score}\\]\nSlope: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.\nIntercept: The expected audience score for a movie with a critics score of 0 points is 32.314 points."
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#fit-the-model",
@@ -311,7 +311,7 @@
     "href": "slides/03-slr-model-evaluation.html#bivariate-exploratory-data-analysis",
     "title": "SLR: Model evaluation",
     "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Bivariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#two-statistics",
@@ -360,14 +360,14 @@
     "href": "slides/03-slr-model-evaluation.html#explained-variability-model",
     "title": "SLR: Model evaluation",
     "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#unexplained-variability-residuals",
     "href": "slides/03-slr-model-evaluation.html#unexplained-variability-residuals",
     "title": "SLR: Model evaluation",
     "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-evaluation.html#sum-of-squares",
@@ -451,7 +451,7 @@
     "href": "slides/03-slr-model-evaluation-notes.html#lab-01",
     "title": "SLR: Model evaluation",
     "section": "Lab 01",
-    "text": "Lab 01\n\nThe TAs let me know that a lot of groups did not finish the lab; we will take this into account when grading this lab.\n\nI will also take this into account for future labs\n\nYou must attend the lab section you’re enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)\nAny questions about the lab?"
+    "text": "Lab 01\n\nThe TAs let me know that some groups did not finish the lab; we will take this into account when grading this lab.\nYou must attend the lab section you’re enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)\nAny questions about the lab?"
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#github-questionnaire-1",
@@ -486,14 +486,14 @@
     "href": "slides/03-slr-model-evaluation-notes.html#data-movie-scores",
     "title": "SLR: Model evaluation",
     "section": "Data: Movie scores",
-    "text": "Data: Movie scores\n\n\nRows: 146 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): film\ndbl (3): year, critics_score, audience_score\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Data: Movie scores"
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#simple-linear-regression-model",
     "href": "slides/03-slr-model-evaluation-notes.html#simple-linear-regression-model",
     "title": "SLR: Model evaluation",
     "section": "Simple linear regression model",
-    "text": "Simple linear regression model\n\\[\\text{audience\\_score} = 32.314 + 0.519 \\times \\text{critics\\_score}\\]\nSlope: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.\nIntercept: The expected audience score for a movie with a critics score of 0 points is 32.314 points."
+    "text": "Simple linear regression model\n\\[\\text{audience_score} = 32.314 + 0.519 \\times \\text{critics_score}\\]\nSlope: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.\nIntercept: The expected audience score for a movie with a critics score of 0 points is 32.314 points."
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#fit-the-model",
@@ -563,7 +563,7 @@
     "href": "slides/03-slr-model-evaluation-notes.html#bivariate-exploratory-data-analysis",
     "title": "SLR: Model evaluation",
     "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Bivariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#two-statistics",
@@ -612,14 +612,14 @@
     "href": "slides/03-slr-model-evaluation-notes.html#explained-variability-model",
     "title": "SLR: Model evaluation",
     "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "text": "Explained variability (Model)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#unexplained-variability-residuals",
     "href": "slides/03-slr-model-evaluation-notes.html#unexplained-variability-residuals",
     "title": "SLR: Model evaluation",
     "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "text": "Unexplained variability (Residuals)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-evaluation-notes.html#sum-of-squares",
@@ -2076,7 +2076,7 @@
     "href": "hw/hw-stats-experience-DRAFT.html#part-2-reflect-on-your-experience",
     "title": "HW 05: Statistics Experience",
     "section": "Part 2: Reflect on your experience",
-    "text": "Part 2: Reflect on your experience\nMake one slide summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!). Creativity on the experience and slide design is encouraged!"
+    "text": "Part 2: Reflect on your experience\nMake one slide1 summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!).\nCreativity on the experience and slide design is encouraged!"
   },
   {
     "objectID": "hw/hw-stats-experience-DRAFT.html#part-3-complete-the-statistics-experience-survey",
@@ -2091,6 +2091,13 @@
     "title": "HW 05: Statistics Experience",
     "section": "Submission",
     "text": "Submission\nThis assignment is due on Tuesday, November 24 at 11:59pm. To be considered on time, the image of the slide must be posted to the “Statistics experience” discussion thread on Canvas and the survey completed by the deadline. The standard homework late policy applies."
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#footnotes",
+    "href": "hw/hw-stats-experience-DRAFT.html#footnotes",
+    "title": "HW 05: Statistics Experience",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou may use a standard slide (e.g., Google slides, Powerpoint, Keynote, Canva, etc.) or a research poster format. If you are interested in the research poster, click here for poster templates from the Duke School of Medicine. Be sure to remove the School of Medicine log.↩︎"
   },
   {
     "objectID": "prepare/prepare-lec02.html",

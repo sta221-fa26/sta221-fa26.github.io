@@ -135,7 +135,9 @@ Perhaps you're interested in a Statistics Experience doesn't seem to fit in one 
 
 ## Part 2: Reflect on your experience
 
-Make one slide summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.
+Make one slide[^1] summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.
+
+[^1]: You may use a standard slide (e.g., Google slides, Powerpoint, Keynote, Canva, etc.) or a research poster format. If you are interested in the research poster, [click here](https://duke.app.box.com/s/tsver1rb3gjjv12l4j10ustydekrm36m) for poster templates from the Duke School of Medicine. Be sure to remove the School of Medicine log.
 
 Include the following on your slide:
 
@@ -148,7 +150,9 @@ Include the following on your slide:
 - **Citation or link to web page for event/competition/etc.**
   - No citation needed if you do an interview.
 
-Make sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!). **Creativity on the experience and slide design is encouraged!**
+Make sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!).
+
+**Creativity on the experience and slide design is encouraged!**
 
 ## Part 3: Complete the Statistics Experience survey
 

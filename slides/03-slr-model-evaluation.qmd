@@ -54,9 +54,7 @@ knitr::opts_chunk$set(
 
 ## Lab 01
 
-- The TAs let me know that a lot of groups did not finish the lab; we will take this into account when grading this lab.
-
-  - I will also take this into account for future labs
+- The TAs let me know that some groups did not finish the lab; we will take this into account when grading this lab.
 
 - You must attend the lab section you're enrolled in. Beginning with Lab 02, you will not receive credit if you attend a different lab section (unless previously discussed with Prof. Tackett)
 
@@ -113,7 +111,7 @@ ggplot2::theme_set(ggplot2::theme_bw())
 
 # Recap
 
-## Data: Movie scores 
+## Data: Movie scores
 
 ```{r}
 #| echo: false
@@ -132,9 +130,9 @@ p <- ggplot(data = movie_scores, mapping = aes(x = critics_score, y = audience_s
 p
 ```
 
-## Simple linear regression model 
+## Simple linear regression model
 
-$$\text{audience\_score} = 32.314 + 0.519 \times \text{critics\_score}$$
+$$\text{audience_score} = 32.314 + 0.519 \times \text{critics_score}$$
 
 **Slope**: For each additional point in the critics score, the audience score is expected to be higher by 0.519 points, on average.
 
@@ -216,7 +214,7 @@ more_new_movies <- tibble(critics_score = c(24, 70, 94))
 predict(movie_fit, more_new_movies)
 ```
 
-# Model evaluation 
+# Model evaluation
 
 ## Data: Life expectancy in 140 countries
 
@@ -450,7 +448,7 @@ $$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting $R^2$  {.smaller}
+## Interpreting $R^2$ {.smaller}
 
 ```{r}
 #| echo: false
