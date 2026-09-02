@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 11:  Confidence intervals" 
+---
+
+<br>
+
+📖 Read [Section 5.9.4 - 5.9.5](https://intro-regression.github.io/05-slr-inference.html#sec-slr-theory-ci)
+
+📖 Read [Section 8.4.3 - 8.4.4](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-theory-ci)

@@ -1,0 +1,11 @@
+---
+title: "Prepare for Lecture 10: Hypothesis tests"
+---
+
+<br>
+
+📖 Read [Section 5.5](https://intro-regression.github.io/05-slr-inference.html#sec-hypothesis-test-overview)
+
+📖 Read [Section 5.9.3](https://intro-regression.github.io/05-slr-inference.html#sec-slr-inf-clt-hypothesis-test)
+
+📖 Read [Section 8.4.2](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-hypothesis-test)

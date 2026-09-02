@@ -1475,6 +1475,20 @@
     "text": "📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
+    "objectID": "prepare/prepare-lec06.html",
+    "href": "prepare/prepare-lec06.html",
+    "title": "Prepare for Lecture 06: Types of predictors",
+    "section": "",
+    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
+  },
+  {
+    "objectID": "prepare/prepare-lec11.html",
+    "href": "prepare/prepare-lec11.html",
+    "title": "Prepare for Lecture 11: Confidence intervals",
+    "section": "",
+    "text": "📖 Read Section 5.9.4 - 5.9.5\n📖 Read Section 8.4.3 - 8.4.4"
+  },
+  {
     "objectID": "prepare/prepare-lec04.html",
     "href": "prepare/prepare-lec04.html",
     "title": "Prepare for Lecture 04: SLR - Matrix representation",
@@ -1482,253 +1496,247 @@
     "text": "📖 Read Appendices A.2 - A.3\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\nNonsignular matrices: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Spring 2026) taught by Dr. Brian Fitzpatrick at Duke University."
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "prepare/prepare-lec09.html",
+    "href": "prepare/prepare-lec09.html",
+    "title": "Prepare for Lecture 09: Inference - Normal assumption",
+    "section": "",
+    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html",
+    "href": "hw/hw-stats-experience-DRAFT.html",
+    "title": "HW 05: Statistics Experience",
+    "section": "",
+    "text": "Important\n\n\n\nThis assignment is due on Tuesday, November 24 at 11:59pm.\nThe world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.\nYou may submit the statistics experience assignment anytime between now and the deadline.\nEach experience has three parts:\n1️⃣ Have a statistics experience.\n2️⃣ Make a slide reflecting on your experience.\n3️⃣ Complete the Statistics Experience survey.\nYou must complete all parts to receive credit. The statistics experience will count as a homework grade."
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#part-1-experience-statistics-outside-of-the-classroom",
+    "href": "hw/hw-stats-experience-DRAFT.html#part-1-experience-statistics-outside-of-the-classroom",
+    "title": "HW 05: Statistics Experience",
+    "section": "Part 1: Experience statistics outside of the classroom",
+    "text": "Part 1: Experience statistics outside of the classroom\nComplete an activity in one of the categories below. Under each category are suggested activities. If you do not see something you’d like to do in Categories 1 - 8, you may do Category 9: Choose your own adventure! If there is an activity you’d like to do but you’re not sure if it qualifies for the statistics experience, just ask!\n\nCategory 1: Attend a talk or conference\nAttend a talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be at least 30 minutes to count towards the statistics experience. The event can be in-person or online.\n\n\nCategory 2: Talk with a statistician/ data scientist\nTalk with someone who uses statistics in their daily work. This could include a professor, professional working in industry, graduate student, etc.\n\n\nCategory 3: Listen to a podcast / watch a video\nListen to a podcast or watch a video about statistics and data science. The podcasts / videos must be (1) one podcast or video that is at least 30 minutes or (2) multiple podcasts and/or videos that are at least 30 minutes combined.\nA few data science podcasts are below:\n\nStats + Stories Podcast\nCausal Inference Podcast\nThe Test Set by Posit\nData Skeptic\nposit::conf talks (formally called rstudio::conf)\n\n2025 conference\n2024 conference\n2023 conference\n\n\nThis list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask Professor Tackett if you are unsure whether a particular podcast or video will count towards the statistics experience.\n\n\nCategory 4: Participate in a data science competition or challenge\nParticipate in a statistics or data science competition. You can participate individually or with a team.\n\n\nCategory 5: Read a book about statistics/data science\nThere are a lot of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn’t on this list, you can ask Professor Tackett if you’re unsure whether it will count for the statistics experience. Many of these books are available through Duke library.\n\nData-Driven Hollywood: The New Data Professionals in the Age of Streaming by Violaine Roussel\nData Empire: The Power of Information to Organize, Control, and Dominate by Roopika Risam\nCHART: Designing Creative Data Visualizations from Charts to Art by Nadieh Bremer\nW. E. B. Du Bois’s Data Portraits: Visualizing Black America by Britt Rusert and Whitney Battle-Baptiste\nHow Charts Lie: Getting Smarter about Visual Information by Alberto Cairo\nThe Theory that Would Not Die by Sharon Bertsch McGrayne\nThe Lady Tasting Tea by David Salsburg\nList of books about data science ethics\n\nThis list is not exhaustive.\n\n\nCategory 6: TidyTuesday\nAnother option is participating in a TidyTuesday challenge. New data sets are announced on Monday afternoons. You can find more information about TidyTuesday and see the data in the TidyTuesday GitHub repo.\nA few guidelines:\n✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include\n\nThe Quarto file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The visualization should include features or customization that are beyond what we’ve done in class.\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 7: Coding Out Loud\nWatch an episode of Coding Out Loud and work through the project. A few guidelines:\n✅ Create a GitHub repo for your Coding Out Loud submission. Your repo should include\n\nThe Quarto file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The final product (visualization, table, etc.) should include features or customization that are beyond what is achieved in the Coding Out Loud episode.\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 8: CURV - connecting, uplifting, and recognizing voices\nCURV is a project by Dr. Jo Hardin at Pomona College to highlight statisticians and data scientists from groups who have been historically marginalized in the discipline.\n\n\n\n\n\n\nFor this statistics experience, you can contribute to the CURV database. If there is a scholar you would like to suggest for the database, submit your suggestion as an issue or pull request on the CURV GitHub repo and create a sample CURV page.\nA few guidelines:\n✅ Create a draft of the CURV page for your suggested scholar. For reference, click here for the CURV page for W.E.B. Du Bois. The page must be created in a Quarto document.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the Quarto documents for current scholars in the database in the CURV GitHub repo. You can use one of these as a template to format your page.\n\n\n✅ Make a pull request to the CURV GitHub repo to add the .qmd file for your suggested scholar, OR open an issue with a link to the .qmd file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.\n✅ Include the URL to your pull request or issue in your one-slide reflection.\n\n\nCategory 9: Choose your own adventure!\nPerhaps you’re interested in a Statistics Experience doesn’t seem to fit in one of the previous categories. If so, you can create your own experience! Please share your idea with Professor Tackett to get it approved for this assignment."
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#part-2-reflect-on-your-experience",
+    "href": "hw/hw-stats-experience-DRAFT.html#part-2-reflect-on-your-experience",
+    "title": "HW 05: Statistics Experience",
+    "section": "Part 2: Reflect on your experience",
+    "text": "Part 2: Reflect on your experience\nMake one slide1 summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!).\nCreativity on the experience and slide design is encouraged!"
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#part-3-complete-the-statistics-experience-survey",
+    "href": "hw/hw-stats-experience-DRAFT.html#part-3-complete-the-statistics-experience-survey",
+    "title": "HW 05: Statistics Experience",
+    "section": "Part 3: Complete the Statistics Experience survey",
+    "text": "Part 3: Complete the Statistics Experience survey\nClick here [UPDATE LINK] to complete the Statistics Experience survey. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. The survey data will be collected and de-identified by an Honest Broker from the Office of the University Registrar. You will receive credit for completing the survey, regardless of whether you consent for your data to be used in research. Professor Tackett will receive the de-identified survey responses after the final course grades have been submitted."
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#submission",
+    "href": "hw/hw-stats-experience-DRAFT.html#submission",
+    "title": "HW 05: Statistics Experience",
+    "section": "Submission",
+    "text": "Submission\nThis assignment is due on Tuesday, November 24 at 11:59pm. To be considered on time, the image of the slide must be posted to the “Statistics experience” discussion thread on Canvas and the survey completed by the deadline. The standard homework late policy applies."
+  },
+  {
+    "objectID": "hw/hw-stats-experience-DRAFT.html#footnotes",
+    "href": "hw/hw-stats-experience-DRAFT.html#footnotes",
+    "title": "HW 05: Statistics Experience",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou may use a standard slide (e.g., Google slides, Powerpoint, Keynote, Canva, etc.) or a research poster format. If you are interested in the research poster, click here for poster templates from the Duke School of Medicine. Be sure to remove the School of Medicine log.↩︎"
+  },
+  {
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-05.html",
-    "href": "hw/hw-05.html",
-    "title": "HW 05",
+    "objectID": "hw/hw-stats-experience.html",
+    "href": "hw/hw-stats-experience.html",
+    "title": "HW 05: Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 05: Statistics experience"
+    ]
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec01.html",
+    "href": "prepare-SPRING2026/prepare-lec01.html",
+    "title": "Prepare for Lecture 01",
+    "section": "",
+    "text": "📖 Read the syllabus"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec03.html",
+    "href": "prepare-SPRING2026/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
+    "section": "",
+    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec16.html",
+    "href": "prepare-SPRING2026/prepare-lec16.html",
+    "title": "Prepare for Lecture 16: Model selection",
+    "section": "",
+    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec06.html",
+    "href": "prepare-SPRING2026/prepare-lec06.html",
+    "title": "Prepare for Lecture 06: Types of predictors",
+    "section": "",
+    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec13.html",
+    "href": "prepare-SPRING2026/prepare-lec13.html",
+    "title": "Prepare for Lecture 13: Variable transformations",
+    "section": "",
+    "text": "📖 Read Chapter 9"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec11.html",
+    "href": "prepare-SPRING2026/prepare-lec11.html",
+    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
+    "section": "",
+    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec04.html",
+    "href": "prepare-SPRING2026/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec21.html",
+    "href": "prepare-SPRING2026/prepare-lec21.html",
+    "title": "Prepare for Lecture 21: LR - Inference",
+    "section": "",
+    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec08.html",
+    "href": "prepare-SPRING2026/prepare-lec08.html",
+    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "section": "",
+    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec22.html",
+    "href": "prepare-SPRING2026/prepare-lec22.html",
+    "title": "Prepare for Lecture 22: Ethics",
     "section": "",
     "text": "To be posted."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec14.html",
-    "href": "prepare-SPRING2026/prepare-lec14.html",
-    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "objectID": "prepare-SPRING2026/prepare-lec19.html",
+    "href": "prepare-SPRING2026/prepare-lec19.html",
+    "title": "Prepare for Lecture 19: LR - Prediction",
     "section": "",
-    "text": "📖 Read Appendix A.8"
+    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec15.html",
-    "href": "prepare-SPRING2026/prepare-lec15.html",
-    "title": "Prepare for Lecture 15: Properties of estimators",
+    "objectID": "labs/lab-04-DRAFT.html",
+    "href": "labs/lab-04-DRAFT.html",
+    "title": "Lab 04: Exam 01 Review",
     "section": "",
-    "text": "No prepare assignment"
+    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec17.html",
-    "href": "prepare-SPRING2026/prepare-lec17.html",
-    "title": "Prepare for Lecture 17: Ridge regression",
-    "section": "",
-    "text": "No prepare assignment"
+    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec02.html",
-    "href": "prepare-SPRING2026/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
-    "section": "",
-    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
+    "href": "labs/lab-04-DRAFT.html#exercise-1",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec12.html",
-    "href": "prepare-SPRING2026/prepare-lec12.html",
-    "title": "Prepare for Lecture 12: Multicollinearity",
-    "section": "",
-    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
+    "href": "labs/lab-04-DRAFT.html#exercise-2",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec07.html",
-    "href": "prepare-SPRING2026/prepare-lec07.html",
-    "title": "Prepare for Lecture 07: Inference for regression",
-    "section": "",
-    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
+    "href": "labs/lab-04-DRAFT.html#exercise-3",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec05.html",
-    "href": "prepare-SPRING2026/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: Multiple linear regression",
-    "section": "",
-    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
+    "href": "labs/lab-04-DRAFT.html#exercise-4",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec09.html",
-    "href": "prepare-SPRING2026/prepare-lec09.html",
-    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
-    "section": "",
-    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
+    "href": "labs/lab-04-DRAFT.html#exercise-5",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec20.html",
-    "href": "prepare-SPRING2026/prepare-lec20.html",
-    "title": "Prepare for Lecture 20: LR - Model selection",
-    "section": "",
-    "text": "📖 Read Section 12.5"
+    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
+    "href": "labs/lab-04-DRAFT.html#exercise-6",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec18.html",
-    "href": "prepare-SPRING2026/prepare-lec18.html",
-    "title": "Prepare for Lecture 18: Logistic regression",
-    "section": "",
-    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+    "objectID": "labs/lab-04-DRAFT.html#footnotes",
+    "href": "labs/lab-04-DRAFT.html#footnotes",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 06"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting started",
-    "section": "",
-    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting started",
-    "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Lab 04"
     ]
   },
   {
@@ -1842,241 +1850,282 @@
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 07"
+      "Lab 03"
     ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html",
-    "href": "labs/lab-04-DRAFT.html",
-    "title": "Lab 04: Exam 01 Review",
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting started",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
-    "href": "labs/lab-04-DRAFT.html#exercise-1",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
-    "href": "labs/lab-04-DRAFT.html#exercise-2",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
-    "href": "labs/lab-04-DRAFT.html#exercise-3",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
-    "href": "labs/lab-04-DRAFT.html#exercise-4",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
-    "href": "labs/lab-04-DRAFT.html#exercise-5",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
-    "href": "labs/lab-04-DRAFT.html#exercise-6",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#footnotes",
-    "href": "labs/lab-04-DRAFT.html#footnotes",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec19.html",
-    "href": "prepare-SPRING2026/prepare-lec19.html",
-    "title": "Prepare for Lecture 19: LR - Prediction",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
-    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec22.html",
-    "href": "prepare-SPRING2026/prepare-lec22.html",
-    "title": "Prepare for Lecture 22: Ethics",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec18.html",
+    "href": "prepare-SPRING2026/prepare-lec18.html",
+    "title": "Prepare for Lecture 18: Logistic regression",
+    "section": "",
+    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec20.html",
+    "href": "prepare-SPRING2026/prepare-lec20.html",
+    "title": "Prepare for Lecture 20: LR - Model selection",
+    "section": "",
+    "text": "📖 Read Section 12.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec09.html",
+    "href": "prepare-SPRING2026/prepare-lec09.html",
+    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
+    "section": "",
+    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec05.html",
+    "href": "prepare-SPRING2026/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: Multiple linear regression",
+    "section": "",
+    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec07.html",
+    "href": "prepare-SPRING2026/prepare-lec07.html",
+    "title": "Prepare for Lecture 07: Inference for regression",
+    "section": "",
+    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec12.html",
+    "href": "prepare-SPRING2026/prepare-lec12.html",
+    "title": "Prepare for Lecture 12: Multicollinearity",
+    "section": "",
+    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec02.html",
+    "href": "prepare-SPRING2026/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
+    "section": "",
+    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec17.html",
+    "href": "prepare-SPRING2026/prepare-lec17.html",
+    "title": "Prepare for Lecture 17: Ridge regression",
+    "section": "",
+    "text": "No prepare assignment"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec15.html",
+    "href": "prepare-SPRING2026/prepare-lec15.html",
+    "title": "Prepare for Lecture 15: Properties of estimators",
+    "section": "",
+    "text": "No prepare assignment"
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec14.html",
+    "href": "prepare-SPRING2026/prepare-lec14.html",
+    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "section": "",
+    "text": "📖 Read Appendix A.8"
+  },
+  {
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "HW 05",
     "section": "",
     "text": "To be posted."
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec08.html",
-    "href": "prepare-SPRING2026/prepare-lec08.html",
-    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
     "section": "",
-    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec21.html",
-    "href": "prepare-SPRING2026/prepare-lec21.html",
-    "title": "Prepare for Lecture 21: LR - Inference",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
-    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec04.html",
-    "href": "prepare-SPRING2026/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "objectID": "prepare/prepare-lec08.html",
+    "href": "prepare/prepare-lec08.html",
+    "title": "Prepare for Lecture 08: Inference for regression",
     "section": "",
-    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec11.html",
-    "href": "prepare-SPRING2026/prepare-lec11.html",
-    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
+    "objectID": "prepare/prepare-lec10.html",
+    "href": "prepare/prepare-lec10.html",
+    "title": "Prepare for Lecture 10: Hypothesis tests",
     "section": "",
-    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
+    "text": "📖 Read Section 5.5\n📖 Read Section 5.9.3\n📖 Read Section 8.4.2"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec13.html",
-    "href": "prepare-SPRING2026/prepare-lec13.html",
-    "title": "Prepare for Lecture 13: Variable transformations",
+    "objectID": "prepare/prepare-lec05.html",
+    "href": "prepare/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: Multiple linear regression",
     "section": "",
-    "text": "📖 Read Chapter 9"
+    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec06.html",
-    "href": "prepare-SPRING2026/prepare-lec06.html",
-    "title": "Prepare for Lecture 06: Types of predictors",
+    "objectID": "prepare/prepare-lec07.html",
+    "href": "prepare/prepare-lec07.html",
+    "title": "Prepare for Lecture 07: Types of predictors cont’d",
     "section": "",
     "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec16.html",
-    "href": "prepare-SPRING2026/prepare-lec16.html",
-    "title": "Prepare for Lecture 16: Model selection",
-    "section": "",
-    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec03.html",
-    "href": "prepare-SPRING2026/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model evaluation",
-    "section": "",
-    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec01.html",
-    "href": "prepare-SPRING2026/prepare-lec01.html",
-    "title": "Prepare for Lecture 01",
-    "section": "",
-    "text": "📖 Read the syllabus"
-  },
-  {
-    "objectID": "hw/hw-stats-experience.html",
-    "href": "hw/hw-stats-experience.html",
-    "title": "HW 05: Statistics Experience",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 05: Statistics experience"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html",
-    "href": "hw/hw-stats-experience-DRAFT.html",
-    "title": "HW 05: Statistics Experience",
-    "section": "",
-    "text": "Important\n\n\n\nThis assignment is due on Tuesday, November 24 at 11:59pm.\nThe world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.\nYou may submit the statistics experience assignment anytime between now and the deadline.\nEach experience has three parts:\n1️⃣ Have a statistics experience.\n2️⃣ Make a slide reflecting on your experience.\n3️⃣ Complete the Statistics Experience survey.\nYou must complete all parts to receive credit. The statistics experience will count as a homework grade."
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html#part-1-experience-statistics-outside-of-the-classroom",
-    "href": "hw/hw-stats-experience-DRAFT.html#part-1-experience-statistics-outside-of-the-classroom",
-    "title": "HW 05: Statistics Experience",
-    "section": "Part 1: Experience statistics outside of the classroom",
-    "text": "Part 1: Experience statistics outside of the classroom\nComplete an activity in one of the categories below. Under each category are suggested activities. If you do not see something you’d like to do in Categories 1 - 8, you may do Category 9: Choose your own adventure! If there is an activity you’d like to do but you’re not sure if it qualifies for the statistics experience, just ask!\n\nCategory 1: Attend a talk or conference\nAttend a talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be at least 30 minutes to count towards the statistics experience. The event can be in-person or online.\n\n\nCategory 2: Talk with a statistician/ data scientist\nTalk with someone who uses statistics in their daily work. This could include a professor, professional working in industry, graduate student, etc.\n\n\nCategory 3: Listen to a podcast / watch a video\nListen to a podcast or watch a video about statistics and data science. The podcasts / videos must be (1) one podcast or video that is at least 30 minutes or (2) multiple podcasts and/or videos that are at least 30 minutes combined.\nA few data science podcasts are below:\n\nStats + Stories Podcast\nCausal Inference Podcast\nThe Test Set by Posit\nData Skeptic\nposit::conf talks (formally called rstudio::conf)\n\n2025 conference\n2024 conference\n2023 conference\n\n\nThis list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask Professor Tackett if you are unsure whether a particular podcast or video will count towards the statistics experience.\n\n\nCategory 4: Participate in a data science competition or challenge\nParticipate in a statistics or data science competition. You can participate individually or with a team.\n\n\nCategory 5: Read a book about statistics/data science\nThere are a lot of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn’t on this list, you can ask Professor Tackett if you’re unsure whether it will count for the statistics experience. Many of these books are available through Duke library.\n\nData-Driven Hollywood: The New Data Professionals in the Age of Streaming by Violaine Roussel\nData Empire: The Power of Information to Organize, Control, and Dominate by Roopika Risam\nCHART: Designing Creative Data Visualizations from Charts to Art by Nadieh Bremer\nW. E. B. Du Bois’s Data Portraits: Visualizing Black America by Britt Rusert and Whitney Battle-Baptiste\nHow Charts Lie: Getting Smarter about Visual Information by Alberto Cairo\nThe Theory that Would Not Die by Sharon Bertsch McGrayne\nThe Lady Tasting Tea by David Salsburg\nList of books about data science ethics\n\nThis list is not exhaustive.\n\n\nCategory 6: TidyTuesday\nAnother option is participating in a TidyTuesday challenge. New data sets are announced on Monday afternoons. You can find more information about TidyTuesday and see the data in the TidyTuesday GitHub repo.\nA few guidelines:\n✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include\n\nThe Quarto file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The visualization should include features or customization that are beyond what we’ve done in class.\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 7: Coding Out Loud\nWatch an episode of Coding Out Loud and work through the project. A few guidelines:\n✅ Create a GitHub repo for your Coding Out Loud submission. Your repo should include\n\nThe Quarto file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The final product (visualization, table, etc.) should include features or customization that are beyond what is achieved in the Coding Out Loud episode.\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 8: CURV - connecting, uplifting, and recognizing voices\nCURV is a project by Dr. Jo Hardin at Pomona College to highlight statisticians and data scientists from groups who have been historically marginalized in the discipline.\n\n\n\n\n\n\nFor this statistics experience, you can contribute to the CURV database. If there is a scholar you would like to suggest for the database, submit your suggestion as an issue or pull request on the CURV GitHub repo and create a sample CURV page.\nA few guidelines:\n✅ Create a draft of the CURV page for your suggested scholar. For reference, click here for the CURV page for W.E.B. Du Bois. The page must be created in a Quarto document.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the Quarto documents for current scholars in the database in the CURV GitHub repo. You can use one of these as a template to format your page.\n\n\n✅ Make a pull request to the CURV GitHub repo to add the .qmd file for your suggested scholar, OR open an issue with a link to the .qmd file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.\n✅ Include the URL to your pull request or issue in your one-slide reflection.\n\n\nCategory 9: Choose your own adventure!\nPerhaps you’re interested in a Statistics Experience doesn’t seem to fit in one of the previous categories. If so, you can create your own experience! Please share your idea with Professor Tackett to get it approved for this assignment."
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html#part-2-reflect-on-your-experience",
-    "href": "hw/hw-stats-experience-DRAFT.html#part-2-reflect-on-your-experience",
-    "title": "HW 05: Statistics Experience",
-    "section": "Part 2: Reflect on your experience",
-    "text": "Part 2: Reflect on your experience\nMake one slide1 summarizing and reflecting on your experience. Post an image of the slide in the Statistics experience discussion thread on Canvas.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!).\nCreativity on the experience and slide design is encouraged!"
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html#part-3-complete-the-statistics-experience-survey",
-    "href": "hw/hw-stats-experience-DRAFT.html#part-3-complete-the-statistics-experience-survey",
-    "title": "HW 05: Statistics Experience",
-    "section": "Part 3: Complete the Statistics Experience survey",
-    "text": "Part 3: Complete the Statistics Experience survey\nClick here [UPDATE LINK] to complete the Statistics Experience survey. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. The survey data will be collected and de-identified by an Honest Broker from the Office of the University Registrar. You will receive credit for completing the survey, regardless of whether you consent for your data to be used in research. Professor Tackett will receive the de-identified survey responses after the final course grades have been submitted."
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html#submission",
-    "href": "hw/hw-stats-experience-DRAFT.html#submission",
-    "title": "HW 05: Statistics Experience",
-    "section": "Submission",
-    "text": "Submission\nThis assignment is due on Tuesday, November 24 at 11:59pm. To be considered on time, the image of the slide must be posted to the “Statistics experience” discussion thread on Canvas and the survey completed by the deadline. The standard homework late policy applies."
-  },
-  {
-    "objectID": "hw/hw-stats-experience-DRAFT.html#footnotes",
-    "href": "hw/hw-stats-experience-DRAFT.html#footnotes",
-    "title": "HW 05: Statistics Experience",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nYou may use a standard slide (e.g., Google slides, Powerpoint, Keynote, Canva, etc.) or a research poster format. If you are interested in the research poster, click here for poster templates from the Duke School of Medicine. Be sure to remove the School of Medicine log.↩︎"
   },
   {
     "objectID": "prepare/prepare-lec02.html",
@@ -2327,7 +2376,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Normal assumption\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
