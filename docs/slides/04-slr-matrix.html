@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <meta name="dcterms.date" content="2026-01-20">
+  <meta name="dcterms.date" content="2026-09-03">
   <title>STA 221 - Fall 2026 – SLR: Matrix representation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,20 +141,18 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">January 20, 2026</p>
+  <p class="date">September 03, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>Lab 01 due on <strong>TODAY at 11:59pm</strong></p>
+<li><p>HW 01 due September 10</p>
 <ul>
-<li>Push work to GitHub repo</li>
-<li>Submit final PDF on Gradescope + mark pages for each question</li>
+<li>Released after class</li>
 </ul></li>
-<li><p>HW 01 released today - <strong>due Thursday, January 29 at 11:59pm</strong></p>
-<ul>
-<li>Note: AI Disclosure</li>
-</ul></li>
+<li><p>No lab on Monday (Labor Day)</p></li>
+<li><p>Office hours start this week</p></li>
+<li><p>See Ed Discussion for additional linear algebra resource</p></li>
 </ul>
 </section>
 <section id="topics" class="slide level2">
@@ -183,7 +181,7 @@ Prof.&nbsp;Maria Tackett
 <ul>
 <li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li><span class="math inline">\(\beta_0\)</span>: Population (true) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\epsilon\)</span>: Error terms centered at 0 with variance <span class="math inline">\(\sigma^2_{\epsilon}\)</span></li>
+<li><span class="math inline">\(\epsilon\)</span>: Error terms</li>
 </ul>
 </section>
 <section id="slr-in-matrix-form" class="slide level2">
@@ -196,7 +194,7 @@ Prof.&nbsp;Maria Tackett
 <li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
 <li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for predictors + intercept)</p></li>
 <li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Vector of model coefficients</p></li>
-<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms centered at <span class="math inline">\(\mathbf{0}\)</span> with variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span></p></li>
+<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms</p></li>
 </ul>
 </section>
 <section id="slr-in-matrix-form-1" class="slide level2">
@@ -392,7 +390,7 @@ y_n
 <ul>
 <li class="fragment">We want to find <span class="math inline">\(\boldsymbol{\beta}\)</span> such that <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>, i.e, we want to minimize the difference <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}\)</span></li>
 </ul></li>
-<li class="fragment"><p>This distance is minimized when <span class="math inline">\(\mathbf{e}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span></p></li>
+<li class="fragment"><p>This distance is minimized when <span class="math inline">\(\boldsymbol{\epsilon}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span></p></li>
 </ul>
 </section>
 <section id="geometry-of-least-squares-regression-3" class="slide level2">
@@ -429,7 +427,7 @@ y_n
 </ul></li>
 </ul>
 <div class="question">
-<p>Show these properties in HW 01 and HW 02.</p>
+<p>Show these properties in homework.</p>
 </div>
 </section>
 <section id="residuals" class="slide level2">
@@ -455,11 +453,10 @@ y_n
 <li><p>Introduced the geometric interpretation of least-squares regression</p></li>
 </ul>
 </section>
-<section id="for-next-class" class="slide level2">
-<h2>For next class</h2>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
 <ul>
-<li><p>Multiple linear regression</p></li>
-<li><p>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></p></li>
+<li>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></li>
 </ul>
 
 
@@ -468,7 +465,7 @@ y_n
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-sp26.github.io">🔗 sta221-sp26.github.io</a></p>
+<p><a href="https://sta221-fa26.github.io">🔗 sta221-fa26.github.io</a></p>
 </div>
 </div></div>
 

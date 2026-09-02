@@ -1,9 +1,9 @@
 ---
 title: "SLR: Matrix representation"
 author: "Prof. Maria Tackett"
-date: "01-20-2026"
+date: "September 3, 2026"
 date-format: "MMMM DD, YYYY"
-footer: "[🔗 sta221-sp26.github.io](https://sta221-sp26.github.io)"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
@@ -47,14 +47,15 @@ knitr::opts_chunk$set(
 
 ## Announcements
 
-- Lab 01 due on **TODAY at 11:59pm**
+- HW 01 due September 10
 
-  - Push work to GitHub repo
-  - Submit final PDF on Gradescope + mark pages for each question
+  - Released after class
 
-- HW 01 released today - **due Thursday, January 29 at 11:59pm**
+- No lab on Monday (Labor Day)
 
-  - Note: AI Disclosure
+- Office hours start this week
+
+- See Ed Discussion for additional linear algebra resource
 
 ## Topics
 
@@ -77,7 +78,7 @@ $$Y = \beta_0 + \beta_1 X + \epsilon$$
 
 - $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
 - $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
-- $\epsilon$: Error terms centered at 0 with variance $\sigma^2_{\epsilon}$
+- $\epsilon$: Error terms
 
 ## SLR in matrix form
 
@@ -93,7 +94,7 @@ $$\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}$$
 
 - $\boldsymbol{\beta}$: Vector of model coefficients
 
-- $\boldsymbol{\epsilon}$: Vector of error terms centered at $\mathbf{0}$ with variance $\sigma^2_{\epsilon}\mathbf{I}$
+- $\boldsymbol{\epsilon}$: Vector of error terms
 
 ## SLR in matrix form
 
@@ -297,7 +298,7 @@ Equivalently:
 
   - We want to find $\boldsymbol{\beta}$ such that $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ is as close as possible to $\mathbf{y}$, i.e, we want to minimize the difference $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}$
 
-- This distance is minimized when $\mathbf{e}$ is orthogonal to $\text{Col}(\mathbf{X})$
+- This distance is minimized when $\boldsymbol{\epsilon}$ is orthogonal to $\text{Col}(\mathbf{X})$
 :::
 
 ## Geometry of least-squares regression
@@ -339,7 +340,7 @@ $$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}
   - If $\mathbf{v}$ is orthogonal to $\text{Col}(\mathbf{X})$, then $\mathbf{Hv} = \mathbf{0}$
 
 ::: question
-Show these properties in HW 01 and HW 02.
+Show these properties in homework.
 :::
 
 ## Residuals
@@ -364,8 +365,6 @@ $$\begin{aligned}
 
 - Introduced the geometric interpretation of least-squares regression
 
-## For next class
-
-- Multiple linear regression
+## Before next class
 
 - Complete [Lecture 05 prepare](../prepare/prepare-lec05.html)

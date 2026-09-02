@@ -192,7 +192,7 @@
     "href": "slides/04-slr-matrix.html#announcements",
     "title": "SLR: Matrix representation",
     "section": "Announcements",
-    "text": "Announcements\n\nLab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 released today - due Thursday, January 29 at 11:59pm\n\nNote: AI Disclosure"
+    "text": "Announcements\n\nHW 01 due September 10\n\nReleased after class\n\nNo lab on Monday (Labor Day)\nOffice hours start this week\nSee Ed Discussion for additional linear algebra resource"
   },
   {
     "objectID": "slides/04-slr-matrix.html#topics",
@@ -206,14 +206,14 @@
     "href": "slides/04-slr-matrix.html#slr-statistical-model-population",
     "title": "SLR: Matrix representation",
     "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms"
   },
   {
     "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form",
     "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
   },
   {
     "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
@@ -318,7 +318,7 @@
     "href": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-2",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\mathbf{e}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
+    "text": "Geometry of least-squares regression\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
     "objectID": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-3",
@@ -339,7 +339,7 @@
     "href": "slides/04-slr-matrix.html#hat-matrix",
     "title": "SLR: Matrix representation",
     "section": "Hat matrix",
-    "text": "Hat matrix\n\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{X}\\boldsymbol{\\beta}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)\n\n\n\nShow these properties in HW 01 and HW 02."
+    "text": "Hat matrix\n\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{X}\\boldsymbol{\\beta}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)\n\n\n\nShow these properties in homework."
   },
   {
     "objectID": "slides/04-slr-matrix.html#residuals",
@@ -356,25 +356,25 @@
     "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\nIntroduced the geometric interpretation of least-squares regression"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#for-next-class",
-    "href": "slides/04-slr-matrix.html#for-next-class",
+    "objectID": "slides/04-slr-matrix.html#before-next-class",
+    "href": "slides/04-slr-matrix.html#before-next-class",
     "title": "SLR: Matrix representation",
-    "section": "For next class",
-    "text": "For next class\n\nMultiple linear regression\nComplete Lecture 05 prepare"
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 05 prepare"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html",
     "href": "slides/04-slr-matrix-notes.html",
     "title": "SLR: Matrix representation",
     "section": "",
-    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 released today - due Thursday, January 29 at 11:59pm\n\nNote: AI Disclosure"
+    "text": "HW 01 due September 10\n\nReleased after class\n\nNo lab on Monday (Labor Day)\nOffice hours start this week\nSee Ed Discussion for additional linear algebra resource"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#announcements",
     "href": "slides/04-slr-matrix-notes.html#announcements",
     "title": "SLR: Matrix representation",
     "section": "",
-    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 released today - due Thursday, January 29 at 11:59pm\n\nNote: AI Disclosure"
+    "text": "HW 01 due September 10\n\nReleased after class\n\nNo lab on Monday (Labor Day)\nOffice hours start this week\nSee Ed Discussion for additional linear algebra resource"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#topics",
@@ -388,14 +388,14 @@
     "href": "slides/04-slr-matrix-notes.html#slr-statistical-model-population",
     "title": "SLR: Matrix representation",
     "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
     "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
@@ -500,7 +500,7 @@
     "href": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-2",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\mathbf{e}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
+    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-3",
@@ -521,7 +521,7 @@
     "href": "slides/04-slr-matrix-notes.html#hat-matrix",
     "title": "SLR: Matrix representation",
     "section": "Hat matrix",
-    "text": "Hat matrix\n\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{X}\\boldsymbol{\\beta}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)\n\n\n\nShow these properties in HW 01 and HW 02."
+    "text": "Hat matrix\n\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{X}\\boldsymbol{\\beta}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)\n\n\n\nShow these properties in homework."
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#residuals",
@@ -538,11 +538,11 @@
     "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\nIntroduced the geometric interpretation of least-squares regression"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#for-next-class",
-    "href": "slides/04-slr-matrix-notes.html#for-next-class",
+    "objectID": "slides/04-slr-matrix-notes.html#before-next-class",
+    "href": "slides/04-slr-matrix-notes.html#before-next-class",
     "title": "SLR: Matrix representation",
-    "section": "For next class",
-    "text": "For next class\n\nMultiple linear regression\nComplete Lecture 05 prepare"
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 05 prepare"
   },
   {
     "objectID": "slides/01-welcome.html#meet-prof.-tackett",
@@ -2327,7 +2327,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Types of predictors cont'd.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nOct 5\nLab 04\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due at 11:59pm\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due at 11:59pm\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due at 11:59pm\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]

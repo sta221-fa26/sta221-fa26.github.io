@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
-<meta name="dcterms.date" content="2026-01-20">
+<meta name="dcterms.date" content="2026-09-03">
 
 <title>SLR: Matrix representation – STA 221 - Fall 2026</title>
 <style>
@@ -413,7 +413,7 @@ window.Quarto = {
   <li><a href="#hat-matrix" id="toc-hat-matrix" class="nav-link" data-scroll-target="#hat-matrix">Hat matrix</a></li>
   <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
-  <li><a href="#for-next-class" id="toc-for-next-class" class="nav-link" data-scroll-target="#for-next-class">For next class</a></li>
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="04-slr-matrix.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -440,7 +440,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2026</p>
+      <p class="date">September 03, 2026</p>
     </div>
   </div>
   
@@ -455,15 +455,13 @@ window.Quarto = {
 <section id="announcements" class="level2">
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>Lab 01 due on <strong>TODAY at 11:59pm</strong></p>
+<li><p>HW 01 due September 10</p>
 <ul>
-<li>Push work to GitHub repo</li>
-<li>Submit final PDF on Gradescope + mark pages for each question</li>
+<li>Released after class</li>
 </ul></li>
-<li><p>HW 01 released today - <strong>due Thursday, January 29 at 11:59pm</strong></p>
-<ul>
-<li>Note: AI Disclosure</li>
-</ul></li>
+<li><p>No lab on Monday (Labor Day)</p></li>
+<li><p>Office hours start this week</p></li>
+<li><p>See Ed Discussion for additional linear algebra resource</p></li>
 </ul>
 </section>
 <section id="topics" class="level2">
@@ -489,7 +487,7 @@ window.Quarto = {
 <ul>
 <li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li><span class="math inline">\(\beta_0\)</span>: Population (true) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\epsilon\)</span>: Error terms centered at 0 with variance <span class="math inline">\(\sigma^2_{\epsilon}\)</span></li>
+<li><span class="math inline">\(\epsilon\)</span>: Error terms</li>
 </ul>
 </section>
 <section id="slr-in-matrix-form" class="level2">
@@ -502,7 +500,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
 <li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for predictors + intercept)</p></li>
 <li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Vector of model coefficients</p></li>
-<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms centered at <span class="math inline">\(\mathbf{0}\)</span> with variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span></p></li>
+<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms</p></li>
 </ul>
 </section>
 <section id="slr-in-matrix-form-1" class="level2">
@@ -696,7 +694,7 @@ Note
 <ul class="incremental">
 <li>We want to find <span class="math inline">\(\boldsymbol{\beta}\)</span> such that <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>, i.e, we want to minimize the difference <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}\)</span></li>
 </ul></li>
-<li><p>This distance is minimized when <span class="math inline">\(\mathbf{e}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span></p></li>
+<li><p>This distance is minimized when <span class="math inline">\(\boldsymbol{\epsilon}\)</span> is orthogonal to <span class="math inline">\(\text{Col}(\mathbf{X})\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -733,7 +731,7 @@ Note
 </ul></li>
 </ul>
 <div class="question">
-<p>Show these properties in HW 01 and HW 02.</p>
+<p>Show these properties in homework.</p>
 </div>
 </section>
 <section id="residuals" class="level2">
@@ -759,11 +757,10 @@ Note
 <li><p>Introduced the geometric interpretation of least-squares regression</p></li>
 </ul>
 </section>
-<section id="for-next-class" class="level2">
-<h2 class="anchored" data-anchor-id="for-next-class">For next class</h2>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
 <ul>
-<li><p>Multiple linear regression</p></li>
-<li><p>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></p></li>
+<li>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></li>
 </ul>
 
 
