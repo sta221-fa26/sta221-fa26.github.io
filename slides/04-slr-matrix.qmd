@@ -84,7 +84,6 @@ $$Y = \beta_0 + \beta_1 X + \epsilon$$
 The simple linear regression model can be represented using vectors and matrices as
 
 ::: equation
-
 $$\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}$$
 :::
 
@@ -140,8 +139,7 @@ What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and
 
 ## Find least-squares estimator for $\boldsymbol{\beta}$
 
-**Goal**: Find estimator $\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}$ that minimizes the sum of squares
-$$\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$$
+**Goal**: Find estimator $\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}$ that minimizes the sum of squares $$\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$$
 
 ## Gradient {.midi background-color="#ccddeb"}
 
@@ -216,8 +214,7 @@ $$\begin{aligned}
 $$\begin{aligned}
 \frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
  & = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
- \end{aligned}$$
-<br>
+ \end{aligned}$$ <br>
 
 Find $\hat{\boldsymbol{\beta}}$ that satisfies
 

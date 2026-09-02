@@ -1,0 +1,109 @@
+---
+title: "Variance Inflation Factors"
+format: html
+bibliography: references.bib
+---
+
+```{r}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(rms)
+
+rail_trail <- read_csv("data/rail_trail.csv")
+```
+
+Here we explain the connection between the Variance Inflation Factor (VIF) and $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. This explanation is motivated by Chapter 3 of @montgomery2021introduction.
+
+## Unit length scaling
+
+We have talked about standardizing predictors, such that
+
+$$x_{ij_{std}} = \frac{x_{ij} - \bar{x_j}}{s_{x_{j}}}$$ such that $\bar{x}_j$ is the mean and $s_{x_{j}}$ is the standard deviation of the predictor $x_j$.
+
+The standardized predictors have a mean of 0 and variance of 1.
+
+Another common type of scaling is **unit length scaling**. We will denote these scaled predictors as $w_j$. We apply this scaling on both the predictor and response variable in the following way.
+
+$$w_{ij} = \frac{x_{ij} - \bar{x_j}}{\sqrt{s_{jj}}}$$ where $s_{jj} = \sum_{i = 1}^{n}(x_{ij} - \bar{x}_j)^2$
+
+The scaled response variable, denoted $y^0$ is
+
+$$y_i^0 = \frac{y_i - \bar{y}}{\sqrt{SST}}$$
+
+where $SST$ is the sum of squares total, $\sum_{i=1}^n(y_i - \bar{y})^2$
+
+We will use the scaled predictor and response variable to show the relationship between $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$ and the formula for VIF. More specifically, that
+
+$$
+C_{jj} = VIF_{j} = \frac{1}{1 - R^2_j}
+$$
+
+when we use the scaled predictors and response.
+
+## Variance inflation factor
+
+We will use the `rail_trail` data from the notes to illustrate this connection. We will focus on the predictors `hightemp`, `avgtemp`, and `precip`.
+
+We begin by creating unit length scaled versions of the variables.
+
+```{r}
+
+hightemp_norm <- sum((rail_trail$hightemp - mean(rail_trail$hightemp))^2)
+avgtemp_norm <- sum((rail_trail$avgtemp - mean(rail_trail$avgtemp))^2)
+precip_norm <- sum((rail_trail$precip - mean(rail_trail$precip))^2)
+volume_norm <- sum((rail_trail$volume - mean(rail_trail$volume))^2)
+
+rail_trail <- rail_trail |>
+  mutate(hightemp_scaled = (hightemp - mean(hightemp)) / hightemp_norm^.5,
+         avgtemp_scaled = (avgtemp - mean(avgtemp)) / avgtemp_norm^.5, 
+         precip_scaled = (precip - mean(precip)) / precip_norm^.5,
+         volume_scaled = (volume - mean(volume)) / volume_norm^.5
+         )
+```
+
+The matrix $\mathbf{W}^\mathsf{T}\mathbf{W}$ is equivalent to the correlation matrix for these predictors.
+
+```{r}
+# use -1 to remove the intercept for the correlation matrix
+W <- model.matrix(volume_scaled ~ hightemp_scaled + avgtemp_scaled + precip_scaled - 1, data = rail_trail)
+
+t(W)%*%W
+```
+
+When we fit a model using the unit length scaling for the response and predictor variables, we would expect $Var(\hat{\beta}_j) / \hat{\sigma}^2_{\epsilon} \approx 1$. As we see below, however, these values are greater than 1.
+
+```{r}
+trail_model_scaled <- lm(volume_scaled ~ hightemp_scaled + avgtemp_scaled + precip_scaled , data = rail_trail)
+
+beta_se <- tidy(trail_model_scaled)$std.error
+sigma <- glance(trail_model_scaled)$sigma
+
+beta_se^2 / sigma^2
+```
+
+(You can ignore the first element, which represents the intercept).
+
+These values show how much the standard errors of the coefficients are inflated given the correlation between the predictors (the off diagonal elements of $\mathbf{W}^\mathsf{T}\mathbf{W}$). The amount by which the standard errors are inflated are called the **variance inflation factors (VIF)**.
+
+Under this model using the unit-length-scaled predictors and response, we see these **variance inflation factors** are equal to the diagonal elements of $\mathbf{C} = (\mathbf{W}^\mathsf{T}\mathbf{W})^{-1}$.
+
+```{r}
+C <- solve(t(W) %*% W)
+diag(C)
+```
+
+```{r}
+# compute 
+vif(lm(volume ~ hightemp + avgtemp + precip, data = rail_trail))
+```
+
+Thus,
+
+$$C_{jj} = VIF_{j} = \frac{1}{1 - R^2_j}$$
+
+## References

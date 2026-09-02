@@ -1,0 +1,54 @@
+---
+title: "Sum of squares"
+format: html
+---
+
+In this document, we show how the equality in @eq-ss holds.
+
+$$
+\begin{aligned}
+SST &= SSM + SSR \\[10pt]
+\sum_{i=1}^{n}(y_i - \bar{y})^2 &= \sum_{i=1}^{n}(\hat{y}_i - \bar{y})^2 + \sum_{i=1}^{n}(y_i -\hat{y}_i)^2
+\end{aligned}
+$$ {#eq-ss}
+
+where $n$ is the number of observations. 
+
+We start with the fact $(y_i - \bar{y}) = (\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i)$.
+
+Then, 
+$$
+\begin{aligned}
+(y_i - \bar{y})^2 &= [(\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i)]^2\\[10pt]
+& = (\hat{y}_i - \bar{y})^2 + 2(\hat{y}_i - \bar{y})(y_i - \hat{y}_i) + (y_i - \hat{y}_i)^2 
+\end{aligned}
+$$
+
+We can sum over both sides to get
+
+$$
+\sum_{i=1}^n(y_i - \bar{y})^2 = \sum_{i=1}^n(\hat{y}_i - \bar{y})^2 + 2\sum_{i=1}^n(\hat{y}_i - \bar{y})(y_i - \hat{y}_i) + \sum_{i=1}^n(y_i - \hat{y}_i)^2 
+$$ {#eq-ss-expand}
+
+For now, let's focus on the middle term: $2\sum_{i=1}^n(\hat{y}_i - \bar{y})(y_i - \hat{y}_i)$
+
+$$
+\begin{aligned}
+2\sum_{i=1}^n(\hat{y}_i - \bar{y})(y_i - \hat{y}_i) &= 2\sum_{i=1}^n(\hat{y}_iy_i - \hat{y}_i^2 - \bar{y}y_i + \bar{y}\hat{y}_i)\\[10pt]
+& = 2\sum_{i=1}^n\hat{y}_i(y_i - \hat{y}_i) - 2\bar{y}\sum_{i=1}^n(y_i - \hat{y}_i) \\[10pt]
+&=2\sum_{i=1}^n\hat{y}_ie_i - 2\bar{y}\sum_{i=1}^ne_i\\[10pt]
+&= 0 \quad(\text{ given }\sum_{i=1}^ne_i = 0)
+\end{aligned}
+$$ {#eq-ss-middle-term}
+
+Plugging @eq-ss-middle-term back into @eq-ss-expand, we have
+
+$$
+\begin{aligned}
+\sum_{i=1}^n(y_i - \bar{y})^2 &= \sum_{i=1}^n(\hat{y}_i - \bar{y})^2 + 0 + \sum_{i=1}^n(y_i - \hat{y}_i)^2 \\[10pt]
+&= \sum_{i=1}^n(\hat{y}_i - \bar{y})^2 +  \sum_{i=1}^n(y_i - \hat{y}_i)^2\\[10pt]
+\end{aligned}
+$$
+
+Thus $SST = SSM + SSR$
+

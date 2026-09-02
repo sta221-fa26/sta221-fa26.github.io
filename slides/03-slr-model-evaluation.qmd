@@ -283,7 +283,7 @@ p1
 # Application exercise
 
 ::: appex
-📋 [sta221-sp26.github.io/ae/ae-01-model-evaluation.html](../ae/ae-01-model-evaluation.html)
+📋 [sta221-fa26.github.io/ae/ae-01-model-evaluation.html](../ae/ae-01-model-evaluation.html)
 
 Complete Part 1.
 :::
@@ -326,7 +326,7 @@ $$RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=
 
 <br>
 
-![](images/clipboard-3964457409.png)
+![](images/anova.png){fig-align="center" width="100%"}
 
 ## Total variability (Response)
 
