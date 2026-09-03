@@ -3503,5 +3503,96 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html",
+    "href": "hw/hw-01-DRAFT.html",
+    "title": "HW 01: Simple linear regression",
+    "section": "",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 10 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-1",
+    "href": "hw/hw-01-DRAFT.html#exercise-1",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn lecture, we introduced \\(\\mathbf{H}\\), the hat matrix, as a projection matrix that projects \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) in linear regression. Here we will show some properties of \\(\\mathbf{H}\\).\n\nShow that \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\).\nShow that \\(\\mathbf{H}\\) is idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nShow that \\(\\text{rank}(\\mathbf{H}) = 2\\) in simple linear regression."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-2",
+    "href": "hw/hw-01-DRAFT.html#exercise-2",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nShow that the Hessian matrix \\(\\frac{\\partial^2}{\\partial \\boldsymbol{\\beta}^2}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-3",
+    "href": "hw/hw-01-DRAFT.html#exercise-3",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nShow that the least-square estimator \\(\\hat{\\boldsymbol{\\beta}}\\) can be written as\n\\[\\hat{\\boldsymbol{\\beta}} = \\boldsymbol{\\beta} + (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\boldsymbol{\\epsilon}\\]"
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-4",
+    "href": "hw/hw-01-DRAFT.html#exercise-4",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nInstead of finding the estimator that minimizes the sum of square error, we wish to find the estimator that minimizes the the following:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) + \\lambda\\boldsymbol{\\beta}^\\mathsf{T}\\boldsymbol{\\beta}\\]\nsuch that \\(\\lambda &gt; 0\\) is a scalar and \\(\\mathbf{X}\\) is full column rank.\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-5",
+    "href": "hw/hw-01-DRAFT.html#exercise-5",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#data-lemurs",
+    "href": "hw/hw-01-DRAFT.html#data-lemurs",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data: Lemurs",
+    "text": "Data: Lemurs\nThe data used in this analysis includes measurements and other characteristics for lemurs from the Eulemur rufus (ERUF), Propithecus coquereli (PCOQ), and Varecia rubra (VRUB) taxa who have lived in the Duke Lemur Center. Though the lemurs are measured regularly while at the center, this data set includes one randomly selected measurement for each lemur taken when they were 24 months old or younger. These data were originally featured in as part of the TidyTuesday weekly data visualization challenge in August 2021.\n\nlemurs &lt;- read_csv(\"https://intro-regression.github.io/data/lemurs-sample-young.csv\")\n\nThe analysis will focus on the following variables:\n\nage: Age of the lemur in months\nweight: Weight of the lemur in grams\n\n\nAnalysis goal\nThe goal of this analysis is to use linear regression to explore the growth rate of young lemurs (age 24 months or younger). More specifically, we want to use age to explain variability in weight."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-6",
+    "href": "hw/hw-01-DRAFT.html#exercise-6",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nLet’s start by exploring the response and predictor variables.\n\nVisualize distribution of the response variable win_pct. Describe the distribution.\nVisualize the relationship between return_pct and win_pct. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nThe description should include shape, center, spread, and presence of outliers. Use specific values in your description. See Section 3.4.2 of Introduction to Regression Analysis for more information about describing univariate distributions. See the ggplot2 reference for example code and plots."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-7",
+    "href": "hw/hw-01-DRAFT.html#exercise-7",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWe will fit a model using return_pct to explain variability in win_pct. The model takes the form\n\\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.\n\n\n\n\n\n\n\nTipMatrix operations in R\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\nmodel.matrix(y ~ x, data = my_data)\nMatrix operations:\n\nAddition/Subtraction: A + B and A - B\nMultiplication : A %*% B\nTranspose of A: t(A)."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-8",
+    "href": "hw/hw-01-DRAFT.html#exercise-8",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nCompute \\(SST\\), \\(SSM\\) and \\(SSR\\) for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality \\(SST = SSM + SSR\\) holds.\nUse the results from part (a) to compute \\(R^2\\) and interpret it the context of the data.\nUse the data to show that for simple linear regression, \\(R^2\\) is equal to \\(cor(x, y)^2\\) and \\(cor(y, \\hat{y})^2\\). Note: \\(cor(a,b)\\) is the correlation between \\(a\\) and \\(b\\)."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-9",
+    "href": "hw/hw-01-DRAFT.html#exercise-9",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nInterpret the slope for the model fit in Exercise 7 in the context of the data.\nThe intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis."
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#exercise-10",
+    "href": "hw/hw-01-DRAFT.html#exercise-10",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\n\nU.S. player Ben Shelton (current #9 player) had a return percentage of 34.470. Based on the model, what is the predicted win percentage for this player?\nHe won 63.415% of games that year. What is the residual for this player?"
+  },
+  {
+    "objectID": "hw/hw-01-DRAFT.html#data-tennis",
+    "href": "hw/hw-01-DRAFT.html#data-tennis",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data: Tennis 🎾",
+    "text": "Data: Tennis 🎾\nThe data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered only include players who either played at least 10 matches overall or at least matches on a give type of surface.\nThe data are originally from Wheelo Ratings, a website containing performance performance statistics for ATP players. The data set was obtained from the SCORE Sports Data Repository.\n\ntennis &lt;- read_csv(\"data/tennis-hardcourt.csv\")\n\nThe analysis will focus on the following variables:\n\nreturn_pct: Percentage of return points won, i.e., percentage of points won on competitor’s serve\nwin_pct: Percentage of matches won\n\n\nAnalysis goal\nThe goal of the analysis is to use the percentage of return points won to explain variability in the percentage of games won for the ATP players."
   }
 ]
