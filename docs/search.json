@@ -1592,224 +1592,165 @@
     ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec14.html",
-    "href": "prepare-SPRING2026/prepare-lec14.html",
-    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "objectID": "prepare-SPRING2026/prepare-lec01.html",
+    "href": "prepare-SPRING2026/prepare-lec01.html",
+    "title": "Prepare for Lecture 01",
     "section": "",
-    "text": "📖 Read Appendix A.8"
+    "text": "📖 Read the syllabus"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec15.html",
-    "href": "prepare-SPRING2026/prepare-lec15.html",
-    "title": "Prepare for Lecture 15: Properties of estimators",
+    "objectID": "prepare-SPRING2026/prepare-lec03.html",
+    "href": "prepare-SPRING2026/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model evaluation",
     "section": "",
-    "text": "No prepare assignment"
+    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec17.html",
-    "href": "prepare-SPRING2026/prepare-lec17.html",
-    "title": "Prepare for Lecture 17: Ridge regression",
+    "objectID": "prepare-SPRING2026/prepare-lec16.html",
+    "href": "prepare-SPRING2026/prepare-lec16.html",
+    "title": "Prepare for Lecture 16: Model selection",
     "section": "",
-    "text": "No prepare assignment"
+    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec02.html",
-    "href": "prepare-SPRING2026/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
+    "objectID": "prepare-SPRING2026/prepare-lec06.html",
+    "href": "prepare-SPRING2026/prepare-lec06.html",
+    "title": "Prepare for Lecture 06: Types of predictors",
     "section": "",
-    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec12.html",
-    "href": "prepare-SPRING2026/prepare-lec12.html",
-    "title": "Prepare for Lecture 12: Multicollinearity",
+    "objectID": "prepare-SPRING2026/prepare-lec13.html",
+    "href": "prepare-SPRING2026/prepare-lec13.html",
+    "title": "Prepare for Lecture 13: Variable transformations",
     "section": "",
-    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
+    "text": "📖 Read Chapter 9"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec07.html",
-    "href": "prepare-SPRING2026/prepare-lec07.html",
-    "title": "Prepare for Lecture 07: Inference for regression",
+    "objectID": "prepare-SPRING2026/prepare-lec11.html",
+    "href": "prepare-SPRING2026/prepare-lec11.html",
+    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
     "section": "",
-    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
+    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec05.html",
-    "href": "prepare-SPRING2026/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: Multiple linear regression",
+    "objectID": "prepare-SPRING2026/prepare-lec04.html",
+    "href": "prepare-SPRING2026/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
     "section": "",
-    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
+    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec09.html",
-    "href": "prepare-SPRING2026/prepare-lec09.html",
-    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
+    "objectID": "prepare-SPRING2026/prepare-lec21.html",
+    "href": "prepare-SPRING2026/prepare-lec21.html",
+    "title": "Prepare for Lecture 21: LR - Inference",
     "section": "",
-    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
+    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec20.html",
-    "href": "prepare-SPRING2026/prepare-lec20.html",
-    "title": "Prepare for Lecture 20: LR - Model selection",
+    "objectID": "prepare-SPRING2026/prepare-lec08.html",
+    "href": "prepare-SPRING2026/prepare-lec08.html",
+    "title": "Prepare for Lecture 08: Inference - Normal assumption",
     "section": "",
-    "text": "📖 Read Section 12.5"
+    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec18.html",
-    "href": "prepare-SPRING2026/prepare-lec18.html",
-    "title": "Prepare for Lecture 18: Logistic regression",
+    "objectID": "prepare-SPRING2026/prepare-lec22.html",
+    "href": "prepare-SPRING2026/prepare-lec22.html",
+    "title": "Prepare for Lecture 22: Ethics",
     "section": "",
-    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
+    "text": "To be posted."
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "prepare-SPRING2026/prepare-lec19.html",
+    "href": "prepare-SPRING2026/prepare-lec19.html",
+    "title": "Prepare for Lecture 19: LR - Prediction",
     "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
   },
   {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "labs/lab-04-DRAFT.html",
+    "href": "labs/lab-04-DRAFT.html",
+    "title": "Lab 04: Exam 01 Review",
     "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
-    "crumbs": [
-      "Overview"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 06"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
+    "href": "labs/lab-04-DRAFT.html#exercise-1",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 05"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
+    "href": "labs/lab-04-DRAFT.html#exercise-2",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting started",
-    "section": "",
-    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
+    "href": "labs/lab-04-DRAFT.html#exercise-3",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
   },
   {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
+    "href": "labs/lab-04-DRAFT.html#exercise-4",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
   },
   {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
+    "href": "labs/lab-04-DRAFT.html#exercise-5",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
   },
   {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
+    "href": "labs/lab-04-DRAFT.html#exercise-6",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
   },
   {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting started",
-    "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "labs/lab-04-DRAFT.html#footnotes",
+    "href": "labs/lab-04-DRAFT.html#footnotes",
+    "title": "Lab 04: Exam 01 Review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
   },
   {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 03"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 04"
     ]
   },
   {
@@ -1923,250 +1864,225 @@
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 07"
+      "Lab 03"
     ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html",
-    "href": "labs/lab-04-DRAFT.html",
-    "title": "Lab 04: Exam 01 Review",
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting started",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis lab is due on Sunday, February 15 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "Important\n\n\n\nComplete all tasks by the end of lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "href": "labs/lab-04-DRAFT.html#exploratory-data-analysis",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-1",
-    "href": "labs/lab-04-DRAFT.html#exercise-1",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe will start with the main effects model that includes Age and Party.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can skip to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-2",
-    "href": "labs/lab-04-DRAFT.html#exercise-2",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nConsider the main effects model that includes Age and Party.\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model."
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\"\n  )\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-3",
-    "href": "labs/lab-04-DRAFT.html#exercise-3",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(\\hat{\\sigma}_{\\epsilon}\\) .\nInterpret \\(\\hat{\\sigma}_\\epsilon\\) in the context of the data.\nCompute \\(Var(\\hat{\\boldsymbol{\\beta}})\\).\nYou wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.\nUse the code below to compute the p-value and explain what it means in the context of the data.\nState the conclusion from the test in the context of the data.\n\n\n2 * pt(abs(test-statistic), df, lower.tail = FALSE)"
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/uVg9f0Yz\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-4",
-    "href": "labs/lab-04-DRAFT.html#exercise-4",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nConsider the main effects model that includes Age and Party. Get \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the data.\n\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(R^2\\). Interpret this value in the context of the data.\nUse \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) to compute \\(RMSE\\). Interpret this value in the context of the data."
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-5",
-    "href": "labs/lab-04-DRAFT.html#exercise-5",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\begin{aligned}\nTip_i = \\beta_0 &+ \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i \\\\\n&+ \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i \\\\\n&+ \\epsilon_i\n\\end{aligned}\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the \\(\\beta\\)’s.\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will be asked to submit your username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub in the Get to Know You survey below.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
   },
   {
-    "objectID": "labs/lab-04-DRAFT.html#exercise-6",
-    "href": "labs/lab-04-DRAFT.html#exercise-6",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the lm() function to fit the model that includes Age and Party and the interaction between the two variables. Display the 90% confidence interval for the coefficients.\n\nThe standard error for AgeSenCit is 0.784. State what this value means in the context of the data.\nWrite code to show how the 90% confidence interval for AgeSenCit was computed.\nBased on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?"
-  },
-  {
-    "objectID": "labs/lab-04-DRAFT.html#footnotes",
-    "href": "labs/lab-04-DRAFT.html#footnotes",
-    "title": "Lab 04: Exam 01 Review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
-  },
-  {
-    "objectID": "prepare-SPRING2026/prepare-lec19.html",
-    "href": "prepare-SPRING2026/prepare-lec19.html",
-    "title": "Prepare for Lecture 19: LR - Prediction",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
-    "text": "📖 Read Sections 12.3 - 12.5\n💻 Computing reference - Section 12.6"
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec22.html",
-    "href": "prepare-SPRING2026/prepare-lec22.html",
-    "title": "Prepare for Lecture 22: Ethics",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
-    "text": "To be posted."
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec08.html",
-    "href": "prepare-SPRING2026/prepare-lec08.html",
-    "title": "Prepare for Lecture 08: Inference - Normal assumption",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "📖 Read Sections 5.8.1 -5.8.2\n📖 Read Section 8.4.1\n📖 Read Appendix A.6"
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a presentation and written or visual format.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec21.html",
-    "href": "prepare-SPRING2026/prepare-lec21.html",
-    "title": "Prepare for Lecture 21: LR - Inference",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "📖 Read Section 11.5.2\n📖 Read Section 11.6"
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec04.html",
-    "href": "prepare-SPRING2026/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nIshrit Gupta\nLab 01 helper\n\n\nArnav Meduri\nLab 02 helper\n\n\nShane Rybacki\nLab 01 leader\n\n\nFranklin Zhou\nLab 02 leader\n\n\n\nOffice hours times and locations on Canvas.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "prepare-SPRING2026/prepare-lec18.html",
+    "href": "prepare-SPRING2026/prepare-lec18.html",
+    "title": "Prepare for Lecture 18: Logistic regression",
     "section": "",
-    "text": "Required\n📖 Read Appendices A.2 - A.3\n\nOptional review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "📖 Read Sections 11.1 - 11.4\n📖 Read Section 12.3.1\n💻 Computing reference - Section 11.7.1"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec11.html",
-    "href": "prepare-SPRING2026/prepare-lec11.html",
-    "title": "Prepare for Lecture 11: Model conditions + diagnostics",
+    "objectID": "prepare-SPRING2026/prepare-lec20.html",
+    "href": "prepare-SPRING2026/prepare-lec20.html",
+    "title": "Prepare for Lecture 20: LR - Model selection",
     "section": "",
-    "text": "📖 Read Chapter 6\n📖 Read Section 8.5"
+    "text": "📖 Read Section 12.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec13.html",
-    "href": "prepare-SPRING2026/prepare-lec13.html",
-    "title": "Prepare for Lecture 13: Variable transformations",
+    "objectID": "prepare-SPRING2026/prepare-lec09.html",
+    "href": "prepare-SPRING2026/prepare-lec09.html",
+    "title": "Prepare for Lecture 09: Inference - Hypothesis tests + Confidence intervals",
     "section": "",
-    "text": "📖 Read Chapter 9"
+    "text": "📖 Read Section 5.5\n📖 Read Section 5.8.3 - 5.8.4\n📖 Read Section 8.4.2 - 8.4.3"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec06.html",
-    "href": "prepare-SPRING2026/prepare-lec06.html",
-    "title": "Prepare for Lecture 06: Types of predictors",
+    "objectID": "prepare-SPRING2026/prepare-lec05.html",
+    "href": "prepare-SPRING2026/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: Multiple linear regression",
     "section": "",
-    "text": "📖 Read Sections 7.4\n📖 Read Sections 7.6 - 7.7"
+    "text": "📖 Read Sections 7.1 - 7.4.1\n📖 Read Section 7.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec16.html",
-    "href": "prepare-SPRING2026/prepare-lec16.html",
-    "title": "Prepare for Lecture 16: Model selection",
+    "objectID": "prepare-SPRING2026/prepare-lec07.html",
+    "href": "prepare-SPRING2026/prepare-lec07.html",
+    "title": "Prepare for Lecture 07: Inference for regression",
     "section": "",
-    "text": "📖 Read Sections 10.1 - 10.2\n📖 Read Section 10.4"
+    "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec03.html",
-    "href": "prepare-SPRING2026/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model evaluation",
+    "objectID": "prepare-SPRING2026/prepare-lec12.html",
+    "href": "prepare-SPRING2026/prepare-lec12.html",
+    "title": "Prepare for Lecture 12: Multicollinearity",
     "section": "",
-    "text": "Required\n📖 Read Section 4.7\n\nOptional computing introduction/ review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "text": "📖 Read Section 8.5.3\n📖 Read Appendix A.7"
   },
   {
-    "objectID": "prepare-SPRING2026/prepare-lec01.html",
-    "href": "prepare-SPRING2026/prepare-lec01.html",
-    "title": "Prepare for Lecture 01",
+    "objectID": "prepare-SPRING2026/prepare-lec02.html",
+    "href": "prepare-SPRING2026/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
     "section": "",
-    "text": "📖 Read the syllabus"
+    "text": "Required\n📖 Read Chapter 1\n📖 Read Sections 4.1 - 4.6\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
-    "objectID": "hw/hw-01-DRAFT.html",
-    "href": "hw/hw-01-DRAFT.html",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "prepare-SPRING2026/prepare-lec17.html",
+    "href": "prepare-SPRING2026/prepare-lec17.html",
+    "title": "Prepare for Lecture 17: Ridge regression",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 10 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "No prepare assignment"
   },
   {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-1",
-    "href": "hw/hw-01-DRAFT.html#exercise-1",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nIn lecture, we introduced \\(\\mathbf{H}\\), the hat matrix, as a projection matrix that projects \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) in linear regression. Here we will show some properties of \\(\\mathbf{H}\\).\n\nShow that \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\).\nShow that \\(\\mathbf{H}\\) is idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nShow that \\(\\text{rank}(\\mathbf{H}) = 2\\) in simple linear regression."
+    "objectID": "prepare-SPRING2026/prepare-lec15.html",
+    "href": "prepare-SPRING2026/prepare-lec15.html",
+    "title": "Prepare for Lecture 15: Properties of estimators",
+    "section": "",
+    "text": "No prepare assignment"
   },
   {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-2",
-    "href": "hw/hw-01-DRAFT.html#exercise-2",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nShow that the Hessian matrix \\(\\frac{\\partial^2}{\\partial \\boldsymbol{\\beta}^2}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-3",
-    "href": "hw/hw-01-DRAFT.html#exercise-3",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nShow that the least-square estimator \\(\\hat{\\boldsymbol{\\beta}}\\) can be written as\n\\[\\hat{\\boldsymbol{\\beta}} = \\boldsymbol{\\beta} + (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\boldsymbol{\\epsilon}\\]"
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-4",
-    "href": "hw/hw-01-DRAFT.html#exercise-4",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nInstead of finding the estimator that minimizes the sum of square error, we wish to find the estimator that minimizes the the following:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) + \\lambda\\boldsymbol{\\beta}^\\mathsf{T}\\boldsymbol{\\beta}\\]\nsuch that \\(\\lambda &gt; 0\\) is a scalar and \\(\\mathbf{X}\\) is full column rank.\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-5",
-    "href": "hw/hw-01-DRAFT.html#exercise-5",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#data-tennis",
-    "href": "hw/hw-01-DRAFT.html#data-tennis",
-    "title": "HW 01: Simple linear regression",
-    "section": "Data: Tennis 🎾",
-    "text": "Data: Tennis 🎾\nThe data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered only include players who either played at least 10 matches overall or at least matches on a give type of surface.\nThe data are originally from Wheelo Ratings, a website containing performance performance statistics for ATP players. The data set was obtained from the SCORE Sports Data Repository.\n\ntennis &lt;- read_csv(\"data/tennis-hardcourt.csv\")\n\nThe analysis will focus on the following variables:\n\nreturn_pct: Percentage of return points won, i.e., percentage of points won on competitor’s serve\nwin_pct: Percentage of matches won\n\n\nAnalysis goal\nThe goal of the analysis is to use the percentage of return points won to explain variability in the percentage of games won for the ATP players."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-6",
-    "href": "hw/hw-01-DRAFT.html#exercise-6",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nLet’s start by exploring the response and predictor variables.\n\nVisualize distribution of the response variable win_pct. Describe the distribution.\nVisualize the relationship between return_pct and win_pct. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nThe description should include shape, center, spread, and presence of outliers. Use specific values in your description. See Section 3.4.2 of Introduction to Regression Analysis for more information about describing univariate distributions. See the ggplot2 reference for example code and plots."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-7",
-    "href": "hw/hw-01-DRAFT.html#exercise-7",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nWe will fit a model using return_pct to explain variability in win_pct. The model takes the form\n\\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.\n\n\n\n\n\n\n\nTipMatrix operations in R\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\nmodel.matrix(y ~ x, data = my_data)\nMatrix operations:\n\nAddition/Subtraction: A + B and A - B\nMultiplication : A %*% B\nTranspose of A: t(A)."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-8",
-    "href": "hw/hw-01-DRAFT.html#exercise-8",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nCompute \\(SST\\), \\(SSM\\) and \\(SSR\\) for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality \\(SST = SSM + SSR\\) holds.\nUse the results from part (a) to compute \\(R^2\\) and interpret it the context of the data.\nUse the data to show that for simple linear regression, \\(R^2\\) is equal to \\(cor(x, y)^2\\) and \\(cor(y, \\hat{y})^2\\). Note: \\(cor(a,b)\\) is the correlation between \\(a\\) and \\(b\\)."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-9",
-    "href": "hw/hw-01-DRAFT.html#exercise-9",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nInterpret the slope for the model fit in Exercise 7 in the context of the data.\nThe intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#exercise-10",
-    "href": "hw/hw-01-DRAFT.html#exercise-10",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nU.S. player Ben Shelton (current #9 player) had a return percentage of 34.470. Based on the model, what is the predicted win percentage for this player?\nHe won 63.415% of games that year. What is the residual for this player?"
+    "objectID": "prepare-SPRING2026/prepare-lec14.html",
+    "href": "prepare-SPRING2026/prepare-lec14.html",
+    "title": "Prepare for Lecture 14: Maximum likelihood estimation",
+    "section": "",
+    "text": "📖 Read Appendix A.8"
   },
   {
     "objectID": "hw/hw-05.html",
@@ -2178,9 +2094,130 @@
   {
     "objectID": "hw/hw-01.html",
     "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "title": "HW 01: Simple linear regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 10 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-1",
+    "href": "hw/hw-01.html#exercise-1",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn lecture, we introduced \\(\\mathbf{H}\\), the hat matrix, as a projection matrix that projects \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) in linear regression. Here we will show some properties of \\(\\mathbf{H}\\).\n\nShow that \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\).\nShow that \\(\\mathbf{H}\\) is idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nShow that \\(\\text{rank}(\\mathbf{H}) = 2\\) in simple linear regression.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-2",
+    "href": "hw/hw-01.html#exercise-2",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nShow that the Hessian matrix \\(\\frac{\\partial^2}{\\partial \\boldsymbol{\\beta}^2}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite. Assume \\(\\mathbf{X}\\) has full column rank.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-3",
+    "href": "hw/hw-01.html#exercise-3",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nShow that the least-square estimator \\(\\hat{\\boldsymbol{\\beta}}\\) can be written as\n\\[\\hat{\\boldsymbol{\\beta}} = \\boldsymbol{\\beta} + (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\boldsymbol{\\epsilon}\\]\nAssume \\(\\mathbf{X}\\) has full column rank.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-4",
+    "href": "hw/hw-01.html#exercise-4",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nInstead of finding the estimator that minimizes the sum of squared error, we wish to find the estimator that minimizes the following:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) + \\lambda\\boldsymbol{\\beta}^\\mathsf{T}\\boldsymbol{\\beta}\\]\nsuch that \\(\\lambda &gt; 0\\) is a scalar and \\(\\mathbf{X}\\) has full column rank.\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-5",
+    "href": "hw/hw-01.html#exercise-5",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#data-tennis",
+    "href": "hw/hw-01.html#data-tennis",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data: Tennis 🎾",
+    "text": "Data: Tennis 🎾\nThe data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered to only include players who played at least 10 matches overall or at least five matches on hard court surfaces.\nThe data are originally from Wheelo Ratings, a website containing performance statistics for ATP players. The data set was obtained from the SCORE Sports Data Repository.\n\ntennis &lt;- read_csv(\"data/tennis-hardcourt.csv\")\n\nThe analysis will focus on the following variables:\n\nreturn_pct: Percentage of return points won, i.e., percentage of points won on competitor’s serve\nwin_pct: Percentage of matches won\n\n\nAnalysis goal\nThe goal of the analysis is to use the percentage of return points won to explain variability in the percentage of matches won for the ATP players.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-6",
+    "href": "hw/hw-01.html#exercise-6",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nLet’s start by exploring the response and predictor variables.\n\nVisualize distribution of the response variable win_pct. Describe the distribution.\nVisualize the relationship between return_pct and win_pct. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nThe description should include shape, center, spread, and presence of outliers. Use specific values in your description. See Section 3.4.2 of Introduction to Regression Analysis for more information about describing univariate distributions. See the ggplot2 reference for example code and plots.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-7",
+    "href": "hw/hw-01.html#exercise-7",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWe will fit a model using return_pct to explain variability in win_pct. The model takes the form\n\\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 decimal places.\n\n\n\n\n\n\n\nTipMatrix operations in R\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\nmodel.matrix(y ~ x, data = my_data)\nMatrix operations:\n\nAddition/Subtraction: A + B and A - B\nMultiplication : A %*% B\nTranspose of A: t(A).",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-8",
+    "href": "hw/hw-01.html#exercise-8",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nCompute \\(SST\\), \\(SSM\\) and \\(SSR\\) for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality \\(SST = SSM + SSR\\) holds.\nUse the results from part (a) to compute \\(R^2\\) and interpret it in the context of the data.\nUse the data to show that for simple linear regression, \\(R^2\\) is equal to \\(cor(x, y)^2\\) and \\(cor(y, \\hat{y})^2\\). Note: \\(cor(a,b)\\) is the correlation between \\(a\\) and \\(b\\).",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-9",
+    "href": "hw/hw-01.html#exercise-9",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nInterpret the slope for the model fit in Exercise 7 in the context of the data.\nThe intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-10",
+    "href": "hw/hw-01.html#exercise-10",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\n\nU.S. player Ben Shelton had a return percentage of 34.470 during this period. Based on the model, what is the predicted win percentage for this player?\nDuring this period, he won 63.415% of matches. What is the residual for this player?",
     "crumbs": [
       "Homework",
       "HW 01"

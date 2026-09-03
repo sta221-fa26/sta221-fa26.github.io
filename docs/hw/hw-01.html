@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 01 – STA 221 - Fall 2026</title>
+<title>HW 01: Simple linear regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -347,15 +411,48 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
+  <ul class="collapse">
+  <li><a href="#data-tennis" id="toc-data-tennis" class="nav-link" data-scroll-target="#data-tennis">Data: Tennis 🎾</a>
+  <ul class="collapse">
+  <li><a href="#analysis-goal" id="toc-analysis-goal" class="nav-link" data-scroll-target="#analysis-goal">Analysis goal</a></li>
+  </ul></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
+  </ul></li>
+  <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI Disclosure</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-25-points" id="toc-grading-25-points" class="nav-link" data-scroll-target="#grading-25-points">Grading (25 points)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-01.html">HW 01</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HW 01</h1>
+<h1 class="title">HW 01: Simple linear regression</h1>
+<p class="subtitle lead">Tennis</p>
 </div>
 
 
@@ -372,10 +469,292 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assignment is due on <strong>Thursday, September 10 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<ul>
+<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
+<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this assignment, you will use simple linear regression to explore the variability in win percentage based on the percentage of return points for professional tennis players. You will also explore the mathematical properties of linear regression models.</p>
+</section>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>In this assignment, you will…</p>
+<ul>
+<li>use matrix operations to show results about simple linear regression.</li>
+<li>conduct exploratory data analysis.</li>
+<li>fit and interpret simple linear regression models.</li>
+<li>evaluate model fit.</li>
+<li>continue developing a workflow for reproducible data analysis.</li>
+</ul>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>Go to the <a href="https://github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>hw-01</strong>. It contains the starter documents you need to complete the assignment.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in this assignment:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.</p>
+<p><strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>In lecture, we introduced <span class="math inline">\(\mathbf{H}\)</span>, the hat matrix, as a projection matrix that projects <span class="math inline">\(\mathbf{y}\)</span> onto <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> in linear regression. Here we will show some properties of <span class="math inline">\(\mathbf{H}\)</span>.</p>
+<ol type="a">
+<li>Show that <span class="math inline">\(\mathbf{H}\)</span> is symmetric <span class="math inline">\((\mathbf{H}^\mathsf{T} = \mathbf{H})\)</span>.</li>
+<li>Show that <span class="math inline">\(\mathbf{H}\)</span> is idempotent <span class="math inline">\((\mathbf{H}^2 = \mathbf{H})\)</span>.</li>
+<li>Show that <span class="math inline">\(\text{rank}(\mathbf{H}) = 2\)</span> in simple linear regression.</li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Show that the Hessian matrix <span class="math inline">\(\frac{\partial^2}{\partial \boldsymbol{\beta}^2}\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = 2\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite. Assume <span class="math inline">\(\mathbf{X}\)</span> has full column rank.</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>Show that the least-square estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> can be written as</p>
+<p><span class="math display">\[\hat{\boldsymbol{\beta}} = \boldsymbol{\beta} + (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\boldsymbol{\epsilon}\]</span></p>
+<p>Assume <span class="math inline">\(\mathbf{X}\)</span> has full column rank.</p>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Instead of finding the estimator that minimizes the sum of squared error, we wish to find the estimator that minimizes the following:</p>
+<p><span class="math display">\[(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) + \lambda\boldsymbol{\beta}^\mathsf{T}\boldsymbol{\beta}\]</span></p>
+<p>such that <span class="math inline">\(\lambda &gt; 0\)</span> is a scalar and <span class="math inline">\(\mathbf{X}\)</span> has full column rank.</p>
+<p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function.</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Show that the sum of squared residuals (SSR) can be written as the following:</p>
+<p><span class="math display">\[\mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}\]</span></p>
+</section>
+</section>
+<section id="applied-exercises" class="level1">
+<h1>Applied exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises are focused on using the methods from the course to analyze data and answer questions about real-world phenomena.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.</strong></p>
+<p>Write all narrative using complete sentences and include informative axis labels / titles on visualizations.</p>
+</div>
+</div>
+<section id="data-tennis" class="level2">
+<h2 class="anchored" data-anchor-id="data-tennis">Data: Tennis 🎾</h2>
+<p>The data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered to only include players who played at least 10 matches overall or at least five matches on hard court surfaces.</p>
+<p>The data are originally from <a href="https://www.wheeloratings.com/index.html">Wheelo Ratings</a>, a website containing performance statistics for ATP players. The data set was obtained from the <a href="https://data.scorenetwork.org/tennis/atp_player-stats.html">SCORE Sports Data Repository</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tennis <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/tennis-hardcourt.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The analysis will focus on the following variables:</p>
+<ul>
+<li><p><code>return_pct</code>: Percentage of return points won, i.e., percentage of points won on competitor’s serve</p></li>
+<li><p><code>win_pct</code>: Percentage of matches won</p></li>
+</ul>
+<section id="analysis-goal" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-goal">Analysis goal</h3>
+<p>The goal of the analysis is to use the percentage of return points won to explain variability in the percentage of matches won for the ATP players.</p>
+</section>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Let’s start by exploring the response and predictor variables.</p>
+<ol type="a">
+<li><p>Visualize distribution of the response variable <code>win_pct</code>. Describe the distribution.</p></li>
+<li><p>Visualize the relationship between <code>return_pct</code> and <code>win_pct</code>. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The description should include shape, center, spread, and presence of outliers. Use specific values in your description. See <a href="https://intro-regression.github.io/03-eda.html#sec-univar-eda-quant">Section 3.4.2</a> of <em>Introduction to Regression Analysis</em> for more information about describing univariate distributions. See the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms">ggplot2 reference</a> for example code and plots.</p>
+</div>
+</div>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>We will fit a model using <code>return_pct</code> to explain variability in <code>win_pct</code>. The model takes the form</p>
+<p><span class="math display">\[\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\]</span></p>
+<ol type="a">
+<li>State the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span> for this analysis. Your answer should have exact values given this data set.</li>
+<li>Estimate the regression coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> in R using the matrix representation. Show the code used to get the answer.</li>
+<li>Check your results from part (b) by using the <code>lm</code> function to fit the model. Neatly display your results using 3 decimal places.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Matrix operations in R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the <code>model.matrix()</code> function to get the design matrix. The code takes the general form:</p>
+<p><code>model.matrix(y ~ x, data = my_data)</code></p>
+<p><strong>Matrix operations:</strong></p>
+<ul>
+<li><p>Addition/Subtraction: <code>A + B</code> and <code>A - B</code></p></li>
+<li><p>Multiplication : <code>A %*% B</code></p></li>
+<li><p>Transpose of A: <code>t(A)</code>.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<ol type="a">
+<li><p>Compute <span class="math inline">\(SST\)</span>, <span class="math inline">\(SSM\)</span> and <span class="math inline">\(SSR\)</span> for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality <span class="math inline">\(SST = SSM + SSR\)</span> holds.</p></li>
+<li><p>Use the results from part (a) to compute <span class="math inline">\(R^2\)</span> and interpret it in the context of the data.</p></li>
+<li><p>Use the data to show that for simple linear regression, <span class="math inline">\(R^2\)</span> is equal to <span class="math inline">\(cor(x, y)^2\)</span> and <span class="math inline">\(cor(y, \hat{y})^2\)</span>. Note: <span class="math inline">\(cor(a,b)\)</span> is the correlation between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p></li>
+</ol>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<ol type="a">
+<li><p>Interpret the slope for the model fit in Exercise 7 in the context of the data.</p></li>
+<li><p>The intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis.</p></li>
+</ol>
+</section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<ol type="a">
+<li><p>U.S. player Ben Shelton had a return percentage of 34.470 during this period. Based on the model, what is the predicted win percentage for this player?</p></li>
+<li><p>During this period, he won 63.415% of matches. What is the residual for this player?</p></li>
+</ol>
+</section>
+</section>
+<section id="ai-disclosure" class="level1">
+<h1>AI Disclosure</h1>
+<p>Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste <u><strong>all</strong></u> statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI.</p>
+<ul>
+<li>I didn’t use an LLM / Generative AI tool.</li>
+<li>I asked it to clarify one or more exercises.</li>
+<li>I asked it clarifying questions to better understand a concept.</li>
+<li>I asked it to help write code to complete an exercise.</li>
+<li>I gave it my code and asked it to help me fix it.</li>
+<li>I asked it about an error or why code would do something I didn’t want.</li>
+<li>I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.</li>
+<li>I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.</li>
+<li>Other:______</li>
+</ul>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<ul>
+<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> and “AI Disclosure” sections.</p></li>
+</ul>
+</section>
+<section id="grading-25-points" class="level1">
+<h1>Grading (25 points)</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Selected conceptual exercise</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Selected applied exercise</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Completing AI Disclosure</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -798,7 +1177,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
