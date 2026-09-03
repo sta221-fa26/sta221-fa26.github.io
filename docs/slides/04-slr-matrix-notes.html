@@ -499,7 +499,7 @@ window.Quarto = {
 </div>
 <ul>
 <li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
-<li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for predictors + intercept)</p></li>
+<li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for intercept + predictors)</p></li>
 <li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Vector of model coefficients</p></li>
 <li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms</p></li>
 </ul>
@@ -633,7 +633,7 @@ Note
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &amp; = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
-\end{aligned}\]</span> <br></p>
+\end{aligned}\]</span></p>
 <p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that satisfies</p>
 <p><span class="math display">\[-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}\]</span></p>
 <div class="equation">
@@ -692,7 +692,7 @@ Note
 <h2 class="anchored" data-anchor-id="geometry-of-least-squares-regression-1">Geometry of least-squares regression</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><p>Let <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> be the <strong>column space</strong> of <span class="math inline">\(\mathbf{X}\)</span>: the set all possible linear combinations (span) of the columns of <span class="math inline">\(\mathbf{X}\)</span></p></li>
+<li><p>Let <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> be the <strong>column space</strong> of <span class="math inline">\(\mathbf{X}\)</span>: the set all possible linear combinations of the columns of <span class="math inline">\(\mathbf{X}\)</span></p></li>
 <li><p>The vector of responses <span class="math inline">\(\mathbf{y}\)</span> is not in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>.</p></li>
 <li><p><strong>Goal:</strong> Find another vector <span class="math inline">\(\mathbf{z} = \mathbf{X}\mathbf{\boldsymbol{\beta}}\)</span> that is in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span> and is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>.</p>
 <ul class="incremental">
@@ -705,7 +705,7 @@ Note
 <h2 class="anchored" data-anchor-id="geometry-of-least-squares-regression-2">Geometry of least-squares regression</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><p>For any <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>, the vector <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{Xb}\)</span> is the difference between <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\boldsymbol{\beta}\)</span>.</p>
+<li><p>For any <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> in <span class="math inline">\(\text{Col}(\mathbf{X})\)</span>, the vector <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}\)</span> is the difference between <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\boldsymbol{\beta}\)</span>.</p>
 <ul class="incremental">
 <li>We want to find <span class="math inline">\(\boldsymbol{\beta}\)</span> such that <span class="math inline">\(\mathbf{z} = \mathbf{X}\boldsymbol{\beta}\)</span> is as close as possible to <span class="math inline">\(\mathbf{y}\)</span>, i.e, we want to minimize the difference <span class="math inline">\(\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}\)</span></li>
 </ul></li>

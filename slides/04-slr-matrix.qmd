@@ -90,7 +90,7 @@ $$\large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}$$
 
 - $\mathbf{y}$ : Vector of responses
 
-- $\mathbf{X}$: Design matrix (columns for predictors + intercept)
+- $\mathbf{X}$: Design matrix (columns for intercept + predictors)
 
 - $\boldsymbol{\beta}$: Vector of model coefficients
 
@@ -225,7 +225,7 @@ $$\begin{aligned}
 $$\begin{aligned}
 \frac{\partial}{\partial\boldsymbol{\beta}} \hspace{1mm} \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= \frac{\partial}{\partial\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
  & = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
- \end{aligned}$$ <br>
+ \end{aligned}$$
 
 Find $\hat{\boldsymbol{\beta}}$ that satisfies
 
@@ -292,7 +292,7 @@ Equivalently:
 ## Geometry of least-squares regression
 
 ::: incremental
-- Let $\text{Col}(\mathbf{X})$ be the **column space** of $\mathbf{X}$: the set all possible linear combinations (span) of the columns of $\mathbf{X}$
+- Let $\text{Col}(\mathbf{X})$ be the **column space** of $\mathbf{X}$: the set all possible linear combinations of the columns of $\mathbf{X}$
 
 - The vector of responses $\mathbf{y}$ is not in $\text{Col}(\mathbf{X})$.
 
@@ -304,7 +304,7 @@ Equivalently:
 ## Geometry of least-squares regression
 
 ::: incremental
-- For any $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ in $\text{Col}(\mathbf{X})$, the vector $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{Xb}$ is the difference between $\mathbf{y}$ and $\mathbf{X}\boldsymbol{\beta}$.
+- For any $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ in $\text{Col}(\mathbf{X})$, the vector $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}$ is the difference between $\mathbf{y}$ and $\mathbf{X}\boldsymbol{\beta}$.
 
   - We want to find $\boldsymbol{\beta}$ such that $\mathbf{z} = \mathbf{X}\boldsymbol{\beta}$ is as close as possible to $\mathbf{y}$, i.e, we want to minimize the difference $\boldsymbol{\epsilon} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta}$
 

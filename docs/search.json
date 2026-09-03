@@ -213,7 +213,7 @@
     "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for intercept + predictors)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
   },
   {
     "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
@@ -283,7 +283,7 @@
     "href": "slides/04-slr-matrix.html#find-the-least-squares-estimator-1",
     "title": "SLR: Matrix representation",
     "section": "Find the least squares estimator",
-    "text": "Find the least squares estimator\n\\[\\begin{aligned}\n\\frac{\\partial}{\\partial\\boldsymbol{\\beta}} \\hspace{1mm} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\frac{\\partial}{\\partial\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\\] \nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+    "text": "Find the least squares estimator\n\\[\\begin{aligned}\n\\frac{\\partial}{\\partial\\boldsymbol{\\beta}} \\hspace{1mm} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\frac{\\partial}{\\partial\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
   },
   {
     "objectID": "slides/04-slr-matrix.html#hessian-matrix",
@@ -318,14 +318,14 @@
     "href": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-1",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations (span) of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{X}\\mathbf{\\boldsymbol{\\beta}}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
+    "text": "Geometry of least-squares regression\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{X}\\mathbf{\\boldsymbol{\\beta}}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
   },
   {
     "objectID": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-2",
     "href": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-2",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
+    "text": "Geometry of least-squares regression\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
     "objectID": "slides/04-slr-matrix.html#geometry-of-least-squares-regression-3",
@@ -402,7 +402,7 @@
     "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for intercept + predictors)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
@@ -472,7 +472,7 @@
     "href": "slides/04-slr-matrix-notes.html#find-the-least-squares-estimator-1",
     "title": "SLR: Matrix representation",
     "section": "Find the least squares estimator",
-    "text": "Find the least squares estimator\n\\[\\begin{aligned}\n\\frac{\\partial}{\\partial\\boldsymbol{\\beta}} \\hspace{1mm} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\frac{\\partial}{\\partial\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\\] \nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+    "text": "Find the least squares estimator\n\\[\\begin{aligned}\n\\frac{\\partial}{\\partial\\boldsymbol{\\beta}} \\hspace{1mm} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\frac{\\partial}{\\partial\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#hessian-matrix",
@@ -507,14 +507,14 @@
     "href": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-1",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations (span) of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{X}\\mathbf{\\boldsymbol{\\beta}}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
+    "text": "Geometry of least-squares regression\n\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{X}\\mathbf{\\boldsymbol{\\beta}}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-2",
     "href": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-2",
     "title": "SLR: Matrix representation",
     "section": "Geometry of least-squares regression",
-    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
+    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\boldsymbol{\\beta}\\).\n\nWe want to find \\(\\boldsymbol{\\beta}\\) such that \\(\\mathbf{z} = \\mathbf{X}\\boldsymbol{\\beta}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\boldsymbol{\\epsilon} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}\\)\n\nThis distance is minimized when \\(\\boldsymbol{\\epsilon}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#geometry-of-least-squares-regression-3",
