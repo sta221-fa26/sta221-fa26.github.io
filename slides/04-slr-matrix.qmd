@@ -138,6 +138,16 @@ y_n
 What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and $\boldsymbol{\epsilon}$?
 :::
 
+## Participate
+
+::: question
+What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and $\boldsymbol{\epsilon}$?
+:::
+
+![](images/september-03-qrcode.png){fig-align="center" width="30%"}
+
+<center><https://app.wooclap.com/KHEPQSA></center>
+
 ## Find least-squares estimator for $\boldsymbol{\beta}$
 
 **Goal**: Find estimator $\hat{\boldsymbol{\beta}}= \begin{bmatrix}\hat{\beta}_0 \\ \hat{\beta}_1 \end{bmatrix}$ that minimizes the sum of squares $$\sum_{i=1}^n \epsilon_i^2 = \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$$
