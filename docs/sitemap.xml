@@ -17,6 +17,10 @@
     <lastmod>2026-08-06T18:41:50.000Z</lastmod>
   </url>
   <url>
+    <loc>https://sta221-fa26.github.io/slides/sum-of-squares.html</loc>
+    <lastmod>2026-01-14T16:58:23.880Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta221-fa26.github.io/slides/04-slr-matrix.html</loc>
     <lastmod>2026-09-03T15:13:51.896Z</lastmod>
   </url>
@@ -97,50 +101,6 @@
     <lastmod>2026-08-28T15:06:20.346Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec01.html</loc>
-    <lastmod>2026-01-13T18:34:54.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec03.html</loc>
-    <lastmod>2026-01-13T18:34:54.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec16.html</loc>
-    <lastmod>2026-03-16T01:06:04.837Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec06.html</loc>
-    <lastmod>2026-01-13T18:34:54.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec13.html</loc>
-    <lastmod>2026-02-07T19:45:33.258Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec11.html</loc>
-    <lastmod>2026-01-27T02:31:20.937Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec04.html</loc>
-    <lastmod>2026-01-13T18:34:54.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec21.html</loc>
-    <lastmod>2026-03-16T01:11:49.796Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec08.html</loc>
-    <lastmod>2026-01-26T14:56:45.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec22.html</loc>
-    <lastmod>2026-03-16T01:14:23.412Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec19.html</loc>
-    <lastmod>2026-03-16T01:09:04.773Z</lastmod>
-  </url>
-  <url>
     <loc>https://sta221-fa26.github.io/labs/lab-04-DRAFT.html</loc>
     <lastmod>2026-02-11T15:22:45.000Z</lastmod>
   </url>
@@ -179,50 +139,6 @@
   <url>
     <loc>https://sta221-fa26.github.io/overview.html</loc>
     <lastmod>2026-08-20T15:50:07.254Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec18.html</loc>
-    <lastmod>2026-03-16T01:07:47.238Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec20.html</loc>
-    <lastmod>2026-03-16T01:11:52.494Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec09.html</loc>
-    <lastmod>2026-01-27T02:30:32.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec10.html</loc>
-    <lastmod>2026-01-27T02:31:12.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec05.html</loc>
-    <lastmod>2026-01-13T18:34:54.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec07.html</loc>
-    <lastmod>2026-01-26T14:55:07.208Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec12.html</loc>
-    <lastmod>2026-02-07T19:44:56.679Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec02.html</loc>
-    <lastmod>2026-01-13T18:34:54.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec17.html</loc>
-    <lastmod>2026-03-16T01:07:50.888Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec15.html</loc>
-    <lastmod>2026-02-07T19:48:55.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa26.github.io/prepare-SPRING2026/prepare-lec14.html</loc>
-    <lastmod>2026-02-07T19:48:05.753Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/hw/hw-05.html</loc>
@@ -301,8 +217,20 @@
     <lastmod>2026-09-02T13:25:19.022Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/sum-of-squares.html</loc>
-    <lastmod>2026-01-14T16:58:23.880Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/06-predictor-type-notes.html</loc>
+    <lastmod>2026-09-05T01:41:47.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/slides/06-predictor-types.html</loc>
+    <lastmod>2026-09-05T01:41:47.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/slides/05-mlr-notes.html</loc>
+    <lastmod>2026-09-05T01:42:18.311Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/slides/05-mlr.html</loc>
+    <lastmod>2026-09-05T01:42:18.311Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/math-rules.html</loc>

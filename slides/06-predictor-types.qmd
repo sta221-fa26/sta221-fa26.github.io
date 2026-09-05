@@ -1,0 +1,433 @@
+---
+title: "Multiple linear regression"
+subtitle: "Types of predictors"
+date: "September 10, 2026"
+author: Shane Rybacki
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 06-predictor-type-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+- HW 01 due **TODAY** at 11:59pm
+- Ishrit's office hours today 1:15 - 4pm (see Canvas for location)
+  - Professor Tackett's office hours canceled today
+
+## Topics
+
+- Categorical predictors
+
+- Centering quantitative predictors
+
+- Standardizing quantitative predictors
+
+## Computing setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+library(viridis) #adjust color palette
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+```
+
+## Data: Lemurs
+
+::: midi
+Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on lemurs less than 24 months old from three taxa:
+
+- Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur
+- Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka
+- Varecia rubra (VRUB), commonly known as Red ruffed lemur.
+:::
+
+```{r}
+#| echo: false
+lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
+```
+
+:::::: columns
+::: {.column width="33%"}
+![ERUF](images/06-eruf-lemur.jpg){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+![PCOQ](images/06-pcoq-lemur.jpg){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+![VRUB](images/06-vrub-lemur.png){fig-align="center"}
+:::
+::::::
+
+::: small
+Images from [Duke Lemur Center - Meet the Lemurs](Duke%20Lemur%20Center.%20n.d.%20“Meet%20the%20Lemurs.”%20https://lemur.duke.edu/discover/meet-the-lemurs/)
+:::
+
+## Variables
+
+**Predictors**:
+
+- `taxon` : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (`ERUF`: Eulemur rufus, `PCOQ`: Propithecus coquereli, `VRUB`: Varecia rubra)
+- `sex` : Sex of the lemur (`M`: Male, `F`: Female)
+- `age`: Age of the lemur when weight was recorded (in months)
+- `litter_size`: Total number of infants in the litter the lemur was born into (this includes the observed lemur)
+
+**Response**: `weight`: Weight of the lemur (in grams)
+
+## Response vs. predictors
+
+```{r}
+#| echo: false
+p4 <- ggplot(lemurs, aes(x = taxon, y = weight)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(
+    y = "Weight in grams",
+    x = "Taxon"
+  )
+
+p5 <- ggplot(lemurs, aes(x = age, y = weight)) +
+  geom_point() +
+  labs(
+    y = NULL,
+    x = "Age in months"
+  )
+
+
+p6 <- ggplot(lemurs, aes(x = litter_size, y = weight)) +
+  geom_point() +
+  labs(
+    y = NULL,
+    x = "Litter size"
+  )
+
+p4 + p5 / p6
+```
+
+. . .
+
+**Goal**: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.
+
+## Model fit in R
+
+```{r}
+#| echo: true
+
+lemur_fit <- lm(weight ~ age + taxon + litter_size,
+              data = lemurs)
+
+tidy(lemur_fit) |>
+  kable(digits = 3)
+```
+
+# Categorical predictors
+
+## Matrix form of multiple linear regression
+
+$$\underbrace{
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix} }_
+{\mathbf{y}} \hspace{3mm}
+= 
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+1 &x_{11} & \dots & x_{1p}\\
+\vdots & \vdots &\ddots & \vdots \\
+1 &  x_{n1} & \dots &x_{np}
+\end{bmatrix}
+}_{\mathbf{X}}
+\hspace{2mm}
+\underbrace{
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_p
+\end{bmatrix}
+}_{\boldsymbol{\beta}}
+\hspace{3mm}
++
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+\epsilon_1 \\
+\vdots\\
+\epsilon_n
+\end{bmatrix}
+}_\boldsymbol{\epsilon}$$
+
+<center>How might we include a categorical predictor with $k$ levels in the design matrix, $\mathbf{X}$ ?</center>
+
+## Indicator variables
+
+- Suppose there is a categorical variable with $k$ levels
+
+- We can make $k$ indicator variables from the data - one indicator for each level
+
+- An **indicator variable** takes values 1 or 0
+
+  - 1 if the observation belongs to that level
+
+  - 0 if the observation does not belong to that level
+
+## Indicator variables {.midi}
+
+Suppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Pratt Yes/ No are the only two options). Consider the model
+
+$$Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1}(Pratt_i = \texttt{No})$$
+
+::: question
+- Write out the design matrix for this hypothesized linear model.
+
+- Demonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).
+
+- Use this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable *and* an intercept.
+:::
+
+## Indicator variables for `taxon`
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+lemurs <- lemurs |>
+  mutate(
+    eruf = factor(if_else(taxon == "ERUF", 1, 0)),
+    pcoq = factor(if_else(taxon == "PCOQ", 1, 0)),
+    vrub = factor(if_else(taxon == "VRUB", 1, 0))
+  )
+```
+
+. . .
+
+```{r}
+#| echo: false
+lemurs |>
+  select(taxon, eruf, pcoq, vrub) |>
+  slice(1, 3, 20 )
+```
+
+## Trying to use all indicators in R {.midi}
+
+::: question
+Run the code below to fit a model using `age`, `litter_size`, and all the indicator variables for `taxon` to predict `weight`. What do you notice about the model output? Why did this happen?
+:::
+
+```{r}
+lm(weight ~ age + eruf + pcoq + vrub + litter_size, data = lemurs) |> 
+  tidy() |>
+  kable(digits = 3)
+```
+
+## Indicator variables in the model {.midi}
+
+Given a categorical predictor with $k$ levels...
+
+- Use $k-1$ indicator variables in the model
+- The **baseline** is the category that doesn't have a term in the model
+  - This is also called the *reference level*
+- The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.
+
+## AE: Model in R {.midi}
+
+::: question
+Now let’s take a look at the first five rows of the design matrix for the model with predictors `age`, `taxon`, and `litter_size`. How does R choose the baseline level by default?
+:::
+
+```{r}
+model.matrix(weight ~ age + taxon + litter_size, data = lemurs)[1:5,]
+```
+
+## Exploring indicator variables {.small}
+
+```{r}
+#| echo: false
+tidy(lemur_fit) |>
+  kable(digits = 3) |>
+  row_spec(c(3,4), background = "#dce5b2")
+```
+
+::: question
+What is the intercept for lemurs from the
+
+- ERUF taxon?
+- PCOQ taxon?
+- VRUB taxon?
+:::
+
+## Interpreting `taxon` {.small}
+
+```{r}
+#| echo: false
+tidy(lemur_fit) |>
+  kable(digits = 3) |>
+  row_spec(c(3,4), background = "#dce5b2")
+```
+
+. . .
+
+::: incremental
+- The baseline level is `ERUF`.
+- Lemurs from the PCOQ taxon weight about 462.184 grams more, on average, than lemurs from the ERUF taxon, holding age and litter size constant.
+:::
+
+## Centering
+
+- Centering a quantitative predictor means shifting every value by some constant $C$
+
+- One common type of centering is **mean-centering**, in which every value of a predictor is shifted by its mean
+
+- Only quantitative predictors are centered
+
+- Can be helpful to center all quantitative predictors in the model for ease of interpretation
+
+::: question
+What is one reason we might want to center quantitative predictors? What are the units of centered variables?
+:::
+
+## Centering {.midi}
+
+Use the `scale()` function with `center = TRUE` and `scale = FALSE` to mean-center variables
+
+```{r}
+#| output-location: fragment 
+#| 
+lemurs <- lemurs |>
+  mutate(age_cent = scale(age, center = TRUE, scale = FALSE) )
+
+lm(weight ~ age_cent + taxon + litter_size,  data = lemurs) |> 
+  tidy() |> kable(digits = 3)
+```
+
+## Centering
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+orig_model <- tidy(lemur_fit) |>
+  select(term, estimate) 
+
+cent_model <- lm(weight ~ age_cent + taxon + litter_size, data = lemurs) |> tidy() |>
+select(estimate)
+
+orig_model |> bind_cols(cent_model) |> 
+  kable(digits = 3, 
+        col.names = c("Term", "Original Model", "Centered Model"))
+```
+
+::: question
+How has the model changed? How has the model remained the same?
+:::
+
+## Is the intercept meaningful? 
+
+```{r}
+#| echo: false
+
+lm(weight ~ age_cent + taxon + litter_size,  data = lemurs) |> 
+  tidy() |> kable(digits = 3)
+```
+
+::: question
+Explain why the interpretation is still not meaningful? How can we use centering to address this?
+:::
+
+## Standardizing
+
+- Standardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable
+
+- Only quantitative predictors are standardized
+
+- Standardize all quantitative predictors in the model for ease of interpretation
+
+::: question
+What is one reason we might want to standardize the quantitative predictors? What are the units of standardized variables?
+:::
+
+## Standardizing {.midi}
+
+Use the `scale()` function with `center = TRUE` and `scale = TRUE` to standardized variables
+
+```{r}
+#| output-location: fragment 
+#| 
+lemurs <- lemurs |>
+  mutate(age_std = scale(age, center = TRUE, scale = TRUE), 
+         litter_size_std = scale(litter_size, center = TRUE, scale = TRUE))
+
+lm(weight ~ age_std + taxon + litter_size_std, data = lemurs) |>
+  tidy() |> kable(digits = 3)
+```
+
+## Standardizing
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+orig_model <- tidy(lemur_fit) |>
+  select(term, estimate) 
+
+std_model <- lm(weight ~ age_std + taxon + litter_size_std, data = lemurs) |> tidy() |>
+select(estimate)
+
+orig_model |> bind_cols(std_model) |> 
+  kable(digits = 3, 
+        col.names = c("Term", "Original Model", "Standardized Model"))
+```
+
+::: question
+How has the model changed? How has the model remained the same?
+:::
+
+## Recap
+
+- Interpreted categorical predictors
+
+- Explored why the model includes $k-1$ terms for a categorical predictor with $k$ levels
+
+- Fit and interpreted models with centered and standardized variables
+
+## Before next class
+
+- Complete [Lecture 07 prepare](../prepare/prepare-lec07.html)
+- Submit HW 01 due TODAY at 11:59pm

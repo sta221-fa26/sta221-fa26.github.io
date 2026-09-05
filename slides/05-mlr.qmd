@@ -1,0 +1,535 @@
+---
+title: "Multiple linear regression"
+author: "Prof. Maria Tackett"
+date: "09-08-2026"
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 05-mlr-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+- HW 01 **due Thursday, September 10 at 11:59pm**
+
+## Topics
+
+- Introducing multiple linear regression
+
+  - Exploratory data analysis for multiple linear regression
+  - Fitting the least squares line
+  - Interpreting coefficients for quantitative predictors
+  - Prediction
+
+- Comparing models
+
+## Computing setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+```
+
+## Data: Lemurs 
+
+::: midi
+Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on lemurs less than 24 months old from three taxa:
+
+- Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur
+- Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka
+- Varecia rubra (VRUB), commonly known as Red ruffed lemur.
+:::
+
+```{r}
+#| echo: false
+lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
+```
+
+:::::: columns
+::: {.column width="33%"}
+![ERUF](images/06-eruf-lemur.jpg){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+![PCOQ](images/06-pcoq-lemur.jpg){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+
+![VRUB](images/06-vrub-lemur.png){fig-align="center"}
+:::
+::::::
+
+::: small
+Images from [Duke Lemur Center - Meet the Lemurs](Duke Lemur Center. n.d. “Meet the Lemurs.” https://lemur.duke.edu/discover/meet-the-lemurs/)
+:::
+
+## Variables
+
+**Predictors**:
+
+- `taxon` : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (`ERUF`: Eulemur rufus, `PCOQ`: Propithecus coquereli, `VRUB`: Varecia rubra)
+- `sex` : Sex of the lemur (`M`: Male, `F`: Female)
+- `age`: Age of the lemur when weight was recorded (in months)
+- `litter_size`: Total number of infants in the litter the lemur was born into (this includes the observed lemur)
+
+**Response**: `weight`: Weight of the lemur (in grams)
+
+## Response: `weight`
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+ggplot(lemurs, aes(x = weight)) +
+  geom_density(fill = "steelblue") +
+  labs(title = "Distribution of weight", 
+  subtitle = "Lemurs < 24 months old",
+  x = "Weight in grams")
+```
+
+```{r}
+#| echo: false
+lemurs |>
+  summarise(
+    Min = min(weight),
+    Median = median(weight),
+    Max = max(weight),
+    IQR = IQR(weight)
+  ) |>
+  kable()
+```
+
+## Predictors
+
+```{r}
+#| echo: false
+#| out.width: "100%"
+#| fig-align: center
+
+
+p1 <- ggplot(lemurs, aes(x = taxon)) +
+  geom_bar(color = "black", fill = "steelblue") +
+  labs(x = "Taxon")
+
+p2 <- ggplot(lemurs, aes(x = age)) +
+  geom_histogram(color = "black", fill = "steelblue", binwidth = 2) +
+  labs(title = "", 
+       x = "Age in months")
+
+p3 <- ggplot(lemurs, aes(x = litter_size)) +
+  geom_histogram(color = "black", fill = "steelblue") +
+  labs(x = "Litter size")
+
+p1 + p2 / p3
+```
+
+## Response vs. predictors
+
+```{r}
+#| echo: false
+p4 <- ggplot(lemurs, aes(x = taxon, y = weight)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(
+    y = "Weight in grams",
+    x = "Taxon"
+  )
+
+p5 <- ggplot(lemurs, aes(x = age, y = weight)) +
+  geom_point() +
+  labs(
+    y = NULL,
+    x = "Age in months"
+  )
+
+
+p6 <- ggplot(lemurs, aes(x = litter_size, y = weight)) +
+  geom_point() +
+  labs(
+    y = NULL,
+    x = "Litter size"
+  )
+
+p4 + p5 / p6
+```
+
+. . .
+
+**Goal**: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.
+
+. . .
+
+::: question
+Why do we want to use a single model versus 3 separate simple linear regression models?
+:::
+
+# Multiple linear regression (MLR)
+
+## Multiple linear regression (MLR)
+
+Based on the analysis goals, we will use a **multiple linear regression** model of the following form
+
+$$\begin{aligned}\text{weight} ~ = 
+\beta_0 & + \beta_1 ~ \text{age} \\ & + \beta_2 ~ \text{taxon}_1 \\ &+ \beta_3 ~ \text{taxon}_2 \\
+&+\beta_4~ \text{litter_size} \\
+& +\epsilon
+\end{aligned}$$
+
+## Multiple linear regression
+
+**Recall:** The simple linear regression model
+
+$$Y = \beta_0 + \beta_1~ X + \epsilon$$
+
+. . .
+
+The form of the multiple linear regression model is
+
+$$Y = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p + \epsilon$$
+
+<br>
+
+. . .
+
+Therefore,
+
+$$E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p$$
+
+## Fitting the least squares line
+
+Similar to simple linear regression, we want to find estimates for $\beta_0, \beta_1, \ldots, \beta_p$ that minimize
+
+$$\sum_{i=1}^{n}\epsilon_i^2 = \sum_{i=1}^n[y_i - \hat{y}_i]^2 = \sum_{i=1}^n[y_i - (\beta_0 + \beta_1x_{i1} + \dots + \beta_px_{ip})]^2$$
+
+<br>
+
+. . .
+
+The calculations can be very tedious, especially if $p$ is large
+
+## Matrix form of multiple linear regression
+
+Suppose we have $n$ observations, a quantitative response variable, and $p$ \> 1 predictors
+$$\underbrace{
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix} }_
+{\mathbf{y}} \hspace{3mm}
+= 
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+1 &x_{11} & \dots & x_{1p}\\
+\vdots & \vdots &\ddots & \vdots \\
+1 &  x_{n1} & \dots &x_{np}
+\end{bmatrix}
+}_{\mathbf{X}}
+\hspace{2mm}
+\underbrace{
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_p
+\end{bmatrix}
+}_{\boldsymbol{\beta}}
+\hspace{3mm}
++
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+\epsilon_1 \\
+\vdots\\
+\epsilon_n
+\end{bmatrix}
+}_\boldsymbol{\epsilon}$$
+
+::: question
+What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, $\boldsymbol{\epsilon}$?
+:::
+
+## Matrix form of multiple linear regression
+
+As with simple linear regression, we have
+
+$$\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$$
+
+. . .
+
+Generalizing the derivations from SLR to $p > 2$, we have
+
+$$\hat{\boldsymbol{\beta}} = (\mathbf{X}^
+ \mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}$$
+
+as before.
+
+## Model fit in R
+
+```{r}
+#| echo: true
+
+lemur_fit <- lm(weight ~ age + taxon + litter_size,
+              data = lemurs)
+
+tidy(lemur_fit) |>
+  kable(digits = 3)
+```
+
+## Model equation
+
+$$\begin{align}\hat{\text{weight}} = -0.772 &+137.479 \times \text{age}\\
+&+ 462.184 \times \text{taxonPCOQ}\\  
+&+ 1020.390 \times \text{taxonVRUB}\\
+& -14.101 \times \text{litter\_size}
+\end{align}$$
+
+::: callout-note
+We will talk about why there are only two terms in the model for `taxon` soon!
+:::
+
+## Interpreting $\hat{\beta}_j$
+
+- The estimated coefficient $\hat{\beta}_j$ is the expected change in the mean of $Y$ when $X_j$ increases by one unit, <i><b>holding all else constant.</b></i>.
+
+. . .
+
+- **Example:** The estimated coefficient for `age` is 137.479. For each additional month in a young lemur’s age, their weight is expected to be greater by 137.479 grams, on average, holding taxon and litter size constant.
+
+::: callout-note
+Alternate interpretation: For each additional month in a young lemur’s age, their weight is expected to be greater by 137.479 grams, on average, adjusting for taxon and litter size.
+:::
+
+## Interpreting $\hat{\beta}_j$
+
+\[UPDATE WITH WOOCLAP POLL\]
+
+::: question
+The estimated coefficient for `litter_size` is -14.101. Interpret this coefficient in the context of the data.
+:::
+
+<br>
+
+::: question
+Why do we need to include a statement about holding all other predictors constant?
+:::
+
+## Interpreting $\hat{\beta}_0$
+
+```{r}
+#| echo: false
+tidy(lemur_fit, conf.int = TRUE) |>
+  kable(digits = 3)
+```
+
+. . .
+
+:::: question
+::: midi
+The intercept is -0.772. What is a potential reason the intercept is negative though negative weight is not possible in practice?
+:::
+::::
+
+## Prediction 
+
+::: question
+What is the predicted weight for a PCOQ lemur who is 10 months old and was born in a litter with 3 lemurs?
+:::
+
+<br>
+
+```{r}
+#| echo: true
+
+-0.772 + 137.479  * 10 +462.184 * 1 + 1020.390 * 0 - 14.101 * 3
+```
+
+. . .
+
+The predicted weight for this lemur is `r -0.772 + 137.479 * 10 +462.184 * 1 + 1020.390 * 0 - 14.101 * 3` grams.
+
+## Prediction in R {.midi}
+
+Just like with simple linear regression, we can use the `predict()` function in R to calculate the appropriate intervals for our predicted values:
+
+```{r}
+#| echo: true
+
+new_lemur <- tibble(
+  age  = 10, 
+  taxon = "PCOQ", 
+  litter_size = 3
+)
+
+predict(lemur_fit, new_lemur)
+```
+
+## Cautions
+
+- **Do not extrapolate!** Because there are multiple predictor variables, there is the potential to extrapolate in many directions
+- The multiple regression model only shows **association, not causality**
+  - To show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study (causal inference)
+
+# Model comparison
+
+## Model evaluation: RMSE & $R^2$
+
+- **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+- **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model
+
+## Comparing models  {.small}
+
+Let's consider the following models:
+
+```{r}
+#| echo: false
+
+lemur_fit_2 <- lm(weight ~ age + taxon + litter_size + age * taxon,  data = lemurs)
+
+tidy_lemur_fit_2 <- tidy(lemur_fit_2) |>
+  select(term, estimate)
+
+
+tidy(lemur_fit) |>
+  select(term, estimate) |>
+  right_join(tidy_lemur_fit_2, by = "term") |>
+  kable(digits = 3, col.names = c("term", "Model 1", "Model 2"))
+```
+
+<br>
+
+<center>**How do we decide which model to choose?**</center>
+
+## Comparing models
+
+::: incremental
+- When comparing models, do we prefer the model with the lower or higher RMSE?
+
+- Though we use $R^2$ to assess the model fit, it is generally unreliable for comparing models with different number of predictors. Why?
+
+  - $R^2$ will stay the same or increase as we add more variables to the model.
+
+  - If we only use $R^2$ to choose a best fit model, we will be prone to choose the model with the most predictor variables.
+:::
+
+## Adjusted $R^2$
+
+- **Adjusted** $R^2$: measure that includes a penalty for unnecessary predictor variables
+- Similar to $R^2$, it is a measure of the amount of variation in the response that is explained by the regression model
+- Use the `glance()` function to get $Adj. R^2$ in R
+
+```{r}
+glance(lemur_fit)$adj.r.squared
+```
+
+## $R^2$ and Adjusted $R^2$
+
+$$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}$$
+
+<br>
+
+. . .
+
+$$R^2_{adj} = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}$$
+
+where
+
+- $n$ is the number of observations used to fit the model
+
+- $p$ is the number of non-intercept terms in the model
+
+## Using $R^2$ and Adjusted $R^2$
+
+- Adjusted $R^2$ can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment
+- Use $R^2$ when describing the relationship between the response and predictor variables
+
+## Comparing interest rate models
+
+::::: columns
+::: {.column width="50%"}
+**Model 1**
+
+**Model without interaction**
+
+```{r}
+# r-squared
+glance(lemur_fit)$r.squared
+```
+
+<br>
+
+```{r}
+# adj-r-squared
+glance(lemur_fit)$adj.r.squared
+```
+:::
+
+::: {.column width="50%"}
+**Model 2**
+
+**Model with interaction**
+
+```{r}
+# r-squared
+glance(lemur_fit_2)$r.squared
+```
+
+<br>
+
+```{r}
+# adj-r-squared
+glance(lemur_fit_2)$adj.r.squared
+```
+:::
+:::::
+
+## Recap
+
+- Conducted exploratory data analysis for multiple linear regression
+
+- Used least squares to fit the regression line
+
+- Interpreted the coefficients for quantitative predictors
+
+- Predicted the response for new observations
+
+- Introduced $Adj. R^2$ for comparing models
+
+## Before next class
+
+- Complete [Lecture 06 prepare](../prepare/prepare-lec06.html)
