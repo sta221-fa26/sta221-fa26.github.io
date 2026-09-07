@@ -36,6 +36,24 @@ bibliography: references.bib
 - Ishrit's office hours today 1:15 - 4pm (see Canvas for location)
   - Professor Tackett's office hours canceled today
 
+## Who is this Shane guy? {.midi}
+
+- 2nd year PhD student in Statistical Science
+- From San Antonio, Texas
+- Undergrad from the University of Texas at Austin (Hook 'em 🤘)
+  - Degrees in Math and Business
+- Worked in consulting for a year (where I made PowerPoints for a living) before starting PhD
+
+::::: {style="display: flex; justify-content: center; align-items: center; gap: 6rem;"}
+::: {}
+<img src="images/06-alamo.jpg" style="height: 170px; width: auto;"/>
+:::
+
+::: {}
+<img src="images/06-ut-longhorns-logo.svg" style="height: 170px; width: auto;"/>
+:::
+:::::
+
 ## Topics
 
 - Categorical predictors
@@ -127,7 +145,7 @@ p5 <- ggplot(lemurs, aes(x = age, y = weight)) +
 
 
 p6 <- ggplot(lemurs, aes(x = litter_size, y = weight)) +
-  geom_point() +
+  geom_point(position = position_jitter(width = 0.15, height = 0)) +
   labs(
     y = NULL,
     x = "Litter size"
@@ -357,7 +375,7 @@ orig_model |> bind_cols(cent_model) |>
 How has the model changed? How has the model remained the same?
 :::
 
-## Is the intercept meaningful? 
+## Is the intercept meaningful?
 
 ```{r}
 #| echo: false

@@ -3445,14 +3445,14 @@
     "href": "slides/06-predictor-type-notes.html#computing-setup",
     "title": "Multiple linear regression",
     "section": "Computing setup",
-    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(viridis) #adjust color palette\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\n\nWarning: package 'tidyr' was built under R version 4.2.3\n\n\nWarning: package 'readr' was built under R version 4.2.3\n\n\nWarning: package 'dplyr' was built under R version 4.2.3\n\n\nWarning: package 'stringr' was built under R version 4.2.3\n\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\nWarning: package 'kableExtra' was built under R version 4.2.3\n\nlibrary(viridis) #adjust color palette\n\nWarning: package 'viridis' was built under R version 4.2.3\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
   },
   {
     "objectID": "slides/06-predictor-type-notes.html#data-lemurs",
     "href": "slides/06-predictor-type-notes.html#data-lemurs",
     "title": "Multiple linear regression",
     "section": "Data: Lemurs",
-    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\nRows: 252 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): name, sex, taxon\ndbl  (4): dlc_id, litter_size, age, weight\ndate (1): dob\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
   },
   {
     "objectID": "slides/06-predictor-type-notes.html#variables",
@@ -4275,5 +4275,54 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/06-predictor-types.html#meet-your-guest-lecturer",
+    "href": "slides/06-predictor-types.html#meet-your-guest-lecturer",
+    "title": "Multiple linear regression",
+    "section": "Meet your guest lecturer!",
+    "text": "Meet your guest lecturer!\n\n[Name]\n\n[Program / year, e.g. “X-year PhD student in ___”]\n[Prior degree(s) and institution(s)]\n\n[Research interests / academic focus]\n[Fun fact or personal note]"
+  },
+  {
+    "objectID": "slides/06-predictor-type-notes.html#meet-your-guest-lecturer",
+    "href": "slides/06-predictor-type-notes.html#meet-your-guest-lecturer",
+    "title": "Multiple linear regression",
+    "section": "Meet your guest lecturer!",
+    "text": "Meet your guest lecturer!\n\n\n[Name]\n\n[Program / year, e.g. “X-year PhD student in ___”]\n[Prior degree(s) and institution(s)]\n\n[Research interests / academic focus]\n[Fun fact or personal note]"
+  },
+  {
+    "objectID": "slides/06-predictor-types.html#who-is-this-guy",
+    "href": "slides/06-predictor-types.html#who-is-this-guy",
+    "title": "Multiple linear regression",
+    "section": "Who is this guy?",
+    "text": "Who is this guy?\n\nI’m Shane\nLab 1 TA\n2nd year PhD student in Statistical Science\nFrom San Antonio, Texas\nUndergrad from the University of Texas at Austin (Hook ’em 🤘)\n\nDegrees in Math and Business\n\nWorked in consulting for a year where I made PowerPoints for a living"
+  },
+  {
+    "objectID": "slides/06-predictor-type-notes.html#who-is-this-guy",
+    "href": "slides/06-predictor-type-notes.html#who-is-this-guy",
+    "title": "Multiple linear regression",
+    "section": "Who is this guy?",
+    "text": "Who is this guy?\n\nI’m Shane\nLab 1 TA\n2nd year PhD student in Statistical Science\nFrom San Antonio, Texas\nUndergrad from the University of Texas at Austin (Hook ’em 🤘)\n\nDegrees in Math and Business\n\nWorked in consulting for a year where I made PowerPoints for a living"
+  },
+  {
+    "objectID": "slides/06-predictor-types.html#who-is-this-shane-guy",
+    "href": "slides/06-predictor-types.html#who-is-this-shane-guy",
+    "title": "Multiple linear regression",
+    "section": "Who is this Shane guy?",
+    "text": "Who is this Shane guy?\n\n2nd year PhD student in Statistical Science\nFrom San Antonio, Texas\nUndergrad from the University of Texas at Austin (Hook ’em 🤘)\n\nDegrees in Math and Business\n\nWorked in consulting for a year (where I made PowerPoints for a living) before starting PhD"
+  },
+  {
+    "objectID": "slides/06-predictor-types.html#who-is-this-shaneon-s-guy",
+    "href": "slides/06-predictor-types.html#who-is-this-shaneon-s-guy",
+    "title": "Multiple linear regression",
+    "section": "Who is this ShaneOn s guy?",
+    "text": "Who is this ShaneOn s guy?\n\n2nd year PhD student in Statistical Science\nFrom San Antonio, Texas\nUndergrad from the University of Texas at Austin (Hook ’em 🤘)\n\nDegrees in Math and Business\n\nWorked in consulting for a year where I made PowerPoints for a living"
+  },
+  {
+    "objectID": "slides/06-predictor-type-notes.html#who-is-this-shaneon-s-guy",
+    "href": "slides/06-predictor-type-notes.html#who-is-this-shaneon-s-guy",
+    "title": "Multiple linear regression",
+    "section": "Who is this ShaneOn s guy?",
+    "text": "Who is this ShaneOn s guy?\n\n2nd year PhD student in Statistical Science\nFrom San Antonio, Texas\nUndergrad from the University of Texas at Austin (Hook ’em 🤘)\n\nDegrees in Math and Business\n\nWorked in consulting for a year where I made PowerPoints for a living"
   }
 ]
