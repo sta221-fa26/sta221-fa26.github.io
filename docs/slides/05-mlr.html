@@ -282,6 +282,7 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
+<div class="midi">
 <p><strong>Predictors</strong>:</p>
 <ul>
 <li><code>taxon</code> : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (<code>ERUF</code>: Eulemur rufus, <code>PCOQ</code>: Propithecus coquereli, <code>VRUB</code>: Varecia rubra)</li>
@@ -290,6 +291,7 @@ Prof.&nbsp;Maria Tackett
 <li><code>litter_size</code>: Total number of infants in the litter the lemur was born into (this includes the observed lemur)</li>
 </ul>
 <p><strong>Response</strong>: <code>weight</code>: Weight of the lemur (in grams)</p>
+</div>
 </section>
 <section id="response-weight" class="slide level2">
 <h2>Response: <code>weight</code></h2>
@@ -324,12 +326,16 @@ Prof.&nbsp;Maria Tackett
 <section id="response-vs.-predictors" class="slide level2">
 <h2>Response vs.&nbsp;predictors</h2>
 
-<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"><div class="fragment">
+<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="fragment">
+<div class="midi">
 <p><strong>Goal</strong>: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.</p>
+</div>
 </div>
 <div class="fragment">
 <div class="question">
+<div class="midi">
 <p>Why do we want to use a single model versus 3 separate simple linear regression models?</p>
+</div>
 </div>
 </div>
 </section>
@@ -422,6 +428,18 @@ y_n
 <p>as before.</p>
 </div>
 </section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="question">
+<div class="midi">
+<p>What are the dimensions of the hat matrix, <span class="math inline">\(\mathbf{H}\)</span>, in multiple linear regression?</p>
+</div>
+</div>
+
+<img data-src="images/september-08-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:35.0%"><center>
+<a href="https://app.wooclap.com/JETCCCB" class="uri">https://app.wooclap.com/JETCCCB</a>
+</center>
+</section>
 <section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
 <div class="cell">
@@ -503,7 +521,7 @@ y_n
 </div>
 </div>
 </section>
-<section id="interpreting-hatbeta_j" class="slide level2">
+<section id="interpreting-hatbeta_j" class="slide level2 midi">
 <h2>Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
 <ul>
 <li>The estimated coefficient <span class="math inline">\(\hat{\beta}_j\)</span> is the expected change in the mean of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X_j\)</span> increases by one unit, <i><b>holding all else constant.</b></i>.</li>
@@ -529,7 +547,6 @@ y_n
 </section>
 <section id="interpreting-hatbeta_j-1" class="slide level2">
 <h2>Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
-<p>[UPDATE WITH WOOCLAP POLL]</p>
 <div class="question">
 <p>The estimated coefficient for <code>litter_size</code> is -14.101. Interpret this coefficient in the context of the data.</p>
 </div>

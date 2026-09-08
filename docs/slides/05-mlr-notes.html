@@ -431,6 +431,7 @@ window.Quarto = {
   <li><a href="#fitting-the-least-squares-line" id="toc-fitting-the-least-squares-line" class="nav-link" data-scroll-target="#fitting-the-least-squares-line">Fitting the least squares line</a></li>
   <li><a href="#matrix-form-of-multiple-linear-regression" id="toc-matrix-form-of-multiple-linear-regression" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</a></li>
   <li><a href="#matrix-form-of-multiple-linear-regression-1" id="toc-matrix-form-of-multiple-linear-regression-1" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression-1">Matrix form of multiple linear regression</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
   <li><a href="#model-fit-in-r" id="toc-model-fit-in-r" class="nav-link" data-scroll-target="#model-fit-in-r">Model fit in R</a></li>
   <li><a href="#model-equation" id="toc-model-equation" class="nav-link" data-scroll-target="#model-equation">Model equation</a></li>
   <li><a href="#interpreting-hatbeta_j" id="toc-interpreting-hatbeta_j" class="nav-link" data-scroll-target="#interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
@@ -563,6 +564,7 @@ window.Quarto = {
 </section>
 <section id="variables" class="level2">
 <h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<div class="midi">
 <p><strong>Predictors</strong>:</p>
 <ul>
 <li><code>taxon</code> : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (<code>ERUF</code>: Eulemur rufus, <code>PCOQ</code>: Propithecus coquereli, <code>VRUB</code>: Varecia rubra)</li>
@@ -571,6 +573,7 @@ window.Quarto = {
 <li><code>litter_size</code>: Total number of infants in the litter the lemur was born into (this includes the observed lemur)</li>
 </ul>
 <p><strong>Response</strong>: <code>weight</code>: Weight of the lemur (in grams)</p>
+</div>
 </section>
 <section id="response-weight" class="level2">
 <h2 class="anchored" data-anchor-id="response-weight">Response: <code>weight</code></h2>
@@ -620,20 +623,24 @@ window.Quarto = {
 </section>
 <section id="response-vs.-predictors" class="level2">
 <h2 class="anchored" data-anchor-id="response-vs.-predictors">Response vs.&nbsp;predictors</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>. . .</p>
+<div class="midi">
 <p><strong>Goal</strong>: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.</p>
+</div>
 <p>. . .</p>
 <div class="question">
+<div class="midi">
 <p>Why do we want to use a single model versus 3 separate simple linear regression models?</p>
+</div>
 </div>
 </section>
 <section id="multiple-linear-regression-mlr" class="level1">
@@ -718,6 +725,22 @@ y_n
 \mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}\]</span></p>
 <p>as before.</p>
 </section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your turn</h2>
+<div class="question">
+<div class="midi">
+<p>What are the dimensions of the hat matrix, <span class="math inline">\(\mathbf{H}\)</span>, in multiple linear regression?</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/september-08-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+<center>
+<a href="https://app.wooclap.com/JETCCCB" class="uri">https://app.wooclap.com/JETCCCB</a>
+</center>
+</section>
 <section id="model-fit-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="model-fit-in-r">Model fit in R</h2>
 <div class="cell">
@@ -799,8 +822,8 @@ Note
 </div>
 </div>
 </section>
-<section id="interpreting-hatbeta_j" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
+<section id="interpreting-hatbeta_j" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
 <ul>
 <li>The estimated coefficient <span class="math inline">\(\hat{\beta}_j\)</span> is the expected change in the mean of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X_j\)</span> increases by one unit, <i><b>holding all else constant.</b></i>.</li>
 </ul>
@@ -824,7 +847,6 @@ Note
 </section>
 <section id="interpreting-hatbeta_j-1" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-hatbeta_j-1">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
-<p>[UPDATE WITH WOOCLAP POLL]</p>
 <div class="question">
 <p>The estimated coefficient for <code>litter_size</code> is -14.101. Interpret this coefficient in the context of the data.</p>
 </div>
