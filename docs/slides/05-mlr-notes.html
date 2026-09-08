@@ -429,8 +429,8 @@ window.Quarto = {
   <li><a href="#multiple-linear-regression-mlr-1" id="toc-multiple-linear-regression-mlr-1" class="nav-link" data-scroll-target="#multiple-linear-regression-mlr-1">Multiple linear regression (MLR)</a></li>
   <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple linear regression</a></li>
   <li><a href="#fitting-the-least-squares-line" id="toc-fitting-the-least-squares-line" class="nav-link" data-scroll-target="#fitting-the-least-squares-line">Fitting the least squares line</a></li>
+  <li><a href="#matrix-form-of-mlr" id="toc-matrix-form-of-mlr" class="nav-link" data-scroll-target="#matrix-form-of-mlr">Matrix form of MLR</a></li>
   <li><a href="#matrix-form-of-multiple-linear-regression" id="toc-matrix-form-of-multiple-linear-regression" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</a></li>
-  <li><a href="#matrix-form-of-multiple-linear-regression-1" id="toc-matrix-form-of-multiple-linear-regression-1" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression-1">Matrix form of multiple linear regression</a></li>
   <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
   <li><a href="#model-fit-in-r" id="toc-model-fit-in-r" class="nav-link" data-scroll-target="#model-fit-in-r">Model fit in R</a></li>
   <li><a href="#model-equation" id="toc-model-equation" class="nav-link" data-scroll-target="#model-equation">Model equation</a></li>
@@ -493,7 +493,10 @@ window.Quarto = {
 <section id="announcements" class="level2">
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li>HW 01 <strong>due Thursday, September 10 at 11:59pm</strong></li>
+<li>HW 01 <strong>due Thursday, September 10 at 11:59pm</strong>
+<ul>
+<li>Reminder: <a href="https://sta221-fa26.github.io/syllabus.html#one-time-late-waiver">One-time late waiver for HW</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="topics" class="level2">
@@ -527,7 +530,7 @@ window.Quarto = {
 <section id="data-lemurs" class="level2">
 <h2 class="anchored" data-anchor-id="data-lemurs">Data: Lemurs</h2>
 <div class="midi">
-<p>Today’s data contains a subset of the original Duke Lemur data set available in the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday GitHub repo</a>. This data includes information on lemurs less than 24 months old from three taxa:</p>
+<p>Today’s data contains a subset of the original Duke Lemur data set available in the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday GitHub repo</a>. This data includes information on 252 lemurs less than 24 months old from three taxa:</p>
 <ul>
 <li>Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur</li>
 <li>Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka</li>
@@ -674,8 +677,8 @@ window.Quarto = {
 <p>. . .</p>
 <p>The calculations can be very tedious, especially if <span class="math inline">\(p\)</span> is large</p>
 </section>
-<section id="matrix-form-of-multiple-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</h2>
+<section id="matrix-form-of-mlr" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-form-of-mlr">Matrix form of MLR</h2>
 <p>Suppose we have <span class="math inline">\(n\)</span> observations, a quantitative response variable, and <span class="math inline">\(p\)</span> &gt; 1 predictors <span class="math display">\[\underbrace{
 \begin{bmatrix}
 y_1 \\
@@ -715,8 +718,8 @@ y_n
 <p>What are the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span>?</p>
 </div>
 </section>
-<section id="matrix-form-of-multiple-linear-regression-1" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-form-of-multiple-linear-regression-1">Matrix form of multiple linear regression</h2>
+<section id="matrix-form-of-multiple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</h2>
 <p>As with simple linear regression, we have</p>
 <p><span class="math display">\[\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\]</span></p>
 <p>. . .</p>
@@ -806,7 +809,7 @@ y_n
 <p><span class="math display">\[\begin{align}\hat{\text{weight}} = -0.772 &amp;+137.479 \times \text{age}\\
 &amp;+ 462.184 \times \text{taxonPCOQ}\\  
 &amp;+ 1020.390 \times \text{taxonVRUB}\\
-&amp; -14.101 \times \text{litter\_size}
+&amp; -14.101 \times \text{litter_size}
 \end{align}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

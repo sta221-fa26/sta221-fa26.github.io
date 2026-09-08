@@ -33,6 +33,7 @@ bibliography: references.bib
 ## Announcements
 
 - HW 01 **due Thursday, September 10 at 11:59pm**
+  - Reminder: [One-time late waiver for HW](https://sta221-fa26.github.io/syllabus.html#one-time-late-waiver)
 
 ## Topics
 
@@ -65,18 +66,18 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
 
 ## Data: Lemurs
 
+```{r}
+#| echo: false
+lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
+```
+
 ::: midi
-Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on lemurs less than 24 months old from three taxa:
+Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on `r nrow(lemurs)` lemurs less than 24 months old from three taxa:
 
 - Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur
 - Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka
 - Varecia rubra (VRUB), commonly known as Red ruffed lemur.
 :::
-
-```{r}
-#| echo: false
-lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
-```
 
 :::::: columns
 ::: {.column width="33%"}
@@ -247,7 +248,7 @@ $$\sum_{i=1}^{n}\epsilon_i^2 = \sum_{i=1}^n[y_i - \hat{y}_i]^2 = \sum_{i=1}^n[y_
 
 The calculations can be very tedious, especially if $p$ is large
 
-## Matrix form of multiple linear regression
+## Matrix form of MLR
 
 Suppose we have $n$ observations, a quantitative response variable, and $p$ \> 1 predictors $$\underbrace{
 \begin{bmatrix}
@@ -304,7 +305,7 @@ $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^
 
 as before.
 
-## Your turn 
+## Your turn
 
 :::: question
 ::: midi
@@ -314,7 +315,7 @@ What are the dimensions of the hat matrix, $\mathbf{H}$, in multiple linear regr
 
 ![](images/september-08-qrcode.png){fig-align="center" width="35%"}
 
-<center> <https://app.wooclap.com/JETCCCB></center>
+<center><https://app.wooclap.com/JETCCCB></center>
 
 ## Model fit in R
 
@@ -333,7 +334,7 @@ tidy(lemur_fit) |>
 $$\begin{align}\hat{\text{weight}} = -0.772 &+137.479 \times \text{age}\\
 &+ 462.184 \times \text{taxonPCOQ}\\  
 &+ 1020.390 \times \text{taxonVRUB}\\
-& -14.101 \times \text{litter\_size}
+& -14.101 \times \text{litter_size}
 \end{align}$$
 
 ::: callout-note

@@ -3795,14 +3795,14 @@
     "href": "slides/05-mlr-notes.html",
     "title": "Multiple linear regression",
     "section": "",
-    "text": "HW 01 due Thursday, September 10 at 11:59pm"
+    "text": "HW 01 due Thursday, September 10 at 11:59pm\n\nReminder: One-time late waiver for HW"
   },
   {
     "objectID": "slides/05-mlr-notes.html#announcements",
     "href": "slides/05-mlr-notes.html#announcements",
     "title": "Multiple linear regression",
     "section": "",
-    "text": "HW 01 due Thursday, September 10 at 11:59pm"
+    "text": "HW 01 due Thursday, September 10 at 11:59pm\n\nReminder: One-time late waiver for HW"
   },
   {
     "objectID": "slides/05-mlr-notes.html#topics",
@@ -3823,7 +3823,7 @@
     "href": "slides/05-mlr-notes.html#data-lemurs",
     "title": "Multiple linear regression",
     "section": "Data: Lemurs",
-    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
   },
   {
     "objectID": "slides/05-mlr-notes.html#variables",
@@ -3875,15 +3875,15 @@
     "text": "Fitting the least squares line\nSimilar to simple linear regression, we want to find estimates for \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) that minimize\n\\[\\sum_{i=1}^{n}\\epsilon_i^2 = \\sum_{i=1}^n[y_i - \\hat{y}_i]^2 = \\sum_{i=1}^n[y_i - (\\beta_0 + \\beta_1x_{i1} + \\dots + \\beta_px_{ip})]^2\\]\n\n. . .\nThe calculations can be very tedious, especially if \\(p\\) is large"
   },
   {
-    "objectID": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
-    "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
+    "objectID": "slides/05-mlr-notes.html#matrix-form-of-mlr",
+    "href": "slides/05-mlr-notes.html#matrix-form-of-mlr",
     "title": "Multiple linear regression",
-    "section": "Matrix form of multiple linear regression",
-    "text": "Matrix form of multiple linear regression\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
+    "section": "Matrix form of MLR",
+    "text": "Matrix form of MLR\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
   },
   {
-    "objectID": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression-1",
-    "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression-1",
+    "objectID": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
+    "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
     "title": "Multiple linear regression",
     "section": "Matrix form of multiple linear regression",
     "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n. . .\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\n\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]\nas before."
@@ -3907,7 +3907,7 @@
     "href": "slides/05-mlr-notes.html#model-equation",
     "title": "Multiple linear regression",
     "section": "Model equation",
-    "text": "Model equation\n\\[\\begin{align}\\hat{\\text{weight}} = -0.772 &+137.479 \\times \\text{age}\\\\\n&+ 462.184 \\times \\text{taxonPCOQ}\\\\  \n&+ 1020.390 \\times \\text{taxonVRUB}\\\\\n& -14.101 \\times \\text{litter\\_size}\n\\end{align}\\]\n\n\n\n\n\n\nNote\n\n\n\nWe will talk about why there are only two terms in the model for taxon soon!"
+    "text": "Model equation\n\\[\\begin{align}\\hat{\\text{weight}} = -0.772 &+137.479 \\times \\text{age}\\\\\n&+ 462.184 \\times \\text{taxonPCOQ}\\\\  \n&+ 1020.390 \\times \\text{taxonVRUB}\\\\\n& -14.101 \\times \\text{litter_size}\n\\end{align}\\]\n\n\n\n\n\n\nNote\n\n\n\nWe will talk about why there are only two terms in the model for taxon soon!"
   },
   {
     "objectID": "slides/05-mlr-notes.html#interpreting-hatbeta_j",
@@ -4019,7 +4019,7 @@
     "href": "slides/05-mlr.html#announcements",
     "title": "Multiple linear regression",
     "section": "Announcements",
-    "text": "Announcements\n\nHW 01 due Thursday, September 10 at 11:59pm"
+    "text": "Announcements\n\nHW 01 due Thursday, September 10 at 11:59pm\n\nReminder: One-time late waiver for HW"
   },
   {
     "objectID": "slides/05-mlr.html#topics",
@@ -4040,7 +4040,7 @@
     "href": "slides/05-mlr.html#data-lemurs",
     "title": "Multiple linear regression",
     "section": "Data: Lemurs",
-    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
   },
   {
     "objectID": "slides/05-mlr.html#variables",
@@ -4092,15 +4092,15 @@
     "text": "Fitting the least squares line\nSimilar to simple linear regression, we want to find estimates for \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) that minimize\n\\[\\sum_{i=1}^{n}\\epsilon_i^2 = \\sum_{i=1}^n[y_i - \\hat{y}_i]^2 = \\sum_{i=1}^n[y_i - (\\beta_0 + \\beta_1x_{i1} + \\dots + \\beta_px_{ip})]^2\\]\n\n\nThe calculations can be very tedious, especially if \\(p\\) is large"
   },
   {
-    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
-    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "objectID": "slides/05-mlr.html#matrix-form-of-mlr",
+    "href": "slides/05-mlr.html#matrix-form-of-mlr",
     "title": "Multiple linear regression",
-    "section": "Matrix form of multiple linear regression",
-    "text": "Matrix form of multiple linear regression\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
+    "section": "Matrix form of MLR",
+    "text": "Matrix form of MLR\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
   },
   {
-    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
-    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
+    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
     "title": "Multiple linear regression",
     "section": "Matrix form of multiple linear regression",
     "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\n\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]\nas before."
@@ -4124,7 +4124,7 @@
     "href": "slides/05-mlr.html#model-equation",
     "title": "Multiple linear regression",
     "section": "Model equation",
-    "text": "Model equation\n\\[\\begin{align}\\hat{\\text{weight}} = -0.772 &+137.479 \\times \\text{age}\\\\\n&+ 462.184 \\times \\text{taxonPCOQ}\\\\  \n&+ 1020.390 \\times \\text{taxonVRUB}\\\\\n& -14.101 \\times \\text{litter\\_size}\n\\end{align}\\]\n\n\n\n\n\n\nNote\n\n\nWe will talk about why there are only two terms in the model for taxon soon!"
+    "text": "Model equation\n\\[\\begin{align}\\hat{\\text{weight}} = -0.772 &+137.479 \\times \\text{age}\\\\\n&+ 462.184 \\times \\text{taxonPCOQ}\\\\  \n&+ 1020.390 \\times \\text{taxonVRUB}\\\\\n& -14.101 \\times \\text{litter_size}\n\\end{align}\\]\n\n\n\n\n\n\nNote\n\n\nWe will talk about why there are only two terms in the model for taxon soon!"
   },
   {
     "objectID": "slides/05-mlr.html#interpreting-hatbeta_j",
