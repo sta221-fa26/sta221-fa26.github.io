@@ -1,0 +1,127 @@
+---
+title: "Lab 02"
+subtitle: "Linear regression"
+date: "September 14, 2026"
+date-format: long
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+---
+
+# Welcome
+
+## Goals
+
+- LaTex in this course
+- Lab 02: Linear regression
+
+## LaTex in this class
+
+For this class you will need to be able to...
+
+- Properly write mathematical symbols, e.g., $\beta_1$ not *B1,* $R^2$ not *R2*
+
+- Write basic regression equations, e.g., $\hat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2$
+
+- Write matrix equations: $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
+
+- Write hypotheses (we'll start this next week), e.g., $H_0: \beta = 0$
+
+You are welcome to but <u>not</u> required to write math proofs using LaTex.
+
+## Writing LaTex {.midi}
+
+**Inline:** Your mathematics will display within the line of text.
+
+- Use `$` to start and end your LaTex syntax. You can also use the menu: *Insert -\> LaTex Math -\> Inline Math*.
+
+- *Example*: The text `The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$` produces
+
+  The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
+
+## Writing LaTex {.midi}
+
+**Display:** Your mathematics will display outside the line of text
+
+- Use a `$$` to start and end your LaTex syntax. You can also use the menu: *Insert -\> LaTex Math -\> Display Math*.
+
+- *Example*: The text `The estimated regression equation is $$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$$` produces
+
+  The estimated regression equation is
+
+$$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$$
+
+::: callout-tip
+[Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a quick reference of LaTex code.
+:::
+
+## Find your teammates!
+
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=jpOT9e&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0) to see your teammates for Lab 01.
+
+- Discuss the lab questions with your teammates
+
+- Everyone write up the team's responses and submit your own Lab 01
+
+## Tips for working on lab {.midi}
+
+- Labs are **due at the end of your lab session**. **There is no late work or make ups accepted for lab.**
+
+  - Push final changes to GitHub
+
+  - Submit the PDF of your work in Gradescope.
+
+- The lab will be graded based on attendance, submitting the lab, workflow & formatting, and correctness of 2 randomly selected questions.
+
+  - For today's lab, we will grade one randomly selected question from the linear algebra review and one from the computing review.
+
+## Workflow and formatting
+
+Part of the lab grade is for “workflow & formatting” assessing the reproducible workflow and document format. This includes
+
+- Having at least 3 informative commit messages (practicing version control)
+
+- The PDF is neatly organized document with clear exercise headings and readable code and narrative
+
+- The name (first and last), teammates' names, and date are updated at the top of the document.
+
+## **When you’re done with lab**
+
+- Make sure all your final changes have been pushed to your GitHub repo
+
+- Submit your final PDF to Gradescope
+
+  - Combine the rendered Quarto document and handwritten math work into a single PDF document if needed.
+
+  - Access Gradescope through the course Canvas site
+
+  - Mark the page(s) associated with each exercise
+
+  - Mark the first page for "Attendance & submitting lab" and "Workflow & formatting"
+
+## Lab 02: Linear regression
+
+Today’s lab focuses on using simple and multiple linear regression to understand variability in avocado prices.
+
+<br>
+
+🔗 [sta221-fa26.github.io/labs/lab-02.html](../labs/lab-02.html)

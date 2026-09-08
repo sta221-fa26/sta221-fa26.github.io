@@ -1,0 +1,226 @@
+---
+title: "Lab 02: Linear regression"
+subtitle: ""
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+format: html
+---
+
+::: callout-important
+## Due date
+
+This lab is due at the end of your lab session on **September 14.** Be sure to complete the following by the end of your lab:
+
+- Push final `.qmd` and `.pdf` files to your GitHub repo
+- Submit final `.pdf` file on Gradescope
+
+**No late work is accepted for labs.**
+:::
+
+::: callout-important
+## Teammates
+
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=jpOT9e&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0) to find your teammates for this week's lab.
+:::
+
+# Introduction \[UPDATE\]
+
+In today’s lab you will analyze data from over 1,000 different coffees and use linear regression to explore the relationship between a coffee’s aroma, flavor, and overall quality using linear regression.
+
+## Learning goals
+
+By the end of the lab, you will...
+
+- Continue developing a reproducible workflow using RStudio and GitHub
+- Produce visualizations and summary statistics to describe distributions
+- Fit, interpret, and evaluate linear regression models
+- Use the matrix representation of the linear regression model to estimate coefficients
+- Explore properties of the linear regression model
+
+# Getting Started
+
+- Go to the [sta221-fa26](https://www.github.com/sta221-fa26) organization on GitHub. Click on the repo with the prefix **lab-02**. It contains the starter documents you need to complete the lab.
+
+- Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](../labs/lab-00.html) for details on cloning a repo and starting a new project in R.
+
+# Packages
+
+You will need the following packages for the lab:
+
+```{r}
+#| label: packages
+
+library(tidyverse)
+library(tidymodels) # contains broom, yardstick, and other modeling packages
+library(knitr)
+
+# add other packages as needed
+```
+
+# Data: Coffee ratings \[UPDATE\]
+
+The data set for this lab comes from the [Coffee Quality Database](https://github.com/jldbc/coffee-quality-database) and was obtained from the [#TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md). It includes information about the origin, producer, measures of various characteristics, and the quality measure for over 1,000 coffees. The coffees can be reasonably be treated as a random sample.
+
+This lab will focus on the following variables:
+
+- `total_cup_points`: Total number of points, indicating overall quality, 0 (worst quality) - 100 (best quality)
+
+- `aroma`: Aroma grade, 0 (worst aroma) - 10 (best aroma)
+
+- `flavor`: Flavor grade, 0 (worst flavor) - 10 (best flavor)
+
+[Click here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md) for the definitions of all variables in the data set. [Click here](http://www.scaa.coffee/?page=resources&d=cupping-protocols&mod=article_inline) for more details about how these measures are obtained.
+
+```{r}
+#| label: import-data
+
+coffee <- read_csv("data/coffee-ratings.csv")
+```
+
+# Exercises
+
+**Goal:** The goal of this analysis is to use a coffee's aroma and flavor to understand variability in its total cup points. \[UPDATE\]
+
+## Instructions \[UPDATE to match HW instructions\]
+
+Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically **render** your Quarto document to produce the updated PDF, **commit** the changes in the Git pane, and **push** the updated files to GitHub.
+
+::: callout-important
+Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
+:::
+
+## Exercise 1
+
+We begin with univariate exploratory data analysis.m \[Each person visualize a different variable - discuss distributions with each other. Add question to make note about distribution from teammates\]
+
+a.  Visualize the distribution of the response variable `total_cup_points` and calculate summary statistics.
+b.  Comment on the features of the distribution of this variable by describing the shape, center, spread, and presence of potential outliers.
+c.  Based on this distribution, do you think the data set is representative of all coffee available to consumers? Briefly explain.
+
+::: callout-tip
+Make sure your data visualizations have clear and informative **titles** and **axis labels**.
+:::
+
+## Exercise 2
+
+Now let's consider the relationship between how good a coffee smells and its overall quality.
+
+a.  Visualize the relationship between `aroma` and `total_cup_points`.
+b.  Does there appear to be a relationship between a coffee's aroma and its overall quality? If so, what is the shape and direction of the relationship?
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., "Completed exercises 1 - 2"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Exercise 3
+
+a.  Fit the model of the relationship between `aroma` and `total_cup_points`. Neatly display the output using 3 digits.
+b.  Interpret the slope in the context of the data.
+
+## Exercise 4
+
+**Now let's add flavor to the model, so we will use both flavor and aroma to understand variability in the overall quality of coffees. Use this model for the remainder of the lab.**
+
+In class we have seen how vectors and matrices can be used to represent the linear regression model:
+
+$$\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}$$
+
+a.  State the dimensions of $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}$ for this model. Your answer should have exact values given the `coffee` data set.
+b.  Compute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.
+
+::: callout-tip
+You can use the `model.matrix()` function to get the design matrix. The code takes the general form:
+
+<center>`model.matrix(y ~ x, data = my_data)`</center>
+
+See [Lab 01](../labs/lab-01.html#matrix-operations-in-r) for other matrix operations in R.
+:::
+
+c.  Check your results from part (b) by using the `lm` function to fit the model. Neatly display your results using 3 digits.
+d.  Write the estimated regression equation.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., "Completed exercises 3 - 4"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Exercise 5
+
+a.  The coefficient for `aroma` for the model fit in Exercise 5 is different than the coefficient from the model fit in Exercise 4. Briefly explain why these coefficients are different.
+b.  Would you willingly drink a coffee represented by the intercept of the model in Exercise 5? Briefly explain why or why not.
+
+## Exercise 6
+
+a.  Compute $\mathbf{H}$, the hat matrix corresponding to the model from Exercise 5. Then use $\mathbf{H}$ to compute the residuals for this model. **Do not print out** $\mathbf{H}$ **or the residuals.**
+
+b.  Compute the mean and standard deviation of the residuals.
+
+c.  Recall root mean square error RMSE
+
+    $$RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}$$
+
+    Similar to other statistics we've seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.
+
+d.  How do the standard deviation of the residuals and RMSE compare?
+
+::: render-commit-push
+You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.
+:::
+
+# Submission
+
+You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+- Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/73984)
+
+- Click on the assignment, and you’ll be prompted to submit it.
+
+- Mark the pages for the *"Exercises"* question.
+
+- Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* question.
+
+# Grading (10pts)
+
+This lab will be graded based on completion and workflow & formatting. The point breakdown is as follows:
+
+| Component             | Points |
+|-----------------------|--------|
+| Completion            | 8      |
+| Workflow & formatting | 2      |
+
+: **Completion:** Points will be awarded for completion based on the following:
+
+- 8pts: Complete all exercises
+
+- 7 pts: 6 exercises complete
+
+- 6 pts: 5 exercises complete
+
+- 5 pts: 4 exercises complete
+
+- 4 pts: 3 exercises complete
+
+- 3 pts: 2 exercises complete
+
+- 0 pts: 0 - 1 exercises complete
+
+**Workflow & formatting**
+
+Each assignment will have a portion associated with "Workflow & formatting". This grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.
+
+- 2 pts: Meet all criteria
+
+- 1 pt: Meet some criteria
+
+- 0 pt: Meet no criteria
