@@ -34,6 +34,8 @@ knitr:
 - LaTex in this course
 - Lab 02: Linear regression
 
+## Figure captions
+
 ## LaTex in this class
 
 For this class you will need to be able to...

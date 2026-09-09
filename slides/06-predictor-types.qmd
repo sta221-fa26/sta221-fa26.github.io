@@ -83,18 +83,18 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
 
 ## Data: Lemurs
 
+```{r}
+#| echo: false
+lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
+```
+
 ::: midi
-Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on lemurs less than 24 months old from three taxa:
+Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on `r nrow(lemurs)` lemurs less than 24 months old from three taxa:
 
 - Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur
 - Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka
 - Varecia rubra (VRUB), commonly known as Red ruffed lemur.
 :::
-
-```{r}
-#| echo: false
-lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
-```
 
 :::::: columns
 ::: {.column width="33%"}
@@ -119,7 +119,6 @@ Images from [Duke Lemur Center - Meet the Lemurs](Duke%20Lemur%20Center.%20n.d.%
 **Predictors**:
 
 - `taxon` : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (`ERUF`: Eulemur rufus, `PCOQ`: Propithecus coquereli, `VRUB`: Varecia rubra)
-- `sex` : Sex of the lemur (`M`: Male, `F`: Female)
 - `age`: Age of the lemur when weight was recorded (in months)
 - `litter_size`: Total number of infants in the litter the lemur was born into (this includes the observed lemur)
 
