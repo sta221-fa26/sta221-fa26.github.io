@@ -1,5 +1,5 @@
 ---
-title: "Lab 02"
+title: "Lab 02: Linear regression"
 subtitle: ""
 execute:
   freeze: auto
@@ -8,8 +8,210 @@ execute:
   warning: false
   message: false
 format: html
+bibliography: references.bib
 ---
 
-<br> 
+::: callout-important
+## Due date
 
-To be posted. 
+This lab is due at the end of your lab session on **September 14.** Be sure to complete the following by the end of your lab:
+
+- Push final `.qmd` and `.pdf` files to your GitHub repo
+- Submit final `.pdf` file on Gradescope
+
+**No late work is accepted for labs.**
+:::
+
+::: callout-important
+## Teammates
+
+[Click here](https://prodduke-my.sharepoint.com/:x:/r/personal/mt324_duke_edu/Documents/STA%20221%20Lab%20Groups.xlsx?d=w5b50723cce064457b91bb28c55596f1a&csf=1&web=1&e=XToHSw&nav=MTVfe0MxMkRDNTE2LTU0MUEtNEJGQS1CNENELTUyOTRDMjc5MDZCOH0) to find your teammates for this week's lab.
+:::
+
+# Introduction
+
+In today’s lab you will use linear regression to explore variability in weekly avocado sales.You will also use the matrix representation to verify regression results and explore properties of the linear regression model.
+
+## Learning goals
+
+By the end of the lab, you will...
+
+- Continue developing a reproducible workflow using RStudio and GitHub
+- Produce visualizations and summary statistics to describe distributions
+- Fit, interpret, and evaluate linear regression models
+- Use the matrix representation of the linear regression model to estimate coefficients
+- Explore properties of the linear regression model
+
+# Getting Started
+
+- Go to the [sta221-fa26](https://www.github.com/sta221-fa26) organization on GitHub. Click on the repo with the prefix **lab-02**. It contains the starter documents you need to complete the lab.
+
+- Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](../labs/lab-00.html) for details on cloning a repo and starting a new project in R.
+
+# Packages
+
+You will need the following packages for the lab:
+
+```{r}
+#| label: packages
+
+library(tidyverse)
+library(tidymodels) # contains broom, yardstick, and other modeling packages
+library(knitr)
+
+# add other packages as needed
+```
+
+# Data: Weekly avocado sales
+
+Today's lab uses data on the weekly sales of Hass avocados in regions across the United States. The data set was adapted from the `hass_region` data frame in the **avocado** package [@avocado], and it was originally obtained from the [Hass Avocado Board](https://hassavocadoboard.com/). The data set contains 1,000 observations randomly selected from observations in `hass_region` with weekly sales of 2,000,000 avocados or fewer.
+
+This lab will focus on the following variables:
+
+- `total_units_th`: Total units (avocados) in thousands
+
+- `region`: Region of the United States (Midwest, Northeast, South, West). This variable was derived based on the 8 regions in the `hass_region` data frame
+
+- `avg_selling_price`: The average selling price of Hass avocados in US Dollars
+
+- `type`: Type of avocado (Conventional (non-organic), Organic)
+
+The data set is in `avocado.csv` in the `data` folder of your repo.
+
+```{r}
+#| label: import-data
+avocado <- read_csv("data/avocado.csv")
+```
+
+# Exercises
+
+**Goal:** The goal of this analysis is to use the region, type, and average selling price to understand variability in the number of avocados sold in a week.
+
+::: important
+## Instructions
+
+**Type your responses for the exercises in your Quarto document.** Throughout the assignment, remember to periodically **render** your Quarto document to produce the updated PDF, **commit** the changes in the Git pane, and **push** the updated files to GitHub
+:::
+
+::: callout-tip
+Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
+:::
+
+## Exercise 1
+
+We begin with univariate exploratory data analysis. **Each person in the group will explore a different variable in this analysis and share what they observe with their teammates.** The variables are `total_units_th`, `region`, `avg_selling_price`, `type`.
+
+a.  Visualize the distribution of your variable and compute the appropriate summary statistics.
+b.  Comment on the features of the distribution for your variable.
+c.  Write down one feature from each of your teammates' distributions.
+
+::: callout-tip
+Make sure your data visualizations have clear and informative **titles (or captions)** and **axis labels**.
+:::
+
+## Exercise 2
+
+Now let's consider the relationship between the total number of avocados sold and the average selling price.
+
+a.  Visualize the relationship between `avg_selling_price` and `total_units_th`.
+b.  Does there appear to be a relationship between these two variables? If so, what is the shape and direction of the relationship?
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., "Completed exercises 1 - 2"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Exercise 3
+
+a.  Fit the model of the relationship between `avg_selling_price` and `total_units_th`. Neatly display the output to 3 decimal places.
+b.  Interpret the slope in the context of the data.
+
+## Exercise 4
+
+**Now let's add the other predictors to the model, so we will use average selling price, region, and type to understand variability in the total number of avocados sold. Use this model for the remainder of the lab.**
+
+In class we have seen how vectors and matrices can be used to represent the linear regression model:
+
+$$\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}$$
+
+a.  State the dimensions of $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}$ for this model. Your answer should have exact values given the `avocado` data set.
+b.  Compute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.
+
+::: callout-tip
+You can use the `model.matrix()` function to get the design matrix. The code takes the general form:
+
+<center>`model.matrix(y ~ x, data = my_data)`</center>
+:::
+
+c.  Check your results from part (b) by using the `lm` function to fit the model. Neatly display your results using 3 decimal places.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., "Completed exercises 3 - 4"), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Exercise 5
+
+The coefficient for `avg_selling_price` for the model fit in Exercise 4 is different than the coefficient from the model fit in Exercise 3. Briefly explain why the coefficient for `avg_selling_price` changes when the additional predictors are added to the model.
+
+## Exercise 6
+
+a.  Compute $\mathbf{H}$, the hat matrix corresponding to the model from Exercise 5. Then use $\mathbf{H}$ to compute the residuals for this model. **Do not print out** $\mathbf{H}$ **or the residuals.**
+
+b.  Compute the mean and standard deviation of the residuals.
+
+c.  Recall root mean square error (RMSE)
+
+    $$RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}$$
+
+    Similar to other statistics we've seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.
+
+d.  How do the standard deviation of the residuals and RMSE compare?
+
+::: render-commit-push
+You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.
+:::
+
+# Submission
+
+You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to Gradescope by the end of your lab session.
+
+If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.
+
+Instructions to combine PDFs:
+
+- Preview (Mac): [support.apple.com/guide/preview/combine-pdfs-prvw43696/mac](https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac)
+
+- Adobe (Mac or PC): [helpx.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
+
+- Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
+:::
+
+**To submit your assignment:**
+
+- Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/84458)
+
+- Click on the assignment, and you’ll be prompted to submit it.
+
+- Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.
+
+- Select the first page of your .PDF submission to be associated with "Attendance & submitting lab" and "Workflow & formatting"
+
+# Grading (30 pts)
+
+This lab will be graded based on completion and workflow & formatting. The point breakdown is as follows:
+
+| Component                   | Points             |
+|-----------------------------|--------------------|
+| Attendance & submitting lab | 10                 |
+| Two selected exercises      | 16 (8 points each) |
+| Workflow & formatting       | 4                  |
+
+------------------------------------------------------------------------
+
+We will grade two randomly selected exercises.
+
+The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.

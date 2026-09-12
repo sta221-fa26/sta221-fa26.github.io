@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 02 – STA 221 - Fall 2026</title>
+<title>Lab 02: Linear regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -71,6 +126,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -347,15 +431,39 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data-weekly-avocado-sales" id="toc-data-weekly-avocado-sales" class="nav-link" data-scroll-target="#data-weekly-avocado-sales">Data: Weekly avocado sales</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-30-pts" id="toc-grading-30-pts" class="nav-link" data-scroll-target="#grading-30-pts">Grading (30 pts)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-02.html">Lab 02</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 02</h1>
+<h1 class="title">Lab 02: Linear regression</h1>
 </div>
 
 
@@ -372,12 +480,266 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab is due at the end of your lab session on <strong>September 14.</strong> Be sure to complete the following by the end of your lab:</p>
+<ul>
+<li>Push final <code>.qmd</code> and <code>.pdf</code> files to your GitHub repo</li>
+<li>Submit final <code>.pdf</code> file on Gradescope</li>
+</ul>
+<p><strong>No late work is accepted for labs.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Teammates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://prodduke-my.sharepoint.com/:x:/r/personal/mt324_duke_edu/Documents/STA%20221%20Lab%20Groups.xlsx?d=w5b50723cce064457b91bb28c55596f1a&amp;csf=1&amp;web=1&amp;e=XToHSw&amp;nav=MTVfe0MxMkRDNTE2LTU0MUEtNEJGQS1CNENELTUyOTRDMjc5MDZCOH0">Click here</a> to find your teammates for this week’s lab.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In today’s lab you will use linear regression to explore variability in weekly avocado sales.You will also use the matrix representation to verify regression results and explore properties of the linear regression model.</p>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Continue developing a reproducible workflow using RStudio and GitHub</li>
+<li>Produce visualizations and summary statistics to describe distributions</li>
+<li>Fit, interpret, and evaluate linear regression models</li>
+<li>Use the matrix representation of the linear regression model to estimate coefficients</li>
+<li>Explore properties of the linear regression model</li>
+</ul>
+</section>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<ul>
+<li><p>Go to the <a href="https://www.github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>lab-02</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>You will need the following packages for the lab:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) <span class="co"># contains broom, yardstick, and other modeling packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-weekly-avocado-sales" class="level1">
+<h1>Data: Weekly avocado sales</h1>
+<p>Today’s lab uses data on the weekly sales of Hass avocados in regions across the United States. The data set was adapted from the <code>hass_region</code> data frame in the <strong>avocado</strong> package <span class="citation" data-cites="avocado">(<a href="#ref-avocado" role="doc-biblioref">Agarwal 2025</a>)</span>, and it was originally obtained from the <a href="https://hassavocadoboard.com/">Hass Avocado Board</a>. The data set contains 1,000 observations randomly selected from observations in <code>hass_region</code> with weekly sales of 2,000,000 avocados or fewer.</p>
+<p>This lab will focus on the following variables:</p>
+<ul>
+<li><p><code>total_units_th</code>: Total units (avocados) in thousands</p></li>
+<li><p><code>region</code>: Region of the United States (Midwest, Northeast, South, West). This variable was derived based on the 8 regions in the <code>hass_region</code> data frame</p></li>
+<li><p><code>avg_selling_price</code>: The average selling price of Hass avocados in US Dollars</p></li>
+<li><p><code>type</code>: Type of avocado (Conventional (non-organic), Organic)</p></li>
+</ul>
+<p>The data set is in <code>avocado.csv</code> in the <code>data</code> folder of your repo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avocado <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/avocado.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p><strong>Goal:</strong> The goal of this analysis is to use the region, type, and average selling price to understand variability in the number of avocados sold in a week.</p>
+<section id="instructions" class="level2 important">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p><strong>Type your responses for the exercises in your Quarto document.</strong> Throughout the assignment, remember to periodically <strong>render</strong> your Quarto document to produce the updated PDF, <strong>commit</strong> the changes in the Git pane, and <strong>push</strong> the updated files to GitHub</p>
+</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>We begin with univariate exploratory data analysis. <strong>Each person in the group will explore a different variable in this analysis and share what they observe with their teammates.</strong> The variables are <code>total_units_th</code>, <code>region</code>, <code>avg_selling_price</code>, <code>type</code>.</p>
+<ol type="a">
+<li>Visualize the distribution of your variable and compute the appropriate summary statistics.</li>
+<li>Comment on the features of the distribution for your variable.</li>
+<li>Write down one feature from each of your teammates’ distributions.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure your data visualizations have clear and informative <strong>titles (or captions)</strong> and <strong>axis labels</strong>.</p>
+</div>
+</div>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Now let’s consider the relationship between the total number of avocados sold and the average selling price.</p>
+<ol type="a">
+<li>Visualize the relationship between <code>avg_selling_price</code> and <code>total_units_th</code>.</li>
+<li>Does there appear to be a relationship between these two variables? If so, what is the shape and direction of the relationship?</li>
+</ol>
+<div class="render-commit-push">
+<p>This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 1 - 2”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<ol type="a">
+<li>Fit the model of the relationship between <code>avg_selling_price</code> and <code>total_units_th</code>. Neatly display the output to 3 decimal places.</li>
+<li>Interpret the slope in the context of the data.</li>
+</ol>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p><strong>Now let’s add the other predictors to the model, so we will use average selling price, region, and type to understand variability in the total number of avocados sold. Use this model for the remainder of the lab.</strong></p>
+<p>In class we have seen how vectors and matrices can be used to represent the linear regression model:</p>
+<p><span class="math display">\[\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}\]</span></p>
+<ol type="a">
+<li>State the dimensions of <span class="math inline">\(\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}\)</span> for this model. Your answer should have exact values given the <code>avocado</code> data set.</li>
+<li>Compute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the <code>model.matrix()</code> function to get the design matrix. The code takes the general form:</p>
+<center>
+<code>model.matrix(y ~ x, data = my_data)</code>
+</center>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Check your results from part (b) by using the <code>lm</code> function to fit the model. Neatly display your results using 3 decimal places.</li>
+</ol>
+<div class="render-commit-push">
+<p>This is a good place to render, commit, and push changes to your lab-02 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 3 - 4”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>The coefficient for <code>avg_selling_price</code> for the model fit in Exercise 4 is different than the coefficient from the model fit in Exercise 3. Briefly explain why the coefficient for <code>avg_selling_price</code> changes when the additional predictors are added to the model.</p>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<ol type="a">
+<li><p>Compute <span class="math inline">\(\mathbf{H}\)</span>, the hat matrix corresponding to the model from Exercise 5. Then use <span class="math inline">\(\mathbf{H}\)</span> to compute the residuals for this model. <strong>Do not print out</strong> <span class="math inline">\(\mathbf{H}\)</span> <strong>or the residuals.</strong></p></li>
+<li><p>Compute the mean and standard deviation of the residuals.</p></li>
+<li><p>Recall root mean square error (RMSE)</p>
+<p><span class="math display">\[RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}\]</span></p>
+<p>Similar to other statistics we’ve seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.</p></li>
+<li><p>How do the standard deviation of the residuals and RMSE compare?</p></li>
+</ol>
+<div class="render-commit-push">
+<p>You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that <u>all</u> documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.</p>
+</div>
+</section>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to Gradescope by the end of your lab session.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p></li>
+<li><p>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></p></li>
+</ul>
+</div>
+</div>
+<p><strong>To submit your assignment:</strong></p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with “Attendance &amp; submitting lab” and “Workflow &amp; formatting”</p></li>
+</ul>
+</section>
+<section id="grading-30-pts" class="level1">
+<h1>Grading (30 pts)</h1>
+<p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance &amp; submitting lab</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Two selected exercises</td>
+<td>16 (8 points each)</td>
+</tr>
+<tr class="odd">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>We will grade two randomly selected exercises.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-avocado" class="csl-entry" role="listitem">
+Agarwal, Nikhil. 2025. <span>“Avocado: Weekly Hass Avocado Sales Summary.”</span> <a href="https://doi.org/10.32614/CRAN.package.avocado">https://doi.org/10.32614/CRAN.package.avocado</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -798,7 +1160,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

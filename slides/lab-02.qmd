@@ -34,7 +34,31 @@ knitr:
 - LaTex in this course
 - Lab 02: Linear regression
 
-## Figure captions
+## Figure captions {.midi}
+
+Figure captions are written as an option in the code chunk containing the visualization code.
+
+```         
+#| label: fig-region-units-boxplot
+#| fig-cap: "The distribution of total avocados sold each week is 
+similar across regions in the United States"
+```
+
+. . .
+
+```{r}
+#| echo: false
+#| fig-cap: "The distribution of total avocados sold each week is similar across regions in the United States"
+#| out-width: 60%
+
+library(tidyverse)
+avocado <- read_csv("../labs/data/avocado.csv")
+ggplot(data = avocado, aes(x = region, y = total_units_th)) +  
+geom_boxplot(color = "black", fill = "darkcyan") + 
+  labs(x = "Region", 
+       y = "Total units sold (in thousands)") +
+  theme_bw()
+```
 
 ## LaTex in this class
 
@@ -78,11 +102,11 @@ $$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$$
 
 ## Find your teammates!
 
-[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=jpOT9e&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0) to see your teammates for Lab 01.
+[Click here](https://prodduke-my.sharepoint.com/:x:/r/personal/mt324_duke_edu/Documents/STA%20221%20Lab%20Groups.xlsx?d=w5b50723cce064457b91bb28c55596f1a&csf=1&web=1&e=XToHSw&nav=MTVfe0MxMkRDNTE2LTU0MUEtNEJGQS1CNENELTUyOTRDMjc5MDZCOH0) to see your teammates for Lab 02
 
 - Discuss the lab questions with your teammates
 
-- Everyone write up the team's responses and submit your own Lab 01
+- Everyone write up the team's responses and submit your own Lab 02
 
 ## Tips for working on lab {.midi}
 
@@ -122,7 +146,7 @@ Part of the lab grade is for “workflow & formatting” assessing the reproduci
 
 ## Lab 02: Linear regression
 
-Today’s lab focuses on using simple and multiple linear regression to understand variability in avocado prices.
+Today’s lab focuses on using simple and multiple linear regression to understand variability in weekly avocado sales.
 
 <br>
 

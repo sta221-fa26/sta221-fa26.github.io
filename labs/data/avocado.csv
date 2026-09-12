@@ -1,0 +1,1001 @@
+region,market,week_ending,type,avg_selling_price,total_units_th
+West,Spokane,2018-11-25,Organic,2.66,4.778
+South,Richmond/Norfolk,2020-05-24,Organic,1.42,20.621
+South,New Orleans/Mobile,2020-01-19,Conventional,0.87,386.975
+South,Raleigh/Greensboro,2019-10-27,Conventional,1.03,381.097
+Northeast,Albany,2022-01-23,Conventional,1.122422306,147.707
+Northeast,Syracuse,2024-04-28,Organic,1.22681,10.148
+South,Nashville,2022-06-19,Organic,1.980505131,24.313
+South,Tampa,2020-06-21,Conventional,1.12,638.093
+West,Spokane,2022-02-13,Organic,2.193048286,5.469
+South,Atlanta,2022-04-03,Conventional,1.121291912,826.767
+West,San Francisco,2023-10-08,Conventional,1.027682582,961.345
+Northeast,Boston,2020-03-08,Conventional,1.35,786.794
+West,San Francisco,2021-10-31,Organic,2.069600703,73.04
+Midwest,Columbus,2017-12-10,Organic,1.52,6.604
+West,West Tex/New Mexico,2024-01-21,Conventional,0.861274261,932.836
+Midwest,Chicago,2023-01-22,Conventional,0.97092181,1185.095
+Northeast,Boston,2017-04-16,Organic,2,17.642
+South,New Orleans/Mobile,2019-12-29,Organic,1.35,2.394
+Northeast,Philadelphia,2018-02-04,Conventional,1.12,819.225
+South,Richmond/Norfolk,2023-12-03,Organic,1.274643987,31.552
+West,Las Vegas,2017-12-10,Conventional,1.03,288.442
+South,Richmond/Norfolk,2023-11-05,Conventional,0.909925035,340.382
+Midwest,Detroit,2023-06-04,Organic,1.323174507,23.031
+South,Atlanta,2024-10-27,Conventional,1.202240768,814.545
+Northeast,Buffalo/Rochester,2017-09-10,Conventional,1.46,142.197
+Midwest,Columbus,2022-05-01,Conventional,1.168559962,337.851
+South,Jacksonville,2019-12-15,Organic,1.2,2.869
+Midwest,Columbus,2019-06-16,Organic,1.61,9.753
+South,Charlotte,2024-04-07,Organic,1.37355,50.132
+West,Portland,2021-05-23,Conventional,1.278514144,645.685
+South,Baltimore/Washington,2020-05-10,Organic,1.56,76.649
+West,Portland,2024-06-02,Organic,2.243508982,43.083
+West,Denver,2022-07-31,Organic,1.878818722,41.531
+South,Charlotte,2024-09-08,Conventional,1.30677207,401.357
+South,Houston,2024-03-31,Organic,1.09928,33.185
+South,Atlanta,2018-02-18,Organic,1.56,11.166
+Midwest,Chicago,2023-04-09,Conventional,1.045064119,1135.258
+South,Baltimore/Washington,2020-05-31,Organic,1.63,60.903
+South,Richmond/Norfolk,2018-03-25,Conventional,1.1,316.218
+Northeast,Philadelphia,2024-09-22,Conventional,1.242392561,656.472
+South,Louisville,2017-02-05,Conventional,0.91,126.83
+West,Phoenix/Tucson,2017-06-18,Organic,1.97,9.721
+South,Richmond/Norfolk,2017-10-01,Conventional,1.59,112.519
+West,Las Vegas,2023-09-24,Organic,1.496362578,19.052
+Northeast,Buffalo/Rochester,2024-06-23,Organic,1.340171989,28.26
+West,Spokane,2021-08-15,Conventional,1.1417291,94.049
+South,Tampa,2023-02-12,Conventional,0.816209473,961.546
+South,Tampa,2024-04-14,Conventional,1.05689,785.38
+Northeast,New York,2024-05-26,Organic,1.527617149,160.084
+West,Boise,2019-12-08,Conventional,0.92,114.926
+Northeast,Harrisburg/Scranton,2022-07-31,Conventional,1.142440374,414.894
+Midwest,Detroit,2023-04-30,Organic,1.321891672,23.554
+West,Portland,2023-01-15,Conventional,1.256400535,539.546
+South,Baltimore/Washington,2023-02-26,Conventional,1.002081743,1333.592
+South,Louisville,2020-05-10,Organic,1.25,12.8
+Northeast,New York,2019-12-15,Organic,1.73,61.887
+South,Charlotte,2017-02-12,Conventional,1.25,206.763
+South,Orlando,2024-09-08,Organic,1.669817927,38.117
+Northeast,Pittsburgh,2020-02-09,Organic,1.14,17.585
+South,Orlando,2017-08-06,Organic,1.82,4.036
+Midwest,Cincinnati/Dayton,2020-05-17,Conventional,1.23,383.539
+Northeast,Hartford/Springfield,2022-04-10,Organic,1.756397457,26.22
+South,Roanoke,2024-07-14,Organic,1.719972347,16.989
+South,Richmond/Norfolk,2019-10-13,Conventional,1.15,272.639
+West,Seattle,2019-10-13,Conventional,1.5,502.551
+West,San Diego,2024-12-29,Organic,2.035642657,21.72
+South,Dallas/Ft. Worth,2018-12-02,Organic,1.37,30.337
+South,Jacksonville,2019-10-27,Organic,0.96,8.204
+Northeast,Buffalo/Rochester,2024-06-02,Conventional,1.191510844,240.829
+South,Orlando,2019-04-14,Organic,1.37,6.597
+West,Sacramento,2022-10-16,Conventional,1.460835644,403.676
+Northeast,Pittsburgh,2019-12-15,Organic,1.16,8.448
+West,San Diego,2018-01-07,Organic,2.06,16.747
+South,Louisville,2018-04-01,Organic,1.45,5.152
+Northeast,Pittsburgh,2017-01-08,Conventional,1.02,152.781
+West,San Francisco,2024-03-03,Organic,1.823552,59.394
+South,Louisville,2019-09-01,Conventional,1.15,128.501
+Midwest,Chicago,2019-05-26,Organic,1.88,46.057
+Midwest,Grand Rapids,2019-06-09,Organic,1.5,9.822
+South,Raleigh/Greensboro,2022-03-06,Conventional,1.293400672,460.863
+South,Baltimore/Washington,2021-08-29,Conventional,1.136311827,1082.717
+West,Las Vegas,2020-04-26,Conventional,0.92,534.972
+West,Seattle,2019-08-25,Conventional,1.87,465.869
+West,Seattle,2024-12-22,Organic,2.712096655,38.045
+West,Spokane,2017-09-10,Organic,2.86,2.914
+South,Dallas/Ft. Worth,2019-09-29,Conventional,0.96,1361.629
+West,Las Vegas,2019-07-14,Conventional,1.42,310.12
+Northeast,New York,2017-12-24,Organic,1.85,74.78
+Midwest,Cincinnati/Dayton,2023-07-23,Conventional,1.045372525,265.006
+Midwest,Grand Rapids,2021-12-26,Conventional,1.382528039,146.848
+South,Nashville,2018-06-10,Conventional,0.97,284.059
+South,Jacksonville,2019-11-24,Organic,1.28,2.351
+Northeast,Buffalo/Rochester,2017-07-09,Organic,2.55,5.37
+Midwest,Detroit,2024-02-18,Organic,1.338722484,31.043
+West,Denver,2021-01-17,Organic,1.219652184,56.122
+West,Denver,2023-07-23,Organic,1.402003652,47.866
+Midwest,Cincinnati/Dayton,2017-05-07,Organic,1.48,19.99
+West,Boise,2021-08-22,Conventional,1.255563167,107.347
+South,Baltimore/Washington,2021-05-16,Conventional,1.265655031,1143.23
+West,Denver,2020-05-31,Conventional,1.01,1287.246
+South,Miami/Ft. Lauderdale,2024-02-11,Conventional,0.89214964,1844.613
+South,Louisville,2020-03-08,Organic,1.06,12.056
+South,Dallas/Ft. Worth,2024-05-19,Organic,1.34817,64.257
+Northeast,Buffalo/Rochester,2017-04-16,Organic,2.14,5.988
+South,Baltimore/Washington,2024-11-24,Conventional,1.176721754,1126.727
+South,New Orleans/Mobile,2017-07-23,Organic,1.28,2.328
+South,Charlotte,2018-04-29,Organic,1.78,13.919
+Midwest,Cincinnati/Dayton,2020-02-23,Conventional,1.03,316.745
+South,Tampa,2019-01-07,Organic,1.45,6.513
+South,New Orleans/Mobile,2017-07-02,Organic,1.89,2.701
+Midwest,Chicago,2019-03-17,Conventional,1.09,796.938
+Northeast,Boston,2022-02-13,Organic,1.77144162,37.824
+South,South Carolina,2022-04-24,Conventional,1.398469692,520.192
+Northeast,Boston,2023-01-29,Organic,1.66191323,34.068
+South,Houston,2020-08-02,Organic,1.25,38.101
+South,Nashville,2020-07-05,Conventional,0.89,365.053
+Midwest,Detroit,2020-10-11,Organic,1.34,22.274
+Midwest,Cincinnati/Dayton,2017-04-30,Organic,1.66,13.925
+West,Portland,2017-12-17,Conventional,1.31,430.915
+West,Spokane,2023-02-26,Organic,1.615909572,7.511
+West,San Diego,2024-06-16,Organic,2.0032009140000002,31.414
+West,Las Vegas,2022-05-01,Conventional,1.429314862,404.17
+West,Boise,2022-05-15,Organic,2.539598687,6.702
+West,Las Vegas,2019-11-17,Conventional,1.02,344.495
+West,Denver,2021-11-28,Conventional,1.262852869,662.242
+South,Houston,2024-05-12,Conventional,1.08052,1047.32
+South,Jacksonville,2020-01-19,Organic,1.2,3.395
+West,Spokane,2017-09-24,Conventional,1.83,144.891
+Northeast,Albany,2019-05-12,Conventional,1.42,124.334
+South,Raleigh/Greensboro,2024-10-20,Conventional,1.173874615,470.003
+South,Orlando,2019-07-21,Conventional,1.39,433.116
+Northeast,Albany,2018-10-28,Conventional,1.27,93.874
+Midwest,St. Louis,2024-03-17,Conventional,0.810246,300.657
+West,San Francisco,2023-10-22,Organic,1.939249838,54.657
+Northeast,Philadelphia,2021-02-14,Organic,1.451938614,34.457
+West,San Francisco,2019-11-03,Conventional,1.33,865.985
+South,Atlanta,2023-12-24,Organic,1.023804814,79.726
+West,Las Vegas,2019-10-27,Conventional,1.03,314.387
+Northeast,Northern New England,2022-02-13,Conventional,1.008736153,712.149
+Midwest,Wichita,2021-06-13,Conventional,0.921596445,121.161
+South,Miami/Ft. Lauderdale,2024-04-28,Organic,1.31775,91.323
+West,Seattle,2021-06-13,Organic,2.211069377,58.36
+Northeast,Hartford/Springfield,2018-10-21,Conventional,1.44,289.086
+West,Sacramento,2017-05-14,Organic,2.43,5.256
+West,Phoenix/Tucson,2022-07-31,Conventional,1.175458309,954.195
+South,Houston,2019-08-25,Organic,1.73,24.802
+Midwest,Detroit,2023-06-11,Organic,1.30626315,23.176
+South,New Orleans/Mobile,2019-06-30,Organic,1.14,5.034
+South,New Orleans/Mobile,2021-01-24,Conventional,0.741834244,359.121
+South,Charlotte,2017-04-09,Organic,2.02,8.815
+Northeast,New York,2023-12-24,Conventional,1.314353741,1865.465
+Northeast,Buffalo/Rochester,2019-06-30,Conventional,1.31,176.56
+Northeast,Harrisburg/Scranton,2023-11-19,Conventional,1.125116916,363.974
+Midwest,Cincinnati/Dayton,2022-02-13,Organic,1.991035507,17.716
+West,Boise,2022-06-12,Conventional,1.488656937,132.773
+West,San Diego,2023-06-25,Conventional,1.21105688,561.974
+Northeast,Boston,2024-08-11,Organic,1.574918637,40.914
+South,Tampa,2021-05-23,Conventional,1.120775632,658.235
+Midwest,Detroit,2024-04-14,Organic,1.45433,31.526
+South,Baltimore/Washington,2022-03-20,Organic,1.651463302,83.54
+South,South Carolina,2018-07-22,Organic,1.48,18.982
+Midwest,Columbus,2024-09-08,Organic,2.1438327,16.165
+South,Roanoke,2018-09-23,Organic,1.79,6.507
+Northeast,Hartford/Springfield,2017-11-05,Organic,2.17,12.29
+South,Louisville,2023-07-23,Conventional,1.086033514,139.503
+South,Miami/Ft. Lauderdale,2022-07-31,Organic,1.578716274,70.152
+West,Boise,2017-02-12,Organic,1.58,2.376
+South,Raleigh/Greensboro,2019-12-22,Organic,2.31,10.678
+South,Miami/Ft. Lauderdale,2024-02-25,Organic,1.271644862,78.311
+Midwest,Columbus,2022-06-19,Organic,1.958733545,13.809
+West,Phoenix/Tucson,2021-04-11,Conventional,0.966910036,1224.663
+South,Charlotte,2020-01-06,Conventional,1.04,336.573
+West,Phoenix/Tucson,2021-07-25,Organic,1.391571107,31.713
+Northeast,Syracuse,2024-11-17,Conventional,1.011898869,115.448
+Midwest,Detroit,2023-03-19,Organic,1.293870447,21.513
+West,Phoenix/Tucson,2017-07-30,Organic,1.9,10.626
+South,Miami/Ft. Lauderdale,2023-02-12,Conventional,0.869234442,1476.514
+South,Tampa,2019-06-16,Conventional,1.21,561.7
+West,Los Angeles,2023-07-30,Organic,1.654716451,171.026
+South,Roanoke,2020-03-08,Conventional,0.96,208.568
+Northeast,Harrisburg/Scranton,2024-06-30,Organic,1.434198941,30.804
+West,Phoenix/Tucson,2019-02-24,Organic,1.33,23.896
+West,West Tex/New Mexico,2024-09-08,Conventional,1.204383869,852.988
+South,Atlanta,2024-01-21,Organic,0.987128141,96.955
+South,Miami/Ft. Lauderdale,2018-05-13,Conventional,1.37,741.44
+West,Boise,2024-04-07,Organic,1.92044,6.705
+West,West Tex/New Mexico,2020-08-02,Conventional,0.82,1104.277
+South,Charlotte,2023-09-03,Organic,1.543286166,36.063
+Northeast,Northern New England,2024-05-12,Organic,1.56754,21.175
+South,Nashville,2022-10-02,Conventional,1.048610882,260.23
+Midwest,Indianapolis,2022-04-10,Conventional,1.166040524,306.003
+Northeast,New York,2022-10-16,Organic,1.757725528,111.499
+South,Dallas/Ft. Worth,2020-10-25,Conventional,0.72,1694.695
+South,Atlanta,2018-10-14,Conventional,0.97,689.992
+West,Spokane,2023-10-08,Organic,2.249748623,4.742
+South,Louisville,2022-06-19,Conventional,1.406104434,107.476
+Midwest,Columbus,2017-10-22,Conventional,1.55,111.492
+South,Richmond/Norfolk,2020-09-13,Organic,1.46,19.364
+South,Baltimore/Washington,2019-03-03,Conventional,1.34,895.248
+South,Miami/Ft. Lauderdale,2023-11-12,Conventional,1.004977128,1154.5
+South,Orlando,2019-11-24,Conventional,0.92,426.644
+Northeast,Philadelphia,2018-01-01,Organic,1.6,21.942
+West,Phoenix/Tucson,2019-05-12,Conventional,0.99,1273.298
+Northeast,Northern New England,2018-06-03,Organic,1.6,19.008
+Midwest,Detroit,2017-10-08,Conventional,2.19,86.754
+South,South Carolina,2020-06-14,Organic,1.5,33.131
+Northeast,Hartford/Springfield,2019-01-13,Conventional,1.32,393.302
+South,Charlotte,2023-10-22,Organic,1.421162224,35.666
+Midwest,Grand Rapids,2017-06-18,Conventional,1.29,245.294
+South,Jacksonville,2022-08-21,Organic,2.001558361,11.079
+West,Seattle,2019-12-15,Conventional,1.23,631.259
+South,South Carolina,2022-10-09,Conventional,1.084733595,506.125
+West,Las Vegas,2020-02-09,Organic,1.51,11.854
+South,New Orleans/Mobile,2017-01-22,Organic,1.31,4.029
+Northeast,Albany,2020-10-11,Organic,1.51,3.009
+Northeast,Buffalo/Rochester,2017-07-30,Conventional,1.32,146.07
+Northeast,Pittsburgh,2023-06-25,Conventional,1.028693226,190.445
+Northeast,Albany,2017-07-30,Conventional,1.61,83.6
+West,San Diego,2023-08-27,Organic,1.947843522,24.035
+South,Baltimore/Washington,2018-01-01,Conventional,1.15,849.488
+West,Denver,2023-04-16,Organic,1.156268208,63.817
+West,San Diego,2017-01-15,Conventional,0.87,580.191
+South,Houston,2018-01-01,Organic,1.36,25.591
+West,San Francisco,2022-08-14,Conventional,1.702363415,665.705
+Midwest,St. Louis,2019-07-21,Conventional,1.55,197.964
+South,Orlando,2018-03-18,Conventional,1.11,508.98
+Midwest,Columbus,2021-10-17,Conventional,1.066318649,248.517
+West,Seattle,2019-11-17,Conventional,1.29,611.12
+West,San Francisco,2021-04-18,Organic,1.85254781,84.594
+West,Los Angeles,2022-08-28,Organic,1.852328403,151.879
+Northeast,Northern New England,2020-06-21,Conventional,1.27,680.934
+Northeast,Buffalo/Rochester,2022-09-25,Conventional,1.149718855,184.826
+Midwest,Wichita,2022-06-26,Conventional,1.265400647,108.47
+Northeast,Syracuse,2018-11-04,Conventional,1.15,73.522
+Midwest,Wichita,2022-07-10,Conventional,1.343064921,102.691
+Midwest,Detroit,2023-05-21,Conventional,1.02750069,553.563
+Northeast,Syracuse,2021-05-09,Organic,1.706165267,6.799
+South,Baltimore/Washington,2017-05-07,Organic,2.13,21.754
+South,Roanoke,2022-08-07,Organic,1.581366472,12.628
+Northeast,Northern New England,2018-01-28,Conventional,1.44,441.977
+Northeast,Northern New England,2021-02-21,Organic,1.631879751,18.093
+Northeast,Pittsburgh,2018-07-08,Conventional,1.12,154.533
+Northeast,Boston,2017-09-03,Conventional,1.81,457.862
+South,Miami/Ft. Lauderdale,2020-06-07,Organic,1.26,17.335
+West,Phoenix/Tucson,2024-12-15,Organic,1.369111149,49.963
+South,Nashville,2017-04-02,Conventional,0.95,281.439
+Midwest,St. Louis,2020-03-22,Conventional,1.17,266.434
+Northeast,Hartford/Springfield,2020-06-21,Conventional,1.48,438.86
+South,Atlanta,2021-05-30,Organic,1.455170476,42.339
+South,Dallas/Ft. Worth,2018-02-18,Conventional,0.77,1421.971
+South,Orlando,2021-01-17,Organic,1.018530037,37.615
+West,West Tex/New Mexico,2023-02-05,Organic,1.203330825,26.422
+West,West Tex/New Mexico,2022-08-21,Organic,1.412469054,22.022
+Midwest,Columbus,2022-08-14,Conventional,1.311352226,229.444
+South,Roanoke,2018-08-12,Organic,1.54,7.244
+Midwest,Cincinnati/Dayton,2023-12-03,Conventional,1.105788145,293.78
+West,San Francisco,2021-08-15,Organic,2.035400794,71.079
+Northeast,Albany,2023-08-06,Organic,1.680626735,3.97
+Midwest,Detroit,2023-11-05,Organic,1.627978999,19.08
+Midwest,Chicago,2017-09-17,Conventional,1.79,184.435
+West,Denver,2019-03-24,Organic,1.19,40.954
+South,Houston,2021-07-11,Organic,1.563838162,24.738
+Northeast,Philadelphia,2021-04-04,Organic,1.635907345,32.363
+South,Louisville,2017-12-24,Conventional,1.18,80.025
+South,New Orleans/Mobile,2019-11-17,Organic,1.47,2.077
+West,Sacramento,2022-12-11,Organic,1.162750295,32.591
+South,Louisville,2021-05-09,Conventional,0.997717699,155.139
+South,Baltimore/Washington,2019-03-31,Organic,1.42,47.677
+South,Orlando,2017-01-29,Conventional,1.24,364.049
+South,Raleigh/Greensboro,2019-04-28,Organic,2.25,13.917
+South,Richmond/Norfolk,2024-04-14,Conventional,1.06925,406.797
+South,Atlanta,2022-08-07,Organic,1.650374681,41.813
+South,Atlanta,2022-05-29,Organic,2.073099653,38.4
+Northeast,Northern New England,2019-02-03,Organic,1.33,31.395
+South,Baltimore/Washington,2017-07-09,Organic,2.26,18.666
+South,Charlotte,2024-07-28,Conventional,1.197999571,436.888
+Midwest,Chicago,2018-09-16,Organic,1.8,54.983
+South,Jacksonville,2018-06-03,Conventional,1.09,273.961
+Midwest,St. Louis,2023-09-10,Conventional,0.929572178,253.759
+Midwest,Cincinnati/Dayton,2021-10-31,Organic,1.820189423,17.62
+Midwest,Detroit,2024-01-14,Conventional,1.002640939,591.077
+West,Seattle,2022-09-25,Organic,1.975098764,80.309
+West,Sacramento,2022-08-14,Organic,2.069887916,18.657
+South,Jacksonville,2024-11-03,Organic,1.624887188,14.149
+West,West Tex/New Mexico,2021-08-29,Conventional,0.881108978,886.8
+West,Seattle,2021-11-07,Organic,2.077774747,64.834
+West,Las Vegas,2023-02-19,Conventional,0.967083698,411.284
+West,Sacramento,2024-09-08,Organic,1.974399823,19.735
+South,Tampa,2019-08-18,Organic,0.91,10.163
+Northeast,Philadelphia,2022-10-16,Organic,1.656681102,29.817
+Northeast,Hartford/Springfield,2022-10-02,Organic,1.471600969,28.026
+South,Baltimore/Washington,2024-02-04,Conventional,1.054645335,1420.591
+South,New Orleans/Mobile,2018-07-01,Conventional,0.95,376.911
+Midwest,Detroit,2018-02-25,Organic,1.45,15.974
+Northeast,Hartford/Springfield,2019-10-13,Conventional,1.36,354.888
+Northeast,Buffalo/Rochester,2024-08-25,Organic,1.484628519,21.423
+South,Raleigh/Greensboro,2019-01-20,Conventional,0.9,488.41
+West,Portland,2020-08-02,Conventional,1,911.718
+Northeast,Syracuse,2017-09-17,Conventional,1.76,304.682
+Northeast,Northern New England,2019-01-07,Conventional,1.21,590.613
+South,Miami/Ft. Lauderdale,2021-02-28,Organic,1.049756165,71.213
+South,Roanoke,2023-12-24,Organic,1.455108659,12.421
+South,Tampa,2020-07-12,Organic,1.16,10.942
+South,Atlanta,2022-01-10,Conventional,1.123514911,866.686
+Midwest,St. Louis,2018-09-16,Organic,1.81,9.009
+South,Nashville,2024-11-03,Conventional,1.227570769,341.771
+West,Spokane,2017-02-26,Organic,1.64,3.682
+Northeast,Albany,2023-09-10,Organic,1.396269563,5.375
+West,Portland,2021-03-07,Conventional,1.102188713,712.958
+West,San Diego,2024-03-03,Conventional,1.16143,587.492
+South,Raleigh/Greensboro,2017-09-03,Conventional,1.54,263.533
+Midwest,Indianapolis,2018-01-01,Organic,1.45,9.438
+West,Portland,2018-06-10,Conventional,1.05,706.448
+Midwest,Wichita,2021-12-19,Conventional,0.996716646,81.821
+South,Baltimore/Washington,2021-08-01,Conventional,1.156822642,1094.415
+West,Portland,2018-08-12,Organic,1.69,44.941
+South,Atlanta,2022-03-27,Organic,1.732557512,48.467
+South,Tampa,2019-06-30,Organic,0.9,5.459
+West,San Diego,2022-12-25,Conventional,1.208370656,498.918
+South,Roanoke,2024-05-12,Organic,1.53747,20.156
+South,Nashville,2018-07-22,Conventional,0.93,272.527
+Midwest,Grand Rapids,2017-04-23,Organic,2.13,2.102
+South,New Orleans/Mobile,2024-05-19,Organic,1.36489,17.66
+South,New Orleans/Mobile,2022-12-11,Organic,1.248531007,4.97
+Northeast,Boston,2023-06-11,Organic,1.504386392,40.561
+South,New Orleans/Mobile,2019-08-11,Conventional,1.04,329.829
+Midwest,Wichita,2022-07-31,Organic,1.498910525,6.213
+Northeast,Harrisburg/Scranton,2018-01-14,Conventional,1.25,277.617
+Midwest,Indianapolis,2018-05-13,Conventional,0.96,247.913
+South,Charlotte,2022-01-10,Conventional,1.110561935,453.179
+South,Jacksonville,2017-08-20,Organic,2.48,2.856
+Northeast,New York,2019-08-11,Organic,2.24,69.524
+West,Phoenix/Tucson,2020-04-05,Conventional,0.93,1365.531
+South,Nashville,2022-04-10,Organic,1.864558995,25.642
+West,West Tex/New Mexico,2021-11-07,Organic,1.1945521,38.896
+Midwest,Columbus,2021-06-06,Organic,1.642039177,16.505
+South,Houston,2023-05-21,Conventional,0.830284586,979.48
+West,San Francisco,2023-05-21,Conventional,1.11873662,891.342
+South,Houston,2023-02-26,Organic,0.937177725,30.611
+Northeast,Pittsburgh,2017-09-03,Organic,1.5,8.524
+South,Dallas/Ft. Worth,2022-07-03,Organic,1.7616844,49.354
+West,San Francisco,2017-02-19,Conventional,1.17,863.689
+South,New Orleans/Mobile,2023-07-23,Organic,1.359431857,12.507
+West,Sacramento,2017-02-26,Conventional,1.08,499.262
+West,Las Vegas,2023-03-05,Conventional,0.851640719,450.222
+West,Boise,2018-06-24,Conventional,1.16,111.774
+South,Atlanta,2021-11-21,Organic,1.665802014,38.712
+South,Richmond/Norfolk,2021-04-25,Organic,1.164645499,39.604
+West,Portland,2018-10-28,Conventional,1.03,640.323
+South,Orlando,2022-04-17,Organic,1.261020574,102.506
+South,Baltimore/Washington,2018-07-15,Organic,1.51,40.188
+West,Spokane,2021-12-19,Conventional,1.324500693,65.798
+West,Seattle,2019-01-07,Conventional,1.37,591.491
+West,Spokane,2022-11-06,Organic,1.927918504,4.601
+Midwest,Wichita,2021-10-17,Conventional,1.008167741,87.327
+West,Sacramento,2018-08-19,Organic,1.81,11.005
+Midwest,Cincinnati/Dayton,2019-01-20,Conventional,0.68,488.776
+West,Sacramento,2020-04-26,Organic,1.9,16.436
+Midwest,Cincinnati/Dayton,2023-09-10,Conventional,1.283219544,282.536
+Northeast,Northern New England,2021-05-09,Conventional,0.985083553,726.526
+South,Louisville,2023-12-31,Conventional,1.167514616,140.731
+Midwest,Grand Rapids,2018-09-30,Conventional,1.41,160.728
+West,Boise,2018-08-05,Conventional,1.28,93.289
+West,Las Vegas,2024-12-22,Conventional,1.264873624,347.275
+Northeast,Syracuse,2019-11-17,Organic,1.2,3.759
+South,New Orleans/Mobile,2023-08-27,Organic,1.42049989,13.595
+South,Charlotte,2022-10-23,Conventional,1.149265245,361.619
+Midwest,St. Louis,2019-12-08,Conventional,1.07,162.223
+Midwest,Columbus,2017-03-05,Conventional,1.14,166.17
+Northeast,Albany,2020-07-05,Conventional,1.41,159.71
+South,New Orleans/Mobile,2020-01-06,Organic,1.35,3.135
+West,Portland,2021-04-04,Organic,2.026553853,52.635
+South,Houston,2018-06-17,Organic,1.39,44.902
+Midwest,Indianapolis,2017-04-09,Organic,1.06,7.729
+South,Raleigh/Greensboro,2020-08-23,Organic,1.55,24.43
+Midwest,Indianapolis,2022-08-14,Organic,1.736956504,9.815
+South,Richmond/Norfolk,2020-03-01,Organic,1.49,14.21
+South,Raleigh/Greensboro,2019-09-01,Conventional,1.28,385.793
+Midwest,Detroit,2020-04-26,Organic,1.61,26.275
+Northeast,Northern New England,2022-03-06,Conventional,1.377134727,458.59
+West,Las Vegas,2020-07-26,Organic,1.39,18.979
+South,Houston,2019-08-18,Conventional,1.08,1158.294
+South,Tampa,2018-03-04,Organic,1.51,9.852
+South,Jacksonville,2017-06-18,Organic,2.23,4.178
+West,Seattle,2018-08-12,Conventional,1.48,577.865
+Northeast,Syracuse,2017-06-11,Conventional,1.66,58.543
+Northeast,New York,2018-07-01,Organic,1.94,79.751
+Midwest,Columbus,2023-02-26,Conventional,0.933669158,271.433
+South,Dallas/Ft. Worth,2017-07-16,Conventional,0.98,1219.893
+South,Jacksonville,2019-04-21,Organic,1.47,0.638
+West,Phoenix/Tucson,2019-11-17,Organic,1.97,14.412
+Northeast,Pittsburgh,2018-09-23,Organic,1.48,13.103
+Midwest,Cincinnati/Dayton,2020-07-12,Organic,1.59,23.452
+Northeast,Buffalo/Rochester,2024-05-12,Organic,1.32065,28.806
+Midwest,Grand Rapids,2019-06-30,Organic,1.7,7.853
+West,Los Angeles,2021-05-30,Organic,1.651656057,189.652
+South,Louisville,2019-12-22,Conventional,1.08,90.054
+South,Orlando,2023-01-15,Conventional,0.86808127,753.948
+West,Phoenix/Tucson,2018-11-25,Organic,1.57,23.599
+West,Denver,2023-03-19,Organic,1.145662125,50.15
+West,San Diego,2024-08-11,Organic,1.993367782,27.872
+Midwest,Cincinnati/Dayton,2019-11-24,Organic,0.93,24.715
+South,Tampa,2017-08-06,Conventional,1.46,312.639
+Midwest,Columbus,2020-10-18,Conventional,0.93,234.436
+South,Roanoke,2024-12-15,Organic,1.651191049,16.531
+Midwest,Grand Rapids,2021-10-10,Organic,0.936465389,21.973
+Northeast,Hartford/Springfield,2020-08-02,Organic,2.03,12.834
+South,Raleigh/Greensboro,2024-05-26,Organic,1.37125182,54.154
+Northeast,Syracuse,2022-10-02,Organic,1.659983148,4.08
+Midwest,Detroit,2021-12-26,Organic,1.364095534,28.187
+West,Phoenix/Tucson,2023-01-22,Conventional,0.831097229,1331.536
+Northeast,Northern New England,2018-05-27,Organic,1.55,28.225
+West,Boise,2023-10-22,Conventional,1.244536144,100.937
+West,Las Vegas,2020-06-21,Conventional,0.97,411.324
+Midwest,Grand Rapids,2024-02-25,Organic,1.114266088,10.433
+Northeast,Northern New England,2020-05-10,Conventional,1.09,1012.472
+West,Seattle,2017-07-16,Conventional,1.68,473.362
+Midwest,Chicago,2020-01-12,Conventional,1.36,667.265
+South,Houston,2018-11-25,Organic,1.53,20.218
+West,Seattle,2017-12-10,Organic,1.07,144.863
+Northeast,Harrisburg/Scranton,2024-11-17,Conventional,1.1225475600000001,451.232
+South,Miami/Ft. Lauderdale,2017-06-18,Organic,1.88,6.481
+South,Miami/Ft. Lauderdale,2023-04-16,Conventional,0.993460052,1439.835
+South,Tampa,2018-09-09,Organic,1.33,16.617
+South,Richmond/Norfolk,2019-05-12,Organic,1.33,18.804
+Northeast,Northern New England,2021-11-07,Organic,1.989116741,13.629
+West,Las Vegas,2020-08-09,Conventional,0.94,481.316
+Northeast,Harrisburg/Scranton,2017-07-30,Organic,1.59,14.097
+South,Atlanta,2021-07-18,Organic,1.445293539,41.85
+Midwest,Cincinnati/Dayton,2022-04-03,Conventional,1.171586297,362.831
+Midwest,Columbus,2021-11-28,Organic,1.767954764,9.863
+West,San Diego,2019-02-17,Organic,1.79,18.278
+Midwest,Wichita,2021-12-26,Organic,1.463085282,5.217
+Midwest,Wichita,2024-06-02,Organic,1.445959373,18.613
+Northeast,Syracuse,2023-10-01,Conventional,1.050731334,81.197
+South,Roanoke,2022-01-16,Organic,1.290546158,16.594
+Midwest,Grand Rapids,2019-01-13,Conventional,1.53,162.141
+South,Baltimore/Washington,2024-07-07,Conventional,1.320791068,1172.934
+South,Roanoke,2017-06-04,Conventional,1.23,151.098
+West,San Diego,2023-01-09,Conventional,1.148418269,564.935
+South,Tampa,2018-06-24,Organic,1.27,8.441
+South,New Orleans/Mobile,2018-09-16,Conventional,1.11,300.155
+South,Tampa,2024-08-18,Organic,1.762039346,23.085
+South,Miami/Ft. Lauderdale,2024-06-09,Organic,1.336605273,92.514
+West,Seattle,2022-12-11,Conventional,1.320176364,489.861
+West,Boise,2019-02-03,Organic,1.65,3.33
+West,Seattle,2021-10-24,Organic,2.220212179,51.323
+Northeast,Albany,2022-11-20,Organic,1.84031635,3.356
+South,South Carolina,2024-01-28,Conventional,0.944811878,674.147
+South,Baltimore/Washington,2024-10-27,Conventional,1.200753596,1174.184
+South,Nashville,2019-07-14,Organic,2.15,12.798
+South,Baltimore/Washington,2024-09-08,Organic,1.482260499,112.138
+South,Jacksonville,2023-07-16,Organic,1.641674892,13.429
+South,Louisville,2024-02-11,Conventional,0.853469839,202.14
+South,South Carolina,2018-06-24,Conventional,1.1,505.631
+Northeast,Pittsburgh,2021-03-07,Organic,1.255118754,18.29
+South,Orlando,2020-01-12,Organic,1.13,9.915
+South,Louisville,2017-09-24,Conventional,1.93,408.852
+West,Denver,2022-05-22,Organic,2.077449122,54.473
+South,Atlanta,2017-12-03,Conventional,1.07,504.933
+West,Las Vegas,2023-03-12,Conventional,0.897426251,450.393
+Northeast,Pittsburgh,2020-03-22,Conventional,1.35,144.917
+West,Spokane,2023-11-19,Organic,2.195060393,3.875
+South,Richmond/Norfolk,2019-05-05,Conventional,1.15,397.198
+South,Nashville,2021-12-12,Conventional,1.033850117,288.681
+Northeast,Pittsburgh,2023-02-05,Conventional,1.049399465,215.459
+Northeast,Northern New England,2023-08-20,Conventional,1.125863815,454.43
+South,Jacksonville,2021-02-28,Conventional,0.869312787,294.646
+West,West Tex/New Mexico,2023-01-09,Organic,1.137258421,35.349
+Midwest,Chicago,2024-11-03,Conventional,0.923916721,1669.366
+Northeast,Syracuse,2024-09-15,Organic,1.438206322,9.954
+West,San Diego,2019-12-01,Conventional,1.12,461.97
+West,Seattle,2022-05-22,Organic,2.259517428,57.239
+West,San Diego,2024-03-24,Conventional,1.164347,585.693
+Midwest,Columbus,2021-04-25,Organic,1.624628854,17.829
+Northeast,Boston,2018-03-18,Organic,1.83,34.81
+South,South Carolina,2021-07-18,Organic,1.458704018,33.7
+South,Nashville,2017-07-30,Conventional,1.14,217.775
+South,Roanoke,2021-04-04,Organic,1.175370816,19.01
+West,Spokane,2018-10-07,Organic,2.04,5.69
+Midwest,Columbus,2022-09-25,Conventional,1.06597087,227.046
+Northeast,Northern New England,2021-10-03,Organic,2.045822285,13.532
+Midwest,Chicago,2023-09-17,Conventional,0.816836164,1468.63
+South,Jacksonville,2020-07-26,Organic,1.45,4.676
+Midwest,Chicago,2020-07-26,Conventional,1.29,997.279
+Northeast,Hartford/Springfield,2020-08-09,Organic,2.05,12.85
+West,Seattle,2023-08-06,Conventional,1.67584362,446.495
+Midwest,St. Louis,2017-10-01,Organic,1.41,6.359
+South,Atlanta,2017-03-05,Organic,0.62,32.293
+Midwest,Chicago,2019-12-29,Conventional,0.9,765.693
+Midwest,Grand Rapids,2019-07-21,Organic,1.7,6.914
+West,Boise,2017-06-25,Organic,2.09,2.374
+South,Raleigh/Greensboro,2019-09-08,Conventional,1.26,396.144
+South,Raleigh/Greensboro,2019-08-18,Organic,2.64,15.409
+West,Portland,2024-08-25,Organic,2.55959275,34.764
+Northeast,Boston,2024-02-11,Conventional,1.138729006,818.274
+Northeast,Northern New England,2020-01-12,Conventional,1.14,568.596
+South,Charlotte,2023-06-18,Organic,1.295482313,36.104
+Northeast,Buffalo/Rochester,2021-11-14,Organic,1.596874119,15.277
+Northeast,Hartford/Springfield,2023-01-01,Organic,1.702719025,18.697
+West,Denver,2021-06-20,Conventional,1.088059912,1017.956
+Northeast,New York,2019-09-15,Organic,1.79,91.817
+West,Los Angeles,2019-01-07,Organic,1.56,129.839
+Northeast,Syracuse,2019-04-14,Organic,1.63,4.367
+West,Sacramento,2022-10-30,Organic,1.860783914,14.892
+Northeast,New York,2020-04-19,Organic,1.84,121.339
+South,Tampa,2018-06-03,Organic,1.44,10.055
+Northeast,Syracuse,2019-09-22,Organic,1.41,3.619
+Northeast,Hartford/Springfield,2024-11-24,Conventional,1.076716837,400.878
+South,Louisville,2023-08-27,Organic,1.666185945,11.659
+Northeast,Philadelphia,2017-11-05,Conventional,1.4,384.629
+Midwest,Indianapolis,2023-09-24,Conventional,0.980576538,254.865
+Midwest,St. Louis,2022-05-15,Conventional,1.229765288,250.421
+Northeast,Pittsburgh,2018-04-22,Organic,1.35,18.224
+Northeast,Buffalo/Rochester,2022-05-29,Organic,1.666479949,19.111
+West,Portland,2018-04-08,Conventional,0.81,1121.568
+West,Los Angeles,2021-12-26,Organic,1.728184164,170.201
+South,Jacksonville,2021-04-18,Organic,1.407185614,17.103
+Midwest,Cincinnati/Dayton,2019-07-14,Organic,2.22,23.642
+West,Seattle,2022-03-06,Conventional,1.718091059,505.753
+South,Miami/Ft. Lauderdale,2017-01-02,Organic,1.21,5.254
+Northeast,Philadelphia,2018-03-11,Conventional,1.32,486.493
+West,Sacramento,2021-12-12,Conventional,1.592768903,347.54
+South,Jacksonville,2022-04-17,Conventional,1.428001587,213.202
+South,Baltimore/Washington,2022-03-27,Organic,1.744014463,72.725
+South,Roanoke,2018-11-11,Conventional,0.87,190.317
+South,Houston,2023-10-01,Organic,1.182595769,27.614
+Midwest,Cincinnati/Dayton,2018-06-24,Conventional,0.89,369.837
+West,Sacramento,2023-12-03,Conventional,1.001453101,481.332
+West,West Tex/New Mexico,2023-05-07,Organic,1.081186927,36.805
+South,Raleigh/Greensboro,2022-06-12,Organic,1.775325135,29.315
+South,Nashville,2021-07-25,Conventional,0.922352227,303.155
+Midwest,Detroit,2022-07-24,Conventional,1.278432071,435.462
+West,Los Angeles,2020-08-23,Organic,1.65,159.342
+Northeast,Syracuse,2024-02-25,Organic,1.128743971,11.261
+West,San Diego,2022-10-02,Conventional,1.296899939,528.009
+South,Orlando,2018-08-19,Conventional,1.22,496.164
+Northeast,Syracuse,2024-02-18,Organic,1.095992619,12.386
+Northeast,Harrisburg/Scranton,2022-03-06,Conventional,1.360057657,386.617
+West,Las Vegas,2022-07-10,Organic,1.850975189,15.021
+Northeast,Albany,2022-07-24,Conventional,1.378322336,118.793
+West,Portland,2022-08-21,Organic,2.020296324,44.982
+Midwest,Wichita,2022-03-13,Organic,1.557772635,4.685
+West,Phoenix/Tucson,2019-09-15,Organic,1.95,17.311
+South,Miami/Ft. Lauderdale,2021-05-30,Organic,1.33103093,72.977
+Northeast,Harrisburg/Scranton,2017-01-02,Conventional,1.35,235.431
+West,San Francisco,2022-07-24,Conventional,1.553767465,715.177
+Midwest,Cincinnati/Dayton,2021-05-09,Organic,1.759381754,21.076
+South,Orlando,2024-06-02,Conventional,1.192045949,756.015
+Northeast,New York,2019-11-10,Organic,1.72,71.86
+Northeast,Albany,2020-03-29,Conventional,1.08,161.995
+South,Tampa,2023-12-10,Organic,1.290015236,32.829
+West,Seattle,2020-01-12,Organic,1.81,41.95
+Northeast,Pittsburgh,2020-07-19,Conventional,0.9,204.793
+West,Spokane,2017-10-01,Conventional,1.83,129.577
+West,Portland,2024-01-28,Conventional,1.141392561,624.782
+West,Phoenix/Tucson,2017-11-19,Conventional,0.6,1427.367
+South,Orlando,2017-07-09,Conventional,1.4,343.077
+West,Portland,2023-10-15,Organic,2.147493558,31.158
+West,Phoenix/Tucson,2024-06-23,Organic,1.370245437,58.599
+South,Richmond/Norfolk,2021-04-18,Organic,1.123669829,43.402
+South,South Carolina,2019-03-17,Conventional,0.94,580.639
+West,Denver,2023-06-04,Conventional,1.122615904,999.929
+West,Denver,2017-04-02,Organic,0.84,68.628
+South,Raleigh/Greensboro,2022-02-27,Conventional,1.258578084,469.444
+Northeast,Hartford/Springfield,2020-01-26,Conventional,1.37,348.109
+Northeast,Buffalo/Rochester,2021-06-06,Conventional,1.143005294,253.923
+West,Spokane,2023-05-14,Conventional,1.191760905,78.913
+Midwest,Cincinnati/Dayton,2017-12-24,Conventional,1.36,159.239
+Midwest,Chicago,2021-01-17,Conventional,0.956241521,1497.027
+Northeast,Northern New England,2023-01-09,Organic,1.851939312,15.781
+Northeast,Syracuse,2020-02-16,Organic,1.45,3.825
+West,Boise,2024-06-23,Conventional,1.558554288,111.132
+Northeast,Northern New England,2023-08-27,Organic,1.735002351,17.818
+Northeast,Pittsburgh,2019-05-19,Organic,1.56,10.977
+West,Boise,2021-09-19,Organic,1.97117329,7.9
+South,Atlanta,2017-10-29,Conventional,1.28,493.922
+West,Boise,2022-02-27,Conventional,1.427658845,131.258
+Northeast,Hartford/Springfield,2022-02-06,Organic,1.635404862,28.945
+West,San Diego,2019-07-14,Conventional,1.77,461.965
+Northeast,Albany,2018-08-19,Conventional,1.47,101.389
+West,Denver,2017-11-12,Organic,1.99,16.86
+South,Roanoke,2019-11-10,Conventional,1.16,154.019
+Midwest,Detroit,2023-12-31,Organic,1.472470563,19.124
+Northeast,Northern New England,2022-05-29,Conventional,1.565370295,489.626
+Northeast,Hartford/Springfield,2021-06-27,Organic,1.743479358,27.239
+West,Sacramento,2023-04-30,Organic,1.10115486,50.888
+Midwest,Detroit,2022-12-25,Organic,1.314279787,24.729
+South,Nashville,2023-08-13,Conventional,1.051467938,325.197
+West,Los Angeles,2017-07-30,Organic,2.1,67.791
+South,Louisville,2018-05-27,Conventional,1.09,124.448
+Northeast,Pittsburgh,2024-02-11,Conventional,0.82958572,293.964
+West,Portland,2018-07-08,Organic,1.65,44.194
+Northeast,Buffalo/Rochester,2024-03-03,Conventional,0.917499,284.12
+Northeast,Hartford/Springfield,2019-05-12,Conventional,1.56,414.028
+South,Houston,2017-06-25,Conventional,0.82,1352.319
+West,Las Vegas,2024-11-03,Conventional,1.323017324,373.25
+Northeast,Syracuse,2017-06-04,Conventional,1.65,64.256
+Midwest,Indianapolis,2024-12-22,Organic,1.76318159,11.798
+South,South Carolina,2023-03-19,Conventional,0.91901659,632.931
+Northeast,Albany,2017-11-26,Organic,1.57,2.842
+South,Richmond/Norfolk,2019-02-03,Organic,1.16,19.682
+South,Houston,2018-07-15,Organic,1.31,32.34
+West,West Tex/New Mexico,2019-04-07,Conventional,0.82,1101.707
+Northeast,Albany,2018-01-14,Conventional,1.42,95.247
+West,San Diego,2017-12-03,Organic,1.79,13.477
+South,Richmond/Norfolk,2019-07-21,Organic,1.46,19.797
+Northeast,Albany,2019-09-29,Organic,1.49,2.881
+Northeast,Harrisburg/Scranton,2017-05-28,Conventional,1.56,275.489
+West,Las Vegas,2017-07-30,Conventional,1.29,288.906
+Midwest,Cincinnati/Dayton,2017-04-09,Organic,0.86,24.185
+South,New Orleans/Mobile,2019-05-26,Organic,1.05,9.079
+Northeast,Boston,2018-03-04,Organic,1.92,23.891
+Midwest,Wichita,2024-12-01,Conventional,1.123533782,90.181
+Midwest,Columbus,2024-12-15,Organic,1.882787161,14.085
+South,Richmond/Norfolk,2021-05-30,Conventional,1.098912909,382.58
+South,Orlando,2019-05-26,Conventional,1.29,489.171
+South,Orlando,2020-01-06,Conventional,0.87,705.585
+South,Jacksonville,2021-12-05,Conventional,1.061693965,194.535
+Midwest,St. Louis,2023-12-10,Organic,1.259026609,12.432
+South,Jacksonville,2022-10-16,Organic,0.906422245,25.649
+West,Spokane,2018-02-11,Organic,1.66,4.1
+South,New Orleans/Mobile,2017-08-27,Organic,1.5,7.633
+West,Portland,2024-07-28,Organic,2.480182069,38.236
+South,Charlotte,2019-03-24,Organic,1.38,17.512
+Northeast,Syracuse,2018-09-02,Conventional,1.31,79.125
+Northeast,New York,2020-02-23,Organic,1.73,64.225
+Northeast,New York,2022-05-01,Organic,1.798895291,132.318
+West,Portland,2017-11-05,Organic,2.45,17.024
+South,Dallas/Ft. Worth,2017-03-26,Conventional,0.91,1282.797
+South,Atlanta,2023-01-22,Organic,1.042442063,80.96
+West,Seattle,2018-04-22,Organic,1.3,138.911
+Northeast,Syracuse,2023-10-08,Organic,1.35747145,7.602
+South,Nashville,2023-12-03,Organic,1.509308361,23.718
+West,West Tex/New Mexico,2019-01-13,Organic,1.59,19.215
+West,Seattle,2017-04-16,Conventional,1.09,682.387
+South,Charlotte,2019-12-22,Organic,1.97,9.558
+Northeast,Hartford/Springfield,2020-02-16,Organic,2.07,10.349
+West,West Tex/New Mexico,2019-10-13,Conventional,0.89,931.558
+West,Spokane,2020-02-02,Organic,1.56,5.513
+Midwest,Columbus,2023-04-02,Conventional,0.943466672,292.194
+West,Portland,2023-12-24,Organic,2.098489861,33.569
+Northeast,Buffalo/Rochester,2022-10-30,Organic,1.711967849,13.101
+Midwest,Cincinnati/Dayton,2018-03-25,Conventional,1.08,277.268
+South,Richmond/Norfolk,2023-01-01,Conventional,0.970710052,331.148
+West,San Francisco,2017-07-23,Organic,2.44,16.832
+South,Louisville,2018-07-01,Conventional,1.02,137.763
+South,Orlando,2018-09-09,Conventional,1.29,417.618
+Northeast,Albany,2023-09-24,Organic,1.450616448,5.18
+Northeast,Albany,2020-05-03,Conventional,1.24,167.927
+South,Miami/Ft. Lauderdale,2021-08-08,Conventional,1.109531908,1060.982
+West,Spokane,2024-03-24,Organic,1.756088,5.934
+West,Sacramento,2022-12-18,Conventional,1.333387778,378.8
+West,Boise,2022-01-02,Conventional,1.145688273,125.544
+South,Tampa,2017-05-14,Organic,1.96,4.947
+South,Atlanta,2020-06-28,Conventional,0.95,880.417
+Northeast,Northern New England,2018-01-14,Organic,1.46,22.638
+Midwest,Chicago,2022-03-06,Organic,1.656547261,57.279
+Midwest,Indianapolis,2018-06-03,Conventional,1.17,210.348
+South,Charlotte,2022-09-25,Conventional,1.16955992,335.024
+Northeast,Buffalo/Rochester,2022-05-15,Organic,1.660638947,18.735
+South,Baltimore/Washington,2017-09-17,Organic,2.65,1.492
+South,Houston,2023-07-23,Organic,1.243706086,27.37
+Northeast,Syracuse,2024-09-15,Conventional,1.106278863,108.934
+Midwest,St. Louis,2020-05-31,Conventional,0.96,319.975
+Midwest,St. Louis,2021-01-11,Conventional,0.734030833,332.564
+South,Baltimore/Washington,2017-04-02,Organic,1.97,23.195
+West,Denver,2017-10-01,Conventional,1.88,215.841
+West,San Diego,2018-09-23,Conventional,1.31,431.897
+West,West Tex/New Mexico,2019-07-14,Conventional,1.27,772.069
+West,San Diego,2024-09-01,Conventional,1.208812942,637.652
+South,Dallas/Ft. Worth,2023-01-01,Organic,1.202374468,43.803
+Midwest,Columbus,2019-04-07,Organic,1.6,6.029
+West,Portland,2017-07-23,Organic,2.35,28.249
+South,Roanoke,2021-10-03,Conventional,1.02010329,190.961
+South,Dallas/Ft. Worth,2020-06-21,Organic,1.27,60.231
+West,Seattle,2024-07-21,Organic,2.891291473,79.812
+Midwest,Grand Rapids,2022-05-08,Organic,1.354715142,17.644
+Midwest,Chicago,2018-10-21,Organic,1.72,52.336
+Northeast,Boston,2020-03-01,Conventional,1.4,734.101
+Northeast,Buffalo/Rochester,2018-02-11,Conventional,1.27,151.058
+Midwest,Columbus,2022-02-27,Conventional,1.141338743,289.868
+West,West Tex/New Mexico,2019-06-02,Organic,1.63,15.215
+South,Atlanta,2024-07-14,Conventional,1.363541738,777.313
+West,Boise,2023-02-05,Organic,1.460761884,8.496
+Midwest,Indianapolis,2018-06-17,Conventional,1.16,216.741
+Northeast,Boston,2022-08-14,Conventional,1.455850348,599.486
+South,Jacksonville,2024-08-25,Conventional,1.174275453,260.942
+Northeast,Harrisburg/Scranton,2023-03-19,Conventional,1.019457711,483.565
+South,New Orleans/Mobile,2024-07-07,Organic,1.386385845,12.084
+West,San Francisco,2021-01-31,Organic,1.908470473,77.248
+Northeast,Northern New England,2018-04-08,Conventional,1.09,703.302
+Northeast,Syracuse,2020-10-11,Organic,1.43,5.226
+South,Richmond/Norfolk,2020-04-05,Conventional,1.01,430.214
+Midwest,Chicago,2018-07-15,Conventional,1.22,931.628
+Northeast,Philadelphia,2024-04-21,Organic,1.15198,81.839
+Midwest,Chicago,2021-02-14,Organic,1.231316412,100.744
+South,Jacksonville,2020-06-14,Organic,1.27,4.834
+Northeast,Hartford/Springfield,2022-10-09,Organic,1.646269603,24.017
+Northeast,Syracuse,2021-04-18,Organic,1.612826618,6.819
+South,South Carolina,2020-09-13,Organic,1.48,18.779
+South,Charlotte,2023-07-30,Conventional,1.267974037,396.552
+South,Houston,2019-09-08,Organic,1.67,24.415
+West,Phoenix/Tucson,2023-09-03,Organic,1.499732963,36.964
+Northeast,Hartford/Springfield,2022-02-13,Organic,1.607079736,25.777
+Northeast,Boston,2024-07-07,Conventional,1.397643059,667.661
+South,Dallas/Ft. Worth,2017-07-09,Conventional,0.84,1514.5
+South,Atlanta,2023-02-26,Conventional,0.913469129,865.946
+Northeast,Pittsburgh,2023-12-17,Organic,1.20340919,10.797
+South,Richmond/Norfolk,2023-07-30,Conventional,1.187353373,293.671
+West,Boise,2017-09-24,Organic,1.56,31.133
+West,Sacramento,2018-09-16,Conventional,1.51,403.569
+West,Spokane,2021-10-17,Conventional,1.387058722,69.196
+South,Orlando,2022-06-05,Conventional,1.463547129,514.424
+Northeast,Philadelphia,2021-04-04,Conventional,1.047899111,826.335
+Northeast,Syracuse,2017-10-29,Organic,1.35,7.074
+West,Spokane,2021-11-28,Organic,2.07278454,3.897
+Midwest,Indianapolis,2017-06-11,Conventional,0.98,224.874
+South,Nashville,2022-09-04,Organic,1.613832113,19.631
+Northeast,Hartford/Springfield,2018-08-26,Conventional,1.42,345.296
+South,Roanoke,2019-06-09,Conventional,1.02,211.272
+Midwest,Wichita,2021-07-11,Conventional,0.884746251,122.678
+South,Richmond/Norfolk,2018-09-09,Organic,1.46,18.662
+Midwest,Chicago,2021-07-04,Conventional,1.242235122,1150.76
+South,Atlanta,2018-04-01,Organic,1.6,20.105
+Midwest,Wichita,2023-12-03,Organic,1.172268602,3.571
+Midwest,Indianapolis,2023-02-26,Organic,1.403175118,13.581
+South,Tampa,2020-07-19,Organic,1.9,6.002
+South,Jacksonville,2021-04-25,Conventional,1.149124358,265.681
+South,South Carolina,2022-01-23,Organic,1.374475051,41.901
+West,San Diego,2018-07-29,Conventional,0.99,584.4
+West,Boise,2018-04-01,Organic,1.82,2.246
+West,Spokane,2024-03-24,Conventional,1.282229,79.797
+Northeast,Boston,2020-03-15,Conventional,1.49,822.21
+South,Dallas/Ft. Worth,2020-06-21,Conventional,0.79,1966.964
+South,Jacksonville,2021-09-26,Conventional,1.214113859,221.456
+West,San Francisco,2019-09-08,Conventional,1.65,901.992
+West,Las Vegas,2021-11-07,Conventional,0.971654043,446.34
+South,Jacksonville,2024-07-07,Organic,1.869549488,11.784
+Northeast,Hartford/Springfield,2017-07-09,Organic,2.67,11.843
+South,Dallas/Ft. Worth,2023-07-16,Conventional,1.004533086,1386.396
+Northeast,Harrisburg/Scranton,2017-02-05,Organic,1.83,8.211
+West,Denver,2023-11-19,Conventional,1.285579677,744.638
+West,Denver,2021-10-31,Conventional,1.237935918,759.494
+Midwest,Chicago,2018-12-02,Conventional,1.68,469.586
+Northeast,Syracuse,2019-05-05,Conventional,1.39,95.584
+Midwest,Columbus,2017-05-21,Organic,1.44,9.531
+West,Spokane,2021-01-31,Organic,1.670978638,8.907
+South,Richmond/Norfolk,2022-01-10,Conventional,0.97831437,394.96
+South,Louisville,2023-01-09,Organic,1.59631089,8.195
+South,Baltimore/Washington,2024-02-04,Organic,1.267925016,106.24
+West,Denver,2024-01-21,Organic,1.201836251,60.448
+South,Houston,2019-09-22,Organic,1.71,19.038
+South,Richmond/Norfolk,2020-01-06,Conventional,0.83,364.863
+Northeast,Boston,2021-05-09,Organic,1.798708824,44.788
+West,Sacramento,2022-06-05,Organic,1.992204249,27.812
+West,Denver,2022-06-19,Organic,2.034945153,50.3
+South,Nashville,2021-07-25,Organic,1.508041146,22.571
+South,Raleigh/Greensboro,2021-08-01,Conventional,1.001099563,511.785
+West,Portland,2024-08-11,Organic,2.405042277,40.159
+Midwest,Grand Rapids,2021-02-28,Conventional,0.863599453,287.819
+West,Las Vegas,2024-09-15,Organic,1.755656122,24.541
+West,Denver,2024-11-24,Organic,1.677193368,51.134
+West,Seattle,2017-01-15,Organic,1.25,48.314
+Northeast,Boston,2023-11-12,Organic,1.605843438,32.959
+Midwest,Grand Rapids,2022-02-13,Conventional,0.967526814,325.627
+West,Denver,2024-09-08,Conventional,1.492781341,908.321
+West,San Francisco,2022-01-10,Conventional,1.234038057,899.5
+Northeast,Philadelphia,2023-04-16,Organic,1.314917843,41.188
+Northeast,New York,2024-12-01,Conventional,1.366999511,1833.707
+Northeast,Philadelphia,2021-06-06,Organic,1.674787911,32.211
+Northeast,Harrisburg/Scranton,2021-08-08,Organic,1.468235447,18.135
+West,Seattle,2017-08-20,Organic,2.87,24.671
+South,South Carolina,2018-03-11,Conventional,1.13,482.066
+South,Tampa,2017-03-05,Organic,2.61,3.706
+South,South Carolina,2018-03-04,Organic,1.44,16.469
+West,Spokane,2021-06-13,Organic,2.029731208,5.177
+South,South Carolina,2020-08-30,Conventional,0.95,590.671
+South,Charlotte,2023-07-30,Organic,1.409479405,38.262
+West,Denver,2019-02-03,Organic,1.44,27.803
+South,Miami/Ft. Lauderdale,2020-08-02,Conventional,0.99,933.431
+South,Houston,2022-01-30,Conventional,1.088125732,950.123
+Midwest,Wichita,2024-12-08,Conventional,1.039524856,104.238
+South,Charlotte,2018-02-11,Organic,1.92,11.217
+Northeast,New York,2023-03-05,Organic,1.570563363,125.78
+West,Spokane,2024-09-15,Organic,2.650107647,5.173
+South,Orlando,2018-11-04,Organic,1.52,9.141
+South,Baltimore/Washington,2018-01-07,Conventional,1.5,771.314
+South,Orlando,2017-08-27,Conventional,1.57,296.757
+South,New Orleans/Mobile,2017-01-08,Organic,1.26,5.078
+West,Sacramento,2020-04-19,Conventional,1.36,552.309
+South,Atlanta,2023-02-12,Organic,0.965208153,76.402
+South,Jacksonville,2023-01-22,Conventional,0.883887839,312.951
+West,West Tex/New Mexico,2018-06-10,Organic,1.53,28.29
+South,Roanoke,2023-05-07,Organic,1.275407116,17.115
+Midwest,St. Louis,2018-08-12,Conventional,1.18,230.822
+West,San Francisco,2021-08-22,Conventional,1.64222203,722.873
+South,Atlanta,2024-09-22,Conventional,1.175721326,827.509
+South,Houston,2022-03-06,Organic,1.451771809,31.629
+South,Nashville,2019-10-27,Conventional,0.94,265.97
+South,South Carolina,2017-04-02,Conventional,1.38,366.511
+West,Sacramento,2018-07-01,Conventional,1.24,621.096
+South,Baltimore/Washington,2024-07-07,Organic,1.408306523,101.186
+West,Spokane,2020-03-15,Conventional,1.49,113.86
+West,Boise,2020-05-10,Conventional,1.22,156.547
+West,Sacramento,2017-04-02,Conventional,1.58,385.735
+Midwest,Columbus,2017-11-05,Conventional,0.96,222.75
+South,Tampa,2018-02-25,Organic,1.37,9.145
+West,Las Vegas,2023-06-04,Organic,1.268626274,20.44
+South,Orlando,2019-01-20,Conventional,1.04,539.311
+South,Nashville,2024-04-28,Organic,1.5352,25.927
+South,Tampa,2022-04-24,Conventional,1.438567363,518.67
+South,New Orleans/Mobile,2024-04-14,Organic,1.20546,18.767
+West,Spokane,2019-07-21,Conventional,1.79,77.013
+West,Portland,2017-04-30,Conventional,0.84,940.105
+Northeast,Boston,2018-11-18,Conventional,1.47,573.891
+South,Tampa,2024-11-24,Organic,1.480260149,31.276
+South,New Orleans/Mobile,2017-11-19,Conventional,1.27,207.295
+Northeast,Syracuse,2017-01-02,Conventional,1.55,64.285
+Northeast,Pittsburgh,2024-07-28,Organic,1.568617717,10.098
+Northeast,Boston,2022-10-30,Conventional,1.404263042,519.398
+Northeast,Boston,2022-06-26,Organic,1.967737888,33.553
+West,Sacramento,2017-06-18,Organic,2.48,7.059
+Northeast,Pittsburgh,2017-02-19,Organic,1.45,8.806
+South,Tampa,2024-06-16,Conventional,1.167078328,730.618
+South,Houston,2024-01-14,Conventional,0.833115355,1189.585
+West,San Diego,2017-02-19,Conventional,0.97,497.334
+Northeast,Albany,2017-06-04,Organic,1.63,3.772
+West,Seattle,2019-12-29,Conventional,1.09,636.458
+West,San Francisco,2023-06-18,Conventional,1.666076923,605.03
+South,Miami/Ft. Lauderdale,2021-01-31,Conventional,0.826765842,1449.985
+Northeast,Hartford/Springfield,2021-07-25,Conventional,1.382585883,364.751
+West,Denver,2023-12-10,Conventional,1.073143899,857.728
+South,South Carolina,2017-01-08,Organic,1.48,9.553
+West,Las Vegas,2020-05-03,Organic,1.5,16.043
+West,Boise,2017-11-19,Organic,1.85,1.864
+Northeast,Philadelphia,2024-02-25,Organic,1.036741216,76.158
+South,Raleigh/Greensboro,2019-01-27,Conventional,1.04,424.275
+South,Jacksonville,2017-09-10,Organic,2.35,4.094
+South,Miami/Ft. Lauderdale,2018-09-16,Organic,1.14,15.362
+South,Houston,2019-09-15,Conventional,0.91,1543.66
+South,Roanoke,2021-08-01,Conventional,1.011409493,182.805
+South,Miami/Ft. Lauderdale,2018-06-17,Conventional,1.12,1019.429
+South,Miami/Ft. Lauderdale,2021-07-04,Organic,1.477670952,60.623
+Midwest,Wichita,2023-09-10,Organic,1.318347033,5.336
+Northeast,Boston,2019-05-05,Conventional,1.5,800.272
+South,Houston,2019-12-29,Conventional,0.68,1324.465
+South,Baltimore/Washington,2019-11-10,Organic,1.41,35.148
+Northeast,Northern New England,2018-03-25,Conventional,1.46,483.125
+South,Raleigh/Greensboro,2022-11-27,Conventional,1.089835402,375.607
+Midwest,St. Louis,2021-05-16,Conventional,0.918251577,281.292
+Midwest,Chicago,2022-12-18,Conventional,0.909645538,1090.429
+South,Roanoke,2019-01-13,Organic,1.37,12.041
+West,Sacramento,2020-10-11,Conventional,1.1,561.255
+South,Orlando,2021-03-14,Conventional,0.858168526,747.678
+South,Charlotte,2024-03-17,Conventional,1.007785,507.954
+Northeast,Boston,2019-04-07,Conventional,1.25,906.206
+South,Roanoke,2024-06-09,Conventional,1.187171436,195.871
+West,San Diego,2021-03-14,Organic,1.695047998,37.71
+South,Tampa,2020-04-05,Organic,1.18,11.945
+Northeast,Syracuse,2020-07-26,Organic,1.21,6.457
+South,Louisville,2022-05-22,Conventional,1.443095927,118.139
+South,New Orleans/Mobile,2024-04-28,Conventional,0.95836,319.28
+South,Raleigh/Greensboro,2018-07-22,Conventional,1.2,349.538
+West,Boise,2020-03-29,Organic,1.86,5.54
+South,Nashville,2018-05-27,Conventional,0.99,291.903
+Northeast,Harrisburg/Scranton,2019-01-07,Conventional,1.02,379.286
+South,Orlando,2019-12-01,Conventional,0.88,428.057
+Midwest,Cincinnati/Dayton,2019-12-29,Conventional,0.8,260.829
+South,Nashville,2023-04-16,Conventional,0.890160639,346.512
+West,Las Vegas,2023-07-02,Conventional,1.099918985,409.939
+Northeast,Buffalo/Rochester,2018-06-24,Organic,1.09,22.949
+West,Boise,2018-01-21,Conventional,1.25,88.728
+Midwest,Chicago,2024-12-15,Conventional,0.997985254,1304.084
+Northeast,Syracuse,2020-07-05,Organic,1.61,4.281
+Northeast,Northern New England,2022-01-02,Conventional,1.038855669,622.991
+West,Spokane,2024-09-08,Organic,2.699147661,5.604
+South,Jacksonville,2018-03-11,Conventional,1.16,227.715
+South,Houston,2023-04-23,Conventional,0.778113177,1096.349
+Midwest,St. Louis,2024-06-02,Conventional,0.942953757,299.98
+West,Las Vegas,2019-07-21,Conventional,1.43,301.78
+West,Sacramento,2023-08-20,Conventional,1.4947402890000001,461.527
+Northeast,Philadelphia,2024-09-15,Conventional,1.244607768,673.649
+South,Baltimore/Washington,2021-11-28,Conventional,1.22698807,956.083
+West,San Francisco,2021-10-10,Conventional,1.616959609,717.579
+South,South Carolina,2019-03-10,Organic,1.31,23.457
+Midwest,Indianapolis,2022-06-26,Organic,1.930953111,15.138
+Midwest,Cincinnati/Dayton,2020-08-09,Conventional,0.92,355.08
+West,Boise,2021-08-22,Organic,1.826422236,7.956
+West,Denver,2023-02-19,Conventional,1.031611043,960.467
+West,Phoenix/Tucson,2019-08-04,Organic,1.75,15.746
+Northeast,Northern New England,2018-01-21,Conventional,1.33,577.117
+Northeast,Harrisburg/Scranton,2024-08-04,Organic,1.486203047,25.205
+South,New Orleans/Mobile,2019-07-28,Organic,1.09,8.996
+West,San Francisco,2021-07-18,Conventional,1.530370441,697.707
+South,Louisville,2022-01-16,Organic,1.410081357,10.122
+South,Miami/Ft. Lauderdale,2020-06-21,Conventional,1.17,1030.7
+West,Portland,2022-08-07,Conventional,1.416639974,699.742
+Northeast,Hartford/Springfield,2018-11-25,Conventional,1.47,203.104
+West,Los Angeles,2017-09-24,Organic,2.21,4.157
+South,Baltimore/Washington,2017-01-08,Conventional,1.14,1029.28
+Midwest,Indianapolis,2023-09-10,Organic,1.635454999,14.349
+South,Houston,2018-11-25,Conventional,0.93,617.603
+Midwest,Indianapolis,2019-04-07,Conventional,0.92,258.182
+South,Charlotte,2021-01-17,Conventional,0.94634859,446.448
+South,Miami/Ft. Lauderdale,2021-11-28,Conventional,1.059284918,873.105
+West,Phoenix/Tucson,2020-02-23,Conventional,0.67,1547.088
+South,New Orleans/Mobile,2018-08-12,Conventional,1.19,274.32
+Midwest,St. Louis,2018-04-22,Conventional,1.31,182.742
+South,Raleigh/Greensboro,2024-12-15,Conventional,1.102636281,447.465
+West,Denver,2023-12-03,Conventional,0.98684886,896.588
+West,San Francisco,2023-09-03,Organic,1.741552434,71.688
+South,Miami/Ft. Lauderdale,2019-05-05,Conventional,1.42,1144.315
+West,Boise,2019-12-29,Conventional,0.93,116.303
+Midwest,Cincinnati/Dayton,2024-06-16,Organic,2.02534958,29.296
+West,Boise,2022-07-31,Organic,2.673017608,5.411
+West,West Tex/New Mexico,2019-10-27,Conventional,0.87,779.649
+Midwest,Indianapolis,2017-01-02,Organic,1.76,1.956
+Midwest,Chicago,2022-04-24,Conventional,1.449168279,1048.321
+West,San Francisco,2018-09-02,Organic,2.39,29.894
+West,Spokane,2024-09-22,Organic,2.661873207,4.917
+South,Atlanta,2017-01-02,Conventional,0.93,547.566
+Midwest,Columbus,2020-02-16,Conventional,0.98,201.904
+Northeast,Pittsburgh,2020-01-26,Conventional,1.26,121.953
+South,Richmond/Norfolk,2024-06-23,Conventional,1.16762661,348.486
+Midwest,Chicago,2018-05-27,Conventional,1.19,926.111
+South,Charlotte,2021-02-14,Organic,1.335642395,25.835
+West,Denver,2019-10-27,Organic,1.65,25.115
+South,Miami/Ft. Lauderdale,2018-08-12,Conventional,1.37,706.048
+West,San Francisco,2021-03-07,Organic,1.631354661,100.2
+Northeast,Hartford/Springfield,2024-12-08,Organic,1.447208044,27.793
+West,Portland,2020-06-28,Conventional,1.16,779.329
+South,Charlotte,2023-04-23,Organic,1.249797472,33.344
+Midwest,Cincinnati/Dayton,2018-09-02,Conventional,1.26,271.667
+West,San Francisco,2023-09-17,Organic,1.953889233,59.816
+Midwest,Indianapolis,2018-03-25,Organic,1.28,9.507
+South,Baltimore/Washington,2019-02-24,Organic,1.29,51.18
+Midwest,Grand Rapids,2018-02-18,Organic,1.29,7.659
+South,Roanoke,2021-08-15,Organic,1.579862339,13.311
+Northeast,Hartford/Springfield,2023-09-24,Organic,1.598665293,23.137
+Midwest,Detroit,2020-09-13,Conventional,0.84,589.766
+West,San Francisco,2022-05-08,Conventional,1.466395562,867.096
+Midwest,Chicago,2022-01-23,Organic,1.445792196,94.936
+West,San Francisco,2021-09-26,Organic,1.8221215,77.009
+West,Boise,2024-10-20,Conventional,1.355890037,110.48
+West,San Francisco,2024-02-25,Conventional,1.031302791,877.702
+Northeast,Philadelphia,2022-01-16,Organic,1.637739288,40.725
+South,Charlotte,2017-02-19,Conventional,1.33,198.558
+Northeast,Albany,2019-02-10,Organic,1.24,4.484
+Midwest,Columbus,2019-06-09,Conventional,0.95,273.611
+West,Sacramento,2017-07-02,Conventional,1.55,509.256
+Midwest,Indianapolis,2021-08-08,Organic,1.526414735,13.166
+Northeast,Buffalo/Rochester,2019-05-19,Conventional,1.28,197.218
+South,Charlotte,2020-10-11,Conventional,1.12,326.222
+West,Spokane,2020-06-28,Conventional,1.3,124.347
+South,Nashville,2019-09-01,Conventional,1.07,278.335
+South,Orlando,2019-08-04,Organic,1.68,0.465
+South,Roanoke,2023-07-16,Conventional,1.096546177,192.332
+West,Spokane,2024-01-28,Conventional,1.148758973,88.128
+Northeast,Hartford/Springfield,2024-02-25,Organic,1.288329742,36.634
+South,Orlando,2024-12-22,Organic,1.461162185,40.05
+South,Nashville,2023-11-12,Organic,1.725350037,24.971
+West,Denver,2019-01-27,Organic,1.25,29.887
+South,Jacksonville,2017-09-17,Organic,2.39,5.488
+West,West Tex/New Mexico,2017-05-28,Organic,1.65,18.799
+South,Atlanta,2021-01-24,Conventional,0.801632402,903.891
+South,Roanoke,2019-03-31,Conventional,0.97,202.187
+South,Miami/Ft. Lauderdale,2024-03-17,Conventional,0.99932,1718.912
+West,San Francisco,2017-04-23,Conventional,1.83,613.564
+South,Dallas/Ft. Worth,2021-07-18,Organic,1.253621494,59.659
+West,Las Vegas,2022-04-17,Organic,1.955372575,19.276
+South,Nashville,2017-09-03,Conventional,1.34,188.702
+West,Phoenix/Tucson,2019-12-22,Conventional,0.78,1249.282
+South,Charlotte,2021-12-12,Conventional,1.087159814,365.25
+South,South Carolina,2023-01-01,Conventional,0.961822839,574.628
+South,Jacksonville,2020-04-12,Organic,1.41,2.726
+Northeast,Syracuse,2023-10-15,Conventional,1.026071306,88.27
+South,Tampa,2021-04-04,Conventional,0.924347176,713.276
+West,San Diego,2017-01-02,Organic,1.45,15.753
+Midwest,Indianapolis,2021-05-02,Organic,1.450068437,15.434
+West,Portland,2019-04-28,Conventional,1.69,486.742
+South,Raleigh/Greensboro,2017-09-24,Organic,1.76,14.076
+West,Phoenix/Tucson,2018-04-22,Organic,1.48,20.36
+Midwest,Cincinnati/Dayton,2021-05-23,Conventional,1.011943959,327.199
+Midwest,St. Louis,2018-09-23,Conventional,1.41,173.404
+South,Atlanta,2022-05-29,Conventional,1.515390148,777.289
+Northeast,Pittsburgh,2020-08-23,Organic,1.51,10.909
+South,Louisville,2017-06-18,Conventional,1.06,104.37
+West,Spokane,2023-04-23,Conventional,1.171018548,78.567
+Northeast,Buffalo/Rochester,2019-07-28,Organic,1.57,8.665
+Midwest,Columbus,2018-01-28,Organic,1.43,7.67
+West,Las Vegas,2018-01-21,Conventional,1.05,364.156
+Northeast,Northern New England,2023-06-25,Organic,1.593184364,17.185
+South,Richmond/Norfolk,2021-05-30,Organic,1.085710925,37.946
+West,Phoenix/Tucson,2018-07-08,Organic,1.38,23.023
+Midwest,Chicago,2021-08-08,Organic,1.593886103,60.3
+Midwest,Grand Rapids,2024-11-24,Organic,1.312881873,10.508
+South,Dallas/Ft. Worth,2020-03-15,Organic,1.37,52.973
+South,New Orleans/Mobile,2021-03-14,Conventional,0.818814144,365.423
+Midwest,Cincinnati/Dayton,2019-04-07,Conventional,0.97,303.36

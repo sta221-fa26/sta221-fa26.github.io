@@ -13,7 +13,7 @@ This assignment is due on **Thursday, September 10 at 11:59pm**. To be considere
 - Final `.pdf` file submitted on Gradescope
 :::
 
-# Introduction 
+# Introduction
 
 In this assignment, you will use simple linear regression to explore the variability in win percentage based on the percentage of return points for professional tennis players. You will also explore the mathematical properties of linear regression models.
 
@@ -175,7 +175,7 @@ c.  Use the data to show that for simple linear regression, $R^2$ is equal to $c
 
 ## Exercise 9
 
-a.   Interpret the slope for the model fit in Exercise 7 in the context of the data.
+a.  Interpret the slope for the model fit in Exercise 7 in the context of the data.
 
 b.  The intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis.
 
@@ -227,13 +227,13 @@ To submit your assignment:
 
 - Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* and "AI Disclosure" sections.
 
-# Grading (25 points) 
+# Grading (25 points)
 
-| Component                     | Points |
-|-------------------------------|--------|
-| Selected conceptual exercise  | 10     |
-| Selected applied exercise     | 10     |
-| Completing AI Disclosure      | 1      |
-| Workflow & formatting         | 4      |
+| Component                    | Points |
+|------------------------------|--------|
+| Selected conceptual exercise | 10     |
+| Selected applied exercise    | 10     |
+| Completing AI Disclosure     | 1      |
+| Workflow & formatting        | 4      |
 
 The "Workflow & formatting" grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.
