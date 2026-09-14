@@ -4643,5 +4643,33 @@
     "title": "Multiple linear regression",
     "section": "Comparing models",
     "text": "Comparing models\n\n\nModel 1\nModel without interaction\n\n# r-squared\nglance(lemur_fit)$r.squared\n\n[1] 0.8020481\n\n\n\n\n# adj-r-squared\nglance(lemur_fit)$adj.r.squared\n\n[1] 0.7988424\n\n\n\nModel 2\nModel with interaction\n\n# r-squared\nglance(lemur_fit_int)$r.squared\n\n[1] 0.8443483\n\n\n\n\n# adj-r-squared\nglance(lemur_fit_int)$adj.r.squared\n\n[1] 0.8405364"
+  },
+  {
+    "objectID": "slides/05-mlr.html#comparing-models-2",
+    "href": "slides/05-mlr.html#comparing-models-2",
+    "title": "Multiple linear regression",
+    "section": "Comparing models",
+    "text": "Comparing models\n\n\nModel 1\nModel without interaction\n\n# r-squared\nglance(lemur_fit)$r.squared\n\n[1] 0.8020481\n\n\n\n\n# adj-r-squared\nglance(lemur_fit)$adj.r.squared\n\n[1] 0.7988424\n\n\n\nModel 2\nModel with interaction\n\n# r-squared\nglance(lemur_fit_2)$r.squared\n\n[1] 0.8443483\n\n\n\n\n# adj-r-squared\nglance(lemur_fit_2)$adj.r.squared\n\n[1] 0.8405364"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#exploring-potential-quadratic-effect",
+    "href": "slides/07-predictor-types-contd.html#exploring-potential-quadratic-effect",
+    "title": "Multiple linear regression",
+    "section": "Exploring potential quadratic effect",
+    "text": "Exploring potential quadratic effect"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#add-textage2-to-the-model",
+    "href": "slides/07-predictor-types-contd.html#add-textage2-to-the-model",
+    "title": "Multiple linear regression",
+    "section": "Add \\(\\text{age}^2\\) to the model",
+    "text": "Add \\(\\text{age}^2\\) to the model\n\nlemur_fit_sq &lt;- lm(weight ~ age + I(age^2) + taxon + litter_size,\n                    data = lemurs)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-446.466\n119.823\n-3.726\n0.000\n\n\nage\n268.050\n17.407\n15.399\n0.000\n\n\nI(age^2)\n-5.916\n0.764\n-7.747\n0.000\n\n\ntaxonPCOQ\n506.279\n85.796\n5.901\n0.000\n\n\ntaxonVRUB\n943.648\n120.318\n7.843\n0.000\n\n\nlitter_size\n18.376\n59.225\n0.310\n0.757"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#interpreting-age-in-quadratic-model",
+    "href": "slides/07-predictor-types-contd.html#interpreting-age-in-quadratic-model",
+    "title": "Multiple linear regression",
+    "section": "Interpreting age in quadratic model",
+    "text": "Interpreting age in quadratic model\n\\[\n\\hat{\\beta}_\\text{age} = 268.050 \\hspace{10mm} \\hat{\\beta}_\\text{age-sq} = -5.916\n\\]\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 (round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2) )"
   }
 ]

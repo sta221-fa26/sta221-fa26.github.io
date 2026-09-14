@@ -360,6 +360,11 @@ Shane Rybacki
 </ul>
 </div>
 </section>
+<section>
+<section id="interaction-effects" class="title-slide slide level1 center">
+<h1>Interaction effects</h1>
+
+</section>
 <section id="growth-rate-by-taxon" class="slide level2">
 <h2>Growth rate by taxon</h2>
 <div class="columns">
@@ -536,15 +541,103 @@ Shane Rybacki
 <li><p>interaction terms impact the model equation?</p></li>
 </ul>
 </div>
-</section>
-<section id="higher-order-terms" class="slide level2">
-<h2>Higher-order terms</h2>
-<p>We may consider</p>
+</section></section>
+<section>
+<section id="quadratic-effects" class="title-slide slide level1 center">
+<h1>Quadratic effects</h1>
 <ul>
-<li><p>do something with age sq.</p></li>
-<li><p>does thi smodel make sense in practice?</p></li>
+<li><p>Thus far, we have only considered models with first-order terms, in which the rate of change in the response is constant for all values of a predictor</p></li>
+<li><p>We may consider instances in which the rate of change differs by values of the predictor</p></li>
+<li><p>One way to account for this is by including a <strong>quadratic effect<em>.</em></strong></p>
+<ul>
+<li>Later in the semester, we will talk about other non-linear terms such as <span class="math inline">\(\log\)</span>.</li>
+</ul></li>
 </ul>
 </section>
+<section id="exploring-potential-quadratic-effect" class="slide level2">
+<h2>Exploring potential quadratic effect</h2>
+
+<img data-src="07-predictor-types-contd_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="add-textage2-to-the-model" class="slide level2">
+<h2>Add <span class="math inline">\(\text{age}^2\)</span> to the model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>lemur_fit_sq <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
+<span id="cb5-2"><a></a>                    <span class="at">data =</span> lemurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-446.466</td>
+<td style="text-align: right;">119.823</td>
+<td style="text-align: right;">-3.726</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 1) !important;">age</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">268.050</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">17.407</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">15.399</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 1) !important;">I(age^2)</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">-5.916</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">0.764</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">-7.747</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 1) !important;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">taxonPCOQ</td>
+<td style="text-align: right;">506.279</td>
+<td style="text-align: right;">85.796</td>
+<td style="text-align: right;">5.901</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">taxonVRUB</td>
+<td style="text-align: right;">943.648</td>
+<td style="text-align: right;">120.318</td>
+<td style="text-align: right;">7.843</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">litter_size</td>
+<td style="text-align: right;">18.376</td>
+<td style="text-align: right;">59.225</td>
+<td style="text-align: right;">0.310</td>
+<td style="text-align: right;">0.757</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="interpreting-age-in-quadratic-model" class="slide level2">
+<h2>Interpreting <code>age</code> in quadratic model</h2>
+<p><span class="math display">\[
+\hat{\beta}_\text{age} = 268.050 \hspace{10mm} \hat{\beta}_\text{age-sq} = -5.916
+\]</span></p>
+<ul>
+<li><strong>General interpretation</strong>: When age increases from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, the weight is expected to change by <span class="math inline">\(\hat{\beta}_\text{age}(b - a) + \hat{\beta}_\text{age-sq}(b^2 - a^2)\)</span> on average, holding all else constant.</li>
+<li>Expected change in weight:
+<ul>
+<li>1 month to 5 months: 930.216 (<code>268.050 * (5 - 1) + -5.916 * (5^2 - 1^2)</code>)</li>
+<li>20 to 24 months: 30.984 (<code>round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2)</code> )</li>
+</ul></li>
+</ul>
+</section></section>
 <section>
 <section id="model-comparison" class="title-slide slide level1 center">
 <h1>Model comparison</h1>
@@ -634,7 +727,7 @@ Shane Rybacki
 <li>Use the <code>glance()</code> function to get <span class="math inline">\(Adj. R^2\)</span> in R</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -667,16 +760,16 @@ Shane Rybacki
 <p><strong>Model 1</strong></p>
 <p><strong>Model without interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb7-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># r-squared</span></span>
+<span id="cb8-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8020481</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb9-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># adj-r-squared</span></span>
+<span id="cb10-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -685,16 +778,16 @@ Shane Rybacki
 <p><strong>Model 2</strong></p>
 <p><strong>Model with interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb11-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># r-squared</span></span>
+<span id="cb12-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8443483</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb13-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># adj-r-squared</span></span>
+<span id="cb14-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8405364</code></pre>
 </div>

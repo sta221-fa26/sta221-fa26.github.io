@@ -157,6 +157,8 @@ tidy(lemur_fit) |>
 - Write the regression equation for PCOQ lemurs.
 :::
 
+# Interaction effects
+
 ## Growth rate by taxon
 
 ::::: columns
@@ -185,7 +187,7 @@ tidy(lemur_fit) |>
 #| warning: false
 #| message: false
 
-p1 <- ggplot(lemurs, 
+p_age <- ggplot(lemurs, 
              aes(x = age, y = weight)) +
   geom_point(alpha = 0.7) +
   geom_smooth(method = "lm", se = FALSE) +
@@ -195,7 +197,7 @@ p1 <- ggplot(lemurs,
     title = "Main effect"
   )
 
-p2 <- ggplot(lemurs, 
+p_age_taxon <- ggplot(lemurs, 
              aes(x = age, y = weight,
                  color = taxon, lty = taxon)) +
   geom_point(alpha = 0.8) +
@@ -206,7 +208,7 @@ p2 <- ggplot(lemurs,
   scale_color_manual(values = pnw_palette("Sunset2", 3))
  
 
-p1 + p2
+p_age + p_age_taxon
 ```
 
 ::: question
@@ -272,15 +274,76 @@ In general, how do
 - interaction terms impact the model equation?
 :::
 
-## Higher-order terms
+# Quadratic effects
 
-We may consider
+- Thus far, we have only considered models with first-order terms, in which the rate of change in the response is constant for all values of a predictor
 
-- do something with age sq.
+- We may consider instances in which the rate of change differs by values of the predictor
 
-- does thi smodel make sense in practice?
+- One way to account for this is by including a **quadratic effect*.***
 
-# Model comparison 
+  - Later in the semester, we will talk about other non-linear terms such as $\log$.
+
+## Exploring potential quadratic effect
+
+```{r}
+#| echo: false
+
+
+# Fit a quadratic regression model
+age_sq_fit <- lm(weight ~ age + I(age^2), data = lemurs)
+
+# Create predicted values
+lemurs <- lemurs |>
+  mutate(
+    predicted = predict(age_sq_fit)
+  )
+
+# Plot the data and quadratic regression curve
+p_age_sq <- ggplot(lemurs, aes(x = age , y = weight)) +
+  geom_point() +
+  geom_line(
+    aes(y = predicted),
+    color = "blue",
+    linewidth = 1
+  ) +
+  labs(
+    x = "Age in months",
+    y = "Weight in grams",
+    title = "Potential quadratic effect"
+  )
+
+p_age + p_age_sq
+```
+
+## Add $\text{age}^2$ to the model
+
+```{r}
+#| echo: true
+lemur_fit_sq <- lm(weight ~ age + I(age^2) + taxon + litter_size,
+                    data = lemurs)
+```
+
+```{r}
+#| echo: false
+
+tidy(lemur_fit_sq) |>
+  kable(digits = 3) |>
+  row_spec(c(2,3), background = "#dce5b2")
+```
+
+## Interpreting `age` in quadratic model
+
+$$
+\hat{\beta}_\text{age} = 268.050 \hspace{10mm} \hat{\beta}_\text{age-sq} = -5.916
+$$
+
+- **General interpretation**: When age increases from $a$ to $b$, the weight is expected to change by $\hat{\beta}_\text{age}(b - a) + \hat{\beta}_\text{age-sq}(b^2 - a^2)$ on average, holding all else constant.
+- Expected change in weight:
+  - 1 month to 5 months: `r round(268.050 * (5 - 1) + -5.916 * (5^2 - 1^2), 3)` (`268.050 * (5 - 1) + -5.916 * (5^2 - 1^2)`)
+  - 20 to 24 months: `r round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2), 3)` (`round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2)`)
+
+# Model comparison
 
 ## Model evaluation: RMSE & $R^2$
 
