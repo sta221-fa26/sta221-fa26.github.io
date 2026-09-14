@@ -1,6 +1,6 @@
 ---
 title: "Multiple linear regression"
-subtitle: "Types of predictors cont'd"
+subtitle: "Interactions + Model comparison"
 date: "September 15, 2026"
 author: "Prof. Maria Tackett"
 date-format: "MMMM DD, YYYY"
@@ -16,7 +16,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 06-predictor-types-notes.html
+    output-file: 07-mlr-interactions-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
