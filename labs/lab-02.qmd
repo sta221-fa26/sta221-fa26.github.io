@@ -1,6 +1,6 @@
 ---
 title: "Lab 02: Linear regression"
-subtitle: ""
+subtitle: "Weekly avocado sales"
 execute:
   freeze: auto
   echo: true
