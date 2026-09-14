@@ -32,8 +32,6 @@ bibliography: references.bib
 
 ## Announcements
 
-\[UPDATE\]
-
 ## Topics
 
 - Interaction terms
@@ -78,15 +76,15 @@ Today’s data contains a subset of the original Duke Lemur data set available i
 
 :::::: columns
 ::: {.column width="33%"}
-![ERUF](images/06-eruf-lemur.jpg){fig-align="center"}
+![ERUF](images/06-eruf-lemur.jpg){fig-align="center" width="75%"}
 :::
 
 ::: {.column width="33%"}
-![PCOQ](images/06-pcoq-lemur.jpg){fig-align="center"}
+![PCOQ](images/06-pcoq-lemur.jpg){fig-align="center" width="75%"}
 :::
 
 ::: {.column width="33%"}
-![VRUB](images/06-vrub-lemur.png){fig-align="center"}
+![VRUB](images/06-vrub-lemur.png){fig-align="center" width="75%"}
 :::
 ::::::
 
@@ -140,7 +138,7 @@ p4 + p5 / p6
 
 **Goal**: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.
 
-## Model fit in R
+## Model fit in R {.midi}
 
 ```{r}
 #| echo: true
@@ -164,6 +162,7 @@ tidy(lemur_fit) |>
 ::::: columns
 ::: {.column width="50%"}
 ```{r}
+#| echo: false
 tidy(lemur_fit) |>
   select(term, estimate) |>
   kable(digits = 3)
@@ -211,11 +210,11 @@ p_age_taxon <- ggplot(lemurs,
 p_age + p_age_taxon
 ```
 
-::: question
-- How do we expect the lines to compare if there is [**no**]{.underline} interaction effect?
-
-- How do we expect the lines to compare if there [**is**]{.underline} an interaction effect?
+:::: question
+::: midi
+How do we expect the lines to compare if there is [**no**]{.underline} interaction effect? If there [**is**]{.underline} an effect?
 :::
+::::
 
 ## Interaction terms
 
@@ -223,15 +222,19 @@ p_age + p_age_taxon
 - This is an **interaction effect**.
 - To account for this, we can include **interaction terms** in the model.
 
-## Your turn \[UPDATE\]
+## Your turn
 
-::: question
+:::: question
+::: midi
 We wish to fit of the variability in lemur weight using `age`, `taxon`, `litter_size`, and the interaction between `age` and `taxon`. What are the dimensions of the design matrix $\mathbf{X}$?
 :::
+::::
 
-\[MAKE WOOCLAP POLL\]
+![](images/september-15-qrcode.png){fig-align="center" width="30%"}
 
-## Model with interaction terms {.smaller}
+<center><https://app.wooclap.com/NKOUZXE></center>
+
+## Model with interaction terms {.midi}
 
 ```{r}
 #| echo: true
@@ -274,7 +277,7 @@ In general, how do
 - interaction terms impact the model equation?
 :::
 
-# Quadratic effects
+## Quadratic effects
 
 - Thus far, we have only considered models with first-order terms, in which the rate of change in the response is constant for all values of a predictor
 
@@ -333,10 +336,6 @@ tidy(lemur_fit_sq) |>
 ```
 
 ## Interpreting `age` in quadratic model
-
-$$
-\hat{\beta}_\text{age} = 268.050 \hspace{10mm} \hat{\beta}_\text{age-sq} = -5.916
-$$
 
 - **General interpretation**: When age increases from $a$ to $b$, the weight is expected to change by $\hat{\beta}_\text{age}(b - a) + \hat{\beta}_\text{age-sq}(b^2 - a^2)$ on average, holding all else constant.
 - Expected change in weight:

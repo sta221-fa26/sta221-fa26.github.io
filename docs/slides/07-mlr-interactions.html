@@ -200,7 +200,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Multiple linear regression</h1>
-  <p class="subtitle">Types of predictors cont’d</p>
+  <p class="subtitle">Interactions + Model comparison</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -214,7 +214,6 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
-<p>[UPDATE]</p>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -254,21 +253,21 @@ Prof.&nbsp;Maria Tackett
 <div class="column" style="width:33%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/06-eruf-lemur.jpg"></p>
+<p><img data-src="images/06-eruf-lemur.jpg" style="width:75.0%"></p>
 <figcaption>ERUF</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:33%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/06-pcoq-lemur.jpg"></p>
+<p><img data-src="images/06-pcoq-lemur.jpg" style="width:75.0%"></p>
 <figcaption>PCOQ</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:33%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/06-vrub-lemur.png"></p>
+<p><img data-src="images/06-vrub-lemur.png" style="width:75.0%"></p>
 <figcaption>VRUB</figcaption>
 </figure>
 </div>
@@ -290,11 +289,11 @@ Prof.&nbsp;Maria Tackett
 <section id="response-vs.-predictors" class="slide level2">
 <h2>Response vs.&nbsp;predictors</h2>
 
-<img data-src="07-predictor-types-contd_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="fragment">
+<img data-src="07-mlr-interactions_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="fragment">
 <p><strong>Goal</strong>: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old.</p>
 </div>
 </section>
-<section id="model-fit-in-r" class="slide level2">
+<section id="model-fit-in-r" class="slide level2 midi">
 <h2>Model fit in R</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>lemur_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
@@ -370,9 +369,6 @@ Prof.&nbsp;Maria Tackett
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">tidy</span>(lemur_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -417,11 +413,10 @@ Prof.&nbsp;Maria Tackett
 <section id="eda-for-interaction-effect" class="slide level2">
 <h2>EDA for interaction effect</h2>
 
-<img data-src="07-predictor-types-contd_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
-<ul>
-<li><p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect?</p></li>
-<li><p>How do we expect the lines to compare if there <u><strong>is</strong></u> an interaction effect?</p></li>
-</ul>
+<img data-src="07-mlr-interactions_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
+<div class="midi">
+<p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect? If there <u><strong>is</strong></u> an effect?</p>
+</div>
 </div>
 </section>
 <section id="interaction-terms" class="slide level2">
@@ -432,18 +427,23 @@ Prof.&nbsp;Maria Tackett
 <li>To account for this, we can include <strong>interaction terms</strong> in the model.</li>
 </ul>
 </section>
-<section id="your-turn-update" class="slide level2">
-<h2>Your turn [UPDATE]</h2>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
 <div class="question">
+<div class="midi">
 <p>We wish to fit of the variability in lemur weight using <code>age</code>, <code>taxon</code>, <code>litter_size</code>, and the interaction between <code>age</code> and <code>taxon</code>. What are the dimensions of the design matrix <span class="math inline">\(\mathbf{X}\)</span>?</p>
 </div>
-<p>[MAKE WOOCLAP POLL]</p>
+</div>
+
+<img data-src="images/september-15-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><center>
+<a href="https://app.wooclap.com/NKOUZXE" class="uri">https://app.wooclap.com/NKOUZXE</a>
+</center>
 </section>
-<section id="model-with-interaction-terms" class="slide level2 smaller">
+<section id="model-with-interaction-terms" class="slide level2 midi">
 <h2>Model with interaction terms</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>lemur_fit_int <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size <span class="sc">+</span> age <span class="sc">*</span> taxon,</span>
-<span id="cb4-2"><a></a>                    <span class="at">data =</span> lemurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>lemur_fit_int <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size <span class="sc">+</span> age <span class="sc">*</span> taxon,</span>
+<span id="cb3-2"><a></a>                    <span class="at">data =</span> lemurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -541,10 +541,9 @@ Prof.&nbsp;Maria Tackett
 <li><p>interaction terms impact the model equation?</p></li>
 </ul>
 </div>
-</section></section>
-<section>
-<section id="quadratic-effects" class="title-slide slide level1 center">
-<h1>Quadratic effects</h1>
+</section>
+<section id="quadratic-effects" class="slide level2">
+<h2>Quadratic effects</h2>
 <ul>
 <li><p>Thus far, we have only considered models with first-order terms, in which the rate of change in the response is constant for all values of a predictor</p></li>
 <li><p>We may consider instances in which the rate of change differs by values of the predictor</p></li>
@@ -557,12 +556,12 @@ Prof.&nbsp;Maria Tackett
 <section id="exploring-potential-quadratic-effect" class="slide level2">
 <h2>Exploring potential quadratic effect</h2>
 
-<img data-src="07-predictor-types-contd_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="07-mlr-interactions_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="add-textage2-to-the-model" class="slide level2">
 <h2>Add <span class="math inline">\(\text{age}^2\)</span> to the model</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>lemur_fit_sq <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
-<span id="cb5-2"><a></a>                    <span class="at">data =</span> lemurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>lemur_fit_sq <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
+<span id="cb4-2"><a></a>                    <span class="at">data =</span> lemurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -626,9 +625,6 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="interpreting-age-in-quadratic-model" class="slide level2">
 <h2>Interpreting <code>age</code> in quadratic model</h2>
-<p><span class="math display">\[
-\hat{\beta}_\text{age} = 268.050 \hspace{10mm} \hat{\beta}_\text{age-sq} = -5.916
-\]</span></p>
 <ul>
 <li><strong>General interpretation</strong>: When age increases from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, the weight is expected to change by <span class="math inline">\(\hat{\beta}_\text{age}(b - a) + \hat{\beta}_\text{age-sq}(b^2 - a^2)\)</span> on average, holding all else constant.</li>
 <li>Expected change in weight:
@@ -727,7 +723,7 @@ Prof.&nbsp;Maria Tackett
 <li>Use the <code>glance()</code> function to get <span class="math inline">\(Adj. R^2\)</span> in R</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -760,16 +756,16 @@ Prof.&nbsp;Maria Tackett
 <p><strong>Model 1</strong></p>
 <p><strong>Model without interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb8-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># r-squared</span></span>
+<span id="cb7-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8020481</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb10-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># adj-r-squared</span></span>
+<span id="cb9-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -778,16 +774,16 @@ Prof.&nbsp;Maria Tackett
 <p><strong>Model 2</strong></p>
 <p><strong>Model with interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb12-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># r-squared</span></span>
+<span id="cb11-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8443483</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb14-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># adj-r-squared</span></span>
+<span id="cb13-2"><a></a><span class="fu">glance</span>(lemur_fit_int)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8405364</code></pre>
 </div>
