@@ -495,7 +495,7 @@ where
 - Adjusted $R^2$ can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment
 - Use $R^2$ when describing the relationship between the response and predictor variables
 
-## Comparing interest rate models
+## Comparing models
 
 ::::: columns
 ::: {.column width="50%"}

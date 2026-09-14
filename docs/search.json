@@ -4461,5 +4461,187 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#announcements",
+    "href": "slides/07-predictor-types-contd.html#announcements",
+    "title": "Multiple linear regression",
+    "section": "Announcements",
+    "text": "Announcements\n[UPDATE]"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#topics",
+    "href": "slides/07-predictor-types-contd.html#topics",
+    "title": "Multiple linear regression",
+    "section": "Topics",
+    "text": "Topics\n\nInteraction terms\nHigher order terms\nModel comparison"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#computing-setup",
+    "href": "slides/07-predictor-types-contd.html#computing-setup",
+    "title": "Multiple linear regression",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(PNWColors) # for color palette\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#data-lemurs",
+    "href": "slides/07-predictor-types-contd.html#data-lemurs",
+    "title": "Multiple linear regression",
+    "section": "Data: Lemurs",
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#variables",
+    "href": "slides/07-predictor-types-contd.html#variables",
+    "title": "Multiple linear regression",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\ntaxon : Code made as a combination of the lemur’s genus and species. Note that the genus is a broader categorization that includes lemurs from multiple species. (ERUF: Eulemur rufus, PCOQ: Propithecus coquereli, VRUB: Varecia rubra)\nage: Age of the lemur when weight was recorded (in months)\nlitter_size: Total number of infants in the litter the lemur was born into (this includes the observed lemur)\n\nResponse: weight: Weight of the lemur (in grams)"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#response-vs.-predictors",
+    "href": "slides/07-predictor-types-contd.html#response-vs.-predictors",
+    "title": "Multiple linear regression",
+    "section": "Response vs. predictors",
+    "text": "Response vs. predictors\n\n\nGoal: Use age, taxon, and litter size to understand variability in the weight of lemurs younger than 24 months old."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#model-fit-in-r",
+    "href": "slides/07-predictor-types-contd.html#model-fit-in-r",
+    "title": "Multiple linear regression",
+    "section": "Model fit in R",
+    "text": "Model fit in R\n\nlemur_fit &lt;- lm(weight ~ age + taxon + litter_size,\n              data = lemurs)\n\ntidy(lemur_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.772\n116.993\n-0.007\n0.995\n\n\nage\n137.479\n4.845\n28.377\n0.000\n\n\ntaxonPCOQ\n462.184\n95.287\n4.850\n0.000\n\n\ntaxonVRUB\n1020.390\n133.468\n7.645\n0.000\n\n\nlitter_size\n-14.101\n65.756\n-0.214\n0.830\n\n\n\n\n\n\n\nWrite the regression equation for ERUB lemurs.\nWrite the regression equation for PCOQ lemurs."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#growth-rate-by-taxon",
+    "href": "slides/07-predictor-types-contd.html#growth-rate-by-taxon",
+    "title": "Multiple linear regression",
+    "section": "Growth rate by taxon",
+    "text": "Growth rate by taxon\n\n\n\ntidy(lemur_fit) |&gt;\n  select(term, estimate) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\n\n\n\n\n(Intercept)\n-0.772\n\n\nage\n137.479\n\n\ntaxonPCOQ\n462.184\n\n\ntaxonVRUB\n1020.390\n\n\nlitter_size\n-14.101\n\n\n\n\n\n\n\nIn the current model, the growth rate (effect of age) is the same for all observations\nWe wish to explore whether the growth rate differs by taxon\nTo do so, we will add an interaction effect between age and taxon"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#eda-for-interaction-between-age-and-taxon",
+    "href": "slides/07-predictor-types-contd.html#eda-for-interaction-between-age-and-taxon",
+    "title": "Multiple linear regression",
+    "section": "EDA for interaction between age and taxon",
+    "text": "EDA for interaction between age and taxon"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#recap",
+    "href": "slides/07-predictor-types-contd.html#recap",
+    "title": "Multiple linear regression",
+    "section": "Recap",
+    "text": "Recap\n\nInteraction effects\nQuadratic effects\nModel comparison"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#before-next-class",
+    "href": "slides/07-predictor-types-contd.html#before-next-class",
+    "title": "Multiple linear regression",
+    "section": "Before next class",
+    "text": "Before next class\n\nComplete Lecture 08 prepare: Inference for regression"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#eda-for-interaction-effect",
+    "href": "slides/07-predictor-types-contd.html#eda-for-interaction-effect",
+    "title": "Multiple linear regression",
+    "section": "EDA for interaction effect",
+    "text": "EDA for interaction effect\n\n\n\nHow do we expect the lines to compare if there is no interaction effect?\nHow do we expect the lines to compare if there is an interaction effect?"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#interaction-terms",
+    "href": "slides/07-predictor-types-contd.html#interaction-terms",
+    "title": "Multiple linear regression",
+    "section": "Interaction terms",
+    "text": "Interaction terms\n\nSometimes the relationship between a predictor variable and the response depends on the value of another predictor variable.\nThis is an interaction effect.\nTo account for this, we can include interaction terms in the model."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#your-turn-update",
+    "href": "slides/07-predictor-types-contd.html#your-turn-update",
+    "title": "Multiple linear regression",
+    "section": "Your turn [UPDATE]",
+    "text": "Your turn [UPDATE]\n\nWe wish to fit of the variability in lemur weight using age, taxon, litter_size, and the interaction between age and taxon. What are the dimensions of the design matrix \\(\\mathbf{X}\\)?\n\n[MAKE WOOCLAP POLL]"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#model-with-interaction-terms",
+    "href": "slides/07-predictor-types-contd.html#model-with-interaction-terms",
+    "title": "Multiple linear regression",
+    "section": "Model with interaction terms",
+    "text": "Model with interaction terms\n\nlemur_fit_int &lt;- lm(weight ~ age + taxon + litter_size + age * taxon,\n                    data = lemurs)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n529.072\n130.926\n4.041\n0.000\n\n\nage\n79.974\n9.915\n8.066\n0.000\n\n\ntaxonPCOQ\n-361.629\n134.561\n-2.687\n0.008\n\n\ntaxonVRUB\n634.483\n163.006\n3.892\n0.000\n\n\nlitter_size\n-32.108\n58.649\n-0.547\n0.585\n\n\nage:taxonPCOQ\n95.760\n12.076\n7.930\n0.000\n\n\nage:taxonVRUB\n47.649\n11.924\n3.996\n0.000"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#model-with-interaction-terms-1",
+    "href": "slides/07-predictor-types-contd.html#model-with-interaction-terms-1",
+    "title": "Multiple linear regression",
+    "section": "Model with interaction terms",
+    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for lemurs from the ERUB taxon.\nWrite the estimated regression equation for lemurs from the PCOQ taxon."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#interpreting-interaction-terms",
+    "href": "slides/07-predictor-types-contd.html#interpreting-interaction-terms",
+    "title": "Multiple linear regression",
+    "section": "Interpreting interaction terms",
+    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#indicators-and-interactions",
+    "href": "slides/07-predictor-types-contd.html#indicators-and-interactions",
+    "title": "Multiple linear regression",
+    "section": "Indicators and interactions",
+    "text": "Indicators and interactions\n\nIn general, how do\n\nindicators for categorical predictors impact the model equation?\ninteraction terms impact the model equation?"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#higher-order-terms",
+    "href": "slides/07-predictor-types-contd.html#higher-order-terms",
+    "title": "Multiple linear regression",
+    "section": "Higher-order terms",
+    "text": "Higher-order terms\nWe may consider\n\ndo something with age sq.\ndoes thi smodel make sense in practice?"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#model-evaluation-rmse-r2",
+    "href": "slides/07-predictor-types-contd.html#model-evaluation-rmse-r2",
+    "title": "Multiple linear regression",
+    "section": "Model evaluation: RMSE & \\(R^2\\)",
+    "text": "Model evaluation: RMSE & \\(R^2\\)\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#comparing-models",
+    "href": "slides/07-predictor-types-contd.html#comparing-models",
+    "title": "Multiple linear regression",
+    "section": "Comparing models",
+    "text": "Comparing models\nLet’s consider the following models:\n\n\n\n\n\nterm\nModel 1\nModel 2\n\n\n\n\n(Intercept)\n-0.772\n529.072\n\n\nage\n137.479\n79.974\n\n\ntaxonPCOQ\n462.184\n-361.629\n\n\ntaxonVRUB\n1020.390\n634.483\n\n\nlitter_size\n-14.101\n-32.108\n\n\nage:taxonPCOQ\nNA\n95.760\n\n\nage:taxonVRUB\nNA\n47.649\n\n\n\n\n\n\n\nHow do we decide which model to choose?"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#comparing-models-1",
+    "href": "slides/07-predictor-types-contd.html#comparing-models-1",
+    "title": "Multiple linear regression",
+    "section": "Comparing models",
+    "text": "Comparing models\n\nWhen comparing models, do we prefer the model with the lower or higher RMSE?\nThough we use \\(R^2\\) to assess the model fit, it is generally unreliable for comparing models with different number of predictors. Why?\n\n\\(R^2\\) will stay the same or increase as we add more variables to the model.\nIf we only use \\(R^2\\) to choose a best fit model, we will be prone to choose the model with the most predictor variables."
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#adjusted-r2",
+    "href": "slides/07-predictor-types-contd.html#adjusted-r2",
+    "title": "Multiple linear regression",
+    "section": "Adjusted \\(R^2\\)",
+    "text": "Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\): measure that includes a penalty for unnecessary predictor variables\nSimilar to \\(R^2\\), it is a measure of the amount of variation in the response that is explained by the regression model\nUse the glance() function to get \\(Adj. R^2\\) in R\n\n\nglance(lemur_fit)$adj.r.squared\n\n[1] 0.7988424"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#r2-and-adjusted-r2",
+    "href": "slides/07-predictor-types-contd.html#r2-and-adjusted-r2",
+    "title": "Multiple linear regression",
+    "section": "\\(R^2\\) and Adjusted \\(R^2\\)",
+    "text": "\\(R^2\\) and Adjusted \\(R^2\\)\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]\n\n\n\\[R^2_{adj} = 1 - \\frac{SSR/(n-p-1)}{SST/(n-1)}\\]\nwhere\n\n\\(n\\) is the number of observations used to fit the model\n\\(p\\) is the number of non-intercept terms in the model"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#using-r2-and-adjusted-r2",
+    "href": "slides/07-predictor-types-contd.html#using-r2-and-adjusted-r2",
+    "title": "Multiple linear regression",
+    "section": "Using \\(R^2\\) and Adjusted \\(R^2\\)",
+    "text": "Using \\(R^2\\) and Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\) can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment\nUse \\(R^2\\) when describing the relationship between the response and predictor variables"
+  },
+  {
+    "objectID": "slides/07-predictor-types-contd.html#comparing-models-2",
+    "href": "slides/07-predictor-types-contd.html#comparing-models-2",
+    "title": "Multiple linear regression",
+    "section": "Comparing models",
+    "text": "Comparing models\n\n\nModel 1\nModel without interaction\n\n# r-squared\nglance(lemur_fit)$r.squared\n\n[1] 0.8020481\n\n\n\n\n# adj-r-squared\nglance(lemur_fit)$adj.r.squared\n\n[1] 0.7988424\n\n\n\nModel 2\nModel with interaction\n\n# r-squared\nglance(lemur_fit_int)$r.squared\n\n[1] 0.8443483\n\n\n\n\n# adj-r-squared\nglance(lemur_fit_int)$adj.r.squared\n\n[1] 0.8405364"
   }
 ]
