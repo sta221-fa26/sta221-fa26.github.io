@@ -1,5 +1,5 @@
 ---
-title: "Prepare for Lecture 07: Types of predictors cont'd"
+title: "Prepare for Lecture 07: Interactions + Model comparison"
 ---
 
 <br>
