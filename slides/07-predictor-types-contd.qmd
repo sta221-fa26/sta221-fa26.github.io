@@ -1,8 +1,8 @@
 ---
 title: "Multiple linear regression"
 subtitle: "Types of predictors cont'd"
-date: "September 10, 2026"
-author: Shane Rybacki
+date: "September 15, 2026"
+author: "Prof. Maria Tackett"
 date-format: "MMMM DD, YYYY"
 footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
 logo: "../images/logo.png"

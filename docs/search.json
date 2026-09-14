@@ -4670,6 +4670,6 @@
     "href": "slides/07-predictor-types-contd.html#interpreting-age-in-quadratic-model",
     "title": "Multiple linear regression",
     "section": "Interpreting age in quadratic model",
-    "text": "Interpreting age in quadratic model\n\\[\n\\hat{\\beta}_\\text{age} = 268.050 \\hspace{10mm} \\hat{\\beta}_\\text{age-sq} = -5.916\n\\]\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 (round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2) )"
+    "text": "Interpreting age in quadratic model\n\\[\n\\hat{\\beta}_\\text{age} = 268.050 \\hspace{10mm} \\hat{\\beta}_\\text{age-sq} = -5.916\n\\]\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 (round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2))"
   }
 ]
