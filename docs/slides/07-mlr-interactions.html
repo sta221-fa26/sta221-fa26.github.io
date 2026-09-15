@@ -278,9 +278,9 @@ Prof.&nbsp;Maria Tackett
 <figcaption>VRUB</figcaption>
 </figure>
 </div>
-</div></div>
-<div class="small">
+</div><div class="small">
 <p>Images from <a href="Duke Lemur Center. n.d. “Meet the Lemurs.” https://lemur.duke.edu/discover/meet-the-lemurs/">Duke Lemur Center - Meet the Lemurs</a></p>
+</div>
 </div>
 </section>
 <section id="variables" class="slide level2">
@@ -422,7 +422,7 @@ Prof.&nbsp;Maria Tackett
 
 <img data-src="07-mlr-interactions_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
 <div class="midi">
-<p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect? If there <u><strong>is</strong></u> an effect?</p>
+<p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect? If there <u><strong>is</strong></u> an interaction effect?</p>
 </div>
 </div>
 </section>
@@ -438,11 +438,11 @@ Prof.&nbsp;Maria Tackett
 <h2>Your turn</h2>
 <div class="question">
 <div class="midi">
-<p>We wish to fit of the variability in lemur weight using <code>age</code>, <code>taxon</code>, <code>litter_size</code>, and the interaction between <code>age</code> and <code>taxon</code>. What are the dimensions of the design matrix <span class="math inline">\(\mathbf{X}\)</span>?</p>
+<p>We wish to fit model for <code>weight</code> using <code>age</code>, <code>taxon</code>, <code>litter_size</code>, and the interaction between <code>age</code> and <code>taxon</code>. What are the dimensions of the design matrix <span class="math inline">\(\mathbf{X}\)</span>?</p>
 </div>
 </div>
 
-<img data-src="images/september-15-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><center>
+<img data-src="images/september-15-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:25.0%"><center>
 <a href="https://app.wooclap.com/NKOUZXE" class="uri">https://app.wooclap.com/NKOUZXE</a>
 </center>
 </section>
@@ -523,8 +523,8 @@ Prof.&nbsp;Maria Tackett
 <h2>Model with interaction terms</h2>
 <div class="question">
 <ul>
-<li><p>Write the estimated regression equation for lemurs from the <code>ERUB</code> taxon.</p></li>
-<li><p>Write the estimated regression equation for lemurs from the <code>PCOQ</code> taxon.</p></li>
+<li><p>Write the estimated regression equation for ERUB lemurs.</p></li>
+<li><p>Write the estimated regression equation for PCOQ lemurs.</p></li>
 </ul>
 </div>
 </section>
@@ -532,7 +532,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Interpreting interaction terms</h2>
 <p>Let’s look at the coefficient of <code>age:taxonPCOQ = 95.760</code></p>
 <ul>
-<li class="fragment"><strong>What the interaction means</strong>: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.</li>
+<li class="fragment"><strong>What the interaction means</strong>: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.</li>
 <li class="fragment"><strong>Interpreting <code>age</code> for PCOQ lemurs</strong>: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.
 <ul>
 <li class="fragment">In short, the growth rate of young PCOQ lemurs is 175.734 grams per month.</li>

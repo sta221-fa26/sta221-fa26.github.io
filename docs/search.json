@@ -220,7 +220,7 @@
     "href": "slides/07-mlr-interactions.html#data-lemurs",
     "title": "Multiple linear regression",
     "section": "Data: Lemurs",
-    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
   },
   {
     "objectID": "slides/07-mlr-interactions.html#variables",
@@ -255,7 +255,7 @@
     "href": "slides/07-mlr-interactions.html#eda-for-interaction-effect",
     "title": "Multiple linear regression",
     "section": "EDA for interaction effect",
-    "text": "EDA for interaction effect\n\n\n\nHow do we expect the lines to compare if there is no interaction effect? If there is an effect?"
+    "text": "EDA for interaction effect\n\n\n\nHow do we expect the lines to compare if there is no interaction effect? If there is an interaction effect?"
   },
   {
     "objectID": "slides/07-mlr-interactions.html#interaction-terms",
@@ -269,7 +269,7 @@
     "href": "slides/07-mlr-interactions.html#your-turn",
     "title": "Multiple linear regression",
     "section": "Your turn",
-    "text": "Your turn\n\n\nWe wish to fit of the variability in lemur weight using age, taxon, litter_size, and the interaction between age and taxon. What are the dimensions of the design matrix \\(\\mathbf{X}\\)?\n\n\n\n\nhttps://app.wooclap.com/NKOUZXE"
+    "text": "Your turn\n\n\nWe wish to fit model for weight using age, taxon, litter_size, and the interaction between age and taxon. What are the dimensions of the design matrix \\(\\mathbf{X}\\)?\n\n\n\n\nhttps://app.wooclap.com/NKOUZXE"
   },
   {
     "objectID": "slides/07-mlr-interactions.html#model-with-interaction-terms",
@@ -283,14 +283,14 @@
     "href": "slides/07-mlr-interactions.html#model-with-interaction-terms-1",
     "title": "Multiple linear regression",
     "section": "Model with interaction terms",
-    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for lemurs from the ERUB taxon.\nWrite the estimated regression equation for lemurs from the PCOQ taxon."
+    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUB lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions.html#interpreting-interaction-terms",
     "href": "slides/07-mlr-interactions.html#interpreting-interaction-terms",
     "title": "Multiple linear regression",
     "section": "Interpreting interaction terms",
-    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
+    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
   },
   {
     "objectID": "slides/07-mlr-interactions.html#indicators-and-interactions",
@@ -423,7 +423,7 @@
     "href": "slides/07-mlr-interactions-notes.html#data-lemurs",
     "title": "Multiple linear regression",
     "section": "Data: Lemurs",
-    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
+    "text": "Data: Lemurs\n\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on 252 lemurs less than 24 months old from three taxa:\n\nEulemur rufus (ERUF), commonly known as Red-fronted brown lemur\nPropithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka\nVarecia rubra (VRUB), commonly known as Red ruffed lemur.\n\n\n\n\n\n\n\nERUF\n\n\n\n\n\n\nPCOQ\n\n\n\n\n\n\nVRUB\n\n\n\nImages from Duke Lemur Center - Meet the Lemurs"
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#variables",
@@ -458,7 +458,7 @@
     "href": "slides/07-mlr-interactions-notes.html#eda-for-interaction-effect",
     "title": "Multiple linear regression",
     "section": "EDA for interaction effect",
-    "text": "EDA for interaction effect\n\n\n\n\n\n\n\n\n\n\n\nHow do we expect the lines to compare if there is no interaction effect? If there is an effect?"
+    "text": "EDA for interaction effect\n\n\n\n\n\n\n\n\n\n\n\nHow do we expect the lines to compare if there is no interaction effect? If there is an interaction effect?"
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#interaction-terms",
@@ -472,7 +472,7 @@
     "href": "slides/07-mlr-interactions-notes.html#your-turn",
     "title": "Multiple linear regression",
     "section": "Your turn",
-    "text": "Your turn\n\n\nWe wish to fit of the variability in lemur weight using age, taxon, litter_size, and the interaction between age and taxon. What are the dimensions of the design matrix \\(\\mathbf{X}\\)?\n\n\n\n\n\n\n\n\nhttps://app.wooclap.com/NKOUZXE"
+    "text": "Your turn\n\n\nWe wish to fit model for weight using age, taxon, litter_size, and the interaction between age and taxon. What are the dimensions of the design matrix \\(\\mathbf{X}\\)?\n\n\n\n\n\n\n\n\nhttps://app.wooclap.com/NKOUZXE"
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#model-with-interaction-terms",
@@ -486,14 +486,14 @@
     "href": "slides/07-mlr-interactions-notes.html#model-with-interaction-terms-1",
     "title": "Multiple linear regression",
     "section": "Model with interaction terms",
-    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for lemurs from the ERUB taxon.\nWrite the estimated regression equation for lemurs from the PCOQ taxon."
+    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUB lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#interpreting-interaction-terms",
     "href": "slides/07-mlr-interactions-notes.html#interpreting-interaction-terms",
     "title": "Multiple linear regression",
     "section": "Interpreting interaction terms",
-    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
+    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#indicators-and-interactions",

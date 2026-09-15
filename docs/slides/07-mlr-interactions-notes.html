@@ -556,10 +556,9 @@ window.Quarto = {
 <figcaption>VRUB</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<div class="small">
+</div><div class="small">
 <p>Images from <a href="Duke Lemur Center. n.d. “Meet the Lemurs.” https://lemur.duke.edu/discover/meet-the-lemurs/">Duke Lemur Center - Meet the Lemurs</a></p>
+</div>
 </div>
 </section>
 <section id="variables" class="level2">
@@ -714,7 +713,7 @@ window.Quarto = {
 </div>
 <div class="question">
 <div class="midi">
-<p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect? If there <u><strong>is</strong></u> an effect?</p>
+<p>How do we expect the lines to compare if there is <u><strong>no</strong></u> interaction effect? If there <u><strong>is</strong></u> an interaction effect?</p>
 </div>
 </div>
 </section>
@@ -730,12 +729,12 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="your-turn">Your turn</h2>
 <div class="question">
 <div class="midi">
-<p>We wish to fit of the variability in lemur weight using <code>age</code>, <code>taxon</code>, <code>litter_size</code>, and the interaction between <code>age</code> and <code>taxon</code>. What are the dimensions of the design matrix <span class="math inline">\(\mathbf{X}\)</span>?</p>
+<p>We wish to fit model for <code>weight</code> using <code>age</code>, <code>taxon</code>, <code>litter_size</code>, and the interaction between <code>age</code> and <code>taxon</code>. What are the dimensions of the design matrix <span class="math inline">\(\mathbf{X}\)</span>?</p>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/september-15-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+<p><img src="images/september-15-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%"></p>
 </figure>
 </div>
 <center>
@@ -819,8 +818,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="model-with-interaction-terms-1">Model with interaction terms</h2>
 <div class="question">
 <ul>
-<li><p>Write the estimated regression equation for lemurs from the <code>ERUB</code> taxon.</p></li>
-<li><p>Write the estimated regression equation for lemurs from the <code>PCOQ</code> taxon.</p></li>
+<li><p>Write the estimated regression equation for ERUB lemurs.</p></li>
+<li><p>Write the estimated regression equation for PCOQ lemurs.</p></li>
 </ul>
 </div>
 </section>
@@ -829,7 +828,7 @@ window.Quarto = {
 <p>Let’s look at the coefficient of <code>age:taxonPCOQ = 95.760</code></p>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>What the interaction means</strong>: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.</li>
+<li><strong>What the interaction means</strong>: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.</li>
 <li><strong>Interpreting <code>age</code> for PCOQ lemurs</strong>: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.
 <ul class="incremental">
 <li>In short, the growth rate of young PCOQ lemurs is 175.734 grams per month.</li>

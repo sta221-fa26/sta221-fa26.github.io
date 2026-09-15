@@ -80,7 +80,7 @@ Today’s data contains a subset of the original Duke Lemur data set available i
 - Varecia rubra (VRUB), commonly known as Red ruffed lemur.
 :::
 
-:::::: columns
+::::::: columns
 ::: {.column width="33%"}
 ![ERUF](images/06-eruf-lemur.jpg){fig-align="center" width="75%"}
 :::
@@ -92,11 +92,11 @@ Today’s data contains a subset of the original Duke Lemur data set available i
 ::: {.column width="33%"}
 ![VRUB](images/06-vrub-lemur.png){fig-align="center" width="75%"}
 :::
-::::::
 
 ::: small
 Images from [Duke Lemur Center - Meet the Lemurs](Duke%20Lemur%20Center.%20n.d.%20“Meet%20the%20Lemurs.”%20https://lemur.duke.edu/discover/meet-the-lemurs/)
 :::
+:::::::
 
 ## Variables
 
@@ -218,7 +218,7 @@ p_age + p_age_taxon
 
 :::: question
 ::: midi
-How do we expect the lines to compare if there is [**no**]{.underline} interaction effect? If there [**is**]{.underline} an effect?
+How do we expect the lines to compare if there is [**no**]{.underline} interaction effect? If there [**is**]{.underline} an interaction effect?
 :::
 ::::
 
@@ -232,11 +232,11 @@ How do we expect the lines to compare if there is [**no**]{.underline} interacti
 
 :::: question
 ::: midi
-We wish to fit of the variability in lemur weight using `age`, `taxon`, `litter_size`, and the interaction between `age` and `taxon`. What are the dimensions of the design matrix $\mathbf{X}$?
+We wish to fit model for `weight` using `age`, `taxon`, `litter_size`, and the interaction between `age` and `taxon`. What are the dimensions of the design matrix $\mathbf{X}$?
 :::
 ::::
 
-![](images/september-15-qrcode.png){fig-align="center" width="30%"}
+![](images/september-15-qrcode.png){fig-align="center" width="25%"}
 
 <center><https://app.wooclap.com/NKOUZXE></center>
 
@@ -258,9 +258,9 @@ tidy(lemur_fit_int) |>
 ## Model with interaction terms
 
 ::: question
-- Write the estimated regression equation for lemurs from the `ERUB` taxon.
+- Write the estimated regression equation for ERUB lemurs.
 
-- Write the estimated regression equation for lemurs from the `PCOQ` taxon.
+- Write the estimated regression equation for PCOQ lemurs.
 :::
 
 ## Interpreting interaction terms
@@ -268,7 +268,7 @@ tidy(lemur_fit_int) |>
 Let's look at the coefficient of `age:taxonPCOQ = 95.760`
 
 ::: incremental
-- **What the interaction means**: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to ERUB lemurs.
+- **What the interaction means**: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.
 - **Interpreting `age` for PCOQ lemurs**: For each additional month in a PCOQ lemur's age, their weight is expected to be greater by `r 79.974 + 95.760` (79.974 + 95.760) grams, on average, holding litter size constant.
   - In short, the growth rate of young PCOQ lemurs is `r 79.974 + 95.760` grams per month.
 :::
