@@ -241,7 +241,7 @@
     "href": "slides/07-mlr-interactions.html#model-fit-in-r",
     "title": "Multiple linear regression",
     "section": "Model fit in R",
-    "text": "Model fit in R\n\nlemur_fit &lt;- lm(weight ~ age + taxon + litter_size,\n              data = lemurs)\n\ntidy(lemur_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.772\n116.993\n-0.007\n0.995\n\n\nage\n137.479\n4.845\n28.377\n0.000\n\n\ntaxonPCOQ\n462.184\n95.287\n4.850\n0.000\n\n\ntaxonVRUB\n1020.390\n133.468\n7.645\n0.000\n\n\nlitter_size\n-14.101\n65.756\n-0.214\n0.830\n\n\n\n\n\n\n\nWrite the regression equation for ERUB lemurs.\nWrite the regression equation for PCOQ lemurs."
+    "text": "Model fit in R\n\nlemur_fit &lt;- lm(weight ~ age + taxon + litter_size,\n              data = lemurs)\n\ntidy(lemur_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.772\n116.993\n-0.007\n0.995\n\n\nage\n137.479\n4.845\n28.377\n0.000\n\n\ntaxonPCOQ\n462.184\n95.287\n4.850\n0.000\n\n\ntaxonVRUB\n1020.390\n133.468\n7.645\n0.000\n\n\nlitter_size\n-14.101\n65.756\n-0.214\n0.830\n\n\n\n\n\n\n\nWrite the regression equation for ERUF lemurs.\nWrite the regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions.html#growth-rate-by-taxon",
@@ -283,14 +283,14 @@
     "href": "slides/07-mlr-interactions.html#model-with-interaction-terms-1",
     "title": "Multiple linear regression",
     "section": "Model with interaction terms",
-    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUB lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
+    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUF lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions.html#interpreting-interaction-terms",
     "href": "slides/07-mlr-interactions.html#interpreting-interaction-terms",
     "title": "Multiple linear regression",
     "section": "Interpreting interaction terms",
-    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
+    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUF lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
   },
   {
     "objectID": "slides/07-mlr-interactions.html#indicators-and-interactions",
@@ -325,7 +325,7 @@
     "href": "slides/07-mlr-interactions.html#interpreting-age-in-quadratic-model",
     "title": "Multiple linear regression",
     "section": "Interpreting age in quadratic model",
-    "text": "Interpreting age in quadratic model\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 (round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2))"
+    "text": "Interpreting age in quadratic model\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 ((268.050 * (24 - 20) + -5.916 * (24^2 - 20^2))"
   },
   {
     "objectID": "slides/07-mlr-interactions.html#model-evaluation-rmse-r2",
@@ -444,7 +444,7 @@
     "href": "slides/07-mlr-interactions-notes.html#model-fit-in-r",
     "title": "Multiple linear regression",
     "section": "Model fit in R",
-    "text": "Model fit in R\n\nlemur_fit &lt;- lm(weight ~ age + taxon + litter_size,\n              data = lemurs)\n\ntidy(lemur_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.772\n116.993\n-0.007\n0.995\n\n\nage\n137.479\n4.845\n28.377\n0.000\n\n\ntaxonPCOQ\n462.184\n95.287\n4.850\n0.000\n\n\ntaxonVRUB\n1020.390\n133.468\n7.645\n0.000\n\n\nlitter_size\n-14.101\n65.756\n-0.214\n0.830\n\n\n\n\n\n\n\nWrite the regression equation for ERUB lemurs.\nWrite the regression equation for PCOQ lemurs."
+    "text": "Model fit in R\n\nlemur_fit &lt;- lm(weight ~ age + taxon + litter_size,\n              data = lemurs)\n\ntidy(lemur_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.772\n116.993\n-0.007\n0.995\n\n\nage\n137.479\n4.845\n28.377\n0.000\n\n\ntaxonPCOQ\n462.184\n95.287\n4.850\n0.000\n\n\ntaxonVRUB\n1020.390\n133.468\n7.645\n0.000\n\n\nlitter_size\n-14.101\n65.756\n-0.214\n0.830\n\n\n\n\n\n\n\nWrite the regression equation for ERUF lemurs.\nWrite the regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#growth-rate-by-taxon",
@@ -486,14 +486,14 @@
     "href": "slides/07-mlr-interactions-notes.html#model-with-interaction-terms-1",
     "title": "Multiple linear regression",
     "section": "Model with interaction terms",
-    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUB lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
+    "text": "Model with interaction terms\n\n\nWrite the estimated regression equation for ERUF lemurs.\nWrite the estimated regression equation for PCOQ lemurs."
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#interpreting-interaction-terms",
     "href": "slides/07-mlr-interactions-notes.html#interpreting-interaction-terms",
     "title": "Multiple linear regression",
     "section": "Interpreting interaction terms",
-    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
+    "text": "Interpreting interaction terms\nLet’s look at the coefficient of age:taxonPCOQ = 95.760\n\n\nWhat the interaction means: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUF lemurs.\nInterpreting age for PCOQ lemurs: For each additional month in a PCOQ lemur’s age, their weight is expected to be greater by 175.734 (79.974 + 95.760) grams, on average, holding litter size constant.\n\nIn short, the growth rate of young PCOQ lemurs is 175.734 grams per month."
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#indicators-and-interactions",
@@ -528,7 +528,7 @@
     "href": "slides/07-mlr-interactions-notes.html#interpreting-age-in-quadratic-model",
     "title": "Multiple linear regression",
     "section": "Interpreting age in quadratic model",
-    "text": "Interpreting age in quadratic model\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 (round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2))"
+    "text": "Interpreting age in quadratic model\n\nGeneral interpretation: When age increases from \\(a\\) to \\(b\\), the weight is expected to change by \\(\\hat{\\beta}_\\text{age}(b - a) + \\hat{\\beta}_\\text{age-sq}(b^2 - a^2)\\) on average, holding all else constant.\nExpected change in weight:\n\n1 month to 5 months: 930.216 (268.050 * (5 - 1) + -5.916 * (5^2 - 1^2))\n20 to 24 months: 30.984 ((268.050 * (24 - 20) + -5.916 * (24^2 - 20^2))"
   },
   {
     "objectID": "slides/07-mlr-interactions-notes.html#model-evaluation-rmse-r2",

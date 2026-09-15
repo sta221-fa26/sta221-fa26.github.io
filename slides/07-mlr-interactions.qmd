@@ -157,7 +157,7 @@ tidy(lemur_fit) |>
 ```
 
 ::: question
-- Write the regression equation for ERUB lemurs.
+- Write the regression equation for ERUF lemurs.
 - Write the regression equation for PCOQ lemurs.
 :::
 
@@ -258,7 +258,7 @@ tidy(lemur_fit_int) |>
 ## Model with interaction terms
 
 ::: question
-- Write the estimated regression equation for ERUB lemurs.
+- Write the estimated regression equation for ERUF lemurs.
 
 - Write the estimated regression equation for PCOQ lemurs.
 :::
@@ -268,7 +268,7 @@ tidy(lemur_fit_int) |>
 Let's look at the coefficient of `age:taxonPCOQ = 95.760`
 
 ::: incremental
-- **What the interaction means**: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUB lemurs.
+- **What the interaction means**: The effect of age is 95.760 grams per month greater for PCOQ lemurs compared to the effect of age for ERUF lemurs.
 - **Interpreting `age` for PCOQ lemurs**: For each additional month in a PCOQ lemur's age, their weight is expected to be greater by `r 79.974 + 95.760` (79.974 + 95.760) grams, on average, holding litter size constant.
   - In short, the growth rate of young PCOQ lemurs is `r 79.974 + 95.760` grams per month.
 :::
@@ -346,7 +346,7 @@ tidy(lemur_fit_sq) |>
 - **General interpretation**: When age increases from $a$ to $b$, the weight is expected to change by $\hat{\beta}_\text{age}(b - a) + \hat{\beta}_\text{age-sq}(b^2 - a^2)$ on average, holding all else constant.
 - Expected change in weight:
   - 1 month to 5 months: `r round(268.050 * (5 - 1) + -5.916 * (5^2 - 1^2), 3)` (`268.050 * (5 - 1) + -5.916 * (5^2 - 1^2)`)
-  - 20 to 24 months: `r round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2), 3)` (`round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2)`)
+  - 20 to 24 months: `r round(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2), 3)` (`(268.050 * (24 - 20) + -5.916 * (24^2 - 20^2)`)
 
 # Model comparison
 
