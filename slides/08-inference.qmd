@@ -1,0 +1,382 @@
+---
+title: "Inference for regression"
+author: "Prof. Maria Tackett"
+date: "September 16, 2026"
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 08-inference-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+
+library(countdown)
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+options(scipen=999)
+```
+
+## Announcements
+
+- (Optional) Submit team request by Thursday, September 17 at 11:59pm: <https://forms.cloud.microsoft/r/Ae2NGSwP2N>
+
+  - 3 - 4 students per team.
+
+  - Must be enrolled in the same lab section.
+
+- HW 02 due Thursday, September 24 at 11:59pm
+
+  - Released after class
+
+## Topics
+
+- Introduce statistical inference in the context of regression
+
+- Describe assumptions on the error terms $\boldsymbol{\epsilon}$
+
+- Use assumptions of $\boldsymbol{\epsilon}$ to derive distribution of $\mathbf{y}$
+
+## Computing setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(kableExtra)  
+library(patchwork)   
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Data: NCAA Football expenditures {.midi}
+
+Today's data come from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list) and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a [March 2022 Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md).
+
+We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :
+
+- `total_exp_m`: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)
+
+- `enrollment_th`: Total student enrollment in the 2019 - 2020 academic year (in thousands)
+
+- `type`: institution type (Public or Private)
+
+```{r}
+#| include: false
+#| eval: false
+
+## code to make data set for these notes
+
+sports <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-29/sports.csv') 
+
+# filter data to only include D1 football for the year 2019
+
+sports |>
+  filter(sports == "Football", 
+         classification_name == "NCAA Division I-FBS", year == 2019) |>
+  mutate(type = if_else(sector_name == "Private nonprofit, 4-year or above", "Private", "Public"), 
+         enrollment_th = ef_total_count / 1000,
+         total_exp_m = total_exp_menwomen/ 1000000) |>
+  select(year, institution_name, city_txt, state_cd, zip_text, type,
+         enrollment_th, 
+         total_exp_m) |> 
+  write_csv("data/ncaa-football-exp.csv")
+
+
+```
+
+```{r}
+football <- read_csv("data/ncaa-football-exp.csv")
+```
+
+## Univariate EDA
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(data = football, aes(x = total_exp_m)) + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 3) + 
+  labs( x= "Total Football Expenditures (in $Millions)")
+
+p2 <- ggplot(data = football, aes(x = enrollment_th)) + 
+  geom_histogram(binwidth = 3, fill = "steelblue", color = "black") +
+  labs(x = "Total Student Enrollment (in Thousands)")
+
+p3 <- ggplot(data = football, aes(x = type)) + 
+  geom_bar(fill = "steelblue", color = "black") + 
+  labs(x = "Institution Type")
+
+p1 + (p2 / p3)
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+#| 
+p4 <- ggplot(data = football, aes(x = enrollment_th, y = total_exp_m)) +
+  geom_point() +
+  labs(x = "Total Student Enrollment (in Thousands)", 
+       y = "Total Football Expenditures (in $Millions)", 
+       title = "Football Expenditures vs. Enrollment")
+
+p5 <- ggplot(data = football, aes(x = type, y = total_exp_m, fill = type)) + 
+  geom_boxplot() +
+  labs(x = "Institution Type", 
+       y = "",
+       title = "Football Expenditures vs. Type") + 
+  theme(legend.position = "none")
+
+p4 + p5
+```
+
+## Regression model
+
+```{r}
+#| echo: true
+exp_fit <- lm(total_exp_m ~ enrollment_th + type, data = football)
+tidy(exp_fit) |>
+  kable(digits = 3)
+```
+
+<br>
+
+For every additional 1,000 students, we expect an institution's total expenditures on football to increase by \$780,000, on average, holding institution type constant.
+
+## From sample to population {.midi}
+
+> For every additional 1,000 students, we expect an institution's total expenditures on football to increase by \$780,000, on average, holding institution type constant.
+
+. . .
+
+::: incremental
+- This is the exact relationship between expenditure and enrollment for the single sample of `r nrow(football)` higher education institutions in the 2019 - 2020 academic year.
+- But what if we're not interested quantifying the relationship between student enrollment, institution type, and football expenditures for this single sample?
+- What if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?
+:::
+
+# Inference for regression
+
+## Statistical inference
+
+:::::: columns
+:::: {.column width="40%"}
+::: midi
+- **Statistical inference** provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from
+
+- For our inferences to be valid, the sample should be representative (ideally random) of the population we're interested in
+:::
+::::
+
+::: {.column width="60%"}
+![Image source: Eugene Morgan © Penn State](images/08/inference.png){fig-align="center"}
+:::
+::::::
+
+## Inference for a coefficient $\beta_j$
+
+- Hypothesis test for a coefficient $\beta_j$
+
+- Confidence interval for a coefficient $\beta_j$
+
+## Inference framework  {.midi}
+
+Our **objective** is to infer properties about a *population* using data from observational (or experimental) data collection
+
+::: incremental
+- **Pre data collection**: Before collecting the data, the data are unknown and random. $\hat{\boldsymbol{\beta}}$, which is a function of the data, is also [unknown]{.underline} and [random.]{.underline}
+
+- **Post data collection**: After collecting the data, $\hat{\boldsymbol{\beta}}$ is [fixed]{.underline} and [known]{.underline}.
+
+- **In all cases**: The true population parameter, $\boldsymbol{\beta}$ is [fixed]{.underline} but [unknown]{.underline}.
+:::
+
+**Question pre data collection:** Is the probability distribution of $\hat{\mathbf{\boldsymbol{\beta}}}$ a meaningful representation of the population? (We will slowly answer this question across the next few classes)
+
+# Distribution of $\mathbf{y}$ in regression
+
+## Linear regression model {.midi}
+
+$$
+\begin{aligned}
+\mathbf{y} &= \text{Model} + \text{Error} \\[5pt]
+&= f(\mathbf{X}) + \boldsymbol{\epsilon} \\[5pt]
+&= E(\mathbf{y}|\mathbf{X}) + \mathbf{\epsilon} \\[5pt]
+&= \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
+\end{aligned}
+$$
+
+. . .
+
+::: incremental
+- We have discussed multiple ways to find the least squares estimates of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\\beta_1\end{bmatrix}$
+
+  - None of these approaches depend on the distribution of $\boldsymbol{\epsilon}$
+
+- Now we will use statistical inference to draw conclusions about $\boldsymbol{\beta}$ that depend on particular assumptions about the distribution of $\boldsymbol{\epsilon}$
+:::
+
+## Linear regression model
+
+$$\begin{aligned}
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\end{aligned}
+$$
+
+such that the errors are independent and normally distributed.
+
+. . .
+
+- **Independent**: Knowing the error term for one observation doesn't tell us about the error term for another observation
+- **Normally distributed**: The distribution follows a particular mathematical model that is unimodal and symmetric
+  - $E(\boldsymbol{\epsilon}) = \mathbf{0}$
+  - $Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}$
+
+## Your turn
+
+\[Add woo clap poll on how we know that the distribution of sigma is independent\]
+
+\[What additional assumption are we making about the residuals. constant variance - maybe a true/false question\]
+
+## Visualizing distribution of $\mathbf{y}|\mathbf{X}$ {.midi}
+
+$$
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
+$$
+
+![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
+
+## Expected value {background-color="#ccddeb"}
+
+Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
+
+<br>
+
+. . .
+
+Then $E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin{bmatrix}E(z_1) \\ \vdots \\ E(z_p)\end{bmatrix}$
+
+## Expected value {background-color="#ccddeb"}
+
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants, $\mathbf{C}$ a $n \times 1$ vector of constants, and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
+
+$$
+E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
+$$
+
+<br>
+
+. . .
+
+$$
+E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
+$$
+
+## Expected value of the response
+
+::: question
+Show $$
+E(\mathbf{y}|\mathbf{X}) = \mathbf{X}\boldsymbol{\beta}
+$$
+:::
+
+## Variance {background-color="#ccddeb"}
+
+\
+Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \times 1$ vector of random variables. Then,
+
+<br>
+
+. . .
+
+$Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \dots & Cov(z_1, z_p)\\ Cov(z_2, z_1) & Var(z_2) & \dots & Cov(z_2, z_p) \\ \vdots & \vdots & \dots & \cdot \\ Cov(z_p, z_1) & Cov(z_p, z_2) & \dots & Var(z_p)\end{bmatrix}$
+
+## Variance {background-color="#ccddeb"}
+
+**General formula**
+
+Let $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
+
+$$
+Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
+$$
+
+<br>
+
+. . .
+
+**Formula for** $\mathbf{Az}$
+
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants
+
+\begin{aligned}
+Var(\mathbf{Az}) &= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^T]\\& = \mathbf{A}Var(\mathbf{z})\mathbf{A}^T
+\end{aligned}
+
+## Variance of the response
+
+::: question
+Show
+
+$$
+Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
+$$
+:::
+
+## Linear transformation of normal random variable {background-color="#ccddeb"}
+
+Suppose $\mathbf{w}$ and $\mathbf{z}$ are (multivariate) normal random variables. Then, $\mathbf{Aw} + \mathbf{Bz}$ is (multivariate) normal for $\mathbf{A}$ and $\mathbf{B}$ constant matrices.
+
+<br>
+
+::: question
+Show that the distribution of $\mathbf{y}|\mathbf{X}$ is normal.
+:::
+
+## Recap
+
+- Introduced statistical inference in the context of regression
+
+- Described assumptions on the error terms $\boldsymbol{\epsilon}$
+
+- Used assumptions of $\boldsymbol{\epsilon}$ to derive distribution of $\mathbf{y}$
+
+## Before next class
+
+- (Optional) submit team request by end of the day
+
+- Complete [Lecture 09 prepare](../prepare/prepare-lec09.html): Distribution of coefficients

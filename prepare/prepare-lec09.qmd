@@ -1,10 +1,10 @@
 ---
-title: "Prepare for Lecture 09: Inference - Normal assumption"
+title: "Prepare for Lecture 09: Inference - Distribution of coefficients"
 ---
 
 <br>
 
-📖 Read [Sections 5.8.1 -5.8.2](https://intro-regression.github.io/appendix-linear.html#sec-assumptions-matrix)
+📖 Read [Sections 5.9.1 - 5.9.2](https://intro-regression.github.io/05-slr-inference.html#sec-slr-inf-clt)
 
 📖 Read [Section 8.4.1](https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-inf-foundation)
 

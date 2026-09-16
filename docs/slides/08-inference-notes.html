@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Prof.&nbsp;Maria Tackett">
+<meta name="dcterms.date" content="2026-09-16">
 
-<title>Prepare for Lecture 09: Inference - Distribution of coefficients – STA 221 - Fall 2026</title>
+<title>Inference for regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare for Lecture 09: Inference - Distribution of coefficients</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Inference for regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -345,22 +411,69 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#computing-setup" id="toc-computing-setup" class="nav-link" data-scroll-target="#computing-setup">Computing setup</a></li>
+  <li><a href="#data-ncaa-football-expenditures" id="toc-data-ncaa-football-expenditures" class="nav-link" data-scroll-target="#data-ncaa-football-expenditures">Data: NCAA Football expenditures</a></li>
+  <li><a href="#univariate-eda" id="toc-univariate-eda" class="nav-link" data-scroll-target="#univariate-eda">Univariate EDA</a></li>
+  <li><a href="#bivariate-eda" id="toc-bivariate-eda" class="nav-link" data-scroll-target="#bivariate-eda">Bivariate EDA</a></li>
+  <li><a href="#regression-model" id="toc-regression-model" class="nav-link" data-scroll-target="#regression-model">Regression model</a></li>
+  <li><a href="#from-sample-to-population" id="toc-from-sample-to-population" class="nav-link" data-scroll-target="#from-sample-to-population">From sample to population</a></li>
+  <li><a href="#inference-for-regression" id="toc-inference-for-regression" class="nav-link" data-scroll-target="#inference-for-regression">Inference for regression</a>
+  <ul class="collapse">
+  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
+  <li><a href="#inference-for-a-coefficient-beta_j" id="toc-inference-for-a-coefficient-beta_j" class="nav-link" data-scroll-target="#inference-for-a-coefficient-beta_j">Inference for a coefficient <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#inference-framework" id="toc-inference-framework" class="nav-link" data-scroll-target="#inference-framework">Inference framework</a></li>
+  </ul></li>
+  <li><a href="#distribution-of-mathbfy-in-regression" id="toc-distribution-of-mathbfy-in-regression" class="nav-link" data-scroll-target="#distribution-of-mathbfy-in-regression">Distribution of <span class="math inline">\(\mathbf{y}\)</span> in regression</a>
+  <ul class="collapse">
+  <li><a href="#linear-regression-model" id="toc-linear-regression-model" class="nav-link" data-scroll-target="#linear-regression-model">Linear regression model</a></li>
+  <li><a href="#linear-regression-model-1" id="toc-linear-regression-model-1" class="nav-link" data-scroll-target="#linear-regression-model-1">Linear regression model</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
+  <li><a href="#visualizing-distribution-of-mathbfymathbfx" id="toc-visualizing-distribution-of-mathbfymathbfx" class="nav-link" data-scroll-target="#visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></a></li>
+  <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected value</a></li>
+  <li><a href="#expected-value-1" id="toc-expected-value-1" class="nav-link" data-scroll-target="#expected-value-1">Expected value</a></li>
+  <li><a href="#expected-value-of-the-response" id="toc-expected-value-of-the-response" class="nav-link" data-scroll-target="#expected-value-of-the-response">Expected value of the response</a></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a></li>
+  <li><a href="#variance-1" id="toc-variance-1" class="nav-link" data-scroll-target="#variance-1">Variance</a></li>
+  <li><a href="#variance-of-the-response" id="toc-variance-of-the-response" class="nav-link" data-scroll-target="#variance-of-the-response">Variance of the response</a></li>
+  <li><a href="#linear-transformation-of-normal-random-variable" id="toc-linear-transformation-of-normal-random-variable" class="nav-link" data-scroll-target="#linear-transformation-of-normal-random-variable">Linear transformation of normal random variable</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-inference.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Prepare for Lecture 09: Inference - Distribution of coefficients</h1>
+<h1 class="title">Inference for regression</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Prof.&nbsp;Maria Tackett </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 16, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -370,14 +483,363 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li><p>(Optional) Submit team request by Thursday, September 17 at 11:59pm: <a href="https://forms.cloud.microsoft/r/Ae2NGSwP2N" class="uri">https://forms.cloud.microsoft/r/Ae2NGSwP2N</a></p>
+<ul>
+<li><p>3 - 4 students per team.</p></li>
+<li><p>Must be enrolled in the same lab section.</p></li>
+</ul></li>
+<li><p>HW 02 due Thursday, September 24 at 11:59pm</p>
+<ul>
+<li>Released after class</li>
+</ul></li>
+</ul>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<ul>
+<li><p>Introduce statistical inference in the context of regression</p></li>
+<li><p>Describe assumptions on the error terms <span class="math inline">\(\boldsymbol{\epsilon}\)</span></p></li>
+<li><p>Use assumptions of <span class="math inline">\(\boldsymbol{\epsilon}\)</span> to derive distribution of <span class="math inline">\(\mathbf{y}\)</span></p></li>
+</ul>
+</section>
+<section id="computing-setup" class="level2">
+<h2 class="anchored" data-anchor-id="computing-setup">Computing setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)       </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)  </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)   </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-ncaa-football-expenditures" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="data-ncaa-football-expenditures">Data: NCAA Football expenditures</h2>
+<p>Today’s data come from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
+<p>We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :</p>
+<ul>
+<li><p><code>total_exp_m</code>: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)</p></li>
+<li><p><code>enrollment_th</code>: Total student enrollment in the 2019 - 2020 academic year (in thousands)</p></li>
+<li><p><code>type</code>: institution type (Public or Private)</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="univariate-eda" class="level2">
+<h2 class="anchored" data-anchor-id="univariate-eda">Univariate EDA</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-inference_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bivariate-eda" class="level2">
+<h2 class="anchored" data-anchor-id="bivariate-eda">Bivariate EDA</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-inference_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="regression-model">Regression model</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(exp_fit) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p><br></p>
-<p>📖 Read <a href="https://intro-regression.github.io/05-slr-inference.html#sec-slr-inf-clt">Sections 5.9.1 - 5.9.2</a></p>
-<p>📖 Read <a href="https://intro-regression.github.io/08-mlr-inference.html#sec-mlr-inf-foundation">Section 8.4.1</a></p>
-<p>📖 Read <a href="https://intro-regression.github.io/appendix-linear.html#sec-beta-dist-matrix">Appendix A.6</a></p>
+<p>For every additional 1,000 students, we expect an institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.</p>
+</section>
+<section id="from-sample-to-population" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
+<blockquote class="blockquote">
+<p>For every additional 1,000 students, we expect an institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.</p>
+</blockquote>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li>This is the exact relationship between expenditure and enrollment for the single sample of 127 higher education institutions in the 2019 - 2020 academic year.</li>
+<li>But what if we’re not interested quantifying the relationship between student enrollment, institution type, and football expenditures for this single sample?</li>
+<li>What if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?</li>
+</ul>
+</div>
+</section>
+<section id="inference-for-regression" class="level1">
+<h1>Inference for regression</h1>
+<section id="statistical-inference" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-inference">Statistical inference</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="midi">
+<ul>
+<li><p><strong>Statistical inference</strong> provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
+<li><p>For our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/08/inference.png" class="img-fluid figure-img"></p>
+<figcaption>Image source: Eugene Morgan © Penn State</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="inference-for-a-coefficient-beta_j" class="level2">
+<h2 class="anchored" data-anchor-id="inference-for-a-coefficient-beta_j">Inference for a coefficient <span class="math inline">\(\beta_j\)</span></h2>
+<ul>
+<li><p>Hypothesis test for a coefficient <span class="math inline">\(\beta_j\)</span></p></li>
+<li><p>Confidence interval for a coefficient <span class="math inline">\(\beta_j\)</span></p></li>
+</ul>
+</section>
+<section id="inference-framework" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="inference-framework">Inference framework</h2>
+<p>Our <strong>objective</strong> is to infer properties about a <em>population</em> using data from observational (or experimental) data collection</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Pre data collection</strong>: Before collecting the data, the data are unknown and random. <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, which is a function of the data, is also <u>unknown</u> and <u>random.</u></p></li>
+<li><p><strong>Post data collection</strong>: After collecting the data, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is <u>fixed</u> and <u>known</u>.</p></li>
+<li><p><strong>In all cases</strong>: The true population parameter, <span class="math inline">\(\boldsymbol{\beta}\)</span> is <u>fixed</u> but <u>unknown</u>.</p></li>
+</ul>
+</div>
+<p><strong>Question pre data collection:</strong> Is the probability distribution of <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> a meaningful representation of the population? (We will slowly answer this question across the next few classes)</p>
+</section>
+</section>
+<section id="distribution-of-mathbfy-in-regression" class="level1">
+<h1>Distribution of <span class="math inline">\(\mathbf{y}\)</span> in regression</h1>
+<section id="linear-regression-model" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="linear-regression-model">Linear regression model</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\mathbf{y} &amp;= \text{Model} + \text{Error} \\[5pt]
+&amp;= f(\mathbf{X}) + \boldsymbol{\epsilon} \\[5pt]
+&amp;= E(\mathbf{y}|\mathbf{X}) + \mathbf{\epsilon} \\[5pt]
+&amp;= \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
+\end{aligned}
+\]</span></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>We have discussed multiple ways to find the least squares estimates of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\\beta_1\end{bmatrix}\)</span></p>
+<ul class="incremental">
+<li>None of these approaches depend on the distribution of <span class="math inline">\(\boldsymbol{\epsilon}\)</span></li>
+</ul></li>
+<li><p>Now we will use statistical inference to draw conclusions about <span class="math inline">\(\boldsymbol{\beta}\)</span> that depend on particular assumptions about the distribution of <span class="math inline">\(\boldsymbol{\epsilon}\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="linear-regression-model-1" class="level2">
+<h2 class="anchored" data-anchor-id="linear-regression-model-1">Linear regression model</h2>
+<p><span class="math display">\[\begin{aligned}
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\end{aligned}
+\]</span></p>
+<p>such that the errors are independent and normally distributed.</p>
+<p>. . .</p>
+<ul>
+<li><strong>Independent</strong>: Knowing the error term for one observation doesn’t tell us about the error term for another observation</li>
+<li><strong>Normally distributed</strong>: The distribution follows a particular mathematical model that is unimodal and symmetric
+<ul>
+<li><span class="math inline">\(E(\boldsymbol{\epsilon}) = \mathbf{0}\)</span></li>
+<li><span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your turn</h2>
+<p>[Add woo clap poll on how we know that the distribution of sigma is independent]</p>
+<p>[What additional assumption are we making about the residuals. constant variance - maybe a true/false question]</p>
+</section>
+<section id="visualizing-distribution-of-mathbfymathbfx" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></h2>
+<p><span class="math display">\[
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/08/regression.png" class="img-fluid figure-img"></p>
+<figcaption>Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="expected-value" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="expected-value">Expected value</h2>
+<p>Let <span class="math inline">\(\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
+<p><br></p>
+<p>. . .</p>
+<p>Then <span class="math inline">\(E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin{bmatrix}E(z_1) \\ \vdots \\ E(z_p)\end{bmatrix}\)</span></p>
+</section>
+<section id="expected-value-1" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="expected-value-1">Expected value</h2>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants, <span class="math inline">\(\mathbf{C}\)</span> a <span class="math inline">\(n \times 1\)</span> vector of constants, and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p><span class="math display">\[
+E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
+\]</span></p>
+</section>
+<section id="expected-value-of-the-response" class="level2">
+<h2 class="anchored" data-anchor-id="expected-value-of-the-response">Expected value of the response</h2>
+<div class="question">
+<p>Show <span class="math display">\[
+E(\mathbf{y}|\mathbf{X}) = \mathbf{X}\boldsymbol{\beta}
+\]</span></p>
+</div>
+</section>
+<section id="variance" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="variance">Variance</h2>
+<p><br>
+Let <span class="math inline">\(\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then,</p>
+<p><br></p>
+<p>. . .</p>
+<p><span class="math inline">\(Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) &amp; Cov(z_1, z_2) &amp; \dots &amp; Cov(z_1, z_p)\\ Cov(z_2, z_1) &amp; Var(z_2) &amp; \dots &amp; Cov(z_2, z_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \cdot \\ Cov(z_p, z_1) &amp; Cov(z_p, z_2) &amp; \dots &amp; Var(z_p)\end{bmatrix}\)</span></p>
+</section>
+<section id="variance-1" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="variance-1">Variance</h2>
+<p><strong>General formula</strong></p>
+<p>Let <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p><strong>Formula for</strong> <span class="math inline">\(\mathbf{Az}\)</span></p>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants</p>
+<span class="math display">\[\begin{aligned}
+Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^T]\\&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^T
+\end{aligned}\]</span>
+</section>
+<section id="variance-of-the-response" class="level2">
+<h2 class="anchored" data-anchor-id="variance-of-the-response">Variance of the response</h2>
+<div class="question">
+<p>Show</p>
+<p><span class="math display">\[
+Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
+\]</span></p>
+</div>
+</section>
+<section id="linear-transformation-of-normal-random-variable" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="linear-transformation-of-normal-random-variable">Linear transformation of normal random variable</h2>
+<p>Suppose <span class="math inline">\(\mathbf{w}\)</span> and <span class="math inline">\(\mathbf{z}\)</span> are (multivariate) normal random variables. Then, <span class="math inline">\(\mathbf{Aw} + \mathbf{Bz}\)</span> is (multivariate) normal for <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> constant matrices.</p>
+<p><br></p>
+<div class="question">
+<p>Show that the distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span> is normal.</p>
+</div>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<ul>
+<li><p>Introduced statistical inference in the context of regression</p></li>
+<li><p>Described assumptions on the error terms <span class="math inline">\(\boldsymbol{\epsilon}\)</span></p></li>
+<li><p>Used assumptions of <span class="math inline">\(\boldsymbol{\epsilon}\)</span> to derive distribution of <span class="math inline">\(\mathbf{y}\)</span></p></li>
+</ul>
+</section>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
+<ul>
+<li><p>(Optional) submit team request by end of the day</p></li>
+<li><p>Complete <a href="../prepare/prepare-lec09.html">Lecture 09 prepare</a>: Distribution of coefficients</p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -786,7 +1248,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
