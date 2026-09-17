@@ -708,14 +708,14 @@ window.Quarto = {
 <li><strong>Normally distributed</strong>: The distribution follows a particular mathematical model that is unimodal and symmetric
 <ul>
 <li><span class="math inline">\(E(\boldsymbol{\epsilon}) = \mathbf{0}\)</span></li>
-<li><span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}\)</span></li>
+<li><span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}\)</span></li>
 </ul></li>
 </ul>
 </section>
 <section id="visualizing-distribution-of-mathbfymathbfx" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></h2>
 <p><span class="math display">\[
-\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -779,7 +779,7 @@ Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf
 <div class="question">
 <p>Show</p>
 <p><span class="math display">\[
-Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
+Var(\mathbf{y}|\mathbf{X}) = \sigma^2\mathbf{I}
 \]</span></p>
 </div>
 </section>

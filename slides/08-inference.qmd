@@ -274,12 +274,12 @@ such that the errors are independent and normally distributed.
 - **Independent**: Knowing the error term for one observation doesn't tell us about the error term for another observation
 - **Normally distributed**: The distribution follows a particular mathematical model that is unimodal and symmetric
   - $E(\boldsymbol{\epsilon}) = \mathbf{0}$
-  - $Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}$
+  - $Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}$
 
 ## Visualizing distribution of $\mathbf{y}|\mathbf{X}$ {.midi}
 
 $$
-\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
 $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
@@ -357,7 +357,7 @@ Var(\mathbf{Az}) &= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}
 Show
 
 $$
-Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
+Var(\mathbf{y}|\mathbf{X}) = \sigma^2\mathbf{I}
 $$
 :::
 
