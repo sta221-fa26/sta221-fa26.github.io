@@ -3778,7 +3778,7 @@
     "href": "slides/08-inference-notes.html#linear-regression-model-1",
     "title": "Inference for regression",
     "section": "Linear regression model",
-    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n. . .\n\nIndependent: Knowing the error term for one observation doesn’t tell us about the error term for another observation\nNormally distributed: The distribution follows a particular mathematical model that is unimodal and symmetric\n\n\\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\)\n\\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\)"
+    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n. . .\n\nIndependent: Knowing the error term for one observation doesn’t tell us about the error term for another observation\nNormally distributed: The distribution follows a particular mathematical model that is unimodal and symmetric\n\n\\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\)\n\\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\)"
   },
   {
     "objectID": "slides/08-inference-notes.html#visualizing-distribution-of-mathbfymathbfx",
@@ -3946,7 +3946,7 @@
     "href": "slides/08-inference.html#linear-regression-model-1",
     "title": "Inference for regression",
     "section": "Linear regression model",
-    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n\n\nIndependent: Knowing the error term for one observation doesn’t tell us about the error term for another observation\nNormally distributed: The distribution follows a particular mathematical model that is unimodal and symmetric\n\n\\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\)\n\\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\)"
+    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n\n\nIndependent: Knowing the error term for one observation doesn’t tell us about the error term for another observation\nNormally distributed: The distribution follows a particular mathematical model that is unimodal and symmetric\n\n\\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\)\n\\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\)"
   },
   {
     "objectID": "slides/08-inference.html#visualizing-distribution-of-mathbfymathbfx",

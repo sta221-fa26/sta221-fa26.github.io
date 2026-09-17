@@ -250,7 +250,7 @@ $$
 - Now we will use statistical inference to draw conclusions about $\boldsymbol{\beta}$ that depend on particular assumptions about the distribution of $\boldsymbol{\epsilon}$
 :::
 
-## Your turn 
+## Your turn
 
 ::: question
 Which components of the linear regression model $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$ are fixed, i.e., not random variables?
@@ -263,7 +263,7 @@ Which components of the linear regression model $\mathbf{y} = \mathbf{X}\boldsym
 ## Linear regression model
 
 $$\begin{aligned}
-\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})
 \end{aligned}
 $$
 
