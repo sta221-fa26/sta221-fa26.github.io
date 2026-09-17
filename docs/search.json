@@ -5203,5 +5203,75 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html",
+    "href": "hw/hw-02-DRAFT.html",
+    "title": "HW 02: Multiple linear regression",
+    "section": "",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 24 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-1",
+    "href": "hw/hw-02-DRAFT.html#exercise-1",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nShow that the following is true for the vector of residuals: \\(\\mathbf{e} = (\\mathbf{I} - \\mathbf{H})\\boldsymbol{\\epsilon}\\)\nUse the result from part (a) to derive \\(E(\\mathbf{e})\\).\nUse the result from part (a) to derive \\(Var(\\mathbf{e})\\)."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-2",
+    "href": "hw/hw-02-DRAFT.html#exercise-2",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nShow how \\(\\boldsymbol{\\epsilon}\\) being normally distributed means that \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-3",
+    "href": "hw/hw-02-DRAFT.html#exercise-3",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThis exercise is adapted from Montgomery, Peck, and Vining (2021).\nSuppose we fit the model \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\boldsymbol{\\epsilon}\\) when the true model is actually given by \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\mathbf{X}_2\\boldsymbol{\\beta}_2 + \\boldsymbol{\\epsilon}\\). Assume \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) for both models.\n\nFind \\(E(\\hat{\\boldsymbol{\\beta}}_1)\\), the expected value of the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}_1\\).\nUnder what condition does \\(E(\\hat{\\boldsymbol{\\beta}}_1) = \\boldsymbol{\\beta}_1\\)? What is the relationship between \\(\\mathbf{X}_1\\) and \\(\\mathbf{X}_2\\) under this condition?"
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-4",
+    "href": "hw/hw-02-DRAFT.html#exercise-4",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWe conduct least-squares regression analysis with certain assumptions underlying the regression model. Consider the linear regression model:This model relies on four assumptions:Linearity: There is a linear relationship between the response and predictor variables.Constant Variance: The variability about the least squares line is constant for every value of the predictor.Normality: The distribution of the residuals is approximately normal.Independence: The residuals are independent from one another.For each condition, state the components of Equation 1 that are used to represent it.\nhttps://sta221-sp25.netlify.app/hw/hw-02"
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#data-lego-sets",
+    "href": "hw/hw-02-DRAFT.html#data-lego-sets",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Data: LEGO® sets",
+    "text": "Data: LEGO® sets\nThe data set includes information about LEGO® sets from themes produced between January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from Peterson and Ziegler (2021).\nYou will work with data on 391 randomly selected LEGO® sets produced during this time period. The primary variables of interest in this analysis are\n\nPieces: Number of pieces in the set from brickset.com.\nMinifigures: Number of minifigures (LEGO® people) in the set scraped from brickset.com.\nAmazon_Price: Price of the set on Amazon.com (in U.S. dollars)\nSize: General size of the interlocking bricks\n\nLarge = LEGO Duplo® sets - which include large brick pieces safe for children ages 1 to 5\nSmall = LEGO® sets which- include the traditional smaller brick pieces created for age groups 5 and - older, e.g., City, Friends\n\n\nThe data are contained in lego-sample.csv.\n\nlegos &lt;- read_csv(\"data/lego-sample.csv\")\n\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nWe want to fit a multiple linear regression model to predict the price of LEGO® sets on Amazon.com based on Pieces, Size, and Minifigures."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-5",
+    "href": "hw/hw-02-DRAFT.html#exercise-5",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\nInstead of using the number of minifigures in the model, we decide to create an indicator variable for whether or not there are any minifigures in the set.\nCreate an indicator variable that takes the value “No” if there are zero minifigures in the LEGO® set, and “Yes” if there is at least one minifigure.\nFit the main effects model using the number of pieces, size of the blocks, and the indicator for minifigures to predict the price on Amazon. Neatly display the results using three decimal places."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-6",
+    "href": "hw/hw-02-DRAFT.html#exercise-6",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nWe want to understand the relationship between Pieces and Amazon_Price in the model from the previous exercise.\nWe are convinced from the model output that there is evidence of a linear relationship between the two variables. Now we want to be more specific and test whether the slope is actually different from 0.1 ($10 increase in the price for every 100 additional pieces).\n\nWrite the null and alternative hypotheses for this test using words and mathematical notation.\nCompute the test statistic for this test. Show the code used to compute the test statistic; you may use any relevant output from the model in the previous exercise.\nWhat is the distribution of the test statistic under the null hypothesis? Specify the distribution specifically for this problem.\nCompute the p-value and state your conclusion in the context of the data using a threshold of \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-7",
+    "href": "hw/hw-02-DRAFT.html#exercise-7",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nWe hypothesize that the relationship between the Amazon.com price and number of pieces may differ based on whether or not there are minifigures in the set.\nMake a plot to visualize this potential effect. Does the relationship between Amazon.com price and number of pieces seem to differ based on the inclusion of minifigures? Briefly explain.\nFit a model using the number of pieces, size of the blocks, and presence of minifigures to predict the price on Amazon.com. Fit the model such that the intercept has a meaningful interpretation and that the effect of pieces may differ based on the presence of minifigures.\nInterpret the intercept in the context of the data."
+  },
+  {
+    "objectID": "hw/hw-02-DRAFT.html#exercise-8",
+    "href": "hw/hw-02-DRAFT.html#exercise-8",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nWhich model is a better fit for the data - the model in Exercise 5 or the model in Exercise 7? Briefly explain your choice using relevant statistics to support your response."
   }
 ]
