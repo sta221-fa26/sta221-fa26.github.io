@@ -339,18 +339,6 @@ $$
 Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
 $$
 
-<br>
-
-. . .
-
-**Formula for** $\mathbf{Az}$
-
-Let $\mathbf{A}$ be an $n \times p$ matrix of constants
-
-\begin{aligned}
-Var(\mathbf{Az}) &= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^T]\\& = \mathbf{A}Var(\mathbf{z})\mathbf{A}^T
-\end{aligned}
-
 ## Variance of the response
 
 ::: question
