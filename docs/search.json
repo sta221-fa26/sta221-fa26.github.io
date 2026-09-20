@@ -5286,7 +5286,7 @@
     "href": "project.html",
     "title": "Final project",
     "section": "",
-    "text": "Proposal: due Tuesday, September 29\nExploratory data analysis: due Thursday, October 29\nPresentation + Presentation comments: Monday, November 23 in lab\nDraft report + Peer review: Monday, November 30 in lab\nFinal write up + Project repo: due Friday, December 4",
+    "text": "[Part 0: Team agreement + Collaboration in GitHub] due Tuesday, September 29\n[Part 1: Project proposal]: due Tuesday, September 29\nPart 2: Exploratory data analysis: due Thursday, October 29\nPart 3: Presentation + Presentation comments: Monday, November 23 in lab\nPart 4: Draft report + Peer review: Monday, November 30 in lab\nPart 5: Final write up + Project repo: due Friday, December 4",
     "crumbs": [
       "Project",
       "Instructions"
@@ -5297,7 +5297,40 @@
     "href": "project.html#project-milestones",
     "title": "Final project",
     "section": "",
-    "text": "Proposal: due Tuesday, September 29\nExploratory data analysis: due Thursday, October 29\nPresentation + Presentation comments: Monday, November 23 in lab\nDraft report + Peer review: Monday, November 30 in lab\nFinal write up + Project repo: due Friday, December 4",
+    "text": "[Part 0: Team agreement + Collaboration in GitHub] due Tuesday, September 29\n[Part 1: Project proposal]: due Tuesday, September 29\nPart 2: Exploratory data analysis: due Thursday, October 29\nPart 3: Presentation + Presentation comments: Monday, November 23 in lab\nPart 4: Draft report + Peer review: Monday, November 30 in lab\nPart 5: Final write up + Project repo: due Friday, December 4",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#introduction",
+    "href": "project.html#introduction",
+    "title": "Final project",
+    "section": "Introduction",
+    "text": "Introduction\nThe goal of the final project is for you to use regression to analyze data and explore a research question of your choice. The data may be from an existing data set or you may collect your own data from the internet.\nChoose the data based on your group’s interests or work you all have done in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\n\n\n\n\n\n\nImportant\n\n\n\nAll analyses must be done in RStudio using Quarto and GitHub, and your analysis and written report must be reproducible.\nAll work for the project will be submitted in your project GitHub repo. There are no Gradescope submissions on the project.\n\n\n\nLogistics\nYou will complete the project as a lab team. The primary deliverables for the project are the following:\n\nAn in-person presentation about the exploratory data analysis and initial modeling\nA reproducible final write up detailing your analysis and results\nA GitHub repository containing all work from the project –&gt;\n\nThere are intermediate milestones and peer review assignments throughout the semester to help you work towards the primary deliverables. These milestones are described below.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#part-0-team-agreement-collaboration-in-github",
+    "href": "project.html#part-0-team-agreement-collaboration-in-github",
+    "title": "Final project",
+    "section": "Part 0: Team agreement + Collaboration in GitHub",
+    "text": "Part 0: Team agreement + Collaboration in GitHub\n[Add the previous instructions]",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#part-1-project-proposal",
+    "href": "project.html#part-1-project-proposal",
+    "title": "Final project",
+    "section": "Part 1: Project proposal",
+    "text": "Part 1: Project proposal\n\n\n\n\n\n\nImportantSubmission\n\n\n\nWrite the narrative and analysis (Sections 1- 4) for each data set in proposal.qmd. Put the data set and the data dictionary in the `data` folder in the repo. Push the `qmd` and rendered `pdf` documents to GitHub by the deadline, **Tuesday, February 24 at 11:59pm.**\n\n\nThe purpose of the project proposal is for your team to identify the data set you’re interested in analyzing to investigate one of your potential research topics. To do so, you will propose 2 - 3 data sets. If you’re unsure where to find data, you can use the list of potential data sources on the Tips + resources.\n\n\n\n\n\n\nImportant\n\n\n\nYou must use one of the proposed data sets for your final project, unless instructed otherwise in the teaching team feedback.\n\n\nEach data set must meet the following criteria:\n\nAt least 500 observations\nAt least 10 columns, such that at least 6 of the columns are useful and unique predictor variables.\n\ne.g., identifier variables such as “name”, “ID number”, etc. are not useful predictor variables.\ne.g., if you have multiple columns with the same information (e.g. “state abbreviation” and “state name”), then they are not unique predictors.\n\nAt least one variable that can be identified as a reasonable response variable.\n\nThe response variable can be quantitative or categorical.\n\nA mix of quantitative and categorical variables that can be used as predictors.\nMay not use a data set directly from lecture notes or assignments. If you use data from the same original data source (e.g., the lemurs data), you must add enough new variables and observations to make your data distinct from the data used in class.\n\n\n\n\n\n\n\nWarningTypes of data sets to avoid\n\n\n\n\nData that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc.\nData sets in which there is no information about how the data were originally collected\nData sets in which there are missing or unclear definitions about the observations and/or variables\n\n\n\nAsk a member of the teaching team if you’re unsure whether your data set meets the criteria.\nInclude the following for each data set:\n\nSection 1: Data description\n\n\nSection 2: Research question\n\n\nSection 3: Analysis plan\n\nDistribution of rsponse variable\nList of potential predictors\n\n\n\nSection 4: Data dictionary\n\nYou may use the data dictonary from the data source, with citations.\n\n\n\n\n\n\n\nSection 1: Introduction\n\nAn introduction to the subject matter you’re investigating (citing any relevant literature)",
     "crumbs": [
       "Project",
       "Instructions"
