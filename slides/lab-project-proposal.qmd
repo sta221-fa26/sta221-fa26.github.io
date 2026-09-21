@@ -1,0 +1,97 @@
+---
+title: "Project: Team agreement + Project proposal "
+date: "09-21-2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Today's agenda
+
+- Team agreement
+
+- Project proposal
+
+## Project team 
+
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=NBe0Z0&nav=MTVfe0I0RDU4MzA5LTZERkMtNEM5MS04OUNFLTU2RUNFQzc3Qjc3OH0) to find your project team. You will work with this team in the remaining labs and the final project.
+
+## Team name + agreement
+
+- Come up with a team name, if you haven't already. You can't have the same name as another team in the class, so be creative!
+
+  - Your TA will get your team name by the end of lab.
+
+- Fill out the document in the **team-agreement** repo. The goals of the agreement are to...
+
+  - Gain a common understanding of the team's goals and expectations for collaboration
+  - Make a plan for team communication
+  - Make a plan for working outside of lab
+
+## Team workflow
+
+- Only <u>**one**</u> team member should type at a time.
+
+  - Every team member should still be engaged in discussion, even if it's not your turn type.
+
+- Don't forget to **pull** to get your teammates' updates before making changes to the `.qmd` file.
+
+- Take turns typing the team's responses on the team agreement to practice a collaborative workflow.
+
+## Tips for working on a team
+
+- Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality project milestone or lab assignment
+
+- Work together on the project and lab assignments.
+
+## Final team project {.midi}
+
+- **Goal**: Use the methods from STA 221 to analyze data and answer a research question developed by your team
+
+- **Primary deliverables:**
+
+  1.  an in-person presentation about the exploratory data analysis and initial modeling
+
+  2.  a reproducible final write up detailing your analysis and results
+
+  3.  a GitHub repository containing all work from the project
+
+- There are periodic project milestones throughout the semester to help you work towards these deliverables
+
+## Today's focus: Project proposal  {.midi}
+
+- **Goals:** Identify 2 - 3 potential research topics you may be interested in analyzing.
+
+- You can discuss the topics you put in the Get to Know You survey to help generate ideas
+
+::: callout-important
+## Submission
+
+All work for the project will be submitted in your team’s project GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow typically used in practice.
+
+There are no Gradescope submissions for project milestones.
+:::
+
+<br>
+
+<center>🔗 <https://sta221-fa26.github.io/project> </center>

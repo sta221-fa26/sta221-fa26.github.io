@@ -10,17 +10,17 @@ library(broom)
 
 ## Project milestones
 
-- [**Part 0: Team agreement + Collaboration in GitHub**] due Tuesday, September 29
+- [Part 0: Team agreement + Collaboration in GitHub](#sec-collaboration): due Tuesday, September 29
 
-- [**Part 1: Project proposal**]**:** due Tuesday, September 29
+- [Part 1: Project proposal](#sec-proposal): due Tuesday, September 29
 
-- **Part 2: Exploratory data analysis:** due Thursday, October 29
+- [Part 2: Exploratory data analysis](#sec-eda): due Thursday, October 29
 
-- **Part 3: Presentation + Presentation comments:** Monday, November 23 in lab
+- [[Part 3: Presentation + Presentation comments](#presentation)]{#sec-presentation}: Monday, November 23 in lab
 
-- **Part 4: Draft report + Peer review:** Monday, November 30 in lab
+- [Part 4: Draft report + Peer review](#sec-draft-report): Monday, November 30 in lab
 
-- **Part 5: Final write up + Project repo:** due Friday, December 4
+- [Part 5: Final write up + Project repo](#sec-writeup): due Friday, December 4
 
 ## Introduction
 
@@ -44,58 +44,36 @@ You will complete the project as a lab team. The primary deliverables for the pr
 
 There are intermediate milestones and peer review assignments throughout the semester to help you work towards the primary deliverables. These milestones are described below.
 
-## Part 0: **Team agreement + Collaboration in GitHub** 
+## Part 0: **Team agreement + Collaboration in GitHub** {#sec-collaboration}
 
-\[Add the previous instructions\]
+::: callout-note
+[Click here](https://prodduke-my.sharepoint.com/:x:/r/personal/mt324_duke_edu/Documents/STA%20221%20Lab%20Groups.xlsx?d=w5b50723cce064457b91bb28c55596f1a&csf=1&web=1&e=g5TNDT&nav=MTVfe0I0RDU4MzA5LTZERkMtNEM5MS04OUNFLTU2RUNFQzc3Qjc3OH0) to see your project teams.
+:::
 
-<!-- ## Research topics {#research-topics} -->
+Complete the team following before starting the project proposal:
 
-<!-- ::: callout-important -->
+✅ If you haven’t already, come up with a team name. You can’t use the same name as another team, so I encourage you to be creative! Your TA will get your team name by the end of lab.
 
-<!-- ## Submission -->
+✅ Fill out the team agreement. This will help you figure out a plan for communication, and working together during labs and outside of class. You can find the team agreement in the GitHub repo **team-agreement-\[github_team_name\]**.
 
-<!-- Write your responses in `research-topics.qmd` in your team's project GitHub repo. Push both the `.qmd` and rendered `.pdf` to GitHub by the deadline, **Tuesday, February 10 at 11:59pm**. There is no Gradescope submission. -->
+- Take turns typing the team's response to the items on the team agreement. Only one person should be typing at a time to reduce merge conflicts. When you are done typing, render and push all changes to GitHub. Then all team members, click **pull** to see the updated document in your RStudio container.
 
-<!-- ::: -->
+- Be sure to push the completed agreement to GitHub. Each team member can refer to the document in this repo or download the PDF of the agreement for future reference.
 
-<!-- The goal of this milestone is to discuss topics and develop potential research questions your team is interested in exploring for the project. You are only developing ideas at this point; you do not need to have a data set identified right now. -->
+::: callout-tip
+Please let your TA know if you have questions about the collaborating in a single GitHub repo.
+:::
 
-<!-- Develop three potential research topics. Include the following for <u><b></b>each</b></u> of the three topics: -->
+### Grading
 
-<!-- 1.  A brief description of the topic -->
+This milestone is worth 5 points and will be graded based on completion.
 
-<!-- 2.  A statement about your motivation for investigating this topic -->
-
-<!-- 3.  The potential audience(s), i.e., who might be most interested in this research? For example: policymakers, researchers, industry professionals, the general public, etc. -->
-
-<!-- 4.  Two or three potential research questions you could analyze about this topic. *(Note: These are draft questions at this point. These questions may change in the next step of the project as you learn more about the data.)* -->
-
-<!-- 5.  Ideas about the type of data you might use to answer this question or potential data sets you're interested in using. (*Note: The goal is to generate ideas at this point, so it is fine if you have not identified any particular data set at this point.)* -->
-
-<!-- **AI Disclosure:** Provide a brief description of how your team used AI (if at all) to complete the research topics milestone. If you used AI, include the name and version of the AI tool(s) used. If you did not use AI, you can state "We did not use AI to complete this milestone." *Note: AI use will not negatively affect your grade, provided it is accurately disclosed and in alignment with the course's academic honesty policy.* -->
-
-<!-- ### Grading (5pts) -->
-
-<!-- The anticipated length is 1 - 3 pages. -->
-
-<!-- The research topics milestone is worth 5 points and will be graded based on accurately and comprehensively addressing the criteria stated above. -->
-
-<!-- - **Excellent (5 pts):** All required elements are completed. This includes meeting the stated criteria for three distinct research topics and the AI disclosure. -->
-
-<!-- - **Strong (3 - 4 pts):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. -->
-
-<!-- - **Satisfactory (2 pts):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. -->
-
-<!-- - **Needs Improvement (1 pts):** Requirements are largely unmet, and there are major elements that are incomplete and/or inaccurate. -->
-
-<!-- - **No submission (0 pts)**: No work submitted by the deadline. -->
-
-## Part 1: Project proposal
+## Part 1: Project proposal {#sec-proposal}
 
 ::: callout-important
 ## Submission
 
-Write the narrative and analysis (Sections 1- 4) for each data set in `proposal.qmd`. Put the data set and the data dictionary in the \`data\` folder in the repo. Push the \`qmd\` and rendered \`pdf\` documents to GitHub by the deadline, \*\*Tuesday, February 24 at 11:59pm.\*\*
+Write the narrative and analysis (Sections 1- 4) for each data set in `proposal.qmd`. Put the data set and the data dictionary in the \`data\` folder in the repo. Push the \`qmd\` and rendered \`pdf\` documents to GitHub by the deadline, **Tuesday, September 29 at 11:59pm.**
 :::
 
 The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research topics. **To do so, you will propose 2 - 3 data sets.** If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](project-tips.html).
@@ -107,20 +85,14 @@ You must use one of the proposed data sets for your final project, unless instru
 Each data set must meet the following criteria:
 
 - At least 500 observations
-
 - At least 10 columns, such that at least 6 of the columns are useful and unique predictor variables.
-
   - e.g., identifier variables such as "name", "ID number", etc. are <u>not</u> useful predictor variables.
 
   - e.g., if you have multiple columns with the same information (e.g. "state abbreviation" and "state name"), then they are not unique predictors.
-
 - At least one variable that can be identified as a reasonable response variable.
-
   - The response variable can be quantitative or categorical.
-
 - A mix of quantitative and categorical variables that can be used as predictors.
-
--  May not use a data set directly from lecture notes or assignments. If you use data from the same original data source (e.g., the lemurs data), you must add enough new variables and observations to make your data distinct from the data used in class.
+- May not use a data set directly from lecture notes or assignments. If you use data from the same original data source (e.g., the lemurs data), you must add enough new variables and observations to make your data distinct from the data used in class.
 
 ::: callout-warning
 ### Types of data sets to avoid
@@ -134,81 +106,65 @@ Each data set must meet the following criteria:
 
 **Ask a member of the teaching team if you're unsure whether your data set meets the criteria.**
 
-Include the following for each data set:
+::: callout-tip
+As you look for data sets, consider what topics your team is interested in or curious about. You can think about potential research questions you're interested in exploring first, then look for data sets that can help you answer those questions.
 
-### Section 1: Data description 
+If you need help generating ideas, start by discussing the topics each of you put down as potential interest for the project in the Get to Know You Survey at the beginning of the semester.
+:::
 
-### Section 2: Research question 
+Include the following information for [**each**]{.underline} data set.
 
-### Section 3: Analysis plan 
+### Section 1: Data description
 
-- Distribution of rsponse variable
+- The source of the data set, i.e., where you obtained the data.
 
-- List of potential predictors
+- A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data)
 
-### Section 4: Data dictionary 
+- A description of the observations and general characteristics being measured
 
-- You may use the data dictonary from the data source, with citations.
+### Section 2: Research question
 
-<!-- 1.  A brief description of the topic -->
+- A brief description of the topic that would be investigated with the data and your motivation for investigating this topic
 
-<!-- 2.  A statement about your motivation for investigating this topic -->
+- The potential audience(s) for your analysis, i.e., who might be most interested in this research? For example: policymakers, researchers, industry professionals, the general public, etc.
 
-<!-- 3.  The potential audience(s), i.e., who might be most interested in this research? For example: policymakers, researchers, industry professionals, the general public, etc. -->
+- One or two potential research questions you could analyze using this data set. *(Note: These are draft questions at this point. These questions may change in the next step of the project as you learn more about the data.)*
 
-<!-- 4.  Two or three potential research questions you could analyze about this topic. *(Note: These are draft questions at this point. These questions may change in the next step of the project as you learn more about the data.)* -->
+### Section 3: Variables
 
-### Section 1: Introduction 
+- Visualization of the proposed response variable.
 
-- An introduction to the subject matter you're investigating (citing any relevant literature)
+- List of variables that will be considered as predictors
 
-<!-- - Statement of a well-developed research question. -->
+  - If there are more than 20 potential predictors, you can provide general descriptions of the types of variables that are considered as predictors (e.g., demographic variables)
 
-<!-- - The motivation for your research question and why it is important -->
+### Section 4: Codebook
 
-<!-- - Your team's hypotheses regarding the research question -->
+- Include a list of the variables in the data and their definitions.
 
-<!--   - This is a narrative about what you think regarding the research question, not formal statistical hypotheses. -->
+  - You may directly use a codebook provided by the data source, as long as you cite it.
 
-<!-- ### Section 2: Data description -->
+### AI Disclosure
 
-<!-- - The source of the data set -->
+Provide a brief description of how your team used AI (if at all) to complete this project milestone. If you used AI, include the name and version of the AI tool(s) used. If you did not use AI, you can state "We did not use AI to complete this milestone." *Note: AI use will not negatively affect your grade, provided it is accurately disclosed and in alignment with the course academic honesty policy.*
 
-<!-- - A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data) -->
+### Grading
 
-<!-- - A description of the observations and general characteristics being measured -->
+The anticipated length is 1 - 2 pages per data set for Sections 1 - 4. The length of the codebook will vary based on the data set.
 
-<!-- ### Section 3: Data processing -->
+The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal.
 
-<!-- - Description of data processing you need to do to prepare for analysis, such as joining multiple data sets, handling missing data, etc. -->
+- **Excellent (9 - 10 pts) :** All required elements are completed and are accurate. There are at least two data sets that meet the requirements (or the team has otherwise discussed the data with Professor Tackett) and that do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data, potential research questions, visualization of the response variable, and potential predictors for at least two data sets. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
 
-<!-- - Visualizations, summary statistics, and narrative to describe the distribution of the [**response**]{.underline} variable. -->
+- **Strong (7 -8 pts):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for next project milestone.
 
-<!-- ### Section 4: Analysis approach -->
+- **Satisfactory (5 - 6 pts):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for next project milestone.
 
-<!-- - a description of the potential predictor variables of interest -->
+- **Needs Improvement (3 - 4pts):** Requirements are largely unmet, and there are major elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for next project milestone.
 
-<!-- - regression model technique (multiple linear regression for quantitative response variable or logistic regression for a categorical response variable) -->
+## Exploratory data analysis {#sec-eda}
 
-<!-- ### Data dictionary (aka code book) -->
-
-<!-- Submit a data dictionary for all the variables in your data set in the `README` of the `data` folder. You do <u>not</u> need to include the data dictionary in the PDF document. -->
-
-<!-- ### Grading -->
-
-<!-- The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages. -->
-
-<!-- The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal. -->
-
-<!-- - **Excellent (10 pts) :** All required elements are completed and are accurate. The data set meets the requirements (or the team has otherwise discussed the data with Professor Tackett) and the data do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data, any data processing, and exploration of the response variable as described above. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
-
-<!-- - **Strong (8 - 9 pts)**: Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling. -->
-
-<!-- - **Satisfactory (6 - 7 pts):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
-
-<!-- - **Needs Improvement (4 - 5 pts):** Requirements are largely unmet, and there are major elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
-
-<!-- ## Exploratory data analysis {#eda} -->
+To be posted.
 
 <!-- ::: callout-important -->
 
@@ -280,7 +236,9 @@ Include the following for each data set:
 
 <!-- - **Needs Improvement (6 points or fewer):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
 
-<!-- ## Presentation {#presentation} -->
+## Presentation  {#presentation}
+
+to be posted.
 
 <!-- ::: callout-important -->
 
@@ -334,7 +292,9 @@ Include the following for each data set:
 
 <!-- 80% of the presentation grade will be the average of the teaching team scores, and 20% will be the average of the peer scores. -->
 
-<!-- ## Presentation comments {#presentation-comments} -->
+### Presentation comments {#presentation-comments}
+
+To be posted.
 
 <!-- ::: callout-important -->
 
@@ -354,7 +314,11 @@ Include the following for each data set:
 
 <!-- The presentation comments are worth 2 points. The grade will be based on submitting the scores and comments for both of your assigned teams by the end of your lab. This portion of the project will be assessed individually. -->
 
-<!-- ## Draft report {#draft-report} -->
+## Draft report + Peer review {#sec-draft-report}
+
+### Draft report
+
+To be posted.
 
 <!-- ::: callout-important -->
 
@@ -388,9 +352,9 @@ Include the following for each data set:
 
 <!-- The draft will be graded based on whether there is demonstration of a reasonable and complete attempt at each section described above in `written-report.qmd` and the rendered PDF file in your GitHub repo by the deadline. -->
 
-<!-- ## Peer review {#peer-review} -->
+### Peer review {#peer-review}
 
-<!-- ::: callout-important -->
+To be posted. <!-- ::: callout-important -->
 
 <!-- ## Submission -->
 
@@ -446,7 +410,9 @@ Include the following for each data set:
 
 <!-- The peer review will be graded based on the extent to which it comprehensively and constructively addresses the components on the peer review form. There will be one peer review grade per team and will reflect the overall quality and thoroughness of the feedback. -->
 
-<!-- ## Written report {#written-report} -->
+## Final write up {#sec-write-up}
+
+To be posted.
 
 <!-- ::: callout-important -->
 
@@ -530,66 +496,50 @@ Include the following for each data set:
 
 <!-- - Other:\_\_\_\_\_\_ -->
 
-<!-- ## Reproducibility + organization {#reproducibility-organization} -->
+## Project GitHub repo {#project-repo}
 
-<!-- All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized. -->
+All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized. =
 
-<!-- The GitHub repo should have the following structure: -->
+The GitHub repo should have the following structure:
 
-<!-- - `README`: Project title and team name -->
+- `README`: Project title and team name updated, along with a short project summary
 
-<!--   - Optional: Short project summary -->
+- `written-report.qmd` & `written-report.pdf` (or other format): Final written report
 
-<!-- - `written-report.qmd` & `written-report.pdf`: Final written report -->
+- `proposal.qmd` & `proposal.pdf`: Project proposal
 
-<!-- - `proposal.qmd` & `proposal.pdf`: Project proposal -->
+- `/data`: Folder that contains the data set for the final project
 
-<!-- - `research-topics.qmd` & `research-topics.pdf`: Proposed research questions -->
+- `/data/README.md`: Codebook and source for data set --\>
 
-<!-- - `/data`: Folder that contains the data set for the final project. -->
+- `project.Rproj`: File specifying the RStudio project
 
-<!--   - `/data/README.md`: Data dictionary and source for data set -->
+- `/presentation`: Folder with the presentation slides or link to slides.
 
-<!-- - `project.Rproj`: File specifying the RStudio project -->
+- `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo --\>
 
-<!-- - `/presentation`: Folder with the presentation slides or link to slides. -->
+- Any other files should be neatly organized into clearly labeled folders.
 
-<!-- - `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo -->
+Update the README of the project repo with your project title, short summary, and team members' names.
 
-<!-- - `/.github`: Folder for peer review issue template -->
+Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, and all text in the `README` should be easily readable.
 
-<!-- - Any other files should be neatly organized into clearly labeled folders. -->
+## Overall grading {#sec-overall-grade}
 
-<!-- Update the README of the project repo with your project title and team members' names. -->
+The grade breakdown is as follows:
 
-<!-- Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, and all text in the `README` should be easily readable. -->
+| Total                      | 100 pts |
+|----------------------------|---------|
+| Team agreement             | 5 pts   |
+| Project proposal           | 10 pts  |
+| Exploratory data analysis  | 10 pts  |
+| Presentation + comments    | 15 pts  |
+| Draft report + peer review | 15 pts  |
+| Final write up             | 40 pts  |
+| GitHub repo                | 5 pts   |
 
-<!-- ## Overall grading -->
+## Late work policy
 
-<!-- The grade breakdown is as follows: -->
+There is no late work accepted on the draft report or presentation. Other components of the project may be accepted up to 48 hours late. A 10% late deduction will apply for each 24-hour period late. The submission time is based on the commits in your GitHub repo.
 
-<!-- | Total                          | 100 pts | -->
-
-<!-- |--------------------------------|---------| -->
-
-<!-- | Research topics                | 5 pts   | -->
-
-<!-- | Project proposal               | 10 pts  | -->
-
-<!-- | Exploratory data analysis      | 15 pts  | -->
-
-<!-- | Presentation                   | 10 pts  | -->
-
-<!-- | Presentation comments          | 2 pts   | -->
-
-<!-- | Draft report + peer review     | 15 pts  | -->
-
-<!-- | Written report                 | 40 pts  | -->
-
-<!-- | Reproducibility + organization | 3 pts   | -->
-
-<!-- ## Late work policy -->
-
-<!-- There is no late work accepted on the draft report or presentation. Other components of the project may be accepted up to 48 hours late. A 10% late deduction will apply for each 24-hour period late. The submission time is based on the commits in your GitHub repo. -->
-
-<!-- **Be sure to turn in your work early to avoid any technological mishaps.** -->
+**Be sure to turn in your work early to avoid any technological mishaps.**
