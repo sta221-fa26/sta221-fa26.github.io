@@ -17,56 +17,56 @@
     <lastmod>2026-08-06T18:41:50.000Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/sum-of-squares.html</loc>
-    <lastmod>2026-01-14T16:58:23.880Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/05-mlr.html</loc>
+    <lastmod>2026-09-14T15:06:15.097Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/07-mlr-interactions.html</loc>
-    <lastmod>2026-09-15T17:11:18.247Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/05-mlr-notes.html</loc>
+    <lastmod>2026-09-14T15:06:15.097Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/07-mlr-interactions-notes.html</loc>
-    <lastmod>2026-09-15T17:11:18.247Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/06-predictor-types.html</loc>
+    <lastmod>2026-09-09T18:19:56.661Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/04-slr-matrix.html</loc>
-    <lastmod>2026-09-03T15:13:51.896Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/06-predictor-types-notes.html</loc>
+    <lastmod>2026-09-09T18:19:56.661Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/04-slr-matrix-notes.html</loc>
-    <lastmod>2026-09-03T15:13:51.896Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/lab-project-proposal.html</loc>
+    <lastmod>2026-09-21T01:53:25.551Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/08-inference.html</loc>
-    <lastmod>2026-09-17T15:27:42.029Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation.html</loc>
+    <lastmod>2026-09-02T13:25:19.022Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/08-inference-notes.html</loc>
-    <lastmod>2026-09-17T15:27:42.029Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation-notes.html</loc>
+    <lastmod>2026-09-02T13:25:19.022Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/02-slr.html</loc>
-    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/01-welcome.html</loc>
+    <lastmod>2026-08-26T15:08:11.982Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/02-slr-notes.html</loc>
-    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/01-welcome-notes.html</loc>
+    <lastmod>2026-08-26T15:08:11.982Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/lab-00.html</loc>
-    <lastmod>2026-08-24T13:38:48.551Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/variance-inflation-factors.html</loc>
+    <lastmod>2026-02-23T19:25:33.814Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/lab-02.html</loc>
-    <lastmod>2026-09-12T19:27:58.748Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/lab-01.html</loc>
+    <lastmod>2026-08-27T18:55:22.427Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/computing-access.html</loc>
-    <lastmod>2026-08-15T20:00:41.112Z</lastmod>
+    <loc>https://sta221-fa26.github.io/index.html</loc>
+    <lastmod>2026-08-15T20:00:41.153Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/support.html</loc>
-    <lastmod>2026-08-21T01:40:12.120Z</lastmod>
+    <loc>https://sta221-fa26.github.io/computing-r-resources.html</loc>
+    <lastmod>2026-08-15T20:00:41.113Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/ae/ae-04-multicollinearity.html</loc>
@@ -193,68 +193,72 @@
     <lastmod>2026-01-13T18:34:54.429Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/ae/ae-03-inference.html</loc>
-    <lastmod>2026-02-05T04:27:05.833Z</lastmod>
+    <loc>https://sta221-fa26.github.io/ae/ae-02-coefficient-dist.html</loc>
+    <lastmod>2026-09-21T19:09:15.202Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/ae/ae-05-model-selection.html</loc>
     <lastmod>2026-03-17T02:38:13.242Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/ae/ae-02-mlr.html</loc>
-    <lastmod>2026-01-26T14:21:01.937Z</lastmod>
+    <loc>https://sta221-fa26.github.io/support.html</loc>
+    <lastmod>2026-08-21T01:40:12.120Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/computing-r-resources.html</loc>
-    <lastmod>2026-08-15T20:00:41.113Z</lastmod>
+    <loc>https://sta221-fa26.github.io/computing-access.html</loc>
+    <lastmod>2026-08-15T20:00:41.112Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/index.html</loc>
-    <lastmod>2026-08-15T20:00:41.153Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/lab-02.html</loc>
+    <lastmod>2026-09-12T19:27:58.748Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/lab-01.html</loc>
-    <lastmod>2026-08-27T18:55:22.427Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/lab-00.html</loc>
+    <lastmod>2026-08-24T13:38:48.551Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/variance-inflation-factors.html</loc>
-    <lastmod>2026-02-23T19:25:33.814Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/02-slr-notes.html</loc>
+    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/01-welcome-notes.html</loc>
-    <lastmod>2026-08-26T15:08:11.982Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/02-slr.html</loc>
+    <lastmod>2026-09-01T00:30:51.118Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/01-welcome.html</loc>
-    <lastmod>2026-08-26T15:08:11.982Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/08-inference-notes.html</loc>
+    <lastmod>2026-09-17T15:27:42.029Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation-notes.html</loc>
-    <lastmod>2026-09-02T13:25:19.022Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/08-inference.html</loc>
+    <lastmod>2026-09-17T15:27:42.029Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/03-slr-model-evaluation.html</loc>
-    <lastmod>2026-09-02T13:25:19.022Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/04-slr-matrix-notes.html</loc>
+    <lastmod>2026-09-03T15:13:51.896Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/lab-project-proposal.html</loc>
-    <lastmod>2026-09-21T01:53:25.551Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/04-slr-matrix.html</loc>
+    <lastmod>2026-09-03T15:13:51.896Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/06-predictor-types-notes.html</loc>
-    <lastmod>2026-09-09T18:19:56.661Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/07-mlr-interactions-notes.html</loc>
+    <lastmod>2026-09-15T17:11:18.247Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/06-predictor-types.html</loc>
-    <lastmod>2026-09-09T18:19:56.661Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/07-mlr-interactions.html</loc>
+    <lastmod>2026-09-15T17:11:18.247Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/05-mlr-notes.html</loc>
-    <lastmod>2026-09-14T15:06:15.097Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/sum-of-squares.html</loc>
+    <lastmod>2026-01-14T16:58:23.880Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa26.github.io/slides/05-mlr.html</loc>
-    <lastmod>2026-09-14T15:06:15.097Z</lastmod>
+    <loc>https://sta221-fa26.github.io/slides/08-coefficient-dist-notes.html</loc>
+    <lastmod>2026-09-21T19:16:34.849Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa26.github.io/slides/09-coefficient-dist.html</loc>
+    <lastmod>2026-09-21T19:16:34.849Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa26.github.io/math-rules.html</loc>

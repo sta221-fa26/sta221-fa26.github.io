@@ -1,12 +1,12 @@
 ---
-title: "AE 03: Inference"
+title: "AE 02: Distribution of coefficients"
 subtitle: "NCAA Football Expenditures"
-date: "February 5, 2026"
+date: "September 22, 2026"
 editor: visual
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta221-sp26) and locate your `ae-03` repo to get started.
+Go to the [course GitHub organization](https://github.com/sta221-fa26) and locate your `ae-02` repo to get started.
 :::
 
 # Set up
@@ -30,11 +30,11 @@ Today's data set comes from [Equity in Athletics Data Analysis](https://ope.ed.g
 
 We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:
 
--   `total_exp_m`: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)
+- `total_exp_m`: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)
 
--   `enrollment_th`: Total student enrollment in the 2019 - 2020 academic year (in thousands)
+- `enrollment_th`: Total student enrollment in the 2019 - 2020 academic year (in thousands)
 
--   `type`: institution type (Public or Private)
+- `type`: institution type (Public or Private)
 
 # Regression model
 
@@ -61,53 +61,25 @@ Use $\mathbf{y}$ and $\mathbf{X}$ to compute the estimated coefficients $\hat{\b
 
 ## Exercise 3
 
--   Compute the residuals using the matrix/vector notation. You do not need to print the residuals.
+- Compute the residuals using the matrix/vector notation. You do not need to print the residuals.
 
--   Use the residuals to compute $\hat{\sigma}^2_{\epsilon}$.
+- Use the residuals to compute $\hat{\sigma}^2$.
 
 ## Exercise 4
 
--   Compute $Var(\hat{\boldsymbol{\beta}})$. What are its dimensions?
+- Compute $Var(\hat{\boldsymbol{\beta}})$. What are its dimensions?
 
--   Explain how the standard error for $\hat{\beta}_j$, the estimated coefficient of `enrollment_th`, is computed from $Var(\hat{\boldsymbol{\beta}})$.
-
-# Part 2: Hypothesis test
-
-We want to conduct a hypothesis test to determine if there is a linear relationship between enrollment and football expenditures, after accounting for institution type.
+- Explain how the standard error for $\hat{\beta}_\text{enroll}$, the estimated coefficient of `enrollment_th`, is computed from $Var(\hat{\boldsymbol{\beta}})$.
 
 ## Exercise 5
 
-State the null and alternative hypotheses in words and using mathematical notation.
-
-## Exercise 6
-
-Compute the test statistic for this hypothesis test.
-
-## Exercise 7
-
-Now we will compute a p-value to help make our final conclusion.
-
--   State the distribution used to calculate the p-value. Be specific.
-
--   Fill in the code below to calculate the p-value. Remove `#| eval: false` once you've filled in the code.
-
-```{r}
-#| label: ex-5
-#| eval: false
-
-2 * pt(test-statistic, df, lower.tail = FALSE)
-
-```
-
-## Exercise 8
-
-State the conclusion in the context of the data. Use a threshold of $\alpha = 0.05$.
+The standard error of $\hat{\beta}_j$ is computed as $\sqrt{Var(\hat{\beta}_j)$ . Interpret the standard error for $\hat{\beta}_\text{enroll}$ in the context of the data.
 
 # Wrapping up
 
 ::: callout-important
 Once you've completed the AE:
 
--   Render the document to produce the PDF with all of your work from today's class.
--   Push all your work to your AE repo on GitHub. You're done! 🎉
+- Render the document to produce the PDF with all of your work from today's class.
+- Push all your work to your AE repo on GitHub. You're done! 🎉
 :::

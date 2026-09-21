@@ -1,0 +1,326 @@
+---
+title: "Inference for regression"
+subtitle: "Distribution of coefficients"
+author: "Prof. Maria Tackett"
+date: "September 22, 2026"
+date-format: "MMMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 08-coefficient-dist-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+
+library(countdown)
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+options(scipen=999)
+```
+
+## Announcements \[UPDATE\]
+
+- [HW 02](../hw/hw-02.html) due Thursday, September 24 at 11:59pm
+
+- [Project proposal](../project.html) due Tuesday, September 29 at 11:59pm (on GitHub)
+
+- [Statistics experience](../hw/hw-stats-experience.html) due November 24
+
+- Looking ahead: Exam 01 on October 6
+
+## Topics
+
+- Derive distribution of $\hat{\boldsymbol{\beta}}_j$
+
+## Computing setup
+
+```{r packages}
+#| echo: true
+#| message: false
+#| warning: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(kableExtra)  
+library(patchwork)   
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Data: NCAA Football expenditures {.midi}
+
+Today's data come from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list) and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a [March 2022 Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md).
+
+We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:
+
+- `total_exp_m`: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)
+
+- `enrollment_th`: Total student enrollment in the 2019 - 2020 academic year (in thousands)
+
+- `type`: institution type (Public or Private)
+
+```{r}
+#| include: false
+#| eval: false
+
+## code to make data set for these notes
+
+sports <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-29/sports.csv') 
+
+# filter data to only include D1 football for the year 2019
+
+sports |>
+  filter(sports == "Football", 
+         classification_name == "NCAA Division I-FBS", year == 2019) |>
+  mutate(type = if_else(sector_name == "Private nonprofit, 4-year or above", "Private", "Public"), 
+         enrollment_th = ef_total_count / 1000,
+         total_exp_m = total_exp_menwomen/ 1000000) |>
+  select(year, institution_name, city_txt, state_cd, zip_text, type,
+         enrollment_th, 
+         total_exp_m) |> 
+  write_csv("data/ncaa-football-exp.csv")
+
+
+```
+
+```{r}
+football <- read_csv("data/ncaa-football-exp.csv")
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+#| 
+p4 <- ggplot(data = football, aes(x = enrollment_th, y = total_exp_m)) +
+  geom_point() +
+  labs(x = "Total Student Enrollment (in Thousands)", 
+       y = "Total Football Expenditures (in $Millions)", 
+       title = "Football Expenditures vs. Enrollment")
+
+p5 <- ggplot(data = football, aes(x = type, y = total_exp_m, fill = type)) + 
+  geom_boxplot() +
+  labs(x = "Institution Type", 
+       y = "",
+       title = "Football Expenditures vs. Type") + 
+  theme(legend.position = "none")
+
+p4 + p5
+```
+
+## Regression model {.midi}
+
+```{r}
+#| echo: true
+exp_fit <- lm(total_exp_m ~ enrollment_th + type, data = football)
+tidy(exp_fit) |>
+  kable(digits = 3)
+```
+
+- 0.780 is the exact relationship between football expenditure and enrollment for these `r nrow(football)` institutions in 2019-2020.
+
+- What if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?
+
+## Statistical inference
+
+:::::: columns
+:::: {.column width="40%"}
+::: midi
+- **Statistical inference** provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from
+
+- For our inferences to be valid, the sample should be representative (ideally random) of the population we're interested in
+:::
+::::
+
+::: {.column width="60%"}
+![Image source: Eugene Morgan © Penn State](images/08/inference.png){fig-align="center"}
+:::
+::::::
+
+## Inference framework {.midi}
+
+Our **objective** is to infer properties about a *population* using data from observational (or experimental) data collection
+
+- **Pre data collection**: Before collecting the data, the data are unknown and random. $\hat{\boldsymbol{\beta}}$, which is a function of the data, is also [unknown]{.underline} and [random.]{.underline}
+
+- **Post data collection**: After collecting the data, $\hat{\boldsymbol{\beta}}$ is [fixed]{.underline} and [known]{.underline}.
+
+- **In all cases**: The true population parameter, $\boldsymbol{\beta}$ is [fixed]{.underline} but [unknown]{.underline}.
+
+**Question pre data collection:** Is the probability distribution of $\hat{\mathbf{\boldsymbol{\beta}}}$ a meaningful representation of the population? (We will slowly answer this question across the next few classes)
+
+## Linear regression model
+
+$$\begin{aligned}
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})
+\end{aligned}
+$$
+
+such that the errors are independent and normally distributed.
+
+. . .
+
+- **Independent**: Knowing the error term for one observation doesn't tell us about the error term for another observation
+- **Normally distributed**: The distribution follows a particular mathematical model that is unimodal and symmetric
+  - $E(\boldsymbol{\epsilon}) = \mathbf{0}$
+  - $Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}$
+
+## Visualizing distribution of $\mathbf{y}|\mathbf{X}$ {.midi}
+
+$$
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
+$$
+
+![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center" width="60%"}
+
+## Assumptions for regression {.midi}
+
+::::: columns
+::: {.column width="50%"}
+$$
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
+$$
+
+![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+1.  **Linearity:** There is a linear relationship between the response and predictor variables.
+2.  **Equal variance:** The variability about the least squares line is equal for all combinations of predictors.
+3.  **Normality:** The distribution of the residuals is normal.
+4.  **Independence:** The residuals are independent from one another.
+:::
+:::::
+
+::: callout-note
+We will assume these hold for now and show how to check the assumptions after Exam 01.
+:::
+
+## Estimating $\sigma^2$ {.midi}
+
+- Once we fit the model, we can use the residuals to estimate $\sigma^2$
+
+- The estimated value $\hat{\sigma}^2$ is needed for inference on the coefficients
+
+$$
+\hat{\sigma}^2 = \frac{SSR}{n - p - 1} = \frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n-p-1} 
+$$
+
+. . .
+
+- The **regression standard error** $\hat{\sigma}$ is a measure of the average distance between the observations and regression line
+
+$$
+\hat{\sigma} = \sqrt{\frac{SSR}{n - p - 1}} = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
+$$
+
+## Your turn 
+
+\[Woo clap - How does this compare to RMSE\]
+
+# Inference for a single coefficient
+
+## Inference for $\beta_j$
+
+We often want to conduct inference on individual model coefficients
+
+- **Hypothesis test:** Is there evidence of a linear relationship between the response and $x_j$? $(\beta_j \neq 0 ? )$
+
+- **Confidence interval**: What is a plausible range of values $\beta_j$ can take?
+
+. . .
+
+But first we need to understand the distribution of $\hat{\beta}_j$
+
+## Sampling distribution of $\hat{\boldsymbol{\beta}}$ {.midi}
+
+- A **sampling distribution** is the probability distribution of a statistic computed from many repeated random samples of size $n$ drawn from a population.
+
+- The sampling distribution of $\hat{\boldsymbol{\beta}}$ is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size $n$ and fitting the regression model to compute $\hat{\boldsymbol{\beta}}$
+
+$$
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
+$$
+
+. . .
+
+The estimated coefficients $\hat{\boldsymbol{\beta}}$ are **normally distributed** with
+
+$$
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}
+$$
+
+## Expected value and variance of $\boldsymbol{\hat{\beta}}$
+
+::: question
+Show
+
+- $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$
+
+- $Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}$
+:::
+
+<br>
+
+## Sampling distribution of $\hat{\beta}_j$
+
+$$
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
+$$
+
+Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then, for each coefficient $\hat{\beta}_j$,
+
+::: incremental
+- $E(\hat{\beta}_j) = \boldsymbol{\beta}_j$, the $j^{th}$ element of $\boldsymbol{\beta}$
+
+- $Var(\hat{\beta}_j) = \sigma^2C_{jj}$, where $C_{jj}$ is the $j^{th}$ diagonal element
+
+- $Cov(\hat{\beta}_i, \hat{\beta}_j) = \sigma^2C_{ij}$
+:::
+
+# Application exercise
+
+::: appex
+📋 [sta221-fa26.github.io/ae/ae-02-coefficient-dist.html](../ae/ae-02-coefficient-dist.html)
+:::
+
+## Recap
+
+- Derived the distribution $\hat{\boldsymbol{\beta}}$
+
+## Next class \[ UPDATE\]
+
+- Hypothesis tests and confidence intervals for a coefficient $\beta_j$
+- Complete [Lecture 09 prepare](../prepare/prepare-lec09.html)

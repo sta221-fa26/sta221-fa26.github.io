@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-27">
+<meta name="dcterms.date" content="2026-09-22">
 
-<title>AE 02: Multiple linear regression – STA 221 - Fall 2026</title>
+<title>AE 02: Distribution of coefficients – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 02: Multiple linear regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 02: Distribution of coefficients</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -415,22 +415,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
+  <ul class="collapse">
+  <li><a href="#data-ncaa-football-expenditures" id="toc-data-ncaa-football-expenditures" class="nav-link" data-scroll-target="#data-ncaa-football-expenditures">Data: NCAA football expenditures</a></li>
+  </ul></li>
+  <li><a href="#regression-model" id="toc-regression-model" class="nav-link" data-scroll-target="#regression-model">Regression model</a></li>
+  <li><a href="#part-1-distribution-of-hatboldsymbolbeta" id="toc-part-1-distribution-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#part-1-distribution-of-hatboldsymbolbeta">Part 1: Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a>
   <ul class="collapse">
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  </ul></li>
-  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
-  <ul class="collapse">
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
-  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">LaTex</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up">Wrapping up</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -439,8 +437,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AE 02: Multiple linear regression</h1>
-<p class="subtitle lead">Peer-to-peer lending</p>
+<h1 class="title">AE 02: Distribution of coefficients</h1>
+<p class="subtitle lead">NCAA Football Expenditures</p>
 </div>
 
 
@@ -451,7 +449,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 27, 2026</p>
+      <p class="date">September 22, 2026</p>
     </div>
   </div>
   
@@ -473,169 +471,108 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This AE will be completed through code chunks in the <a href="../slides/06-predictor-types.html">lecture slides</a>.</p>
+<p>Go to the <a href="https://github.com/sta221-fa26">course GitHub organization</a> and locate your <code>ae-02</code> repo to get started.</p>
 </div>
 </div>
-<section id="packages" class="level1">
-<h1>Packages</h1>
+<section id="set-up" class="level1">
+<h1>Set up</h1>
+<p>Run the code below to load the required packages and data.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)   </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)   </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)    </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)       </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>Today’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the <code>loan50</code> data frame in the <strong>openintro</strong> R package.</p>
-<p>We will focus on the following variables:</p>
+<section id="data-ncaa-football-expenditures" class="level2">
+<h2 class="anchored" data-anchor-id="data-ncaa-football-expenditures">Data: NCAA football expenditures</h2>
+<p>Today’s data set comes from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
+<p>We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:</p>
 <ul>
-<li><code>annual_income_th</code>: Annual income (in $1000s)</li>
-<li><code>debt_to_income</code>: Debt-to-income ratio, i.e.&nbsp;the percentage of a borrower’s total debt divided by their total income</li>
-<li><code>verified_income</code>: Whether borrower’s income source and amount have been verified (<code>Not Verified</code>, <code>Source Verified</code>, <code>Verified</code>)</li>
-<li><code>interest_rate</code>: Interest rate for the loan</li>
+<li><p><code>total_exp_m</code>: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)</p></li>
+<li><p><code>enrollment_th</code>: Total student enrollment in the 2019 - 2020 academic year (in thousands)</p></li>
+<li><p><code>type</code>: institution type (Public or Private)</p></li>
 </ul>
-<p>The goal of this analysis is to use the annual income, debt-to-income ratio, and income verification to understand variability in the interest rate on the loan.</p>
-<p>We’ll start with data prep to rescale annual income to $1000’s and recode <code>verified_income</code> to fix an issue with the underlying data.</p>
+</section>
+</section>
+<section id="regression-model" class="level1">
+<h1>Regression model</h1>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">annual_income_th =</span> annual_income <span class="sc">/</span> <span class="dv">1000</span>, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">verified_income =</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">case_when</span>(verified_income <span class="sc">==</span> <span class="st">"Not Verified"</span> <span class="sc">~</span> <span class="st">"Not Verified"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                      verified_income <span class="sc">==</span> <span class="st">"Source Verified"</span> <span class="sc">~</span> <span class="st">"Source Verified"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                      verified_income <span class="sc">==</span> <span class="st">"Verified"</span> <span class="sc">~</span> <span class="st">"Verified"</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">verified_income =</span> <span class="fu">as_factor</span>(verified_income)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   )                    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(loan50)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 50
-Columns: 19
-$ state                   &lt;fct&gt; NJ, CA, SC, CA, OH, IN, NY, MO, FL, FL, MD, HI…
-$ emp_length              &lt;dbl&gt; 3, 10, NA, 0, 4, 6, 2, 10, 6, 3, 8, 10, 10, 2,…
-$ term                    &lt;dbl&gt; 60, 36, 36, 36, 60, 36, 36, 36, 60, 60, 36, 36…
-$ homeownership           &lt;fct&gt; rent, rent, mortgage, rent, mortgage, mortgage…
-$ annual_income           &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…
-$ verified_income         &lt;fct&gt; Not Verified, Not Verified, Verified, Not Veri…
-$ debt_to_income          &lt;dbl&gt; 0.55752542, 1.30568333, 1.05628000, 0.57434667…
-$ total_credit_limit      &lt;int&gt; 95131, 51929, 301373, 59890, 422619, 349825, 1…
-$ total_credit_utilized   &lt;int&gt; 32894, 78341, 79221, 43076, 60490, 72162, 2872…
-$ num_cc_carrying_balance &lt;int&gt; 8, 2, 14, 10, 2, 4, 1, 3, 10, 4, 3, 4, 3, 2, 3…
-$ loan_purpose            &lt;fct&gt; debt_consolidation, credit_card, debt_consolid…
-$ loan_amount             &lt;int&gt; 22000, 6000, 25000, 6000, 25000, 6400, 3000, 1…
-$ grade                   &lt;fct&gt; B, B, E, B, B, B, D, A, A, C, D, A, A, A, A, E…
-$ interest_rate           &lt;dbl&gt; 10.90, 9.92, 26.30, 9.92, 9.43, 9.92, 17.09, 6…
-$ public_record_bankrupt  &lt;int&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0…
-$ loan_status             &lt;fct&gt; Current, Current, Current, Current, Current, C…
-$ has_second_income       &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
-$ total_income            &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…
-$ annual_income_th        &lt;dbl&gt; 59.0, 60.0, 75.0, 75.0, 254.0, 67.0, 28.8, 80.…</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(exp_fit)<span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
-<section id="part-1" class="level1">
-<h1>Part 1</h1>
+<section id="part-1-distribution-of-hatboldsymbolbeta" class="level1">
+<h1>Part 1: Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h1>
+<p>Our ultimate goal is to use statistical inference to draw conclusions about the relationship between student enrollment and spending on football programs, after accounting for the institution type.</p>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>We’ll start by fitting a model in which we include all levels of <code>verified_income</code>.</p>
-<ul>
-<li><p>Fit a model using <code>debt_to_income</code>, <code>annual_income_th</code>, and the indicator variables created below to predict <code>interest_rate</code>.</p></li>
-<li><p>What do you notice about the model output? Why did this happen?</p></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">not_verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Not Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Source Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>We will use the vector of responses <span class="math inline">\(\mathbf{y}\)</span> and the design matrix <span class="math inline">\(\mathbf{X}\)</span> to compute the values needed for inference.</p>
+<p>Obtain <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> from the football data frame. What are their dimensions?</p>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Now let’s take a look at the design matrix for the model with predictors <code>debt_to_income</code>, <code>annual_income_th</code>, and <code>verified_income</code>.</p>
-<p>How does R choose the baseline level by default?</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## add code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Use <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> to compute the estimated coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>.</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>What is the intercept for individuals with</p>
 <ul>
-<li><p>Not verified income?</p></li>
-<li><p>Source verified income?</p></li>
-<li><p>Verified income?</p></li>
+<li><p>Compute the residuals using the matrix/vector notation. You do not need to print the residuals.</p></li>
+<li><p>Use the residuals to compute <span class="math inline">\(\hat{\sigma}^2\)</span>.</p></li>
 </ul>
 </section>
-</section>
-<section id="part-2" class="level1">
-<h1>Part 2</h1>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Fit the model with the predictors <code>debt_to_income</code>, <code>annual_income_th</code>, <code>verified_income</code> , and the interaction between <code>annual_income_th</code> and <code>verified_income</code>.</p>
-<p>Neatly display the model results using 3 digits.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ul>
+<li><p>Compute <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>. What are its dimensions?</p></li>
+<li><p>Explain how the standard error for <span class="math inline">\(\hat{\beta}_\text{enroll}\)</span>, the estimated coefficient of <code>enrollment_th</code>, is computed from <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>.</p></li>
+</ul>
 </section>
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<ul>
-<li><p>Write the estimated regression equation for the people with <code>Not Verified</code> income.</p></li>
-<li><p>Write the estimated regression equation for people with <code>Verified</code> income.</p></li>
-</ul>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>In general, how do</p>
-<ul>
-<li><p>indicators for categorical predictors impact the model equation?</p></li>
-<li><p>interaction terms impact the model equation?</p></li>
-</ul>
+<p>The standard error of <span class="math inline">\(\hat{\beta}_j\)</span> is computed as <span class="math inline">\(\sqrt{Var(\hat{\beta}_j)\)</span> . Interpret the standard error for <span class="math inline">\(\hat{\beta}_\text{enroll}\)</span> in the context of the data.</p>
 </section>
 </section>
-<section id="latex" class="level1">
-<h1>LaTex</h1>
-<p>Sometimes, you will need to include mathematical notation in your document. There are two ways you can display mathematics in your document:</p>
-<p><strong>Inline:</strong> Your mathematics will display within the line of text.</p>
-<ul>
-<li><p>Use <code>$</code> to start and end your LaTex syntax. You can also use the menu: <em>Insert -&gt; LaTex Math -&gt; Inline Math</em>.</p></li>
-<li><p><em>Example</em>: The text <code>The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$</code> produces<br>
-</p>
-<p>The simple linear regression model is <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span></p></li>
-</ul>
-<p><br>
-<strong>Displayed:</strong> Your mathematics will display outside the line of text</p>
-<ul>
-<li><p>Use a <code>$$</code> to start and end your LaTex syntax. You can also use the menu: <em>Insert -&gt; LaTex Math -&gt; Display Math</em>.</p></li>
-<li><p><em>Example</em>: The text <code>The estimated regression equation is $$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$$</code>produces<br>
-</p>
-<p>The estimated regression equation is</p></li>
-</ul>
-<p><span class="math display">\[
-\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">Click here</a> for a quick reference of LaTex code.</p>
-</div>
-</div>
-</section>
-<section id="submission" class="level1">
-<h1>Submission</h1>
+<section id="wrapping-up" class="level1">
+<h1>Wrapping up</h1>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -646,7 +583,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To submit the AE:</p>
+<p>Once you’ve completed the AE:</p>
 <ul>
 <li>Render the document to produce the PDF with all of your work from today’s class.</li>
 <li>Push all your work to your AE repo on GitHub. You’re done! 🎉</li>
