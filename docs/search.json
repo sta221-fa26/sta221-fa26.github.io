@@ -3297,7 +3297,7 @@
     "href": "ae/ae-02-coefficient-dist.html#exercise-5",
     "title": "AE 02: Distribution of coefficients",
     "section": "Exercise 5",
-    "text": "Exercise 5\nThe standard error of \\(\\hat{\\beta}_j\\) is computed as \\(\\sqrt{Var(\\hat{\\beta}_j)\\) . Interpret the standard error for \\(\\hat{\\beta}_\\text{enroll}\\) in the context of the data."
+    "text": "Exercise 5\nThe standard error of \\(\\hat{\\beta}_j\\) is computed as \\(\\sqrt{Var(\\hat{\\beta}_j)}\\) . Interpret the standard error for \\(\\hat{\\beta}_\\text{enroll}\\) in the context of the data."
   },
   {
     "objectID": "ae/ae-05-model-selection.html",
@@ -5210,151 +5210,151 @@
     "text": "In this document, we show how the equality in Equation 1 holds.\n\\[\n\\begin{aligned}\nSST &= SSM + SSR \\\\[10pt]\n\\sum_{i=1}^{n}(y_i - \\bar{y})^2 &= \\sum_{i=1}^{n}(\\hat{y}_i - \\bar{y})^2 + \\sum_{i=1}^{n}(y_i -\\hat{y}_i)^2\n\\end{aligned}\n\\tag{1}\\]\nwhere \\(n\\) is the number of observations.\nWe start with the fact \\((y_i - \\bar{y}) = (\\hat{y}_i - \\bar{y}) + (y_i - \\hat{y}_i)\\).\nThen, \\[\n\\begin{aligned}\n(y_i - \\bar{y})^2 &= [(\\hat{y}_i - \\bar{y}) + (y_i - \\hat{y}_i)]^2\\\\[10pt]\n& = (\\hat{y}_i - \\bar{y})^2 + 2(\\hat{y}_i - \\bar{y})(y_i - \\hat{y}_i) + (y_i - \\hat{y}_i)^2\n\\end{aligned}\n\\]\nWe can sum over both sides to get\n\\[\n\\sum_{i=1}^n(y_i - \\bar{y})^2 = \\sum_{i=1}^n(\\hat{y}_i - \\bar{y})^2 + 2\\sum_{i=1}^n(\\hat{y}_i - \\bar{y})(y_i - \\hat{y}_i) + \\sum_{i=1}^n(y_i - \\hat{y}_i)^2\n\\tag{2}\\]\nFor now, let’s focus on the middle term: \\(2\\sum_{i=1}^n(\\hat{y}_i - \\bar{y})(y_i - \\hat{y}_i)\\)\n\\[\n\\begin{aligned}\n2\\sum_{i=1}^n(\\hat{y}_i - \\bar{y})(y_i - \\hat{y}_i) &= 2\\sum_{i=1}^n(\\hat{y}_iy_i - \\hat{y}_i^2 - \\bar{y}y_i + \\bar{y}\\hat{y}_i)\\\\[10pt]\n& = 2\\sum_{i=1}^n\\hat{y}_i(y_i - \\hat{y}_i) - 2\\bar{y}\\sum_{i=1}^n(y_i - \\hat{y}_i) \\\\[10pt]\n&=2\\sum_{i=1}^n\\hat{y}_ie_i - 2\\bar{y}\\sum_{i=1}^ne_i\\\\[10pt]\n&= 0 \\quad(\\text{ given }\\sum_{i=1}^ne_i = 0)\n\\end{aligned}\n\\tag{3}\\]\nPlugging Equation 3 back into Equation 2, we have\n\\[\n\\begin{aligned}\n\\sum_{i=1}^n(y_i - \\bar{y})^2 &= \\sum_{i=1}^n(\\hat{y}_i - \\bar{y})^2 + 0 + \\sum_{i=1}^n(y_i - \\hat{y}_i)^2 \\\\[10pt]\n&= \\sum_{i=1}^n(\\hat{y}_i - \\bar{y})^2 +  \\sum_{i=1}^n(y_i - \\hat{y}_i)^2\\\\[10pt]\n\\end{aligned}\n\\]\nThus \\(SST = SSM + SSR\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html",
-    "href": "slides/08-coefficient-dist-notes.html",
+    "objectID": "slides/09-coefficient-dist-notes.html",
+    "href": "slides/09-coefficient-dist-notes.html",
     "title": "Inference for regression",
     "section": "",
     "text": "HW 02 due Thursday, September 24 at 11:59pm\nProject proposal due Tuesday, September 29 at 11:59pm (on GitHub)\nStatistics experience due November 24\nLooking ahead: Exam 01 on October 6"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#announcements-update",
-    "href": "slides/08-coefficient-dist-notes.html#announcements-update",
+    "objectID": "slides/09-coefficient-dist-notes.html#announcements",
+    "href": "slides/09-coefficient-dist-notes.html#announcements",
     "title": "Inference for regression",
     "section": "",
     "text": "HW 02 due Thursday, September 24 at 11:59pm\nProject proposal due Tuesday, September 29 at 11:59pm (on GitHub)\nStatistics experience due November 24\nLooking ahead: Exam 01 on October 6"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#topics",
-    "href": "slides/08-coefficient-dist-notes.html#topics",
+    "objectID": "slides/09-coefficient-dist-notes.html#topics",
+    "href": "slides/09-coefficient-dist-notes.html#topics",
     "title": "Inference for regression",
     "section": "Topics",
     "text": "Topics\n\nDerive distribution of \\(\\hat{\\boldsymbol{\\beta}}_j\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#computing-setup",
-    "href": "slides/08-coefficient-dist-notes.html#computing-setup",
+    "objectID": "slides/09-coefficient-dist-notes.html#computing-setup",
+    "href": "slides/09-coefficient-dist-notes.html#computing-setup",
     "title": "Inference for regression",
     "section": "Computing setup",
     "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#data-ncaa-football-expenditures",
-    "href": "slides/08-coefficient-dist-notes.html#data-ncaa-football-expenditures",
+    "objectID": "slides/09-coefficient-dist-notes.html#data-ncaa-football-expenditures",
+    "href": "slides/09-coefficient-dist-notes.html#data-ncaa-football-expenditures",
     "title": "Inference for regression",
     "section": "Data: NCAA Football expenditures",
-    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\nRows: 127 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (5): institution_name, city_txt, state_cd, zip_text, type\ndbl (3): year, enrollment_th, total_exp_m\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#bivariate-eda",
-    "href": "slides/08-coefficient-dist-notes.html#bivariate-eda",
+    "objectID": "slides/09-coefficient-dist-notes.html#bivariate-eda",
+    "href": "slides/09-coefficient-dist-notes.html#bivariate-eda",
     "title": "Inference for regression",
     "section": "Bivariate EDA",
     "text": "Bivariate EDA"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#regression-model",
-    "href": "slides/08-coefficient-dist-notes.html#regression-model",
+    "objectID": "slides/09-coefficient-dist-notes.html#regression-model",
+    "href": "slides/09-coefficient-dist-notes.html#regression-model",
     "title": "Inference for regression",
     "section": "Regression model",
     "text": "Regression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\ntidy(exp_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n0.780 is the exact relationship between football expenditure and enrollment for these 127 institutions in 2019-2020.\nWhat if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#statistical-inference",
-    "href": "slides/08-coefficient-dist-notes.html#statistical-inference",
+    "objectID": "slides/09-coefficient-dist-notes.html#statistical-inference",
+    "href": "slides/09-coefficient-dist-notes.html#statistical-inference",
     "title": "Inference for regression",
     "section": "Statistical inference",
     "text": "Statistical inference\n\n\n\n\nStatistical inference provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in\n\n\n\n\n\n\nImage source: Eugene Morgan © Penn State"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#inference-framework",
-    "href": "slides/08-coefficient-dist-notes.html#inference-framework",
+    "objectID": "slides/09-coefficient-dist-notes.html#inference-framework",
+    "href": "slides/09-coefficient-dist-notes.html#inference-framework",
     "title": "Inference for regression",
     "section": "Inference framework",
     "text": "Inference framework\nOur objective is to infer properties about a population using data from observational (or experimental) data collection\n\nPre data collection: Before collecting the data, the data are unknown and random. \\(\\hat{\\boldsymbol{\\beta}}\\), which is a function of the data, is also unknown and random.\nPost data collection: After collecting the data, \\(\\hat{\\boldsymbol{\\beta}}\\) is fixed and known.\nIn all cases: The true population parameter, \\(\\boldsymbol{\\beta}\\) is fixed but unknown.\n\nQuestion pre data collection: Is the probability distribution of \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) a meaningful representation of the population? (We will slowly answer this question across the next few classes)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#linear-regression-model",
-    "href": "slides/08-coefficient-dist-notes.html#linear-regression-model",
+    "objectID": "slides/09-coefficient-dist-notes.html#linear-regression-model",
+    "href": "slides/09-coefficient-dist-notes.html#linear-regression-model",
     "title": "Inference for regression",
     "section": "Linear regression model",
     "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n. . .\n\nIndependent: Knowing the error term for one observation doesn’t tell us about the error term for another observation\nNormally distributed: The distribution follows a particular mathematical model that is unimodal and symmetric\n\n\\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\)\n\\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#visualizing-distribution-of-mathbfymathbfx",
-    "href": "slides/08-coefficient-dist-notes.html#visualizing-distribution-of-mathbfymathbfx",
+    "objectID": "slides/09-coefficient-dist-notes.html#visualizing-distribution-of-mathbfymathbfx",
+    "href": "slides/09-coefficient-dist-notes.html#visualizing-distribution-of-mathbfymathbfx",
     "title": "Inference for regression",
     "section": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)",
     "text": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2\\mathbf{I})\n\\]\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#assumptions-for-regression",
-    "href": "slides/08-coefficient-dist-notes.html#assumptions-for-regression",
+    "objectID": "slides/09-coefficient-dist-notes.html#assumptions-for-regression",
+    "href": "slides/09-coefficient-dist-notes.html#assumptions-for-regression",
     "title": "Inference for regression",
     "section": "Assumptions for regression",
     "text": "Assumptions for regression\n\n\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2\\mathbf{I})\n\\]\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)\n\n\n\n\nLinearity: There is a linear relationship between the response and predictor variables.\nEqual variance: The variability about the least squares line is equal for all combinations of predictors.\nNormality: The distribution of the residuals is normal.\nIndependence: The residuals are independent from one another.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will assume these hold for now and show how to check the assumptions after Exam 01."
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#estimating-sigma2",
-    "href": "slides/08-coefficient-dist-notes.html#estimating-sigma2",
+    "objectID": "slides/09-coefficient-dist-notes.html#estimating-sigma2",
+    "href": "slides/09-coefficient-dist-notes.html#estimating-sigma2",
     "title": "Inference for regression",
     "section": "Estimating \\(\\sigma^2\\)",
     "text": "Estimating \\(\\sigma^2\\)\n\nOnce we fit the model, we can use the residuals to estimate \\(\\sigma^2\\)\nThe estimated value \\(\\hat{\\sigma}^2\\) is needed for inference on the coefficients\n\n\\[\n\\hat{\\sigma}^2 = \\frac{SSR}{n - p - 1} = \\frac{\\mathbf{e}^\\mathsf{T}\\mathbf{e}}{n-p-1}\n\\]\n. . .\n\nThe regression standard error \\(\\hat{\\sigma}\\) is a measure of the average distance between the observations and regression line\n\n\\[\n\\hat{\\sigma} = \\sqrt{\\frac{SSR}{n - p - 1}} = \\sqrt{\\frac{\\mathbf{e}^\\mathsf{T}\\mathbf{e}}{n - p - 1}}\n\\]"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#your-turn",
-    "href": "slides/08-coefficient-dist-notes.html#your-turn",
+    "objectID": "slides/09-coefficient-dist-notes.html#your-turn",
+    "href": "slides/09-coefficient-dist-notes.html#your-turn",
     "title": "Inference for regression",
     "section": "Your turn",
-    "text": "Your turn\n[Woo clap - How does this compare to RMSE]"
+    "text": "Your turn\n\nHow do the regression standard error and RMSE compare?\n\n\n\n\n\n\n\nhttps://app.wooclap.com/BPSKYOR"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#inference-for-beta_j",
-    "href": "slides/08-coefficient-dist-notes.html#inference-for-beta_j",
+    "objectID": "slides/09-coefficient-dist-notes.html#inference-for-beta_j",
+    "href": "slides/09-coefficient-dist-notes.html#inference-for-beta_j",
     "title": "Inference for regression",
     "section": "Inference for \\(\\beta_j\\)",
     "text": "Inference for \\(\\beta_j\\)\nWe often want to conduct inference on individual model coefficients\n\nHypothesis test: Is there evidence of a linear relationship between the response and \\(x_j\\)? \\((\\beta_j \\neq 0 ? )\\)\nConfidence interval: What is a plausible range of values \\(\\beta_j\\) can take?\n\n. . .\nBut first we need to understand the distribution of \\(\\hat{\\beta}_j\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#sampling-distribution-of-hatboldsymbolbeta",
-    "href": "slides/08-coefficient-dist-notes.html#sampling-distribution-of-hatboldsymbolbeta",
+    "objectID": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatboldsymbolbeta",
+    "href": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatboldsymbolbeta",
     "title": "Inference for regression",
     "section": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
     "text": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nA sampling distribution is the probability distribution of a statistic computed from many repeated random samples of size \\(n\\) drawn from a population.\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size \\(n\\) and fitting the regression model to compute \\(\\hat{\\boldsymbol{\\beta}}\\)\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\n. . .\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\n\\]"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#expected-value-and-variance-of-boldsymbolhatbeta",
-    "href": "slides/08-coefficient-dist-notes.html#expected-value-and-variance-of-boldsymbolhatbeta",
+    "objectID": "slides/09-coefficient-dist-notes.html#expected-value-and-variance-of-boldsymbolhatbeta",
+    "href": "slides/09-coefficient-dist-notes.html#expected-value-and-variance-of-boldsymbolhatbeta",
     "title": "Inference for regression",
     "section": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)",
     "text": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nShow\n\n\\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#sampling-distribution-of-hatbeta_j",
-    "href": "slides/08-coefficient-dist-notes.html#sampling-distribution-of-hatbeta_j",
+    "objectID": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatbeta_j",
+    "href": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatbeta_j",
     "title": "Inference for regression",
     "section": "Sampling distribution of \\(\\hat{\\beta}_j\\)",
     "text": "Sampling distribution of \\(\\hat{\\beta}_j\\)\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\nLet \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\). Then, for each coefficient \\(\\hat{\\beta}_j\\),\n\n\n\\(E(\\hat{\\beta}_j) = \\boldsymbol{\\beta}_j\\), the \\(j^{th}\\) element of \\(\\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\beta}_j) = \\sigma^2C_{jj}\\), where \\(C_{jj}\\) is the \\(j^{th}\\) diagonal element\n\\(Cov(\\hat{\\beta}_i, \\hat{\\beta}_j) = \\sigma^2C_{ij}\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#recap",
-    "href": "slides/08-coefficient-dist-notes.html#recap",
+    "objectID": "slides/09-coefficient-dist-notes.html#recap",
+    "href": "slides/09-coefficient-dist-notes.html#recap",
     "title": "Inference for regression",
     "section": "Recap",
     "text": "Recap\n\nDerived the distribution \\(\\hat{\\boldsymbol{\\beta}}\\)"
   },
   {
-    "objectID": "slides/08-coefficient-dist-notes.html#next-class-update",
-    "href": "slides/08-coefficient-dist-notes.html#next-class-update",
+    "objectID": "slides/09-coefficient-dist-notes.html#before-next-class",
+    "href": "slides/09-coefficient-dist-notes.html#before-next-class",
     "title": "Inference for regression",
-    "section": "Next class [ UPDATE]",
-    "text": "Next class [ UPDATE]\n\nHypothesis tests and confidence intervals for a coefficient \\(\\beta_j\\)\nComplete Lecture 09 prepare"
+    "section": "Before next class",
+    "text": "Before next class\n\nHypothesis test for \\(\\beta_j\\)\nComplete Lecture 10 prepare"
   },
   {
-    "objectID": "slides/09-coefficient-dist.html#announcements-update",
-    "href": "slides/09-coefficient-dist.html#announcements-update",
+    "objectID": "slides/09-coefficient-dist.html#announcements",
+    "href": "slides/09-coefficient-dist.html#announcements",
     "title": "Inference for regression",
-    "section": "Announcements [UPDATE]",
-    "text": "Announcements [UPDATE]\n\nHW 02 due Thursday, September 24 at 11:59pm\nProject proposal due Tuesday, September 29 at 11:59pm (on GitHub)\nStatistics experience due November 24\nLooking ahead: Exam 01 on October 6"
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 02 due Thursday, September 24 at 11:59pm\nProject proposal due Tuesday, September 29 at 11:59pm (on GitHub)\nStatistics experience due November 24\nLooking ahead: Exam 01 on October 6"
   },
   {
     "objectID": "slides/09-coefficient-dist.html#topics",
@@ -5375,7 +5375,7 @@
     "href": "slides/09-coefficient-dist.html#data-ncaa-football-expenditures",
     "title": "Inference for regression",
     "section": "Data: NCAA Football expenditures",
-    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\nRows: 127 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (5): institution_name, city_txt, state_cd, zip_text, type\ndbl (3): year, enrollment_th, total_exp_m\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The following variables are used in this analysis:\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")"
   },
   {
     "objectID": "slides/09-coefficient-dist.html#bivariate-eda",
@@ -5438,7 +5438,7 @@
     "href": "slides/09-coefficient-dist.html#your-turn",
     "title": "Inference for regression",
     "section": "Your turn",
-    "text": "Your turn\n[Woo clap - How does this compare to RMSE]"
+    "text": "Your turn\n\nHow do the regression standard error and RMSE compare?\n\n\n\nhttps://app.wooclap.com/BPSKYOR"
   },
   {
     "objectID": "slides/09-coefficient-dist.html#inference-for-beta_j",
@@ -5476,11 +5476,11 @@
     "text": "Recap\n\nDerived the distribution \\(\\hat{\\boldsymbol{\\beta}}\\)"
   },
   {
-    "objectID": "slides/09-coefficient-dist.html#next-class-update",
-    "href": "slides/09-coefficient-dist.html#next-class-update",
+    "objectID": "slides/09-coefficient-dist.html#before-next-class",
+    "href": "slides/09-coefficient-dist.html#before-next-class",
     "title": "Inference for regression",
-    "section": "Next class [ UPDATE]",
-    "text": "Next class [ UPDATE]\n\nHypothesis tests and confidence intervals for a coefficient \\(\\beta_j\\)\nComplete Lecture 09 prepare"
+    "section": "Before next class",
+    "text": "Before next class\n\nHypothesis test for \\(\\beta_j\\)\nComplete Lecture 10 prepare"
   },
   {
     "objectID": "math-rules.html",

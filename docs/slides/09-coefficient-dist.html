@@ -210,8 +210,8 @@ Prof.&nbsp;Maria Tackett
 
   <p class="date">September 22, 2026</p>
 </section>
-<section id="announcements-update" class="slide level2">
-<h2>Announcements [UPDATE]</h2>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
 <ul>
 <li><p><a href="../hw/hw-02.html">HW 02</a> due Thursday, September 24 at 11:59pm</p></li>
 <li><p><a href="../project.html">Project proposal</a> due Tuesday, September 29 at 11:59pm (on GitHub)</p></li>
@@ -250,28 +250,18 @@ Prof.&nbsp;Maria Tackett
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 127 Columns: 8
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (5): institution_name, city_txt, state_cd, zip_text, type
-dbl (3): year, enrollment_th, total_exp_m
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
 </div>
 </section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 
-<img data-src="09-coefficient-dist_files/figure-html/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="09-coefficient-dist_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="regression-model" class="slide level2 midi">
 <h2>Regression model</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
-<span id="cb4-2"><a></a><span class="fu">tidy</span>(exp_fit) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
+<span id="cb3-2"><a></a><span class="fu">tidy</span>(exp_fit) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -423,7 +413,13 @@ dbl (3): year, enrollment_th, total_exp_m
 </section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn</h2>
-<p>[Woo clap - How does this compare to RMSE]</p>
+<div class="question">
+<p>How do the regression standard error and RMSE compare?</p>
+</div>
+
+<img data-src="images/september-22-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:35.0%"><center>
+<a href="https://app.wooclap.com/BPSKYOR" class="uri">https://app.wooclap.com/BPSKYOR</a>
+</center>
 </section>
 <section>
 <section id="inference-for-a-single-coefficient" class="title-slide slide level1 center">
@@ -493,11 +489,11 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <li>Derived the distribution <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></li>
 </ul>
 </section>
-<section id="next-class-update" class="slide level2">
-<h2>Next class [ UPDATE]</h2>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
 <ul>
-<li>Hypothesis tests and confidence intervals for a coefficient <span class="math inline">\(\beta_j\)</span></li>
-<li>Complete <a href="../prepare/prepare-lec09.html">Lecture 09 prepare</a></li>
+<li>Hypothesis test for <span class="math inline">\(\beta_j\)</span></li>
+<li>Complete <a href="../prepare/prepare-lec10.html">Lecture 10 prepare</a></li>
 </ul>
 
 
@@ -720,6 +716,44 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

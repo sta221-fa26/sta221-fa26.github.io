@@ -73,7 +73,7 @@ Use $\mathbf{y}$ and $\mathbf{X}$ to compute the estimated coefficients $\hat{\b
 
 ## Exercise 5
 
-The standard error of $\hat{\beta}_j$ is computed as $\sqrt{Var(\hat{\beta}_j)$ . Interpret the standard error for $\hat{\beta}_\text{enroll}$ in the context of the data.
+The standard error of $\hat{\beta}_j$ is computed as $\sqrt{Var(\hat{\beta}_j)}$ . Interpret the standard error for $\hat{\beta}_\text{enroll}$ in the context of the data.
 
 # Wrapping up
 

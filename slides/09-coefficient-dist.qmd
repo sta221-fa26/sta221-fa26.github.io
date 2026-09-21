@@ -16,7 +16,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 08-coefficient-dist-notes.html
+    output-file: 09-coefficient-dist-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -47,7 +47,7 @@ knitr::opts_chunk$set(
 options(scipen=999)
 ```
 
-## Announcements \[UPDATE\]
+## Announcements
 
 - [HW 02](../hw/hw-02.html) due Thursday, September 24 at 11:59pm
 
@@ -246,9 +246,15 @@ $$
 \hat{\sigma} = \sqrt{\frac{SSR}{n - p - 1}} = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
 $$
 
-## Your turn 
+## Your turn
 
-\[Woo clap - How does this compare to RMSE\]
+::: question
+How do the regression standard error and RMSE compare?
+:::
+
+![](images/september-22-qrcode.png){fig-align="center" width="35%"}
+
+<center><https://app.wooclap.com/BPSKYOR></center>
 
 # Inference for a single coefficient
 
@@ -320,7 +326,7 @@ Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then, for each coeffi
 
 - Derived the distribution $\hat{\boldsymbol{\beta}}$
 
-## Next class \[ UPDATE\]
+## Before next class
 
-- Hypothesis tests and confidence intervals for a coefficient $\beta_j$
-- Complete [Lecture 09 prepare](../prepare/prepare-lec09.html)
+- Hypothesis test for $\beta_j$
+- Complete [Lecture 10 prepare](../prepare/prepare-lec10.html)
