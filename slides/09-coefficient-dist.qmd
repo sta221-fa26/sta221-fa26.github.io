@@ -274,7 +274,7 @@ But first we need to understand the distribution of $\hat{\beta}_j$
 
 - A **sampling distribution** is the probability distribution of a statistic computed from many repeated random samples of size $n$ drawn from a population.
 
-- The sampling distribution of $\hat{\boldsymbol{\beta}}$ is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size $n$ and fitting the regression model to compute $\hat{\boldsymbol{\beta}}$
+- The sampling distribution of $\hat{\boldsymbol{\beta}}$ is the probability distribution of the estimated coefficients, formed by repeatedly taking samples of size $n$ and fitting the regression model to compute $\hat{\boldsymbol{\beta}}$
 
 $$
 \hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
@@ -298,7 +298,16 @@ Show
 - $Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}$
 :::
 
-<br>
+## Variance short cut {background-color="#ccddeb"}
+
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
+
+$$
+\begin{aligned}
+Var(\mathbf{Az}) &= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\[8pt]
+& = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
+\end{aligned}
+$$
 
 ## Sampling distribution of $\hat{\beta}_j$
 

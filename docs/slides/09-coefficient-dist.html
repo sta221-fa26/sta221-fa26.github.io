@@ -441,7 +441,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <ul>
 <li><p>A <strong>sampling distribution</strong> is the probability distribution of a statistic computed from many repeated random samples of size <span class="math inline">\(n\)</span> drawn from a population.</p></li>
-<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size <span class="math inline">\(n\)</span> and fitting the regression model to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
+<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients, formed by repeatedly taking samples of size <span class="math inline">\(n\)</span> and fitting the regression model to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
 </ul>
 <p><span class="math display">\[
 \hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
@@ -462,7 +462,16 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <li><p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}\)</span></p></li>
 </ul>
 </div>
-<p><br></p>
+</section>
+<section id="variance-short-cut" class="slide level2" data-background-color="#ccddeb">
+<h2>Variance short cut</h2>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\[8pt]
+&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
+\end{aligned}
+\]</span></p>
 </section>
 <section id="sampling-distribution-of-hatbeta_j" class="slide level2">
 <h2>Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>

@@ -434,6 +434,7 @@ window.Quarto = {
   <li><a href="#inference-for-beta_j" id="toc-inference-for-beta_j" class="nav-link" data-scroll-target="#inference-for-beta_j">Inference for <span class="math inline">\(\beta_j\)</span></a></li>
   <li><a href="#sampling-distribution-of-hatboldsymbolbeta" id="toc-sampling-distribution-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#sampling-distribution-of-hatboldsymbolbeta">Sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
   <li><a href="#expected-value-and-variance-of-boldsymbolhatbeta" id="toc-expected-value-and-variance-of-boldsymbolhatbeta" class="nav-link" data-scroll-target="#expected-value-and-variance-of-boldsymbolhatbeta">Expected value and variance of <span class="math inline">\(\boldsymbol{\hat{\beta}}\)</span></a></li>
+  <li><a href="#variance-short-cut" id="toc-variance-short-cut" class="nav-link" data-scroll-target="#variance-short-cut">Variance short cut</a></li>
   <li><a href="#sampling-distribution-of-hatbeta_j" id="toc-sampling-distribution-of-hatbeta_j" class="nav-link" data-scroll-target="#sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
   </ul></li>
   <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
@@ -723,7 +724,7 @@ Note
 <h2 class="midi anchored" data-anchor-id="sampling-distribution-of-hatboldsymbolbeta">Sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <ul>
 <li><p>A <strong>sampling distribution</strong> is the probability distribution of a statistic computed from many repeated random samples of size <span class="math inline">\(n\)</span> drawn from a population.</p></li>
-<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size <span class="math inline">\(n\)</span> and fitting the regression model to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
+<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients, formed by repeatedly taking samples of size <span class="math inline">\(n\)</span> and fitting the regression model to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
 </ul>
 <p><span class="math display">\[
 \hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
@@ -743,7 +744,16 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <li><p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}\)</span></p></li>
 </ul>
 </div>
-<p><br></p>
+</section>
+<section id="variance-short-cut" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="variance-short-cut">Variance short cut</h2>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\[8pt]
+&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
+\end{aligned}
+\]</span></p>
 </section>
 <section id="sampling-distribution-of-hatbeta_j" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>

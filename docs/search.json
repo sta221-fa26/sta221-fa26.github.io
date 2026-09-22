@@ -5332,7 +5332,7 @@
     "href": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatboldsymbolbeta",
     "title": "Inference for regression",
     "section": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nA sampling distribution is the probability distribution of a statistic computed from many repeated random samples of size \\(n\\) drawn from a population.\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size \\(n\\) and fitting the regression model to compute \\(\\hat{\\boldsymbol{\\beta}}\\)\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\n. . .\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\n\\]"
+    "text": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nA sampling distribution is the probability distribution of a statistic computed from many repeated random samples of size \\(n\\) drawn from a population.\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients, formed by repeatedly taking samples of size \\(n\\) and fitting the regression model to compute \\(\\hat{\\boldsymbol{\\beta}}\\)\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\n. . .\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\n\\]"
   },
   {
     "objectID": "slides/09-coefficient-dist-notes.html#expected-value-and-variance-of-boldsymbolhatbeta",
@@ -5340,6 +5340,13 @@
     "title": "Inference for regression",
     "section": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)",
     "text": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nShow\n\n\\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\\)"
+  },
+  {
+    "objectID": "slides/09-coefficient-dist-notes.html#variance-short-cut",
+    "href": "slides/09-coefficient-dist-notes.html#variance-short-cut",
+    "title": "Inference for regression",
+    "section": "Variance short cut",
+    "text": "Variance short cut\nLet \\(\\mathbf{A}\\) be an \\(n \\times p\\) matrix of constants and \\(\\mathbf{z}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\n\\begin{aligned}\nVar(\\mathbf{Az}) &= E[(\\mathbf{Az} - E(\\mathbf{Az}))(\\mathbf{Az} - E(\\mathbf{Az}))^\\mathsf{T}] \\\\[8pt]\n& = \\mathbf{A}Var(\\mathbf{z})\\mathbf{A}^\\mathsf{T}\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/09-coefficient-dist-notes.html#sampling-distribution-of-hatbeta_j",
@@ -5465,7 +5472,7 @@
     "href": "slides/09-coefficient-dist.html#sampling-distribution-of-hatboldsymbolbeta",
     "title": "Inference for regression",
     "section": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nA sampling distribution is the probability distribution of a statistic computed from many repeated random samples of size \\(n\\) drawn from a population.\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients, formed by repeatedly taking sample of size \\(n\\) and fitting the regression model to compute \\(\\hat{\\boldsymbol{\\beta}}\\)\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\n\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\n\\]"
+    "text": "Sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nA sampling distribution is the probability distribution of a statistic computed from many repeated random samples of size \\(n\\) drawn from a population.\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients, formed by repeatedly taking samples of size \\(n\\) and fitting the regression model to compute \\(\\hat{\\boldsymbol{\\beta}}\\)\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1})\n\\]\n\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\n\\]"
   },
   {
     "objectID": "slides/09-coefficient-dist.html#expected-value-and-variance-of-boldsymbolhatbeta",
@@ -5473,6 +5480,13 @@
     "title": "Inference for regression",
     "section": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)",
     "text": "Expected value and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nShow\n\n\\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\boldsymbol{X}^\\mathsf{T}\\boldsymbol{X})^{-1}\\)"
+  },
+  {
+    "objectID": "slides/09-coefficient-dist.html#variance-short-cut",
+    "href": "slides/09-coefficient-dist.html#variance-short-cut",
+    "title": "Inference for regression",
+    "section": "Variance short cut",
+    "text": "Variance short cut\nLet \\(\\mathbf{A}\\) be an \\(n \\times p\\) matrix of constants and \\(\\mathbf{z}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\n\\begin{aligned}\nVar(\\mathbf{Az}) &= E[(\\mathbf{Az} - E(\\mathbf{Az}))(\\mathbf{Az} - E(\\mathbf{Az}))^\\mathsf{T}] \\\\[8pt]\n& = \\mathbf{A}Var(\\mathbf{z})\\mathbf{A}^\\mathsf{T}\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/09-coefficient-dist.html#sampling-distribution-of-hatbeta_j",
