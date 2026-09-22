@@ -3,6 +3,163 @@ title: "HW 05: Statistics Experience"
 editor: visual
 ---
 
-<br>
+::: callout-important
+This assignment is due on **Tuesday, November 24 at 11:59pm**.
+:::
 
-To be posted.
+The world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.
+
+You may submit the statistics experience assignment anytime between now and the deadline.
+
+Each experience has three parts:
+
+1️⃣ Have a statistics experience.
+
+2️⃣ Make a slide reflecting on your experience.
+
+3️⃣ Complete the *Statistics Experience survey.*
+
+**You must complete all parts to receive credit. The statistics experience will count as a homework grade.**
+
+## Part 1: Experience statistics outside of the classroom
+
+Complete an activity in one of the categories below. Under each category are suggested activities. If you do not see something you'd like to do in Categories 1 - 8, you may do Category 9: Choose your own adventure! If there is an activity you'd like to do but you're not sure if it qualifies for the statistics experience, just ask!
+
+### Category 1: Attend a talk or conference
+
+Attend a talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be *at least 30 minutes* to count towards the statistics experience. The event can be in-person or online.
+
+### Category 2: Talk with a statistician/ data scientist
+
+Talk with someone who uses statistics in their daily work. This could include a professor, professional working in industry, graduate student, etc.
+
+### Category 3: Listen to a podcast / watch a video
+
+Listen to a podcast or watch a video about statistics and data science. The podcasts / videos must be (1) one podcast or video that is at least 30 minutes or (2) multiple podcasts and/or videos that are at least 30 minutes combined.
+
+A few data science podcasts are below:
+
+- [Stats + Stories Podcast](https://statsandstories.net/)
+- [Causal Inference Podcast](https://casualinfer.libsyn.com/)
+- [The Test Set](https://posit.co/thetestset/) by Posit
+- [Data Skeptic](https://dataskeptic.com/podcast)
+- posit::conf talks (formally called rstudio::conf)
+  - [2025 conference](https://www.youtube.com/playlist?list=PL9HYL-VRX0oTixlfDPCS5RW_F1pccERRe)
+
+  - [2024 conference](https://www.youtube.com/playlist?list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn)
+
+  - [2023 conference](https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp)
+
+This list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask Professor Tackett if you are unsure whether a particular podcast or video will count towards the statistics experience.
+
+### Category 4: Participate in a data science competition or challenge
+
+Participate in a statistics or data science competition. You can participate individually or with a team.
+
+### Category 5: Read a book about statistics/data science
+
+There are *a lot* of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn't on this list, you can ask Professor Tackett if you're unsure whether it will count for the statistics experience. Many of these books are available through Duke library.
+
+- *Data-Driven Hollywood: The New Data Professionals in the Age of Streaming* by Violaine Roussel
+- *Data Empire: The Power of Information to Organize, Control, and Dominate* by Roopika Risam
+- *CHART: Designing Creative Data Visualizations from Charts to Art* by Nadieh Bremer
+- *W. E. B. Du Bois's Data Portraits: Visualizing Black America* by Britt Rusert and Whitney Battle-Baptiste
+- *How Charts Lie: Getting Smarter about Visual Information* by Alberto Cairo
+- *The Theory that Would Not Die* by Sharon Bertsch McGrayne
+- *The Lady Tasting Tea* by David Salsburg
+- [List of books about data science ethics](https://teachdatascience.com/bookclub/)
+
+This list is not exhaustive.
+
+### Category 6: TidyTuesday
+
+Another option is participating in a TidyTuesday challenge. New data sets are announced on Monday afternoons. You can find more information about TidyTuesday and see the data in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday).
+
+A few guidelines:
+
+✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include
+
+- The Quarto file with all the code needed to reproduce your visualization.
+- A README that includes an image of your final visualization and a short summary (\~ 1 paragraph) about your visualization.
+
+✅ The visualization should include features or customization that are beyond what we've done in class.
+
+✅ Include the link to your GitHub repo in the slide summarizing your experience.
+
+### Category 7: Coding Out Loud
+
+Watch an episode of [Coding Out Loud](https://dukecct.github.io/coding-out-loud/) and work through the project. A few guidelines:
+
+✅ Create a GitHub repo for your Coding Out Loud submission. Your repo should include
+
+- The Quarto file with all the code needed to reproduce your visualization.
+- A README that includes an image of your final visualization and a short summary (\~ 1 paragraph) about your visualization.
+
+✅ The final product (visualization, table, etc.) should include features or customization that are beyond what is achieved in the Coding Out Loud episode.
+
+✅ Include the link to your GitHub repo in the slide summarizing your experience.
+
+### Category 8: CURV - connecting, uplifting, and recognizing voices
+
+[CURV](https://hardin47.github.io/CURV/) is a project by Dr. Jo Hardin at Pomona College to highlight statisticians and data scientists from groups who have been historically marginalized in the discipline.
+
+<!--# There are two options for this statistics experience:-->
+
+<!--# Learn about one of the scholars in the CURV data base and present what you learn in class.-->
+
+<!--# A few guidelines:-->
+
+<!--# Let Professor Tackett know at least one week in advance of when you'd like to present a Statistician of the Day. They will take place at the beginning of lectures on Mondays.-->
+
+<!--# Create 1 - 2 slides about the scholar.-->
+
+<!--# Present at the beginning of lecture for both lectures. If you are unable to attend the beginning of both lectures, you can present in-person during your lecture period and provide a short video for the other lecture period.-->
+
+For this statistics experience, you can contribute to the CURV database. If there is a scholar you would like to suggest for the database, submit your suggestion as an issue or pull request on the [CURV GitHub repo](https://github.com/hardin47/CURV/) and create a sample CURV page.
+
+A few guidelines:
+
+✅ Create a draft of the CURV page for your suggested scholar. For reference, [click here](https://hardin47.github.io/CURV/scholars/dubois.html) for the CURV page for W.E.B. Du Bois. The page must be created in a Quarto document.
+
+::: callout-tip
+You can find the Quarto documents for current scholars in the database in the CURV GitHub repo. You can use one of these as a template to format your page.
+:::
+
+✅ Make a pull request to the CURV GitHub repo to add the `.qmd` file for your suggested scholar, [**OR**]{.underline} open an issue with a link to the `.qmd` file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.
+
+✅ Include the URL to your pull request or issue in your one-slide reflection.
+
+### Category 9: Choose your own adventure!
+
+Perhaps you're interested in a Statistics Experience doesn't seem to fit in one of the previous categories. If so, you can create your own experience! Please share your idea with Professor Tackett to get it approved for this assignment.
+
+## Part 2: Reflect on your experience
+
+Make one slide[^1] summarizing and reflecting on your experience. Post an image of the slide in the Statistics Experience discussion thread on Canvas.
+
+[^1]: You may use a standard slide (e.g., Google slides, Powerpoint, Keynote, Canva, etc.) or a research poster format. If you are interested in the research poster, [click here](https://duke.app.box.com/s/tsver1rb3gjjv12l4j10ustydekrm36m) for poster templates from the Duke School of Medicine. Be sure to remove the School of Medicine log.
+
+Include the following on your slide:
+
+- **Description of the experience**
+  - Name and brief description of the event/podcast/competition/etc.
+- **Something you learned**
+  - Write 2 - 4 sentences about something you learned or found particularly interesting or unexpected.
+- **Connection to STA 221**
+  - Write 2 - 4 sentences about how the experience connects to what we've done in the course.
+- **Citation or link to web page for event/competition/etc.**
+  - No citation needed if you do an interview.
+
+Make sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!).
+
+::: callout-note
+**Creativity on the experience and slide design is encouraged!**
+:::
+
+## Part 3: Complete the Statistics Experience survey
+
+Click here to complete the Statistics Experience survey. \[Link will be provided\]. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. The survey data will be collected and de-identified by an Honest Broker from the [Office of the University Registrar](https://registrar.duke.edu/). You will receive credit for completing the survey, regardless of whether you consent for your data to be used in research. Professor Tackett will receive the de-identified survey responses after the final course grades have been submitted.
+
+## Submission
+
+This assignment is due on **Tuesday, November 24 at 11:59pm.** To be considered on time, the image of the slide must be posted to the "Statistics experience" discussion thread on Canvas and the survey completed by the deadline. The standard homework late policy applies.
