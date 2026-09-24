@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 03 – STA 221 - Fall 2026</title>
+<title>HW 03: Inference for regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -71,6 +126,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -359,15 +443,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  </ul></li>
+  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
+  <ul class="collapse">
+  <li><a href="#data-physical-activity-in-post-covid-19-condition" id="toc-data-physical-activity-in-post-covid-19-condition" class="nav-link" data-scroll-target="#data-physical-activity-in-post-covid-19-condition">Data: Physical activity in post-COVID-19 condition</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  </ul></li>
+  <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI disclosure</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-25-points" id="toc-grading-25-points" class="nav-link" data-scroll-target="#grading-25-points">Grading (25 points)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-03.html">HW 03</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HW 03</h1>
+<h1 class="title">HW 03: Inference for regression</h1>
+<p class="subtitle lead">Physical activity and post-COVID-19 conditions</p>
 </div>
 
 
@@ -384,12 +494,273 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assignment is due on <strong>Thursday, October 1 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<ul>
+<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
+<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this assignment, you will explore mathematical properties of inference for regression and use inference to draw conclusions about factors associated with the daily physical activity among individuals with a post-COVID-19 condition.</p>
+</section>
+<section id="learning-goals" class="level1">
+<h1><strong>Learning goals</strong></h1>
+<p>In this assignment, you will…</p>
+<ul>
+<li>explore mathematical properties of linear regression models.</li>
+<li>use multiple linear regression to model the relationship between three or more variables</li>
+<li>fit and interpret models with interaction terms.</li>
+</ul>
+</section>
+<section id="getting-started" class="level1">
+<h1><strong>Getting started</strong></h1>
+<ul>
+<li><p>Go to the <a href="https://github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>hw-03</strong>. It contains the starter documents you need to complete the assignment.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in this assignment:</p>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.</p>
+<p><strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Derive <span class="math inline">\(Var(\hat{\mathbf{y})}\)</span>, the variance of the fitted values produced by the ordinary least-squares regression model.</p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Consider the weighted least-squares regression model</p>
+<p><span class="math display">\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon} \hspace{10mm} \epsilon \sim N(\mathbf{0}, \sigma^2\mathbf{W}^{-1})
+\]</span></p>
+<p>such that <span class="math inline">\(\mathbf{W}\)</span> is a fixed, diagonal matrix with <span class="math inline">\(w_i &gt; 0\)</span>, the weight for the <span class="math inline">\(i\)</span>th observation, on the diagonal.</p>
+<ol type="a">
+<li><p>The estimator for the weighted-least squares model is the <span class="math inline">\(\hat{\boldsymbol{\beta}}_{WLS}\)</span> that minimizes the following objective function:</p>
+<p><span class="math display">\[(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}\mathbf{W}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\]</span></p></li>
+</ol>
+<p>Show that the estimator is <span class="math inline">\(\hat{\boldsymbol{\beta}}_{WLS} = (\mathbf{X}^\mathsf{T}\mathbf{W}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{Wy}\)</span>. <em>Hint: You can use the fact that</em> <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{W}\mathbf{X}\)</span> <em>is invertible; you do not need to show this.</em></p>
+<ol start="2" type="a">
+<li><p>Derive <span class="math inline">\(E(\hat{\boldsymbol{\beta}}_{WLS})\)</span></p></li>
+<li><p>Derive <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}_{WLS})\)</span>.</p></li>
+</ol>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>If the columns of the design matrix <span class="math inline">\(\mathbf{X}\)</span> are linearly dependent, prove that there is no matrix <span class="math inline">\(\mathbf{C}\)</span> such that <span class="math inline">\(E[\mathbf{Cy}] = \boldsymbol{\beta}\)</span> for every possible <span class="math inline">\(\boldsymbol{\beta}\)</span>. <em>Note:</em> <span class="math inline">\(\mathbf{C}\)</span> is a fixed matrix, i.e., a matrix of constants.</p>
+</section>
+</section>
+<section id="applied-exercises" class="level1">
+<h1>Applied exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.</strong></p>
+<p>Write all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations.</p>
+</div>
+</div>
+<section id="data-physical-activity-in-post-covid-19-condition" class="level2">
+<h2 class="anchored" data-anchor-id="data-physical-activity-in-post-covid-19-condition">Data: Physical activity in post-COVID-19 condition</h2>
+<p>In the academic article <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357465#abstract0">“Physical activity in post-COVID-19 condition: A cross-sectional study”</a>, <span class="citation" data-cites="kopp2026">Kopp et al. (<a href="#ref-kopp2026" role="doc-biblioref">2026</a>)</span> use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.</p>
+<p>The data include the baseline measurements for the 141 adults from the clinical trial who were included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This measure is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.</p>
+<p>The analysis will focus on the variables below. The definitions are in the codebook provided by the authors.</p>
+<ul>
+<li><p><code>mean_ENMO_per_person</code>: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)</p></li>
+<li><p><code>chron_symp_disease</code>: Physician-diagnosed chronic symptomatic disease (<code>Ja</code> (yes), <code>Nein</code> (no))</p></li>
+<li><p><code>sex</code> : Sex ( <code>Female</code> or <code>Male</code>)</p></li>
+<li><p><code>age</code>: Age in years (ranges from 18 to 80)</p></li>
+<li><p><code>edu_t0</code>: Education</p>
+<ul>
+<li><p><code>Lower secondary</code>: Compulsory school</p></li>
+<li><p><code>Upper secondary</code>: Vocational training or Baccalaureate</p></li>
+<li><p><code>Tertiary</code>: Technical college or higher technical college or University</p></li>
+</ul></li>
+<li><p><code>sts_reps_t1</code> :Number of repetitions during the 30-second Sit-to-Stand test</p>
+<ul>
+<li>Measure of functional capacity</li>
+</ul></li>
+<li><p><code>longcov_pem_grade_t1</code> : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire</p></li>
+<li><p>Columns starting with <code>facit_</code> : 13 Likert scale items from Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. See <a href="https://doi.org/10.1371/journal.pone.0357465.s003">the codebook</a> for full details on the questions.</p></li>
+</ul>
+<p><a href="https://doi.org/10.1371/journal.pone.0357465.s003">Click here</a> to access the full codebook.</p>
+<p>The raw data were provided by the authors and are available in <code>physical-activity-post-covid.csv</code> in the <code>data</code> folder of your repo. You may use the code below or your code from <a href="https://sta221-fa26.github.io/hw/hw-02.html#exercise-5">HW 02 Exercise 5</a> to process the data before modeling.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>phys_activity <span class="ot">&lt;-</span> phys_activity <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">chron_symp_disease =</span> <span class="fu">factor</span>(chron_symp_disease, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Nein"</span>, <span class="st">"Ja"</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">education =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>           edu_t0 <span class="sc">==</span> <span class="st">"Compulsory school"</span> <span class="sc">~</span> <span class="st">"Lower secondary"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           edu_t0 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Vocational training"</span>, <span class="st">"Baccalaureate"</span>) <span class="sc">~</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Upper secondary"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>           <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Tertiary"</span>), </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">total_facit =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"facit_"</span>)))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Analysis goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Our goal is to use statistical inference to draw conclusions about the factors associated with mean ENMO.</strong></p>
+</div>
+</div>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Let’s start with the model presented in <a href="https://doi.org/10.1371/journal.pone.0357465.t004">Table 4</a> of the article.</p>
+<ol type="a">
+<li><p>Fit the linear regression model using physician-diagnosed chronic symptomatic disease, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places along with the confidence intervals for the coefficients. The estimated model coefficients should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)</p></li>
+<li><p>Does the model provide evidence of a difference in the mean ENMO based on education? Briefly explain, referencing any statistics used to make the determination.</p></li>
+<li><p>One of the conclusions the authors draw from the model is “each additional repetition in the 30-s STS test was associated with higher ENMO values”. Does the model support this conclusion? Briefly explain, referencing any statistics used to make the determination.</p></li>
+</ol>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Thus far, we have evaluated whether there is evidence of any association between various factors and mean ENMO. Now, we would like to evaluate whether there is evidence of a practically meaningful association.</p>
+<p><span class="citation" data-cites="rowlands2020">(<a href="#ref-rowlands2020" role="doc-biblioref">Rowlands et al. 2020</a>)</span>define an increase of 0.8 - 1.0 in mean ENMO to be the “minimum clinically important” change for adults who typically have lower physical activity. We will use 0.8 mg as the lower threshold for clinical importance. Thus, we wish to evaluate whether the difference in the mean ENMO between individuals with chronic symptomatic disease and those without is clinically important.</p>
+<p>To do so, we wish to test whether the coefficient for <code>chron_symp_disease</code> <strong>is less than -0.8.</strong></p>
+<ol type="a">
+<li><p>Write the null and alternative hypotheses for this test using words and mathematical notation.</p></li>
+<li><p>Compute the test statistic for this test. Show the code used to compute the test statistic; you may use any relevant output from the model in the previous exercise.</p></li>
+<li><p>What is the distribution of the test statistic under the null hypothesis? Specify the distribution specifically for this problem.</p></li>
+<li><p>Compute the p-value and state your conclusion in the context of the data using a threshold of <span class="math inline">\(\alpha = 0.05\)</span>.</p></li>
+</ol>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>The study excluded individuals with untreated comorbidities. What ethical considerations arise when generalizing these findings to individuals with a post-COVID-19 condition who also have an untreated medical condition?</p>
+</section>
+</section>
+<section id="ai-disclosure" class="level1">
+<h1>AI disclosure</h1>
+<p>Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste <u><strong>all</strong></u> statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI.</p>
+<ul>
+<li>I didn’t use an LLM / Generative AI tool.</li>
+<li>I asked it to clarify one or more exercises.</li>
+<li>I asked it clarifying questions to better understand a concept.</li>
+<li>I asked it to help write code to complete an exercise.</li>
+<li>I gave it my code and asked it to help me fix it.</li>
+<li>I asked it about an error or why code would do something I didn’t want.</li>
+<li>I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.</li>
+<li>I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.</li>
+<li>Other:______</li>
+</ul>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<ul>
+<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> and “AI Disclosure” sections.</p></li>
+</ul>
+</section>
+<section id="grading-25-points" class="level1">
+<h1>Grading (25 points)</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Selected conceptual exercise</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Selected applied exercise</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Completing AI Disclosure</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-kopp2026" class="csl-entry" role="listitem">
+Kopp, Julia, Dara Corina Spies Rodriguez, Lisa Künzi, Milo A. Puhan, Jan Sven Fehr, and Thomas Radtke. 2026. <span>“Physical Activity in Post-COVID-19 Condition: A Cross-Sectional Study.”</span> Edited by LS Katrina Li. <em>PLOS One</em> 21 (9): e0357465. <a href="https://doi.org/10.1371/journal.pone.0357465">https://doi.org/10.1371/journal.pone.0357465</a>.
+</div>
+<div id="ref-rowlands2020" class="csl-entry" role="listitem">
+Rowlands, Alex, Melanie Davies, Paddy Dempsey, Charlotte Edwardson, Cameron Razieh, and Thomas Yates. 2020. <span>“Wrist-Worn Accelerometers: Recommending &nbsp;1.0 m<span><em>g</em></span> as the Minimum Clinically Important Difference (MCID) in Daily Average Acceleration for Inactive Adults.”</span> <em>British Journal of Sports Medicine</em> 55 (14): 814–15. <a href="https://doi.org/10.1136/bjsports-2020-102293">https://doi.org/10.1136/bjsports-2020-102293</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -810,7 +1181,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
