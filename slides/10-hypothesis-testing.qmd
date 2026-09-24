@@ -53,6 +53,10 @@ options(scipen=999)
 
 - [Project proposal](../project.html) due Tuesday, September 29 at 11:59pm (on GitHub)
 
+- HW 03 due Thursday, October 1 at 11:59pm
+
+  - Released later today
+
 - [Statistics experience](../hw/hw-stats-experience.html) due November 24
 
 ## Exam 01 resources

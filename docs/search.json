@@ -6178,5 +6178,61 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html",
+    "href": "hw/hw-03-DRAFT.html",
+    "title": "HW 03: Inference for regression",
+    "section": "",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 1 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-1",
+    "href": "hw/hw-03-DRAFT.html#exercise-1",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nDerive \\(Var(\\hat{\\mathbf{y})}\\), the variance of the fitted values \\(\\hat{\\mathbf{y}}\\)."
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-2",
+    "href": "hw/hw-03-DRAFT.html#exercise-2",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the weighted least-squares regression model\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon} \\hspace{10mm} \\epsilon \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{W}^{-1})\n\\]\nsuch that \\(\\mathbf{W}\\) is a diagonal matrix with \\(w_i\\), the weight for the \\(i^{th}\\) observation, on the diagonal.\n\nDerive \\(E(\\hat{\\boldsymbol{\\beta}})\\) for weighted least squares.\nDerive \\(Var(\\hat{\\boldsymbol{\\beta}})\\) for weighted least squares."
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-3",
+    "href": "hw/hw-03-DRAFT.html#exercise-3",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nIf the columns of the design matrix \\(\\mathbf{X}\\) are linearly dependent, prove that there is no matrix \\(\\mathbf{C}\\) such that \\(E[\\mathbf{Cy}] = \\boldsymbol{\\beta}\\). Note: \\(\\mathbf{C}\\) is a fixed matrix, i.e., a matrix of constants."
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#data-physical-activity-in-post-covid-19-condition",
+    "href": "hw/hw-03-DRAFT.html#data-physical-activity-in-post-covid-19-condition",
+    "title": "HW 03: Inference for regression",
+    "section": "Data: Physical activity in post-COVID-19 condition",
+    "text": "Data: Physical activity in post-COVID-19 condition\nIn the academic article “Physical activity in post-COVID-19 condition: A cross-sectional study”, Kopp et al. (2026) use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.\nThe data include the baseline measurements for 141 adults who participated in a clinical trial and are included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.\nThe analysis will focus on the variables below. The definitions are in the codebook provided by the authors.\n\nmean_ENMO_per_person: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)\nchron_symp_disease: Physician-diagnosed chronic symptomatic disease (Ja (yes), Nein (no))\nsex : Sex ( Female or Male)\nage: Age in years (ranges from 18 to 80)\nedu_t0: Education\n\nLower secondary: Compulsory school\nUpper secondary: Vocational training or Baccalaureate\nTertiary: Technical college or higher technical college or University\n\nsts_reps_t1 :Number of repetitions during the 30-second Sit-to-Stand test\n\nMeasure of functional capacity\n\nlongcov_pem_grade_t1 : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire\nfacit_total : Total score on the Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. It is computed from the 13 Likert scale items on the instrument. See the codebook for full details on the questions.\n\nClick here to access the full codebook.\nWe will use phys-act-post-covid-clean.csv in the data folder of your repo. It is the raw data provided by the authors with the data processing steps from HW 02 Exercise 5 applied.\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nOur goal is to use statistical inference to draw conclusions about the factors associated with mean ENMO."
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-4",
+    "href": "hw/hw-03-DRAFT.html#exercise-4",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nLet’s start with the model presented in Table 4 of the article.\n\nFit the linear regression model using presence of diagnosed chronic symptoms, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places along with the confidence intervals for the coefficients. The estimated model coefficients hsould match the results in Table 4 of the article. (Note: The authors do not print the intercept.)\nDoes the model provide evidence of a difference in the mean ENMO based on education? Briefly explain, referencing any statistics used to make the determination.\nOne of the conclusions the authors draw from the model is “each additional repetition in the 30-s STS test was associated with higher ENMO values”. Does the model support this conclusion? Briefly explain, referencing any statistics used to make the determination."
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-5",
+    "href": "hw/hw-03-DRAFT.html#exercise-5",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nConduct a hyptoehsis test about a meaningful dfference in mean ENMO.\n[find the LEGO example and do hypothesis test for something not equal to 0]\n\nDoes the 95% confdience interval support the conclusion?\n\nhttps://sta221-sp26.github.io/hw/hw-02.html#exercise-5"
+  },
+  {
+    "objectID": "hw/hw-03-DRAFT.html#exercise-6",
+    "href": "hw/hw-03-DRAFT.html#exercise-6",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n[Ethics question -what is the scope of the conclusions?] - maybe look at the limitations and discussion?"
   }
 ]
