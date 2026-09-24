@@ -264,8 +264,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./hw/hw-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./hw/hw-stats-experience.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HW 05: Statistics experience</span></a>
+ <span class="menu-text">HW 06: Statistics experience</span></a>
   </div>
 </li>
       </ul>
@@ -360,8 +366,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://forms.cloud.microsoft/r/ksZvHWmz0f" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture recording request</span></a>
+  <a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=363a0255-5193-41c3-a809-b4a601301869" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture recordings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -390,7 +396,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#expected-value-of-mathbfaz-mathbfc" id="toc-expected-value-of-mathbfaz-mathbfc" class="nav-link" data-scroll-target="#expected-value-of-mathbfaz-mathbfc">Expected value of <span class="math inline">\(\mathbf{Az} + \mathbf{C}\)</span></a></li>
   <li><a href="#expected-value-of-mathbfaxamathsft" id="toc-expected-value-of-mathbfaxamathsft" class="nav-link" data-scroll-target="#expected-value-of-mathbfaxamathsft">Expected value of <span class="math inline">\(\mathbf{AXA}\mathsf{^T}\)</span></a></li>
-  <li><a href="#variance-of-vector-mathbfz" id="toc-variance-of-vector-mathbfz" class="nav-link" data-scroll-target="#variance-of-vector-mathbfz">Variance of vector <span class="math inline">\(\mathbf{z}\)</span></a></li>
+  <li><a href="#variance-of-mathbfz" id="toc-variance-of-mathbfz" class="nav-link" data-scroll-target="#variance-of-mathbfz">Variance of <span class="math inline">\(\mathbf{z}\)</span></a></li>
+  <li><a href="#variance-of-mathbfaz" id="toc-variance-of-mathbfaz" class="nav-link" data-scroll-target="#variance-of-mathbfaz">Variance of <span class="math inline">\(\mathbf{Az}\)</span></a></li>
   <li><a href="#univariate-normal-distribution" id="toc-univariate-normal-distribution" class="nav-link" data-scroll-target="#univariate-normal-distribution">Univariate normal distribution</a></li>
   <li><a href="#multivariate-normal-distribution" id="toc-multivariate-normal-distribution" class="nav-link" data-scroll-target="#multivariate-normal-distribution">Multivariate normal distribution</a></li>
   <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution">Bernoulli distribution</a></li>
@@ -469,11 +476,21 @@ E(\mathbf{AXA}^\mathsf{T}) = \mathbf{A}E(\mathbf{X})\mathbf{A}^\mathsf{T}
 \]</span></p>
 <hr>
 </section>
-<section id="variance-of-vector-mathbfz" class="level3">
-<h3 class="anchored" data-anchor-id="variance-of-vector-mathbfz">Variance of vector <span class="math inline">\(\mathbf{z}\)</span></h3>
+<section id="variance-of-mathbfz" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-mathbfz">Variance of <span class="math inline">\(\mathbf{z}\)</span></h3>
 <p>Let <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
+\]</span></p>
+</section>
+<section id="variance-of-mathbfaz" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-mathbfaz">Variance of <span class="math inline">\(\mathbf{Az}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\[8pt]
+&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
+\end{aligned}
 \]</span></p>
 </section>
 <section id="univariate-normal-distribution" class="level3">

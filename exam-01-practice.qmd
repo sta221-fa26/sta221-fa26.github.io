@@ -1,0 +1,152 @@
+---
+title: Exam 01 practice
+---
+
+::: callout-important
+This page contains practice problems to help prepare for Exam 01. This set of practice problems is <u>**not**</u> comprehensive.\
+\
+There is no answer key for these problems. You are encouraged to ask questions during office hours or on Ed Discussion.
+:::
+
+## Exercise 1
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+library(knitr)
+
+penguins <- penguins |> 
+  select(species, flipper_length_mm, bill_depth_mm, body_mass_g) |>
+  drop_na()
+
+```
+
+We will use data from `r nrow(penguins)` penguins at Palmer Station in Antarctica to fit linear regression model using species (Adelie, Chinstrap, or Gentoo), flipper length (in millimeters), and bill depth (in millimeters) to predict the body mass of penguins (in grams). [Click here](https://allisonhorst.github.io/palmerpenguins/reference/penguins.html) to read more about the variables.
+
+The linear regression model has the form
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+$$Write the dimensions of $\mathbf{y}, \mathbf{X},\boldsymbol{\beta}, \boldsymbol{\epsilon}$ specifically for this analysis.
+
+## Exercise 2
+
+The output for the model described in Exercise 1, along with 95% confidence intervals for the model coefficients, is shown below:
+
+```{r}
+penguins_fit <- lm(body_mass_g ~ species + flipper_length_mm + 
+                     bill_depth_mm, 
+                   data = penguins)
+
+tidy(penguins_fit, conf.int = TRUE) |>
+  kable(digits = 3)
+```
+
+- Interpret the coefficient of `flipper_length_mm` in the context of the data.
+
+- What is the baseline category for `speices`?
+
+- Interpret the coefficient of `speciesChinstrap` in the context of the data.
+
+## Exercise 3
+
+- Does the intercept have a meaningful interpretation?
+
+- If not, what are some strategies we can use to fit a model in which the intercept is meaningful?
+
+## Exercise 4
+
+There are three species in the data set (Adelie, Chinstrap, Gentoo), but only two terms for species in the model. Use the design matrix to show why we cannot put indicators for all three species along with the intercept in the model.
+
+## Exercise 5
+
+We conduct the following hypothesis test for the coefficient of `flipper_length_mm`.
+
+- **Null:** There is no linear relationship between flipper length and body mass, after accounting for species and bill depth
+
+- **Alternative**: There is a linear relationship between flipper length and body mass, after accounting for species and bill depth
+
+a.  Write these hypotheses in mathematical notation.
+b.  The standard error is 3.098. Explain how this value is computed and what this value means in the context of the data.
+c.  The test statistic is 8.295. Explain how this value is computed and what this value means in the context of the data.
+d.  What distribution is used to compute the p-value?
+e.  What is the conclusion from the test in the context of the data?
+
+## Exercise 6
+
+1.  Interpret the 95% confidence interval for `flipper_length_mm` in the context of the data.
+2.  Is the interval consistent with the test from the previous exercise? Briefly explain.
+
+## Exercise 7
+
+Sketch a scatterplot of the relationship between bill depth and body mass that shows the effect of bill depth differing by species.
+
+## Exercise 8
+
+When we conduct inference for regression, we assume the following distribution for $\mathbf{y}|\mathbf{X}$
+
+$$
+\mathbf{y}|\mathbf{X} \sim(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
+$$
+
+a.  Show that $E(\mathbf{y}|\mathbf{X}) = \mathbf{X}\boldsymbol{\beta}$
+b.  Show that $Var(\mathbf{y}|\mathbf{X})= \sigma^2_{\epsilon}\mathbf{I}$
+
+See the lecture [Inference for Regression](../slides/08-inference.html) to check your work.
+
+## Exercise 9
+
+We conduct inference on the coefficients $\boldsymbol{\beta}$ assuming that the variability of $\mathbf{y}|\mathbf{X}$ is equal for all values (or combination of values) of the predictor(s). Briefly explain why this assumption is important.
+
+## Exercise 10
+
+Given the model $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$, derive the least-squares estimator $\hat{\boldsymbol{\beta}}$ using matrix calculus.
+
+See the lecture [SLR: Matrix representation](../slides/04-slr-matrix.html) to check your work.
+
+## Exercise 11
+
+Given the model $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$, derive the least-squares estimator $\hat{\boldsymbol{\beta}}$ using the geometric interpretation of the model.
+
+See the lecture [SLR: Matrix representation](../slides/04-slr-matrix.html) to check your work.
+
+## Exercise 12
+
+Explain why we say "holding all else constant" when interpreting the coefficients in a multiple linear regression model.
+
+## Exercise 13
+
+Suppose we have two models:
+
+- Model 1 includes predictors $X_1$ and $X_2$
+
+- Model 2 includes predictors $X_1, X_2, X_3$ and $X_4$
+
+Explain why we should use $Adj. R^2$ and not $R^2$ to compare these models.
+
+## Exercise 14
+
+Rework Exercises 1 - 5 in [HW 01](/hw/hw-01.html) for more practice with theory and math.
+
+## Exercise 15
+
+Rework Exercises 1 - 4 in [HW 02](/hw/hw-02.html) for more practice with theory and math.
+
+## Exercise 16
+
+Assume $Var(\boldsymbol{\epsilon})$ = $\mathbf{XV}$, such that $\mathbf{V}$ has the appropriate dimensions. Derive $Var(\hat{\boldsymbol{\beta}})$. What are the dimensions of $\mathbf{V}$?
+
+## Relevant lectures, assignments and AEs
+
+Ask yourself "why" questions as you review the slides, along with your answers, problem-solving process, and derivations on the lectures and assignments. It can also be helpful to explain your process to others.
+
+- Lectures: August 24 - October 1
+
+- HW 01 - 03
+
+- Lab 01 - 04 (Lab 04 is an exam review)
+
+- AE 01 - 02 (AE 04 is an exam review)
