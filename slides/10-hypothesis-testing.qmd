@@ -63,9 +63,9 @@ options(scipen=999)
 
 Exam 01: October 6 in-class
 
-- [Exam 01 practice](../exam-01-practice.html)
+- [Exam 01 practice](../exam-01-practice.html) (see menu on course website)
 - [Math rules](../math-rules.html) (will be provided on exam)
-- Lecture recordings
+- Lecture recordings (see menu on course website)
 - Prepare readings (see course schedule)
 - Lecture notes
 - AEs
