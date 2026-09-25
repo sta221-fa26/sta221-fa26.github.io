@@ -157,7 +157,7 @@ phys_activity <- phys_activity |>
 
 Let's start with the model presented in [Table 4](https://doi.org/10.1371/journal.pone.0357465.t004) of the article.
 
-a.  Fit the linear regression model using physician-diagnosed chronic symptomatic disease, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places along with the confidence intervals for the coefficients. The estimated model coefficients should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)
+a.  Fit the linear regression model using physician-diagnosed chronic symptomatic disease, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places. The estimated model coefficients should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)
 
 b.  Does the model provide evidence of a difference in the mean ENMO based on education? Briefly explain, referencing any statistics used to make the determination.
 
@@ -178,6 +178,10 @@ b.  Compute the test statistic for this test. Show the code used to compute the 
 c.  What is the distribution of the test statistic under the null hypothesis? Specify the distribution specifically for this problem.
 
 d.  Compute the p-value and state your conclusion in the context of the data using a threshold of $\alpha = 0.05$.
+
+::: callout-tip
+Use the `pt()` function to "manually" compute the p-value.
+:::
 
 ## Exercise 6
 
