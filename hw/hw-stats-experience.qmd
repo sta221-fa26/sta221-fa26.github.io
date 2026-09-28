@@ -158,7 +158,9 @@ Make sure the slide includes the information mentioned above and is easily reada
 
 ## Part 3: Complete the Statistics Experience survey
 
-Click here to complete the Statistics Experience survey. \[Link will be provided\]. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. The survey data will be collected and de-identified by an Honest Broker from the [Office of the University Registrar](https://registrar.duke.edu/). You will receive credit for completing the survey, regardless of whether you consent for your data to be used in research. Professor Tackett will receive the de-identified survey responses after the final course grades have been submitted.
+[Click here](https://duke.qualtrics.com/jfe/form/SV_797toAS0HAATlY2) to complete the Statistics Experience survey. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. The survey data will be collected and de-identified by an Honest Broker from the [Office of the University Registrar](https://registrar.duke.edu/). You will receive credit for completing the survey, regardless of whether you consent for your data to be used in research. Professor Tackett will receive the de-identified survey responses after the final course grades have been submitted.
+
+🔗 <https://duke.qualtrics.com/jfe/form/SV_797toAS0HAATlY2>
 
 ## Submission
 
