@@ -3,13 +3,15 @@
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: \"Lab 03\"\nsubtitle: \"Inference for linear regression\"\ndate: \"September 28, 2026\"\ndate-format: long\nfooter: \"[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\n\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\n---\n\n# Welcome\n\n## Goals\n\n- Lab 03: Inference for linear regression\n- Project proposal\n\n\n\n## Hypothesis testing example {.midi}\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n\n|term          | estimate| std.error| statistic| p.value|\n|:-------------|--------:|---------:|---------:|-------:|\n|(Intercept)   |   19.332|     2.984|     6.478|       0|\n|enrollment_th |    0.780|     0.110|     7.074|       0|\n|typePublic    |  -13.226|     3.153|    -4.195|       0|\n\n\n:::\n:::\n\n\n:::: question\n::: midi\nWe wish to test whether there is evidence of a linear relationship between enrollment and football expenditure after accounting for the type of institution.\n\n1.  State the null and alternative hypotheses in words and mathematical notation.\n2.  State how the test statistic is computed from the other values in the output. Interpret the test statistic in the context of the data.\n3.  State the distribution used to compute the p-value and interpret it in the context of the data. \\*Note: There are 127 observations in the data.\\*\n4.  State your conclusion in the context of the data.\n:::\n::::\n\n## Lab 03: Inference for linear regression\n\nToday’s lab focuses on using statistical inference to draw conclusions about factors associated with weekly avocado sales.\n\n<br>\n\n🔗 [sta221-fa26.github.io/labs/lab-03.html](../labs/lab-03.html)\n\n<br>\n\nIf you finish the lab early, use the remaining time to work on the project proposal.\n",
-    "supporting": [
-      "lab-03_files"
-    ],
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
-    "includes": {},
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
     "engineDependencies": {},
     "preserve": {},
     "postProcess": true

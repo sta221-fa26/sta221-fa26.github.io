@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 03 – STA 221 - Fall 2026</title>
+<title>Lab 03: Inference for linear regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -359,15 +414,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data-weekly-avocado-sales" id="toc-data-weekly-avocado-sales" class="nav-link" data-scroll-target="#data-weekly-avocado-sales">Data: Weekly avocado sales</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  </ul></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-30-pts" id="toc-grading-30-pts" class="nav-link" data-scroll-target="#grading-30-pts">Grading (30 pts)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-03.html">Lab 03</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 03</h1>
+<h1 class="title">Lab 03: Inference for linear regression</h1>
+<p class="subtitle lead">Weekly avocado sales</p>
 </div>
 
 
@@ -384,12 +461,211 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab is due at the end of your lab session on <strong>September 28.</strong> Be sure to complete the following by the end of your lab:</p>
+<ul>
+<li>Push final <code>.qmd</code> and <code>.pdf</code> files to your GitHub repo</li>
+<li>Submit final <code>.pdf</code> file on Gradescope</li>
+</ul>
+<p><strong>No late work is accepted for labs.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Teammates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will work with your project team. Each student will submit their own lab assignment.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In today’s lab, you will use hypothesis tests and confidence intervals to draw conclusions about factors associated with weekly avocado sales.</p>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Continue developing a reproducible workflow using RStudio and GitHub</li>
+<li>Use statistical inference to draw conclusions about the relationships between two or more variables</li>
+</ul>
+</section>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<ul>
+<li><p>Go to the <a href="https://www.github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>lab-03</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>You will need the following packages for the lab:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) <span class="co"># contains broom, yardstick, and other modeling packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-weekly-avocado-sales" class="level1">
+<h1>Data: Weekly avocado sales</h1>
+<p>Today’s lab uses data on the weekly sales of Hass avocados in regions across the United States. The data set was adapted from the <code>hass_region</code> data frame in the <strong>avocado</strong> package <span class="citation" data-cites="avocado">(<a href="#ref-avocado" role="doc-biblioref">Agarwal 2025</a>)</span>, and it was originally obtained from the <a href="https://hassavocadoboard.com/">Hass Avocado Board</a>. The data set contains 1,000 observations randomly selected from observations in <code>hass_region</code> with weekly sales of 2,000,000 avocados or fewer.</p>
+<p>This lab will focus on the following variables:</p>
+<ul>
+<li><p><code>total_units_th</code>: Total units (avocados) in thousands</p></li>
+<li><p><code>region</code>: Region of the United States (Midwest, Northeast, South, West). This variable was derived based on the 8 regions in the <code>hass_region</code> data frame</p></li>
+<li><p><code>avg_selling_price</code>: The average selling price of Hass avocados in US Dollars</p></li>
+<li><p><code>type</code>: Type of avocado (Conventional (non-organic), Organic)</p></li>
+</ul>
+<p>The data set is in <code>avocado.csv</code> in the <code>data</code> folder of your repo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avocado <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/avocado.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p><strong>Goal:</strong> The goal of this analysis is to use statistical inference to draw conclusions about factors associated with weekly avocado sales based on a model that includes region, type, and average selling price.</p>
+<section id="instructions" class="level2 important">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p><strong>Type your responses for the exercises in your Quarto document.</strong> Throughout the assignment, remember to periodically <strong>render</strong> your Quarto document to produce the updated PDF, <strong>commit</strong> the changes in the Git pane, and <strong>push</strong> the updated files to GitHub</p>
+</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>In Lab 02, we fit a model using <code>region</code>, <code>avg_selling_price</code>, and <code>type</code> to explain variability in <code>total_units_th</code>. We now wish to consider the price sensitivity based on the type of avocado (conventional versus organic). In general, price sensitivity is defined as “the degree to which the price of a product affects consumers’ purchasing behaviors.” (<a href="https://www.investopedia.com/terms/p/price-sensitivity.asp">Investopedia</a>)</p>
+<ol type="a">
+<li>Fit a model of <code>total_units_th</code> using <code>region</code>, <code>avg_selling_price</code>, and <code>type</code>, such that the price sensitivity can differ based on <code>type</code>. Neatly display the model output to 3 decimal places and include the 95% confidence intervals for the model coefficients.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Include the confidence intervals in the model output by including the argument <code>conf.int = TRUE</code> in the <code>tidy()</code> function. The default level is 95%.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>We will use hypothesis testing to draw conclusions about differences in price sensitivity based on type. Which model coefficient(s) do you need to test for this analysis objective? Briefly explain your choice.</p></li>
+<li><p>Conduct hypothesis test(s) for the coefficient(s) in part(b). For a given hypothesis test:</p>
+<ul>
+<li><p>State the hypotheses in words and mathematical notation.</p></li>
+<li><p>Show or explain how the test statistic is computed.</p></li>
+<li><p>State the distribution of the test statistic. Be specific.</p></li>
+<li><p>State the conclusion in the context of the data.</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Is the confidence interval for the coefficient(s) tested in part (c) consistent with the conclusion from your test. Briefly explain why or why not.</p>
+</section>
+</section>
+<section id="project" class="level1">
+<h1>Project</h1>
+<p>Use remaining lab time to work on your project proposal.</p>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to Gradescope by the end of your lab session.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p></li>
+<li><p>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></p></li>
+</ul>
+</div>
+</div>
+<p><strong>To submit your assignment:</strong></p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with “Attendance &amp; submitting lab” and “Workflow &amp; formatting”</p></li>
+</ul>
+</section>
+<section id="grading-30-pts" class="level1">
+<h1>Grading (30 pts)</h1>
+<p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance &amp; submitting lab</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Two exercises</td>
+<td>16 (8 points each)</td>
+</tr>
+<tr class="odd">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>We will grade two randomly selected exercises.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-avocado" class="csl-entry" role="listitem">
+Agarwal, Nikhil. 2025. <span>“Avocado: Weekly Hass Avocado Sales Summary.”</span> <a href="https://doi.org/10.32614/CRAN.package.avocado">https://doi.org/10.32614/CRAN.package.avocado</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -810,7 +1086,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
