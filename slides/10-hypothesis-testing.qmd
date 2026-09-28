@@ -47,7 +47,7 @@ knitr::opts_chunk$set(
 options(scipen=999)
 ```
 
-## Announcements 
+## Announcements
 
 - [HW 02](../hw/hw-02.html) due TODAY at 11:59pm
 
@@ -382,7 +382,7 @@ Why do we take into account the high and low ends of the distribution to define 
 
 - State the conclusion in the context of the data
 
-## Your turn  {.midi}
+## Your turn {.midi}
 
 ```{r}
 #| echo: false

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-02-15">
 
-<title>Lab 04: Exam 01 Review – STA 221 - Fall 2026</title>
+<title>Lab 03: Inference for linear regression – STA 221 - Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -105,35 +124,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -146,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 04: Exam 01 Review</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 03: Inference for linear regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -427,20 +417,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#restaurant-tips" id="toc-restaurant-tips" class="nav-link" data-scroll-target="#restaurant-tips">Restaurant tips</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data-weekly-avocado-sales" id="toc-data-weekly-avocado-sales" class="nav-link" data-scroll-target="#data-weekly-avocado-sales">Data: Weekly avocado sales</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading-10-pts" id="toc-grading-10-pts" class="nav-link" data-scroll-target="#grading-10-pts">Grading (10 pts)</a></li>
+  <li><a href="#grading-30-pts" id="toc-grading-30-pts" class="nav-link" data-scroll-target="#grading-30-pts">Grading (30 pts)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -449,7 +441,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 04: Exam 01 Review</h1>
+<h1 class="title">Lab 03: Inference for linear regression</h1>
+<p class="subtitle lead">Weekly avocado sales</p>
 </div>
 
 
@@ -457,12 +450,6 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 15, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -482,19 +469,44 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Sunday, February 15 at 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
+<p>This lab is due at the end of your lab session on <strong>September 28.</strong> Be sure to complete the following by the end of your lab:</p>
 <ul>
-<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your team’s GitHub repo</li>
-<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+<li>Push final <code>.qmd</code> and <code>.pdf</code> files to your GitHub repo</li>
+<li>Submit final <code>.pdf</code> file on Gradescope</li>
 </ul>
+<p><strong>No late work is accepted for labs.</strong></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Teammates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will work with your project team. Each student will submit their own lab assignment.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In today’s lab, you will use hypothesis tests and confidence intervals to draw conclusions about factors associated with weekly avocado sales.</p>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Continue developing a reproducible workflow using RStudio and GitHub</li>
+<li>Use statistical inference to draw conclusions about the relationships between two or more variables</li>
+</ul>
+</section>
+</section>
 <section id="getting-started" class="level1">
 <h1>Getting Started</h1>
 <ul>
-<li><p>Go to the <a href="https://www.github.com/sta221-sp26">sta221-sp26</a> organization on GitHub. Click on the repo with the prefix <strong>lab-04</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Go to the <a href="https://www.github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>lab-03</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
-<li><p>Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo</p></li>
 </ul>
 </section>
 <section id="packages" class="level1">
@@ -502,162 +514,89 @@ window.Quarto = {
 <p>You will need the following packages for the lab:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) <span class="co"># contains broom, yardstick, and other modeling packages</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="restaurant-tips" class="level1">
-<h1>Restaurant tips</h1>
-<p><strong>What factors are associated with the amount customers tip at a restaurant?</strong> To answer this question, we will use data collected in 2011 by a student at St.&nbsp;Olaf who worked at a local restaurant.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>The variables we’ll focus on for this analysis are</p>
+<section id="data-weekly-avocado-sales" class="level1">
+<h1>Data: Weekly avocado sales</h1>
+<p>Today’s lab uses data on the weekly sales of Hass avocados in regions across the United States. The data set was adapted from the <code>hass_region</code> data frame in the <strong>avocado</strong> package <span class="citation" data-cites="avocado">(<a href="#ref-avocado" role="doc-biblioref">Agarwal 2025</a>)</span>, and it was originally obtained from the <a href="https://hassavocadoboard.com/">Hass Avocado Board</a>. The data set contains 1,000 observations randomly selected from observations in <code>hass_region</code> with weekly sales of 2,000,000 avocados or fewer.</p>
+<p>This lab will focus on the following variables:</p>
 <ul>
-<li><code>Tip</code>: amount of the tip</li>
-<li><code>Party</code>: number of people in the party</li>
-<li><code>Age</code>: Age of the payer</li>
+<li><p><code>total_units_th</code>: Total units (avocados) in thousands</p></li>
+<li><p><code>region</code>: Region of the United States (Midwest, Northeast, South, West). This variable was derived based on the 8 regions in the <code>hass_region</code> data frame</p></li>
+<li><p><code>avg_selling_price</code>: The average selling price of Hass avocados in US Dollars</p></li>
+<li><p><code>type</code>: Type of avocado (Conventional (non-organic), Organic)</p></li>
 </ul>
-<p>View the data set to see the remaining variables.</p>
+<p>The data set is in <code>avocado.csv</code> in the <code>data</code> folder of your repo.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tips <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/tip-data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avocado <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/avocado.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tips, <span class="fu">aes</span>(<span class="at">x =</span> Tip)) <span class="sc">+</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tips ($)"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Tips at local restaurant"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tips, <span class="fu">aes</span>(<span class="at">x =</span> Party)) <span class="sc">+</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Party"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number of diners in party"</span>) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">7</span>))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tips, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span> </span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Age of Payer"</span>) </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> (p2 <span class="sc">+</span> p3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lab-04-DRAFT_files/figure-html/univariate-eda-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tips, <span class="fu">aes</span>(<span class="at">x =</span> Party, <span class="at">y =</span> Tip)) <span class="sc">+</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of diners in party"</span>, </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Tips ($)"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Tips vs. Party"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tips, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Tip)) <span class="sc">+</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age of payer"</span>, </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Tips ($)"</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Tips vs. Age"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>p4 <span class="sc">+</span> p5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lab-04-DRAFT_files/figure-html/bivariate-eda-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>We will use the number of diners in the party and age of the payer to understand variability in the tips.</strong></p>
 </section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p><strong>Goal:</strong> The goal of this analysis is to use statistical inference to draw conclusions about factors associated with weekly avocado sales based on a model that includes region, type, and average selling price.</p>
+<section id="instructions" class="level2 important">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p><strong>Type your responses for the exercises in your Quarto document.</strong> Throughout the assignment, remember to periodically <strong>render</strong> your Quarto document to produce the updated PDF, <strong>commit</strong> the changes in the Git pane, and <strong>push</strong> the updated files to GitHub</p>
+</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
+</div>
+</div>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>We will start with the main effects model that includes <code>Age</code> and <code>Party</code>.</p>
+<p>In Lab 02, we fit a model using <code>region</code>, <code>avg_selling_price</code>, and <code>type</code> to explain variability in <code>total_units_th</code>. We now wish to consider the price sensitivity based on the type of avocado (conventional versus organic). In general, price sensitivity is defined as “the degree to which the price of a product affects consumers’ purchasing behaviors.” (<a href="https://www.investopedia.com/terms/p/price-sensitivity.asp">Investopedia</a>)</p>
 <ol type="a">
-<li><p>How many indicator variables for <code>Age</code> can we create from the data?</p></li>
-<li><p>How many indicator variables for <code>Age</code> will be in the regression model?</p></li>
-<li><p>Are the responses to parts a and b equal? If not, explain why not.</p></li>
-<li><p>Which of the following is true for this model? Select all that apply.</p>
-<ol type="i">
-<li>The intercepts are the same for every level of <code>Age</code>.</li>
-<li>The intercepts differ by <code>Age</code>.</li>
-<li>The effect of <code>Party</code> is the same for every level of <code>Age</code>.</li>
-<li>The effect of <code>Party</code> differs by <code>Age</code>.</li>
-</ol></li>
+<li>Fit a model of <code>total_units_th</code> using <code>region</code>, <code>avg_selling_price</code>, and <code>type</code>, such that the price sensitivity can differ based on <code>type</code>. Neatly display the model output to 3 decimal places and include the 95% confidence intervals for the model coefficients.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Include the confidence intervals in the model output by including the argument <code>conf.int = TRUE</code> in the <code>tidy()</code> function. The default level is 95%.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>We will use hypothesis testing to draw conclusions about differences in price sensitivity based on type. Which model coefficient(s) do you need to test for this analysis objective? Briefly explain your choice.</p></li>
+<li><p>Conduct hypothesis test(s) for the coefficient(s) in part(b). For a hypothesis test, include</p>
+<ul>
+<li><p>State the hypotheses in words and mathematical notation.</p></li>
+<li><p>Show or explain how the hypothesis test is computed.</p></li>
+<li><p>State the distribution of the test statistic. Be specific.</p></li>
+<li><p>State the conclusion in the context of the data.</p></li>
+</ul></li>
 </ol>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Consider the main effects model that includes <code>Age</code> and <code>Party</code>.</p>
-<ol type="a">
-<li><p>What is the dimension of the design matrix <span class="math inline">\(\mathbf{X}\)</span> for the main effects model?</p></li>
-<li><p>Calculate the coefficient estimates <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> directly from the data.</p></li>
-<li><p>Write the equation of the estimated regression model.</p></li>
-</ol>
+<p>Is the confidence interval for the coefficient(s) tested in part (c) consistent with the conclusion from your test. Briefly explain why or why not.</p>
 </section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Consider the main effects model that includes <code>Age</code> and <code>Party</code>. Get <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> from the data.</p>
-<ol type="a">
-<li><p>Use <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> to compute <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> .</p></li>
-<li><p>Interpret <span class="math inline">\(\hat{\sigma}_\epsilon\)</span> in the context of the data.</p></li>
-<li><p>Compute <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>.</p></li>
-<li><p>You wish to test whether there is a linear relationship between tips and the number of diners in the party, after adjusting for the age of the payer. Compute the test statistic. Explain what it means in the context of the data.</p></li>
-<li><p>Use the code below to compute the p-value and explain what it means in the context of the data.</p></li>
-<li><p>State the conclusion from the test in the context of the data.</p></li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="fu">abs</span>(test<span class="sc">-</span>statistic), df, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Consider the main effects model that includes <code>Age</code> and <code>Party</code>. Get <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> from the data.</p>
-<ol type="a">
-<li><p>Use <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> to compute <span class="math inline">\(R^2\)</span>. Interpret this value in the context of the data.</p></li>
-<li><p>Use <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{X}\)</span> to compute <span class="math inline">\(RMSE\)</span>. Interpret this value in the context of the data.</p></li>
-</ol>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>You decide to add an interaction effect between <code>Age</code> and <code>Party</code> to the model and fit a model of the following form:</p>
-<p><span class="math display">\[
-\begin{aligned}
-Tip_i = \beta_0 &amp;+ \beta_1Party_i + \beta_2SenCit_i + \beta_3Yadult_i \\
-&amp;+ \beta_4Party_i \times SenCit_i + \beta_5 Party_i \times Yadult_i \\
-&amp;+ \epsilon_i
-\end{aligned}
-\]</span></p>
-<ol type="a">
-<li><p>Which of the following is true for this model? Select all that apply.</p>
-<ol type="i">
-<li><p>The intercepts are the same for every level of <code>Age</code>.</p></li>
-<li><p>The intercepts differ by <code>Age</code>.</p></li>
-<li><p>The effect of <code>Party</code> is the same for every level of <code>Age</code>.</p></li>
-<li><p>The effect of <code>Party</code> differs by <code>Age</code>.</p></li>
-</ol></li>
-<li><p>By how much does the intercept for tables with young adult payers differ from tables with middle age payers? Write the answer in terms of the <span class="math inline">\(\beta\)</span>’s.</p></li>
-<li><p>Write the equation of the model for tables in which the payer is a senior citizen.</p></li>
-<li><p>Suppose you wish to test the hypotheses: <span class="math inline">\(H_0: \beta_5 = 0 \text{ vs. }H_a: \beta_5 \neq 0\)</span> . State what is being tested in terms of the effect of <code>Party</code>.</p></li>
-</ol>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>Use the <code>lm()</code> function to fit the model that includes <code>Age</code> and <code>Party</code> and the interaction between the two variables. Display the 90% confidence interval for the coefficients.</p>
-<ol type="a">
-<li><p>The standard error for <code>AgeSenCit</code> is 0.784. State what this value means in the context of the data.</p></li>
-<li><p>Write code to show how the 90% confidence interval for <code>AgeSenCit</code> was computed.</p></li>
-<li><p>Based on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?</p></li>
-</ol>
-</section>
+<section id="project" class="level1">
+<h1>Project</h1>
+<p>Use remaining lab time to work on your project proposal.</p>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
-<p>You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.</p>
+<p>You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -669,23 +608,28 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
-</div>
-</div>
-<p>To submit your assignment:</p>
+<p>Remember – you must turn in a PDF file to Gradescope by the end of your lab session.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
 <ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/73984">STA 221 Canvas site.</a></p></li>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p></li>
+<li><p>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></p></li>
+</ul>
+</div>
+</div>
+<p><strong>To submit your assignment:</strong></p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
 <li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
-<li><p>Select the name of <strong>every</strong> team member.</p></li>
-<li><p>Mark the pages for the <em>“Exercises”</em> question.</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Team agreement”</em> and <em>“Workflow &amp; formatting”</em> questions.</p></li>
+<li><p>Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with “Attendance &amp; submitting lab” and “Workflow &amp; formatting”</p></li>
 </ul>
 </section>
-<section id="grading-10-pts" class="level1">
-<h1>Grading (10 pts)</h1>
+<section id="grading-30-pts" class="level1">
+<h1>Grading (30 pts)</h1>
 <p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
 <table class="caption-top table">
-<caption><strong>Completion:</strong> Points will be awarded for completion based on the following:</caption>
 <thead>
 <tr class="header">
 <th>Component</th>
@@ -694,41 +638,32 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td>Complete exercises</td>
-<td>8</td>
+<td>Attendance &amp; submitting lab</td>
+<td>10</td>
 </tr>
 <tr class="even">
+<td>Two exercises</td>
+<td>16 (8 points each)</td>
+</tr>
+<tr class="odd">
 <td>Workflow &amp; formatting</td>
-<td>2</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><p>8 pts: Complete all exercises</p></li>
-<li><p>7 pts: Complete 5 exercises</p></li>
-<li><p>6 pts: Complete 4 exercises</p></li>
-<li><p>5 pts: Complete 3 exercises</p></li>
-<li><p>4 pts: Complete 2 exercises</p></li>
-<li><p>0 pts: Complete &lt; 2 exercises</p></li>
-</ul>
-<p><strong>Workflow &amp; formatting</strong></p>
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member and updating the team name and date in the YAML.</p>
-<ul>
-<li><p>2 pts: Meet all criteria</p></li>
-<li><p>1 pt: Meet some criteria</p></li>
-<li><p>0 pt: Meet no criteria</p></li>
-</ul>
+<hr>
+<p>We will grade two randomly selected exercises.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
+
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Dahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St.&nbsp;Olaf College.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-avocado" class="csl-entry" role="listitem">
+Agarwal, Nikhil. 2025. <span>“Avocado: Weekly Hass Avocado Sales Summary.”</span> <a href="https://doi.org/10.32614/CRAN.package.avocado">https://doi.org/10.32614/CRAN.package.avocado</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

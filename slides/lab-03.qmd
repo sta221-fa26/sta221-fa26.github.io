@@ -1,0 +1,78 @@
+---
+title: "Lab 03"
+subtitle: "Inference for linear regression"
+date: "September 28, 2026"
+date-format: long
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+---
+
+# Welcome
+
+## Goals
+
+- Lab 03: Inference for linear regression
+- Project proposal
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+
+football <- read_csv("data/ncaa-football-exp.csv")
+```
+
+## Hypothesis testing example {.midi}
+
+```{r}
+#| echo: false
+
+lm(total_exp_m ~ enrollment_th + type, data = football) |>
+  tidy() |>
+  kable(digits = 3)
+```
+
+:::: question
+::: midi
+We wish to test whether there is evidence of a linear relationship between enrollment and football expenditure after accounting for the type of institution.
+
+1.  State the null and alternative hypotheses in words and mathematical notation.
+2.  State how the test statistic is computed from the other values in the output. Interpret the test statistic in the context of the data.
+3.  State the distribution used to compute the p-value and interpret it in the context of the data. \*Note: There are `r nrow(football)` observations in the data.\*
+4.  State your conclusion in the context of the data.
+:::
+::::
+
+## Lab 03: Inference for linear regression
+
+Today’s lab focuses on using statistical inference to draw conclusions about factors associated with weekly avocado sales.
+
+<br>
+
+🔗 [sta221-fa26.github.io/labs/lab-03.html](../labs/lab-03.html)
+
+<br>
+
+If you finish the lab early, use the remaining time to work on the project proposal.
