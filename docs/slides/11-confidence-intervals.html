@@ -224,7 +224,7 @@ Prof.&nbsp;Maria Tackett
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li>Confidence intervals for a coefficient <span class="math inline">\(\beta_j\)</span></li>
+<li>Confidence interval for a coefficient <span class="math inline">\(\beta_j\)</span></li>
 </ul>
 </section>
 <section id="computing-setup" class="slide level2">
@@ -243,16 +243,16 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="data-ncaa-football-expenditures" class="slide level2 midi">
 <h2>Data: NCAA Football expenditures</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Today’s data come from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
-<p>We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :</p>
+<p>We will focus on the 2019 - 2020 season expenditures on football for 127 institutions in the NCAA - Division 1 FBS. The variables are</p>
 <ul>
 <li><p><code>total_exp_m</code>: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)</p></li>
 <li><p><code>enrollment_th</code>: Total student enrollment in the 2019 - 2020 academic year (in thousands)</p></li>
 <li><p><code>type</code>: institution type (Public or Private)</p></li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="regression-model" class="slide level2">
 <h2>Regression model</h2>
@@ -309,7 +309,44 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="hypothesis-test-for-beta_textpublic" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\beta_\text{public}\)</span></h2>
-<p>[UPDATE]</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section>
 <section id="confidence-interval-for-beta_j" class="title-slide slide level1 center">
@@ -320,12 +357,17 @@ Prof.&nbsp;Maria Tackett
 <h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
 <ul>
 <li class="fragment"><p>A plausible range of values for a population parameter is called a <strong>confidence interval</strong></p></li>
-<li class="fragment"><p>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net</p>
+<li class="fragment"><p>Using only a single point estimate is like fishing with a fishing line, and using a confidence interval is like fishing with a net</p>
 <ul>
-<li class="fragment"><p>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</p></li>
-<li class="fragment"><p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p></li>
+<li class="fragment">We put the line where we saw a fish but we will probably miss, if we use a net in that area, we have a good chance of catching the fish</li>
 </ul></li>
 </ul>
+
+<img data-src="images/clipboard-281042674.png" class="r-stretch quarto-figure-center"><p class="caption">Image generated by ChatGPT 6-Luna</p></section>
+<section id="confidence-interval-for-beta_j-2" class="slide level2">
+<h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+
+<img data-src="images/11-fishing-ci.png" class="r-stretch quarto-figure-center"><p class="caption">Image generated by ChatGPT 6-Luna</p><p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p>
 </section>
 <section id="what-confidence-means" class="slide level2 midi">
 <h2>What “confidence” means</h2>
@@ -348,11 +390,11 @@ Prof.&nbsp;Maria Tackett
 </ul>
 </div>
 
-<img data-src="images/september-29-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><center>
-<a href="https://app.wooclap.com/GFGFXBZ">https://app.wooclap.com/GFGFXBZ</a>
-</center>
+<img data-src="images/september-29-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><div class="center">
+<p><a href="https://app.wooclap.com/GFGFXBZ">https://app.wooclap.com/GFGFXBZ</a></p>
+</div>
 </section>
-<section id="confidence-interval-for-beta_j-2" class="slide level2">
+<section id="confidence-interval-for-beta_j-3" class="slide level2">
 <h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
 <p><span class="math display">\[
 \text{Estimate} \pm \text{ (critical value) } \times \text{SE}
@@ -396,8 +438,8 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 </section>
-<section id="ci-for-beta_j-calculation" class="slide level2">
-<h2>95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</h2>
+<section id="ci-for-beta_textenroll-calculation" class="slide level2">
+<h2>95% CI for <span class="math inline">\(\beta_\text{enroll}\)</span>: Calculation</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -508,6 +550,7 @@ Prof.&nbsp;Maria Tackett
 <li><p>If the hypothesized value is not in the interval <span class="math inline">\(\Rightarrow\)</span> Reject <span class="math inline">\(H_0\)</span></p></li>
 </ul></li>
 </ul>
+<p><br></p>
 <div class="question">
 <p>The 95% confidence interval for <code>typePublic</code> is -19.466 to -6.986. Do we reject or fail to reject the null hypothesis that <span class="math inline">\(\beta_{\text{typePublic}} = 0\)</span> ?</p>
 </div>

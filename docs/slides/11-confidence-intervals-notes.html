@@ -437,11 +437,12 @@ window.Quarto = {
   <li><a href="#confidence-interval-for-beta_j" id="toc-confidence-interval-for-beta_j" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j">Confidence interval for <span class="math inline">\(\beta_j\)</span></a>
   <ul class="collapse">
   <li><a href="#confidence-interval-for-beta_j-1" id="toc-confidence-interval-for-beta_j-1" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-1">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#confidence-interval-for-beta_j-2" id="toc-confidence-interval-for-beta_j-2" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
   <li><a href="#what-confidence-means" id="toc-what-confidence-means" class="nav-link" data-scroll-target="#what-confidence-means">What “confidence” means</a></li>
   <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
-  <li><a href="#confidence-interval-for-beta_j-2" id="toc-confidence-interval-for-beta_j-2" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#confidence-interval-for-beta_j-3" id="toc-confidence-interval-for-beta_j-3" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-3">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
   <li><a href="#confidence-interval-critical-value" id="toc-confidence-interval-critical-value" class="nav-link" data-scroll-target="#confidence-interval-critical-value">Confidence interval: Critical value</a></li>
-  <li><a href="#ci-for-beta_j-calculation" id="toc-ci-for-beta_j-calculation" class="nav-link" data-scroll-target="#ci-for-beta_j-calculation">95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</a></li>
+  <li><a href="#ci-for-beta_textenroll-calculation" id="toc-ci-for-beta_textenroll-calculation" class="nav-link" data-scroll-target="#ci-for-beta_textenroll-calculation">95% CI for <span class="math inline">\(\beta_\text{enroll}\)</span>: Calculation</a></li>
   <li><a href="#ci-for-beta_j-in-r" id="toc-ci-for-beta_j-in-r" class="nav-link" data-scroll-target="#ci-for-beta_j-in-r">95% CI for <span class="math inline">\(\beta_j\)</span> in R</a></li>
   <li><a href="#confidence-intervals-hypothesis-tests" id="toc-confidence-intervals-hypothesis-tests" class="nav-link" data-scroll-target="#confidence-intervals-hypothesis-tests">Confidence intervals &amp; hypothesis tests</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
@@ -500,7 +501,7 @@ window.Quarto = {
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
-<li>Confidence intervals for a coefficient <span class="math inline">\(\beta_j\)</span></li>
+<li>Confidence interval for a coefficient <span class="math inline">\(\beta_j\)</span></li>
 </ul>
 </section>
 <section id="computing-setup" class="level2">
@@ -519,16 +520,16 @@ window.Quarto = {
 </section>
 <section id="data-ncaa-football-expenditures" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="data-ncaa-football-expenditures">Data: NCAA Football expenditures</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Today’s data come from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
-<p>We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :</p>
+<p>We will focus on the 2019 - 2020 season expenditures on football for 127 institutions in the NCAA - Division 1 FBS. The variables are</p>
 <ul>
 <li><p><code>total_exp_m</code>: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)</p></li>
 <li><p><code>enrollment_th</code>: Total student enrollment in the 2019 - 2020 academic year (in thousands)</p></li>
 <li><p><code>type</code>: institution type (Public or Private)</p></li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="regression-model" class="level2">
 <h2 class="anchored" data-anchor-id="regression-model">Regression model</h2>
@@ -585,7 +586,44 @@ window.Quarto = {
 </section>
 <section id="hypothesis-test-for-beta_textpublic" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis-test-for-beta_textpublic">Hypothesis test for <span class="math inline">\(\beta_\text{public}\)</span></h2>
-<p>[UPDATE]</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="confidence-interval-for-beta_j" class="level1">
 <h1>Confidence interval for <span class="math inline">\(\beta_j\)</span></h1>
@@ -594,13 +632,28 @@ window.Quarto = {
 <div class="incremental">
 <ul class="incremental">
 <li><p>A plausible range of values for a population parameter is called a <strong>confidence interval</strong></p></li>
-<li><p>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net</p>
+<li><p>Using only a single point estimate is like fishing with a fishing line, and using a confidence interval is like fishing with a net</p>
 <ul class="incremental">
-<li><p>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</p></li>
-<li><p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p></li>
+<li>We put the line where we saw a fish but we will probably miss, if we use a net in that area, we have a good chance of catching the fish</li>
 </ul></li>
 </ul>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-281042674.png" class="img-fluid figure-img"></p>
+<figcaption>Image generated by ChatGPT 6-Luna</figcaption>
+</figure>
+</div>
+</section>
+<section id="confidence-interval-for-beta_j-2" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/11-fishing-ci.png" class="img-fluid figure-img"></p>
+<figcaption>Image generated by ChatGPT 6-Luna</figcaption>
+</figure>
+</div>
+<p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p>
 </section>
 <section id="what-confidence-means" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="what-confidence-means">What “confidence” means</h2>
@@ -629,12 +682,12 @@ window.Quarto = {
 <p><img src="images/september-29-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
 </figure>
 </div>
-<center>
-<a href="https://app.wooclap.com/GFGFXBZ">https://app.wooclap.com/GFGFXBZ</a>
-</center>
+<div class="center">
+<p><a href="https://app.wooclap.com/GFGFXBZ">https://app.wooclap.com/GFGFXBZ</a></p>
+</div>
 </section>
-<section id="confidence-interval-for-beta_j-2" class="level2">
-<h2 class="anchored" data-anchor-id="confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<section id="confidence-interval-for-beta_j-3" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-for-beta_j-3">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
 <p><span class="math display">\[
 \text{Estimate} \pm \text{ (critical value) } \times \text{SE}
 \]</span></p>
@@ -676,8 +729,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="ci-for-beta_j-calculation" class="level2">
-<h2 class="anchored" data-anchor-id="ci-for-beta_j-calculation">95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</h2>
+<section id="ci-for-beta_textenroll-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="ci-for-beta_textenroll-calculation">95% CI for <span class="math inline">\(\beta_\text{enroll}\)</span>: Calculation</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -788,6 +841,7 @@ window.Quarto = {
 <li><p>If the hypothesized value is not in the interval <span class="math inline">\(\Rightarrow\)</span> Reject <span class="math inline">\(H_0\)</span></p></li>
 </ul></li>
 </ul>
+<p><br></p>
 <div class="question">
 <p>The 95% confidence interval for <code>typePublic</code> is -19.466 to -6.986. Do we reject or fail to reject the null hypothesis that <span class="math inline">\(\beta_{\text{typePublic}} = 0\)</span> ?</p>
 </div>
