@@ -5385,14 +5385,14 @@
     "href": "slides/12-exam-01-review-notes.html#exam-01",
     "title": "Exam 01 review",
     "section": "Exam 01",
-    "text": "Exam 01\n\n75 minutes during October 06 lecture\nIf you miss the exam due to a reason documented by a Dean’s excuse, the final exam score will be imputed for the Exam 01 grade."
+    "text": "Exam 01\n\n75 minutes during October 06 lecture\nIf you miss the exam due to a reason documented by a Dean’s excuse or other official university documentation (not a STINF), the final exam score will be imputed for the Exam 01 grade."
   },
   {
     "objectID": "slides/12-exam-01-review-notes.html#exam-01-1",
     "href": "slides/12-exam-01-review-notes.html#exam-01-1",
     "title": "Exam 01 review",
     "section": "Exam 01",
-    "text": "Exam 01\n\nBring pencil or pen. No calculator permitted.\nOne page (front and back) of handwritten notes permitted\n\nNotes must be written directly on paper. You may not write notes on a tablet and print them out.\n\nPossible question types:\n\nShort answer (show work / explain response)\nInterpretations\nDerivations (show work)\nTrue/False\nMultiple choice\n\nWill be provided all relevant R output and page of math rules\nCan use results from notes and assignments. State the results you’re using!"
+    "text": "Exam 01\n\nBring pencil or pen. No calculator permitted.\nOne page (front and back) of handwritten notes permitted\n\nNotes must be written directly on paper. You may not write notes on a tablet and print them out.\n\nPossible question types:\n\nShort answer (show work / explain response/ interpretations)\nDerivations (show work)\nTrue/False\nMultiple choice\n\nWill be provided all relevant R output and page of math rules\nCan use results from notes and assignments. State the results you’re using!"
   },
   {
     "objectID": "slides/12-exam-01-review-notes.html#tips-for-studying",
@@ -5427,7 +5427,7 @@
     "href": "slides/12-exam-01-review-notes.html#model-in-matrix-form-1",
     "title": "Exam 01 review",
     "section": "Model in matrix form",
-    "text": "Model in matrix form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\n\n\nWhat assumptions do we make about \\(\\boldsymbol{\\epsilon}\\) making given this model?\nWhat does this model tell us about the distribution of \\(\\mathbf{y}\\) ?"
+    "text": "Model in matrix form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\n\n\nWhat assumptions do we make about \\(\\boldsymbol{\\epsilon}\\) in Ordinary Least Squares?\nWhat does this model tell us about the distribution of \\(\\mathbf{y}\\) ?"
   },
   {
     "objectID": "slides/12-exam-01-review-notes.html#least-squares-estimator-hatboldsymbolbeta",
@@ -5483,14 +5483,14 @@
     "href": "slides/12-exam-01-review.html#exam-01",
     "title": "Exam 01 review",
     "section": "Exam 01",
-    "text": "Exam 01\n\n75 minutes during October 06 lecture\nIf you miss the exam due to a reason documented by a Dean’s excuse, the final exam score will be imputed for the Exam 01 grade."
+    "text": "Exam 01\n\n75 minutes during October 06 lecture\nIf you miss the exam due to a reason documented by a Dean’s excuse or other official university documentation (not a STINF), the final exam score will be imputed for the Exam 01 grade."
   },
   {
     "objectID": "slides/12-exam-01-review.html#exam-01-1",
     "href": "slides/12-exam-01-review.html#exam-01-1",
     "title": "Exam 01 review",
     "section": "Exam 01",
-    "text": "Exam 01\n\nBring pencil or pen. No calculator permitted.\nOne page (front and back) of handwritten notes permitted\n\nNotes must be written directly on paper. You may not write notes on a tablet and print them out.\n\nPossible question types:\n\nShort answer (show work / explain response)\nInterpretations\nDerivations (show work)\nTrue/False\nMultiple choice\n\nWill be provided all relevant R output and page of math rules\nCan use results from notes and assignments. State the results you’re using!"
+    "text": "Exam 01\n\nBring pencil or pen. No calculator permitted.\nOne page (front and back) of handwritten notes permitted\n\nNotes must be written directly on paper. You may not write notes on a tablet and print them out.\n\nPossible question types:\n\nShort answer (show work / explain response/ interpretations)\nDerivations (show work)\nTrue/False\nMultiple choice\n\nWill be provided all relevant R output and page of math rules\nCan use results from notes and assignments. State the results you’re using!"
   },
   {
     "objectID": "slides/12-exam-01-review.html#tips-for-studying",
@@ -5525,7 +5525,7 @@
     "href": "slides/12-exam-01-review.html#model-in-matrix-form-1",
     "title": "Exam 01 review",
     "section": "Model in matrix form",
-    "text": "Model in matrix form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\n\n\nWhat assumptions do we make about \\(\\boldsymbol{\\epsilon}\\) making given this model?\nWhat does this model tell us about the distribution of \\(\\mathbf{y}\\) ?"
+    "text": "Model in matrix form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\n\n\nWhat assumptions do we make about \\(\\boldsymbol{\\epsilon}\\) in Ordinary Least Squares?\nWhat does this model tell us about the distribution of \\(\\mathbf{y}\\) ?"
   },
   {
     "objectID": "slides/12-exam-01-review.html#least-squares-estimator-hatboldsymbolbeta",

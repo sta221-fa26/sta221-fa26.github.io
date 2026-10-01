@@ -39,7 +39,7 @@ bibliography: references.bib
 
 - 75 minutes during October 06 lecture
 
-- If you miss the exam due to a reason documented by a Dean's excuse, the final exam score will be imputed for the Exam 01 grade.
+- If you miss the exam due to a reason documented by a Dean's excuse or other official university documentation (not a STINF), the final exam score will be imputed for the Exam 01 grade.
 
 ## Exam 01 {.midi}
 
@@ -47,8 +47,7 @@ bibliography: references.bib
 - One page (front and back) of handwritten notes permitted
   - Notes must be written directly on paper. You may [**not**]{.underline} write notes on a tablet and print them out.
 - Possible question types:
-  - Short answer (show work / explain response)
-  - Interpretations
+  - Short answer (show work / explain response/ interpretations)
   - Derivations (show work)
   - True/False
   - Multiple choice
@@ -94,7 +93,7 @@ bibliography: references.bib
 :::
 :::::
 
-# Questions? 
+# Questions?
 
 ## Population-level vs. sample-level models
 
@@ -134,7 +133,7 @@ $$
 <br>
 
 ::: question
-1.  What assumptions do we make about $\boldsymbol{\epsilon}$ making given this model?
+1.  What assumptions do we make about $\boldsymbol{\epsilon}$ in Ordinary Least Squares?
 2.  What does this model tell us about the distribution of $\mathbf{y}$ ?
 :::
 
@@ -170,7 +169,7 @@ SSR = \mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}^\mathsf{T}\math
 $$
 :::
 
-## Your turn 
+## Your turn
 
 ::: questions
 What remaining questions do you have? Are there any topics you would like to review in lab on Monday?
