@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
   <meta name="dcterms.date" content="2026-09-08">
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -96,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e0b6c07cd567680a37b837ced835fbeb.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-894178fba86c39910efe481f737b63a7.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -202,7 +208,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Prof.&nbsp;Maria Tackett 
+Prof.&nbsp;Maria Tackett
 </div>
 </div>
 </div>
@@ -234,16 +240,16 @@ Prof.&nbsp;Maria Tackett
 <section id="computing-setup" class="slide level2">
 <h2>Computing setup</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(openintro)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-7"><a></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-7"><a aria-label="7"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a aria-label="8"></a></span>
+<span id="cb1-9"><a aria-label="9"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-10"><a aria-label="10"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-lemurs" class="slide level2">
@@ -446,11 +452,11 @@ y_n
 <section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>lemur_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
-<span id="cb2-2"><a></a>              <span class="at">data =</span> lemurs)</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="fu">tidy</span>(lemur_fit) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>lemur_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
+<span id="cb2-2"><a aria-label="2"></a>              <span class="at">data =</span> lemurs)</span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="fu">tidy</span>(lemur_fit) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -648,7 +654,7 @@ y_n
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="sc">-</span><span class="fl">0.772</span> <span class="sc">+</span> <span class="fl">137.479</span>  <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span><span class="fl">462.184</span> <span class="sc">*</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">1020.390</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">-</span> <span class="fl">14.101</span> <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="sc">-</span><span class="fl">0.772</span> <span class="sc">+</span> <span class="fl">137.479</span>  <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span><span class="fl">462.184</span> <span class="sc">*</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">1020.390</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">-</span> <span class="fl">14.101</span> <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1793.899</code></pre>
 </div>
@@ -661,13 +667,13 @@ y_n
 <h2>Prediction in R</h2>
 <p>Just like with simple linear regression, we can use the <code>predict()</code> function in R to calculate the appropriate intervals for our predicted values:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>new_lemur <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb5-2"><a></a>  <span class="at">age  =</span> <span class="dv">10</span>, </span>
-<span id="cb5-3"><a></a>  <span class="at">taxon =</span> <span class="st">"PCOQ"</span>, </span>
-<span id="cb5-4"><a></a>  <span class="at">litter_size =</span> <span class="dv">3</span></span>
-<span id="cb5-5"><a></a>)</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a><span class="fu">predict</span>(lemur_fit, new_lemur)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>new_lemur <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="at">age  =</span> <span class="dv">10</span>, </span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="at">taxon =</span> <span class="st">"PCOQ"</span>, </span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="at">litter_size =</span> <span class="dv">3</span></span>
+<span id="cb5-5"><a aria-label="5"></a>)</span>
+<span id="cb5-6"><a aria-label="6"></a></span>
+<span id="cb5-7"><a aria-label="7"></a><span class="fu">predict</span>(lemur_fit, new_lemur)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1 
 1793.898 </code></pre>
@@ -773,7 +779,7 @@ y_n
 <li>Use the <code>glance()</code> function to get <span class="math inline">\(Adj. R^2\)</span> in R</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -806,16 +812,16 @@ y_n
 <p><strong>Model 1</strong></p>
 <p><strong>Model without interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb9-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a><span class="co"># r-squared</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8020481</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb11-2"><a></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a><span class="co"># adj-r-squared</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="fu">glance</span>(lemur_fit)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7988424</code></pre>
 </div>
@@ -824,16 +830,16 @@ y_n
 <p><strong>Model 2</strong></p>
 <p><strong>Model with interaction</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># r-squared</span></span>
-<span id="cb13-2"><a></a><span class="fu">glance</span>(lemur_fit_2)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a><span class="co"># r-squared</span></span>
+<span id="cb13-2"><a aria-label="2"></a><span class="fu">glance</span>(lemur_fit_2)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8443483</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># adj-r-squared</span></span>
-<span id="cb15-2"><a></a><span class="fu">glance</span>(lemur_fit_2)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a><span class="co"># adj-r-squared</span></span>
+<span id="cb15-2"><a aria-label="2"></a><span class="fu">glance</span>(lemur_fit_2)<span class="sc">$</span>adj.r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8405364</code></pre>
 </div>

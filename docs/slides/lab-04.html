@@ -9,8 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="dcterms.date" content="2026-08-24">
-  <title>STA 221 - Fall 2026 – Welcome to STA 221 labs!</title>
+  <title>STA 221 - Fall 2026 – Lab 04</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -129,62 +128,63 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Welcome to STA 221 labs!</h1>
+  <h1 class="title">Lab 04</h1>
+  <p class="subtitle">Exam 01 Review</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">August 24, 2026</p>
+  <p class="date">Oct 05, 2026</p>
 </section>
-<section id="meet-your-tas" class="slide level2">
-<h2>Meet your TAs!</h2>
+<section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome</h1>
 
-<img data-src="images/hello-sticker.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%" alt="Sticker that says &quot;Hello my name is&quot;"></section>
-<section id="meet-your-classmates" class="slide level2">
-<h2>Meet your classmates!</h2>
-<div class="question">
-<ul>
-<li><p>Get into groups of 2 or 3</p></li>
-<li><p>Introduce yourself: Name, year, major (or academic interest), a highlight from summer break or something you’re looking forward to this semester</p></li>
-<li><p>Introduce your partner to the class</p></li>
-</ul>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_d2e048f7" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
-</div>
-</div>
 </section>
-<section id="what-to-expect-in-lab" class="slide level2">
-<h2>What to expect in lab</h2>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
 <ul>
-<li><p>Introduction to the lab assignment (~ 5 minutes)</p></li>
-<li><p>Review lecture content, as needed (~ 10 minutes)</p></li>
-<li><p>Complete the lab assignment</p>
+<li><p>Exam 01 will be during lecture on Tuesday, October 6</p></li>
+<li><p>You may bring one page (front and back) of handwritten notes.</p>
 <ul>
-<li>Submit to Gradescope starting with Lab 01</li>
+<li>Notes must be written directly on the paper. They can <u><strong>not</strong></u> be written on a tablet and printed</li>
+</ul></li>
+<li><p>No office hours on Tuesday afternoon</p></li>
+</ul>
+</section>
+<section id="todays-lab" class="slide level2">
+<h2>Today’s lab</h2>
+<ul>
+<li><p>Practice problems based on submitted questions</p>
+<ul>
+<li><p>Derivation for variance</p></li>
+<li><p>Interpreting interaction term</p></li>
+<li><p>Confidence interval</p></li>
+<li><p>Sum of Squares</p></li>
 </ul></li>
 </ul>
 </section>
-<section>
-<section id="any-questions" class="title-slide slide level1 center">
-<h1>Any questions?</h1>
-
+<section id="from-lecture" class="slide level2">
+<h2>From lecture</h2>
+<div class="question">
+<p>Assume <span class="math inline">\(Var(\boldsymbol{\epsilon}) =  \mathbf{XV}\)</span>, such that <span class="math inline">\(\mathbf{V}\)</span> has the appropriate dimensions. All other assumptions hold.</p>
+<ul>
+<li><p>What are the dimensions of <span class="math inline">\(\mathbf{XV}\)</span>?</p></li>
+<li><p>Derive <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>. What are the dimensions of <span class="math inline">\(\mathbf{V}\)</span>?</p></li>
+</ul>
+</div>
 </section>
-<section id="todays-lab" class="slide level2 midi">
+<section id="todays-lab-1" class="slide level2">
 <h2>Today’s lab</h2>
-<p>The rest of the today’s lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.</p>
-<p>We will demonstrate the steps to set up computing and interact with RStudio and GitHub.</p>
-<p><br></p>
-<p>🔗 <a href="https://sta221-fa26.github.io/labs/lab-00.html" class="uri">https://sta221-fa26.github.io/labs/lab-00.html</a></p>
+<p>This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Lab 02.</p>
+<p>🔗 <a href="https://sta221-fa26.github.io/labs/lab-04.html">sta221-fa26.github.io/labs/lab-04.html</a></p>
 
 
 </section></section>
@@ -380,7 +380,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -406,44 +406,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Shane Rybacki">
   <meta name="dcterms.date" content="2026-09-10">
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -96,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e0b6c07cd567680a37b837ced835fbeb.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-894178fba86c39910efe481f737b63a7.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -205,7 +211,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Shane Rybacki 
+Shane Rybacki
 </div>
 </div>
 </div>
@@ -253,17 +259,17 @@ Shane Rybacki
 <section id="computing-setup" class="slide level2">
 <h2>Computing setup</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(openintro)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-7"><a></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-8"><a></a><span class="fu">library</span>(viridis) <span class="co">#adjust color palette</span></span>
-<span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-11"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-7"><a aria-label="7"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a aria-label="8"></a><span class="fu">library</span>(viridis) <span class="co">#adjust color palette</span></span>
+<span id="cb1-9"><a aria-label="9"></a></span>
+<span id="cb1-10"><a aria-label="10"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-11"><a aria-label="11"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-lemurs" class="slide level2">
@@ -323,11 +329,11 @@ Shane Rybacki
 <section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>lemur_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
-<span id="cb2-2"><a></a>              <span class="at">data =</span> lemurs)</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="fu">tidy</span>(lemur_fit) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>lemur_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,</span>
+<span id="cb2-2"><a aria-label="2"></a>              <span class="at">data =</span> lemurs)</span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="fu">tidy</span>(lemur_fit) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -455,12 +461,12 @@ How might we include a categorical predictor with <span class="math inline">\(k\
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-3"><a></a>    <span class="at">eruf =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"ERUF"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
-<span id="cb3-4"><a></a>    <span class="at">pcoq =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"PCOQ"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
-<span id="cb3-5"><a></a>    <span class="at">vrub =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"VRUB"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb3-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a aria-label="3"></a>    <span class="at">eruf =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"ERUF"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
+<span id="cb3-4"><a aria-label="4"></a>    <span class="at">pcoq =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"PCOQ"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
+<span id="cb3-5"><a aria-label="5"></a>    <span class="at">vrub =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(taxon <span class="sc">==</span> <span class="st">"VRUB"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb3-6"><a aria-label="6"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="fragment">
@@ -482,9 +488,9 @@ How might we include a categorical predictor with <span class="math inline">\(k\
 <p>Run the code below to fit a model using <code>age</code>, <code>litter_size</code>, and all the indicator variables for <code>taxon</code> to predict <code>weight</code>. What do you notice about the model output? Why did this happen?</p>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> eruf <span class="sc">+</span> pcoq <span class="sc">+</span> vrub <span class="sc">+</span> litter_size, <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> eruf <span class="sc">+</span> pcoq <span class="sc">+</span> vrub <span class="sc">+</span> litter_size, <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -562,7 +568,7 @@ How might we include a categorical predictor with <span class="math inline">\(k\
 <p>Now let’s take a look at the first five rows of the design matrix for the model with predictors <code>age</code>, <code>taxon</code>, and <code>litter_size</code>. How does R choose the baseline level by default?</p>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">model.matrix</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size, <span class="at">data =</span> lemurs)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="fu">model.matrix</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon <span class="sc">+</span> litter_size, <span class="at">data =</span> lemurs)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  (Intercept)  age taxonPCOQ taxonVRUB litter_size
 1           1 2.27         0         0           1
@@ -713,11 +719,11 @@ How might we include a categorical predictor with <span class="math inline">\(k\
 <h2>Centering</h2>
 <p>Use the <code>scale()</code> function with <code>center = TRUE</code> and <code>scale = FALSE</code> to mean-center variables</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">mutate</span>(<span class="at">age_cent =</span> <span class="fu">scale</span>(age, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>) )</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="fu">lm</span>(weight <span class="sc">~</span> age_cent <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,  <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">age_cent =</span> <span class="fu">scale</span>(age, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>) )</span>
+<span id="cb8-3"><a aria-label="3"></a></span>
+<span id="cb8-4"><a aria-label="4"></a><span class="fu">lm</span>(weight <span class="sc">~</span> age_cent <span class="sc">+</span> taxon <span class="sc">+</span> litter_size,  <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a aria-label="5"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
@@ -891,12 +897,12 @@ How might we include a categorical predictor with <span class="math inline">\(k\
 <h2>Standardizing</h2>
 <p>Use the <code>scale()</code> function with <code>center = TRUE</code> and <code>scale = TRUE</code> to standardized variables</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">mutate</span>(<span class="at">age_std =</span> <span class="fu">scale</span>(age, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb9-3"><a></a>         <span class="at">litter_size_std =</span> <span class="fu">scale</span>(litter_size, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a><span class="fu">lm</span>(weight <span class="sc">~</span> age_std <span class="sc">+</span> taxon <span class="sc">+</span> litter_size_std, <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>lemurs <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">age_std =</span> <span class="fu">scale</span>(age, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb9-3"><a aria-label="3"></a>         <span class="at">litter_size_std =</span> <span class="fu">scale</span>(litter_size, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb9-4"><a aria-label="4"></a></span>
+<span id="cb9-5"><a aria-label="5"></a><span class="fu">lm</span>(weight <span class="sc">~</span> age_std <span class="sc">+</span> taxon <span class="sc">+</span> litter_size_std, <span class="at">data =</span> lemurs) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a aria-label="6"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">

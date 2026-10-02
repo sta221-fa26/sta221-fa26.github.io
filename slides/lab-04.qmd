@@ -1,0 +1,68 @@
+---
+title: "Lab 04"
+subtitle: "Exam 01 Review"
+date: "October 5, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+# Welcome
+
+## Reminders
+
+- Exam 01 will be during lecture on Tuesday, October 6
+
+- You may bring one page (front and back) of handwritten notes.
+
+  - Notes must be written directly on the paper. They can [**not**]{.underline} be written on a tablet and printed
+
+- No office hours on Tuesday afternoon
+
+## Today's lab
+
+- Practice problems based on submitted questions
+
+  - Derivation for variance
+
+  - Interpreting interaction term
+
+  - Confidence interval
+
+  - Sum of Squares
+
+## From lecture
+
+::: question
+Assume $Var(\boldsymbol{\epsilon}) =  \mathbf{XV}$, such that $\mathbf{V}$ has the appropriate dimensions. All other assumptions hold.
+
+- What are the dimensions of $\mathbf{XV}$?
+
+- Derive $Var(\hat{\boldsymbol{\beta}})$. What are the dimensions of $\mathbf{V}$?
+:::
+
+## Today's lab
+
+This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Lab 02.
+
+🔗 [sta221-fa26.github.io/labs/lab-04.html](https://sta221-fa26.github.io/labs/lab-04.html)

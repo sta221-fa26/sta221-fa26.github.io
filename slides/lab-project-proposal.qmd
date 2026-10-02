@@ -32,7 +32,7 @@ bibliography: references.bib
 
 - Project proposal
 
-## Project team 
+## Project team
 
 [Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/IQA8clBbBs5XRLkbsoxVWW8aAQ0WFcxyggGecf_EvJpprQo?e=NBe0Z0&nav=MTVfe0I0RDU4MzA5LTZERkMtNEM5MS04OUNFLTU2RUNFQzc3Qjc3OH0) to find your project team. You will work with this team in the remaining labs and the final project.
 
@@ -78,7 +78,7 @@ bibliography: references.bib
 
 - There are periodic project milestones throughout the semester to help you work towards these deliverables
 
-## Today's focus: Project proposal  {.midi}
+## Today's focus: Project proposal {.midi}
 
 - **Goals:** Identify 2 - 3 potential research topics you may be interested in analyzing.
 
@@ -94,4 +94,4 @@ There are no Gradescope submissions for project milestones.
 
 <br>
 
-<center>🔗 <https://sta221-fa26.github.io/project> </center>
+<center>🔗 <https://sta221-fa26.github.io/project></center>

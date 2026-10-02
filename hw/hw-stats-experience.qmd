@@ -39,6 +39,7 @@ Listen to a podcast or watch a video about statistics and data science. The podc
 
 A few data science podcasts are below:
 
+- [Harvard Data Science Review Podcast](https://hdsr.mitpress.mit.edu/podcast)
 - [Stats + Stories Podcast](https://statsandstories.net/)
 - [Causal Inference Podcast](https://casualinfer.libsyn.com/)
 - [The Test Set](https://posit.co/thetestset/) by Posit
