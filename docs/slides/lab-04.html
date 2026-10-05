@@ -154,7 +154,7 @@
 <li><p>Exam 01 will be during lecture on Tuesday, October 6</p></li>
 <li><p>You may bring one page (front and back) of handwritten notes.</p>
 <ul>
-<li>Notes must be written directly on the paper. They can <u><strong>not</strong></u> be written on a tablet and printed</li>
+<li>Notes must be written directly on the paper. They can <u><strong>not</strong></u> be written on a device and printed</li>
 </ul></li>
 <li><p>No office hours on Tuesday afternoon</p></li>
 </ul>
@@ -183,7 +183,7 @@
 </section>
 <section id="todays-lab-1" class="slide level2">
 <h2>Today’s lab</h2>
-<p>This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Lab 02.</p>
+<p>This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Section 02L lab.</p>
 <p>🔗 <a href="https://sta221-fa26.github.io/labs/lab-04.html">sta221-fa26.github.io/labs/lab-04.html</a></p>
 
 
@@ -406,6 +406,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

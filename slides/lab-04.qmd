@@ -35,7 +35,7 @@ bibliography: references.bib
 
 - You may bring one page (front and back) of handwritten notes.
 
-  - Notes must be written directly on the paper. They can [**not**]{.underline} be written on a tablet and printed
+  - Notes must be written directly on the paper. They can [**not**]{.underline} be written on a device and printed
 
 - No office hours on Tuesday afternoon
 
@@ -63,6 +63,6 @@ Assume $Var(\boldsymbol{\epsilon}) =  \mathbf{XV}$, such that $\mathbf{V}$ has t
 
 ## Today's lab
 
-This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Lab 02.
+This lab is a review for Exam 01. It is due at the end of your lab session. Solutions will be released Monday after Section 02L lab.
 
 🔗 [sta221-fa26.github.io/labs/lab-04.html](https://sta221-fa26.github.io/labs/lab-04.html)
