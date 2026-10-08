@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <title>STA 221 - Fall 2026 – Data science ethics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-894178fba86c39910efe481f737b63a7.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Data science ethics</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett
+</div>
+</div>
+</div>
+
+  <p class="date">Oct 08, 2026</p>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li>SSMU Data Challenge - October 17. See <a href="https://edstem.org/us/courses/101204/discussion/8366022">Ed Discussion</a> for details</li>
+</ul>
+<p><br></p>
+<center>
+🍂Have a good fall break!🍂
+</center>
+</section>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<ul>
+<li>Data science ethics</li>
+</ul>
+</section>
+<section>
+<section id="data-science-ethics" class="title-slide slide level1 center">
+<h1>Data science ethics</h1>
+
+</section>
+<section id="when-things-go-wrong" class="slide level2">
+<h2>When things go wrong</h2>
+
+<img data-src="images/clipboard-2930999253.png" class="r-stretch"></section>
+<section id="branding-healthy-foods" class="slide level2">
+<h2>Branding healthy foods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="midi">
+<ul>
+<li><p>The now retracted paper <a href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/1352169">“Can Branding Improve School Lunches”</a> concluded that giving healthy food snappy names and colorful branding would lead to more kids eating healthy foods. <span class="citation" data-cites="goltz2023real">(<a href="#/references" role="doc-biblioref" onclick="">Goltz and Dowdeswell 2023</a>)</span></p></li>
+<li><p>Millions of dollars in government funding went towards the Smarter Lunchrooms Movement and the program was adopted in 30,000 schools in the US. <span class="citation" data-cites="lee2017smarterlunchrooms">(<a href="#/references" role="doc-biblioref" onclick="">Lee 2017</a>)</span></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-1465839102.png" style="width:60.0%"></p>
+<figcaption>Image Credit: <a href="https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data">BuzzFeed News</a></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="branding-healthy-foods-1" class="slide level2">
+<h2>Branding healthy foods</h2>
+<ul>
+<li><p>In the <a href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2654849">notice of retraction</a>, the authors state some of the errors included</p>
+<blockquote>
+<p>“…we inadvertently provided an incorrect description of the study design and sample size, used an inadequate statistical procedure, and presented a mislabeled bar graph.”</p>
+</blockquote></li>
+<li><p>This was part of a pattern of misleading data and statistical analyses published by this lab.</p></li>
+</ul>
+</section>
+<section id="gap-in-public-trust" class="slide level2">
+<h2>Gap in public trust</h2>
+
+<img data-src="images/clipboard-129687469.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p>“…coverage of polls [data science] often <strong>does not adequately convey the many decisions</strong> that pollsters [data scientists] must make … as well as the <strong>potential consequences of those decisions</strong>”</p>
+
+<aside><div>
+<p>Clinton, J. (2021, January 11). Polling problems and why we should still trust (some) polls. The Vanderbilt Project on Unity and American Democracy. <a href="https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/" class="uri">https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/</a></p>
+</div></aside></section>
+<section id="ideal-objectivity" class="slide level2">
+<h2>“Ideal objectivity?”</h2>
+<ul>
+<li class="fragment"><p><strong>Desire for “ideal objectivity”</strong></p>
+<ul>
+<li class="fragment"><p>Work that is free from interference of human perception <span class="citation" data-cites="feinberg2023myth">(<a href="#/references" role="doc-biblioref" onclick="">Feinberg 2023</a>)</span></p></li>
+<li class="fragment"><p>Conclusions that are observer independent <span class="citation" data-cites="gelman2017beyond">(<a href="#/references" role="doc-biblioref" onclick="">Gelman and Hennig 2017</a>)</span></p></li>
+</ul></li>
+<li class="fragment"><p><strong>Feels like the ethical approach</strong> <span class="citation" data-cites="feinberg2023myth">(<a href="#/references" role="doc-biblioref" onclick="">Feinberg 2023</a>)</span></p></li>
+<li class="fragment"><p><strong>There are implications</strong> <span class="citation" data-cites="feinberg2023myth">(<a href="#/references" role="doc-biblioref" onclick="">Feinberg 2023</a>)</span></p>
+<ul>
+<li class="fragment"><p>Distorted reality of data analysis process</p></li>
+<li class="fragment"><p>Lack of communication about decisions that don’t seem “objective”</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-role-of-data-science-ethics" class="slide level2">
+<h2>The role of data science ethics</h2>
+<ul>
+<li><p>Illuminates the the decision-making in data science</p>
+<ul>
+<li><p>Makes explicit the existence of choice throughout an analysis</p></li>
+<li><p>Makes explicit the moral implications of our choices</p></li>
+</ul></li>
+<li><p>Align data science practices with what we ought to do and moral duties to stakeholders</p></li>
+</ul>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Problem definition</strong>: Question we wish to answer with data
+<ul>
+<li>What is the likelihood a customer purchases product S?</li>
+<li>Our model (built on training data) is successful if it achieves at least 75% accuracy on testing data</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science-1" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Raw data</strong>: Information collected by interacting with the world
+<ul>
+<li>Information from each time the customer clicks on an advertisement for product S</li>
+<li>Includes timestamps for each advertisement interaction and the customer’s demographic information</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science-2" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Data</strong>: Processed form of raw data
+<ul>
+<li>Data table where each row represents a unique customer and the columns are the variables that describe that customer</li>
+<li>Includes information from raw data and engineered variables (e.g., average time between clicks)</li>
+<li>We decide what to do with missing data</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science-3" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Data model(s)</strong>: Product from running input data through learning algorithm (generalize the relationship between variables in the data)
+<ul>
+<li>We choose a logistic regression model of the form</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\log(\frac{\pi}{1-\pi}) = \beta_0 + \beta_1 ~ \text{age}
++ \beta_2 ~ \text{number clicks}
++ \beta_3 ~ \text{avg time between clicks}
+\]</span></p>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science-4" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Tuned data model(s)</strong>: Data model in which the parameters are adjusted
+<ul>
+<li>Use 5-fold cross validation to determine which variables to include in order to improve model’s accuracy</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="processes-in-data-science-5" class="slide level2 midi">
+<h2>Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-719982942.png" class="quarto-figure quarto-figure-center" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Deployment and usage</strong>: Generating predictions (or other output) from the tuned model
+<ul>
+<li>Determine that the model should only be used for customers under a certain age</li>
+<li>Determine only data scientists at the company selling product S should be able to access model and sell products from it</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="your-data-science-process" class="slide level2 midi">
+<h2>Your data science process</h2>
+
+<img data-src="images/clipboard-3136590850.png" style="width:90.0%" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://scolando.github.io/data-science-ethics/Intro-DS-ethics.html" class="uri">https://scolando.github.io/data-science-ethics/Intro-DS-ethics.html</a></p></section>
+<section id="what-is-data-science-ethics" class="slide level2">
+<h2>What is data science ethics?</h2>
+<p>Data science ethics studies and evaluates moral problems related to:</p>
+<ul>
+<li><p><strong>Data:</strong> generation, recording, process, dissemination, and sharing</p></li>
+<li><p><strong>Algorithms:</strong> artificial intelligence, machine learning, large language models, and statistical learning models</p></li>
+<li><p><strong>Corresponding practices:</strong> responsible innovation, programming, hacking, professional code</p></li>
+</ul>
+
+<aside><div>
+<p>Sources: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>, <span class="citation" data-cites="floridi2016data">Floridi and Taddeo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+</div></aside></section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="question">
+<p>What is one ethical concern data scientists need to consider in their work?</p>
+</div>
+
+<img data-src="images/october-08-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:40.0%"><div class="center">
+<p><a href="https://app.wooclap.com/ARZFHPT" class="uri">https://app.wooclap.com/ARZFHPT</a></p>
+</div>
+</section>
+<section id="data-science-oath" class="slide level2 midi">
+<h2>Data Science Oath</h2>
+<ol type="1">
+<li><p>I will not be ashamed to say, “I know not,” nor will I fail to call in my colleagues when the skills of another are needed for solving a problem.</p></li>
+<li><p>I will respect the privacy of my data subjects, for their data are not disclosed to me that the world may know, so I will tread with care in matters of privacy and security.</p></li>
+<li><p>I will remember that my data are not just numbers without meaning or context, but represent real people and situations, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.</p></li>
+</ol>
+<p><small>From <span class="citation" data-cites="nas2018data_science_undergraduate_project">National Academies of Sciences, Engineering, and Medicine (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> based on the Hippocratic Oath for physicians.</small></p>
+</section>
+<section id="responsibility" class="slide level2 midi">
+<h2>Responsibility</h2>
+<p>The data scientist is (morally) responsible for</p>
+<ul>
+<li>How the data are handled and stored</li>
+<li>Modeling decisions</li>
+<li>Implications of data handling and modeling</li>
+<li>Providing clear documentation and guidance on model use</li>
+</ul>
+<div class="fragment">
+<p>The user is (morally) responsible for</p>
+<ul>
+<li>Understanding the model and its limitations</li>
+<li>How the model is deployed</li>
+</ul>
+
+</div>
+<aside><div>
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="example-mistaken-identity" class="slide level2 midi">
+<h2>Example: Mistaken identity</h2>
+<p>Angela Lipps, from Tennessee, spent 5 months in jail after facial recognition software connected her to a string of bank fraud cases in Fargo, North Dakota</p>
+<ul>
+<li>Police were investigating a string of cases in Fargo, ND in which a woman used a fake ID to withdraw money from a bank account or home-equity line of credit</li>
+<li>Investigators used facial recognition technology to identify a potential suspect based on bank surveillance video</li>
+<li>The software “identified a potential suspect with similar features to Angela Lipps”</li>
+</ul>
+
+<aside><div>
+<p>Source: <a href="https://www.nytimes.com/2026/03/30/us/north-dakota-facial-recognition-ai-errors-bank-fraud.html">New York Times</a></p>
+</div></aside></section>
+<section id="example-mistaken-identity-1" class="slide level2 midi">
+<h2>Example: Mistaken identity</h2>
+<ul>
+<li>Police used Angela Lipps’ Facebook and Instagram accounts, along with her Tennessee ID to determine she matched the identified suspect</li>
+<li>She was released from jail after a judge dismissed the case</li>
+</ul>
+
+<aside><div>
+<p>Source: <a href="https://www.nytimes.com/2026/03/30/us/north-dakota-facial-recognition-ai-errors-bank-fraud.html">New York Times</a></p>
+</div></aside></section>
+<section id="example-mistaken-identity-2" class="slide level2 midi">
+<h2>Example: Mistaken identity</h2>
+<ul>
+<li><p>Facial recognition company, Clearview AI uses “publicly available images” for its data base and to train its models used by law enforcement agencies</p></li>
+<li><p>Their statement on how models should be used:</p>
+<blockquote>
+<p>“Once a search is performed, the search may return a set of potential leads, which the investigator is required to independently verify by both peer review and other means, before continuing with their investigation.”</p>
+</blockquote></li>
+<li><p>Website reports “99% accuracy for all demographics”</p></li>
+</ul>
+
+<aside><div>
+<p>Source: <a href="https://www.clearview.ai/" class="uri">https://www.clearview.ai/</a></p>
+</div></aside></section>
+<section id="example-mistaken-identity-3" class="slide level2">
+<h2>Example: Mistaken identity</h2>
+<div class="question">
+<ul>
+<li>What are the ethical considerations and responsibilities for the data scientists <u>building</u> such facial recognition technology?</li>
+</ul>
+</div>
+<p><br></p>
+<div class="question">
+<ul>
+<li>What are the ethical considerations and responsibilities for those <u>using</u> such facial recognition technology?</li>
+</ul>
+</div>
+</section>
+<section id="example-case-study" class="slide level2">
+<h2>Example case study</h2>
+<p>A data analyst received permission to analyze a data set that was scraped from a social media site. The full data set included name, screen name, email address, geographic location, IP (internet protocol) address, demographic profiles, and preferences for relationships.</p>
+<p><br></p>
+<div class="question">
+<p>What are ethical considerations of putting a deidentified data set with name and email address removed in a LLM (e.g., Claude or ChatGPT) to help with analysis?</p>
+</div>
+
+<aside><div>
+<p>Adapted from Chapter 8 of <span class="citation" data-cites="baumer2017modern">Baumer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></p>
+</div></aside></section>
+<section id="common-ethical-pitfalls" class="slide level2">
+<h2>Common ethical pitfalls</h2>
+<ul>
+<li><p><strong>p-hacking</strong>: Manipulating the data to derive a statistical significant p-value where one is absent <span class="citation" data-cites="goltz2023real">(<a href="#/references" role="doc-biblioref" onclick="">Goltz and Dowdeswell 2023</a>)</span></p>
+<ul>
+<li><a href="https://xkcd.com/882/">xkcd comic</a></li>
+</ul></li>
+<li><p><strong>HARK-ing</strong>: Hypothesizing after Experimental Results are Known. The results are know, and then a hypothesis is constructed to explain the observed data <span class="citation" data-cites="goltz2023real">(<a href="#/references" role="doc-biblioref" onclick="">Goltz and Dowdeswell 2023</a>)</span></p></li>
+</ul>
+<center>
+<strong>A result of “not statistically significant” can be just as interesting and meaningful as a statistically significant result.</strong>
+</center>
+</section>
+<section id="p-hacking-pizza-studies" class="slide level2">
+<h2>p-hacking pizza studies</h2>
+<p>The following now retracted papers were published about consumer behaviors at a pizza restaurant:</p>
+<ul>
+<li><p>“Lower buffet prices lead to less taste satisfaction”</p></li>
+<li><p>“Peak-end pizza: Prices delay evaluations of quality”</p></li>
+<li><p>“Eating heavily: Men eat more in the company of women.”</p></li>
+<li><p>“Low prices and high regret: How pricing influences regret at all-you-can-eat buffets.”</p></li>
+</ul>
+</section>
+<section id="p-hacking-pizza-studies-1" class="slide level2">
+<h2>p-hacking pizza studies</h2>
+<div class="midi">
+<p>The lead researcher on the papers published the following about the analysis process on his personal blog:</p>
+<blockquote>
+<p>“I gave her [post-doc researcher] a data set of a self-funded, failed study which had null results (it was a one month study in an all-you-can-eat Italian restaurant buffet where we had charged some people 1/2 as much as others). I said, ‘This cost us a lot of time and our own money to collect. There’s got to be something here we can salvage because it’s a cool (rich &amp; unique) data set.’ I had three ideas for potential Plan B, C, &amp; D directions (since Plan A had failed).”</p>
+</blockquote>
+</div>
+<div class="question">
+<p>What are the ethical concerns with this analysis approach?</p>
+</div>
+</section>
+<section id="p-hacking-pizza-results" class="slide level2">
+<h2>p-hacking pizza results</h2>
+<div class="midi">
+<p>Researchers attempted to reproduce the results, and published the following inconsistencies:</p>
+<ul>
+<li>impossible sample sizes within and between articles</li>
+<li>incorrectly calculated and/or reported test statistics and degrees of freedom,</li>
+<li>large number of impossible means and standard deviations.</li>
+</ul>
+<p>“In total, we identified approximately 150 inconsistencies and impossibilities in these four papers. Taken together, these problems make it difficult to have confidence in the authors’ conclusions.”</p>
+</div>
+<div class="midi">
+<p>Source: <span class="citation" data-cites="van2017statistical">(<a href="#/references" role="doc-biblioref" onclick="">Der Zee et al. 2017</a>)</span></p>
+</div>
+</section>
+<section id="why-reproducibility-matters" class="slide level2">
+<h2>Why reproducibility matters</h2>
+<div class="midi">
+<p>“One of the fundamental principles of the scientific method is transparency - to conduct research in a way that can be assessed, verified, and reproduced. This is not optional - it is imperative.” - Tim van der Zee in <span class="citation" data-cites="lee2017smarterlunchrooms">Lee (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span></p>
+<ul>
+<li><p>Reproducibility provides scientists with evidence that research results are objective and reliable and not due to bias or chance <span class="citation" data-cites="resnik2016">(<a href="#/references" role="doc-biblioref" onclick="">Resnik and Shamoo 2016</a>)</span></p></li>
+<li><p>Irreproducibility, by contrast, may indicate a problem with any of the steps involved in the research <span class="citation" data-cites="resnik2016">(<a href="#/references" role="doc-biblioref" onclick="">Resnik and Shamoo 2016</a>)</span></p></li>
+<li><p>Check your models: <a href="https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf">Machine Learning Reproducibility Checklist</a></p></li>
+</ul>
+</div>
+</section>
+<section id="additional-resources" class="slide level2">
+<h2>Additional resources</h2>
+<ul>
+<li><p><a href="https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice">American Statistical Association: Ethical Guidelines for Statistical Practice</a></p></li>
+<li><p><a href="https://scolando.github.io/data-science-ethics/Reading-Tags.html">Data science ethics reading lists</a></p></li>
+<li><p><a href="https://mdsr-book.github.io/mdsr3e/08-ethics.html#sec-ethics-intro">Chapter 8 in Modern Data Science with R</a></p></li>
+</ul>
+</section>
+<section id="examples-in-slides" class="slide level2">
+<h2>Examples in slides</h2>
+<ul>
+<li><p>When things go wrong examples:</p>
+<ul>
+<li><p><a href="https://www.vox.com/recode/2019/7/31/20747874/cambridge-analytica-julian-wheatland-great-hack-netflix-documentary-kara-swisher-podcast-interview">Cambridge Analytica made ‘ethical mistakes’ because it was too focused on regulation, former COO says</a> from Vox.com</p></li>
+<li><p><a href="https://www.vox.com/2018/2/6/16874782/welfare-big-data-technology-poverty">How big data is helping states kick poor people off welfare</a> from Vox.com</p></li>
+<li><p><a href="https://www.washingtonpost.com/technology/2023/10/25/data-provenance/">How AI researchers uncover ethical, legal risks to using popular data sets</a> from the Washington Post</p></li>
+<li><p><a href="https://www.seattletimes.com/opinion/boeings-manufacturing-ethical-lapses-go-back-decades/">Boeing’s manufacturing, ethical lapses go back decades</a> from the Seattle Times</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-in-slides-1" class="slide level2">
+<h2>Examples in slides</h2>
+<ul>
+<li><p>Gap in public trust examples</p>
+<ul>
+<li><p><a href="https://www.vox.com/2024-elections/370649/trust-polls-2016-2020-election-2024-pollster-polling-miss">Can we trust the polls this year?</a> from Vox.com</p></li>
+<li><p><a href="https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/">Polling problems and why we should still trust (some) polls</a> from Vanderbilt Project on Unity and American Democracy</p></li>
+<li><p><a href="https://www.nytimes.com/2024/11/01/upshot/so-can-we-trust-the-polls.html">So, can we trust the polls?</a> from New York Times</p></li>
+<li><p><a href="https://today.usc.edu/can-we-still-trust-the-polls/">Can we still trust the polls?</a> from University of Southern California</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>Data science ethics</li>
+</ul>
+</section>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
+<p>🍂 Enjoy Fall Break 🍂</p>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-baumer2017modern" class="csl-entry" role="listitem">
+Baumer, Benjamin S, Daniel T Kaplan, and Nicholas J Horton. 2024. <em>Modern Data Science with r</em>. 3rd ed. <a href="https://mdsr-book.github.io/mdsr3e/">https://mdsr-book.github.io/mdsr3e/</a>.
+</div>
+<div id="ref-colando2024philosophy" class="csl-entry" role="listitem">
+Colando, Sara, and Johanna Hardin. 2024. <span>“Philosophy Within Data Science Ethics Courses.”</span> <em>Journal of Statistics and Data Science Education</em> 32 (4): 361–73.
+</div>
+<div id="ref-van2017statistical" class="csl-entry" role="listitem">
+Der Zee, Tim van, Jordan Anaya, and Nicholas JL Brown. 2017. <span>“Statistical Heartburn: An Attempt to Digest Four Pizza Publications from the Cornell Food and Brand Lab.”</span> <em>BMC Nutrition</em> 3 (1): 54.
+</div>
+<div id="ref-feinberg2023myth" class="csl-entry" role="listitem">
+Feinberg, Melanie. 2023. <span>“The Myth of Objective Data.”</span> MIT Press Reader. <a href="https://thereader.mitpress.mit.edu/the-myth-of-objective-data/">https://thereader.mitpress.mit.edu/the-myth-of-objective-data/</a>.
+</div>
+<div id="ref-floridi2016data" class="csl-entry" role="listitem">
+Floridi, Luciano, and Mariarosaria Taddeo. 2016. <span>“What Is Data Ethics?”</span> <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 374 (2083).
+</div>
+<div id="ref-gelman2017beyond" class="csl-entry" role="listitem">
+Gelman, Andrew, and Christian Hennig. 2017. <span>“Beyond Subjective and Objective in Statistics.”</span> <em>Journal of the Royal Statistical Society Series A: Statistics in Society</em> 180 (4): 967–1033.
+</div>
+<div id="ref-goltz2023real" class="csl-entry" role="listitem">
+Goltz, Nachshon Sean, and Tracey Dowdeswell. 2023. <em>Real World AI Ethics for Data Scientists: Practical Case Studies</em>. CRC Press.
+</div>
+<div id="ref-lee2017smarterlunchrooms" class="csl-entry" role="listitem">
+Lee, Stephanie M. 2017. <span>“Emails Show How an <span>Ivy League</span> Prof Tried to Do Damage Control for His Bogus Food Science.”</span> <em>BuzzFeed News</em>, September 27. <a href="https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data">https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data</a>.
+</div>
+<div id="ref-nas2018data_science_undergraduate_project" class="csl-entry" role="listitem">
+National Academies of Sciences, Engineering, and Medicine. 2018. <span>“Envisioning the Data Science Discipline: The Undergraduate Perspective.”</span> <a href="https://www.nationalacademies.org/projects/DEPS-CSTB-16-01">https://www.nationalacademies.org/projects/DEPS-CSTB-16-01</a>.
+</div>
+<div id="ref-resnik2016" class="csl-entry" role="listitem">
+Resnik, David B., and Adil E. Shamoo. 2016. <span>“Reproducibility and Research Integrity.”</span> <em>Accountability in Research</em> 24 (2): 116–23. <a href="https://doi.org/10.1080/08989621.2016.1257387">https://doi.org/10.1080/08989621.2016.1257387</a>.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://sta221-fa26.github.io">🔗 sta221-fa26.github.io</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/sta221-fa26\.github\.io");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

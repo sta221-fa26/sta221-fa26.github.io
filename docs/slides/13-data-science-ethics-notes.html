@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Maria Tackett">
+
+<title>Data science ethics – STA 221 - Fall 2026</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eda662c711f8ca3e4fb6fa9fc2628810.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data science ethics</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta221-fa26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-chat-dots-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/101204">
+            Ed Discussion
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458">
+            Office hours
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-check-square-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/announcements">
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.gradescope.com/courses/1347048">
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/84458/gradebook">
+            Gradebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-r-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw/hw-stats-experience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 06: Statistics experience</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 00</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 07</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tips + resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-01-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam 01 Practice</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=363a0255-5193-41c3-a809-b4a601301869" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture recordings</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math rules</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#data-science-ethics" id="toc-data-science-ethics" class="nav-link" data-scroll-target="#data-science-ethics">Data science ethics</a>
+  <ul class="collapse">
+  <li><a href="#when-things-go-wrong" id="toc-when-things-go-wrong" class="nav-link" data-scroll-target="#when-things-go-wrong">When things go wrong</a></li>
+  <li><a href="#branding-healthy-foods" id="toc-branding-healthy-foods" class="nav-link" data-scroll-target="#branding-healthy-foods">Branding healthy foods</a></li>
+  <li><a href="#branding-healthy-foods-1" id="toc-branding-healthy-foods-1" class="nav-link" data-scroll-target="#branding-healthy-foods-1">Branding healthy foods</a></li>
+  <li><a href="#gap-in-public-trust" id="toc-gap-in-public-trust" class="nav-link" data-scroll-target="#gap-in-public-trust">Gap in public trust</a></li>
+  <li><a href="#ideal-objectivity" id="toc-ideal-objectivity" class="nav-link" data-scroll-target="#ideal-objectivity">“Ideal objectivity?”</a></li>
+  <li><a href="#the-role-of-data-science-ethics" id="toc-the-role-of-data-science-ethics" class="nav-link" data-scroll-target="#the-role-of-data-science-ethics">The role of data science ethics</a></li>
+  <li><a href="#processes-in-data-science" id="toc-processes-in-data-science" class="nav-link" data-scroll-target="#processes-in-data-science">Processes in data science</a></li>
+  <li><a href="#processes-in-data-science-1" id="toc-processes-in-data-science-1" class="nav-link" data-scroll-target="#processes-in-data-science-1">Processes in data science</a></li>
+  <li><a href="#processes-in-data-science-2" id="toc-processes-in-data-science-2" class="nav-link" data-scroll-target="#processes-in-data-science-2">Processes in data science</a></li>
+  <li><a href="#processes-in-data-science-3" id="toc-processes-in-data-science-3" class="nav-link" data-scroll-target="#processes-in-data-science-3">Processes in data science</a></li>
+  <li><a href="#processes-in-data-science-4" id="toc-processes-in-data-science-4" class="nav-link" data-scroll-target="#processes-in-data-science-4">Processes in data science</a></li>
+  <li><a href="#processes-in-data-science-5" id="toc-processes-in-data-science-5" class="nav-link" data-scroll-target="#processes-in-data-science-5">Processes in data science</a></li>
+  <li><a href="#your-data-science-process" id="toc-your-data-science-process" class="nav-link" data-scroll-target="#your-data-science-process">Your data science process</a></li>
+  <li><a href="#what-is-data-science-ethics" id="toc-what-is-data-science-ethics" class="nav-link" data-scroll-target="#what-is-data-science-ethics">What is data science ethics?</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
+  <li><a href="#data-science-oath" id="toc-data-science-oath" class="nav-link" data-scroll-target="#data-science-oath">Data Science Oath</a></li>
+  <li><a href="#responsibility" id="toc-responsibility" class="nav-link" data-scroll-target="#responsibility">Responsibility</a></li>
+  <li><a href="#example-mistaken-identity" id="toc-example-mistaken-identity" class="nav-link" data-scroll-target="#example-mistaken-identity">Example: Mistaken identity</a></li>
+  <li><a href="#example-mistaken-identity-1" id="toc-example-mistaken-identity-1" class="nav-link" data-scroll-target="#example-mistaken-identity-1">Example: Mistaken identity</a></li>
+  <li><a href="#example-mistaken-identity-2" id="toc-example-mistaken-identity-2" class="nav-link" data-scroll-target="#example-mistaken-identity-2">Example: Mistaken identity</a></li>
+  <li><a href="#example-mistaken-identity-3" id="toc-example-mistaken-identity-3" class="nav-link" data-scroll-target="#example-mistaken-identity-3">Example: Mistaken identity</a></li>
+  <li><a href="#example-case-study" id="toc-example-case-study" class="nav-link" data-scroll-target="#example-case-study">Example case study</a></li>
+  <li><a href="#common-ethical-pitfalls" id="toc-common-ethical-pitfalls" class="nav-link" data-scroll-target="#common-ethical-pitfalls">Common ethical pitfalls</a></li>
+  <li><a href="#p-hacking-pizza-studies" id="toc-p-hacking-pizza-studies" class="nav-link" data-scroll-target="#p-hacking-pizza-studies">p-hacking pizza studies</a></li>
+  <li><a href="#p-hacking-pizza-studies-1" id="toc-p-hacking-pizza-studies-1" class="nav-link" data-scroll-target="#p-hacking-pizza-studies-1">p-hacking pizza studies</a></li>
+  <li><a href="#p-hacking-pizza-results" id="toc-p-hacking-pizza-results" class="nav-link" data-scroll-target="#p-hacking-pizza-results">p-hacking pizza results</a></li>
+  <li><a href="#why-reproducibility-matters" id="toc-why-reproducibility-matters" class="nav-link" data-scroll-target="#why-reproducibility-matters">Why reproducibility matters</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional resources</a></li>
+  <li><a href="#examples-in-slides" id="toc-examples-in-slides" class="nav-link" data-scroll-target="#examples-in-slides">Examples in slides</a></li>
+  <li><a href="#examples-in-slides-1" id="toc-examples-in-slides-1" class="nav-link" data-scroll-target="#examples-in-slides-1">Examples in slides</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="13-data-science-ethics.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data science ethics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Prof.&nbsp;Maria Tackett </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Oct 08, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li>SSMU Data Challenge - October 17. See <a href="https://edstem.org/us/courses/101204/discussion/8366022">Ed Discussion</a> for details</li>
+</ul>
+<p><br></p>
+<center>
+🍂Have a good fall break!🍂
+</center>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<ul>
+<li>Data science ethics</li>
+</ul>
+</section>
+<section id="data-science-ethics" class="level1 page-columns page-full">
+<h1>Data science ethics</h1>
+<section id="when-things-go-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="when-things-go-wrong">When things go wrong</h2>
+<p><img src="images/clipboard-2930999253.png" class="img-fluid"></p>
+</section>
+<section id="branding-healthy-foods" class="level2">
+<h2 class="anchored" data-anchor-id="branding-healthy-foods">Branding healthy foods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="midi">
+<ul>
+<li><p>The now retracted paper <a href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/1352169">“Can Branding Improve School Lunches”</a> concluded that giving healthy food snappy names and colorful branding would lead to more kids eating healthy foods. <span class="citation" data-cites="goltz2023real">(<a href="#ref-goltz2023real" role="doc-biblioref">Goltz and Dowdeswell 2023</a>)</span></p></li>
+<li><p>Millions of dollars in government funding went towards the Smarter Lunchrooms Movement and the program was adopted in 30,000 schools in the US. <span class="citation" data-cites="lee2017smarterlunchrooms">(<a href="#ref-lee2017smarterlunchrooms" role="doc-biblioref">Lee 2017</a>)</span></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1465839102.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Image Credit: <a href="https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data">BuzzFeed News</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="branding-healthy-foods-1" class="level2">
+<h2 class="anchored" data-anchor-id="branding-healthy-foods-1">Branding healthy foods</h2>
+<ul>
+<li><p>In the <a href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2654849">notice of retraction</a>, the authors state some of the errors included</p>
+<blockquote class="blockquote">
+<p>“…we inadvertently provided an incorrect description of the study design and sample size, used an inadequate statistical procedure, and presented a mislabeled bar graph.”</p>
+</blockquote></li>
+<li><p>This was part of a pattern of misleading data and statistical analyses published by this lab.</p></li>
+</ul>
+</section>
+<section id="gap-in-public-trust" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="gap-in-public-trust">Gap in public trust</h2>
+<p><img src="images/clipboard-129687469.png" class="img-fluid"></p>
+<hr>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p>“…coverage of polls [data science] often <strong>does not adequately convey the many decisions</strong> that pollsters [data scientists] must make … as well as the <strong>potential consequences of those decisions</strong>”</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Clinton, J. (2021, January 11). Polling problems and why we should still trust (some) polls. The Vanderbilt Project on Unity and American Democracy. <a href="https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/" class="uri">https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/</a></p>
+</div></div><hr>
+</section>
+<section id="ideal-objectivity" class="level2">
+<h2 class="anchored" data-anchor-id="ideal-objectivity">“Ideal objectivity?”</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Desire for “ideal objectivity”</strong></p>
+<ul class="incremental">
+<li><p>Work that is free from interference of human perception <span class="citation" data-cites="feinberg2023myth">(<a href="#ref-feinberg2023myth" role="doc-biblioref">Feinberg 2023</a>)</span></p></li>
+<li><p>Conclusions that are observer independent <span class="citation" data-cites="gelman2017beyond">(<a href="#ref-gelman2017beyond" role="doc-biblioref">Gelman and Hennig 2017</a>)</span></p></li>
+</ul></li>
+<li><p><strong>Feels like the ethical approach</strong> <span class="citation" data-cites="feinberg2023myth">(<a href="#ref-feinberg2023myth" role="doc-biblioref">Feinberg 2023</a>)</span></p></li>
+<li><p><strong>There are implications</strong> <span class="citation" data-cites="feinberg2023myth">(<a href="#ref-feinberg2023myth" role="doc-biblioref">Feinberg 2023</a>)</span></p>
+<ul class="incremental">
+<li><p>Distorted reality of data analysis process</p></li>
+<li><p>Lack of communication about decisions that don’t seem “objective”</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="the-role-of-data-science-ethics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-role-of-data-science-ethics">The role of data science ethics</h2>
+<ul>
+<li><p>Illuminates the the decision-making in data science</p>
+<ul>
+<li><p>Makes explicit the existence of choice throughout an analysis</p></li>
+<li><p>Makes explicit the moral implications of our choices</p></li>
+</ul></li>
+<li><p>Align data science practices with what we ought to do and moral duties to stakeholders</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Problem definition</strong>: Question we wish to answer with data
+<ul>
+<li>What is the likelihood a customer purchases product S?</li>
+<li>Our model (built on training data) is successful if it achieves at least 75% accuracy on testing data</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science-1" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science-1">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Raw data</strong>: Information collected by interacting with the world
+<ul>
+<li>Information from each time the customer clicks on an advertisement for product S</li>
+<li>Includes timestamps for each advertisement interaction and the customer’s demographic information</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science-2" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science-2">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Data</strong>: Processed form of raw data
+<ul>
+<li>Data table where each row represents a unique customer and the columns are the variables that describe that customer</li>
+<li>Includes information from raw data and engineered variables (e.g., average time between clicks)</li>
+<li>We decide what to do with missing data</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science-3" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science-3">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Data model(s)</strong>: Product from running input data through learning algorithm (generalize the relationship between variables in the data)
+<ul>
+<li>We choose a logistic regression model of the form</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\log(\frac{\pi}{1-\pi}) = \beta_0 + \beta_1 ~ \text{age}
++ \beta_2 ~ \text{number clicks}
++ \beta_3 ~ \text{avg time between clicks}
+\]</span></p>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science-4" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science-4">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Tuned data model(s)</strong>: Data model in which the parameters are adjusted
+<ul>
+<li>Use 5-fold cross validation to determine which variables to include in order to improve model’s accuracy</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="processes-in-data-science-5" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="processes-in-data-science-5">Processes in data science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-719982942.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Source: Figure 1 of @colando2024philosophy"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Deployment and usage</strong>: Generating predictions (or other output) from the tuned model
+<ul>
+<li>Determine that the model should only be used for customers under a certain age</li>
+<li>Determine only data scientists at the company selling product S should be able to access model and sell products from it</li>
+</ul></li>
+</ul>
+<div class="question">
+<p>What choice(s) have been made at this step?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="your-data-science-process" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="your-data-science-process">Your data science process</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3136590850.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Source: <a href="https://scolando.github.io/data-science-ethics/Intro-DS-ethics.html" class="uri">https://scolando.github.io/data-science-ethics/Intro-DS-ethics.html</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-data-science-ethics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-is-data-science-ethics">What is data science ethics?</h2>
+<p>Data science ethics studies and evaluates moral problems related to:</p>
+<ul>
+<li><p><strong>Data:</strong> generation, recording, process, dissemination, and sharing</p></li>
+<li><p><strong>Algorithms:</strong> artificial intelligence, machine learning, large language models, and statistical learning models</p></li>
+<li><p><strong>Corresponding practices:</strong> responsible innovation, programming, hacking, professional code</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Sources: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="floridi2016data">Floridi and Taddeo (<a href="#ref-floridi2016data" role="doc-biblioref">2016</a>)</span></p>
+</div></div></section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your turn</h2>
+<div class="question">
+<p>What is one ethical concern data scientists need to consider in their work?</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/october-08-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<div class="center">
+<p><a href="https://app.wooclap.com/ARZFHPT" class="uri">https://app.wooclap.com/ARZFHPT</a></p>
+</div>
+</section>
+<section id="data-science-oath" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="data-science-oath">Data Science Oath</h2>
+<ol type="1">
+<li><p>I will not be ashamed to say, “I know not,” nor will I fail to call in my colleagues when the skills of another are needed for solving a problem.</p></li>
+<li><p>I will respect the privacy of my data subjects, for their data are not disclosed to me that the world may know, so I will tread with care in matters of privacy and security.</p></li>
+<li><p>I will remember that my data are not just numbers without meaning or context, but represent real people and situations, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.</p></li>
+</ol>
+<p><small>From <span class="citation" data-cites="nas2018data_science_undergraduate_project">National Academies of Sciences, Engineering, and Medicine (<a href="#ref-nas2018data_science_undergraduate_project" role="doc-biblioref">2018</a>)</span> based on the Hippocratic Oath for physicians.</small></p>
+</section>
+<section id="responsibility" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="responsibility">Responsibility</h2>
+<p>The data scientist is (morally) responsible for</p>
+<ul>
+<li>How the data are handled and stored</li>
+<li>Modeling decisions</li>
+<li>Implications of data handling and modeling</li>
+<li>Providing clear documentation and guidance on model use</li>
+</ul>
+<p>. . .</p>
+<p>The user is (morally) responsible for</p>
+<ul>
+<li>Understanding the model and its limitations</li>
+<li>How the model is deployed</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <span class="citation" data-cites="colando2024philosophy">Colando and Hardin (<a href="#ref-colando2024philosophy" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="example-mistaken-identity" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="example-mistaken-identity">Example: Mistaken identity</h2>
+<p>Angela Lipps, from Tennessee, spent 5 months in jail after facial recognition software connected her to a string of bank fraud cases in Fargo, North Dakota</p>
+<ul>
+<li>Police were investigating a string of cases in Fargo, ND in which a woman used a fake ID to withdraw money from a bank account or home-equity line of credit</li>
+<li>Investigators used facial recognition technology to identify a potential suspect based on bank surveillance video</li>
+<li>The software “identified a potential suspect with similar features to Angela Lipps”</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://www.nytimes.com/2026/03/30/us/north-dakota-facial-recognition-ai-errors-bank-fraud.html">New York Times</a></p>
+</div></div></section>
+<section id="example-mistaken-identity-1" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="example-mistaken-identity-1">Example: Mistaken identity</h2>
+<ul>
+<li>Police used Angela Lipps’ Facebook and Instagram accounts, along with her Tennessee ID to determine she matched the identified suspect</li>
+<li>She was released from jail after a judge dismissed the case</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://www.nytimes.com/2026/03/30/us/north-dakota-facial-recognition-ai-errors-bank-fraud.html">New York Times</a></p>
+</div></div></section>
+<section id="example-mistaken-identity-2" class="level2 midi page-columns page-full">
+<h2 class="midi anchored" data-anchor-id="example-mistaken-identity-2">Example: Mistaken identity</h2>
+<ul>
+<li><p>Facial recognition company, Clearview AI uses “publicly available images” for its data base and to train its models used by law enforcement agencies</p></li>
+<li><p>Their statement on how models should be used:</p>
+<blockquote class="blockquote">
+<p>“Once a search is performed, the search may return a set of potential leads, which the investigator is required to independently verify by both peer review and other means, before continuing with their investigation.”</p>
+</blockquote></li>
+<li><p>Website reports “99% accuracy for all demographics”</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://www.clearview.ai/" class="uri">https://www.clearview.ai/</a></p>
+</div></div></section>
+<section id="example-mistaken-identity-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-mistaken-identity-3">Example: Mistaken identity</h2>
+<div class="question">
+<ul>
+<li>What are the ethical considerations and responsibilities for the data scientists <u>building</u> such facial recognition technology?</li>
+</ul>
+</div>
+<p><br></p>
+<div class="question">
+<ul>
+<li>What are the ethical considerations and responsibilities for those <u>using</u> such facial recognition technology?</li>
+</ul>
+</div>
+</section>
+<section id="example-case-study" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="example-case-study">Example case study</h2>
+<p>A data analyst received permission to analyze a data set that was scraped from a social media site. The full data set included name, screen name, email address, geographic location, IP (internet protocol) address, demographic profiles, and preferences for relationships.</p>
+<p><br></p>
+<div class="question">
+<p>What are ethical considerations of putting a deidentified data set with name and email address removed in a LLM (e.g., Claude or ChatGPT) to help with analysis?</p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Adapted from Chapter 8 of <span class="citation" data-cites="baumer2017modern">Baumer et al. (<a href="#ref-baumer2017modern" role="doc-biblioref">2024</a>)</span></p>
+</div></div></section>
+<section id="common-ethical-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="common-ethical-pitfalls">Common ethical pitfalls</h2>
+<ul>
+<li><p><strong>p-hacking</strong>: Manipulating the data to derive a statistical significant p-value where one is absent <span class="citation" data-cites="goltz2023real">(<a href="#ref-goltz2023real" role="doc-biblioref">Goltz and Dowdeswell 2023</a>)</span></p>
+<ul>
+<li><a href="https://xkcd.com/882/">xkcd comic</a></li>
+</ul></li>
+<li><p><strong>HARK-ing</strong>: Hypothesizing after Experimental Results are Known. The results are know, and then a hypothesis is constructed to explain the observed data <span class="citation" data-cites="goltz2023real">(<a href="#ref-goltz2023real" role="doc-biblioref">Goltz and Dowdeswell 2023</a>)</span></p></li>
+</ul>
+<center>
+<strong>A result of “not statistically significant” can be just as interesting and meaningful as a statistically significant result.</strong>
+</center>
+</section>
+<section id="p-hacking-pizza-studies" class="level2">
+<h2 class="anchored" data-anchor-id="p-hacking-pizza-studies">p-hacking pizza studies</h2>
+<p>The following now retracted papers were published about consumer behaviors at a pizza restaurant:</p>
+<ul>
+<li><p>“Lower buffet prices lead to less taste satisfaction”</p></li>
+<li><p>“Peak-end pizza: Prices delay evaluations of quality”</p></li>
+<li><p>“Eating heavily: Men eat more in the company of women.”</p></li>
+<li><p>“Low prices and high regret: How pricing influences regret at all-you-can-eat buffets.”</p></li>
+</ul>
+</section>
+<section id="p-hacking-pizza-studies-1" class="level2">
+<h2 class="anchored" data-anchor-id="p-hacking-pizza-studies-1">p-hacking pizza studies</h2>
+<div class="midi">
+<p>The lead researcher on the papers published the following about the analysis process on his personal blog:</p>
+<blockquote class="blockquote">
+<p>“I gave her [post-doc researcher] a data set of a self-funded, failed study which had null results (it was a one month study in an all-you-can-eat Italian restaurant buffet where we had charged some people 1/2 as much as others). I said, ‘This cost us a lot of time and our own money to collect. There’s got to be something here we can salvage because it’s a cool (rich &amp; unique) data set.’ I had three ideas for potential Plan B, C, &amp; D directions (since Plan A had failed).”</p>
+</blockquote>
+</div>
+<div class="question">
+<p>What are the ethical concerns with this analysis approach?</p>
+</div>
+</section>
+<section id="p-hacking-pizza-results" class="level2">
+<h2 class="anchored" data-anchor-id="p-hacking-pizza-results">p-hacking pizza results</h2>
+<div class="midi">
+<p>Researchers attempted to reproduce the results, and published the following inconsistencies:</p>
+<ul>
+<li>impossible sample sizes within and between articles</li>
+<li>incorrectly calculated and/or reported test statistics and degrees of freedom,</li>
+<li>large number of impossible means and standard deviations.</li>
+</ul>
+<p>“In total, we identified approximately 150 inconsistencies and impossibilities in these four papers. Taken together, these problems make it difficult to have confidence in the authors’ conclusions.”</p>
+</div>
+<div class="midi">
+<p>Source: <span class="citation" data-cites="van2017statistical">(<a href="#ref-van2017statistical" role="doc-biblioref">Der Zee et al. 2017</a>)</span></p>
+</div>
+</section>
+<section id="why-reproducibility-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-reproducibility-matters">Why reproducibility matters</h2>
+<div class="midi">
+<p>“One of the fundamental principles of the scientific method is transparency - to conduct research in a way that can be assessed, verified, and reproduced. This is not optional - it is imperative.” - Tim van der Zee in <span class="citation" data-cites="lee2017smarterlunchrooms">Lee (<a href="#ref-lee2017smarterlunchrooms" role="doc-biblioref">2017</a>)</span></p>
+<ul>
+<li><p>Reproducibility provides scientists with evidence that research results are objective and reliable and not due to bias or chance <span class="citation" data-cites="resnik2016">(<a href="#ref-resnik2016" role="doc-biblioref">Resnik and Shamoo 2016</a>)</span></p></li>
+<li><p>Irreproducibility, by contrast, may indicate a problem with any of the steps involved in the research <span class="citation" data-cites="resnik2016">(<a href="#ref-resnik2016" role="doc-biblioref">Resnik and Shamoo 2016</a>)</span></p></li>
+<li><p>Check your models: <a href="https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf">Machine Learning Reproducibility Checklist</a></p></li>
+</ul>
+</div>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice">American Statistical Association: Ethical Guidelines for Statistical Practice</a></p></li>
+<li><p><a href="https://scolando.github.io/data-science-ethics/Reading-Tags.html">Data science ethics reading lists</a></p></li>
+<li><p><a href="https://mdsr-book.github.io/mdsr3e/08-ethics.html#sec-ethics-intro">Chapter 8 in Modern Data Science with R</a></p></li>
+</ul>
+</section>
+<section id="examples-in-slides" class="level2">
+<h2 class="anchored" data-anchor-id="examples-in-slides">Examples in slides</h2>
+<ul>
+<li><p>When things go wrong examples:</p>
+<ul>
+<li><p><a href="https://www.vox.com/recode/2019/7/31/20747874/cambridge-analytica-julian-wheatland-great-hack-netflix-documentary-kara-swisher-podcast-interview">Cambridge Analytica made ‘ethical mistakes’ because it was too focused on regulation, former COO says</a> from Vox.com</p></li>
+<li><p><a href="https://www.vox.com/2018/2/6/16874782/welfare-big-data-technology-poverty">How big data is helping states kick poor people off welfare</a> from Vox.com</p></li>
+<li><p><a href="https://www.washingtonpost.com/technology/2023/10/25/data-provenance/">How AI researchers uncover ethical, legal risks to using popular data sets</a> from the Washington Post</p></li>
+<li><p><a href="https://www.seattletimes.com/opinion/boeings-manufacturing-ethical-lapses-go-back-decades/">Boeing’s manufacturing, ethical lapses go back decades</a> from the Seattle Times</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-in-slides-1" class="level2">
+<h2 class="anchored" data-anchor-id="examples-in-slides-1">Examples in slides</h2>
+<ul>
+<li><p>Gap in public trust examples</p>
+<ul>
+<li><p><a href="https://www.vox.com/2024-elections/370649/trust-polls-2016-2020-election-2024-pollster-polling-miss">Can we trust the polls this year?</a> from Vox.com</p></li>
+<li><p><a href="https://www.vanderbilt.edu/unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/">Polling problems and why we should still trust (some) polls</a> from Vanderbilt Project on Unity and American Democracy</p></li>
+<li><p><a href="https://www.nytimes.com/2024/11/01/upshot/so-can-we-trust-the-polls.html">So, can we trust the polls?</a> from New York Times</p></li>
+<li><p><a href="https://today.usc.edu/can-we-still-trust-the-polls/">Can we still trust the polls?</a> from University of Southern California</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<ul>
+<li>Data science ethics</li>
+</ul>
+</section>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
+<p>🍂 Enjoy Fall Break 🍂</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-baumer2017modern" class="csl-entry" role="listitem">
+Baumer, Benjamin S, Daniel T Kaplan, and Nicholas J Horton. 2024. <em>Modern Data Science with r</em>. 3rd ed. <a href="https://mdsr-book.github.io/mdsr3e/">https://mdsr-book.github.io/mdsr3e/</a>.
+</div>
+<div id="ref-colando2024philosophy" class="csl-entry" role="listitem">
+Colando, Sara, and Johanna Hardin. 2024. <span>“Philosophy Within Data Science Ethics Courses.”</span> <em>Journal of Statistics and Data Science Education</em> 32 (4): 361–73.
+</div>
+<div id="ref-van2017statistical" class="csl-entry" role="listitem">
+Der Zee, Tim van, Jordan Anaya, and Nicholas JL Brown. 2017. <span>“Statistical Heartburn: An Attempt to Digest Four Pizza Publications from the Cornell Food and Brand Lab.”</span> <em>BMC Nutrition</em> 3 (1): 54.
+</div>
+<div id="ref-feinberg2023myth" class="csl-entry" role="listitem">
+Feinberg, Melanie. 2023. <span>“The Myth of Objective Data.”</span> MIT Press Reader. <a href="https://thereader.mitpress.mit.edu/the-myth-of-objective-data/">https://thereader.mitpress.mit.edu/the-myth-of-objective-data/</a>.
+</div>
+<div id="ref-floridi2016data" class="csl-entry" role="listitem">
+Floridi, Luciano, and Mariarosaria Taddeo. 2016. <span>“What Is Data Ethics?”</span> <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 374 (2083).
+</div>
+<div id="ref-gelman2017beyond" class="csl-entry" role="listitem">
+Gelman, Andrew, and Christian Hennig. 2017. <span>“Beyond Subjective and Objective in Statistics.”</span> <em>Journal of the Royal Statistical Society Series A: Statistics in Society</em> 180 (4): 967–1033.
+</div>
+<div id="ref-goltz2023real" class="csl-entry" role="listitem">
+Goltz, Nachshon Sean, and Tracey Dowdeswell. 2023. <em>Real World AI Ethics for Data Scientists: Practical Case Studies</em>. CRC Press.
+</div>
+<div id="ref-lee2017smarterlunchrooms" class="csl-entry" role="listitem">
+Lee, Stephanie M. 2017. <span>“Emails Show How an <span>Ivy League</span> Prof Tried to Do Damage Control for His Bogus Food Science.”</span> <em>BuzzFeed News</em>, September 27. <a href="https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data">https://www.buzzfeednews.com/article/stephaniemlee/brian-wansink-cornell-smarter-lunchrooms-flawed-data</a>.
+</div>
+<div id="ref-nas2018data_science_undergraduate_project" class="csl-entry" role="listitem">
+National Academies of Sciences, Engineering, and Medicine. 2018. <span>“Envisioning the Data Science Discipline: The Undergraduate Perspective.”</span> <a href="https://www.nationalacademies.org/projects/DEPS-CSTB-16-01">https://www.nationalacademies.org/projects/DEPS-CSTB-16-01</a>.
+</div>
+<div id="ref-resnik2016" class="csl-entry" role="listitem">
+Resnik, David B., and Adil E. Shamoo. 2016. <span>“Reproducibility and Research Integrity.”</span> <em>Accountability in Research</em> 24 (2): 116–23. <a href="https://doi.org/10.1080/08989621.2016.1257387">https://doi.org/10.1080/08989621.2016.1257387</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sta221-fa26\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2026, Maria Tackett</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
