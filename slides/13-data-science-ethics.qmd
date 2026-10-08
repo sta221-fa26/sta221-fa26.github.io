@@ -44,6 +44,8 @@ knitr::opts_chunk$set(
 
 - SSMU Data Challenge - October 17. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8366022) for details
 
+- New 4+1 program in StatSci - Info Session October 14. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8368174) for details.
+
 <br>
 
 <center>🍂Have a good fall break!🍂</center>
