@@ -144,7 +144,7 @@ There will be two midterm exams and one final exam in this course. Each exam wil
 
 There are no make-up exams. If you miss Exam 01 or Exam 02 due to a reason documented by a Dean's Excuse, the final exam score will replace the missed exam score. If you miss the final exam due to a reason documented by a Dean's Excuse, you will receive an "Incomplete" in the course and take the final exam at a later date.
 
-<!--# For students who take all three examsthe final exam score will replace the lower of the two mid-term scores, if the final exam score is higher than the Exam 01 and/or Exam 02 score.-->
+*For students who take all three exams, the final exam score will replace the lower of the two mid-term scores, if the final exam score is higher than the Exam 01 and/or Exam 02 score.*
 
 ### Project
 
@@ -266,7 +266,7 @@ The due dates for assignments are there to help you keep up with the course mate
 
 - The late work policy for the project will be provided with the project instructions.
 
-### One-time late waiver 
+### One-time late waiver
 
 If there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email me at [maria.tackett\@duke.edu](maria.tackett@duke.edu) [**before the deadline**]{.underline} to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. *This waiver may only be used once in the semester, so only use it for a truly extenuating circumstance.*
 
