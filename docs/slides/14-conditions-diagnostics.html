@@ -221,9 +221,26 @@ Prof.&nbsp;Maria Tackett
 <li><p>Travelers University Modeling Competition - register by October 22. See <a href="https://edstem.org/us/courses/101204/discussion/8395549">Ed Discussion</a> for details</p></li>
 </ul>
 </section>
+<section id="exam-01" class="slide level2">
+<h2>Exam 01</h2>
+<ul>
+<li><p>Submit regrade requests by <strong>tomorrow, October 16 at 11:59pm</strong></p>
+<ul>
+<li>Please review solutions before submitting a regrade request</li>
+</ul></li>
+<li><p>Final exam improvement incentive (see <a href="https://sta221-fa26.github.io/syllabus.html#exams">syllabus)</a><br>
+<em>For students who take all three exams, the final exam score will replace the lower of the two mid-term scores, if the final exam score is higher than the Exam 01 and/or Exam 02 score.</em></p></li>
+</ul>
+</section>
 <section id="icebreaker" class="slide level2">
 <h2>Icebreaker</h2>
-<p>What is something that has brought you joy this semester? Or something that has been unexpected?</p>
+<div class="question">
+<p>What is something that has brought you joy or made you laugh lately?</p>
+</div>
+<ul>
+<li><p>Share in groups of 2 - 3</p></li>
+<li><p>We’ll get some students to share with the class.</p></li>
+</ul>
 </section>
 <section id="computing-set-up" class="slide level2">
 <h2>Computing set up</h2>
@@ -239,9 +256,6 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-9"><a aria-label="9"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="exam-01-update" class="slide level2">
-<h2>Exam 01 [UPDATE]</h2>
-</section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
@@ -255,7 +269,7 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 </ul>
 </section>
-<section id="data-duke-lemurs" class="slide level2 midi">
+<section id="data-duke-lemurs" class="slide level2">
 <h2>Data: Duke lemurs</h2>
 <div class="midi">
 <p>Today’s data contains a subset of the original Duke Lemur data set available in the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday GitHub repo</a>. This data includes information on 252 lemurs less than 24 months old from three taxa:</p>
@@ -406,28 +420,10 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="linearity-1" class="slide level2 midi">
 <h2>Linearity</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="fragment">
+
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"><div class="fragment">
 <div class="question">
 <p>Is linearity satisfied?</p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
-<figcaption>Plot made from simulated data produced by ChatGPT</figcaption>
-</figure>
-</div>
-</div>
 </div>
 <!--# For multiple linear regression: if linearity is not satisfied, examine the plots of residuals versus each predictor to figure out which relationship is non-linear-->
 <!--# Add higher order term(s), as needed.-->
@@ -444,7 +440,7 @@ Prof.&nbsp;Maria Tackett
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -457,7 +453,7 @@ Prof.&nbsp;Maria Tackett
 <section id="example-equal-variance-not-satisfied" class="slide level2">
 <h2>Example: Equal variance not satisfied</h2>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Plot made from simulated data produced by ChatGPT</p><div class="fragment">
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:75.0%" class="r-stretch quarto-figure-center"><p class="caption">Plot made from simulated data produced by ChatGPT</p><div class="fragment">
 <ul>
 <li><p>Equal variance is critical for reliable inference. Why?</p></li>
 <li><p>Address violations by applying transformation on the response</p></li>
@@ -467,7 +463,7 @@ Prof.&nbsp;Maria Tackett
 <section id="example-equal-variance-not-satisfied-1" class="slide level2">
 <h2>Example: Equal variance not satisfied</h2>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><div class="question">
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:75.0%" class="r-stretch"><div class="question">
 <p>Is linearity satisfied in this example?</p>
 </div>
 </section>
@@ -541,7 +537,13 @@ Prof.&nbsp;Maria Tackett
 <img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Simulation produced by ChatGPT GPT-6 Astra</p></section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn</h2>
-<p>[Wooclap poll about when you need the conditions]</p>
+<div class="question">
+<p>Which condition(s) must be satisfied for a linear regression model to produce reliable predictions? Select all that apply.</p>
+</div>
+
+<img data-src="images/october-15-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><div class="center">
+<p><a href="https://app.wooclap.com/KBSSCZJ" class="uri">https://app.wooclap.com/KBSSCZJ</a></p>
+</div>
 </section></section>
 <section>
 <section id="model-diagnostics" class="title-slide slide level1 center">
@@ -672,6 +674,8 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 </table>
 </div>
 </div>
+<p><br></p>
+<p>Model coefficients do not change much because there are no influential points in the data.</p>
 </section></section>
 <section>
 <section id="leverage" class="title-slide slide level1 center">
@@ -686,8 +690,10 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 <p><span class="math display">\[
 h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_i
 \]</span>such that <span class="math inline">\(\mathbf{x}^\mathsf{T}_i\)</span> is the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\mathbf{X}\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: measures how far an observation’s predictor values are from the mean predictor values</p></li>
-<li class="fragment"><p>Observations with high values of <span class="math inline">\(h_{ii}\)</span> are far away from the typical value (or combination of values) of the <u>predictors</u> in the data</p></li>
+<li class="fragment"><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: measures how far an observation’s predictor values are from the mean predictor values</p>
+<ul>
+<li class="fragment">It measures how much <span class="math inline">\(\hat{y}_i\)</span> changes when <span class="math inline">\(y_i\)</span> changes, holding the values of the predictor constant</li>
+</ul></li>
 </ul>
 </section>
 <section id="high-leverage" class="slide level2">
@@ -771,7 +777,7 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 <ul>
 <li class="fragment">The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2(1 - h_{ii})\)</span></li>
 </ul></li>
-<li class="fragment"><p>The <strong>standardized residual</strong> (also called internally studentized residaul)is the residual rescaled by its variance</p></li>
+<li class="fragment"><p>The <strong>standardized residual</strong> (also called internally studentized residual)is the residual rescaled by its variance</p></li>
 </ul>
 <p><span class="math display">\[
 r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
@@ -787,7 +793,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <li><p>An observation is a <em>potential outlier</em> if its standardized residual has magnitude greater than 3</p></li>
 </ul>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="using-these-measures" class="slide level2">
 <h2>Using these measures</h2>
 <ul>
@@ -802,7 +808,9 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a><span class="fu">library</span>(gglm)</span>
 <span id="cb10-2"><a aria-label="2"></a><span class="fu">gglm</span>(lemurs_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><br></p>
 <p><strong>gglm</strong> documentation: <a href="https://graysonwhite.com/gglm/" class="uri">https://graysonwhite.com/gglm/</a></p>
+<p><br></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">

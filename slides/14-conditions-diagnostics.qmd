@@ -35,9 +35,24 @@ bibliography: references.bib
 
 - Travelers University Modeling Competition - register by October 22. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8395549) for details
 
+## Exam 01
+
+- Submit regrade requests by **tomorrow, October 16 at 11:59pm**
+
+  - Please review solutions before submitting a regrade request
+
+- Final exam improvement incentive (see [syllabus)](https://sta221-fa26.github.io/syllabus.html#exams)\
+  *For students who take all three exams, the final exam score will replace the lower of the two mid-term scores, if the final exam score is higher than the Exam 01 and/or Exam 02 score.*
+
 ## Icebreaker
 
-What is something that has brought you joy this semester? Or something that has been unexpected?
+::: question
+What is something that has brought you joy or made you laugh lately?
+:::
+
+- Share in groups of 2 - 3
+
+- We'll get some students to share with the class.
 
 ## Computing set up
 
@@ -56,8 +71,6 @@ library(viridis)
 ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 ```
 
-## Exam 01 \[UPDATE\]
-
 ## Topics
 
 - Model conditions
@@ -72,7 +85,7 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 
   - Cook's Distance
 
-## Data: Duke lemurs {.midi}
+## Data: Duke lemurs
 
 ```{r}
 #| echo: false
@@ -222,7 +235,7 @@ resid_v_fitted <- ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
   labs(title = "Residuals versus Fitted")
 
 resid_v_age <- ggplot(data = lemurs_aug, aes(x = age, y = .resid)) +
-  geom_point(alpha = 0.7) + 
+  geom_point(alpha = 0.7, color = "blue") + 
   geom_hline(yintercept = 0, linetype = 2, color = "red") + 
   labs(title = "Residuals versus Age")
 ```
@@ -238,6 +251,7 @@ Why does seeing no discernible pattern mean linearity is satisfied?
 ```{r}
 #| echo: false
 #| fig-align: center
+#| out-width: 75%
 
 resid_v_fitted + resid_v_age
 ```
@@ -252,6 +266,7 @@ Is linearity satisfied?
 #| echo: false
 #| fig-align: center
 #| fig-cap: Plot made from simulated data produced by ChatGPT
+#| eval: false
 #| 
 # code produced by chatgpt
 # https://chatgpt.com/c/67bd1e0e-7650-8002-b467-1bcab2e3e172
@@ -297,7 +312,7 @@ ggplot(data, aes(x = fitted, y = residuals)) +
 
 ```{r}
 #| echo: false
-#| out-width: 65%
+#| out-width: 50%
 #| fig-align: center
 
 lemurs_aug <- augment(lemurs_fit)
@@ -320,6 +335,7 @@ Is equal variance satisfied?
 #| echo: false
 #| fig-align: center
 #| fig-cap: Plot made from simulated data produced by ChatGPT
+#| out-width: 75%
 
 
 # simulation code from Chat gpt: 
@@ -377,6 +393,7 @@ ggplot(df, aes(x = fitted, y = residuals)) +
 
 ```{r}
 #| echo: false
+#| out-width: 75%
 
 ggplot(df, aes(x = fitted, y = residuals)) +
   geom_point() +
@@ -506,9 +523,17 @@ ggplot(dat, aes(x = predicted, y = residual)) +
   theme_minimal()
 ```
 
-## Your turn 
+## Your turn
 
-\[Wooclap poll about when you need the conditions\]
+::: question
+Which condition(s) must be satisfied for a linear regression model to produce reliable predictions? Select all that apply.
+:::
+
+![](images/october-15-qrcode.png){fig-align="center" width="30%"}
+
+::: center
+<https://app.wooclap.com/KBSSCZJ>
+:::
 
 # Model diagnostics
 
@@ -640,6 +665,10 @@ tidy(lemurs_fit) |>
   kable(digits = 3, col.names = c("Term", "All obs", "-Max(Cook's D)"))
 ```
 
+<br>
+
+Model coefficients do not change much because there are no influential points in the data.
+
 # Leverage
 
 ## Leverage {.midi}
@@ -655,7 +684,7 @@ tidy(lemurs_fit) |>
 
 - $h_{ii}$ is the **leverage**: measures how far an observation’s predictor values are from the mean predictor values
 
-- Observations with high values of $h_{ii}$ are far away from the typical value (or combination of values) of the <u>predictors</u> in the data
+  - It measures how much $\hat{y}_i$ changes when $y_i$ changes, holding the values of the predictor constant
 :::
 
 ## High leverage
@@ -743,14 +772,14 @@ Just because a point has high leverage does not necessarily mean it will have a 
 
   - The variance of the $i^{th}$ residual is $Var(e_i) = \sigma^2(1 - h_{ii})$
 
-- The **standardized residual** (also called internally studentized residaul)is the residual rescaled by its variance
+- The **standardized residual** (also called internally studentized residual)is the residual rescaled by its variance
 :::
 
 $$
 r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 $$
 
-## Using standardized residuals 
+## Using standardized residuals
 
 - We can use the standardized residuals in the plot of residuals versus predicted
 
@@ -760,6 +789,7 @@ $$
 
 ```{r}
 #| echo: false
+#| fig-align: center
 
 ggplot(data = lemurs_aug, aes(x = .fitted, y = .std.resid)) + 
   geom_point(alpha = 0.7) +
@@ -787,7 +817,11 @@ library(gglm)
 gglm(lemurs_fit)
 ```
 
+<br>
+
 **gglm** documentation: <https://graysonwhite.com/gglm/>
+
+<br>
 
 ::: callout-tip
 You will need to install this package in RStudio in the Docker containers.
