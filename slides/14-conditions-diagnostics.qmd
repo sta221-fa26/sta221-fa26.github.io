@@ -31,7 +31,13 @@ bibliography: references.bib
 
 ## Announcements
 
-\[UPDATE\]
+- SSMU Data Challenge - October 17. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8366022) for details
+
+- Travelers University Modeling Competition - register by October 22. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8395549) for details
+
+## Icebreaker
+
+What is something that has brought you joy this semester? Or something that has been unexpected?
 
 ## Computing set up
 
@@ -62,7 +68,7 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 
   - Leverage
 
-  - Studentized residuals
+  - Standardized residuals
 
   - Cook's Distance
 
@@ -134,8 +140,9 @@ p4 + p5
 ## Fit model
 
 ```{r}
-lemurs_fit <- lm(weight ~ age + taxon, data = lemurs)
+#| echo: false
 
+lemurs_fit <- lm(weight ~ age + taxon, data = lemurs)
 tidy(lemurs_fit) |> 
   kable(digits = 3)
 ```
@@ -178,12 +185,10 @@ $$
 . . .
 
 ::: question
-After fitting a model, we check a set of conditions to evaluate whether these assumptions hold in the data.
+After fitting a model, we check a set of conditions to evaluate whether these assumptions hold for the data.
 :::
 
-\[UPDATE - ADD WOOCLAP POLL ABOUT WHEN YOU NEED THE CONDITIONS\]
-
-## Augment data set 
+## Augment data set
 
 ```{r}
 #| echo: true
@@ -222,7 +227,7 @@ resid_v_age <- ggplot(data = lemurs_aug, aes(x = age, y = .resid)) +
   labs(title = "Residuals versus Age")
 ```
 
-. . .
+<br>
 
 ::: question
 Why does seeing no discernible pattern mean linearity is satisfied?
@@ -230,13 +235,8 @@ Why does seeing no discernible pattern mean linearity is satisfied?
 
 ## Linearity {.midi}
 
-- Examine plot of residuals versus fitted (predicted) values
-- Good practice to also check plots of residuals versus quantitative predictors
-- Linearity is satisfied if there is no discernible pattern in the plots (i.e., points randomly scattered around $\text{residuals} = 0$)
-
 ```{r}
 #| echo: false
-#| out-width: 65%
 #| fig-align: center
 
 resid_v_fitted + resid_v_age
@@ -247,8 +247,6 @@ resid_v_fitted + resid_v_age
 ::: question
 Is linearity satisfied?
 :::
-
-## <!--# Example: Linearity not satisfied-->
 
 ```{r}
 #| echo: false
@@ -311,8 +309,6 @@ ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
        y = "Residuals", 
        title = "Residuals vs. Fitted Values")
 ```
-
-<br>
 
 ::: question
 Is equal variance satisfied?
@@ -377,6 +373,24 @@ ggplot(df, aes(x = fitted, y = residuals)) +
 
 - Address violations by applying transformation on the response
 
+## Example: Equal variance not satisfied
+
+```{r}
+#| echo: false
+
+ggplot(df, aes(x = fitted, y = residuals)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(title = "Equal variance not satisfied",
+       subtitle = "Residuals vs Fitted Values", x = "Fitted Values", y = "Residuals") +
+  theme_bw()
+
+```
+
+::: question
+Is linearity satisfied in this example?
+:::
+
 ## Normality {.midi}
 
 - Look at the distribution of the residuals
@@ -400,13 +414,16 @@ ggplot(data = lemurs_aug, aes(x = .resid)) +
 Is normality satisfied?
 :::
 
-## Normal Q-Q plot 
+## Normal Q-Q plot
 
 - An alternative way to assess normality is by examining a Normal Q-Q Plot.
 
 - The distribution of residuals is approximately normal if the points lie along the diagonal line
 
 ```{r}
+#| code-fold: true
+#| fig-align: center
+
 ggplot(lemurs_aug, aes(sample = .resid)) +
   stat_qq() +
   stat_qq_line(color = "red") +
@@ -427,11 +444,12 @@ ggplot(lemurs_aug, aes(sample = .resid)) +
 
 - Can also check for dependence within subgroups that are not accounted for in the model
 
-## Independence 
+## Independence
 
 Let's check whether there is unaccounted dependence by `sex`.
 
 ```{r}
+#| echo: false
 lemurs_aug <- lemurs_aug |>
   mutate(sex = lemurs$sex)
 
@@ -449,21 +467,50 @@ Is the independence condition satisfied?
 
 ## Example of spatial correlation
 
-\[Add North Carolina example\]
+Below is a visualization of the residuals for a model of the relationship between political leanings and percentage of in-person votes cast in the 2020 election.
+
+![](images/clipboard-4197877067.png){fig-align="center" width="75%"}
+
+::: question
+What would the map look like if independence was satisfied? Is the condition satisfied?
+:::
 
 ## Example of correlation over time
 
-\[Find something online or simulated data\]
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-cap: Simulation produced by ChatGPT GPT-6 Astra
+
+set.seed(221)
+n <- 150
+
+dat <- data.frame(
+  time = seq_len(n),
+  predicted = seq(10, 30, length.out = n),
+  residual = as.numeric(arima.sim(
+    model = list(ar = 0.85), n = n, sd = 1
+  ))
+)
+
+ggplot(dat, aes(x = predicted, y = residual)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_path(color = "gray70", linewidth = 0.4) +
+  geom_point(aes(color = time), size = 2) +
+  scale_color_viridis_c(name = "Time") +
+  labs(
+    x = "Predicted values",
+    y = "Residuals",
+    title = "Residuals with time-ordered correlation"
+  ) +
+  theme_minimal()
+```
+
+## Your turn 
+
+\[Wooclap poll about when you need the conditions\]
 
 # Model diagnostics
-
-## Model diagnostics
-
-```{r}
-lemurs_aug <- augment(lemurs_fit)
-
-lemurs_aug |> slice(1:10)
-```
 
 ## Model diagnostics in R {.midi}
 
@@ -475,7 +522,14 @@ We get observation-level model diagnostics from `augment()` in R. We will use th
 
 - `.std.resid`: standardized residuals
 
-## Influential Point
+```{r}
+#| echo: false
+
+lemurs_aug |> slice(1:5)
+
+```
+
+## Influential point
 
 An observation is **influential** if removing has a noticeable impact on the regression coefficients
 
@@ -509,7 +563,7 @@ p1 + p2
 - These points can sometimes be identified in a scatterplot if there is only one predictor variable
   - This is often not the case when there are multiple predictors
 - We will use measures to quantify an individual observation's influence on the regression model
-  - **leverage**, **standardized & studentized residuals**, and **Cook's distance**
+  - **leverage**, **standardized residuals**, and **Cook's Distance**
 :::
 
 # Cook's Distance
@@ -532,7 +586,7 @@ $$
 D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 $$
 
-where $r_i$ is the studentized residual and $h_{ii}$ is the leverage for the $i^{th}$ observation
+where $r_i$ is the standardized residual and $h_{ii}$ is the leverage for the $i^{th}$ observation
 
 . . .
 
@@ -570,25 +624,20 @@ lemurs_aug |>
 
 ## Comparing models {.midi}
 
-**All observations**
-
 ```{r}
 #| echo: false
-tidy(lemurs_fit) |> 
-  kable(digits = 3)
-```
 
-<br>
-
-**Without observation with max Cook's Distance (`r round(max(lemurs_aug$.cooksd), 3)`**)
-
-```{r}
-#| echo: false
-lemurs_aug |> 
+model2 <- lemurs_aug |> 
   filter(.cooksd < max(lemurs_aug$.cooksd)) |>
-lm(weight ~ age + taxon, data = _) |>
+  lm(weight ~ age + taxon, data = _) |>
   tidy() |>
-  kable(digits = 3)
+  select(estimate)
+
+
+tidy(lemurs_fit) |> 
+  select(term, estimate) |>
+  bind_cols(model2) |>
+  kable(digits = 3, col.names = c("Term", "All obs", "-Max(Cook's D)"))
 ```
 
 # Leverage
@@ -604,12 +653,12 @@ lm(weight ~ age + taxon, data = _) |>
   h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_i
   $$such that $\mathbf{x}^\mathsf{T}_i$ is the $i^{th}$ row of $\mathbf{X}$
 
-- $h_{ii}$ is the **leverage**: a measure of the distance of the $i^{th}$ observation from the center (or centroid) of the $x$ space \[UPDATE- THIS IS NOT CORRECT\]
+- $h_{ii}$ is the **leverage**: measures how far an observation’s predictor values are from the mean predictor values
 
-- Observations with large values of $h_{ii}$ are far away from the typical value (or combination of values) of the <u>predictors</u> in the data
+- Observations with high values of $h_{ii}$ are far away from the typical value (or combination of values) of the <u>predictors</u> in the data
 :::
 
-## Large leverage
+## High leverage
 
 ::: incremental
 - The sum of the leverages for all points is $p + 1$, where $p$ is the number of predictors in the model . More specifically
@@ -620,7 +669,7 @@ lm(weight ~ age + taxon, data = _) |>
 
 - The average value of leverage, $h_{ii}$, is $\bar{h} =  \frac{(p+1)}{n}$
 
-- An observation has **large leverage** if $$h_{ii} > \frac{2(p+1)}{n}$$
+- An observation has **high leverage** if $$h_{ii} > \frac{2(p+1)}{n}$$
 :::
 
 ## Lemurs: Leverage
@@ -642,10 +691,10 @@ lemurs_aug |>
 . . .
 
 ::: question
-Why do you think these points have large leverage?
+Why do you think these points have high leverage?
 :::
 
-## Let's look at the data \[UPDATE - are they old for ERUF lemurs?\]
+## Let's look at the data
 
 ```{r}
 #| echo: false
@@ -654,16 +703,16 @@ lemurs_aug %>%
   mutate(large_h = if_else(.hat > h_threshold, "Yes", "No"),
          large_h = factor(large_h, levels = c("Yes", "No")),
          obs_num = row_number()) |>
-  ggplot(aes(x = obs_num, y = age)) +
-  geom_point(aes(color = large_h), size = 2) + 
-  labs(x = "Observation number",
-    y = "Age at weight (in months)", title = "Age of PCOQ lemurs versus observation number", 
-    color = "Large h") +
+  ggplot(aes(x = taxon, y = age)) +
+  geom_point(aes(color = large_h), size = 2, alpha = 0.7) + 
+  labs(x = "Taxon",
+    y = "Age at weight (in months)", title = "Age vs Taxon", 
+    color = "High h") +
   #theme(legend.position = "none") + 
   scale_color_viridis(discrete = T, end = 0.9)
 ```
 
-## Large leverage
+## High leverage
 
 If there is point with high leverage, ask
 
@@ -675,9 +724,9 @@ If there is point with high leverage, ask
 
 Just because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures.
 
-# Scaled residuals
+# Standardized residuals
 
-## Scaled residuals
+## Standardized residuals
 
 ::: incremental
 - What is the best way to identify outlier points that don't fit the pattern from the regression line?
@@ -687,40 +736,39 @@ Just because a point has high leverage does not necessarily mean it will have a 
 - We can rescale residuals and put them on a common scale to more easily identify "large" residuals
 :::
 
-## Standardized residuals \[ UPDATE THIS - THESE ARE ACTUALLY THE STUDENTIZED RESIDAUL FORMULA\]
+## Standardized residuals {.midi}
 
 ::: incremental
-- The variance of the residuals can be estimated by the mean squared residuals (MSR) $= \frac{SSR}{n - p - 1} = \hat{\sigma}^2_{\epsilon}$
+- The variance of the residuals is $Var(\mathbf{e}) = \sigma^2(\mathbf{I} - \mathbf{H})$
 
-- We can use MSR to compute **standardized residuals**
+  - The variance of the $i^{th}$ residual is $Var(e_i) = \sigma^2(1 - h_{ii})$
 
-  $$
-  std.res_i = \frac{e_i}{\sqrt{MSR}}
-  $$
-
-- Standardized residuals are produced by `augment()` in the column `.std.resid`
-:::
-
-------------------------------------------------------------------------
-
-## Studentized residuals \[ UPDATE - THESE ARE STANDARDIZED\] {.midi}
-
-::: incremental
-- MSR is an approximation of the variance of the residuals.
-
-- The variance of the residuals is $Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})$
-
-  - The variance of the $i^{th}$ residual is $Var(e_i) = \sigma^2_{\epsilon}(1 - h_{ii})$
-
-- The **studentized residual** is the residual rescaled by the more exact calculation for variance
+- The **standardized residual** (also called internally studentized residaul)is the residual rescaled by its variance
 :::
 
 $$
-r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
+r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 $$
 
-- Standardized and studentized residuals provide similar information about which points are outliers in the response.
-  - Studentized residuals are used to compute Cook's Distance.
+## Using standardized residuals 
+
+- We can use the standardized residuals in the plot of residuals versus predicted
+
+  - Use it to evaluate linearity, equal variance, and outliers
+
+- An observation is a *potential outlier* if its standardized residual has magnitude greater than 3
+
+```{r}
+#| echo: false
+
+ggplot(data = lemurs_aug, aes(x = .fitted, y = .std.resid)) + 
+  geom_point(alpha = 0.7) +
+  geom_hline(yintercept = 3, color = "red", linetype =2)+
+  geom_hline(yintercept = -3, color = "red", linetype = 2) +
+  labs(x  = "Fitted values",
+       y = "Std. Residuals",
+       title = "Standardized residuals vs. fitted")
+```
 
 ## Using these measures
 
@@ -728,11 +776,31 @@ $$
 
 - Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.
 
-## R package to make all plots
+## Diagnostic plots using gglm
 
-- need to install in the contianers
+Can make main diagnostic plots using `gglm()` in the **gglm** R package
 
-- <https://graysonwhite.com/gglm/>
+```{r}
+#| echo: true
+#| eval: false
+library(gglm)
+gglm(lemurs_fit)
+```
+
+**gglm** documentation: <https://graysonwhite.com/gglm/>
+
+::: callout-tip
+You will need to install this package in RStudio in the Docker containers.
+:::
+
+## Diagnostic plots using gglm
+
+```{r}
+#| echo: false
+
+library(gglm)
+gglm(lemurs_fit)
+```
 
 ## What to do with outliers/influential points?
 
@@ -770,7 +838,7 @@ $$
 
   - Leverage
 
-  - Studentized residuals
+  - Standardized residuals
 
 Cook's Distance
 

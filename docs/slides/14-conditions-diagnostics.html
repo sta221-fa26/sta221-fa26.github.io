@@ -216,7 +216,14 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
-<p>[UPDATE]</p>
+<ul>
+<li><p>SSMU Data Challenge - October 17. See <a href="https://edstem.org/us/courses/101204/discussion/8366022">Ed Discussion</a> for details</p></li>
+<li><p>Travelers University Modeling Competition - register by October 22. See <a href="https://edstem.org/us/courses/101204/discussion/8395549">Ed Discussion</a> for details</p></li>
+</ul>
+</section>
+<section id="icebreaker" class="slide level2">
+<h2>Icebreaker</h2>
+<p>What is something that has brought you joy this semester? Or something that has been unexpected?</p>
 </section>
 <section id="computing-set-up" class="slide level2">
 <h2>Computing set up</h2>
@@ -243,7 +250,7 @@ Prof.&nbsp;Maria Tackett
 <li><p>Model diagnostics</p>
 <ul>
 <li><p>Leverage</p></li>
-<li><p>Studentized residuals</p></li>
+<li><p>Standardized residuals</p></li>
 <li><p>Cook’s Distance</p></li>
 </ul></li>
 </ul>
@@ -271,10 +278,6 @@ Prof.&nbsp;Maria Tackett
 <section id="fit-model" class="slide level2">
 <h2>Fit model</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>lemurs_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> age <span class="sc">+</span> taxon, <span class="at">data =</span> lemurs)</span>
-<span id="cb2-2"><a aria-label="2"></a></span>
-<span id="cb2-3"><a aria-label="3"></a><span class="fu">tidy</span>(lemurs_fit) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a aria-label="4"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -361,15 +364,14 @@ Prof.&nbsp;Maria Tackett
 </ol>
 <div class="fragment">
 <div class="question">
-<p>After fitting a model, we check a set of conditions to evaluate whether these assumptions hold in the data.</p>
+<p>After fitting a model, we check a set of conditions to evaluate whether these assumptions hold for the data.</p>
 </div>
-<p>[UPDATE - ADD WOOCLAP POLL ABOUT WHEN YOU NEED THE CONDITIONS]</p>
 </div>
 </section>
 <section id="augment-data-set" class="slide level2">
 <h2>Augment data set</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>lemurs_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(lemurs_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>lemurs_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(lemurs_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -397,32 +399,40 @@ Prof.&nbsp;Maria Tackett
 <li>Linearity is satisfied if there is no discernible pattern in the plots (i.e., points randomly scattered around <span class="math inline">\(\text{residuals} = 0\)</span>)</li>
 </ul>
 <p><br></p>
-<div class="fragment">
+<p><br></p>
 <div class="question">
 <p>Why does seeing no discernible pattern mean linearity is satisfied?</p>
-</div>
 </div>
 </section>
 <section id="linearity-1" class="slide level2 midi">
 <h2>Linearity</h2>
-<ul>
-<li>Examine plot of residuals versus fitted (predicted) values</li>
-<li>Good practice to also check plots of residuals versus quantitative predictors</li>
-<li>Linearity is satisfied if there is no discernible pattern in the plots (i.e., points randomly scattered around <span class="math inline">\(\text{residuals} = 0\)</span>)</li>
-</ul>
-
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%"><div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
 <div class="question">
 <p>Is linearity satisfied?</p>
 </div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<figcaption>Plot made from simulated data produced by ChatGPT</figcaption>
+</figure>
 </div>
-</section>
-<section id="section" class="slide level2">
-<h2><!--# Example: Linearity not satisfied--></h2>
-
+</div>
+</div>
 <!--# For multiple linear regression: if linearity is not satisfied, examine the plots of residuals versus each predictor to figure out which relationship is non-linear-->
 <!--# Add higher order term(s), as needed.-->
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Plot made from simulated data produced by ChatGPT</p></section>
+</div>
+</section>
 <section id="equal-variance" class="slide level2 midi">
 <h2>Equal variance</h2>
 <ul>
@@ -439,7 +449,6 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 </div>
-<p><br></p>
 <div class="question">
 <p>Is equal variance satisfied?</p>
 </div>
@@ -455,6 +464,13 @@ Prof.&nbsp;Maria Tackett
 </ul>
 </div>
 </section>
+<section id="example-equal-variance-not-satisfied-1" class="slide level2">
+<h2>Example: Equal variance not satisfied</h2>
+
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><div class="question">
+<p>Is linearity satisfied in this example?</p>
+</div>
+</section>
 <section id="normality" class="slide level2 midi">
 <h2>Normality</h2>
 <ul>
@@ -465,7 +481,7 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 </ul>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%"><div class="fragment">
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%"><div class="fragment">
 <div class="question">
 <p>Is normality satisfied?</p>
 </div>
@@ -477,18 +493,21 @@ Prof.&nbsp;Maria Tackett
 <li><p>An alternative way to assess normality is by examining a Normal Q-Q Plot.</p></li>
 <li><p>The distribution of residuals is approximately normal if the points lie along the diagonal line</p></li>
 </ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="fu">ggplot</span>(lemurs_aug, <span class="fu">aes</span>(<span class="at">sample =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"Normal Q-Q Plot"</span>,</span>
-<span id="cb5-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
-<span id="cb5-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Residual Quantiles"</span></span>
-<span id="cb5-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="fu">ggplot</span>(lemurs_aug, <span class="fu">aes</span>(<span class="at">sample =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb4-2"><a aria-label="2"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a aria-label="3"></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"Normal Q-Q Plot"</span>,</span>
+<span id="cb4-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
+<span id="cb4-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Residual Quantiles"</span></span>
+<span id="cb4-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="independence" class="slide level2">
 <h2>Independence</h2>
 <ul>
@@ -503,57 +522,31 @@ Prof.&nbsp;Maria Tackett
 <section id="independence-1" class="slide level2">
 <h2>Independence</h2>
 <p>Let’s check whether there is unaccounted dependence by <code>sex</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>lemurs_aug <span class="ot">&lt;-</span> lemurs_aug <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> lemurs<span class="sc">$</span>sex)</span>
-<span id="cb6-3"><a aria-label="3"></a></span>
-<span id="cb6-4"><a aria-label="4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lemurs_aug, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb6-5"><a aria-label="5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)<span class="sc">+</span> </span>
-<span id="cb6-6"><a aria-label="6"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb6-7"><a aria-label="7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sex"</span>, </span>
-<span id="cb6-8"><a aria-label="8"></a>       <span class="at">y =</span> <span class="st">"Residuals"</span>, </span>
-<span id="cb6-9"><a aria-label="9"></a>       <span class="at">title =</span> <span class="st">"Residuals versus Sex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div>
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><div class="question">
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"><div class="question">
 <p>Is the independence condition satisfied?</p>
 </div>
 </section>
 <section id="example-of-spatial-correlation" class="slide level2">
 <h2>Example of spatial correlation</h2>
-<p>[Add North Carolina example]</p>
+<p>Below is a visualization of the residuals for a model of the relationship between political leanings and percentage of in-person votes cast in the 2020 election.</p>
+
+<img data-src="images/clipboard-4197877067.png" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"><div class="question">
+<p>What would the map look like if independence was satisfied? Is the condition satisfied?</p>
+</div>
 </section>
 <section id="example-of-correlation-over-time" class="slide level2">
 <h2>Example of correlation over time</h2>
-<p>[Find something online or simulated data]</p>
+
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Simulation produced by ChatGPT GPT-6 Astra</p></section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<p>[Wooclap poll about when you need the conditions]</p>
 </section></section>
 <section>
 <section id="model-diagnostics" class="title-slide slide level1 center">
 <h1>Model diagnostics</h1>
 
-</section>
-<section id="model-diagnostics-1" class="slide level2">
-<h2>Model diagnostics</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>lemurs_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(lemurs_fit)</span>
-<span id="cb7-2"><a aria-label="2"></a></span>
-<span id="cb7-3"><a aria-label="3"></a>lemurs_aug <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 9
-   weight   age taxon .fitted .resid   .hat .sigma   .cooksd .std.resid
-    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
- 1    410  2.27 ERUF    295.   115.  0.0244   534. 0.000299       0.219
- 2    137  0.72 ERUF     81.8   55.2 0.0263   534. 0.0000745      0.105
- 3    206  0.69 PCOQ    542.  -336.  0.0153   533. 0.00157       -0.635
- 4    185  1.05 PCOQ    591.  -406.  0.0149   533. 0.00223       -0.768
- 5    373  2.66 PCOQ    813.  -440.  0.0132   533. 0.00231       -0.831
- 6    200  0.76 ERUF     87.3  113.  0.0262   534. 0.000310       0.214
- 7   1861  9.01 ERUF   1222.   639.  0.0208   532. 0.00782        1.21 
- 8   1634  8.02 ERUF   1086.   548.  0.0209   533. 0.00577        1.04 
- 9    636  2.76 ERUF    362.   274.  0.0239   533. 0.00165        0.520
-10    373  1.74 ERUF    222.   151.  0.0250   534. 0.000528       0.287</code></pre>
-</div>
-</div>
 </section>
 <section id="model-diagnostics-in-r" class="slide level2 midi">
 <h2>Model diagnostics in R</h2>
@@ -563,12 +556,24 @@ Prof.&nbsp;Maria Tackett
 <li><p><code>.cooksd</code>: Cook’s distance</p></li>
 <li><p><code>.std.resid</code>: standardized residuals</p></li>
 </ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+  weight   age taxon .fitted .resid   .hat .sigma   .cooksd .std.resid sex  
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;
+1    410  2.27 ERUF    295.   115.  0.0244   534. 0.000299       0.219 F    
+2    137  0.72 ERUF     81.8   55.2 0.0263   534. 0.0000745      0.105 F    
+3    206  0.69 PCOQ    542.  -336.  0.0153   533. 0.00157       -0.635 F    
+4    185  1.05 PCOQ    591.  -406.  0.0149   533. 0.00223       -0.768 M    
+5    373  2.66 PCOQ    813.  -440.  0.0132   533. 0.00231       -0.831 F    </code></pre>
+</div>
+</div>
 </section>
 <section id="influential-point" class="slide level2">
-<h2>Influential Point</h2>
+<h2>Influential point</h2>
 <p>An observation is <strong>influential</strong> if removing has a noticeable impact on the regression coefficients</p>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
 <section id="influential-points" class="slide level2">
 <h2>Influential points</h2>
 <ul>
@@ -579,7 +584,7 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 <li class="fragment">We will use measures to quantify an individual observation’s influence on the regression model
 <ul>
-<li class="fragment"><strong>leverage</strong>, <strong>standardized &amp; studentized residuals</strong>, and <strong>Cook’s distance</strong></li>
+<li class="fragment"><strong>leverage</strong>, <strong>standardized residuals</strong>, and <strong>Cook’s Distance</strong></li>
 </ul></li>
 </ul>
 </section></section>
@@ -605,7 +610,7 @@ Prof.&nbsp;Maria Tackett
 <p><span class="math display">\[
 D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 \]</span></p>
-<p>where <span class="math inline">\(r_i\)</span> is the studentized residual and <span class="math inline">\(h_{ii}\)</span> is the leverage for the <span class="math inline">\(i^{th}\)</span> observation</p>
+<p>where <span class="math inline">\(r_i\)</span> is the standardized residual and <span class="math inline">\(h_{ii}\)</span> is the leverage for the <span class="math inline">\(i^{th}\)</span> observation</p>
 <div class="fragment">
 <p>This measure is a combination of</p>
 <ul>
@@ -629,97 +634,39 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 <h2>Cook’s Distance</h2>
 <p>Cook’s Distance is in the column <code>.cooksd</code> in the output from <code>augment()</code></p>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
 <section id="comparing-models" class="slide level2 midi">
 <h2>Comparing models</h2>
-<p><strong>All observations</strong></p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">All obs</th>
+<th style="text-align: right;">-Max(Cook’s D)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
 <td style="text-align: right;">-17.270</td>
-<td style="text-align: right;">87.968</td>
-<td style="text-align: right;">-0.196</td>
-<td style="text-align: right;">0.845</td>
+<td style="text-align: right;">19.583</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">age</td>
 <td style="text-align: right;">137.550</td>
-<td style="text-align: right;">4.824</td>
-<td style="text-align: right;">28.515</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">133.392</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">taxonPCOQ</td>
 <td style="text-align: right;">463.997</td>
-<td style="text-align: right;">94.728</td>
-<td style="text-align: right;">4.898</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">423.287</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">taxonVRUB</td>
 <td style="text-align: right;">999.722</td>
-<td style="text-align: right;">92.148</td>
-<td style="text-align: right;">10.849</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<p><strong>Without observation with max Cook’s Distance (0.303</strong>)</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">19.583</td>
-<td style="text-align: right;">80.447</td>
-<td style="text-align: right;">0.243</td>
-<td style="text-align: right;">0.808</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">age</td>
-<td style="text-align: right;">133.392</td>
-<td style="text-align: right;">4.441</td>
-<td style="text-align: right;">30.037</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">taxonPCOQ</td>
-<td style="text-align: right;">423.287</td>
-<td style="text-align: right;">86.639</td>
-<td style="text-align: right;">4.886</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">taxonVRUB</td>
 <td style="text-align: right;">1003.960</td>
-<td style="text-align: right;">84.098</td>
-<td style="text-align: right;">11.938</td>
-<td style="text-align: right;">0.000</td>
 </tr>
 </tbody>
 </table>
@@ -739,59 +686,59 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 <p><span class="math display">\[
 h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_i
 \]</span>such that <span class="math inline">\(\mathbf{x}^\mathsf{T}_i\)</span> is the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\mathbf{X}\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: a measure of the distance of the <span class="math inline">\(i^{th}\)</span> observation from the center (or centroid) of the <span class="math inline">\(x\)</span> space [UPDATE- THIS IS NOT CORRECT]</p></li>
-<li class="fragment"><p>Observations with large values of <span class="math inline">\(h_{ii}\)</span> are far away from the typical value (or combination of values) of the <u>predictors</u> in the data</p></li>
+<li class="fragment"><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: measures how far an observation’s predictor values are from the mean predictor values</p></li>
+<li class="fragment"><p>Observations with high values of <span class="math inline">\(h_{ii}\)</span> are far away from the typical value (or combination of values) of the <u>predictors</u> in the data</p></li>
 </ul>
 </section>
-<section id="large-leverage" class="slide level2">
-<h2>Large leverage</h2>
+<section id="high-leverage" class="slide level2">
+<h2>High leverage</h2>
 <ul>
 <li class="fragment"><p>The sum of the leverages for all points is <span class="math inline">\(p + 1\)</span>, where <span class="math inline">\(p\)</span> is the number of predictors in the model . More specifically</p>
 <p><span class="math display">\[
 \sum_{i=1}^n h_{ii} = \text{rank}(\mathbf{H}) = \text{rank}(\mathbf{X}) = p+1
 \]</span></p></li>
 <li class="fragment"><p>The average value of leverage, <span class="math inline">\(h_{ii}\)</span>, is <span class="math inline">\(\bar{h} =  \frac{(p+1)}{n}\)</span></p></li>
-<li class="fragment"><p>An observation has <strong>large leverage</strong> if <span class="math display">\[h_{ii} &gt; \frac{2(p+1)}{n}\]</span></p></li>
+<li class="fragment"><p>An observation has <strong>high leverage</strong> if <span class="math display">\[h_{ii} &gt; \frac{2(p+1)}{n}\]</span></p></li>
 </ul>
 </section>
 <section id="lemurs-leverage" class="slide level2">
 <h2>Lemurs: Leverage</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>h_threshold <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">nrow</span>(lemurs)</span>
-<span id="cb9-2"><a aria-label="2"></a>h_threshold</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>h_threshold <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">nrow</span>(lemurs)</span>
+<span id="cb6-2"><a aria-label="2"></a>h_threshold</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.03174603</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>lemurs_aug <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">filter</span>(.hat <span class="sc">&gt;</span> h_threshold)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>lemurs_aug <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">filter</span>(.hat <span class="sc">&gt;</span> h_threshold)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 9
-  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid
-   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
-1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588
-2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53 
-3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99 
-4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65 
-5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89 </code></pre>
+<pre><code># A tibble: 5 × 10
+  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;
+1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    
+2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    
+3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    
+4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    
+5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    </code></pre>
 </div>
 </div>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="question">
-<p>Why do you think these points have large leverage?</p>
+<p>Why do you think these points have high leverage?</p>
 </div>
 </div>
 </section>
-<section id="lets-look-at-the-data-update---are-they-old-for-eruf-lemurs" class="slide level2">
-<h2>Let’s look at the data [UPDATE - are they old for ERUF lemurs?]</h2>
+<section id="lets-look-at-the-data" class="slide level2">
+<h2>Let’s look at the data</h2>
 
-<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
-<section id="large-leverage-1" class="slide level2">
-<h2>Large leverage</h2>
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<section id="high-leverage-1" class="slide level2">
+<h2>High leverage</h2>
 <p>If there is point with high leverage, ask</p>
 <ul>
 <li>❓ Is there a data entry error?</li>
@@ -803,12 +750,12 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 </div>
 </section></section>
 <section>
-<section id="scaled-residuals" class="title-slide slide level1 center">
-<h1>Scaled residuals</h1>
+<section id="standardized-residuals" class="title-slide slide level1 center">
+<h1>Standardized residuals</h1>
 
 </section>
-<section id="scaled-residuals-1" class="slide level2">
-<h2>Scaled residuals</h2>
+<section id="standardized-residuals-1" class="slide level2">
+<h2>Standardized residuals</h2>
 <ul>
 <li class="fragment"><p>What is the best way to identify outlier points that don’t fit the pattern from the regression line?</p>
 <ul>
@@ -817,37 +764,30 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 <li class="fragment"><p>We can rescale residuals and put them on a common scale to more easily identify “large” residuals</p></li>
 </ul>
 </section>
-<section id="standardized-residuals-update-this---these-are-actually-the-studentized-residaul-formula" class="slide level2">
-<h2>Standardized residuals [ UPDATE THIS - THESE ARE ACTUALLY THE STUDENTIZED RESIDAUL FORMULA]</h2>
+<section id="standardized-residuals-2" class="slide level2 midi">
+<h2>Standardized residuals</h2>
 <ul>
-<li class="fragment"><p>The variance of the residuals can be estimated by the mean squared residuals (MSR) <span class="math inline">\(= \frac{SSR}{n - p - 1} = \hat{\sigma}^2_{\epsilon}\)</span></p></li>
-<li class="fragment"><p>We can use MSR to compute <strong>standardized residuals</strong></p>
-<p><span class="math display">\[
-std.res_i = \frac{e_i}{\sqrt{MSR}}
-\]</span></p></li>
-<li class="fragment"><p>Standardized residuals are produced by <code>augment()</code> in the column <code>.std.resid</code></p></li>
-</ul>
-</section>
-<section id="studentized-residuals-update---these-are-standardized" class="slide level2 midi">
-<h2>Studentized residuals [ UPDATE - THESE ARE STANDARDIZED]</h2>
+<li class="fragment"><p>The variance of the residuals is <span class="math inline">\(Var(\mathbf{e}) = \sigma^2(\mathbf{I} - \mathbf{H})\)</span></p>
 <ul>
-<li class="fragment"><p>MSR is an approximation of the variance of the residuals.</p></li>
-<li class="fragment"><p>The variance of the residuals is <span class="math inline">\(Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})\)</span></p>
-<ul>
-<li class="fragment">The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2_{\epsilon}(1 - h_{ii})\)</span></li>
+<li class="fragment">The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2(1 - h_{ii})\)</span></li>
 </ul></li>
-<li class="fragment"><p>The <strong>studentized residual</strong> is the residual rescaled by the more exact calculation for variance</p></li>
+<li class="fragment"><p>The <strong>standardized residual</strong> (also called internally studentized residaul)is the residual rescaled by its variance</p></li>
 </ul>
 <p><span class="math display">\[
-r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
+r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 \]</span></p>
-<ul>
-<li>Standardized and studentized residuals provide similar information about which points are outliers in the response.
-<ul>
-<li>Studentized residuals are used to compute Cook’s Distance.</li>
-</ul></li>
-</ul>
 </section>
+<section id="using-standardized-residuals" class="slide level2">
+<h2>Using standardized residuals</h2>
+<ul>
+<li><p>We can use the standardized residuals in the plot of residuals versus predicted</p>
+<ul>
+<li>Use it to evaluate linearity, equal variance, and outliers</li>
+</ul></li>
+<li><p>An observation is a <em>potential outlier</em> if its standardized residual has magnitude greater than 3</p></li>
+</ul>
+
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
 <section id="using-these-measures" class="slide level2">
 <h2>Using these measures</h2>
 <ul>
@@ -855,13 +795,32 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 <li><p>Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.</p></li>
 </ul>
 </section>
-<section id="r-package-to-make-all-plots" class="slide level2">
-<h2>R package to make all plots</h2>
-<ul>
-<li><p>need to install in the contianers</p></li>
-<li><p><a href="https://graysonwhite.com/gglm/" class="uri">https://graysonwhite.com/gglm/</a></p></li>
-</ul>
+<section id="diagnostic-plots-using-gglm" class="slide level2">
+<h2>Diagnostic plots using gglm</h2>
+<p>Can make main diagnostic plots using <code>gglm()</code> in the <strong>gglm</strong> R package</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a><span class="fu">library</span>(gglm)</span>
+<span id="cb10-2"><a aria-label="2"></a><span class="fu">gglm</span>(lemurs_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>gglm</strong> documentation: <a href="https://graysonwhite.com/gglm/" class="uri">https://graysonwhite.com/gglm/</a></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>You will need to install this package in RStudio in the Docker containers.</p>
+</div>
+</div>
+</div>
 </section>
+<section id="diagnostic-plots-using-gglm-1" class="slide level2">
+<h2>Diagnostic plots using gglm</h2>
+
+<img data-src="14-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
 <section id="what-to-do-with-outliersinfluential-points" class="slide level2">
 <h2>What to do with outliers/influential points?</h2>
 <ul>
@@ -892,7 +851,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 <li><p>Model diagnostics</p>
 <ul>
 <li><p>Leverage</p></li>
-<li><p>Studentized residuals</p></li>
+<li><p>Standardized residuals</p></li>
 </ul></li>
 </ul>
 <p>Cook’s Distance</p>

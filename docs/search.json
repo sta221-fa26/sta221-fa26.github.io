@@ -7363,7 +7363,7 @@
     "href": "slides/14-conditions-diagnostics.html#announcements",
     "title": "Model conditions + diagnostics",
     "section": "Announcements",
-    "text": "Announcements\n[UPDATE]"
+    "text": "Announcements\n\nSSMU Data Challenge - October 17. See Ed Discussion for details\nTravelers University Modeling Competition - register by October 22. See Ed Discussion for details"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#computing-set-up",
@@ -7377,7 +7377,7 @@
     "href": "slides/14-conditions-diagnostics.html#topics",
     "title": "Model conditions + diagnostics",
     "section": "Topics",
-    "text": "Topics\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStudentized residuals\nCook’s Distance"
+    "text": "Topics\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\nCook’s Distance"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#data-duke-lemurs",
@@ -7405,7 +7405,7 @@
     "href": "slides/14-conditions-diagnostics.html#fit-model",
     "title": "Model conditions + diagnostics",
     "section": "Fit model",
-    "text": "Fit model\n\nlemurs_fit &lt;- lm(weight ~ age + taxon, data = lemurs)\n\ntidy(lemurs_fit) |&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-17.270\n87.968\n-0.196\n0.845\n\n\nage\n137.550\n4.824\n28.515\n0.000\n\n\ntaxonPCOQ\n463.997\n94.728\n4.898\n0.000\n\n\ntaxonVRUB\n999.722\n92.148\n10.849\n0.000"
+    "text": "Fit model\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-17.270\n87.968\n-0.196\n0.845\n\n\nage\n137.550\n4.824\n28.515\n0.000\n\n\ntaxonPCOQ\n463.997\n94.728\n4.898\n0.000\n\n\ntaxonVRUB\n999.722\n92.148\n10.849\n0.000"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#linear-regression-model",
@@ -7426,7 +7426,7 @@
     "href": "slides/14-conditions-diagnostics.html#assumptions-for-regression-1",
     "title": "Model conditions + diagnostics",
     "section": "Assumptions for regression",
-    "text": "Assumptions for regression\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2\\mathbf{I})\n\\]\n\nLinearity: There is a linear relationship between the response and predictor variables.\nEqual variance: The variability about the least squares line is generally constant.\nNormality: The distribution of the errors (residuals) is approximately normal.\nIndependence: The errors (residuals) are independent from one another.\n\n\n\nAfter fitting a model, we check a set of conditions to evaluate whether these assumptions hold in the data.\n\n[UPDATE - ADD WOOCLAP POLL ABOUT WHEN YOU NEED THE CONDITIONS]"
+    "text": "Assumptions for regression\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2\\mathbf{I})\n\\]\n\nLinearity: There is a linear relationship between the response and predictor variables.\nEqual variance: The variability about the least squares line is generally constant.\nNormality: The distribution of the errors (residuals) is approximately normal.\nIndependence: The errors (residuals) are independent from one another.\n\n\n\nAfter fitting a model, we check a set of conditions to evaluate whether these assumptions hold for the data."
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#linearity",
@@ -7440,7 +7440,7 @@
     "href": "slides/14-conditions-diagnostics.html#linearity-1",
     "title": "Model conditions + diagnostics",
     "section": "Linearity",
-    "text": "Linearity\n\nExamine plot of residuals versus fitted (predicted) values\nGood practice to also check plots of residuals versus quantitative predictors\nLinearity is satisfied if there is no discernible pattern in the plots (i.e., points randomly scattered around \\(\\text{residuals} = 0\\))\n\n\n\n\nIs linearity satisfied?"
+    "text": "Linearity\n\n\n\n\n\n\n\n\n\n\n\nIs linearity satisfied?\n\n\n\n\n\n\nPlot made from simulated data produced by ChatGPT"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#example-linearity-not-satisfied",
@@ -7454,7 +7454,7 @@
     "href": "slides/14-conditions-diagnostics.html#equal-variance",
     "title": "Model conditions + diagnostics",
     "section": "Equal variance",
-    "text": "Equal variance\n\nExamine plot of residuals versus fitted (predicted) values\nEqual variance is satisfied if the vertical spread of the points is approximately equal for all fitted values\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs equal variance satisfied?"
+    "text": "Equal variance\n\nExamine plot of residuals versus fitted (predicted) values\nEqual variance is satisfied if the vertical spread of the points is approximately equal for all fitted values\n\n\n\n\n\n\n\n\n\n\n\n\nIs equal variance satisfied?"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#example-equal-variance-not-satisfied",
@@ -7489,21 +7489,21 @@
     "href": "slides/14-conditions-diagnostics.html#model-diagnostics-in-r",
     "title": "Model conditions + diagnostics",
     "section": "Model diagnostics in R",
-    "text": "Model diagnostics in R\nWe get observation-level model diagnostics from augment() in R. We will use the following columns:\n\n.hat: leverage\n.cooksd: Cook’s distance\n.std.resid: standardized residuals"
+    "text": "Model diagnostics in R\nWe get observation-level model diagnostics from augment() in R. We will use the following columns:\n\n.hat: leverage\n.cooksd: Cook’s distance\n.std.resid: standardized residuals\n\n\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma   .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1    410  2.27 ERUF    295.   115.  0.0244   534. 0.000299       0.219 F    \n2    137  0.72 ERUF     81.8   55.2 0.0263   534. 0.0000745      0.105 F    \n3    206  0.69 PCOQ    542.  -336.  0.0153   533. 0.00157       -0.635 F    \n4    185  1.05 PCOQ    591.  -406.  0.0149   533. 0.00223       -0.768 M    \n5    373  2.66 PCOQ    813.  -440.  0.0132   533. 0.00231       -0.831 F"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#influential-point",
     "href": "slides/14-conditions-diagnostics.html#influential-point",
     "title": "Model conditions + diagnostics",
-    "section": "Influential Point",
-    "text": "Influential Point\nAn observation is influential if removing has a noticeable impact on the regression coefficients"
+    "section": "Influential point",
+    "text": "Influential point\nAn observation is influential if removing has a noticeable impact on the regression coefficients"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#influential-points",
     "href": "slides/14-conditions-diagnostics.html#influential-points",
     "title": "Model conditions + diagnostics",
     "section": "Influential points",
-    "text": "Influential points\n\nInfluential points have a noticeable impact on the coefficients and their standard errors\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized & studentized residuals, and Cook’s distance"
+    "text": "Influential points\n\nInfluential points have a noticeable impact on the coefficients and their standard errors\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized residuals, and Cook’s Distance"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#motivating-cooks-distance",
@@ -7517,7 +7517,7 @@
     "href": "slides/14-conditions-diagnostics.html#cooks-distance-1",
     "title": "Model conditions + diagnostics",
     "section": "Cook’s Distance",
-    "text": "Cook’s Distance\nCook’s distance for the \\(i^{th}\\) observation is\n\\[\nD_i = \\frac{r^2_i}{p + 1}\\Big(\\frac{h_{ii}}{1 - h_{ii}}\\Big)\n\\]\nwhere \\(r_i\\) is the studentized residual and \\(h_{ii}\\) is the leverage for the \\(i^{th}\\) observation\n\nThis measure is a combination of\n\nHow well the model fits the \\(i^{th}\\) observation (magnitude of residuals)\nHow far the \\(i^{th}\\) observation is from the rest of the data"
+    "text": "Cook’s Distance\nCook’s distance for the \\(i^{th}\\) observation is\n\\[\nD_i = \\frac{r^2_i}{p + 1}\\Big(\\frac{h_{ii}}{1 - h_{ii}}\\Big)\n\\]\nwhere \\(r_i\\) is the standardized residual and \\(h_{ii}\\) is the leverage for the \\(i^{th}\\) observation\n\nThis measure is a combination of\n\nHow well the model fits the \\(i^{th}\\) observation (magnitude of residuals)\nHow far the \\(i^{th}\\) observation is from the rest of the data"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#using-cooks-distance",
@@ -7538,14 +7538,14 @@
     "href": "slides/14-conditions-diagnostics.html#comparing-models",
     "title": "Model conditions + diagnostics",
     "section": "Comparing models",
-    "text": "Comparing models\nAll observations\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-17.270\n87.968\n-0.196\n0.845\n\n\nage\n137.550\n4.824\n28.515\n0.000\n\n\ntaxonPCOQ\n463.997\n94.728\n4.898\n0.000\n\n\ntaxonVRUB\n999.722\n92.148\n10.849\n0.000\n\n\n\n\n\n\nWithout observation with max Cook’s Distance (0.303)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.583\n80.447\n0.243\n0.808\n\n\nage\n133.392\n4.441\n30.037\n0.000\n\n\ntaxonPCOQ\n423.287\n86.639\n4.886\n0.000\n\n\ntaxonVRUB\n1003.960\n84.098\n11.938\n0.000"
+    "text": "Comparing models\n\n\n\n\n\nTerm\nAll obs\n-Max(Cook’s D)\n\n\n\n\n(Intercept)\n-17.270\n19.583\n\n\nage\n137.550\n133.392\n\n\ntaxonPCOQ\n463.997\n423.287\n\n\ntaxonVRUB\n999.722\n1003.960"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#leverage-1",
     "href": "slides/14-conditions-diagnostics.html#leverage-1",
     "title": "Model conditions + diagnostics",
     "section": "Leverage",
-    "text": "Leverage\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^\\mathsf{T}_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: a measure of the distance of the \\(i^{th}\\) observation from the center (or centroid) of the \\(x\\) space [UPDATE- THIS IS NOT CORRECT]\nObservations with large values of \\(h_{ii}\\) are far away from the typical value (or combination of values) of the predictors in the data"
+    "text": "Leverage\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^\\mathsf{T}_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: measures how far an observation’s predictor values are from the mean predictor values\nObservations with high values of \\(h_{ii}\\) are far away from the typical value (or combination of values) of the predictors in the data"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#large-leverage",
@@ -7559,7 +7559,7 @@
     "href": "slides/14-conditions-diagnostics.html#lemurs-leverage",
     "title": "Model conditions + diagnostics",
     "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 9\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid\n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588\n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53 \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99 \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65 \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89 \n\n\n\n\n\n\nWhy do you think these points have large leverage?"
+    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    \n\n\n\n\n\n\nWhy do you think these points have high leverage?"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#lets-look-at-the-data",
@@ -7594,7 +7594,7 @@
     "href": "slides/14-conditions-diagnostics.html#using-standardized-residuals",
     "title": "Model conditions + diagnostics",
     "section": "Using standardized residuals",
-    "text": "Using standardized residuals\nWe can examine the standardized residuals directly from the output from the augment() function\n\n\nAn observation is a potential outlier if its standardized residual is beyond \\(\\pm 3\\)"
+    "text": "Using standardized residuals\n\nWe can use the standardized residuals in the plot of residuals versus predicted\n\nUse it to evaluate linearity, equal variance, and outliers\n\nAn observation is a potential outlier if its standardized residual has magnitude greater than 3"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#digging-in-to-the-data",
@@ -7643,7 +7643,7 @@
     "href": "slides/14-conditions-diagnostics.html#recap",
     "title": "Model conditions + diagnostics",
     "section": "Recap",
-    "text": "Recap\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStudentized residuals\n\n\nCook’s Distance"
+    "text": "Recap\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\n\n\nCook’s Distance"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#next-class",
@@ -7692,28 +7692,28 @@
     "href": "slides/14-conditions-diagnostics.html#normal-q-q-plot",
     "title": "Model conditions + diagnostics",
     "section": "Normal Q-Q plot",
-    "text": "Normal Q-Q plot\n\nAn alternative way to assess normality is by examining a Normal Q-Q Plot.\nThe distribution of residuals is approximately normal if the points lie along the diagonal line\n\n\nggplot(lemurs_aug, aes(sample = .resid)) +\n  stat_qq() +\n  stat_qq_line(color = \"red\") +\n  labs(\n    title = \"Normal Q-Q Plot\",\n    x = \"Theoretical Quantiles\",\n    y = \"Residual Quantiles\"\n  )"
+    "text": "Normal Q-Q plot\n\nAn alternative way to assess normality is by examining a Normal Q-Q Plot.\nThe distribution of residuals is approximately normal if the points lie along the diagonal line\n\n\n\nCode\nggplot(lemurs_aug, aes(sample = .resid)) +\n  stat_qq() +\n  stat_qq_line(color = \"red\") +\n  labs(\n    title = \"Normal Q-Q Plot\",\n    x = \"Theoretical Quantiles\",\n    y = \"Residual Quantiles\"\n  )"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#independence-1",
     "href": "slides/14-conditions-diagnostics.html#independence-1",
     "title": "Model conditions + diagnostics",
     "section": "Independence",
-    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex.\n\nlemurs_aug &lt;- lemurs_aug |&gt;\n  mutate(sex = lemurs$sex)\n\nggplot(data = lemurs_aug, aes(x = sex, y = .resid)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.3)+ \n  geom_hline(yintercept = 0, color = \"red\", linetype = 2) + \n  labs(x = \"Sex\", \n       y = \"Residuals\", \n       title = \"Residuals versus Sex\")\n\n\n\nIs the independence condition satisfied?"
+    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex.\n\n\nIs the independence condition satisfied?"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#example-of-spatial-correlation",
     "href": "slides/14-conditions-diagnostics.html#example-of-spatial-correlation",
     "title": "Model conditions + diagnostics",
     "section": "Example of spatial correlation",
-    "text": "Example of spatial correlation\n[Add North Carolina example]"
+    "text": "Example of spatial correlation\nBelow is a visualization of the residuals for a model of the relationship between political leanings and percentage of in-person votes cast in the 2020 election.\n\n\nWhat would the map look like if independence was satisfied? Is the condition satisfied?"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#example-of-correlation-over-time",
     "href": "slides/14-conditions-diagnostics.html#example-of-correlation-over-time",
     "title": "Model conditions + diagnostics",
     "section": "Example of correlation over time",
-    "text": "Example of correlation over time\n[Find something online or simulated data]"
+    "text": "Example of correlation over time\n\nSimulation produced by ChatGPT GPT-6 Astra"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#lets-look-at-the-data-update---are-they-old-for-eruf-lemurs",
@@ -7741,7 +7741,7 @@
     "href": "slides/14-conditions-diagnostics.html#r-package-to-make-all-plots",
     "title": "Model conditions + diagnostics",
     "section": "R package to make all plots",
-    "text": "R package to make all plots\n\nneed to install in the contianers\nhttps://graysonwhite.com/gglm/"
+    "text": "R package to make all plots\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\n\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\nTip\n\n\nYou will need to install this package in RStudio in the Docker containers."
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#before-next-class",
@@ -7749,5 +7749,75 @@
     "title": "Model conditions + diagnostics",
     "section": "Before next class",
     "text": "Before next class\n\nMulticollinearity\nComplete Lecture 15 prepare"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#icebreaker",
+    "href": "slides/14-conditions-diagnostics.html#icebreaker",
+    "title": "Model conditions + diagnostics",
+    "section": "Icebreaker",
+    "text": "Icebreaker\nWhat is something that has brought you joy this semester? Or something that has been unexpected?"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#your-turn",
+    "href": "slides/14-conditions-diagnostics.html#your-turn",
+    "title": "Model conditions + diagnostics",
+    "section": "Your turn",
+    "text": "Your turn\n[Wooclap poll about when you need the conditions]"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#example-equal-variance-not-satisfied-1",
+    "href": "slides/14-conditions-diagnostics.html#example-equal-variance-not-satisfied-1",
+    "title": "Model conditions + diagnostics",
+    "section": "Example: Equal variance not satisfied",
+    "text": "Example: Equal variance not satisfied\n\n\nIs linearity satisfied in this example?"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#high-leverage",
+    "href": "slides/14-conditions-diagnostics.html#high-leverage",
+    "title": "Model conditions + diagnostics",
+    "section": "High leverage",
+    "text": "High leverage\n\nThe sum of the leverages for all points is \\(p + 1\\), where \\(p\\) is the number of predictors in the model . More specifically\n\\[\n\\sum_{i=1}^n h_{ii} = \\text{rank}(\\mathbf{H}) = \\text{rank}(\\mathbf{X}) = p+1\n\\]\nThe average value of leverage, \\(h_{ii}\\), is \\(\\bar{h} =  \\frac{(p+1)}{n}\\)\nAn observation has high leverage if \\[h_{ii} &gt; \\frac{2(p+1)}{n}\\]"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#high-leverage-1",
+    "href": "slides/14-conditions-diagnostics.html#high-leverage-1",
+    "title": "Model conditions + diagnostics",
+    "section": "High leverage",
+    "text": "High leverage\nIf there is point with high leverage, ask\n\n❓ Is there a data entry error?\n❓ Is this observation within the scope of individuals for which you want to make predictions and draw conclusions?\n❓ Is this observation impacting the estimates of the model coefficients? (Need more information!)\n\n\nJust because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures."
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#standardized-residuals-update---these-are-standardized",
+    "href": "slides/14-conditions-diagnostics.html#standardized-residuals-update---these-are-standardized",
+    "title": "Model conditions + diagnostics",
+    "section": "Standardized residuals [ UPDATE - THESE ARE STANDARDIZED]",
+    "text": "Standardized residuals [ UPDATE - THESE ARE STANDARDIZED]\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response.\n\nStudentized residuals are used to compute Cook’s Distance."
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#standardized-residuals-1",
+    "href": "slides/14-conditions-diagnostics.html#standardized-residuals-1",
+    "title": "Model conditions + diagnostics",
+    "section": "Standardized residuals",
+    "text": "Standardized residuals\n\nWhat is the best way to identify outlier points that don’t fit the pattern from the regression line?\n\nLook for points that have large residuals\n\nWe can rescale residuals and put them on a common scale to more easily identify “large” residuals"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#standardized-residuals-2",
+    "href": "slides/14-conditions-diagnostics.html#standardized-residuals-2",
+    "title": "Model conditions + diagnostics",
+    "section": "Standardized residuals",
+    "text": "Standardized residuals\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residaul)is the residual rescaled by its variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm",
+    "href": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm",
+    "title": "Model conditions + diagnostics",
+    "section": "Diagnostic plots using gglm",
+    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\nTip\n\n\nYou will need to install this package in RStudio in the Docker containers."
+  },
+  {
+    "objectID": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm-1",
+    "href": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm-1",
+    "title": "Model conditions + diagnostics",
+    "section": "Diagnostic plots using gglm",
+    "text": "Diagnostic plots using gglm"
   }
 ]
