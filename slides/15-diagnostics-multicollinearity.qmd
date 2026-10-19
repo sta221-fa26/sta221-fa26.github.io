@@ -1,0 +1,900 @@
+---
+title: "Model diagnostics + multicollinearity"
+author: "Prof. Maria Tackett"
+date: "October 20, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 15-diagnostics-multicollinearity-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements \[UPDATE - ADD WOOCLAP\]
+
+- Travelers University Modeling Competition - register by October 22. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8395549) for details
+
+- Project exploratory data analysis - due October 29 on GitHub
+
+## Computing set up
+
+```{r}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(patchwork)   
+library(viridis)
+library(GGally)   # for pairwise plot matrix
+library(corrplot) # for correlation matrix
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
+```
+
+## Topics
+
+- Influential points
+
+- Model diagnostics
+
+  - Leverage
+
+  - Standardized residuals
+
+  - Cook's Distance
+
+- Multicollinearity
+
+## Data: Duke lemurs
+
+```{r}
+#| echo: false
+
+lemurs <- read_csv("data/lemurs-sample-lt24mo.csv")
+```
+
+::: midi
+Today’s data contains a subset of the original Duke Lemur data set available in the [TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md). This data includes information on `r nrow(lemurs)` lemurs less than 24 months old from three taxa:
+
+- Eulemur rufus (ERUF), commonly known as Red-fronted brown lemur
+- Propithecus coquereli (PCOQ), commonly known as Coquerel’s sifaka
+- Varecia rubra (VRUB), commonly known as Red ruffed lemur.
+:::
+
+**We will explore the model conditions and diagnostics for a model of weight using age and taxon.**
+
+## Univariate EDA
+
+```{r}
+#| echo: false
+
+# univariate EDA
+
+p1 <- ggplot(data = lemurs, aes(x = weight)) + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 300) + 
+  labs(x = "",
+       title = "Weight in grams")
+
+p2 <- ggplot(data = lemurs, aes(x = age)) + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 1) + 
+  labs(x = "",
+       title = "Age in months")
+
+p3 <- ggplot(data = lemurs, aes(x = taxon)) + 
+  geom_bar(fill = "darkcyan", color = "black") + 
+  labs(x = "",
+       title = "Taxon")
+
+# bivariate EDA
+p4 <- ggplot(data = lemurs, aes(x = age, y = weight)) + 
+  geom_point(alpha = 0.7) + 
+  labs(x = "Age in months",
+       y = "Weight in grams", 
+       title = "Weight versus Age")
+
+p5 <- ggplot(data = lemurs, aes(x = taxon, y = weight)) + 
+  geom_boxplot(fill = "darkcyan", color = "black") + 
+  labs(x = "Taxon",
+       y = "Weight in grams", 
+       title = "Weight versus Taxon")
+
+p1 + (p2 / p3)
+
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+#| fig-align: center
+p4 + p5
+```
+
+## Fit model
+
+```{r}
+#| echo: false
+
+lemurs_fit <- lm(weight ~ age + taxon, data = lemurs)
+tidy(lemurs_fit) |> 
+  kable(digits = 3)
+```
+
+# Model conditions
+
+## Assumptions for regression {.midi}
+
+$$
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2\mathbf{I})
+$$
+
+1.  **Linearity:** There is a linear relationship between the response and predictor variables.
+2.  **Equal variance:** The variability about the least squares line is generally constant.
+3.  **Normality:** The distribution of the errors (residuals) is approximately normal.
+4.  **Independence:** The errors (residuals) are independent from one another.
+
+::: question
+After fitting a model, we check a set of conditions to evaluate whether these assumptions hold for the data.
+:::
+
+## Augment data set
+
+```{r}
+#| echo: true
+lemurs_aug <- augment(lemurs_fit)
+```
+
+```{r}
+#| echo: false
+
+lemurs_aug |> 
+  slice(1:10)
+```
+
+## Linearity {.midi}
+
+- Examine plot of residuals versus fitted (predicted) values
+- Good practice to also check plots of residuals versus quantitative predictors
+- Linearity is satisfied if there is no discernible pattern in the plots (i.e., points randomly scattered around $\text{residuals} = 0$)
+
+<br>
+
+```{r}
+#| echo: false
+#| out-width: 65%
+#| fig-align: center
+
+
+resid_v_fitted <- ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, linetype = 2, color = "red") +
+  labs(title = "Residuals versus Fitted")
+
+resid_v_age <- ggplot(data = lemurs_aug, aes(x = age, y = .resid)) +
+  geom_point(alpha = 0.7, color = "blue") + 
+  geom_hline(yintercept = 0, linetype = 2, color = "red") + 
+  labs(title = "Residuals versus Age")
+```
+
+## Linearity {.midi}
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 75%
+
+resid_v_fitted + resid_v_age
+```
+
+## Equal variance {.midi}
+
+- Examine plot of residuals versus fitted (predicted) values
+- Equal variance is satisfied if the vertical spread of the points is approximately equal for all fitted values
+
+```{r}
+#| echo: false
+#| out-width: 50%
+#| fig-align: center
+
+lemurs_aug <- augment(lemurs_fit)
+
+ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
+  geom_point() + 
+  geom_hline(yintercept = 0, linetype = 2, color = "red") + 
+  labs(x = "Fitted values", 
+       y = "Residuals", 
+       title = "Residuals vs. Fitted Values")
+```
+
+## Normality {.midi}
+
+- Look at the distribution of the residuals
+- Normality is satisfied if the distribution is approximately unimodal and symmetric.
+  - Even if normality is not satisfied, inference is robust for $n > 30$
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out.width: 65%
+
+resid_hist <- ggplot(data = lemurs_aug, aes(x = .resid)) +
+  geom_histogram(fill = "steelblue", color = "black") + 
+  labs(x = "Residuals", 
+       title = "Distribution of residuals")
+
+resid_qqplot <- ggplot(lemurs_aug, aes(sample = .resid)) +
+  stat_qq() +
+  stat_qq_line(color = "red") +
+  labs(
+    title = "Normal Q-Q Plot",
+    x = "Theoretical Quantiles",
+    y = "Residual Quantiles"
+  )
+
+resid_hist + resid_qqplot
+```
+
+## Independence
+
+- We can often check the independence condition based on the context of the data and how the observations were collected.
+
+  - If the data were collected in a particular order, examine a scatterplot of the residuals versus order in which the data were collected.
+
+  - If data has spatial element, plot residuals on a map to examine potential spatial correlation.
+
+- Can also check for dependence within subgroups that are not accounted for in the model
+
+## Independence
+
+Let's check whether there is unaccounted dependence by `sex`.
+
+```{r}
+#| echo: false
+lemurs_aug <- lemurs_aug |>
+  mutate(sex = lemurs$sex)
+
+ggplot(data = lemurs_aug, aes(x = sex, y = .resid)) +
+  geom_boxplot(fill = "steelblue", alpha = 0.3)+ 
+  geom_hline(yintercept = 0, color = "red", linetype = 2) + 
+  labs(x = "Sex", 
+       y = "Residuals", 
+       title = "Residuals versus Sex")
+```
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-cap: Simulation produced by ChatGPT GPT-6 Astra
+
+set.seed(221)
+n <- 150
+
+dat <- data.frame(
+  time = seq_len(n),
+  predicted = seq(10, 30, length.out = n),
+  residual = as.numeric(arima.sim(
+    model = list(ar = 0.85), n = n, sd = 1
+  ))
+)
+
+ggplot(dat, aes(x = predicted, y = residual)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_path(color = "gray70", linewidth = 0.4) +
+  geom_point(aes(color = time), size = 2) +
+  scale_color_viridis_c(name = "Time") +
+  labs(
+    x = "Time order",
+    y = "Residuals",
+    title = "Residuals with time-ordered correlation"
+  ) +
+  theme_minimal()
+```
+
+# Model diagnostics
+
+## Influential point
+
+An observation is **influential** if removing has a noticeable impact on the regression coefficients
+
+```{r,echo=F}
+set.seed(12)
+n <- 20
+x <- c(runif(n,0,1))
+y <- 3*x + rnorm(n,0,.5)
+new.pt <- data.frame(x=2,y=0)
+x.new <- c(x,2)
+y.new <- c(y,0)
+data <- bind_cols(x=x.new,y=y.new)
+p1<- ggplot(data=data,aes(x=x,y=y))+geom_point(alpha =0.5)  + 
+              geom_point(data=new.pt,color="red",size=3) + 
+  geom_smooth(method="lm",se=F) + 
+  labs(title = "With Influential Point")+ theme_light()+
+  theme(title=element_text(hjust=0.5,size=14)) + 
+  scale_x_continuous(limits = c(0,2)) 
+
+data2 <- bind_cols(x=x,y=y)
+p2 <- ggplot(data=data2,aes(x=x,y=y))+geom_point(alpha=0.5) + geom_smooth(method="lm",se=F) + 
+  labs(title="Without Influential Point") + 
+  scale_x_continuous(limits = c(0, 2)) + theme_light() + theme(title=element_text(hjust=0.5,size=14))  
+p1 + p2
+```
+
+## Influential points
+
+::: incremental
+- Influential points have a noticeable impact on the coefficients and their standard errors
+- These points can sometimes be identified in a scatterplot if there is only one predictor variable
+  - This is often not the case when there are multiple predictors
+- We will use measures to quantify an individual observation's influence on the regression model
+  - **leverage**, **standardized residuals**, and **Cook's Distance**
+:::
+
+## Model diagnostics in R {.midi}
+
+We get observation-level model diagnostics from `augment()` in R. We will use the following columns:
+
+- `.hat`: leverage
+
+- `.cooksd`: Cook's distance
+
+- `.std.resid`: standardized residuals
+
+```{r}
+#| echo: false
+
+lemurs_aug |> slice(1:5)
+
+```
+
+# Cook's Distance
+
+## Motivating Cook's Distance
+
+- An observation's influence on the regression line depends on
+
+  - How close it lies to the general trend of the data
+
+  - Its leverage
+
+- **Cook's Distance** is a statistic that includes both of these components to measure an observation's overall impact on the model
+
+## Cook's Distance
+
+Cook's distance for the $i^{th}$ observation is
+
+$$
+D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
+$$
+
+where $r_i$ is the standardized residual and $h_{ii}$ is the leverage for the $i^{th}$ observation
+
+. . .
+
+This measure is a combination of
+
+- How well the model fits the $i^{th}$ observation (magnitude of residuals)
+
+- How far the $i^{th}$ observation is from the rest of the data
+
+## Using Cook's Distance
+
+- An observation with large value of $D_i$ is said to have a strong influence on the predicted values
+
+- General thresholds .An observation with
+
+  - $D_i > 0.5$ is **moderately influential**
+
+  - $D_i > 1$ is **very influential**
+
+## Cook's Distance
+
+Cook's Distance is in the column `.cooksd` in the output from `augment()`
+
+```{r}
+#| echo: false
+
+lemurs_aug |>
+  mutate(obs_num = row_number()) |>
+  ggplot(aes(x = obs_num, y = .cooksd)) + 
+  geom_point() + 
+  geom_hline(yintercept = 1,color = "red") +
+  labs(x = "Observation number",
+       y = "Cook's Distance")
+```
+
+## Comparing models {.midi}
+
+```{r}
+#| echo: false
+
+model2 <- lemurs_aug |> 
+  filter(.cooksd < max(lemurs_aug$.cooksd)) |>
+  lm(weight ~ age + taxon, data = _) |>
+  tidy() |>
+  select(estimate)
+
+
+tidy(lemurs_fit) |> 
+  select(term, estimate) |>
+  bind_cols(model2) |>
+  kable(digits = 3, col.names = c("Term", "All obs", "-Max(Cook's D)"))
+```
+
+<br>
+
+Model coefficients do not change much because there are no influential points in the data.
+
+# Leverage
+
+## Leverage {.midi}
+
+::: incremental
+- Recall the **hat matrix** $\mathbf{H} = \mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}$
+
+- We focus on the diagonal elements
+
+  $$
+  h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_i
+  $$such that $\mathbf{x}^\mathsf{T}_i$ is the $i^{th}$ row of $\mathbf{X}$
+
+- $h_{ii}$ is the **leverage**: measures how far an observation’s predictor values are from the mean predictor values
+
+  - It measures how much $\hat{y}_i$ changes when $y_i$ changes, holding the values of the predictor constant
+:::
+
+## High leverage
+
+::: incremental
+- The sum of the leverages for all points is $p + 1$, where $p$ is the number of predictors in the model . More specifically
+
+  $$
+  \sum_{i=1}^n h_{ii} = \text{rank}(\mathbf{H}) = \text{rank}(\mathbf{X}) = p+1
+  $$
+
+- The average value of leverage, $h_{ii}$, is $\bar{h} =  \frac{(p+1)}{n}$
+
+- An observation has **high leverage** if $$h_{ii} > \frac{2(p+1)}{n}$$
+:::
+
+## Lemurs: Leverage
+
+```{r}
+h_threshold <- 2 * (3 + 1) / nrow(lemurs)
+h_threshold
+```
+
+. . .
+
+```{r}
+lemurs_aug |>
+  filter(.hat > h_threshold)
+```
+
+<br>
+
+. . .
+
+::: question
+Why do you think these points have high leverage?
+:::
+
+## Let's look at the data
+
+```{r}
+#| echo: false
+
+lemurs_aug %>%
+  mutate(large_h = if_else(.hat > h_threshold, "Yes", "No"),
+         large_h = factor(large_h, levels = c("Yes", "No")),
+         obs_num = row_number()) |>
+  ggplot(aes(x = taxon, y = age)) +
+  geom_point(aes(color = large_h), size = 2, alpha = 0.7) + 
+  labs(x = "Taxon",
+    y = "Age at weight (in months)", title = "Age vs Taxon", 
+    color = "High h") +
+  #theme(legend.position = "none") + 
+  scale_color_viridis(discrete = T, end = 0.9)
+```
+
+## High leverage
+
+If there is point with high leverage, ask
+
+- ❓ Is there a data entry error?
+- ❓ Is this observation within the scope of individuals for which you want to make predictions and draw conclusions?
+- ❓ Is this observation impacting the estimates of the model coefficients? (Need more information!)
+
+. . .
+
+Just because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures.
+
+# Standardized residuals
+
+## Standardized residuals
+
+::: incremental
+- What is the best way to identify outlier points that don't fit the pattern from the regression line?
+
+  - Look for points that have large residuals
+
+- We can rescale residuals and put them on a common scale to more easily identify "large" residuals
+:::
+
+## Standardized residuals {.midi}
+
+::: incremental
+- The variance of the residuals is $Var(\mathbf{e}) = \sigma^2(\mathbf{I} - \mathbf{H})$
+
+  - The variance of the $i^{th}$ residual is $Var(e_i) = \sigma^2(1 - h_{ii})$
+
+- The **standardized residual** (also called internally studentized residual)is the residual rescaled by its variance
+:::
+
+$$
+r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
+$$
+
+## Using standardized residuals
+
+- We can use the standardized residuals in the plot of residuals versus predicted
+
+  - Use it to evaluate linearity, equal variance, and outliers
+
+- An observation is a *potential outlier* if its standardized residual has magnitude greater than 3
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+ggplot(data = lemurs_aug, aes(x = .fitted, y = .std.resid)) + 
+  geom_point(alpha = 0.7) +
+  geom_hline(yintercept = 3, color = "red", linetype =2)+
+  geom_hline(yintercept = -3, color = "red", linetype = 2) +
+  labs(x  = "Fitted values",
+       y = "Std. Residuals",
+       title = "Standardized residuals vs. fitted")
+```
+
+## Using these measures
+
+- Standardized residuals, leverage, and Cook's Distance should all be examined together
+
+- Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.
+
+## Diagnostic plots using gglm
+
+Can make main diagnostic plots using `gglm()` in the **gglm** R package
+
+```{r}
+#| echo: true
+#| eval: false
+library(gglm)
+gglm(lemurs_fit)
+```
+
+<br>
+
+**gglm** documentation: <https://graysonwhite.com/gglm/>
+
+<br>
+
+::: callout-tip
+You will need to install this package in RStudio in the Docker containers.
+:::
+
+## Diagnostic plots using gglm
+
+```{r}
+#| echo: false
+
+library(gglm)
+gglm(lemurs_fit)
+```
+
+## What to do with outliers/influential points?
+
+::: incremental
+- First consider if the outlier is a result of a data entry error.
+
+- If not, you may consider dropping an observation if it's an outlier in the <u>predictor</u> variables if...
+
+  - It is meaningful to drop the observation given the context of the problem
+
+  - You intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions
+:::
+
+## What to do with outliers/influential points?
+
+::: incremental
+- It is generally **not** good practice to drop observations that ar outliers in the value of the <u>response</u> variable
+
+  - These are legitimate observations and should be in the model
+
+  - You can try transformations or increasing the sample size by collecting more data
+
+- A general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes
+:::
+
+# Multicollinearity
+
+## Data: Trail users {.midi}
+
+- The Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005 to
+- Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+rail_trail <- read_csv(here::here("slides", "data/rail_trail.csv"))
+rail_trail |> slice(1:5)
+```
+
+Source: [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
+
+## Variables
+
+**Response**
+
+- `volume` estimated number of trail users that day (number of breaks recorded)
+
+**Predictors**
+
+- `hightemp` daily high temperature (in degrees Fahrenheit)
+
+- `avgtemp` average of daily low and daily high temperature (in degrees Fahrenheit)
+
+- `season` one of “Fall”, “Spring”, or “Summer”
+
+- `precip` measure of precipitation (in inches)
+
+## EDA: Relationship between predictors
+
+We can create a pairwise plot matrix using the `ggpairs` function from the **GGally** R package
+
+```{r}
+#| eval: false
+
+rail_trail |>
+  select(hightemp, avgtemp, season, precip) |>
+  ggpairs()
+```
+
+## EDA: Relationship between predictors {.midi}
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+rail_trail |>
+  select(hightemp, avgtemp, season, precip) |>
+  ggpairs()
+```
+
+## EDA: Correlation matrix
+
+We can. use `corrplot()` in the **corrplot** R package to make a matrix of pairwise correlations between [quantitative]{.underline} predictors
+
+```{r}
+#| eval: false
+correlations <- rail_trail |>
+  select(hightemp, avgtemp, precip) |>
+  cor()
+
+corrplot(correlations, method = "number")
+```
+
+## EDA: Correlation matrix {.midi}
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+correlations <- rail_trail |>
+  select(hightemp, avgtemp, precip) |>
+  cor()
+
+
+corrplot(correlations, method = "number")
+```
+
+::: question
+What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?
+:::
+
+# Multicollinearity
+
+## Multicollinearity
+
+::: incremental
+- Ideally the predictors are orthogonal, meaning they are completely independent of one another
+
+- In practice, there is typically some dependence between predictors but it is often not a major issue in the model
+
+- If there is linear dependence among (a subset of) the predictors, we cannot find $\hat{\boldsymbol{\beta}}$
+
+- If there are near-linear dependencies, we can find $\hat{\boldsymbol{\beta}}$ but there may be other issues with the model
+
+- **Multicollinearity**: near-linear dependence among predictors
+:::
+
+## Sources of multicollinearity
+
+::: incremental
+- Data collection method - only sample from a subspace of the region of predictors
+
+- Constraints in the population - e.g., predictors family income and size of house
+
+- Choice of model - e.g., adding high order terms to the model
+
+- Overdefined model - have more predictors than observations
+:::
+
+::: aside
+Source: @montgomery2021introduction
+:::
+
+## Detecting multicollinearity
+
+::: incremental
+- Recall $Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
+- Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then $Var(\hat{\beta}_j) = \sigma^2C_{jj}$
+- When there are near-linear dependencies, $C_{jj}$ increases and thus $Var(\hat{\beta}_j)$ becomes inflated
+- $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
+:::
+
+## Variance inflation factor {.midi}
+
+- The **variance inflation factor (VIF)** measures how much the linear dependencies impact the variance of the predictors
+
+$$
+VIF_{j} = \frac{1}{1 - R^2_j}
+$$
+
+where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a linear combination of all the other predictors
+
+. . .
+
+- When the response and predictors are scaled in a particular way, $C_{jj} = VIF_{j}$. [Click here](variance-inflation-factors.html) to see how.
+
+## Detecting multicollinearity
+
+- Common practice uses threshold $VIF > 10$ as indication of concerning multicollinearity (some say VIF \> 5 is worth investigation)
+
+- Variables with similar values of VIF are typically the ones correlated with each other
+
+- Use the `vif()` function in the **rms** R package to compute VIF
+
+```{r}
+library(rms)
+
+trail_fit <- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)
+
+vif(trail_fit)
+```
+
+## How multicollinearity impacts model {.midi}
+
+::: incremental
+- Large variance for the model coefficients that are collinear
+
+  - Different combinations of coefficient estimates produce equally good model fits
+
+- Unreliable statistical inference results
+
+  - May conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response
+
+- Interpretation of coefficient is no longer "holding all other variables constant", since this would be impossible for correlated predictors
+:::
+
+## Dealing with multicollinearity
+
+::: incremental
+- Collect more data (often not feasible given practical constraints)
+
+- Redefine the correlated predictors to keep the information from predictors but eliminate collinearity
+
+  - e.g., if $x_1, x_2, x_3$ are correlated, use a new variable $(x_1 + x_2) / x_3$ in the model
+
+- For categorical predictors, avoid using levels with very few observations as the baseline
+
+- Remove one of the correlated variables
+
+  - Be careful about substantially reducing predictive power of the model
+:::
+
+## Rail Trail
+
+We will keep either `avgtemp` or `hightemp` in the model.
+
+```{r}
+#| echo: false
+fit_avgtemp <- lm(volume ~  avgtemp + precip, data = rail_trail)
+fit_hightemp <- lm(volume ~  hightemp + precip, data = rail_trail)
+
+# rsq
+rsq_avgtemp <- glance(fit_avgtemp)$r.squared
+rsq_hightemp <- glance(fit_hightemp)$r.squared
+
+#rmse
+rmse_avgtemp <- sqrt(sum(residuals(fit_avgtemp)^2) / nrow(rail_trail))
+rmse_hightemp <- sqrt(sum(residuals(fit_hightemp)^2) / nrow(rail_trail))
+
+tibble(Model = c("keep avtemp", "keep hightemp"), 
+                 rsq = c(rsq_avgtemp, rsq_hightemp), 
+       rmse = c(rmse_avgtemp, rmse_hightemp)) |>
+  kable(digits = 3)
+```
+
+<br>
+
+::: question
+Which variable will you keep in the model?
+:::
+
+## Original versus final model 
+
+::::: columns
+::: {.column width="50%"}
+**Original model**
+
+```{r}
+#| echo: false
+trail_fit |> 
+  tidy() |>
+  select(term, estimate, std.error) |>
+  kable(digits = 3)
+```
+:::
+
+::: {.column width="50%"}
+**Model with `hightemp`**
+
+```{r}
+#| echo: false
+
+fit_hightemp |> 
+  tidy() |> 
+  select(estimate, std.error) |>
+  add_row(estimate = NA, std.error = NA, .before = 3) |>
+  kable(digits = 3)
+
+```
+:::
+:::::
+
+## Recap
+
+- Model diagnostics
+
+- Introduced multicollinearity and how it impacts a model
+
+## Before next class
+
+- Complete [Lecture 16 prepare](../prepare/prepare-lec16.html)
+
+## References
