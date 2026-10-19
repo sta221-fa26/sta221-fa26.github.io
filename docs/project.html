@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -387,7 +422,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI Disclosure</a></li>
   <li><a href="#grading-1" id="toc-grading-1" class="nav-link" data-scroll-target="#grading-1">Grading</a></li>
   </ul></li>
-  <li><a href="#sec-eda" id="toc-sec-eda" class="nav-link" data-scroll-target="#sec-eda">Exploratory data analysis</a></li>
+  <li><a href="#sec-eda" id="toc-sec-eda" class="nav-link" data-scroll-target="#sec-eda">Exploratory data analysis</a>
+  <ul class="collapse">
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
+  <li><a href="#ai-disclosure-1" id="toc-ai-disclosure-1" class="nav-link" data-scroll-target="#ai-disclosure-1">AI Disclosure</a></li>
+  <li><a href="#grading-2" id="toc-grading-2" class="nav-link" data-scroll-target="#grading-2">Grading</a></li>
+  </ul></li>
   <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a>
   <ul class="collapse">
   <li><a href="#presentation-comments" id="toc-presentation-comments" class="nav-link" data-scroll-target="#presentation-comments">Presentation comments</a></li>
@@ -627,7 +668,7 @@ Tip
 <p>The anticipated length is 1 - 2 pages per data set for Sections 1 - 4. The length of the codebook will vary based on the data set.</p>
 <p>The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal.</p>
 <ul>
-<li><p><strong>Excellent (9 - 10 pts) :</strong> All required elements are completed and are accurate. There are at least two data sets that meet the requirements (or the team has otherwise discussed the data with Professor Tackett) and that do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data, potential research questions, visualization of the response variable, and potential predictors for at least two data sets. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.</p></li>
+<li><p><strong>Excellent (9 - 10 pts) :</strong> All required elements are present and accurate. There are at least two data sets that meet the requirements (or the team has otherwise discussed the data with Professor Tackett) and that do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data, potential research questions, visualization of the response variable, and potential predictors for at least two data sets. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.</p></li>
 <li><p><strong>Strong (7 -8 pts):</strong> Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for next project milestone.</p></li>
 <li><p><strong>Satisfactory (5 - 6 pts):</strong> Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for next project milestone.</p></li>
 <li><p><strong>Needs Improvement (3 - 4pts):</strong> Requirements are largely unmet, and there are major elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for next project milestone.</p></li>
@@ -636,42 +677,89 @@ Tip
 </section>
 <section id="sec-eda" class="level2">
 <h2 class="anchored" data-anchor-id="sec-eda">Exploratory data analysis</h2>
-<p>To be posted.</p>
-<!-- ::: callout-important -->
-<!-- ## Submission -->
-<!-- Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the `.qmd` and rendered `.pdf` documents to GitHub by **Thursday, March 19 at 11:59pm.** -->
-<!-- ::: -->
-<!-- The purpose of this milestone is to begin exploring the data and receive early feedback on your data and analysis. You will submit a draft of the early sections of the report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results. -->
-<!-- Below is a brief description of the sections to include in this step: -->
-<!-- ### Introduction -->
-<!-- This section includes an introduction to the project motivation, background, data, and research question. Additionally, comment on any known limitations, missingness, or measurement concerns that may impact the interpretation of your analysis and results. -->
-<!-- ::: callout-tip -->
-<!-- Reuse and iterate on the work from the previous milestones. -->
-<!-- ::: -->
-<!-- ### Exploratory data analysis -->
-<!-- This section includes the following: -->
-<!-- - Description of the data set and key variables. -->
-<!-- - Exploratory data analysis of the response variable and key predictor variables. This includes visualizations, summary statistics, and narrative. Focus on 4 - 6 key predictors that are most relevant to your research question. You may explore additional variables, as appropriate, but prioritize depth over breadth. -->
-<!--   - Univariate EDA of the response and key predictor variables -->
-<!--   - Bivariate EDA of the response and key predictor variables -->
-<!--   - Visualizations exploring at least one potential interaction effect -->
-<!-- For each visualization and/or set of summary statistics, briefly describe what you learn about the distribution of the variable or relationship between variables. Additionally, comment on how the observations from the EDA may inform your modeling decisions (e.g., use of transformations, quadratic effects, interactions effects, etc.) -->
-<!-- ### Grading -->
-<!-- The anticipated length with code, warnings, and messages suppressed in the rendered `pdf` is about 5 - 7 pages. It is OK to be over this page limit at this stage in the project. -->
-<!-- ::: callout-tip -->
-<!-- Include the code below in the YAML to suppress code, messages, and warnings in the rendered pdf. -->
-<!-- ``` r -->
-<!-- execute: -->
-<!--   echo: false -->
-<!--   message: false -->
-<!--   warning: false -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis. -->
-<!-- - **Excellent (13 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
-<!-- - **Strong (10 - 12 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Minor gaps or areas needing clarification, but the analysis is sound overall and will be ready for modeling with minor revision. -->
-<!-- - **Satisfactory (7 - 9 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. This may include multiple gaps in the analysis, unclear interpretations, or limited connection between EDA and modeling decisions. Major revision is required before team is ready for modeling. -->
-<!-- - **Needs Improvement (6 points or fewer):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Submission
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write your draft introduction and exploratory data analysis in the <code>written-report.qmd</code> file in your team’s GitHub repo. Push the <code>.qmd</code> and rendered <code>.pdf</code> documents to GitHub by <strong>Thursday, October 29 at 11:59pm.</strong></p>
+</div>
+</div>
+<p>The purpose of this milestone is to begin exploring the data you have chosen for the project and receive early feedback on your data and analysis. You will submit a draft of the early sections of the report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results.</p>
+<p>Below is a brief description of the sections to include in this step:</p>
+<section id="introduction-1" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-1">Introduction</h3>
+<p>This section includes an introduction to the project motivation, background, data, and research question. Additionally, comment on any known limitations, missingness, or measurement concerns that may impact the interpretation of your analysis and results.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reuse and iterate on the work from the previous milestones.</p>
+</div>
+</div>
+</section>
+<section id="exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h3>
+<p>This section includes the following:</p>
+<ul>
+<li><p>Description of the data set and key variables. This includes</p>
+<ul>
+<li><p>The source of the data set, i.e., where you obtained the data</p></li>
+<li><p>A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data)</p></li>
+<li><p>A description of the observations and general characteristics being measured</p></li>
+</ul></li>
+<li><p>Exploratory data analysis of the response variable and key predictor variables. This includes visualizations, summary statistics, and narrative. Focus on 4 - 6 key predictors that are most relevant to your research question. You may explore additional variables, as appropriate, but prioritize depth over breadth.</p>
+<ul>
+<li>Univariate EDA of the response and key predictor variables</li>
+<li>Bivariate EDA of the response and key predictor variables</li>
+<li>Visualization exploring at least one potential interaction effect</li>
+</ul></li>
+</ul>
+<p>For each visualization and/or set of summary statistics, briefly describe what you learn about the distribution of the variable or relationship between variables.</p>
+</section>
+<section id="ai-disclosure-1" class="level3">
+<h3 class="anchored" data-anchor-id="ai-disclosure-1">AI Disclosure</h3>
+<p>Provide a brief description of how your team used AI (if at all) to complete this project milestone. If you used AI, include the name and version of the AI tool(s) used. If you did not use AI, you can state “We did not use AI to complete this milestone.” <em>Note: AI use will not negatively affect your grade, provided it is accurately disclosed and in alignment with the course academic honesty policy.</em></p>
+</section>
+<section id="grading-2" class="level3">
+<h3 class="anchored" data-anchor-id="grading-2">Grading</h3>
+<p>The anticipated length with code, warnings, and messages suppressed in the rendered <code>pdf</code> is about 5 - 7 pages. It is OK to be over this suggested range.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Include the code below in the YAML to suppress code, messages, and warnings in the rendered pdf.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>execute<span class="sc">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  echo<span class="sc">:</span> false</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  message<span class="sc">:</span> false</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  warning<span class="sc">:</span> false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>The exploratory data analysis milestone is worth 10 points and will be graded based on accurately addressing the criteria above by conducting a focused and purposeful data exploration. Points will be assigned based on a holistic review of the introduction and exploratory data analysis.</p>
+<ul>
+<li><p><strong>Excellent (9 - 10 points) :</strong> All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach to exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.</p></li>
+<li><p><strong>Strong (7 - 8 points):</strong> Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Minor gaps or areas needing clarification, but the analysis is sound overall and will be ready for modeling with minor revision.</p></li>
+<li><p><strong>Satisfactory (5 - 6 points):</strong> Requirements partially met, but there are some elements that are incomplete and/or inaccurate. This may include multiple gaps in the analysis, unclear interpretations, or limited connection between EDA and modeling decisions. Major revision is required before the team is ready for modeling.</p></li>
+<li><p><strong>Needs Improvement (4 points or fewer):</strong> Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions are required before the team is ready for modeling.</p></li>
+</ul>
+</section>
 </section>
 <section id="presentation" class="level2">
 <h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
