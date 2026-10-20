@@ -1119,7 +1119,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You will need to install this package in RStudio in the Docker containers.</p>
+<p>You will need to install this package in the RStudio Docker containers.</p>
 </div>
 </div>
 </section>
@@ -1221,7 +1221,7 @@ Tip
 </section>
 <section id="eda-correlation-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="eda-correlation-matrix">EDA: Correlation matrix</h2>
-<p>We can. use <code>corrplot()</code> in the <strong>corrplot</strong> R package to make a matrix of pairwise correlations between <u>quantitative</u> predictors</p>
+<p>We can use <code>corrplot()</code> in the <strong>corrplot</strong> R package to make a matrix of pairwise correlations between <u>quantitative</u> predictors</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> rail_trail <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hightemp, avgtemp, precip) <span class="sc">|&gt;</span></span>
@@ -1242,7 +1242,7 @@ Tip
 </div>
 </div>
 <div class="question">
-<p>What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?</p>
+<p>What might be a potential concern with a model that uses high temperature, average temperature, and precipitation to predict volume?</p>
 </div>
 </section>
 </section>

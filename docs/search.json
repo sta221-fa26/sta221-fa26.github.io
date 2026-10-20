@@ -5647,7 +5647,7 @@
     "href": "slides/15-diagnostics-multicollinearity-notes.html#diagnostic-plots-using-gglm",
     "title": "Model diagnostics + multicollinearity",
     "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\n\nYou will need to install this package in RStudio in the Docker containers."
+    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\n\nYou will need to install this package in the RStudio Docker containers."
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#diagnostic-plots-using-gglm-1",
@@ -5703,14 +5703,14 @@
     "href": "slides/15-diagnostics-multicollinearity-notes.html#eda-correlation-matrix",
     "title": "Model diagnostics + multicollinearity",
     "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+    "text": "EDA: Correlation matrix\nWe can use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#eda-correlation-matrix-1",
     "href": "slides/15-diagnostics-multicollinearity-notes.html#eda-correlation-matrix-1",
     "title": "Model diagnostics + multicollinearity",
     "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+    "text": "EDA: Correlation matrix\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, and precipitation to predict volume?"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#multicollinearity-2",
@@ -6025,7 +6025,7 @@
     "href": "slides/15-diagnostics-multicollinearity.html#diagnostic-plots-using-gglm",
     "title": "Model diagnostics + multicollinearity",
     "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\nYou will need to install this package in RStudio in the Docker containers."
+    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\nYou will need to install this package in the RStudio Docker containers."
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#diagnostic-plots-using-gglm-1",
@@ -6081,14 +6081,14 @@
     "href": "slides/15-diagnostics-multicollinearity.html#eda-correlation-matrix",
     "title": "Model diagnostics + multicollinearity",
     "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+    "text": "EDA: Correlation matrix\nWe can use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#eda-correlation-matrix-1",
     "href": "slides/15-diagnostics-multicollinearity.html#eda-correlation-matrix-1",
     "title": "Model diagnostics + multicollinearity",
     "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+    "text": "EDA: Correlation matrix\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, and precipitation to predict volume?"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#multicollinearity-2",

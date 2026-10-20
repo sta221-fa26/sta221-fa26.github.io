@@ -575,7 +575,7 @@ gglm(lemurs_fit)
 <br>
 
 ::: callout-tip
-You will need to install this package in RStudio in the Docker containers.
+You will need to install this package in the RStudio Docker containers.
 :::
 
 ## Diagnostic plots using gglm
@@ -670,7 +670,7 @@ rail_trail |>
 
 ## EDA: Correlation matrix
 
-We can. use `corrplot()` in the **corrplot** R package to make a matrix of pairwise correlations between [quantitative]{.underline} predictors
+We can use `corrplot()` in the **corrplot** R package to make a matrix of pairwise correlations between [quantitative]{.underline} predictors
 
 ```{r}
 #| eval: false
@@ -696,7 +696,7 @@ corrplot(correlations, method = "number")
 ```
 
 ::: question
-What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?
+What might be a potential concern with a model that uses high temperature, average temperature, and precipitation to predict volume?
 :::
 
 # Multicollinearity

@@ -707,7 +707,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>You will need to install this package in RStudio in the Docker containers.</p>
+<p>You will need to install this package in the RStudio Docker containers.</p>
 </div>
 </div>
 </div>
@@ -792,7 +792,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <img data-src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="eda-correlation-matrix" class="slide level2">
 <h2>EDA: Correlation matrix</h2>
-<p>We can. use <code>corrplot()</code> in the <strong>corrplot</strong> R package to make a matrix of pairwise correlations between <u>quantitative</u> predictors</p>
+<p>We can use <code>corrplot()</code> in the <strong>corrplot</strong> R package to make a matrix of pairwise correlations between <u>quantitative</u> predictors</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>correlations <span class="ot">&lt;-</span> rail_trail <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a aria-label="2"></a>  <span class="fu">select</span>(hightemp, avgtemp, precip) <span class="sc">|&gt;</span></span>
@@ -805,7 +805,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <h2>EDA: Correlation matrix</h2>
 
 <img data-src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
-<p>What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?</p>
+<p>What might be a potential concern with a model that uses high temperature, average temperature, and precipitation to predict volume?</p>
 </div>
 </section></section>
 <section>
