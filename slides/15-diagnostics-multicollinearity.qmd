@@ -29,7 +29,7 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements \[UPDATE - ADD WOOCLAP\]
+## Announcements 
 
 - Travelers University Modeling Competition - register by October 22. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8395549) for details
 
@@ -61,9 +61,7 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 - Model diagnostics
 
   - Leverage
-
   - Standardized residuals
-
   - Cook's Distance
 
 - Multicollinearity
@@ -284,35 +282,6 @@ ggplot(data = lemurs_aug, aes(x = sex, y = .resid)) +
        title = "Residuals versus Sex")
 ```
 
-```{r}
-#| echo: false
-#| fig-align: center
-#| fig-cap: Simulation produced by ChatGPT GPT-6 Astra
-
-set.seed(221)
-n <- 150
-
-dat <- data.frame(
-  time = seq_len(n),
-  predicted = seq(10, 30, length.out = n),
-  residual = as.numeric(arima.sim(
-    model = list(ar = 0.85), n = n, sd = 1
-  ))
-)
-
-ggplot(dat, aes(x = predicted, y = residual)) +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
-  geom_path(color = "gray70", linewidth = 0.4) +
-  geom_point(aes(color = time), size = 2) +
-  scale_color_viridis_c(name = "Time") +
-  labs(
-    x = "Time order",
-    y = "Residuals",
-    title = "Residuals with time-ordered correlation"
-  ) +
-  theme_minimal()
-```
-
 # Model diagnostics
 
 ## Influential point
@@ -493,12 +462,16 @@ lemurs_aug |>
   filter(.hat > h_threshold)
 ```
 
-<br>
-
-. . .
+## Your turn
 
 ::: question
-Why do you think these points have high leverage?
+Which variable(s) will we use to examine why the observations have high leverage? Select all that apply.
+:::
+
+![](images/october-20-qrcode.png){fig-align="center" width="30%"}
+
+::: center
+<https://app.wooclap.com/HYEALSK>
 :::
 
 ## Let's look at the data
@@ -550,7 +523,7 @@ Just because a point has high leverage does not necessarily mean it will have a 
 
   - The variance of the $i^{th}$ residual is $Var(e_i) = \sigma^2(1 - h_{ii})$
 
-- The **standardized residual** (also called internally studentized residual)is the residual rescaled by its variance
+- The **standardized residual** (also called internally studentized residual) is the residual rescaled by its estimated variance
 :::
 
 $$
@@ -856,7 +829,7 @@ tibble(Model = c("keep avtemp", "keep hightemp"),
 Which variable will you keep in the model?
 :::
 
-## Original versus final model 
+## Original versus final model
 
 ::::: columns
 ::: {.column width="50%"}

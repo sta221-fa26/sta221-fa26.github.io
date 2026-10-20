@@ -451,7 +451,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#announcements-update---add-wooclap" id="toc-announcements-update---add-wooclap" class="nav-link active" data-scroll-target="#announcements-update---add-wooclap">Announcements [UPDATE - ADD WOOCLAP]</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
   <li><a href="#computing-set-up" id="toc-computing-set-up" class="nav-link" data-scroll-target="#computing-set-up">Computing set up</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#data-duke-lemurs" id="toc-data-duke-lemurs" class="nav-link" data-scroll-target="#data-duke-lemurs">Data: Duke lemurs</a></li>
@@ -488,6 +488,7 @@ window.Quarto = {
   <li><a href="#leverage-1" id="toc-leverage-1" class="nav-link" data-scroll-target="#leverage-1">Leverage</a></li>
   <li><a href="#high-leverage" id="toc-high-leverage" class="nav-link" data-scroll-target="#high-leverage">High leverage</a></li>
   <li><a href="#lemurs-leverage" id="toc-lemurs-leverage" class="nav-link" data-scroll-target="#lemurs-leverage">Lemurs: Leverage</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
   <li><a href="#lets-look-at-the-data" id="toc-lets-look-at-the-data" class="nav-link" data-scroll-target="#lets-look-at-the-data">Let’s look at the data</a></li>
   <li><a href="#high-leverage-1" id="toc-high-leverage-1" class="nav-link" data-scroll-target="#high-leverage-1">High leverage</a></li>
   </ul></li>
@@ -563,8 +564,8 @@ window.Quarto = {
 </header>
 
 
-<section id="announcements-update---add-wooclap" class="level2">
-<h2 class="anchored" data-anchor-id="announcements-update---add-wooclap">Announcements [UPDATE - ADD WOOCLAP]</h2>
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
 <li><p>Travelers University Modeling Competition - register by October 22. See <a href="https://edstem.org/us/courses/101204/discussion/8395549">Ed Discussion</a> for details</p></li>
 <li><p>Project exploratory data analysis - due October 29 on GitHub</p></li>
@@ -592,9 +593,9 @@ window.Quarto = {
 <li><p>Influential points</p></li>
 <li><p>Model diagnostics</p>
 <ul>
-<li><p>Leverage</p></li>
-<li><p>Standardized residuals</p></li>
-<li><p>Cook’s Distance</p></li>
+<li>Leverage</li>
+<li>Standardized residuals</li>
+<li>Cook’s Distance</li>
 </ul></li>
 <li><p>Multicollinearity</p></li>
 </ul>
@@ -802,16 +803,6 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></p>
-<figcaption>Simulation produced by ChatGPT GPT-6 Astra</figcaption>
-</figure>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="model-diagnostics" class="level1">
@@ -823,7 +814,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -912,7 +903,7 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1014,10 +1005,19 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    </code></pre>
 </div>
 </div>
-<p><br></p>
-<p>. . .</p>
+</section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your turn</h2>
 <div class="question">
-<p>Why do you think these points have high leverage?</p>
+<p>Which variable(s) will we use to examine why the observations have high leverage? Select all that apply.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/october-20-qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+<div class="center">
+<p><a href="https://app.wooclap.com/HYEALSK" class="uri">https://app.wooclap.com/HYEALSK</a></p>
 </div>
 </section>
 <section id="lets-look-at-the-data" class="level2">
@@ -1026,7 +1026,7 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1066,7 +1066,7 @@ h_{ii} = \mathbf{x}_i^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}
 <ul class="incremental">
 <li>The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2(1 - h_{ii})\)</span></li>
 </ul></li>
-<li><p>The <strong>standardized residual</strong> (also called internally studentized residual)is the residual rescaled by its variance</p></li>
+<li><p>The <strong>standardized residual</strong> (also called internally studentized residual) is the residual rescaled by its estimated variance</p></li>
 </ul>
 </div>
 <p><span class="math display">\[
@@ -1086,7 +1086,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1129,7 +1129,7 @@ Tip
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1213,7 +1213,7 @@ Tip
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-26-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1236,7 +1236,7 @@ Tip
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-28-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-diagnostics-multicollinearity_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>

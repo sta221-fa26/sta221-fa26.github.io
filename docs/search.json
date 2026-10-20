@@ -3398,7 +3398,7 @@
     "href": "slides/14-conditions-diagnostics.html#topics",
     "title": "Model conditions + diagnostics",
     "section": "Topics",
-    "text": "Topics\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\nCook’s Distance"
+    "text": "Topics\n\nModel conditions"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#data-duke-lemurs",
@@ -3541,158 +3541,11 @@
     "text": "Your turn\n\nWhich condition(s) must be satisfied for a linear regression model to produce reliable predictions? Select all that apply.\n\n\n\nhttps://app.wooclap.com/KBSSCZJ"
   },
   {
-    "objectID": "slides/14-conditions-diagnostics.html#model-diagnostics-in-r",
-    "href": "slides/14-conditions-diagnostics.html#model-diagnostics-in-r",
-    "title": "Model conditions + diagnostics",
-    "section": "Model diagnostics in R",
-    "text": "Model diagnostics in R\nWe get observation-level model diagnostics from augment() in R. We will use the following columns:\n\n.hat: leverage\n.cooksd: Cook’s distance\n.std.resid: standardized residuals\n\n\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma   .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1    410  2.27 ERUF    295.   115.  0.0244   534. 0.000299       0.219 F    \n2    137  0.72 ERUF     81.8   55.2 0.0263   534. 0.0000745      0.105 F    \n3    206  0.69 PCOQ    542.  -336.  0.0153   533. 0.00157       -0.635 F    \n4    185  1.05 PCOQ    591.  -406.  0.0149   533. 0.00223       -0.768 M    \n5    373  2.66 PCOQ    813.  -440.  0.0132   533. 0.00231       -0.831 F"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#influential-point",
-    "href": "slides/14-conditions-diagnostics.html#influential-point",
-    "title": "Model conditions + diagnostics",
-    "section": "Influential point",
-    "text": "Influential point\nAn observation is influential if removing has a noticeable impact on the regression coefficients"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#influential-points",
-    "href": "slides/14-conditions-diagnostics.html#influential-points",
-    "title": "Model conditions + diagnostics",
-    "section": "Influential points",
-    "text": "Influential points\n\nInfluential points have a noticeable impact on the coefficients and their standard errors\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized residuals, and Cook’s Distance"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#motivating-cooks-distance",
-    "href": "slides/14-conditions-diagnostics.html#motivating-cooks-distance",
-    "title": "Model conditions + diagnostics",
-    "section": "Motivating Cook’s Distance",
-    "text": "Motivating Cook’s Distance\n\nAn observation’s influence on the regression line depends on\n\nHow close it lies to the general trend of the data\nIts leverage\n\nCook’s Distance is a statistic that includes both of these components to measure an observation’s overall impact on the model"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#cooks-distance-1",
-    "href": "slides/14-conditions-diagnostics.html#cooks-distance-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Cook’s Distance",
-    "text": "Cook’s Distance\nCook’s distance for the \\(i^{th}\\) observation is\n\\[\nD_i = \\frac{r^2_i}{p + 1}\\Big(\\frac{h_{ii}}{1 - h_{ii}}\\Big)\n\\]\nwhere \\(r_i\\) is the standardized residual and \\(h_{ii}\\) is the leverage for the \\(i^{th}\\) observation\n\nThis measure is a combination of\n\nHow well the model fits the \\(i^{th}\\) observation (magnitude of residuals)\nHow far the \\(i^{th}\\) observation is from the rest of the data"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#using-cooks-distance",
-    "href": "slides/14-conditions-diagnostics.html#using-cooks-distance",
-    "title": "Model conditions + diagnostics",
-    "section": "Using Cook’s Distance",
-    "text": "Using Cook’s Distance\n\nAn observation with large value of \\(D_i\\) is said to have a strong influence on the predicted values\nGeneral thresholds .An observation with\n\n\\(D_i &gt; 0.5\\) is moderately influential\n\\(D_i &gt; 1\\) is very influential"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#cooks-distance-2",
-    "href": "slides/14-conditions-diagnostics.html#cooks-distance-2",
-    "title": "Model conditions + diagnostics",
-    "section": "Cook’s Distance",
-    "text": "Cook’s Distance\nCook’s Distance is in the column .cooksd in the output from augment()"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#comparing-models",
-    "href": "slides/14-conditions-diagnostics.html#comparing-models",
-    "title": "Model conditions + diagnostics",
-    "section": "Comparing models",
-    "text": "Comparing models\n\n\n\n\n\nTerm\nAll obs\n-Max(Cook’s D)\n\n\n\n\n(Intercept)\n-17.270\n19.583\n\n\nage\n137.550\n133.392\n\n\ntaxonPCOQ\n463.997\n423.287\n\n\ntaxonVRUB\n999.722\n1003.960\n\n\n\n\n\n\nModel coefficients do not change much because there are no influential points in the data."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#leverage-1",
-    "href": "slides/14-conditions-diagnostics.html#leverage-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Leverage",
-    "text": "Leverage\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^\\mathsf{T}_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: measures how far an observation’s predictor values are from the mean predictor values\n\nIt measures how much \\(\\hat{y}_i\\) changes when \\(y_i\\) changes, holding the values of the predictor constant"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#high-leverage",
-    "href": "slides/14-conditions-diagnostics.html#high-leverage",
-    "title": "Model conditions + diagnostics",
-    "section": "High leverage",
-    "text": "High leverage\n\nThe sum of the leverages for all points is \\(p + 1\\), where \\(p\\) is the number of predictors in the model . More specifically\n\\[\n\\sum_{i=1}^n h_{ii} = \\text{rank}(\\mathbf{H}) = \\text{rank}(\\mathbf{X}) = p+1\n\\]\nThe average value of leverage, \\(h_{ii}\\), is \\(\\bar{h} =  \\frac{(p+1)}{n}\\)\nAn observation has high leverage if \\[h_{ii} &gt; \\frac{2(p+1)}{n}\\]"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#lemurs-leverage",
-    "href": "slides/14-conditions-diagnostics.html#lemurs-leverage",
-    "title": "Model conditions + diagnostics",
-    "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    \n\n\n\n\n\n\nWhy do you think these points have high leverage?"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#lets-look-at-the-data",
-    "href": "slides/14-conditions-diagnostics.html#lets-look-at-the-data",
-    "title": "Model conditions + diagnostics",
-    "section": "Let’s look at the data",
-    "text": "Let’s look at the data"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#high-leverage-1",
-    "href": "slides/14-conditions-diagnostics.html#high-leverage-1",
-    "title": "Model conditions + diagnostics",
-    "section": "High leverage",
-    "text": "High leverage\nIf there is point with high leverage, ask\n\n❓ Is there a data entry error?\n❓ Is this observation within the scope of individuals for which you want to make predictions and draw conclusions?\n❓ Is this observation impacting the estimates of the model coefficients? (Need more information!)\n\n\nJust because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#standardized-residuals-1",
-    "href": "slides/14-conditions-diagnostics.html#standardized-residuals-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Standardized residuals",
-    "text": "Standardized residuals\n\nWhat is the best way to identify outlier points that don’t fit the pattern from the regression line?\n\nLook for points that have large residuals\n\nWe can rescale residuals and put them on a common scale to more easily identify “large” residuals"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#standardized-residuals-2",
-    "href": "slides/14-conditions-diagnostics.html#standardized-residuals-2",
-    "title": "Model conditions + diagnostics",
-    "section": "Standardized residuals",
-    "text": "Standardized residuals\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual)is the residual rescaled by its variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#using-standardized-residuals",
-    "href": "slides/14-conditions-diagnostics.html#using-standardized-residuals",
-    "title": "Model conditions + diagnostics",
-    "section": "Using standardized residuals",
-    "text": "Using standardized residuals\n\nWe can use the standardized residuals in the plot of residuals versus predicted\n\nUse it to evaluate linearity, equal variance, and outliers\n\nAn observation is a potential outlier if its standardized residual has magnitude greater than 3"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#using-these-measures",
-    "href": "slides/14-conditions-diagnostics.html#using-these-measures",
-    "title": "Model conditions + diagnostics",
-    "section": "Using these measures",
-    "text": "Using these measures\n\nStandardized residuals, leverage, and Cook’s Distance should all be examined together\nExamine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm",
-    "href": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm",
-    "title": "Model conditions + diagnostics",
-    "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\nYou will need to install this package in RStudio in the Docker containers."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm-1",
-    "href": "slides/14-conditions-diagnostics.html#diagnostic-plots-using-gglm-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#what-to-do-with-outliersinfluential-points",
-    "href": "slides/14-conditions-diagnostics.html#what-to-do-with-outliersinfluential-points",
-    "title": "Model conditions + diagnostics",
-    "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\nFirst consider if the outlier is a result of a data entry error.\nIf not, you may consider dropping an observation if it’s an outlier in the predictor variables if…\n\nIt is meaningful to drop the observation given the context of the problem\nYou intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics.html#what-to-do-with-outliersinfluential-points-1",
-    "href": "slides/14-conditions-diagnostics.html#what-to-do-with-outliersinfluential-points-1",
-    "title": "Model conditions + diagnostics",
-    "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\nIt is generally not good practice to drop observations that ar outliers in the value of the response variable\n\nThese are legitimate observations and should be in the model\nYou can try transformations or increasing the sample size by collecting more data\n\nA general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes"
-  },
-  {
     "objectID": "slides/14-conditions-diagnostics.html#recap",
     "href": "slides/14-conditions-diagnostics.html#recap",
     "title": "Model conditions + diagnostics",
     "section": "Recap",
-    "text": "Recap\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\n\n\nCook’s Distance"
+    "text": "Recap\n\nModel conditions"
   },
   {
     "objectID": "slides/14-conditions-diagnostics.html#before-next-class",
@@ -3741,7 +3594,7 @@
     "href": "slides/14-conditions-diagnostics-notes.html#topics",
     "title": "Model conditions + diagnostics",
     "section": "Topics",
-    "text": "Topics\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\nCook’s Distance"
+    "text": "Topics\n\nModel conditions"
   },
   {
     "objectID": "slides/14-conditions-diagnostics-notes.html#data-duke-lemurs",
@@ -3884,158 +3737,11 @@
     "text": "Your turn\n\nWhich condition(s) must be satisfied for a linear regression model to produce reliable predictions? Select all that apply.\n\n\n\n\n\n\n\nhttps://app.wooclap.com/KBSSCZJ"
   },
   {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#model-diagnostics-in-r",
-    "href": "slides/14-conditions-diagnostics-notes.html#model-diagnostics-in-r",
-    "title": "Model conditions + diagnostics",
-    "section": "Model diagnostics in R",
-    "text": "Model diagnostics in R\nWe get observation-level model diagnostics from augment() in R. We will use the following columns:\n\n.hat: leverage\n.cooksd: Cook’s distance\n.std.resid: standardized residuals\n\n\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma   .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1    410  2.27 ERUF    295.   115.  0.0244   534. 0.000299       0.219 F    \n2    137  0.72 ERUF     81.8   55.2 0.0263   534. 0.0000745      0.105 F    \n3    206  0.69 PCOQ    542.  -336.  0.0153   533. 0.00157       -0.635 F    \n4    185  1.05 PCOQ    591.  -406.  0.0149   533. 0.00223       -0.768 M    \n5    373  2.66 PCOQ    813.  -440.  0.0132   533. 0.00231       -0.831 F"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#influential-point",
-    "href": "slides/14-conditions-diagnostics-notes.html#influential-point",
-    "title": "Model conditions + diagnostics",
-    "section": "Influential point",
-    "text": "Influential point\nAn observation is influential if removing has a noticeable impact on the regression coefficients"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#influential-points",
-    "href": "slides/14-conditions-diagnostics-notes.html#influential-points",
-    "title": "Model conditions + diagnostics",
-    "section": "Influential points",
-    "text": "Influential points\n\n\nInfluential points have a noticeable impact on the coefficients and their standard errors\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized residuals, and Cook’s Distance"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#motivating-cooks-distance",
-    "href": "slides/14-conditions-diagnostics-notes.html#motivating-cooks-distance",
-    "title": "Model conditions + diagnostics",
-    "section": "Motivating Cook’s Distance",
-    "text": "Motivating Cook’s Distance\n\nAn observation’s influence on the regression line depends on\n\nHow close it lies to the general trend of the data\nIts leverage\n\nCook’s Distance is a statistic that includes both of these components to measure an observation’s overall impact on the model"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#cooks-distance-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#cooks-distance-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Cook’s Distance",
-    "text": "Cook’s Distance\nCook’s distance for the \\(i^{th}\\) observation is\n\\[\nD_i = \\frac{r^2_i}{p + 1}\\Big(\\frac{h_{ii}}{1 - h_{ii}}\\Big)\n\\]\nwhere \\(r_i\\) is the standardized residual and \\(h_{ii}\\) is the leverage for the \\(i^{th}\\) observation\n. . .\nThis measure is a combination of\n\nHow well the model fits the \\(i^{th}\\) observation (magnitude of residuals)\nHow far the \\(i^{th}\\) observation is from the rest of the data"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#using-cooks-distance",
-    "href": "slides/14-conditions-diagnostics-notes.html#using-cooks-distance",
-    "title": "Model conditions + diagnostics",
-    "section": "Using Cook’s Distance",
-    "text": "Using Cook’s Distance\n\nAn observation with large value of \\(D_i\\) is said to have a strong influence on the predicted values\nGeneral thresholds .An observation with\n\n\\(D_i &gt; 0.5\\) is moderately influential\n\\(D_i &gt; 1\\) is very influential"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#cooks-distance-2",
-    "href": "slides/14-conditions-diagnostics-notes.html#cooks-distance-2",
-    "title": "Model conditions + diagnostics",
-    "section": "Cook’s Distance",
-    "text": "Cook’s Distance\nCook’s Distance is in the column .cooksd in the output from augment()"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#comparing-models",
-    "href": "slides/14-conditions-diagnostics-notes.html#comparing-models",
-    "title": "Model conditions + diagnostics",
-    "section": "Comparing models",
-    "text": "Comparing models\n\n\n\n\n\nTerm\nAll obs\n-Max(Cook’s D)\n\n\n\n\n(Intercept)\n-17.270\n19.583\n\n\nage\n137.550\n133.392\n\n\ntaxonPCOQ\n463.997\n423.287\n\n\ntaxonVRUB\n999.722\n1003.960\n\n\n\n\n\n\nModel coefficients do not change much because there are no influential points in the data."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#leverage-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#leverage-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Leverage",
-    "text": "Leverage\n\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^\\mathsf{T}_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: measures how far an observation’s predictor values are from the mean predictor values\n\nIt measures how much \\(\\hat{y}_i\\) changes when \\(y_i\\) changes, holding the values of the predictor constant"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#high-leverage",
-    "href": "slides/14-conditions-diagnostics-notes.html#high-leverage",
-    "title": "Model conditions + diagnostics",
-    "section": "High leverage",
-    "text": "High leverage\n\n\nThe sum of the leverages for all points is \\(p + 1\\), where \\(p\\) is the number of predictors in the model . More specifically\n\\[\n\\sum_{i=1}^n h_{ii} = \\text{rank}(\\mathbf{H}) = \\text{rank}(\\mathbf{X}) = p+1\n\\]\nThe average value of leverage, \\(h_{ii}\\), is \\(\\bar{h} =  \\frac{(p+1)}{n}\\)\nAn observation has high leverage if \\[h_{ii} &gt; \\frac{2(p+1)}{n}\\]"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#lemurs-leverage",
-    "href": "slides/14-conditions-diagnostics-notes.html#lemurs-leverage",
-    "title": "Model conditions + diagnostics",
-    "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n. . .\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    \n\n\n\n. . .\n\nWhy do you think these points have high leverage?"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#lets-look-at-the-data",
-    "href": "slides/14-conditions-diagnostics-notes.html#lets-look-at-the-data",
-    "title": "Model conditions + diagnostics",
-    "section": "Let’s look at the data",
-    "text": "Let’s look at the data"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#high-leverage-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#high-leverage-1",
-    "title": "Model conditions + diagnostics",
-    "section": "High leverage",
-    "text": "High leverage\nIf there is point with high leverage, ask\n\n❓ Is there a data entry error?\n❓ Is this observation within the scope of individuals for which you want to make predictions and draw conclusions?\n❓ Is this observation impacting the estimates of the model coefficients? (Need more information!)\n\n. . .\nJust because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#standardized-residuals-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#standardized-residuals-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Standardized residuals",
-    "text": "Standardized residuals\n\n\nWhat is the best way to identify outlier points that don’t fit the pattern from the regression line?\n\nLook for points that have large residuals\n\nWe can rescale residuals and put them on a common scale to more easily identify “large” residuals"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#standardized-residuals-2",
-    "href": "slides/14-conditions-diagnostics-notes.html#standardized-residuals-2",
-    "title": "Model conditions + diagnostics",
-    "section": "Standardized residuals",
-    "text": "Standardized residuals\n\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual)is the residual rescaled by its variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#using-standardized-residuals",
-    "href": "slides/14-conditions-diagnostics-notes.html#using-standardized-residuals",
-    "title": "Model conditions + diagnostics",
-    "section": "Using standardized residuals",
-    "text": "Using standardized residuals\n\nWe can use the standardized residuals in the plot of residuals versus predicted\n\nUse it to evaluate linearity, equal variance, and outliers\n\nAn observation is a potential outlier if its standardized residual has magnitude greater than 3"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#using-these-measures",
-    "href": "slides/14-conditions-diagnostics-notes.html#using-these-measures",
-    "title": "Model conditions + diagnostics",
-    "section": "Using these measures",
-    "text": "Using these measures\n\nStandardized residuals, leverage, and Cook’s Distance should all be examined together\nExamine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#diagnostic-plots-using-gglm",
-    "href": "slides/14-conditions-diagnostics-notes.html#diagnostic-plots-using-gglm",
-    "title": "Model conditions + diagnostics",
-    "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm\nCan make main diagnostic plots using gglm() in the gglm R package\n\nlibrary(gglm)\ngglm(lemurs_fit)\n\n\ngglm documentation: https://graysonwhite.com/gglm/\n\n\n\n\n\n\n\nTip\n\n\n\nYou will need to install this package in RStudio in the Docker containers."
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#diagnostic-plots-using-gglm-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#diagnostic-plots-using-gglm-1",
-    "title": "Model conditions + diagnostics",
-    "section": "Diagnostic plots using gglm",
-    "text": "Diagnostic plots using gglm"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#what-to-do-with-outliersinfluential-points",
-    "href": "slides/14-conditions-diagnostics-notes.html#what-to-do-with-outliersinfluential-points",
-    "title": "Model conditions + diagnostics",
-    "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\n\nFirst consider if the outlier is a result of a data entry error.\nIf not, you may consider dropping an observation if it’s an outlier in the predictor variables if…\n\nIt is meaningful to drop the observation given the context of the problem\nYou intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions"
-  },
-  {
-    "objectID": "slides/14-conditions-diagnostics-notes.html#what-to-do-with-outliersinfluential-points-1",
-    "href": "slides/14-conditions-diagnostics-notes.html#what-to-do-with-outliersinfluential-points-1",
-    "title": "Model conditions + diagnostics",
-    "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\n\nIt is generally not good practice to drop observations that ar outliers in the value of the response variable\n\nThese are legitimate observations and should be in the model\nYou can try transformations or increasing the sample size by collecting more data\n\nA general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes"
-  },
-  {
     "objectID": "slides/14-conditions-diagnostics-notes.html#recap",
     "href": "slides/14-conditions-diagnostics-notes.html#recap",
     "title": "Model conditions + diagnostics",
     "section": "Recap",
-    "text": "Recap\n\nModel conditions\nInfluential points\nModel diagnostics\n\nLeverage\nStandardized residuals\n\n\nCook’s Distance"
+    "text": "Recap\n\nModel conditions"
   },
   {
     "objectID": "slides/14-conditions-diagnostics-notes.html#before-next-class",
@@ -4119,7 +3825,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Interactions + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03: Inference for linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n7\nM\nOct 5\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due, Project EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 06 due\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nM\nAug 24\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 00 due at the end of lab\n\n\n\nTu\nAug 25\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 27\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nAug 31\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due at the end of lab\n\n\n\nTu\nSep 1\nSLR: Model evaluation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 3\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 7\nNo class: Labor day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 8\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 10\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n4\nM\nSep 14\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due at the end of lab\n\n\n\nTu\nSep 15\nMLR: Interactions + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 17\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nSep 21\nLab: Project Proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 22\nInference: Distribution of coefficients\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 24\nInference: Hypothesis tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n6\nM\nSep 28\nLab 03: Inference for linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due at the end of lab\n\n\n\nTu\nSep 29\nInference: Confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject proposal due\n\n\n\nTh\nOct 1\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n7\nM\nOct 5\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at the end of lab\n\n\n\nTu\nOct 6\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 8\nData science ethics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 12\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 13\nNo class: Fall break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 15\nMLR: Model conditions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nOct 19\nLab: Project EDA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 20\nMLR: Model diagnostics + multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 22\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nOct 26\nLab 05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due at the end of lab\n\n\n\nTu\nOct 27\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 29\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due, Project EDA due\n\n\n11\nM\nNov 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due at the end of lab\n\n\n\nTu\nNov 3\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 5\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due\n\n\n12\nM\nNov 9\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due at the end of lab\n\n\n\nTu\nNov 10\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 12\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nNov 16\nLab 08\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at the end of lab\n\n\n\nTu\nNov 17\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 19\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nNov 23\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation slides due at the beginning of lab\n\n\n\nTu\nNov 24\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due at 11:59pm\n\n\n\nTh\nNov 26\nNo class: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nNov 30\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeer review due at the end of lab\n\n\n\nTu\nDec 1\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 3\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 06 due\n\n\n\nFr\nDec 4\nFinal project due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\n\n\n\nOptional Final Exam review (Time/ location TBD)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSa\nDec 12\nFinal exam (2 - 5pm)",
     "crumbs": [
       "Schedule"
     ]
@@ -5706,8 +5412,8 @@
     "text": "Travelers University Modeling Competition - register by October 22. See Ed Discussion for details\nProject exploratory data analysis - due October 29 on GitHub"
   },
   {
-    "objectID": "slides/15-diagnostics-multicollinearity-notes.html#announcements-update---add-wooclap",
-    "href": "slides/15-diagnostics-multicollinearity-notes.html#announcements-update---add-wooclap",
+    "objectID": "slides/15-diagnostics-multicollinearity-notes.html#announcements",
+    "href": "slides/15-diagnostics-multicollinearity-notes.html#announcements",
     "title": "Model diagnostics + multicollinearity",
     "section": "",
     "text": "Travelers University Modeling Competition - register by October 22. See Ed Discussion for details\nProject exploratory data analysis - due October 29 on GitHub"
@@ -5808,7 +5514,7 @@
     "href": "slides/15-diagnostics-multicollinearity-notes.html#independence-1",
     "title": "Model diagnostics + multicollinearity",
     "section": "Independence",
-    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation produced by ChatGPT GPT-6 Astra"
+    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex."
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#influential-point",
@@ -5885,7 +5591,14 @@
     "href": "slides/15-diagnostics-multicollinearity-notes.html#lemurs-leverage",
     "title": "Model diagnostics + multicollinearity",
     "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n. . .\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    \n\n\n\n. . .\n\nWhy do you think these points have high leverage?"
+    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n. . .\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F"
+  },
+  {
+    "objectID": "slides/15-diagnostics-multicollinearity-notes.html#your-turn",
+    "href": "slides/15-diagnostics-multicollinearity-notes.html#your-turn",
+    "title": "Model diagnostics + multicollinearity",
+    "section": "Your turn",
+    "text": "Your turn\n\nWhich variable(s) will we use to examine why the observations have high leverage? Select all that apply.\n\n\n\n\n\n\n\nhttps://app.wooclap.com/HYEALSK"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#lets-look-at-the-data",
@@ -5913,7 +5626,7 @@
     "href": "slides/15-diagnostics-multicollinearity-notes.html#standardized-residuals-2",
     "title": "Model diagnostics + multicollinearity",
     "section": "Standardized residuals",
-    "text": "Standardized residuals\n\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual)is the residual rescaled by its variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
+    "text": "Standardized residuals\n\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual) is the residual rescaled by its estimated variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity-notes.html#using-standardized-residuals",
@@ -6077,11 +5790,11 @@
     "text": "Before next class\n\nComplete Lecture 16 prepare"
   },
   {
-    "objectID": "slides/15-diagnostics-multicollinearity.html#announcements-update---add-wooclap",
-    "href": "slides/15-diagnostics-multicollinearity.html#announcements-update---add-wooclap",
+    "objectID": "slides/15-diagnostics-multicollinearity.html#announcements",
+    "href": "slides/15-diagnostics-multicollinearity.html#announcements",
     "title": "Model diagnostics + multicollinearity",
-    "section": "Announcements [UPDATE - ADD WOOCLAP]",
-    "text": "Announcements [UPDATE - ADD WOOCLAP]\n\nTravelers University Modeling Competition - register by October 22. See Ed Discussion for details\nProject exploratory data analysis - due October 29 on GitHub"
+    "section": "Announcements",
+    "text": "Announcements\n\nTravelers University Modeling Competition - register by October 22. See Ed Discussion for details\nProject exploratory data analysis - due October 29 on GitHub"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#computing-set-up",
@@ -6179,7 +5892,7 @@
     "href": "slides/15-diagnostics-multicollinearity.html#independence-1",
     "title": "Model diagnostics + multicollinearity",
     "section": "Independence",
-    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation produced by ChatGPT GPT-6 Astra"
+    "text": "Independence\nLet’s check whether there is unaccounted dependence by sex."
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#influential-point",
@@ -6256,7 +5969,14 @@
     "href": "slides/15-diagnostics-multicollinearity.html#lemurs-leverage",
     "title": "Model diagnostics + multicollinearity",
     "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F    \n\n\n\n\n\n\nWhy do you think these points have high leverage?"
+    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * (3 + 1) / nrow(lemurs)\nh_threshold\n\n[1] 0.03174603\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 5 × 10\n  weight   age taxon .fitted .resid   .hat .sigma .cooksd .std.resid sex  \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;\n1  2515   20.6 ERUF    2823.  -308. 0.0322   533. 0.00288     -0.588 F    \n2  2230   22.2 ERUF    3031.  -801. 0.0353   531. 0.0215      -1.53  F    \n3  1776.  20.6 ERUF    2818. -1042. 0.0322   529. 0.0328      -1.99  F    \n4  1761   23.0 ERUF    3144. -1383. 0.0372   526. 0.0676      -2.65  F    \n5  2040   22.2 ERUF    3031.  -991. 0.0353   530. 0.0328      -1.89  F"
+  },
+  {
+    "objectID": "slides/15-diagnostics-multicollinearity.html#your-turn",
+    "href": "slides/15-diagnostics-multicollinearity.html#your-turn",
+    "title": "Model diagnostics + multicollinearity",
+    "section": "Your turn",
+    "text": "Your turn\n\nWhich variable(s) will we use to examine why the observations have high leverage? Select all that apply.\n\n\n\nhttps://app.wooclap.com/HYEALSK"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#lets-look-at-the-data",
@@ -6284,7 +6004,7 @@
     "href": "slides/15-diagnostics-multicollinearity.html#standardized-residuals-2",
     "title": "Model diagnostics + multicollinearity",
     "section": "Standardized residuals",
-    "text": "Standardized residuals\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual)is the residual rescaled by its variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
+    "text": "Standardized residuals\n\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2(1 - h_{ii})\\)\n\nThe standardized residual (also called internally studentized residual) is the residual rescaled by its estimated variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2(1 - h_{ii})}}\n\\]"
   },
   {
     "objectID": "slides/15-diagnostics-multicollinearity.html#using-standardized-residuals",
