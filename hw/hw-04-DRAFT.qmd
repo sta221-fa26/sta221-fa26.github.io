@@ -1,5 +1,5 @@
 ---
-title: "HW 03: Multiple linear regression"
+title: "HW 04: Multiple linear regression"
 subtitle: "Transformations, diagnostics, and inference"
 bibliography: references.bib
 ---
@@ -93,31 +93,20 @@ Use the model from the previous exercise.
 
 a.  This model violates which of the LINE model assumptions? Briefly explain why.
 b.  Suppose you refit the model with the transformation on $y$, $y^\prime = y / x$, such that $x \neq 0$. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on $x$.
-c.  
 
 ## Exercise 4
 
-[MAKE SURE THIS IS CORRECT + SIMPLFIY IT! ]
+Suppose we have the ordinary least-squares model $$\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})$$
 
-Suppose we have the ordinary least-squares model 
-$$y = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})$$
+a.  Assume $\mathbf{X}$ has full column rank. Use eigendecomposition to show that $(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}$ where $\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})$ with all $\lambda > 0$.
 
-a. Use eigendecomposition to show that $(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathbf{T}$ where $\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_p)$ with all $\lambda > 0$. 
+b.  Recall $Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$ . Use part (a) to show that $$Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{q_{jk}^2}{\lambda_k}$$
 
-b. Use part (a) to show that $$Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{1}{\lambda_k}q_{k}q_k^\mathsf{T}$$
+    where $q_{jk}$ is the $(j,k)$ entry of $\mathbf{Q}$, such that the columns of $\mathbf{Q}$ are orthonormal eigenvectors.
 
+c.  Multicollinearity means there are near-linear dependencies among the columns of $\mathbf{X}$. It is a known fact that when multicollinearity is present, at least one eigenvalue $\lambda_k$ of $\mathbf{X}^\top\mathbf{X}$ is close to zero. Without further proof, use this fact and your formula from (b) to explain why $\operatorname{Var}(\hat\beta_j)$ can be very large when there is multicollinearity.
 
-
-b. Multicollinearity means that some linear combination of the predictor columns is nearly zero. Suppose a vector (\mathbf a), with (\mathbf a^\top\mathbf a=1), satisfies (|X\mathbf a|^2\approx0). Use
-[
-|X\mathbf a|^2
-=\mathbf a^\top X^\top X\mathbf a
-=\sum_{k=1}^{p}\lambda_k(\mathbf q_k^\top\mathbf a)^2
-]
-to explain why at least one eigenvalue must be close to zero.
-
-c. Combine parts (a) and (b) to explain why multicollinearity can produce large variances for estimated regression coefficients. What determines which coefficients are most affected?
-# Applied exercises
+d.  Does a small eigenvalue force every coefficient to have a large variance? Explain, using the quantities $q_{jk}$ in your formula from (b), which coefficients are affected.
 
 ::: callout-important
 ## Instructions

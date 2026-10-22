@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 03: Multiple linear regression – STA 221 - Fall 2026</title>
+<title>HW 04: Multiple linear regression – STA 221 - Fall 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -169,7 +169,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 03: Multiple linear regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 04: Multiple linear regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -480,7 +480,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HW 03: Multiple linear regression</h1>
+<h1 class="title">HW 04: Multiple linear regression</h1>
 <p class="subtitle lead">Transformations, diagnostics, and inference</p>
 </div>
 
@@ -597,18 +597,17 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 <ol type="a">
 <li>This model violates which of the LINE model assumptions? Briefly explain why.</li>
 <li>Suppose you refit the model with the transformation on <span class="math inline">\(y\)</span>, <span class="math inline">\(y^\prime = y / x\)</span>, such that <span class="math inline">\(x \neq 0\)</span>. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on <span class="math inline">\(x\)</span>.</li>
-<li></li>
 </ol>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>[MAKE SURE THIS IS CORRECT + SIMPLFIY IT! ]</p>
-<p>Suppose we have the ordinary least-squares model <span class="math display">\[y = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})\]</span></p>
+<p>Suppose we have the ordinary least-squares model <span class="math display">\[\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})\]</span></p>
 <ol type="a">
-<li><p>Use eigendecomposition to show that <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathbf{T}\)</span> where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_p)\)</span> with all <span class="math inline">\(\lambda &gt; 0\)</span>.</p></li>
-<li><p>Use part (a) to show that <span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{1}{\lambda_k}q_{k}q_k^\mathsf{T}\]</span></p></li>
-<li><p>Multicollinearity means that some linear combination of the predictor columns is nearly zero. Suppose a vector (a), with (a^a=1), satisfies (|Xa|^2). Use [ |Xa|^2 =a^X^Xa =_{k=1}^{p}_k(q_k^a)^2] to explain why at least one eigenvalue must be close to zero.</p></li>
-<li><p>Combine parts (a) and (b) to explain why multicollinearity can produce large variances for estimated regression coefficients. What determines which coefficients are most affected? # Applied exercises</p></li>
+<li><p>Assume <span class="math inline">\(\mathbf{X}\)</span> has full column rank. Use eigendecomposition to show that <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}\)</span> where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> with all <span class="math inline">\(\lambda &gt; 0\)</span>.</p></li>
+<li><p>Recall <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span> . Use part (a) to show that <span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{q_{jk}^2}{\lambda_k}\]</span></p>
+<p>where <span class="math inline">\(q_{jk}\)</span> is the <span class="math inline">\((j,k)\)</span> entry of <span class="math inline">\(\mathbf{Q}\)</span>, such that the columns of <span class="math inline">\(\mathbf{Q}\)</span> are orthonormal eigenvectors.</p></li>
+<li><p>Multicollinearity means there are near-linear dependencies among the columns of <span class="math inline">\(\mathbf{X}\)</span>. It is a known fact that when multicollinearity is present, at least one eigenvalue <span class="math inline">\(\lambda_k\)</span> of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> is close to zero. Without further proof, use this fact and your formula from (b) to explain why <span class="math inline">\(\operatorname{Var}(\hat\beta_j)\)</span> can be very large when there is multicollinearity.</p></li>
+<li><p>Does a small eigenvalue force every coefficient to have a large variance? Explain, using the quantities <span class="math inline">\(q_{jk}\)</span> in your formula from (b), which coefficients are affected.</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">

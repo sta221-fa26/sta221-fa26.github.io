@@ -37,6 +37,8 @@ bibliography: references.bib
 
   - Released later today
 
+- **No office hours today** Office hours will resume tomorrow (Friday, October 23)
+
 ## Spring 2027 STA courses
 
 - **STA 240**: Probability (prereqs: Calculus 2)

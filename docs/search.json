@@ -3661,91 +3661,91 @@
   {
     "objectID": "hw/hw-04-DRAFT.html",
     "href": "hw/hw-04-DRAFT.html",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "",
     "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 29 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-1",
     "href": "hw/hw-04-DRAFT.html#exercise-1",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 1",
     "text": "Exercise 1\nSuppose we have a model of the form\n\\[\n\\log(y_i) =\\beta_0 + \\beta_1\\log(x_i) + \\epsilon_i \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nDescribe the expected change in \\(y_i\\) when \\(x_i\\) is multiplied by a constant \\(C\\). Show the work used to obtain the expected change."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-1-1",
     "href": "hw/hw-04-DRAFT.html#exercise-1-1",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 1",
     "text": "Exercise 1\n\nShow that the eigenvalues of \\(\\mathbf{H}\\) are either 0 or 1.\nShow that the trace of \\(\\mathbf{H}\\) is equal to \\(p+1\\).\nUse parts (a) and (b) to explain why \\(\\text{rank}(\\mathbf{H}) = p+1\\)."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-2",
     "href": "hw/hw-04-DRAFT.html#exercise-2",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 2",
     "text": "Exercise 2\nExercise adapted from Montgomery et al. (2021).\nSuppose we have the weighted least-squares model, that takes the form\n\\[\ny_i =\\beta_1x_i + \\epsilon_i, \\quad \\epsilon_i \\sim N(0, \\sigma^2 x_i^2)\n\\]\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\)."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-3",
     "href": "hw/hw-04-DRAFT.html#exercise-3",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 3",
     "text": "Exercise 3\nUse the model from the previous exercise.\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\)."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-4",
     "href": "hw/hw-04-DRAFT.html#exercise-4",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\n[MAKE SURE THIS IS CORRECT + SIMPLFIY IT! ]\nSuppose we have the ordinary least-squares model \\[y = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\qquad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\\]\n\nUse eigendecomposition to show that \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathbf{T}\\) where \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_p)\\) with all \\(\\lambda &gt; 0\\).\nUse part (a) to show that \\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{1}{\\lambda_k}q_{k}q_k^\\mathsf{T}\\]\nMulticollinearity means that some linear combination of the predictor columns is nearly zero. Suppose a vector (a), with (a^a=1), satisfies (|Xa|^2). Use [ |Xa|^2 =a^X^Xa =_{k=1}^{p}_k(q_k^a)^2] to explain why at least one eigenvalue must be close to zero.\nCombine parts (a) and (b) to explain why multicollinearity can produce large variances for estimated regression coefficients. What determines which coefficients are most affected? # Applied exercises\n\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations."
+    "text": "Exercise 4\nSuppose we have the ordinary least-squares model \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\qquad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\\]\n\nAssume \\(\\mathbf{X}\\) has full column rank. Use eigendecomposition to show that \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathsf{T}\\) where \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_{p+1})\\) with all \\(\\lambda &gt; 0\\).\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\) . Use part (a) to show that \\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{q_{jk}^2}{\\lambda_k}\\]\nwhere \\(q_{jk}\\) is the \\((j,k)\\) entry of \\(\\mathbf{Q}\\), such that the columns of \\(\\mathbf{Q}\\) are orthonormal eigenvectors.\nMulticollinearity means there are near-linear dependencies among the columns of \\(\\mathbf{X}\\). It is a known fact that when multicollinearity is present, at least one eigenvalue \\(\\lambda_k\\) of \\(\\mathbf{X}^\\top\\mathbf{X}\\) is close to zero. Without further proof, use this fact and your formula from (b) to explain why \\(\\operatorname{Var}(\\hat\\beta_j)\\) can be very large when there is multicollinearity.\nDoes a small eigenvalue force every coefficient to have a large variance? Explain, using the quantities \\(q_{jk}\\) in your formula from (b), which coefficients are affected.\n\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#data-age-of-abalones",
     "href": "hw/hw-04-DRAFT.html#data-age-of-abalones",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Data: Age of abalones",
     "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-5",
     "href": "hw/hw-04-DRAFT.html#exercise-5",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 5",
     "text": "Exercise 5\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.\nDoes this model have issues with multicollinearity? Briefly explain, showing any output to support your response."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#data-2000-u.s.-presidential-election",
     "href": "hw/hw-04-DRAFT.html#data-2000-u.s.-presidential-election",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Data: 2000 U.S. Presidential Election",
     "text": "Data: 2000 U.S. Presidential Election\nThese exercises were motivated by Ramsey and Schafer (2012)\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-6",
     "href": "hw/hw-04-DRAFT.html#exercise-6",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 6",
     "text": "Exercise 6\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nName the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 7."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-7",
     "href": "hw/hw-04-DRAFT.html#exercise-7",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 7",
     "text": "Exercise 7\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\nModel 1\nBuchanan2000\nBush2000\n\n\nModel 2\nlog(Buchanan2000)\nBush2000\n\n\nModel 3\nBuchanan2000\nlog(Bush2000)\n\n\nModel 4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)"
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-8",
     "href": "hw/hw-04-DRAFT.html#exercise-8",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 8",
     "text": "Exercise 8\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\), the row of the design matrix for the selected model.\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes)."
   },
   {
     "objectID": "hw/hw-04-DRAFT.html#exercise-9",
     "href": "hw/hw-04-DRAFT.html#exercise-9",
-    "title": "HW 03: Multiple linear regression",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 9",
     "text": "Exercise 9\nIn 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?"
   },
@@ -7204,14 +7204,14 @@
     "href": "slides/16-variable-transformations-notes.html",
     "title": "Variable transformations",
     "section": "",
-    "text": "Project exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today"
+    "text": "Project exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today\n\nNo office hours today Office hours will resume tomorrow (Friday, October 23)"
   },
   {
     "objectID": "slides/16-variable-transformations-notes.html#announcements",
     "href": "slides/16-variable-transformations-notes.html#announcements",
     "title": "Variable transformations",
     "section": "",
-    "text": "Project exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today"
+    "text": "Project exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today\n\nNo office hours today Office hours will resume tomorrow (Friday, October 23)"
   },
   {
     "objectID": "slides/16-variable-transformations-notes.html#spring-2027-sta-courses",
@@ -7477,7 +7477,7 @@
     "href": "slides/16-variable-transformations.html#announcements",
     "title": "Variable transformations",
     "section": "Announcements",
-    "text": "Announcements\n\nProject exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today"
+    "text": "Announcements\n\nProject exploratory data analysis - due October 29 on GitHub\nHW 04 due October 29 at 11:59pm\n\nReleased later today\n\nNo office hours today Office hours will resume tomorrow (Friday, October 23)"
   },
   {
     "objectID": "slides/16-variable-transformations.html#spring-2027-sta-courses",
