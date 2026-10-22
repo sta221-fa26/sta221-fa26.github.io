@@ -29,7 +29,7 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements 
+## Announcements
 
 - Travelers University Modeling Competition - register by October 22. See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8395549) for details
 

@@ -1,0 +1,622 @@
+---
+title: " Variable transformations"
+author: "Prof. Maria Tackett"
+date: "October 22, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 16-variable-transformations-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+- Project exploratory data analysis - due October 29 on GitHub
+
+- HW 04 due October 29 at 11:59pm
+
+  - Released later today
+
+## Computing set up
+
+```{r}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(patchwork)
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Topics
+
+- Multicollinearity exercise
+- Log-transformation on the response variable
+- Log-transformation on predictor variable(s)
+
+# Multicollinearity
+
+## Model diagnostics
+
+- We use model diagnostics to identify **influential points**, i.e., outliers that impact the model coefficients
+
+- We identify influential points using Cook's distance.
+
+  - `.cooksd > 0.5`: potential influential point
+
+  - `.cooksd > 1`: influential point
+
+- Cook's distance takes into account
+
+  - **leverage** $(h_{ii})$ : a measure of how far the value of predictors are from the center of the $x$ space.
+  - **standardized residuals** $(r_i)$: a measure of how far an observation is from the general trend in the data
+
+## Multicollinearity
+
+- Ideally the predictors are orthogonal, meaning they are completely independent of one another
+
+  - In practice, there is typically some dependence between predictors but it is often not a major issue in the model
+
+- If there is linear dependence among (a subset of) the predictors, we cannot find $\hat{\boldsymbol{\beta}}$
+
+- If there are near-linear dependencies (**multicollinearity**), we can compute $\hat{\boldsymbol{\beta}}$ but there may be other issues with the model
+
+# Application exercise
+
+::: appex
+📋 [sta221-fa26.github.io/ae/ae-03-multicollinearity](../ae/ae-03-multicollinearity.html)
+:::
+
+# Variable transformations
+
+## Data: Life expectancy in 140 countries
+
+```{r}
+#| echo: false
+
+library(readxl)
+
+health_data <- read_xlsx("data/life-expectancy-data.xlsx") |>
+  rename(life_exp = `Life_expectancy_at_birth`, 
+         income_inequality = `Income_inequality_Gini_coefficient`,
+         health_expenditure = Health_expenditure) |>
+  mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"), 
+         education = factor(education, levels = c("Low", "High")))
+
+```
+
+The data set comes from @zarulli2021 who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data) and [World Health Organization](https://apps.who.int/nha/database/).
+
+There are `r nrow(health_data)` countries (observations) in the data set.
+
+::: aside
+[Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) for the original research paper.
+:::
+
+## Variables
+
+- `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+
+- `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
+
+## Variables
+
+- `education`: Indicator of whether a country’s education index is above (`High`) or below (`Low`) the median index for the 140 countries in the data set.
+
+  - Education index: *Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.*
+
+- `health_expend`: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar ([from the World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952))
+
+## Exploratory data analysis
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+ggplot(data = health_data, aes(x = health_expenditure)) + 
+  geom_histogram(fill = "steelblue", color = "black") + 
+  labs(x = "",
+       title = "Healthcare expenditure")
+```
+
+## Exploratory data analysis
+
+**The goal is to use income inequality and education to understand variability in healthcare expenditure.**
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+p1 <- ggplot(data = health_data, aes(x = income_inequality, y = health_expenditure)) + 
+  geom_point() + 
+  labs(x = "Income inequality",
+       y = "Healthcare expenditure")
+
+p2 <- ggplot(data = health_data, aes(x = education, y = health_expenditure)) + 
+  geom_boxplot(fill = "steelblue", color = "black") + 
+  labs(x = "Education",
+       y = "Healthcare expenditure")
+
+p1 + p2 + plot_annotation(
+  title = 'Healthcare expenditure vs. predictors')
+```
+
+## Original model
+
+```{r}
+health_fit <- lm(health_expenditure ~ income_inequality + education, 
+                     data = health_data)
+```
+
+```{r}
+#| echo: false
+
+tidy(health_fit) |>
+  kable(digits = 3)
+```
+
+## Original model: Residuals vs. fitted
+
+```{r echo=FALSE}
+health_aug <- augment(health_fit)
+
+resid_orig <- ggplot(data = health_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0,color = "red", linetype. = 2) + 
+  labs(x = "Predicted", y = "Residuals", 
+       title = "Model for original y")
+
+resid_orig
+```
+
+::: question
+What model assumption(s) appear to be violated?
+:::
+
+## Consider different transformations...
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(data=health_data, aes(x=income_inequality, y=health_expenditure)) +
+  geom_point(alpha = 0.7) + 
+  geom_smooth(method = "lm") +
+  labs(title = "Original")
+
+p2 <- ggplot(data=health_data, aes(x=income_inequality, y=log(health_expenditure))) +
+  geom_point(alpha = 0.7) + 
+  geom_smooth(method = "lm") + 
+    labs(y = "log(health_expenditure)",
+         title = "Log-transformed response",
+         
+    )
+p3 <- ggplot(data=health_data, aes(x=log(income_inequality), y=health_expenditure)) +
+  geom_point(alpha = 0.7) + 
+  geom_smooth(method = "lm") + 
+    labs(x = "log(income_inequality)",
+        title = "Log-transformed predictor")
+  
+p4 <- ggplot(data=health_data, aes(x=log(income_inequality), y=log(health_expenditure))) +
+  geom_point(alpha = 0.7) + 
+  geom_smooth(method = "lm") + 
+    labs(x = "log(income_inequality)", y = "log(health_expenditure)",
+         title = "Log-transformed response and predictor")
+  
+(p1 + p2) / (p3 + p4)
+```
+
+# Transformation on $\mathbf{y}$
+
+## Identifying a need to transform $\mathbf{y}$ {.midi}
+
+::: incremental
+- Typically, a “fan-shaped” residual plot indicates the need for a transformation on $\mathbf{y} = [y_1 \dots y_n]^\mathsf{T}$
+
+  - There are multiple ways to transform the values of the response, e.g., $\sqrt{y_i}$, $1/ y_i$, $\log(y_i)$. These are called **variance stabilizing transformations.**
+
+  - $\log(y_i)$ the most straightforward to interpret, so we use that transformation when possible
+
+<!-- -->
+
+- When building a model:
+
+  - Choose a transformation and build the model on the transformed data
+
+  - Reassess the residual plots
+
+  - If the residuals plots did not sufficiently improve, try a new transformation!
+:::
+
+## Log transformation on $\mathbf{y}$
+
+- If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model
+
+$$
+\log(\mathbf{y}) = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})
+$$
+
+- The regression equation is
+
+$$\widehat{\log(\mathbf{y})} = \mathbf{X}\hat{\boldsymbol{\beta}}$$
+
+## Distribution of $\mathbf{y}$ and $\log(\mathbf{y})$
+
+```{r}
+#| echo: false
+
+y_orig <- ggplot(data = health_data, aes(x = health_expenditure)) + 
+  geom_histogram(fill = "steelblue", color = "black") + 
+  labs(x = "",
+       title = "Original")
+
+y_transformed <- ggplot(data = health_data, aes(x = log(health_expenditure))) + 
+  geom_histogram(fill = "darkcyan", color = "black", binwidth = 0.5) + 
+  labs(x = "",
+       title = "Log-transformed")
+
+y_orig + y_transformed + plot_annotation(title = "Original vs. transformed healthcare expenditure")
+```
+
+## Model with $\log(\mathbf{y})$
+
+```{r}
+health_logy_fit <- lm(log(health_expenditure) ~ income_inequality + education, 
+                      data = health_data)
+```
+
+```{r}
+#| echo: false
+
+tidy(health_logy_fit) |>
+  kable(digits = 3)
+```
+
+## Model with $\log(\mathbf{y})$: Residuals
+
+```{r echo=F}
+health_logy_aug <- augment(health_logy_fit)
+
+resid_logy <- ggplot(data = health_logy_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Predicted", y="Residuals",
+       title="Model for log(y)")
+
+resid_logy
+```
+
+## Compare residual plots
+
+```{r}
+#| echo: false
+
+resid_orig + resid_logy
+```
+
+## Model interpretation in terms of $\mathbf{y}$ {.midi}
+
+Let $\mathbf{x}_i^\mathsf{T}$ be the $i^{th}$ row of $\mathbf{X}$. Then,
+
+$$\begin{align}
+\widehat{\log(y_i)} &= \mathbf{x}_i^\mathsf{T}\hat{\boldsymbol{\beta}}\\
+\Rightarrow \hat{y_i} &=  e^{\mathbf{x}^\mathsf{T}_i\hat{\boldsymbol{\beta}}} \\ & = e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_px_{ip})} \\ 
+&= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}$$
+
+. . .
+
+- **Intercept**: When $x_{i1} = \dots = x_{ip} =0$, $y_i$ is expected to be $e^{\hat{\beta}_0}$
+
+- **Coefficient of** $X_j$: For every one unit increase in $x_{ij}$, $y_{i}$ is expected to multiply by a factor of $e^{\hat{\beta}_j}$, holding all else constant.
+
+## You turn - Interpretation
+
+```{r}
+#| echo: false
+
+tidy(health_logy_fit) |>
+  kable(digits = 3)
+```
+
+<br>
+
+:::: question
+::: midi
+Select the best interpretation of `education` in terms of the healthcare expenditure.
+:::
+::::
+
+## Your turn 
+
+![](images/october-22-qrcode.png){fig-align="center" width="30%"}
+
+::: center
+<https://app.wooclap.com/JIZSIKA>
+:::
+
+# Transformation on $x_j$
+
+## Variability in life expectancy
+
+Let's consider a model using a country's healthcare expenditure, income inequality, and education understand variability in its life expectancy.
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+ggplot(data = health_data, aes(x = life_exp)) + 
+  geom_histogram(color = "black", fill = "steelblue") +
+  labs(x = "",
+       title = "Life expectancy in years")
+
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+p1 <- ggplot(data = health_data, aes(x = health_expenditure, y = life_exp)) + 
+  geom_point() + 
+  labs(x = "Healthcare expenditure",
+       y = "Life expectancy")
+
+p2 <- ggplot(data = health_data, aes(x = income_inequality, y = life_exp)) + 
+  geom_point() + 
+  labs(x = "Income inequality",
+       y = "Life expectancy")
+
+p3 <- ggplot(data = health_data, aes(x = education, y = life_exp)) + 
+  geom_boxplot(fill = "steelblue", color = "black") + 
+  labs(x = "Education",
+       y = "Life expectancy")
+
+
+p1 + p2 + p3
+```
+
+## Original model
+
+```{r}
+life_exp_fit <- lm(life_exp ~ health_expenditure + income_inequality + education, 
+                   data = health_data)
+```
+
+```{r}
+#| echo: false
+tidy(life_exp_fit) |>
+  kable(digits = 3)
+```
+
+## Original model: Residuals
+
+```{r}
+#| echo: false
+
+life_exp_aug <- augment(life_exp_fit)
+
+life_exp_resid <- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Predicted", y="Residuals",
+       title="Original model")
+
+life_exp_resid
+```
+
+::: question
+Look at residuals vs. each predictor to determine which variable has non-linear relationship with life expectancy.
+:::
+
+## Residuals vs. predictors
+
+```{r}
+#| echo: false
+#| fig-align: center
+resid1 <-  ggplot(data = life_exp_aug, aes(x = health_expenditure, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Healthcare expenditure", y="Residuals",
+       title="")
+
+resid2 <-  ggplot(data = life_exp_aug, aes(x = income_inequality, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Income inequality", y="Residuals",
+       title="")
+
+resid3 <-  ggplot(data = life_exp_aug, aes(x = education, y = .resid)) +
+  geom_boxplot(fill = "steelblue", color = "black") + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Education", y="Residuals",
+       title="")
+
+resid1 + resid2 + resid3 + plot_annotation(title = "Residuals vs. predictors")
+
+
+```
+
+. . .
+
+::: question
+There is a non-linear relationship is between healthcare expenditure and life expectancy.
+:::
+
+## Log Transformation on $x_j$
+
+Consider a transformation on predictor $x_j$ if the scatterplot in EDA shows non-linear relationship and residuals vs. fitted looks parabolic
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+
+p1 <- ggplot(data = health_data, aes(x = health_expenditure, y = life_exp)) + 
+  geom_point() + 
+  labs(x = "Healthcare expenditure",
+       y = "Life expectancy",
+       title = "EDA")
+
+resid1 <-  ggplot(data = life_exp_aug, aes(x = health_expenditure, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Healthcare expenditure", y="Residuals",
+       title="Residuals")
+
+p1 + resid1 + plot_annotation(title = "Healthcare expenditure")
+```
+
+## Bivariate EDA with log(health_expend)
+
+```{r}
+#| echo: false
+ggplot(data = health_data, aes(x = log(health_expenditure), y = life_exp)) + 
+  geom_point() + 
+  labs(x = "Log-transformed healthcare expenditure",
+       y = "Life expectancy",
+       title = "Life expectancy vs. Log-transformed healthcare expenditure")
+```
+
+## Model with Transformation on $x_j$ {.midi}
+
+When we fit a model with predictor $\log(x_j)$, we fit a model of the form
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})
+$$
+
+such that $\mathbf{X}$ has a column for $\log(x_j)$ .
+
+. . .
+
+The estimated regression model is
+
+$$
+\begin{aligned}
+\hat{\mathbf{y}} &= \mathbf{X}\hat{\boldsymbol{\beta}} \\[8pt]
+\Rightarrow \quad &\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip} 
+\end{aligned}
+$$
+
+## Model with $\log(x_j)$ {.midi}
+
+```{r}
+life_exp_logx_fit <- lm(life_exp ~ log(health_expenditure) + income_inequality 
+                        + education, data = health_data)
+
+```
+
+```{r}
+#| echo: false
+
+tidy(life_exp_logx_fit) |>
+  kable(digits = 3)
+```
+
+## Model with $\log(x_j)$: Residuals
+
+```{r}
+#| echo: false
+life_exp_logx_aug <- augment(life_exp_logx_fit)
+
+resid_logx <- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Predicted", y="Residuals",
+       title="Model with log(x)")
+
+resid_logx
+```
+
+## Comparing residual plots
+
+```{r}
+#| echo: false
+life_exp_resid + resid_logx + plot_annotation(title = "Residuals vs. Predicted")
+```
+
+## Model interpretation {.midi}
+
+$$
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip} 
+$$
+
+::: incremental
+- **Intercept:** When $x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0$ , $y_i$ is expected to be $\hat{\beta}_0$, on average.
+
+  - $\log(x_{ij}) = 0$ when $x_{ij} = 1$
+
+- **Coefficient of** $x_j$**:** When $x_{ij}$ is multiplied by a factor of $C$, $y_i$ is expected to change by $\hat{\beta}_j\log(C)$ units, on average, holding all else constant.
+
+  - **Example**: When $x_{ij}$ is multiplied by a factor of 2, $y_i$ is expected to increase by $\hat{\beta}_j\log(2)$ units, on average, holding all else constant.
+:::
+
+## Model with $\log(x_j)$ {.midi}
+
+```{r}
+life_exp_logx_fit <- lm(life_exp ~ log(health_expenditure) + income_inequality 
+                        + education, data = health_data)
+
+```
+
+```{r}
+#| echo: false
+
+tidy(life_exp_logx_fit) |>
+  kable(digits = 3)
+```
+
+<br>
+
+:::: question
+::: midi
+- Interpret the intercept in the context of the data.
+
+- Interpret the effect of a 10% increase in healthcare expenditure in the context of the data.
+
+- Interpret the effect of education in the context of the data.
+:::
+::::
+
+## Recap
+
+- Explored multicollinearity
+
+- Introduced log-transformation on the response variable
+
+- Introduced log-transformation on predictor variable(s)
+
+- Identified linear models
+
+## Before next class
+
+- Model selection
+
+- Complete [Lecture 17 prepare](../prepare/prepare-lec17.html)
+
+## References
