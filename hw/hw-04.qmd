@@ -7,7 +7,7 @@ bibliography: references.bib
 ::: callout-important
 ## Due date
 
-This assignment is due on **Thursday, October 29 at 11:59pm**. To be considered on time, the following must be done by the due date:
+This assignment is due on **Friday, October 30 at 11:59pm**. To be considered on time, the following must be done by the due date:
 
 - Final `.qmd` and `.pdf` files pushed to your GitHub repo
 - Final `.pdf` file submitted on Gradescope
