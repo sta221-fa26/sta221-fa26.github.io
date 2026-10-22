@@ -37,6 +37,16 @@ bibliography: references.bib
 
   - Released later today
 
+## Spring 2027 STA courses
+
+- **STA 240**: Probability (prereqs: Calculus 2)
+- **STA 323**: Statistical Computing
+- **STA 332**: Statistical Inference (prereqs: Multivariable Calculus)
+- **STA 345**: Statistical Methods for Sports Analytics (coreqs: STA 323)
+- **STA 402**: Bayesian Statistical Modeling (prereqs: STA 332)
+- **STA 561**: Probabilistic Machine Learning (recommended prereq: STA 332)
+- **Math 590/ STA 690**: Sampling and Simulation (prereqs: Probability)
+
 ## Computing set up
 
 ```{r}
@@ -87,6 +97,15 @@ ggplot2::theme_set(ggplot2::theme_bw())
 - If there are near-linear dependencies (**multicollinearity**), we can compute $\hat{\boldsymbol{\beta}}$ but there may be other issues with the model
 
 # Application exercise
+
+Need to install the **rms** R package in the docker container. Run the following command in the ***console*****:**
+
+```{r}
+#| eval: false
+install.packages("rms")
+```
+
+<br>
 
 ::: appex
 📋 [sta221-fa26.github.io/ae/ae-03-multicollinearity](../ae/ae-03-multicollinearity.html)
@@ -350,7 +369,7 @@ Select the best interpretation of `education` in terms of the healthcare expendi
 :::
 ::::
 
-## Your turn 
+## Your turn
 
 ![](images/october-22-qrcode.png){fig-align="center" width="30%"}
 

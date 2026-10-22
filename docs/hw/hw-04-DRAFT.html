@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 04 – STA 221 - Fall 2026</title>
+<title>HW 03: Multiple linear regression – STA 221 - Fall 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -36,8 +90,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../hw/hw-05.html" rel="next">
-<link href="../hw/hw-03.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,6 +128,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -88,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-04.html">HW 04</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 03: Multiple linear regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -208,13 +289,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../hw/hw-01.html" class="sidebar-item-text sidebar-link">
@@ -235,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-04.html" class="sidebar-item-text sidebar-link active">
+  <a href="../hw/hw-04.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 04</span></a>
   </div>
 </li>
@@ -364,15 +445,43 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-1-1" id="toc-exercise-1-1" class="nav-link" data-scroll-target="#exercise-1-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#data-age-of-abalones" id="toc-data-age-of-abalones" class="nav-link" data-scroll-target="#data-age-of-abalones">Data: Age of abalones</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#data-2000-u.s.-presidential-election" id="toc-data-2000-u.s.-presidential-election" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election">Data: 2000 U.S. Presidential Election</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  </ul></li>
+  <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI disclosure</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-04.html">HW 04</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HW 04</h1>
+<h1 class="title">HW 03: Multiple linear regression</h1>
+<p class="subtitle lead">Transformations, diagnostics, and inference</p>
 </div>
 
 
@@ -389,13 +498,365 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
-<!--# add question about  eigenvalues of H are 0 or 1 and use it to show trace-->
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assignment is due on <strong>Thursday, October 29 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<ul>
+<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
+<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this assignment you will use linear regression to explore the relationship between multiple variables. You will also examine model diagnostics and variable transformations.</p>
+</section>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>In this assignment, you will…</p>
+<ul>
+<li>use model diagnostics to identify influential points.</li>
+<li>examine multicollinearity and consider strategies to handle it.</li>
+<li>fit and interpret models with transformed variables.</li>
+</ul>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>Go to the <a href="https://github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>hw-04.</strong> It contains the starter documents you need to complete the assignment.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in this assignment:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rms)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.</p>
+<p><strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Suppose we have a model of the form</p>
+<p><span class="math display">\[
+\log(y_i) =\beta_0 + \beta_1\log(x_i) + \epsilon_i \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
+\]</span></p>
+<p>Describe the expected change in <span class="math inline">\(y_i\)</span> when <span class="math inline">\(x_i\)</span> is multiplied by a constant <span class="math inline">\(C\)</span>. Show the work used to obtain the expected change.</p>
+</section>
+<section id="exercise-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-1">Exercise 1</h2>
+<ol type="a">
+<li><p>Show that the eigenvalues of <span class="math inline">\(\mathbf{H}\)</span> are either 0 or 1.</p></li>
+<li><p>Show that the trace of <span class="math inline">\(\mathbf{H}\)</span> is equal to <span class="math inline">\(p+1\)</span>.</p></li>
+<li><p>Use parts (a) and (b) to explain why <span class="math inline">\(\text{rank}(\mathbf{H}) = p+1\)</span>.</p></li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p><em>Exercise adapted from <span class="citation" data-cites="montgomery2021introduction">Montgomery et al. (<a href="#ref-montgomery2021introduction" role="doc-biblioref">2021</a>)</span>.</em></p>
+<p>Suppose we have the weighted least-squares model, that takes the form</p>
+<p><span class="math display">\[
+y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
+\]</span></p>
+<ol type="a">
+<li>This model violates which of the LINE model assumptions? Briefly explain why.</li>
+<li>Suppose you refit the model with the transformation on <span class="math inline">\(y\)</span>, <span class="math inline">\(y^\prime = y / x\)</span>, such that <span class="math inline">\(x \neq 0\)</span>. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on <span class="math inline">\(x\)</span>.</li>
+</ol>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>Use the model from the previous exercise.</p>
+<ol type="a">
+<li>This model violates which of the LINE model assumptions? Briefly explain why.</li>
+<li>Suppose you refit the model with the transformation on <span class="math inline">\(y\)</span>, <span class="math inline">\(y^\prime = y / x\)</span>, such that <span class="math inline">\(x \neq 0\)</span>. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on <span class="math inline">\(x\)</span>.</li>
+<li></li>
+</ol>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>[MAKE SURE THIS IS CORRECT + SIMPLFIY IT! ]</p>
+<p>Suppose we have the ordinary least-squares model <span class="math display">\[y = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})\]</span></p>
+<ol type="a">
+<li><p>Use eigendecomposition to show that <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathbf{T}\)</span> where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_p)\)</span> with all <span class="math inline">\(\lambda &gt; 0\)</span>.</p></li>
+<li><p>Use part (a) to show that <span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{1}{\lambda_k}q_{k}q_k^\mathsf{T}\]</span></p></li>
+<li><p>Multicollinearity means that some linear combination of the predictor columns is nearly zero. Suppose a vector (a), with (a^a=1), satisfies (|Xa|^2). Use [ |Xa|^2 =a^X^Xa =_{k=1}^{p}_k(q_k^a)^2] to explain why at least one eigenvalue must be close to zero.</p></li>
+<li><p>Combine parts (a) and (b) to explain why multicollinearity can produce large variances for estimated regression coefficients. What determines which coefficients are most affected? # Applied exercises</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.</strong></p>
+<p>Write all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations.</p>
+</div>
+</div>
+</section>
+<section id="data-age-of-abalones" class="level2">
+<h2 class="anchored" data-anchor-id="data-age-of-abalones">Data: Age of abalones</h2>
+<p>The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in <span class="citation" data-cites="warwick1994population">Warwick et al. (<a href="#ref-warwick1994population" role="doc-biblioref">1994</a>)</span>. <a href="https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf">Click here</a> for the publication.</p>
+<p>The 4177 abalones in this study can be reasonably treated as a random sample.</p>
+<p>The data are available in the file <code>abalone.csv</code> in the <code>data</code> folder. This analysis will focus on the following variables:</p>
+<ul>
+<li><p><code>Sex</code>: Male (M), Female (F), Infant (I)</p></li>
+<li><p><code>Length</code>: Longest shell measurement (in millimeters)</p></li>
+<li><p><code>Diameter</code>: Measured perpendicular to length (in millimeters)</p></li>
+<li><p><code>Height</code> : Measured with meat in shell (in millimeters)</p></li>
+<li><p><code>Whole_Weight</code>: Total weight of abalone (in grams)</p></li>
+<li><p><code>Age</code>: Age (in year)</p></li>
+</ul>
+<p><strong>The goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.</strong></p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<ol type="a">
+<li>Fit a model using <code>Sex</code>, <code>Length</code>, <code>Diameter</code>, <code>Height</code> and <code>Whole_Weight</code> to understand variability in <code>Age</code>. Neatly display the model using 3 digits.</li>
+<li>Are there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.</li>
+<li>Consider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.</li>
+<li>Does this model have issues with multicollinearity? Briefly explain, showing any output to support your response.</li>
+</ol>
+</section>
+<section id="data-2000-u.s.-presidential-election" class="level2">
+<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidential-election">Data: 2000 U.S. Presidential Election</h2>
+<p>These exercises were motivated by <span class="citation" data-cites="ramsey_schafer_2012_statistical_sleuth">Ramsey and Schafer (<a href="#ref-ramsey_schafer_2012_statistical_sleuth" role="doc-biblioref">2012</a>)</span></p>
+<p>We will examine data about the <a href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">2000 U.S. presidential election</a> between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous <a href="http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm">butterfly ballots</a>. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.</p>
+<p>The variables in the data are</p>
+<ul>
+<li><p><code>County</code>: County name</p></li>
+<li><p><code>Bush2000</code>: Number of votes for George W. Bush</p></li>
+<li><p><code>Buchanan2000</code>: Number of votes for Pat Buchanan</p></li>
+</ul>
+<p>The data are available in the file <code>florida-votes-2000.csv</code> in the <code>data</code> folder of your repo.</p>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.</p>
+<ol type="a">
+<li>Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.</li>
+<li>Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise and Exercise 7.</strong></li>
+</ol>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Now let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Response variable</th>
+<th>Predictor variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model 1</td>
+<td>Buchanan2000</td>
+<td>Bush2000</td>
+</tr>
+<tr class="even">
+<td>Model 2</td>
+<td>log(Buchanan2000)</td>
+<td>Bush2000</td>
+</tr>
+<tr class="odd">
+<td>Model 3</td>
+<td>Buchanan2000</td>
+<td>log(Bush2000)</td>
+</tr>
+<tr class="even">
+<td>Model 4</td>
+<td>log(Buchanan2000)</td>
+<td>log(Bush2000)</td>
+</tr>
+</tbody>
+</table>
+<p>Which model best fits the data? Briefly explain, showing any work and output used to determine the response. <strong>(Note: Use the data set without the outlying county to find the candidate models.)</strong></p>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Now we will use the model to predict the expected number of Buchanan votes for the outlier county.</p>
+<p>Suppose the observed value of the predictor for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^\mathsf{T} = [1, x_0]\)</span>, the row of the design matrix for the selected model.</p>
+<p>Then the predicted response is</p>
+<p><span class="math display">\[
+\hat{y}_0 = \mathbf{x}_0^\mathsf{T}\hat{\boldsymbol{\beta}}
+\]</span></p>
+<p>Where <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the vector of estimated model coefficients.</p>
+<p>Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a <strong>prediction interval</strong> to quantify the uncertainty in the prediction for a new observation.</p>
+<p>The <span class="math inline">\(C\%\)</span> prediction interval for the new observation is</p>
+<p><span class="math display">\[
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_0)}
+\]</span></p>
+<p>where <span class="math inline">\(t^*_{n-p-1}\)</span> is the critical value obtained from the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom, <span class="math inline">\(\mathbf{X}\)</span> is the design matrix for the model, and <span class="math inline">\(\hat{\sigma}^2_\epsilon\)</span> is the estimated variability about the regression line.</p>
+<ol type="a">
+<li><p>Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+<li><p>Use the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the <code>predict</code> function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+<li><p>It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?</p>
+<ul>
+<li><p>If no, briefly explain.</p></li>
+<li><p>If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>In 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?</p>
+</section>
+</section>
+<section id="ai-disclosure" class="level1">
+<h1>AI disclosure</h1>
+<p>Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste <u><strong>all</strong></u> statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI.</p>
+<ul>
+<li>I didn’t use an LLM / Generative AI tool.</li>
+<li>I asked it to clarify one or more exercises.</li>
+<li>I asked it clarifying questions to better understand a concept.</li>
+<li>I asked it to help write code to complete an exercise.</li>
+<li>I gave it my code and asked it to help me fix it.</li>
+<li>I asked it about an error or why code would do something I didn’t want.</li>
+<li>I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.</li>
+<li>I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.</li>
+<li>Other:______</li>
+</ul>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember: you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<ul>
+<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/73984">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+</ul>
+</section>
+<section id="grading" class="level1">
+<h1>Grading</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ex 1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Ex 2</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>Ex 3</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Ex 4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Ex 5</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>Ex 6</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ex 7</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Ex 8</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>Ex 9</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>AI Disclosure</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Workflow &amp; formatting</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-montgomery2021introduction" class="csl-entry" role="listitem">
+Montgomery, Douglas C, Elizabeth A Peck, and G Geoffrey Vining. 2021. <em>Introduction to Linear Regression Analysis</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-ramsey_schafer_2012_statistical_sleuth" class="csl-entry" role="listitem">
+Ramsey, Fred L., and Daniel W. Schafer. 2012. <em>The Statistical Sleuth: A Course in Methods of Data Analysis</em>. 3rd ed. Cengage Learning.
+</div>
+<div id="ref-warwick1994population" class="csl-entry" role="listitem">
+Warwick, JN, TL Sellers, SR Talbot, AJ Cawthorn, and WB Ford. 1994. <span>“The Population Biology of Abalone (Haliotis Species) in Tasmania. I. Blacklip Abalone (h. Rubra) from the North Coast and Islands of Bass Strait. Sea Fisheries Division.”</span> <em>Sea Fisheries Division, Technical</em>, no. 48.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -796,18 +1257,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../hw/hw-03.html" class="pagination-link" aria-label="HW 03">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">HW 03</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../hw/hw-05.html" class="pagination-link" aria-label="HW 05">
-        <span class="nav-page-text">HW 05</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -816,7 +1265,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

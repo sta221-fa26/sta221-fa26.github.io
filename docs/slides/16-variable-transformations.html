@@ -243,6 +243,18 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 </ul>
 </section>
+<section id="spring-2027-sta-courses" class="slide level2">
+<h2>Spring 2027 STA courses</h2>
+<ul>
+<li><strong>STA 240</strong>: Probability (prereqs: Calculus 2)</li>
+<li><strong>STA 323</strong>: Statistical Computing</li>
+<li><strong>STA 332</strong>: Statistical Inference (prereqs: Multivariable Calculus)</li>
+<li><strong>STA 345</strong>: Statistical Methods for Sports Analytics (coreqs: STA 323)</li>
+<li><strong>STA 402</strong>: Bayesian Statistical Modeling (prereqs: STA 332)</li>
+<li><strong>STA 561</strong>: Probabilistic Machine Learning (recommended prereq: STA 332)</li>
+<li><strong>Math 590/ STA 690</strong>: Sampling and Simulation (prereqs: Probability)</li>
+</ul>
+</section>
 <section id="computing-set-up" class="slide level2">
 <h2>Computing set up</h2>
 <div class="cell">
@@ -298,6 +310,11 @@ Prof.&nbsp;Maria Tackett
 </section></section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
+<p>Need to install the <strong>rms</strong> R package in the docker container. Run the following command in the <strong><em>console</em>:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">install.packages</span>(<span class="st">"rms"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><br></p>
 <div class="appex">
 <p>📋 <a href="../ae/ae-03-multicollinearity.html">sta221-fa26.github.io/ae/ae-03-multicollinearity</a></p>
 </div>
@@ -336,17 +353,17 @@ Prof.&nbsp;Maria Tackett
 <section id="exploratory-data-analysis" class="slide level2">
 <h2>Exploratory data analysis</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="exploratory-data-analysis-1" class="slide level2">
 <h2>Exploratory data analysis</h2>
 <p><strong>The goal is to use income inequality and education to understand variability in healthcare expenditure.</strong></p>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="original-model" class="slide level2">
 <h2>Original model</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a aria-label="2"></a>                     <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb3-2"><a aria-label="2"></a>                     <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -390,14 +407,14 @@ Prof.&nbsp;Maria Tackett
 <section id="original-model-residuals-vs.-fitted" class="slide level2">
 <h2>Original model: Residuals vs.&nbsp;fitted</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="question">
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><div class="question">
 <p>What model assumption(s) appear to be violated?</p>
 </div>
 </section>
 <section id="consider-different-transformations" class="slide level2">
 <h2>Consider different transformations…</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="transformation-on-mathbfy" class="title-slide slide level1 center">
 <h1>Transformation on <span class="math inline">\(\mathbf{y}\)</span></h1>
@@ -438,12 +455,12 @@ Prof.&nbsp;Maria Tackett
 <section id="distribution-of-mathbfy-and-logmathbfy" class="slide level2">
 <h2>Distribution of <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\log(\mathbf{y})\)</span></h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="model-with-logmathbfy" class="slide level2">
 <h2>Model with <span class="math inline">\(\log(\mathbf{y})\)</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>health_logy_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(health_expenditure) <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb3-2"><a aria-label="2"></a>                      <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>health_logy_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(health_expenditure) <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb4-2"><a aria-label="2"></a>                      <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -487,11 +504,11 @@ Prof.&nbsp;Maria Tackett
 <section id="model-with-logmathbfy-residuals" class="slide level2">
 <h2>Model with <span class="math inline">\(\log(\mathbf{y})\)</span>: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="compare-residual-plots" class="slide level2">
 <h2>Compare residual plots</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="model-interpretation-in-terms-of-mathbfy" class="slide level2 midi">
 <h2>Model interpretation in terms of <span class="math inline">\(\mathbf{y}\)</span></h2>
 <p>Let <span class="math inline">\(\mathbf{x}_i^\mathsf{T}\)</span> be the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\mathbf{X}\)</span>. Then,</p>
@@ -569,16 +586,16 @@ Prof.&nbsp;Maria Tackett
 <h2>Variability in life expectancy</h2>
 <p>Let’s consider a model using a country’s healthcare expenditure, income inequality, and education understand variability in its life expectancy.</p>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="original-model-1" class="slide level2">
 <h2>Original model</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb4-2"><a aria-label="2"></a>                   <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb5-2"><a aria-label="2"></a>                   <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -629,14 +646,14 @@ Prof.&nbsp;Maria Tackett
 <section id="original-model-residuals" class="slide level2">
 <h2>Original model: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"><div class="question">
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><div class="question">
 <p>Look at residuals vs.&nbsp;each predictor to determine which variable has non-linear relationship with life expectancy.</p>
 </div>
 </section>
 <section id="residuals-vs.-predictors" class="slide level2">
 <h2>Residuals vs.&nbsp;predictors</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <div class="question">
 <p>There is a non-linear relationship is between healthcare expenditure and life expectancy.</p>
 </div>
@@ -646,11 +663,11 @@ Prof.&nbsp;Maria Tackett
 <h2>Log Transformation on <span class="math inline">\(x_j\)</span></h2>
 <p>Consider a transformation on predictor <span class="math inline">\(x_j\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;fitted looks parabolic</p>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="bivariate-eda-with-loghealth_expend" class="slide level2">
 <h2>Bivariate EDA with log(health_expend)</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
 <section id="model-with-transformation-on-x_j" class="slide level2 midi">
 <h2>Model with Transformation on <span class="math inline">\(x_j\)</span></h2>
 <p>When we fit a model with predictor <span class="math inline">\(\log(x_j)\)</span>, we fit a model of the form</p>
@@ -671,8 +688,8 @@ Prof.&nbsp;Maria Tackett
 <section id="model-with-logx_j" class="slide level2 midi">
 <h2>Model with <span class="math inline">\(\log(x_j)\)</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
-<span id="cb5-2"><a aria-label="2"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
+<span id="cb6-2"><a aria-label="2"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -723,11 +740,11 @@ Prof.&nbsp;Maria Tackett
 <section id="model-with-logx_j-residuals" class="slide level2">
 <h2>Model with <span class="math inline">\(\log(x_j)\)</span>: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="comparing-residual-plots" class="slide level2">
 <h2>Comparing residual plots</h2>
 
-<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
 <section id="model-interpretation" class="slide level2 midi">
 <h2>Model interpretation</h2>
 <p><span class="math display">\[
@@ -747,8 +764,8 @@ Prof.&nbsp;Maria Tackett
 <section id="model-with-logx_j-1" class="slide level2 midi">
 <h2>Model with <span class="math inline">\(\log(x_j)\)</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
-<span id="cb6-2"><a aria-label="2"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
+<span id="cb7-2"><a aria-label="2"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

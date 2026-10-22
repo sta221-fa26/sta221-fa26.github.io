@@ -1,0 +1,303 @@
+---
+title: "HW 03: Multiple linear regression"
+subtitle: "Transformations, diagnostics, and inference"
+bibliography: references.bib
+---
+
+::: callout-important
+## Due date
+
+This assignment is due on **Thursday, October 29 at 11:59pm**. To be considered on time, the following must be done by the due date:
+
+- Final `.qmd` and `.pdf` files pushed to your GitHub repo
+- Final `.pdf` file submitted on Gradescope
+:::
+
+# Introduction
+
+In this assignment you will use linear regression to explore the relationship between multiple variables. You will also examine model diagnostics and variable transformations.
+
+# Learning goals
+
+In this assignment, you will…
+
+- use model diagnostics to identify influential points.
+- examine multicollinearity and consider strategies to handle it.
+- fit and interpret models with transformed variables.
+
+# Getting started
+
+- Go to the [sta221-fa26](https://github.com/sta221-fa26) organization on GitHub. Click on the repo with the prefix **hw-04.** It contains the starter documents you need to complete the assignment.
+
+- Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](../labs/lab-00.html) for details on cloning a repo and starting a new project in R.
+
+# Packages
+
+The following packages are used in this assignment:
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(rms)
+
+# load other packages as needed
+```
+
+# Conceptual exercises
+
+::: callout-important
+## Instructions
+
+The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.
+
+**You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.**
+:::
+
+## Exercise 1
+
+Suppose we have a model of the form
+
+$$
+\log(y_i) =\beta_0 + \beta_1\log(x_i) + \epsilon_i \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
+$$
+
+Describe the expected change in $y_i$ when $x_i$ is multiplied by a constant $C$. Show the work used to obtain the expected change.
+
+## Exercise 1
+
+a.  Show that the eigenvalues of $\mathbf{H}$ are either 0 or 1.
+
+b.  Show that the trace of $\mathbf{H}$ is equal to $p+1$.
+
+c.  Use parts (a) and (b) to explain why $\text{rank}(\mathbf{H}) = p+1$.
+
+## Exercise 2
+
+*Exercise adapted from @montgomery2021introduction.*
+
+Suppose we have the weighted least-squares model, that takes the form
+
+$$
+y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
+$$
+
+a.  This model violates which of the LINE model assumptions? Briefly explain why.
+b.  Suppose you refit the model with the transformation on $y$, $y^\prime = y / x$, such that $x \neq 0$. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on $x$.
+
+## Exercise 3
+
+Use the model from the previous exercise.
+
+a.  This model violates which of the LINE model assumptions? Briefly explain why.
+b.  Suppose you refit the model with the transformation on $y$, $y^\prime = y / x$, such that $x \neq 0$. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on $x$.
+c.  
+
+## Exercise 4
+
+[MAKE SURE THIS IS CORRECT + SIMPLFIY IT! ]
+
+Suppose we have the ordinary least-squares model 
+$$y = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})$$
+
+a. Use eigendecomposition to show that $(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathbf{T}$ where $\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_p)$ with all $\lambda > 0$. 
+
+b. Use part (a) to show that $$Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{1}{\lambda_k}q_{k}q_k^\mathsf{T}$$
+
+
+
+b. Multicollinearity means that some linear combination of the predictor columns is nearly zero. Suppose a vector (\mathbf a), with (\mathbf a^\top\mathbf a=1), satisfies (|X\mathbf a|^2\approx0). Use
+[
+|X\mathbf a|^2
+=\mathbf a^\top X^\top X\mathbf a
+=\sum_{k=1}^{p}\lambda_k(\mathbf q_k^\top\mathbf a)^2
+]
+to explain why at least one eigenvalue must be close to zero.
+
+c. Combine parts (a) and (b) to explain why multicollinearity can produce large variances for estimated regression coefficients. What determines which coefficients are most affected?
+# Applied exercises
+
+::: callout-important
+## Instructions
+
+The applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.
+
+**All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.**
+
+Write all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations.
+:::
+
+## Data: Age of abalones
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: true
+
+library(tidyverse)
+abalone <- read_csv("data/abalone.csv")
+```
+
+The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in @warwick1994population. [Click here](https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf) for the publication.
+
+The `r nrow(abalone)` abalones in this study can be reasonably treated as a random sample.
+
+The data are available in the file `abalone.csv` in the `data` folder. This analysis will focus on the following variables:
+
+- `Sex`: Male (M), Female (F), Infant (I)
+
+- `Length`: Longest shell measurement (in millimeters)
+
+- `Diameter`: Measured perpendicular to length (in millimeters)
+
+- `Height` : Measured with meat in shell (in millimeters)
+
+- `Whole_Weight`: Total weight of abalone (in grams)
+
+- `Age`: Age (in year)
+
+**The goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.**
+
+## Exercise 5
+
+a.  Fit a model using `Sex`, `Length`, `Diameter`, `Height` and `Whole_Weight` to understand variability in `Age`. Neatly display the model using 3 digits.
+b.  Are there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.
+c.  Consider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.
+d.  Does this model have issues with multicollinearity? Briefly explain, showing any output to support your response.
+
+## Data: 2000 U.S. Presidential Election
+
+These exercises were motivated by @ramsey_schafer_2012_statistical_sleuth
+
+We will examine data about the [2000 U.S. presidential election](https://en.wikipedia.org/wiki/2000_United_States_presidential_election) between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous [butterfly ballots](http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm). It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.
+
+The variables in the data are
+
+- `County`: County name
+
+- `Bush2000`: Number of votes for George W. Bush
+
+- `Buchanan2000`: Number of votes for Pat Buchanan
+
+The data are available in the file `florida-votes-2000.csv` in the `data` folder of your repo.
+
+## Exercise 6
+
+The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.
+
+a.  Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.
+b.  Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise and Exercise 7.**
+
+## Exercise 7
+
+Now let's consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:
+
+| Model   | Response variable | Predictor variable |
+|---------|-------------------|--------------------|
+| Model 1 | Buchanan2000      | Bush2000           |
+| Model 2 | log(Buchanan2000) | Bush2000           |
+| Model 3 | Buchanan2000      | log(Bush2000)      |
+| Model 4 | log(Buchanan2000) | log(Bush2000)      |
+
+Which model best fits the data? Briefly explain, showing any work and output used to determine the response. **(Note: Use the data set without the outlying county to find the candidate models.)**
+
+## Exercise 8
+
+Now we will use the model to predict the expected number of Buchanan votes for the outlier county.
+
+Suppose the observed value of the predictor for this county (a new observation) is $x_0$. We define $\mathbf{x}_0^\mathsf{T} = [1, x_0]$, the row of the design matrix for the selected model.
+
+Then the predicted response is
+
+$$
+\hat{y}_0 = \mathbf{x}_0^\mathsf{T}\hat{\boldsymbol{\beta}}
+$$
+
+Where $\hat{\boldsymbol{\beta}}$ is the vector of estimated model coefficients.
+
+Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a **prediction interval** to quantify the uncertainty in the prediction for a new observation.
+
+The $C\%$ prediction interval for the new observation is
+
+$$
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^\mathsf{T}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{x}_0)}
+$$
+
+where $t^*_{n-p-1}$ is the critical value obtained from the $t$ distribution with $n - p - 1$ degrees of freedom, $\mathbf{X}$ is the design matrix for the model, and $\hat{\sigma}^2_\epsilon$ is the estimated variability about the regression line.
+
+a.  Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+b.  Use the formula above to "manually" compute the 95% prediction interval for this county (do not obtain the interval using the `predict` function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+c.  It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?
+
+    - If no, briefly explain.
+
+    - If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+## Exercise 9
+
+In 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?
+
+# AI disclosure
+
+Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste [**all**]{.underline} statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI.
+
+- I didn't use an LLM / Generative AI tool.
+- I asked it to clarify one or more exercises.
+- I asked it clarifying questions to better understand a concept.
+- I asked it to help write code to complete an exercise.
+- I gave it my code and asked it to help me fix it.
+- I asked it about an error or why code would do something I didn't want.
+- I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.
+- I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.
+- Other:\_\_\_\_\_\_
+
+# Submission
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember: you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+
+If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.
+
+Instructions to combine PDFs:
+
+- Preview (Mac): [support.apple.com/guide/preview/combine-pdfs-prvw43696/mac](https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac)
+
+- Adobe (Mac or PC): [helpx.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
+
+  - Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
+:::
+
+To submit your assignment:
+
+- Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/73984)
+
+- Click on the assignment, and you’ll be prompted to submit it.
+
+- Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).
+
+- Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading
+
+| Component             | Points |
+|-----------------------|--------|
+| Ex 1                  | 4      |
+| Ex 2                  | 6      |
+| Ex 3                  | 5      |
+| Ex 4                  | 4      |
+| Ex 5                  | 8      |
+| Ex 6                  | 5      |
+| Ex 7                  | 4      |
+| Ex 8                  | 7      |
+| Ex 9                  | 3      |
+| AI Disclosure         | 1      |
+| Workflow & formatting | 3      |
+
+The "Workflow & formatting" grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.
