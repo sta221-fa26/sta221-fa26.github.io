@@ -100,7 +100,7 @@ Suppose we have the linear regression model $\mathbf{y} = \mathbf{X}\boldsymbol{
 
 $$\mathbf{X}^\mathsf{T}\mathbf{X} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\mathsf{T},$$
 
-where $\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})$ such that each $\lambda_k > 0$.
+where $\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})$ such that each eigenvalue $\lambda_k > 0$.
 
 a.  Given $(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}$, show
 

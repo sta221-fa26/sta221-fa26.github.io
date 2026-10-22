@@ -605,7 +605,7 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <p>Suppose we have the linear regression model <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span> such that <span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}\)</span>. Since <span class="math inline">\(\mathbf{X}\)</span> has full column rank, <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite (as shown in <a href="hw-01.html">HW 01</a>). We can write the eigendecomposition of <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> as</p>
 <p><span class="math display">\[\mathbf{X}^\mathsf{T}\mathbf{X} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\mathsf{T},\]</span></p>
-<p>where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> such that each <span class="math inline">\(\lambda_k &gt; 0\)</span>.</p>
+<p>where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> such that each eigenvalue <span class="math inline">\(\lambda_k &gt; 0\)</span>.</p>
 <ol type="a">
 <li><p>Given <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}\)</span>, show</p>
 <p><span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{q_{jk}^2}{\lambda_k}\]</span></p></li>
