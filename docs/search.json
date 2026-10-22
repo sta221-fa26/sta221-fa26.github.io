@@ -3659,182 +3659,245 @@
     "text": "📖 Read Sections 5.1 - 5.3\n📖 Read Section 8.4.1\n📖 Read Appendix A.5"
   },
   {
-    "objectID": "hw/hw-04-DRAFT.html",
-    "href": "hw/hw-04-DRAFT.html",
-    "title": "HW 04: Multiple linear regression",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02: Multiple linear regression",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 29 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 24 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-1",
-    "href": "hw/hw-04-DRAFT.html#exercise-1",
-    "title": "HW 04: Multiple linear regression",
+    "objectID": "hw/hw-02.html#exercise-1",
+    "href": "hw/hw-02.html#exercise-1",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nSuppose we have a model of the form\n\\[\n\\log(y_i) =\\beta_0 + \\beta_1\\log(x_i) + \\epsilon_i \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nDescribe the expected change in \\(y_i\\) when \\(x_i\\) is multiplied by a constant \\(C\\). Show the work used to obtain the expected change."
+    "text": "Exercise 1\n\nShow that the following is true for the vector of residuals: \\(\\mathbf{e} = (\\mathbf{I} - \\mathbf{H})\\boldsymbol{\\epsilon}\\)\nUse the result from part (a) to derive \\(E(\\mathbf{e})\\).\nUse the result from part (a) to derive \\(Var(\\mathbf{e})\\).",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-1-1",
-    "href": "hw/hw-04-DRAFT.html#exercise-1-1",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nShow that the eigenvalues of \\(\\mathbf{H}\\) are either 0 or 1.\nShow that the trace of \\(\\mathbf{H}\\) is equal to \\(p+1\\).\nUse parts (a) and (b) to explain why \\(\\text{rank}(\\mathbf{H}) = p+1\\)."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-2",
-    "href": "hw/hw-04-DRAFT.html#exercise-2",
-    "title": "HW 04: Multiple linear regression",
+    "objectID": "hw/hw-02.html#exercise-2",
+    "href": "hw/hw-02.html#exercise-2",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nExercise adapted from Montgomery et al. (2021).\nSuppose we have the weighted least-squares model, that takes the form\n\\[\ny_i =\\beta_1x_i + \\epsilon_i, \\quad \\epsilon_i \\sim N(0, \\sigma^2 x_i^2)\n\\]\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\)."
+    "text": "Exercise 2\nShow how \\(\\boldsymbol{\\epsilon}\\) being normally distributed means that \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-3",
-    "href": "hw/hw-04-DRAFT.html#exercise-3",
-    "title": "HW 04: Multiple linear regression",
+    "objectID": "hw/hw-02.html#exercise-3",
+    "href": "hw/hw-02.html#exercise-3",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nUse the model from the previous exercise.\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\)."
+    "text": "Exercise 3\nThis exercise is adapted from Montgomery et al. (2021).\nSuppose we fit the model \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\boldsymbol{\\epsilon}\\) when the true model is actually given by \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\mathbf{X}_2\\boldsymbol{\\beta}_2 + \\boldsymbol{\\epsilon}\\). Assume \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) for both models.\n\nFind \\(E(\\hat{\\boldsymbol{\\beta}}_1)\\), the expected value of the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}_1\\).\nUnder what condition does \\(E(\\hat{\\boldsymbol{\\beta}}_1) = \\boldsymbol{\\beta}_1\\)? What is the relationship between \\(\\mathbf{X}_1\\) and \\(\\mathbf{X}_2\\) under this condition?",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
   },
   {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-4",
-    "href": "hw/hw-04-DRAFT.html#exercise-4",
-    "title": "HW 04: Multiple linear regression",
+    "objectID": "hw/hw-02.html#exercise-4",
+    "href": "hw/hw-02.html#exercise-4",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nSuppose we have the ordinary least-squares model \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\qquad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\\]\n\nAssume \\(\\mathbf{X}\\) has full column rank. Use eigendecomposition to show that \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathsf{T}\\) where \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_{p+1})\\) with all \\(\\lambda &gt; 0\\).\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\) . Use part (a) to show that \\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{q_{jk}^2}{\\lambda_k}\\]\nwhere \\(q_{jk}\\) is the \\((j,k)\\) entry of \\(\\mathbf{Q}\\), such that the columns of \\(\\mathbf{Q}\\) are orthonormal eigenvectors.\nMulticollinearity means there are near-linear dependencies among the columns of \\(\\mathbf{X}\\). It is a known fact that when multicollinearity is present, at least one eigenvalue \\(\\lambda_k\\) of \\(\\mathbf{X}^\\top\\mathbf{X}\\) is close to zero. Without further proof, use this fact and your formula from (b) to explain why \\(\\operatorname{Var}(\\hat\\beta_j)\\) can be very large when there is multicollinearity.\nDoes a small eigenvalue force every coefficient to have a large variance? Explain, using the quantities \\(q_{jk}\\) in your formula from (b), which coefficients are affected.\n\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#data-age-of-abalones",
-    "href": "hw/hw-04-DRAFT.html#data-age-of-abalones",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Data: Age of abalones",
-    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-5",
-    "href": "hw/hw-04-DRAFT.html#exercise-5",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.\nDoes this model have issues with multicollinearity? Briefly explain, showing any output to support your response."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#data-2000-u.s.-presidential-election",
-    "href": "hw/hw-04-DRAFT.html#data-2000-u.s.-presidential-election",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Data: 2000 U.S. Presidential Election",
-    "text": "Data: 2000 U.S. Presidential Election\nThese exercises were motivated by Ramsey and Schafer (2012)\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-6",
-    "href": "hw/hw-04-DRAFT.html#exercise-6",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nName the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 7."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-7",
-    "href": "hw/hw-04-DRAFT.html#exercise-7",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\nModel 1\nBuchanan2000\nBush2000\n\n\nModel 2\nlog(Buchanan2000)\nBush2000\n\n\nModel 3\nBuchanan2000\nlog(Bush2000)\n\n\nModel 4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)"
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-8",
-    "href": "hw/hw-04-DRAFT.html#exercise-8",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\), the row of the design matrix for the selected model.\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes)."
-  },
-  {
-    "objectID": "hw/hw-04-DRAFT.html#exercise-9",
-    "href": "hw/hw-04-DRAFT.html#exercise-9",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\nIn 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?"
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03: Inference for regression",
-    "section": "",
-    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 1 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "Exercise 4\nWe conduct least-squares regression analysis with certain assumptions underlying the regression model. Consider ordinary least-squares regression model:\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\n\\tag{1}\\]\nThis model relies on four assumptions:\n\nLinearity: There is a linear relationship between the response and predictor variables.\nConstant Variance: The variability about the least squares line is constant for every value of the predictor.\nNormality: The distribution of the residuals is approximately normal.\nIndependence: The residuals are independent from one another.\n\nFor each condition, state the components of Equation 1 that are used to represent it.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-1",
-    "href": "hw/hw-03.html#exercise-1",
-    "title": "HW 03: Inference for regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nDerive \\(Var(\\hat{\\mathbf{y})}\\), the variance of the fitted values produced by the ordinary least-squares regression model.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-2",
-    "href": "hw/hw-03.html#exercise-2",
-    "title": "HW 03: Inference for regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nConsider the weighted least-squares regression model\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon} \\hspace{10mm} \\epsilon \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{W}^{-1})\n\\]\nsuch that \\(\\mathbf{W}\\) is a fixed, diagonal matrix with \\(w_i &gt; 0\\), the weight for the \\(i\\)th observation, on the diagonal.\n\nThe estimator for the weighted-least squares model is the \\(\\hat{\\boldsymbol{\\beta}}_{WLS}\\) that minimizes the following objective function:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}\\mathbf{W}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\]\n\nShow that the estimator is \\(\\hat{\\boldsymbol{\\beta}}_{WLS} = (\\mathbf{X}^\\mathsf{T}\\mathbf{W}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{Wy}\\). Hint: You can use the fact that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{W}\\mathbf{X}\\) is invertible; you do not need to show this.\n\nDerive \\(E(\\hat{\\boldsymbol{\\beta}}_{WLS})\\)\nDerive \\(Var(\\hat{\\boldsymbol{\\beta}}_{WLS})\\).",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-3",
-    "href": "hw/hw-03.html#exercise-3",
-    "title": "HW 03: Inference for regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nIf the columns of the design matrix \\(\\mathbf{X}\\) are linearly dependent, prove that there is no matrix \\(\\mathbf{C}\\) such that \\(E[\\mathbf{Cy}] = \\boldsymbol{\\beta}\\) for every possible \\(\\boldsymbol{\\beta}\\). Note: \\(\\mathbf{C}\\) is a fixed matrix, i.e., a matrix of constants.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#data-physical-activity-in-post-covid-19-condition",
-    "href": "hw/hw-03.html#data-physical-activity-in-post-covid-19-condition",
-    "title": "HW 03: Inference for regression",
+    "objectID": "hw/hw-02.html#data-physical-activity-in-post-covid-19-condition",
+    "href": "hw/hw-02.html#data-physical-activity-in-post-covid-19-condition",
+    "title": "HW 02: Multiple linear regression",
     "section": "Data: Physical activity in post-COVID-19 condition",
-    "text": "Data: Physical activity in post-COVID-19 condition\nIn the academic article “Physical activity in post-COVID-19 condition: A cross-sectional study”, Kopp et al. (2026) use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.\nThe data include the baseline measurements for the 141 adults from the clinical trial who were included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This measure is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.\nThe analysis will focus on the variables below. The definitions are in the codebook provided by the authors.\n\nmean_ENMO_per_person: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)\nchron_symp_disease: Physician-diagnosed chronic symptomatic disease (Ja (yes), Nein (no))\nsex : Sex ( Female or Male)\nage: Age in years (ranges from 18 to 80)\nedu_t0: Education\n\nLower secondary: Compulsory school\nUpper secondary: Vocational training or Baccalaureate\nTertiary: Technical college or higher technical college or University\n\nsts_reps_t1 :Number of repetitions during the 30-second Sit-to-Stand test\n\nMeasure of functional capacity\n\nlongcov_pem_grade_t1 : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire\nColumns starting with facit_ : 13 Likert scale items from Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. See the codebook for full details on the questions.\n\nClick here to access the full codebook.\nThe raw data were provided by the authors and are available in physical-activity-post-covid.csv in the data folder of your repo. You may use the code below or your code from HW 02 Exercise 5 to process the data before modeling.\n\nphys_activity &lt;- phys_activity |&gt; \n  mutate(chron_symp_disease = factor(chron_symp_disease, \n                                     levels = c(\"Nein\", \"Ja\")),\n         education = case_when(\n           edu_t0 == \"Compulsory school\" ~ \"Lower secondary\",\n           edu_t0 %in% c(\"Vocational training\", \"Baccalaureate\") ~\n             \"Upper secondary\", \n           TRUE ~ \"Tertiary\"), \n         total_facit = rowSums(across(starts_with(\"facit_\")))\n  )\n\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nOur goal is to use statistical inference to draw conclusions about the factors associated with mean ENMO.",
+    "text": "Data: Physical activity in post-COVID-19 condition\nIn the academic article “Physical activity in post-COVID-19 condition: A cross-sectional study”, Kopp et al. (2026) use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.\nThe data include the baseline measurements for 141 adults who participated in a clinical trial and are included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.\nThe analysis will focus on the variables below. The definitions are in the codebook provided by the authors.\n\nmean_ENMO_per_person: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)\nchron_symp_disease: Physician-diagnosed chronic symptomatic disease (Ja (yes), Nein (no))\nsex : Sex ( Female or Male)\nage: Age in years (ranges from 18 to 80)\nedu_t0: Education\n\nLower secondary: Compulsory school\nUpper secondary: Vocational training or Baccalaureate\nTertiary: Technical college or higher technical college or University\n\nsts_reps_t1 :Number of repetitions during the 30-second Sit-to-Stand test\n\nMeasure of functional capacity\n\nlongcov_pem_grade_t1 : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire\nColumns starting with facit_ : 13 Likert scale items from Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. See the codebook for full details on the questions.\n\nClick here to access the full codebook.\nThe raw data were provided by the authors and are available in physical-activity-post-covid.csv in the data folder of your repo.\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nOur goal is to reproduce the researcher’s regression analysis on the mean 24h ENMO and extend the analysis by considering a potential interaction effect.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-4",
-    "href": "hw/hw-03.html#exercise-4",
-    "title": "HW 03: Inference for regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nLet’s start with the model presented in Table 4 of the article.\n\nFit the linear regression model using physician-diagnosed chronic symptomatic disease, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places. The estimated model coefficients should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)\nDoes the model provide evidence of a difference in the mean ENMO based on education? Briefly explain, referencing any statistics used to make the determination.\nOne of the conclusions the authors draw from the model is “each additional repetition in the 30-s STS test was associated with higher ENMO values”. Does the model support this conclusion? Briefly explain, referencing any statistics used to make the determination.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-5",
-    "href": "hw/hw-03.html#exercise-5",
-    "title": "HW 03: Inference for regression",
+    "objectID": "hw/hw-02.html#exercise-5",
+    "href": "hw/hw-02.html#exercise-5",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nThus far, we have evaluated whether there is evidence of any association between various factors and mean ENMO. Now, we would like to evaluate whether there is evidence of a practically meaningful association.\n(Rowlands et al. 2020)define an increase of 0.8 - 1.0 in mean ENMO to be the “minimum clinically important” change for adults who typically have lower physical activity. We will use 0.8 mg as the lower threshold for clinical importance. Thus, we wish to evaluate whether the difference in the mean ENMO between individuals with chronic symptomatic disease and those without is clinically important.\nTo do so, we wish to test whether the coefficient for chron_symp_disease is less than -0.8.\n\nWrite the null and alternative hypotheses for this test using words and mathematical notation.\nCompute the test statistic for this test. Show the code used to compute the test statistic; you may use any relevant output from the model in the previous exercise.\nWhat is the distribution of the test statistic under the null hypothesis? Specify the distribution specifically for this problem.\nCompute the p-value and state your conclusion in the context of the data using a threshold of \\(\\alpha = 0.05\\).\n\n\n\n\n\n\n\nTip\n\n\n\nUse the pt() function to “manually” compute the p-value.",
+    "text": "Exercise 5\nWe would like to reproduce the regression model for mean ENMO shown in Table 4 of the article. In order to do so, we start with data processing to prepare the data for the model.\n\nConduct the following data processing steps used by the authors to prepare the data for analysis:\n\nRefactor chron_symp_disease, so that Nein is the baseline level.\nThe authors use three levels for education in the model. Create a new variable that summarizes edu_t0 into three levels: Lower secondary, Upper secondary, Tertiary. Refer to the data dictionary to see how the authors categorize the levels of edu_t0.\nThe original data contains the data for each of the 13 items on the Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument (Montan et al. 2018). We wish to compute an overall assessment score for the model. To do so, compute the sum for the 13 assessment items. The possible scores for the assessment total are 0 (severe fatigue) to 52 (no fatigue).\n\nFit the linear regression model using presence of diagnosed chronic symptoms, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places. The model should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-6",
-    "href": "hw/hw-03.html#exercise-6",
-    "title": "HW 03: Inference for regression",
+    "objectID": "hw/hw-02.html#exercise-6",
+    "href": "hw/hw-02.html#exercise-6",
+    "title": "HW 02: Multiple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nThe study excluded individuals with untreated comorbidities. What ethical considerations arise when generalizing these findings to individuals with a post-COVID-19 condition who also have an untreated medical condition?",
+    "text": "Exercise 6\n\nInterpret the coefficient of sts_reps_t1 in the context of the data.\nInterpret the coefficient of Upper secondary in the context of the data.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-7",
+    "href": "hw/hw-02.html#exercise-7",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWe wish to expand on the analysis from the article by considering an interaction between the presence of a diagnosed chronic illness and functional capacity.\n\nCreate a visualization that can be used to explore this potential interaction effect. Use the visualization to comment on whether there appears to be an interaction between these two variables.\nFit a model using the predictors from Exercise 5 along with this interaction effect. Neatly display the model using 2 decimal places.\nInterpret the coefficient for the interaction term.\nInterpret the effect of functional capacity for individuals with a diagnosed chronic illness.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-8",
+    "href": "hw/hw-02.html#exercise-8",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nWhich model is a better fit for the data - the model in Exercise 5 or the model in Exercise 7? Briefly explain your choice using relevant statistics to support your response.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01: Simple linear regression",
+    "section": "",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 10 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-1",
+    "href": "hw/hw-01.html#exercise-1",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn lecture, we introduced \\(\\mathbf{H}\\), the hat matrix, as a projection matrix that projects \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) in linear regression. Here we will show some properties of \\(\\mathbf{H}\\).\n\nShow that \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\).\nShow that \\(\\mathbf{H}\\) is idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nShow that \\(\\text{rank}(\\mathbf{H}) = 2\\) in simple linear regression.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-2",
+    "href": "hw/hw-01.html#exercise-2",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nShow that the Hessian matrix \\(\\frac{\\partial^2}{\\partial \\boldsymbol{\\beta}^2}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite. Assume \\(\\mathbf{X}\\) has full column rank.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-3",
+    "href": "hw/hw-01.html#exercise-3",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nShow that the least-square estimator \\(\\hat{\\boldsymbol{\\beta}}\\) can be written as\n\\[\\hat{\\boldsymbol{\\beta}} = \\boldsymbol{\\beta} + (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\boldsymbol{\\epsilon}\\]\nAssume \\(\\mathbf{X}\\) has full column rank.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-4",
+    "href": "hw/hw-01.html#exercise-4",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nInstead of finding the estimator that minimizes the sum of squared error, we wish to find the estimator that minimizes the following:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) + \\lambda\\boldsymbol{\\beta}^\\mathsf{T}\\boldsymbol{\\beta}\\]\nsuch that \\(\\lambda &gt; 0\\) is a scalar and \\(\\mathbf{X}\\) has full column rank.\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-5",
+    "href": "hw/hw-01.html#exercise-5",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#data-tennis",
+    "href": "hw/hw-01.html#data-tennis",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data: Tennis 🎾",
+    "text": "Data: Tennis 🎾\nThe data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered to only include players who played at least 10 matches overall or at least five matches on hard court surfaces.\nThe data are originally from Wheelo Ratings, a website containing performance statistics for ATP players. The data set was obtained from the SCORE Sports Data Repository.\n\ntennis &lt;- read_csv(\"data/tennis-hardcourt.csv\")\n\nThe analysis will focus on the following variables:\n\nreturn_pct: Percentage of return points won, i.e., percentage of points won on competitor’s serve\nwin_pct: Percentage of matches won\n\n\nAnalysis goal\nThe goal of the analysis is to use the percentage of return points won to explain variability in the percentage of matches won for the ATP players.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-6",
+    "href": "hw/hw-01.html#exercise-6",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nLet’s start by exploring the response and predictor variables.\n\nVisualize distribution of the response variable win_pct. Describe the distribution.\nVisualize the relationship between return_pct and win_pct. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nThe description should include shape, center, spread, and presence of outliers. Use specific values in your description. See Section 3.4.2 of Introduction to Regression Analysis for more information about describing univariate distributions. See the ggplot2 reference for example code and plots.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-7",
+    "href": "hw/hw-01.html#exercise-7",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWe will fit a model using return_pct to explain variability in win_pct. The model takes the form\n\\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 decimal places.\n\n\n\n\n\n\n\nTipMatrix operations in R\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\nmodel.matrix(y ~ x, data = my_data)\nMatrix operations:\n\nAddition/Subtraction: A + B and A - B\nMultiplication : A %*% B\nTranspose of A: t(A).",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-8",
+    "href": "hw/hw-01.html#exercise-8",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nCompute \\(SST\\), \\(SSM\\) and \\(SSR\\) for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality \\(SST = SSM + SSR\\) holds.\nUse the results from part (a) to compute \\(R^2\\) and interpret it in the context of the data.\nUse the data to show that for simple linear regression, \\(R^2\\) is equal to \\(cor(x, y)^2\\) and \\(cor(y, \\hat{y})^2\\). Note: \\(cor(a,b)\\) is the correlation between \\(a\\) and \\(b\\).",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-9",
+    "href": "hw/hw-01.html#exercise-9",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nInterpret the slope for the model fit in Exercise 7 in the context of the data.\nThe intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-10",
+    "href": "hw/hw-01.html#exercise-10",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\n\nU.S. player Ben Shelton had a return percentage of 34.470 during this period. Based on the model, what is the predicted win percentage for this player?\nDuring this period, he won 63.415% of matches. What is the residual for this player?",
+    "crumbs": [
+      "Homework",
+      "HW 01"
     ]
   },
   {
@@ -4396,245 +4459,234 @@
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04: Multiple linear regression",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 10 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 29 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-1",
-    "href": "hw/hw-01.html#exercise-1",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-1",
+    "href": "hw/hw-04.html#exercise-1",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nIn lecture, we introduced \\(\\mathbf{H}\\), the hat matrix, as a projection matrix that projects \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) in linear regression. Here we will show some properties of \\(\\mathbf{H}\\).\n\nShow that \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\).\nShow that \\(\\mathbf{H}\\) is idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nShow that \\(\\text{rank}(\\mathbf{H}) = 2\\) in simple linear regression.",
+    "text": "Exercise 1\nSuppose we have a model of the form\n\\[\n\\log(y_i) =\\beta_0 + \\beta_1\\log(x_i) + \\epsilon_i \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nDescribe the expected change in \\(y_i\\) when \\(x_i\\) is multiplied by a constant \\(C\\). Show the work used to obtain the expected change.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-2",
-    "href": "hw/hw-01.html#exercise-2",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-1-1",
+    "href": "hw/hw-04.html#exercise-1-1",
+    "title": "HW 04: Multiple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nShow that the eigenvalues of \\(\\mathbf{H}\\) are either 0 or 1.\nShow that the trace of \\(\\mathbf{H}\\) is equal to \\(p+1\\).\nUse parts (a) and (b) to explain why \\(\\text{rank}(\\mathbf{H}) = p+1\\).",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-2",
+    "href": "hw/hw-04.html#exercise-2",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nShow that the Hessian matrix \\(\\frac{\\partial^2}{\\partial \\boldsymbol{\\beta}^2}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite. Assume \\(\\mathbf{X}\\) has full column rank.",
+    "text": "Exercise 2\nExercise adapted from Montgomery et al. (2021).\nSuppose we have the weighted least-squares model, that takes the form\n\\[\ny_i =\\beta_1x_i + \\epsilon_i, \\quad \\epsilon_i \\sim N(0, \\sigma^2 x_i^2)\n\\]\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\).",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-3",
-    "href": "hw/hw-01.html#exercise-3",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-3",
+    "href": "hw/hw-04.html#exercise-3",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nShow that the least-square estimator \\(\\hat{\\boldsymbol{\\beta}}\\) can be written as\n\\[\\hat{\\boldsymbol{\\beta}} = \\boldsymbol{\\beta} + (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\boldsymbol{\\epsilon}\\]\nAssume \\(\\mathbf{X}\\) has full column rank.",
+    "text": "Exercise 3\nUse the model from the previous exercise.\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\).",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-4",
-    "href": "hw/hw-01.html#exercise-4",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-4",
+    "href": "hw/hw-04.html#exercise-4",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nInstead of finding the estimator that minimizes the sum of squared error, we wish to find the estimator that minimizes the following:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) + \\lambda\\boldsymbol{\\beta}^\\mathsf{T}\\boldsymbol{\\beta}\\]\nsuch that \\(\\lambda &gt; 0\\) is a scalar and \\(\\mathbf{X}\\) has full column rank.\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes this objective function. Show your derivation and confirm that your solution minimizes the objective function.",
+    "text": "Exercise 4\nSuppose we have the linear regression model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\) such that \\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\). Since \\(\\mathbf{X}\\) has full column rank, \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite (as shown in HW 01). We can write the eigendecomposition of \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) as\n\\[\\mathbf{X}^\\mathsf{T}\\mathbf{X} = \\mathbf{Q}\\boldsymbol{\\Lambda}\\mathbf{Q}^\\mathsf{T},\\]\nwhere \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_{p+1})\\) such that each \\(\\lambda_k &gt; 0\\).\n\nGiven \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathsf{T}\\), show\n\\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{q_{jk}^2}{\\lambda_k}\\]\n\nwhere \\(q_{jk}\\) is the \\((j, k)\\) entry of \\(\\mathbf{Q}\\).\n\nSuppose there is multicollinearity and thus at least one eigenvalue \\(\\lambda_k\\) is close to 0. Use part (a) to briefly explain why this can make \\(Var(\\hat{\\beta}_j)\\) large, and thus the standard error of \\(\\hat{\\beta}_j\\) inflated.\n\n\n\n\n\n\n\nImportantInstructions\n\n\n\nThe applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.\nAll work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.\nWrite all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-5",
-    "href": "hw/hw-01.html#exercise-5",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#data-age-of-abalones",
+    "href": "hw/hw-04.html#data-age-of-abalones",
+    "title": "HW 04: Multiple linear regression",
+    "section": "Data: Age of abalones",
+    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-5",
+    "href": "hw/hw-04.html#exercise-5",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]",
+    "text": "Exercise 5\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.\nDoes this model have issues with multicollinearity? Briefly explain, showing any output to support your response.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#data-tennis",
-    "href": "hw/hw-01.html#data-tennis",
-    "title": "HW 01: Simple linear regression",
-    "section": "Data: Tennis 🎾",
-    "text": "Data: Tennis 🎾\nThe data for this analysis includes the percentage of return points and the win percentage for matches played by 148 players in the Association of Tennis Professionals (ATP). The percentages are computed based on the performance over the 52 weeks prior to May 27, 2024. The data only includes the players’ performance on hard court surfaces during this time period, and it is filtered to only include players who played at least 10 matches overall or at least five matches on hard court surfaces.\nThe data are originally from Wheelo Ratings, a website containing performance statistics for ATP players. The data set was obtained from the SCORE Sports Data Repository.\n\ntennis &lt;- read_csv(\"data/tennis-hardcourt.csv\")\n\nThe analysis will focus on the following variables:\n\nreturn_pct: Percentage of return points won, i.e., percentage of points won on competitor’s serve\nwin_pct: Percentage of matches won\n\n\nAnalysis goal\nThe goal of the analysis is to use the percentage of return points won to explain variability in the percentage of matches won for the ATP players.",
+    "objectID": "hw/hw-04.html#data-2000-u.s.-presidential-election",
+    "href": "hw/hw-04.html#data-2000-u.s.-presidential-election",
+    "title": "HW 04: Multiple linear regression",
+    "section": "Data: 2000 U.S. Presidential Election",
+    "text": "Data: 2000 U.S. Presidential Election\nThese exercises were motivated by Ramsey and Schafer (2012)\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-6",
-    "href": "hw/hw-01.html#exercise-6",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-6",
+    "href": "hw/hw-04.html#exercise-6",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nLet’s start by exploring the response and predictor variables.\n\nVisualize distribution of the response variable win_pct. Describe the distribution.\nVisualize the relationship between return_pct and win_pct. Based on the visualization, would a linear regression model reasonably summarize the relationship between the two variables? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nThe description should include shape, center, spread, and presence of outliers. Use specific values in your description. See Section 3.4.2 of Introduction to Regression Analysis for more information about describing univariate distributions. See the ggplot2 reference for example code and plots.",
+    "text": "Exercise 6\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nName the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 7.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-7",
-    "href": "hw/hw-01.html#exercise-7",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-7",
+    "href": "hw/hw-04.html#exercise-7",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nWe will fit a model using return_pct to explain variability in win_pct. The model takes the form\n\\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 decimal places.\n\n\n\n\n\n\n\nTipMatrix operations in R\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\nmodel.matrix(y ~ x, data = my_data)\nMatrix operations:\n\nAddition/Subtraction: A + B and A - B\nMultiplication : A %*% B\nTranspose of A: t(A).",
+    "text": "Exercise 7\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\nModel 1\nBuchanan2000\nBush2000\n\n\nModel 2\nlog(Buchanan2000)\nBush2000\n\n\nModel 3\nBuchanan2000\nlog(Bush2000)\n\n\nModel 4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-8",
-    "href": "hw/hw-01.html#exercise-8",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-8",
+    "href": "hw/hw-04.html#exercise-8",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nCompute \\(SST\\), \\(SSM\\) and \\(SSR\\) for the model from the previous exercise. Show the code used to compute these values from the appropriate sums (not just built-in R functions). Use the values to show the equality \\(SST = SSM + SSR\\) holds.\nUse the results from part (a) to compute \\(R^2\\) and interpret it in the context of the data.\nUse the data to show that for simple linear regression, \\(R^2\\) is equal to \\(cor(x, y)^2\\) and \\(cor(y, \\hat{y})^2\\). Note: \\(cor(a,b)\\) is the correlation between \\(a\\) and \\(b\\).",
+    "text": "Exercise 8\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\), the row of the design matrix for the selected model.\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-9",
-    "href": "hw/hw-01.html#exercise-9",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html#exercise-9",
+    "href": "hw/hw-04.html#exercise-9",
+    "title": "HW 04: Multiple linear regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nInterpret the slope for the model fit in Exercise 7 in the context of the data.\nThe intercept is negative, which is not possible in practice. Explain why the model might produce such an intercept in this analysis.",
+    "text": "Exercise 9\nIn 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-10",
-    "href": "hw/hw-01.html#exercise-10",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nU.S. player Ben Shelton had a return percentage of 34.470 during this period. Based on the model, what is the predicted win percentage for this player?\nDuring this period, he won 63.415% of matches. What is the residual for this player?",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03: Inference for regression",
     "section": "",
-    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, September 24 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "ImportantDue date\n\n\n\nThis assignment is due on Thursday, October 1 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-1",
-    "href": "hw/hw-02.html#exercise-1",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-1",
+    "href": "hw/hw-03.html#exercise-1",
+    "title": "HW 03: Inference for regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nShow that the following is true for the vector of residuals: \\(\\mathbf{e} = (\\mathbf{I} - \\mathbf{H})\\boldsymbol{\\epsilon}\\)\nUse the result from part (a) to derive \\(E(\\mathbf{e})\\).\nUse the result from part (a) to derive \\(Var(\\mathbf{e})\\).",
+    "text": "Exercise 1\nDerive \\(Var(\\hat{\\mathbf{y})}\\), the variance of the fitted values produced by the ordinary least-squares regression model.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-2",
-    "href": "hw/hw-02.html#exercise-2",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-2",
+    "href": "hw/hw-03.html#exercise-2",
+    "title": "HW 03: Inference for regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nShow how \\(\\boldsymbol{\\epsilon}\\) being normally distributed means that \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed.",
+    "text": "Exercise 2\nConsider the weighted least-squares regression model\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon} \\hspace{10mm} \\epsilon \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{W}^{-1})\n\\]\nsuch that \\(\\mathbf{W}\\) is a fixed, diagonal matrix with \\(w_i &gt; 0\\), the weight for the \\(i\\)th observation, on the diagonal.\n\nThe estimator for the weighted-least squares model is the \\(\\hat{\\boldsymbol{\\beta}}_{WLS}\\) that minimizes the following objective function:\n\\[(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}\\mathbf{W}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\]\n\nShow that the estimator is \\(\\hat{\\boldsymbol{\\beta}}_{WLS} = (\\mathbf{X}^\\mathsf{T}\\mathbf{W}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{Wy}\\). Hint: You can use the fact that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{W}\\mathbf{X}\\) is invertible; you do not need to show this.\n\nDerive \\(E(\\hat{\\boldsymbol{\\beta}}_{WLS})\\)\nDerive \\(Var(\\hat{\\boldsymbol{\\beta}}_{WLS})\\).",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-3",
-    "href": "hw/hw-02.html#exercise-3",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-3",
+    "href": "hw/hw-03.html#exercise-3",
+    "title": "HW 03: Inference for regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nThis exercise is adapted from Montgomery et al. (2021).\nSuppose we fit the model \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\boldsymbol{\\epsilon}\\) when the true model is actually given by \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\mathbf{X}_2\\boldsymbol{\\beta}_2 + \\boldsymbol{\\epsilon}\\). Assume \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) for both models.\n\nFind \\(E(\\hat{\\boldsymbol{\\beta}}_1)\\), the expected value of the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}_1\\).\nUnder what condition does \\(E(\\hat{\\boldsymbol{\\beta}}_1) = \\boldsymbol{\\beta}_1\\)? What is the relationship between \\(\\mathbf{X}_1\\) and \\(\\mathbf{X}_2\\) under this condition?",
+    "text": "Exercise 3\nIf the columns of the design matrix \\(\\mathbf{X}\\) are linearly dependent, prove that there is no matrix \\(\\mathbf{C}\\) such that \\(E[\\mathbf{Cy}] = \\boldsymbol{\\beta}\\) for every possible \\(\\boldsymbol{\\beta}\\). Note: \\(\\mathbf{C}\\) is a fixed matrix, i.e., a matrix of constants.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-4",
-    "href": "hw/hw-02.html#exercise-4",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nWe conduct least-squares regression analysis with certain assumptions underlying the regression model. Consider ordinary least-squares regression model:\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2\\mathbf{I})\n\\tag{1}\\]\nThis model relies on four assumptions:\n\nLinearity: There is a linear relationship between the response and predictor variables.\nConstant Variance: The variability about the least squares line is constant for every value of the predictor.\nNormality: The distribution of the residuals is approximately normal.\nIndependence: The residuals are independent from one another.\n\nFor each condition, state the components of Equation 1 that are used to represent it.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#data-physical-activity-in-post-covid-19-condition",
-    "href": "hw/hw-02.html#data-physical-activity-in-post-covid-19-condition",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#data-physical-activity-in-post-covid-19-condition",
+    "href": "hw/hw-03.html#data-physical-activity-in-post-covid-19-condition",
+    "title": "HW 03: Inference for regression",
     "section": "Data: Physical activity in post-COVID-19 condition",
-    "text": "Data: Physical activity in post-COVID-19 condition\nIn the academic article “Physical activity in post-COVID-19 condition: A cross-sectional study”, Kopp et al. (2026) use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.\nThe data include the baseline measurements for 141 adults who participated in a clinical trial and are included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.\nThe analysis will focus on the variables below. The definitions are in the codebook provided by the authors.\n\nmean_ENMO_per_person: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)\nchron_symp_disease: Physician-diagnosed chronic symptomatic disease (Ja (yes), Nein (no))\nsex : Sex ( Female or Male)\nage: Age in years (ranges from 18 to 80)\nedu_t0: Education\n\nLower secondary: Compulsory school\nUpper secondary: Vocational training or Baccalaureate\nTertiary: Technical college or higher technical college or University\n\nsts_reps_t1 :Number of repetitions during the 30-second Sit-to-Stand test\n\nMeasure of functional capacity\n\nlongcov_pem_grade_t1 : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire\nColumns starting with facit_ : 13 Likert scale items from Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. See the codebook for full details on the questions.\n\nClick here to access the full codebook.\nThe raw data were provided by the authors and are available in physical-activity-post-covid.csv in the data folder of your repo.\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nOur goal is to reproduce the researcher’s regression analysis on the mean 24h ENMO and extend the analysis by considering a potential interaction effect.",
+    "text": "Data: Physical activity in post-COVID-19 condition\nIn the academic article “Physical activity in post-COVID-19 condition: A cross-sectional study”, Kopp et al. (2026) use multiple linear regression to study variability in the amount of daily physical activity among adults experiencing a post-COVID-19 condition (PCC). They define PCC based on the World Health Organization’s definition as a “spectrum of symptoms that persist for three months or longer following a [COVID-19] infection and cannot be explained by an alternative diagnosis.” Common symptoms include fatigue, dyspnea (shortness of breath), concentration difficulties, among others.\nThe data include the baseline measurements for the 141 adults from the clinical trial who were included in the article’s analysis. This article focuses on understanding the level of the participants’ physical activity based on demographic information and factors related to PCC measured by previously validated survey instruments. Physical activity is measured by the 24-hour Euclidean Norm Minus One (mean 24h ENMO). This measure is derived based on accelerometer data and is a reflection of the overall physical activity across an entire day.\nThe analysis will focus on the variables below. The definitions are in the codebook provided by the authors.\n\nmean_ENMO_per_person: Mean ENMO (mg) value over at least 4 days with at least one weekend day for each participant (measured in milligravity, mg)\nchron_symp_disease: Physician-diagnosed chronic symptomatic disease (Ja (yes), Nein (no))\nsex : Sex ( Female or Male)\nage: Age in years (ranges from 18 to 80)\nedu_t0: Education\n\nLower secondary: Compulsory school\nUpper secondary: Vocational training or Baccalaureate\nTertiary: Technical college or higher technical college or University\n\nsts_reps_t1 :Number of repetitions during the 30-second Sit-to-Stand test\n\nMeasure of functional capacity\n\nlongcov_pem_grade_t1 : Post-exertional malaise symptom grade (PEM) measured on Likert scale questionnaire\nColumns starting with facit_ : 13 Likert scale items from Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument. See the codebook for full details on the questions.\n\nClick here to access the full codebook.\nThe raw data were provided by the authors and are available in physical-activity-post-covid.csv in the data folder of your repo. You may use the code below or your code from HW 02 Exercise 5 to process the data before modeling.\n\nphys_activity &lt;- phys_activity |&gt; \n  mutate(chron_symp_disease = factor(chron_symp_disease, \n                                     levels = c(\"Nein\", \"Ja\")),\n         education = case_when(\n           edu_t0 == \"Compulsory school\" ~ \"Lower secondary\",\n           edu_t0 %in% c(\"Vocational training\", \"Baccalaureate\") ~\n             \"Upper secondary\", \n           TRUE ~ \"Tertiary\"), \n         total_facit = rowSums(across(starts_with(\"facit_\")))\n  )\n\n\n\n\n\n\n\nNoteAnalysis goal\n\n\n\nOur goal is to use statistical inference to draw conclusions about the factors associated with mean ENMO.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-5",
-    "href": "hw/hw-02.html#exercise-5",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-4",
+    "href": "hw/hw-03.html#exercise-4",
+    "title": "HW 03: Inference for regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nLet’s start with the model presented in Table 4 of the article.\n\nFit the linear regression model using physician-diagnosed chronic symptomatic disease, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places. The estimated model coefficients should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)\nDoes the model provide evidence of a difference in the mean ENMO based on education? Briefly explain, referencing any statistics used to make the determination.\nOne of the conclusions the authors draw from the model is “each additional repetition in the 30-s STS test was associated with higher ENMO values”. Does the model support this conclusion? Briefly explain, referencing any statistics used to make the determination.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-5",
+    "href": "hw/hw-03.html#exercise-5",
+    "title": "HW 03: Inference for regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nWe would like to reproduce the regression model for mean ENMO shown in Table 4 of the article. In order to do so, we start with data processing to prepare the data for the model.\n\nConduct the following data processing steps used by the authors to prepare the data for analysis:\n\nRefactor chron_symp_disease, so that Nein is the baseline level.\nThe authors use three levels for education in the model. Create a new variable that summarizes edu_t0 into three levels: Lower secondary, Upper secondary, Tertiary. Refer to the data dictionary to see how the authors categorize the levels of edu_t0.\nThe original data contains the data for each of the 13 items on the Functional Assessment of Chronic Illness Therapy Fatigue (FACIT-Fatigue) instrument (Montan et al. 2018). We wish to compute an overall assessment score for the model. To do so, compute the sum for the 13 assessment items. The possible scores for the assessment total are 0 (severe fatigue) to 52 (no fatigue).\n\nFit the linear regression model using presence of diagnosed chronic symptoms, sex, age, functional capacity, severity of fatigue, severity of PEM, and education to explain variability in mean ENMO. Display the model output to 2 decimal places. The model should match the results in Table 4 of the article. (Note: The authors do not print the intercept.)",
+    "text": "Exercise 5\nThus far, we have evaluated whether there is evidence of any association between various factors and mean ENMO. Now, we would like to evaluate whether there is evidence of a practically meaningful association.\n(Rowlands et al. 2020)define an increase of 0.8 - 1.0 in mean ENMO to be the “minimum clinically important” change for adults who typically have lower physical activity. We will use 0.8 mg as the lower threshold for clinical importance. Thus, we wish to evaluate whether the difference in the mean ENMO between individuals with chronic symptomatic disease and those without is clinically important.\nTo do so, we wish to test whether the coefficient for chron_symp_disease is less than -0.8.\n\nWrite the null and alternative hypotheses for this test using words and mathematical notation.\nCompute the test statistic for this test. Show the code used to compute the test statistic; you may use any relevant output from the model in the previous exercise.\nWhat is the distribution of the test statistic under the null hypothesis? Specify the distribution specifically for this problem.\nCompute the p-value and state your conclusion in the context of the data using a threshold of \\(\\alpha = 0.05\\).\n\n\n\n\n\n\n\nTip\n\n\n\nUse the pt() function to “manually” compute the p-value.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-6",
-    "href": "hw/hw-02.html#exercise-6",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-6",
+    "href": "hw/hw-03.html#exercise-6",
+    "title": "HW 03: Inference for regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nInterpret the coefficient of sts_reps_t1 in the context of the data.\nInterpret the coefficient of Upper secondary in the context of the data.",
+    "text": "Exercise 6\nThe study excluded individuals with untreated comorbidities. What ethical considerations arise when generalizing these findings to individuals with a post-COVID-19 condition who also have an untreated medical condition?",
     "crumbs": [
       "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#exercise-7",
-    "href": "hw/hw-02.html#exercise-7",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nWe wish to expand on the analysis from the article by considering an interaction between the presence of a diagnosed chronic illness and functional capacity.\n\nCreate a visualization that can be used to explore this potential interaction effect. Use the visualization to comment on whether there appears to be an interaction between these two variables.\nFit a model using the predictors from Exercise 5 along with this interaction effect. Neatly display the model using 2 decimal places.\nInterpret the coefficient for the interaction term.\nInterpret the effect of functional capacity for individuals with a diagnosed chronic illness.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#exercise-8",
-    "href": "hw/hw-02.html#exercise-8",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nWhich model is a better fit for the data - the model in Exercise 5 or the model in Exercise 7? Briefly explain your choice using relevant statistics to support your response.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {

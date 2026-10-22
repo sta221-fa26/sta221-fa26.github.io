@@ -90,6 +90,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../hw/hw-05.html" rel="next">
+<link href="../hw/hw-03.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -169,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 04: Multiple linear regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-04.html">HW 04</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -289,13 +291,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../hw/hw-01.html" class="sidebar-item-text sidebar-link">
@@ -316,7 +318,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-04.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../hw/hw-04.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HW 04</span></a>
   </div>
 </li>
@@ -471,14 +473,14 @@ window.Quarto = {
   </ul></li>
   <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI disclosure</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#grading-25-points" id="toc-grading-25-points" class="nav-link" data-scroll-target="#grading-25-points">Grading (25 points)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-04.html">HW 04</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">HW 04: Multiple linear regression</h1>
 <p class="subtitle lead">Transformations, diagnostics, and inference</p>
@@ -601,13 +603,16 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Suppose we have the ordinary least-squares model <span class="math display">\[\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \qquad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})\]</span></p>
+<p>Suppose we have the linear regression model <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span> such that <span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}\)</span>. Since <span class="math inline">\(\mathbf{X}\)</span> has full column rank, <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite (as shown in <a href="hw-01.html">HW 01</a>). We can write the eigendecomposition of <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> as</p>
+<p><span class="math display">\[\mathbf{X}^\mathsf{T}\mathbf{X} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\mathsf{T},\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> such that each <span class="math inline">\(\lambda_k &gt; 0\)</span>.</p>
 <ol type="a">
-<li><p>Assume <span class="math inline">\(\mathbf{X}\)</span> has full column rank. Use eigendecomposition to show that <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}\)</span> where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> with all <span class="math inline">\(\lambda &gt; 0\)</span>.</p></li>
-<li><p>Recall <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span> . Use part (a) to show that <span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{q_{jk}^2}{\lambda_k}\]</span></p>
-<p>where <span class="math inline">\(q_{jk}\)</span> is the <span class="math inline">\((j,k)\)</span> entry of <span class="math inline">\(\mathbf{Q}\)</span>, such that the columns of <span class="math inline">\(\mathbf{Q}\)</span> are orthonormal eigenvectors.</p></li>
-<li><p>Multicollinearity means there are near-linear dependencies among the columns of <span class="math inline">\(\mathbf{X}\)</span>. It is a known fact that when multicollinearity is present, at least one eigenvalue <span class="math inline">\(\lambda_k\)</span> of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> is close to zero. Without further proof, use this fact and your formula from (b) to explain why <span class="math inline">\(\operatorname{Var}(\hat\beta_j)\)</span> can be very large when there is multicollinearity.</p></li>
-<li><p>Does a small eigenvalue force every coefficient to have a large variance? Explain, using the quantities <span class="math inline">\(q_{jk}\)</span> in your formula from (b), which coefficients are affected.</p></li>
+<li><p>Given <span class="math inline">\((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} = \mathbf{Q}\boldsymbol{\Lambda}^{-1}\mathbf{Q}^\mathsf{T}\)</span>, show</p>
+<p><span class="math display">\[Var(\hat{\beta}_j) = \sigma^2\sum_{k=1}^{p+1}\frac{q_{jk}^2}{\lambda_k}\]</span></p></li>
+</ol>
+<p>where <span class="math inline">\(q_{jk}\)</span> is the <span class="math inline">\((j, k)\)</span> entry of <span class="math inline">\(\mathbf{Q}\)</span>.</p>
+<ol start="2" type="a">
+<li>Suppose there is multicollinearity and thus at least one eigenvalue <span class="math inline">\(\lambda_k\)</span> is close to 0. Use part (a) to briefly explain why this can make <span class="math inline">\(Var(\hat{\beta}_j)\)</span> large, and thus the standard error of <span class="math inline">\(\hat{\beta}_j\)</span> inflated.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -752,18 +757,18 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember: you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
 <p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
 <p>Instructions to combine PDFs:</p>
 <ul>
@@ -777,14 +782,14 @@ Warning
 </div>
 <p>To submit your assignment:</p>
 <ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/73984">STA 221 Canvas site.</a></p></li>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
 <li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
 <li><p>Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> and “AI Disclosure” sections.</p></li>
 </ul>
 </section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
+<section id="grading-25-points" class="level1">
+<h1>Grading (25 points)</h1>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -794,52 +799,24 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td>Ex 1</td>
-<td>4</td>
+<td>Selected conceptual exercise</td>
+<td>10</td>
 </tr>
 <tr class="even">
-<td>Ex 2</td>
-<td>6</td>
+<td>Selected applied exercise</td>
+<td>10</td>
 </tr>
 <tr class="odd">
-<td>Ex 3</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Ex 4</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>Ex 5</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td>Ex 6</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>Ex 7</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>Ex 8</td>
-<td>7</td>
-</tr>
-<tr class="odd">
-<td>Ex 9</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>AI Disclosure</td>
+<td>Completing AI Disclosure</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Workflow &amp; formatting</td>
-<td>3</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
 
@@ -1256,6 +1233,18 @@ Warwick, JN, TL Sellers, SR Talbot, AJ Cawthorn, and WB Ford. 1994. <span>“The
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../hw/hw-03.html" class="pagination-link" aria-label="HW 03">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">HW 03</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../hw/hw-05.html" class="pagination-link" aria-label="HW 05">
+        <span class="nav-page-text">HW 05</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
