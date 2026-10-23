@@ -462,17 +462,16 @@ window.Quarto = {
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   </ul></li>
   <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
   <ul class="collapse">
   <li><a href="#data-age-of-abalones" id="toc-data-age-of-abalones" class="nav-link" data-scroll-target="#data-age-of-abalones">Data: Age of abalones</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#data-2000-u.s.-presidential-election" id="toc-data-2000-u.s.-presidential-election" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election">Data: 2000 U.S. Presidential Election</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
-  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul></li>
   <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI disclosure</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
@@ -598,14 +597,6 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Use the model from the previous exercise.</p>
-<ol type="a">
-<li>This model violates which of the LINE model assumptions? Briefly explain why.</li>
-<li>Suppose you refit the model with the transformation on <span class="math inline">\(y\)</span>, <span class="math inline">\(y^\prime = y / x\)</span>, such that <span class="math inline">\(x \neq 0\)</span>. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on <span class="math inline">\(x\)</span>.</li>
-</ol>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>Suppose we have the linear regression model <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span> such that <span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}\)</span>. Since <span class="math inline">\(\mathbf{X}\)</span> has full column rank, <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite (as shown in <a href="hw-01.html">HW 01</a>). We can write the eigendecomposition of <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{X}\)</span> as</p>
 <p><span class="math display">\[\mathbf{X}^\mathsf{T}\mathbf{X} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\mathsf{T},\]</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\Lambda} = \operatorname{diag}(\lambda_1,\ldots,\lambda_{p+1})\)</span> such that each eigenvalue <span class="math inline">\(\lambda_k &gt; 0\)</span>.</p>
@@ -651,8 +642,8 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </ul>
 <p><strong>The goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.</strong></p>
 </section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <ol type="a">
 <li>Fit a model using <code>Sex</code>, <code>Length</code>, <code>Diameter</code>, <code>Height</code> and <code>Whole_Weight</code> to understand variability in <code>Age</code>. Neatly display the model using 3 digits.</li>
 <li>Are there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.</li>
@@ -672,16 +663,16 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </ul>
 <p>The data are available in the file <code>florida-votes-2000.csv</code> in the <code>data</code> folder of your repo.</p>
 </section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.</p>
 <ol type="a">
 <li>Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.</li>
-<li>Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise and Exercise 8.</strong></li>
+<li>Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise and Exercise 7.</strong></li>
 </ol>
 </section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <p>Now let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:</p>
 <table class="caption-top table">
 <thead>
@@ -716,8 +707,8 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </table>
 <p>Which model best fits the data? Briefly explain, showing any work and output used to determine the response. <strong>(Note: Use the data set without the outlying county to find the candidate models.)</strong></p>
 </section>
-<section id="exercise-9" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
 <p>Now we will use the model to predict the expected number of Buchanan votes for the outlier county.</p>
 <p>Suppose the observed value of the predictor for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^\mathsf{T} = [1, x_0]\)</span>, the row of the design matrix for the selected model.</p>
 <p>Then the predicted response is</p>
@@ -741,8 +732,8 @@ y_i =\beta_1x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2 x_i^2)
 </ul></li>
 </ol>
 </section>
-<section id="exercise-10" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
 <p>In 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?</p>
 </section>
 </section>

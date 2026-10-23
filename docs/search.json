@@ -4507,18 +4507,7 @@
     "href": "hw/hw-04.html#exercise-4",
     "title": "HW 04: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nUse the model from the previous exercise.\n\nThis model violates which of the LINE model assumptions? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\), such that \\(x \\neq 0\\). Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\).",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html#exercise-5",
-    "href": "hw/hw-04.html#exercise-5",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nSuppose we have the linear regression model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\) such that \\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\). Since \\(\\mathbf{X}\\) has full column rank, \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite (as shown in HW 01). We can write the eigendecomposition of \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) as\n\\[\\mathbf{X}^\\mathsf{T}\\mathbf{X} = \\mathbf{Q}\\boldsymbol{\\Lambda}\\mathbf{Q}^\\mathsf{T},\\]\nwhere \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_{p+1})\\) such that each eigenvalue \\(\\lambda_k &gt; 0\\).\n\nGiven \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathsf{T}\\), show\n\\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{q_{jk}^2}{\\lambda_k}\\]\n\nwhere \\(q_{jk}\\) is the \\((j, k)\\) entry of \\(\\mathbf{Q}\\).\n\nSuppose there is multicollinearity and thus at least one eigenvalue \\(\\lambda_k\\) is close to 0. Use part (a) to briefly explain why this can make \\(Var(\\hat{\\beta}_j)\\) large, and thus the standard error of \\(\\hat{\\beta}_j\\) inflated.",
+    "text": "Exercise 4\nSuppose we have the linear regression model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\) such that \\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2\\mathbf{I}\\). Since \\(\\mathbf{X}\\) has full column rank, \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite (as shown in HW 01). We can write the eigendecomposition of \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) as\n\\[\\mathbf{X}^\\mathsf{T}\\mathbf{X} = \\mathbf{Q}\\boldsymbol{\\Lambda}\\mathbf{Q}^\\mathsf{T},\\]\nwhere \\(\\boldsymbol{\\Lambda} = \\operatorname{diag}(\\lambda_1,\\ldots,\\lambda_{p+1})\\) such that each eigenvalue \\(\\lambda_k &gt; 0\\).\n\nGiven \\((\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1} = \\mathbf{Q}\\boldsymbol{\\Lambda}^{-1}\\mathbf{Q}^\\mathsf{T}\\), show\n\\[Var(\\hat{\\beta}_j) = \\sigma^2\\sum_{k=1}^{p+1}\\frac{q_{jk}^2}{\\lambda_k}\\]\n\nwhere \\(q_{jk}\\) is the \\((j, k)\\) entry of \\(\\mathbf{Q}\\).\n\nSuppose there is multicollinearity and thus at least one eigenvalue \\(\\lambda_k\\) is close to 0. Use part (a) to briefly explain why this can make \\(Var(\\hat{\\beta}_j)\\) large, and thus the standard error of \\(\\hat{\\beta}_j\\) inflated.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -4536,11 +4525,11 @@
     ]
   },
   {
-    "objectID": "hw/hw-04.html#exercise-6",
-    "href": "hw/hw-04.html#exercise-6",
+    "objectID": "hw/hw-04.html#exercise-5",
+    "href": "hw/hw-04.html#exercise-5",
     "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.\nDoes this model have issues with multicollinearity? Briefly explain, showing any output to support your response.",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. This observation has large leverage. Explain how this observation differs from the typical observation in the data.\nDoes this model have issues with multicollinearity? Briefly explain, showing any output to support your response.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -4558,11 +4547,22 @@
     ]
   },
   {
+    "objectID": "hw/hw-04.html#exercise-6",
+    "href": "hw/hw-04.html#exercise-6",
+    "title": "HW 04: Multiple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nName the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 7.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
     "objectID": "hw/hw-04.html#exercise-7",
     "href": "hw/hw-04.html#exercise-7",
     "title": "HW 04: Multiple linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nName the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 8.",
+    "text": "Exercise 7\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\nModel 1\nBuchanan2000\nBush2000\n\n\nModel 2\nlog(Buchanan2000)\nBush2000\n\n\nModel 3\nBuchanan2000\nlog(Bush2000)\n\n\nModel 4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -4573,7 +4573,7 @@
     "href": "hw/hw-04.html#exercise-8",
     "title": "HW 04: Multiple linear regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\nModel 1\nBuchanan2000\nBush2000\n\n\nModel 2\nlog(Buchanan2000)\nBush2000\n\n\nModel 3\nBuchanan2000\nlog(Bush2000)\n\n\nModel 4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
+    "text": "Exercise 8\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\), the row of the design matrix for the selected model.\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -4584,18 +4584,7 @@
     "href": "hw/hw-04.html#exercise-9",
     "title": "HW 04: Multiple linear regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\), the row of the design matrix for the selected model.\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 6. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html#exercise-10",
-    "href": "hw/hw-04.html#exercise-10",
-    "title": "HW 04: Multiple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\nIn 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?",
+    "text": "Exercise 9\nIn 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?",
     "crumbs": [
       "Homework",
       "HW 04"

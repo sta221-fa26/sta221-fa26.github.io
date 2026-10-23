@@ -89,13 +89,6 @@ b.  Suppose you refit the model with the transformation on $y$, $y^\prime = y / 
 
 ## Exercise 4
 
-Use the model from the previous exercise.
-
-a.  This model violates which of the LINE model assumptions? Briefly explain why.
-b.  Suppose you refit the model with the transformation on $y$, $y^\prime = y / x$, such that $x \neq 0$. Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on $x$.
-
-## Exercise 5
-
 Suppose we have the linear regression model $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$ such that $Var(\boldsymbol{\epsilon}) = \sigma^2\mathbf{I}$. Since $\mathbf{X}$ has full column rank, $\mathbf{X}^\mathsf{T}\mathbf{X}$ is positive definite (as shown in [HW 01](hw-01.html)). We can write the eigendecomposition of $\mathbf{X}^\mathsf{T}\mathbf{X}$ as
 
 $$\mathbf{X}^\mathsf{T}\mathbf{X} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\mathsf{T},$$
@@ -154,7 +147,7 @@ The data are available in the file `abalone.csv` in the `data` folder. This anal
 
 **The goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.**
 
-## Exercise 6
+## Exercise 5
 
 a.  Fit a model using `Sex`, `Length`, `Diameter`, `Height` and `Whole_Weight` to understand variability in `Age`. Neatly display the model using 3 digits.
 b.  Are there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.
@@ -177,14 +170,14 @@ The variables in the data are
 
 The data are available in the file `florida-votes-2000.csv` in the `data` folder of your repo.
 
-## Exercise 7
+## Exercise 6
 
 The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.
 
 a.  Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.
-b.  Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise and Exercise 8.**
+b.  Name the county that is an extreme outlier in the number of Buchanan votes. Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise and Exercise 7.**
 
-## Exercise 8
+## Exercise 7
 
 Now let's consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:
 
@@ -197,7 +190,7 @@ Now let's consider potential models with transformations on the response and/or 
 
 Which model best fits the data? Briefly explain, showing any work and output used to determine the response. **(Note: Use the data set without the outlying county to find the candidate models.)**
 
-## Exercise 9
+## Exercise 8
 
 Now we will use the model to predict the expected number of Buchanan votes for the outlier county.
 
@@ -231,7 +224,7 @@ c.  It is assumed that some of the votes for Buchanan in that county were actual
 
     - If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
 
-## Exercise 10
+## Exercise 9
 
 In 3 - 5 sentences, briefly discuss whether your conclusion about the claim in the previous exercise is sensitive to your modeling choices. How do transformations, excluding the outlier, and the width of the prediction interval change the level of uncertainty in your results and the strength of the statistical support for the claim?
 
