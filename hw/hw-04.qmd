@@ -110,6 +110,8 @@ where $q_{jk}$ is the $(j, k)$ entry of $\mathbf{Q}$.
 
 b.  Suppose there is multicollinearity and thus at least one eigenvalue $\lambda_k$ is close to 0. Use part (a) to briefly explain why this can make $Var(\hat{\beta}_j)$ large, and thus the standard error of $\hat{\beta}_j$ inflated.
 
+# Applied exercises
+
 ::: callout-important
 ## Instructions
 
