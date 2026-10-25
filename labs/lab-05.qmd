@@ -10,6 +10,6 @@ format: html
 bibliography: references.bib
 ---
 
-<br> 
+<br>
 
-To be posted. 
+To be posted.
