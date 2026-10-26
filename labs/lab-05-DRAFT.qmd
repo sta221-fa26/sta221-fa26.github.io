@@ -128,7 +128,8 @@ b.  Run the code below to visualize the relationship between `exp100k` and `rev1
     ggplot(sports, aes(x = exp100k, y = rev100k)) +
       geom_point(alpha = 0.4) +
       labs(x = "Expenditure ($100,000)", 
-           y = "Revenue ($100,000)")
+           y = "Revenue ($100,000)") +
+      labs(title = "Revenue versus Expenditure for NCAA Sports")
     ```
 
     Describe the relationship between the two variables.
@@ -140,9 +141,12 @@ d.  Larger values of expenditures and revenues seem to follow a slightly differe
 ## Exercise 2
 
 a.  Visualize the relationship between `log_rev` and `log_exp`.
+
 b.  From the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues.
+
     i.  Give one plausible explanation for this phenomenon.
     ii. Would you recommend including these observations in the analysis? Briefly explain.
+
 c.  For the purposes of this analysis, we will create a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame `sports_nolinear`.
 
 **You will use `sports_nolinear` for the remainder of the assignment.**

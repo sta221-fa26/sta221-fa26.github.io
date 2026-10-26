@@ -526,7 +526,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sports, <span class="fu">aes</span>(<span class="at">x =</span> exp100k, <span class="at">y =</span> rev100k)) <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Expenditure ($100,000)"</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Revenue ($100,000)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Revenue ($100,000)"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Revenue versus Expenditure for NCAA Sports"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Describe the relationship between the two variables.</p></li>
 <li><p>Transform <code>exp100k</code> and <code>rev100k</code> using a log transformation, and name the variables <code>log_exp</code> and <code>log_rev</code>, respectively. Which regression assumption motivates using the log transformations?</p></li>
@@ -536,13 +537,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <ol type="a">
-<li>Visualize the relationship between <code>log_rev</code> and <code>log_exp</code>.</li>
-<li>From the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues.
+<li><p>Visualize the relationship between <code>log_rev</code> and <code>log_exp</code>.</p></li>
+<li><p>From the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues.</p>
 <ol type="i">
 <li>Give one plausible explanation for this phenomenon.</li>
 <li>Would you recommend including these observations in the analysis? Briefly explain.</li>
 </ol></li>
-<li>For the purposes of this analysis, we will create a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame <code>sports_nolinear</code>.</li>
+<li><p>For the purposes of this analysis, we will create a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame <code>sports_nolinear</code>.</p></li>
 </ol>
 <p><strong>You will use <code>sports_nolinear</code> for the remainder of the assignment.</strong></p>
 </section>
