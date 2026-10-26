@@ -1,5 +1,5 @@
 ---
-title: "Lab 05"
+title: "Lab 05: Expanding Multiple Linear Regression"
 execute:
   freeze: auto
   echo: true
@@ -10,6 +10,245 @@ format: html
 bibliography: references.bib
 ---
 
-<br>
+::: callout-important
+# Due date
 
-To be posted.
+This lab is due at the end of your lab session on **October 26.** Be sure to complete the following by the end of your lab:
+
+- Push final `.qmd` and `.pdf` files to your GitHub repo
+- Submit final `.pdf` file on Gradescope
+
+**No late work is accepted for labs.**
+:::
+
+# Introduction
+
+In this lab, you will apply what you've learned about linear regression to analyze data on expenditures and revenues for collegiate athletic programs. The analysis will focus on working with and interpreting categorical predictors and interaction terms. You will also explore model conditions as part of an assessment of a model's appropriateness for the data.
+
+# Learning goals
+
+By the end of the lab you will be able to…
+
+- use multiple linear regression to analyze complex real-world data.
+- use variance-stabilizing transformations.
+- identify and address multicollinearity.
+
+# Getting started
+
+- Go to the [sta221-fa26](https://www.github.com/sta221-fa26) organization on GitHub. Click on the repo with the prefix **lab-05**. It contains the starter documents you need to complete the lab.
+
+- Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](../labs/lab-00.html) for details on cloning a repo and starting a new project in R.
+
+- Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.
+
+# Packages
+
+You will use the following packages in today’s lab. Add other packages as needed.
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+#| eval: true
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+```
+
+# Data
+
+Today's data contains expenditures, revenues, and student body composition, other information about NCAA Division 1 athletic programs at colleges and universities in the United States. The data were featured as part of the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md) data visualization challenge. It was originally obtained from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list), a reporting tool by the Office of Postsecondary Education of the U.S. Department of Education.
+
+We will investigate whether institution features affect the revenues of athletics programs in different sports. Here is a table describing the variables in the data.
+
+This analysis will focus on the following variables:
+
+- `institution_name`: Institution name
+
+- `sector_name`: Institution type
+
+- `ef_total_count`: Total student enrollment for binary male/female gender
+
+- `sum_partic_men`: Total participation in athletics for men
+
+- `sum_partic_women`: Total participation in athletics for women
+
+- `sports`: Sports name
+
+- `total_exp_menwomen`: Total expenditure for both (in US dollars)
+
+- `total_rev_menwomen`: Total revenue for all sports (in US dollars)
+
+[Click here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md) for the full data dictionary.
+
+```{r}
+#| label: load-data
+#| echo: true
+#| eval: true
+#| message: false
+#| warning: false
+sports <- read_csv("data/ncaa-revenues.csv")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+
+sports <- sports |> 
+  mutate(bball_football = 
+           as.factor(if_else(sports == "Basketball" | sports == "Football", 1, 0)),
+         exp_100k = total_exp_menwomen / 100000,
+         rev_100k = total_rev_menwomen / 100000,
+         log_exp = log(exp_100k),
+         log_rev = log(rev_100k))
+
+sports_nolinear <- sports |>
+  filter(log_exp != log_rev)
+```
+
+# Exercises
+
+**Goal**: The goal of the analysis is to use various features of NCAA Division 1 colleges and universities to explain variability in the total revenue from their athletic programs.
+
+## Exercise 1
+
+a.  We'll begin by rescaling the response and some of the predictor variables.
+
+    - Rescale the response variable `total_rev_menwomen` and the primary predictor variable `total_exp_menwomen`, so that they are in terms of \$100K (100 thousand dollars). Name the new variables `rev100k` and `exp100k`, respectively.
+
+    - Rescale the predictor variable `ef_total_count` , so it is in terms of thousands of students. Name the new variable `students_1k`.
+
+b.  Run the code below to visualize the relationship between `exp100k` and `rev100k` .
+
+    ```{r}
+    #| label: plot-original-scales
+    #| echo: true
+
+    ggplot(sports, aes(x = exp100k, y = rev100k)) +
+      geom_point(alpha = 0.4) +
+      labs(x = "Expenditure ($100,000)", 
+           y = "Revenue ($100,000)") +
+      labs(title = "Revenue versus Expenditure for NCAA Sports")
+    ```
+
+    Describe the relationship between the two variables.
+
+c.  Transform `exp100k` and `rev100k` using a log transformation, and name the variables `log_exp` and `log_rev`, respectively. Which regression assumption motivates using the log transformations?
+
+d.  Larger values of expenditures and revenues seem to follow a slightly different trend and are associated with two sports - football and basketball. Create an indicator variable that takes value `1` if the sport is basketball or football and `0` otherwise. Name the variable `bball_football`.
+
+## Exercise 2
+
+a.  Visualize the relationship between `log_rev` and `log_exp`.
+
+b.  From the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues.
+
+    i.  Give one plausible explanation for this phenomenon.
+    ii. Would you recommend including these observations in the analysis? Briefly explain.
+
+c.  For the purposes of this analysis, we will create a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame `sports_nolinear`.
+
+**You will use `sports_nolinear` for the remainder of the assignment.**
+
+## Exercise 3
+
+Use the code below to fit a model of log-transformed revenue using the predictors log-transformed expenditures, student enrollment, institution type, sports type, participation in athletics for men, participation in athletics for women, the basketball/football indicator you created in a previous exercise, the interaction between the log-transformed expenditures and the basketball/football indicator.
+
+```{r}
+#| echo: true
+#| eval: false
+
+sports_fit <- lm(log_rev ~ sports + students_1k + sector_name +
+                     sum_partic_men + sum_partic_women + log_exp + 
+                     log_exp*bball_football,
+                   data = sports_nolinear)
+```
+
+a.  What type of institution and sport correspond to the intercept?
+
+b.  You'll notice that one coefficient has a missing value. Why is the coefficient missing? What is the technical name of this phenomenon?
+
+## Exercise 4
+
+For the sake of interpretability, it is useful to have a regression model in which no coefficients are missing, and the coefficients for each sport indicator represent the baseline level for such sport.
+
+To address this issue, use the code below to fit another regression model that uses the same predictors as before, making sure to drop the unnecessary variables and the intercept (by the the `-1` in the formula) to achieve this.
+
+```{r}
+#| echo: true
+#| eval: true
+
+sports_fit_2 <- lm(log_rev ~ -1 + sports + students_1k + sector_name +
+             sum_partic_men + sum_partic_women + log_exp + 
+             log_exp*bball_football - bball_football,
+          data = sports_nolinear)
+```
+
+a.  Why is there only one coefficient for institution type, even after the intercept was removed?
+
+b.  Which type of institution was chosen to be the baseline in this model?
+
+## Exercise 5
+
+Let's examine the residuals for the model from the previous exercise.
+
+Because there are multiple sports at every institution, we may be concerned the residuals within an institution are correlated with each other (thus violating the independence assumption).
+
+Due to the large number of institutions, we will look at randomly selected subset of 20 institutions to evaluate this.
+
+a.  Take a random sample of 20 institutions. Use `set.seed(221)` to make your results reproducible. Then plot the residuals versus fitted values, faceted by institution for the 20 institutions.
+
+b.  Based on the faceted plot, do the errors appear to be correlated within institutions? Briefly explain your response.
+
+::: callout-tip
+[Click here](https://r-graph-gallery.com/223-faceting-with-ggplot2.html) for more detail, code, and examples of faceting in ggplot2.
+
+You may need to change the size of the figure so that the faceted lot is fully visible. You can do so using the options `#| fig-width` and `#| fig-height` in the code chunk.
+:::
+
+# Submission
+
+You will submit the PDF documents for labs, homework, and exams in Gradescope as part of your final submission.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to Gradescope by the end of your lab session.
+
+If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.
+
+Instructions to combine PDFs:
+
+- Preview (Mac): [support.apple.com/guide/preview/combine-pdfs-prvw43696/mac](https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac)
+
+- Adobe (Mac or PC): [helpx.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
+
+- Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
+:::
+
+**To submit your assignment:**
+
+- Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/84458)
+
+- Click on the assignment, and you’ll be prompted to submit it.
+
+- Mark the pages associated with each exercise. Each question in Gradescope should have at least one page associated with it.
+
+- Select the first page of your .PDF submission to be associated with "Attendance & submitting lab" and "Workflow & formatting"
+
+# Grading (30 pts)
+
+This lab will be graded based on completion and workflow & formatting. The point breakdown is as follows:
+
+| Component                   | Points             |
+|-----------------------------|--------------------|
+| Attendance & submitting lab | 10                 |
+| Two exercises               | 16 (8 points each) |
+| Workflow & formatting       | 4                  |
+
+------------------------------------------------------------------------
+
+We will grade two randomly selected exercises.
+
+The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.
