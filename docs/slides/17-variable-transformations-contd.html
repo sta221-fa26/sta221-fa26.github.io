@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 221 - Fall 2026 – Model selection</title>
+  <title>STA 221 - Fall 2026 – Variable transformations</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -221,7 +221,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Model selection</h1>
+  <h1 class="title">Variable transformations</h1>
+  <p class="subtitle">Transforming predictors</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -237,7 +238,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Announcements</h2>
 <ul>
 <li><p>Project exploratory data analysis - due October 29 on GitHub</p></li>
-<li><p>HW 04 due October 30 at 11:59pm</p></li>
+<li><p>HW 04 - due October 30 at 11:59pm</p></li>
 <li><p>Statistics experience - due November 24 at 11:59pm</p></li>
 </ul>
 </section>
@@ -477,13 +478,15 @@ Prof.&nbsp;Maria Tackett
 </div>
 <div class="midi">
 <ul>
-<li><p>For each additional point increase in the index for income inequality, a country’s predicted healthcare expenditure is expected to multiply by a factor of 0.937 (exp(-0.065)), holding education constant.</p></li>
-<li><p>A country with high education index is expected to have a healthcare expenditure that is 3.056 (exp(1.117)) times the healthcare expenditure of a country with low education index, holding education constant.</p></li>
+<li><p>For each additional point increase in the index for income inequality, a country’s healthcare expenditure is expected to multiply by a factor of 0.937 (exp(-0.065)), holding education constant.</p></li>
+<li><p>A country with high education index is expected to have a healthcare expenditure that is 3.056 (exp(1.117)) times the healthcare expenditure of a country with low education index, holding income inequality constant.</p></li>
 </ul>
 </div>
-</section>
-<section id="transformation-on-x_j" class="slide level2">
-<h2>Transformation on <span class="math inline">\(x_j\)</span></h2>
+</section></section>
+<section>
+<section id="transformation-on-x_j" class="title-slide slide level1 center">
+<h1>Transformation on <span class="math inline">\(x_j\)</span></h1>
+
 </section>
 <section id="variability-in-life-expectancy" class="slide level2">
 <h2>Variability in life expectancy</h2>
@@ -654,7 +657,7 @@ Prof.&nbsp;Maria Tackett
 \hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
 \]</span></p>
 <ul>
-<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0\)</span> , <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span>, on average.</p>
+<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0\)</span> , <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span>.</p>
 <ul>
 <li class="fragment"><span class="math inline">\(\log(x_{ij}) = 0\)</span> when <span class="math inline">\(x_{ij} = 1\)</span></li>
 </ul></li>
@@ -721,26 +724,20 @@ Prof.&nbsp;Maria Tackett
 <ul>
 <li><p>Interpret the intercept in the context of the data.</p></li>
 <li><p>Interpret the effect of a 10% increase in healthcare expenditure in the context of the data.</p></li>
-<li><p>Interpret the effect of education in the context of the data.</p></li>
 </ul>
 </div>
 </div>
 </section></section>
-<section id="what-is-a-linear-model" class="title-slide slide level1 center">
-<h1>What is a linear model</h1>
-
-</section>
-
 <section>
-<section id="linear-model" class="title-slide slide level1 center">
-<h1>Linear model</h1>
+<section id="what-is-a-linear-model" class="title-slide slide level1 center">
+<h1>What is a linear model?</h1>
 <center>
 <div class="question">
 <p>Is a model with log-transformed response and/or predictor still a “linear” model?</p>
 </div>
 </center>
 </section>
-<section id="linear-model-1" class="slide level2">
+<section id="linear-model" class="slide level2">
 <h2>“Linear” model</h2>
 <p>What does it mean for a model to be a “linear” model?</p>
 <ul>

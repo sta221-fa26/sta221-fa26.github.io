@@ -1,5 +1,6 @@
 ---
-title: "Model selection" 
+title: "Variable transformations"
+subtitle: "Transforming predictors"
 author: "Prof. Maria Tackett"
 date: "October 27, 2026"
 date-format: "MMM DD, YYYY"
@@ -33,18 +34,17 @@ bibliography: references.bib
 
 - Project exploratory data analysis - due October 29 on GitHub
 
-- HW 04 due October 30 at 11:59pm
+- HW 04 - due October 30 at 11:59pm
 
 - Statistics experience - due November 24 at 11:59pm
 
-## Upcoming dates 
+## Upcoming dates
 
 - November 12: Exam 02
 
 - November 23: Project presentations in lab
 
 - November 24: No lecture - finish statistics experience
-
 
 ## Computing set up
 
@@ -277,12 +277,12 @@ tidy(health_logy_fit) |>
 ```
 
 ::: midi
-- For each additional point increase in the index for income inequality, a country's predicted healthcare expenditure is expected to multiply by a factor of `r round(exp(-0.065), 3)` (exp(-0.065)), holding education constant.
+- For each additional point increase in the index for income inequality, a country's healthcare expenditure is expected to multiply by a factor of `r round(exp(-0.065), 3)` (exp(-0.065)), holding education constant.
 
-- A country with high education index is expected to have a healthcare expenditure that is `r round(exp(1.117), 3)` (exp(1.117)) times the healthcare expenditure of a country with low education index, holding education constant.
+- A country with high education index is expected to have a healthcare expenditure that is `r round(exp(1.117), 3)` (exp(1.117)) times the healthcare expenditure of a country with low education index, holding income inequality constant.
 :::
 
-## Transformation on $x_j$
+# Transformation on $x_j$
 
 ## Variability in life expectancy
 
@@ -491,7 +491,7 @@ $$
 $$
 
 ::: incremental
-- **Intercept:** When $x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0$ , $y_i$ is expected to be $\hat{\beta}_0$, on average.
+- **Intercept:** When $x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0$ , $y_i$ is expected to be $\hat{\beta}_0$.
 
   - $\log(x_{ij}) = 0$ when $x_{ij} = 1$
 
@@ -522,14 +522,10 @@ tidy(life_exp_logx_fit) |>
 - Interpret the intercept in the context of the data.
 
 - Interpret the effect of a 10% increase in healthcare expenditure in the context of the data.
-
-- Interpret the effect of education in the context of the data.
 :::
 ::::
 
-# What is a linear model
-
-# Linear model
+# What is a linear model?
 
 <center>
 
