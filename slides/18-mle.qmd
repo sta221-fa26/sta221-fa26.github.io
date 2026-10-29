@@ -1,0 +1,464 @@
+---
+title: "Maximum likelihood estimation"
+author: "Prof. Maria Tackett"
+date: "October 29, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 18-mle-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+- Project exploratory data analysis - due **TODAY** on GitHub
+
+- HW 04 - due October 30 at 11:59pm
+
+- Statistics experience - due November 24 at 11:59pm
+
+- SSMU Data Challenge #2 November 14 - See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8452527) announcement for details
+
+## Icebreaker 
+
+<br>
+
+::: question
+What is your favorite Halloween candy (or just candy in general)?
+:::
+
+## Topics
+
+Introduce
+
+- Likelihood functions
+
+- Maximum likelihood estimation (MLE)
+
+- MLE for linear regression
+
+# Maximum likelihood estimation
+
+## Motivation {.midi}
+
+- We've discussed how to find the estimators of $\boldsymbol{\beta}$ and $\sigma^2$ for the model
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2\mathbf{I})
+$$using least-squares estimation
+
+- Today we will introduce another way to find these estimators - **maximum likelihood estimation.**
+
+- We will see the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold
+
+# Maximum likelihood estimation
+
+## Example: Basketball
+
+Suppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is $p$
+
+. . .
+
+::: incremental
+- What is the probability distribution for this random phenomenon?
+
+- Suppose the probability is $p = 0.5$. What is the probability the player makes a single basket, given this value of $p$?
+
+- Suppose the probability is $p = 0.8$. What is the probability the player makes a single basket, given this value of $p$?
+:::
+
+## Three basketball shots
+
+Suppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.
+
+Let $B$ represent a made basket, and $M$ represent a missed basket. The player shoots the ball three times with the outcome $BBM$.
+
+. . .
+
+::: incremental
+- Suppose the probability is $p = 0.5$. What is the probability of observing the data $BBM$, given this value of $p$?
+
+- Suppose the probability is $p = 0.3$. What is the probability of observing the data $BBM$, given this value of $p$ ?
+:::
+
+## Three basketball shots
+
+Suppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.
+
+The player shoots the ball three times with the outcome $BBM$.
+
+. . .
+
+::: incremental
+- **New question:** What parameter value of $p$ do you think maximizes the probability of observing this data?
+
+- We will use a **likelihood** function to answer this question.
+:::
+
+## Likelihood {.midi}
+
+::: incremental
+- A **likelihood function** is a measure of how likely we are to observe our data under each possible value of the parameter(s)
+
+- Note that this is **not** the same as the probability function.
+
+- **Probability function**: Fixed parameter value(s) + input possible outcomes
+
+  - *Given* $p=0.8$ , *what is the probability of observing* $BBM$ *in three basketball shots?*
+
+- **Likelihood function**: Fixed data + input possible parameter values
+
+  - *Given we've observed* $BBM$, *what is the most plausible value of* $p$?
+:::
+
+## Likelihood: Three basketball shots
+
+The likelihood function for the probability of a basket $p$ given we observed $BBM$ when shooting the ball three independent times $$
+L(p|BBM) = p \times p \times (1 - p)
+$$
+
+<br>
+
+. . .
+
+Thus, if the likelihood for $p = 0.8$ is
+
+$$
+L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
+$$
+
+## Likelihood: Three basketball shots
+
+The likelihood function for $p$ given the data $BBM$ is
+
+$$
+L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
+$$
+
+<br>
+
+::: question
+- How does assuming independence simplify things?
+
+- How does having identically distributed data simplify things?
+:::
+
+## Likelihood: Three basketball shots {.midi}
+
+The likelihood function for $p$ given the data $BBM$ is
+
+$$
+L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
+$$
+
+. . .
+
+::: incremental
+- We want of the value of $p$ that maximizes this likelihood function, i.e., the value of $p$ that is most likely given the observed data.
+
+- The process of finding this value is **maximum likelihood estimation**.
+
+- There are three primary ways to find the maximum likelihood estimator
+
+  - Approximate using a graph
+
+  - Using calculus
+
+  - Numerical approximation
+:::
+
+## Finding the MLE using graphs
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+
+
+p <- seq(0, 1, 0.05)
+
+lik <- function(p) {
+  p^2 * (1 - p)
+}
+
+l <- lik(p)
+
+combined <- bind_cols(p = p, l = l)
+
+ggplot(data = combined, aes(x = p, y = l)) +
+  geom_point() + 
+  geom_line() + 
+  labs(x = "p",
+       y = "Likelihood", 
+       title = "Likelihood of p given data BBM")
+
+```
+
+::: question
+What do you think is the approximate value of the MLE of $p$ given the data?
+:::
+
+## Finding the MLE using calculus
+
+- Find the MLE using the first derivative of the likelihood function.
+
+- This can be tricky because of the product rule, so we can maximize the **log(Likelihood)** instead. The same value maximizes the likelihood and log(Likelihood).
+
+::: question
+Use calculus to find the MLE of $p$ given the data $BBM$.
+:::
+
+## Shooting the ball $n$ times
+
+Suppose the player shoots the ball $n$ times. They are all independent and the player has the same probability $p$ of making each one.
+
+Suppose we observe a particular sequence in which the player made $k$ baskets out of the $n$ shots. This is the observed data.
+
+. . .
+
+:::: question
+::: midi
+- What is the formula for the probability distribution to describe this random phenomenon?
+- What is the formula for the likelihood function for $p$ given the observed data?
+- For what value of $p$ do we maximize the likelihood given the observed data? Use calculus to find the response.
+:::
+::::
+
+# MLE in linear regression
+
+## Why maximum likelihood estimation? {.midi}
+
+- *"Maximum likelihood estimation is, by far, the most popular technique for deriving estimators."* [@casella2024statistical, pp. 315]
+
+- MLEs have nice statistical properties (more on this next class)
+
+  - Consistent
+
+  - Efficient
+
+  - Asymptotically normal
+
+. . .
+
+::: callout-note
+Under the normality assumption, the least squares estimator is the maximum likelihood estimator for $\beta$. Therefore, it has all the properties of the MLE.
+:::
+
+## Linear regression
+
+Recall the linear model
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I}) 
+$$
+
+. . .
+
+::: incremental
+- We have discussed least-squares estimation to find $\hat{\boldsymbol{\beta}}$ and $\hat{\sigma}^2$
+- We have used the fact that $\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})$ when doing hypothesis testing and confidence intervals.
+- Now we will use the assumptions on $\boldsymbol{\epsilon}$ to show $\hat{\beta}$ is equal to the MLE
+:::
+
+## Simple linear regression model
+
+Suppose we have the simple linear regression (SLR) model
+
+$$
+y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2)
+$$
+
+such that $\epsilon_i$ are independently and identically distributed.
+
+<br>
+
+. . .
+
+We can write this model in the form below and use this to find the MLE
+
+$$
+y_i | x_i \sim N(\beta_0 + \beta_1 x_i, \sigma^2)
+$$
+
+## Side note: Normal distribution {background-color="#ccddeb"}
+
+Let $Z$ be a random variable, such that $Z \sim N(\mu, \sigma^2)$. Then the probability function is
+
+$$
+P(Z = z | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(z - \mu)^2}\Big\}
+$$
+
+## SLR: Likelihood for $\beta_0, \beta_1, \sigma^2$ {.midi}
+
+The likelihood function for $\beta_0, \beta_1, \sigma^2$ is
+
+$$
+\begin{aligned}
+L(\beta_0, \beta_1, \sigma^2 &| x_1, \ldots, x_n, y_1, \ldots, y_n) \\ &= p(y_1|x_1, \beta_0, \beta_1, \sigma^2) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2) \\[5pt]
+& = \class{fragment}{\prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2)} \\[5pt]
+ &= \class{fragment}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{{-\frac{1}{2\sigma^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\}} \\[10pt]
+& = \class{fragment}{(2\pi\sigma^2)^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}}
+\end{aligned}
+$$
+
+## Log-Likelihood for $\beta_0, \beta_1, \sigma^2$
+
+The log-likelihood function for $\beta_0, \beta_1, \sigma^2$ is
+
+$$
+\begin{aligned}
+\log &L(\beta_0, \beta_1, \sigma^2 | x_1, \ldots, x_n, y_1, \ldots, y_n) \\[8pt]
+& = \class{fragment}{\log\Big((2\pi\sigma^2)^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big)} \\[8pt]
+& = \class{fragment}{-\frac{n}{2}\log(2\pi\sigma^2) -\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2}
+\end{aligned}
+$$
+
+## MLE for $\beta_0$
+
+1️⃣ Take derivative of $\log L$ with respect to $\beta_0$ and set it equal to 0
+
+$$
+\frac{\partial \log L}{\partial \beta_0} = -\frac{2}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
+$$
+
+## MLE for $\beta_0$ {.midi}
+
+2️⃣ Find the $\tilde{\beta}_0$ that satisfies the equality on the previous slide
+
+. . .
+
+After a few steps...
+
+$$
+\begin{aligned}
+&\Rightarrow \class{fragment}{\sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0} \\[8pt]
+&\Rightarrow \class{fragment}{\sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0} \\[8pt]
+&\Rightarrow \class{fragment}{ \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0}
+\end{aligned}
+$$
+
+## MLE for $\beta_0$ {.midi}
+
+3️⃣ We can use the second derivative to show we've found the maximum
+
+$$
+\frac{\partial^2 \log L}{\partial \beta_0^2} = -\frac{n}{2\tilde{\sigma}^2}  < 0
+$$
+
+<br>
+
+. . .
+
+Therefore, we have found the maximum. Thus, MLE for $\beta_0$ is
+
+$$
+\tilde{\beta}_0 = \bar{y} - \tilde{\beta}_1\bar{x}
+$$
+
+. . .
+
+Note that $\tilde{\beta}_0$ is equal to $\hat{\beta}_0$, the least-squares estimate
+
+## MLE for $\beta_1$ and $\sigma^2$
+
+We can use a similar process to find the MLEs for $\beta_1$ and $\sigma^2$
+
+$$
+\tilde{\beta}_1 = \frac{\sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^n(x_i - \bar{x})^2}
+$$ <br>
+
+. . .
+
+$$
+\tilde{\sigma}^2 = \frac{\sum_{i=1}^n(y_i - \tilde{\beta}_0 - \tilde{\beta}_1x_i)^2}{n} = \frac{\sum_{i=1}^ne_i^2}{n}
+$$
+
+. . .
+
+Note: $\tilde{\beta}_1 = \hat{\beta}_1$ and $\tilde{\sigma}^2 \approx \hat{\sigma}^2$
+
+# MLE in matrix form
+
+## Side note: Multivariate normal distribution {background-color="#ccddeb"}
+
+Let $\mathbf{z}$ be a $k \times 1$ vector such that $\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})$. Then the probability function is
+
+$$
+P(\mathbf{z}|\boldsymbol{\mu}, \boldsymbol{\Sigma}) =(2\pi)^{-k/2} |\boldsymbol{\Sigma}|^{-1/2}\exp \left(-\frac{1}{2}(\mathbf{z} - \boldsymbol{\mu})^\mathsf{T}\boldsymbol{\Sigma}^{-1}(\mathbf{z} - \boldsymbol{\mu})\right)
+$$
+
+## MLE for linear regression in matrix form {.small}
+
+$$
+\begin{aligned}
+L(\boldsymbol{\beta}, \sigma^2 | \mathbf{X}, \mathbf{y}) &= (2\pi)^{-n/2}|\sigma^2 \mathbf{I}|^{-1/2}\exp\Big\{-\frac{1}{2}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\sigma^2\mathbf{I})^{-1}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\Big\} \\[8pt]
+& = \frac{1}{(2\pi)^{n/2}\sigma^n}\exp\Big\{-\frac{1}{2\sigma^2}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\Big\}
+\end{aligned}
+$$ <br>
+
+. . .
+
+$$
+\begin{aligned}
+\log L(\boldsymbol{\beta}, \sigma^2_\epsilon &| \mathbf{X}, \mathbf{y}) \\ 
+& = -\frac{n}{2}\log(2\pi) - n \log(\sigma) - \frac{1}{2\sigma^2}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})
+\end{aligned}
+$$
+
+## Your turn 
+
+::: question
+For a fixed value of $\sigma$ , we know that $\log L$ is maximized when what is true about $(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$ ?
+:::
+
+![](images/october-29-qrcode.png){fig-align="center"}
+
+::: center
+<https://app.wooclap.com/DNLCOIC>
+:::
+
+## Putting it all together
+
+::: incremental
+- The MLE $\tilde{\boldsymbol{\beta}}$ is equivalent to the least-squares estimator $\hat{\boldsymbol{\beta}}$ , when the errors follow independent and identical normal distributions
+
+- MLEs have nice properties (consistency, efficiency, normality), so this means the least-squares estimator $\hat{\mathbf{\boldsymbol{\beta}}}$ inherits all the nice properties of MLEs
+
+- The MLE $\tilde{\sigma}^2$ is approximately equal to the least-squares estimator $\hat{\sigma}^2$. When $n >> p$, the difference is trivial
+:::
+
+## Recap 
+
+Introduced
+
+- Likelihood functions
+
+- Maximum likelihood estimation
+
+- MLE for linear regression
+
+##  Before next class
+
+- No prepare assignment
+
+## References
