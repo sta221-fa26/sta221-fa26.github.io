@@ -5149,9 +5149,75 @@
   {
     "objectID": "labs/lab-06.html",
     "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "title": "Lab 06: Maximum likelihood estimation",
     "section": "",
-    "text": "To be posted.",
+    "text": "ImportantDue date\n\n\n\nThis lab is due at the end of your lab session on November 2. Be sure to complete the following by the end of your lab:\n\nPush final .qmd and .pdf files to your GitHub repo\nSubmit final .pdf file on Gradescope\n\nNo late work is accepted for labs.\nThis lab is due on . To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-1",
+    "href": "labs/lab-06.html#exercise-1",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe’ll start with exploratory data analysis focused on the relationship between the response and predictor variables.\n\nNow, visualize the relationship between bill_depth_mm and bill_length_mm by species. Use geom_smooth(method = \"lm\", se = FALSE) to add lines and more clearly visualize the relationship for each species.\nBased on these visualizations, why is it important to include species when in the model of the relationship between bill depth and length? Briefly explain.\nBased on these visualizations, would you include an interaction term between the two predictors? Briefly explain.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-2",
+    "href": "labs/lab-06.html#exercise-2",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWe will fit the main effects model using bill length and species to understand variability in the bill depth.\n\nWrite the form of the statistical (population-level) model in matrix form.\nWrite the dimensions for \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) specific for this problem.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-3",
+    "href": "labs/lab-06.html#exercise-3",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe will compare the results of the maximum likelihood and least-squares procedures.\n\nAs a group, you will estimate the coefficients using least-squares estimation and maximum likelihood estimation. You only need to do one of the following:\n\n1 - 2 group members: Use matrix/vector operations to fit the model described in Exercise 2 using least-squares estimation. described in Exercise 2. Neatly display the results using three digits.\n1 - 2 group members: Use matrix/vector operations to compute the maximum likelihood estimators \\(\\tilde{\\beta}\\) for the model in Exercise 2.\n\nHow do the estimate coefficients in part (a) compare?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-4",
+    "href": "labs/lab-06.html#exercise-4",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nThe maximum likelihood estimation procedure also produces an estimator for the variance about the regression line, \\(\\sigma^2_\\epsilon\\), which we can write as\n\\[\n\\tilde{\\sigma}^2 = \\frac{1}{n} \\mathbf{e}^\\mathsf{T}\\mathbf{e}\n\\]\nWe know that the maximum likelihood estimator and least-squares estimator for \\(\\sigma^2_{\\epsilon}\\) are not equal. Additionally, the least-squares estimator \\(\\hat{\\sigma}^2\\) is unbiased, i.e., \\(E(\\hat{\\sigma}^2) = \\sigma^2\\) . We want to find a scaling factor \\(c\\) such that the maximum likelihood estimator is unbiased.\nUsing the data and regression estimates for this analysis, compute both the maximum likelihood and least-squares estimators for \\(\\sigma^2\\), and then find \\(c\\) by solving the equation \\[ \\hat\\sigma^2 = c \\cdot \\tilde\\sigma^2 \\]You can do this last step either computationally or algebraically.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-5",
+    "href": "labs/lab-06.html#exercise-5",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow we will look into the last property of the maximum likelihood estimator for \\(\\boldsymbol{\\beta}\\), and thus of least-squares estimator - asymptotic normality.\nIn words, this property says that, when the number of samples \\(n\\) is large compared to the number of predictors \\(p\\), the maximum likelihood estimator \\(\\tilde{\\boldsymbol\\beta}\\) follows a (multivariate) normal distribution \\(N\\big(\\boldsymbol\\beta, \\sigma^2 (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\big)\\). Let’s use this to construct an approximate confidence interval for \\(\\beta_j\\), the coefficient for speciesChinstrap.\n\nAs a group, you will compute the 95% confidence intervals using an approximation using the maximum likelihood estimator and the exact confidence interval using the \\(t\\) distribution. You only need to do one of the following:\n\n1 - 2 group members: Use \\(\\tilde{\\sigma}^2\\), the maximum likelihood estimator, to compute the approximate confidence interval for \\(\\beta_j\\) . The approximate 95% confidence interval may be computed as $ j SE{_j} $\n1 - 2 group members: Compute the exact (based on the \\(t\\)-distribution) confidence interval for \\(\\beta_j\\).\n\nCompare the center and width of these two intervals. Do they differ? By how much? Which one is wider, indicating more uncertainty?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-6",
+    "href": "labs/lab-06.html#exercise-6",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nTo wrap up, we have seen that both the least-squares and the maximum likelihood procedures for linear regression produce the same coefficient estimates, but lead to different estimators for the variance \\(\\sigma^2\\) and allow for different types of uncertainty quantification.\nBased on the work in this lab, do you think performing inference based on either method would have changed your conclusion about the the relationship between bill depth and Chinstrap species? Briefly explain.",
     "crumbs": [
       "Labs",
       "Lab 06"
