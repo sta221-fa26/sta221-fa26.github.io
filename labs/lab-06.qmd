@@ -11,7 +11,7 @@ bibliography: references.bib
 ---
 
 ::: callout-important
-# Due date 
+# Due date
 
 This lab is due at the end of your lab session on **November 2.** Be sure to complete the following by the end of your lab:
 
@@ -83,7 +83,7 @@ The data are in the file `palmer-penguins.csv` in the `data` folder. This datase
 
 We'll start with exploratory data analysis focused on the relationship between the response and predictor variables.
 
-a.  Now, visualize the relationship between `bill_depth_mm` and `bill_length_mm` by `species`. Use `geom_smooth(method = "lm", se = FALSE)` to add lines and more clearly visualize the relationship for each species.
+a.  Visualize the relationship between `bill_depth_mm` and `bill_length_mm` by `species`. Use `geom_smooth(method = "lm", se = FALSE)` to add lines and more clearly visualize the relationship for each species.
 
 b.  Based on these visualizations, why is it important to include `species` when in the model of the relationship between bill depth and length? Briefly explain.
 
@@ -103,11 +103,11 @@ We will compare the results of the maximum likelihood and least-squares procedur
 
 a.  As a group, you will estimate the coefficients using least-squares estimation and maximum likelihood estimation. You only need to do one of the following:
 
-    i.  **1 - 2 group members:** Use matrix/vector operations to fit the model described in Exercise 2 using least-squares estimation. described in Exercise 2. Neatly display the results using three digits.
+    i.  **1 - 2 group members:** Use matrix/vector operations to fit the model described in Exercise 2 using least-squares estimation. Neatly display the results using three decimal places.
 
-    ii. **1 - 2 group members:** Use matrix/vector operations to compute the maximum likelihood estimators $\tilde{\beta}$ for the model in Exercise 2.
+    ii. **1 - 2 group members:** Use matrix/vector operations to compute the maximum likelihood estimators for the model in Exercise 2. Neatly display the results using three decimal places.
 
-b.  How do the estimate coefficients in part (a) compare?
+b.  How do the estimated coefficients in part (a) compare?
 
 ## Exercise 4
 
@@ -128,9 +128,7 @@ Now we will look into the last property of the maximum likelihood estimator for 
 In words, this property says that, when the number of samples $n$ is large compared to the number of predictors $p$, the maximum likelihood estimator $\tilde{\boldsymbol\beta}$ follows a (multivariate) normal distribution $N\big(\boldsymbol\beta, \sigma^2 (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\big)$. Let's use this to construct an approximate confidence interval for $\beta_j$, the coefficient for `speciesChinstrap`.
 
 a.  As a group, you will compute the 95% confidence intervals using an approximation using the maximum likelihood estimator and the exact confidence interval using the $t$ distribution. You only need to do one of the following:
-    i.  **1 - 2 group members:** Use $\tilde{\sigma}^2$, the maximum likelihood estimator, to compute the approximate confidence interval for $\beta_j$ . The approximate 95% confidence interval may be computed as $
-        \tilde{\beta}_j\pm 2 \times SE_{\tilde{\beta}_j}
-        $
+    i.  **1 - 2 group members:** Use $\tilde{\sigma}^2$, the maximum likelihood estimator, to compute the approximate confidence interval for $\beta_j$ . The approximate 95% confidence interval may be computed as $\tilde{\beta}_j\pm 2 \times SE_{\tilde{\beta}_j}$
 
     ii. **1 - 2 group members:** Compute the exact (based on the $t$-distribution) confidence interval for $\beta_j$.
 b.  Compare the center and width of these two intervals. Do they differ? By how much? Which one is wider, indicating more uncertainty?

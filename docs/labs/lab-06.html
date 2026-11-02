@@ -565,7 +565,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
 <p>We’ll start with exploratory data analysis focused on the relationship between the response and predictor variables.</p>
 <ol type="a">
-<li><p>Now, visualize the relationship between <code>bill_depth_mm</code> and <code>bill_length_mm</code> by <code>species</code>. Use <code>geom_smooth(method = "lm", se = FALSE)</code> to add lines and more clearly visualize the relationship for each species.</p></li>
+<li><p>Visualize the relationship between <code>bill_depth_mm</code> and <code>bill_length_mm</code> by <code>species</code>. Use <code>geom_smooth(method = "lm", se = FALSE)</code> to add lines and more clearly visualize the relationship for each species.</p></li>
 <li><p>Based on these visualizations, why is it important to include <code>species</code> when in the model of the relationship between bill depth and length? Briefly explain.</p></li>
 <li><p>Based on these visualizations, would you include an interaction term between the two predictors? Briefly explain.</p></li>
 </ol>
@@ -584,10 +584,10 @@ window.Quarto = {
 <ol type="a">
 <li><p>As a group, you will estimate the coefficients using least-squares estimation and maximum likelihood estimation. You only need to do one of the following:</p>
 <ol type="i">
-<li><p><strong>1 - 2 group members:</strong> Use matrix/vector operations to fit the model described in Exercise 2 using least-squares estimation. described in Exercise 2. Neatly display the results using three digits.</p></li>
-<li><p><strong>1 - 2 group members:</strong> Use matrix/vector operations to compute the maximum likelihood estimators <span class="math inline">\(\tilde{\beta}\)</span> for the model in Exercise 2.</p></li>
+<li><p><strong>1 - 2 group members:</strong> Use matrix/vector operations to fit the model described in Exercise 2 using least-squares estimation. Neatly display the results using three decimal places.</p></li>
+<li><p><strong>1 - 2 group members:</strong> Use matrix/vector operations to compute the maximum likelihood estimators for the model in Exercise 2. Neatly display the results using three decimal places.</p></li>
 </ol></li>
-<li><p>How do the estimate coefficients in part (a) compare?</p></li>
+<li><p>How do the estimated coefficients in part (a) compare?</p></li>
 </ol>
 </section>
 <section id="exercise-4" class="level2">
@@ -606,7 +606,7 @@ window.Quarto = {
 <ol type="a">
 <li>As a group, you will compute the 95% confidence intervals using an approximation using the maximum likelihood estimator and the exact confidence interval using the <span class="math inline">\(t\)</span> distribution. You only need to do one of the following:
 <ol type="i">
-<li><p><strong>1 - 2 group members:</strong> Use <span class="math inline">\(\tilde{\sigma}^2\)</span>, the maximum likelihood estimator, to compute the approximate confidence interval for <span class="math inline">\(\beta_j\)</span> . The approximate 95% confidence interval may be computed as $ <em>j SE</em>{_j} $</p></li>
+<li><p><strong>1 - 2 group members:</strong> Use <span class="math inline">\(\tilde{\sigma}^2\)</span>, the maximum likelihood estimator, to compute the approximate confidence interval for <span class="math inline">\(\beta_j\)</span> . The approximate 95% confidence interval may be computed as <span class="math inline">\(\tilde{\beta}_j\pm 2 \times SE_{\tilde{\beta}_j}\)</span></p></li>
 <li><p><strong>1 - 2 group members:</strong> Compute the exact (based on the <span class="math inline">\(t\)</span>-distribution) confidence interval for <span class="math inline">\(\beta_j\)</span>.</p></li>
 </ol></li>
 <li>Compare the center and width of these two intervals. Do they differ? By how much? Which one is wider, indicating more uncertainty?</li>
