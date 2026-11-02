@@ -19,11 +19,6 @@ This lab is due at the end of your lab session on **November 2.** Be sure to com
 - Submit final `.pdf` file on Gradescope
 
 **No late work is accepted for labs.**
-
-This lab is due on **.** To be considered on time, the following must be done by the due date:
-
-- Final `.qmd` and `.pdf` files pushed to your team's GitHub repo
-- Final `.pdf` file submitted on Gradescope
 :::
 
 # Introduction
@@ -35,7 +30,6 @@ In this lab you will compute maximum likelihood estimates for regression models 
 By the end of the lab you will be able to…
 
 - compute estimates for $\hat{\boldsymbol{\beta}}$ and $\sigma^2_{\epsilon}$ using maximum likelihood estimation.
-- understand how assumptions of linear regression connect to maximum likelihood estimation.
 - describe the similarities and differences between maximum likelihood estimators and least-squares estimators.
 - evaluate which estimation procedure may be preferable in a given analysis scenario.
 
