@@ -436,10 +436,9 @@ window.Quarto = {
   <li><a href="#asymptotic-properties" id="toc-asymptotic-properties" class="nav-link" data-scroll-target="#asymptotic-properties">Asymptotic properties</a>
   <ul class="collapse">
   <li><a href="#properties-from-the-mle" id="toc-properties-from-the-mle" class="nav-link" data-scroll-target="#properties-from-the-mle">Properties from the MLE</a></li>
-  <li><a href="#mean-squared-error" id="toc-mean-squared-error" class="nav-link" data-scroll-target="#mean-squared-error">Mean squared error</a></li>
   <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency">Consistency</a></li>
   <li><a href="#law-of-large-numbers" id="toc-law-of-large-numbers" class="nav-link" data-scroll-target="#law-of-large-numbers">Law of large numbers</a></li>
-  <li><a href="#mean-squared-error-1" id="toc-mean-squared-error-1" class="nav-link" data-scroll-target="#mean-squared-error-1">Mean squared error</a></li>
+  <li><a href="#mean-squared-error" id="toc-mean-squared-error" class="nav-link" data-scroll-target="#mean-squared-error">Mean squared error</a></li>
   <li><a href="#consistency-1" id="toc-consistency-1" class="nav-link" data-scroll-target="#consistency-1">Consistency</a></li>
   <li><a href="#consistency-of-hatboldsymbolbeta" id="toc-consistency-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#consistency-of-hatboldsymbolbeta">Consistency of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
   <li><a href="#efficiency" id="toc-efficiency" class="nav-link" data-scroll-target="#efficiency">Efficiency</a></li>
@@ -824,20 +823,6 @@ Note
 </div>
 </div>
 </section>
-<section id="mean-squared-error" class="level2">
-<h2 class="anchored" data-anchor-id="mean-squared-error">Mean squared error</h2>
-<p>The <strong>mean squared error (MSE)</strong> is the squared difference between the estimator and parameter.</p>
-<p>. . .</p>
-<p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of the parameter <span class="math inline">\(\theta\)</span>. Then</p>
-<p><span class="math display">\[
-\begin{aligned}
-MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
-&amp; = E(\hat{\theta}^2 - 2\hat{\theta}\theta + \theta^2) \\
-&amp; = E(\hat{\theta}^2) - 2\theta E(\hat{\theta}) + \theta^2 \\
-&amp; = \underbrace{E(\hat{\theta}^2) -  E(\hat{\theta})^2}_{Var(\hat{\theta})} + \underbrace{E(\hat{\theta})^2 - 2\theta E(\hat{\theta}) + \theta^2}_{Bias(\theta)^2}
-\end{aligned}
-\]</span></p>
-</section>
 <section id="consistency" class="level2">
 <h2 class="anchored" data-anchor-id="consistency">Consistency</h2>
 <p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is a consistent estimator of a parameter <span class="math inline">\(\theta\)</span> if it converges in probability to <span class="math inline">\(\theta\)</span>. Given a sequence of estimators <span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2, . . .\)</span>, then for every <span class="math inline">\(c&gt; 0\)</span>,</p>
@@ -859,8 +844,8 @@ MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
 \]</span></p>
 <p>for every <span class="math inline">\(c &gt; 0\)</span></p>
 </section>
-<section id="mean-squared-error-1" class="level2">
-<h2 class="anchored" data-anchor-id="mean-squared-error-1">Mean squared error</h2>
+<section id="mean-squared-error" class="level2">
+<h2 class="anchored" data-anchor-id="mean-squared-error">Mean squared error</h2>
 <p>The <strong>mean squared error (MSE)</strong> is the squared difference between the estimator and parameter.</p>
 <p>. . .</p>
 <p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of the parameter <span class="math inline">\(\theta\)</span>. Then</p>

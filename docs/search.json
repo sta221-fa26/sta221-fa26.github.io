@@ -9718,13 +9718,6 @@
     "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\tilde{\\boldsymbol{\\beta}}\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
   },
   {
-    "objectID": "slides/19-prop-of-estimators-notes.html#mean-squared-error",
-    "href": "slides/19-prop-of-estimators-notes.html#mean-squared-error",
-    "title": "Properties of estimators",
-    "section": "Mean squared error",
-    "text": "Mean squared error\nThe mean squared error (MSE) is the squared difference between the estimator and parameter.\n. . .\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}) &= E[(\\hat{\\theta} - \\theta)^2] \\\\\n& = E(\\hat{\\theta}^2 - 2\\hat{\\theta}\\theta + \\theta^2) \\\\\n& = E(\\hat{\\theta}^2) - 2\\theta E(\\hat{\\theta}) + \\theta^2 \\\\\n& = \\underbrace{E(\\hat{\\theta}^2) -  E(\\hat{\\theta})^2}_{Var(\\hat{\\theta})} + \\underbrace{E(\\hat{\\theta})^2 - 2\\theta E(\\hat{\\theta}) + \\theta^2}_{Bias(\\theta)^2}\n\\end{aligned}\n\\]"
-  },
-  {
     "objectID": "slides/19-prop-of-estimators-notes.html#consistency",
     "href": "slides/19-prop-of-estimators-notes.html#consistency",
     "title": "Properties of estimators",
@@ -9739,8 +9732,8 @@
     "text": "Law of large numbers\nLet \\(X_1, X_2, \\ldots, X_n\\) be independent and identically distributed random variables, such that \\(E(X) = \\mu\\), such that \\(\\mu\\) is finite.\n\\[\n\\displaystyle \\lim_{n\\to\\infty} P(|\\bar{X} - \\mu| \\geq c) = 0\n\\]\nfor every \\(c &gt; 0\\)"
   },
   {
-    "objectID": "slides/19-prop-of-estimators-notes.html#mean-squared-error-1",
-    "href": "slides/19-prop-of-estimators-notes.html#mean-squared-error-1",
+    "objectID": "slides/19-prop-of-estimators-notes.html#mean-squared-error",
+    "href": "slides/19-prop-of-estimators-notes.html#mean-squared-error",
     "title": "Properties of estimators",
     "section": "Mean squared error",
     "text": "Mean squared error\nThe mean squared error (MSE) is the squared difference between the estimator and parameter.\n. . .\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}) &= E[(\\hat{\\theta} - \\theta)^2] \\\\\n& = E(\\hat{\\theta}^2 - 2\\hat{\\theta}\\theta + \\theta^2) \\\\\n& = E(\\hat{\\theta}^2) - 2\\theta E(\\hat{\\theta}) + \\theta^2 \\\\\n& = \\underbrace{E(\\hat{\\theta}^2) -  E(\\hat{\\theta})^2}_{Var(\\hat{\\theta})} + \\underbrace{E(\\hat{\\theta})^2 - 2\\theta E(\\hat{\\theta}) + \\theta^2}_{Bias(\\theta)^2}\n\\end{aligned}\n\\]"
@@ -9942,13 +9935,6 @@
     "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\tilde{\\boldsymbol{\\beta}}\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
   },
   {
-    "objectID": "slides/19-prop-of-estimators.html#mean-squared-error",
-    "href": "slides/19-prop-of-estimators.html#mean-squared-error",
-    "title": "Properties of estimators",
-    "section": "Mean squared error",
-    "text": "Mean squared error\nThe mean squared error (MSE) is the squared difference between the estimator and parameter.\n\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}) &= E[(\\hat{\\theta} - \\theta)^2] \\\\\n& = E(\\hat{\\theta}^2 - 2\\hat{\\theta}\\theta + \\theta^2) \\\\\n& = E(\\hat{\\theta}^2) - 2\\theta E(\\hat{\\theta}) + \\theta^2 \\\\\n& = \\underbrace{E(\\hat{\\theta}^2) -  E(\\hat{\\theta})^2}_{Var(\\hat{\\theta})} + \\underbrace{E(\\hat{\\theta})^2 - 2\\theta E(\\hat{\\theta}) + \\theta^2}_{Bias(\\theta)^2}\n\\end{aligned}\n\\]"
-  },
-  {
     "objectID": "slides/19-prop-of-estimators.html#consistency",
     "href": "slides/19-prop-of-estimators.html#consistency",
     "title": "Properties of estimators",
@@ -9963,8 +9949,8 @@
     "text": "Law of large numbers\nLet \\(X_1, X_2, \\ldots, X_n\\) be independent and identically distributed random variables, such that \\(E(X) = \\mu\\), such that \\(\\mu\\) is finite.\n\\[\n\\displaystyle \\lim_{n\\to\\infty} P(|\\bar{X} - \\mu| \\geq c) = 0\n\\]\nfor every \\(c &gt; 0\\)"
   },
   {
-    "objectID": "slides/19-prop-of-estimators.html#mean-squared-error-1",
-    "href": "slides/19-prop-of-estimators.html#mean-squared-error-1",
+    "objectID": "slides/19-prop-of-estimators.html#mean-squared-error",
+    "href": "slides/19-prop-of-estimators.html#mean-squared-error",
     "title": "Properties of estimators",
     "section": "Mean squared error",
     "text": "Mean squared error\nThe mean squared error (MSE) is the squared difference between the estimator and parameter.\n\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}) &= E[(\\hat{\\theta} - \\theta)^2] \\\\\n& = E(\\hat{\\theta}^2 - 2\\hat{\\theta}\\theta + \\theta^2) \\\\\n& = E(\\hat{\\theta}^2) - 2\\theta E(\\hat{\\theta}) + \\theta^2 \\\\\n& = \\underbrace{E(\\hat{\\theta}^2) -  E(\\hat{\\theta})^2}_{Var(\\hat{\\theta})} + \\underbrace{E(\\hat{\\theta})^2 - 2\\theta E(\\hat{\\theta}) + \\theta^2}_{Bias(\\theta)^2}\n\\end{aligned}\n\\]"

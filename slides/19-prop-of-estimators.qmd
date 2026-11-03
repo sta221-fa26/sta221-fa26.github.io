@@ -375,23 +375,6 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 We will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference
 :::
 
-## Mean squared error
-
-The **mean squared error (MSE)** is the squared difference between the estimator and parameter.
-
-. . .
-
-Let $\hat{\theta}$ be an estimator of the parameter $\theta$. Then
-
-$$
-\begin{aligned}
-MSE(\hat{\theta}) &= E[(\hat{\theta} - \theta)^2] \\
-& = E(\hat{\theta}^2 - 2\hat{\theta}\theta + \theta^2) \\
-& = E(\hat{\theta}^2) - 2\theta E(\hat{\theta}) + \theta^2 \\
-& = \underbrace{E(\hat{\theta}^2) -  E(\hat{\theta})^2}_{Var(\hat{\theta})} + \underbrace{E(\hat{\theta})^2 - 2\theta E(\hat{\theta}) + \theta^2}_{Bias(\theta)^2}
-\end{aligned}
-$$
-
 ## Consistency
 
 An estimator $\hat{\theta}$ is a consistent estimator of a parameter $\theta$ if it converges in probability to $\theta$. Given a sequence of estimators $\hat{\theta}_1, \hat{\theta}_2, . . .$, then for every $c> 0$,

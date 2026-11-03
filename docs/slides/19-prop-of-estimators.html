@@ -486,21 +486,6 @@ Var(\hat{\boldsymbol{\beta}}^\prime) = \sigma^2(\mathbf{X}^\mathsf{T}\mathbf{X})
 </div>
 </div>
 </section>
-<section id="mean-squared-error" class="slide level2">
-<h2>Mean squared error</h2>
-<p>The <strong>mean squared error (MSE)</strong> is the squared difference between the estimator and parameter.</p>
-<div class="fragment">
-<p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of the parameter <span class="math inline">\(\theta\)</span>. Then</p>
-<p><span class="math display">\[
-\begin{aligned}
-MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
-&amp; = E(\hat{\theta}^2 - 2\hat{\theta}\theta + \theta^2) \\
-&amp; = E(\hat{\theta}^2) - 2\theta E(\hat{\theta}) + \theta^2 \\
-&amp; = \underbrace{E(\hat{\theta}^2) -  E(\hat{\theta})^2}_{Var(\hat{\theta})} + \underbrace{E(\hat{\theta})^2 - 2\theta E(\hat{\theta}) + \theta^2}_{Bias(\theta)^2}
-\end{aligned}
-\]</span></p>
-</div>
-</section>
 <section id="consistency" class="slide level2">
 <h2>Consistency</h2>
 <p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is a consistent estimator of a parameter <span class="math inline">\(\theta\)</span> if it converges in probability to <span class="math inline">\(\theta\)</span>. Given a sequence of estimators <span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2, . . .\)</span>, then for every <span class="math inline">\(c&gt; 0\)</span>,</p>
@@ -523,7 +508,7 @@ MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
 \]</span></p>
 <p>for every <span class="math inline">\(c &gt; 0\)</span></p>
 </section>
-<section id="mean-squared-error-1" class="slide level2">
+<section id="mean-squared-error" class="slide level2">
 <h2>Mean squared error</h2>
 <p>The <strong>mean squared error (MSE)</strong> is the squared difference between the estimator and parameter.</p>
 <div class="fragment">
