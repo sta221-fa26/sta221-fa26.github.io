@@ -39,7 +39,7 @@ bibliography: references.bib
 
 - SSMU Data Challenge #2 November 14 - See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8452527) announcement for details
 
-## Icebreaker 
+## Icebreaker
 
 <br>
 
@@ -425,7 +425,7 @@ $$
 \end{aligned}
 $$
 
-## Your turn 
+## Your turn
 
 ::: question
 For a fixed value of $\sigma$ , we know that $\log L$ is maximized when what is true about $(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})$ ?
@@ -447,7 +447,7 @@ For a fixed value of $\sigma$ , we know that $\log L$ is maximized when what is 
 - The MLE $\tilde{\sigma}^2$ is approximately equal to the least-squares estimator $\hat{\sigma}^2$. When $n >> p$, the difference is trivial
 :::
 
-## Recap 
+## Recap
 
 Introduced
 
@@ -457,7 +457,7 @@ Introduced
 
 - MLE for linear regression
 
-##  Before next class
+## Before next class
 
 - No prepare assignment
 
