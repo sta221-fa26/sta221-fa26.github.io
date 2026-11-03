@@ -1,6 +1,6 @@
 ---
 title: "HW 05: Multiple linear regression"
-subtitle: "Maximum Likelihood Estimatin"
+subtitle: "MLE & Properties of Estimator"
 bibliography: references.bib
 ---
 
@@ -135,7 +135,6 @@ Show that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is consistent b
 - $\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = 0$
 
 ::: callout-tip
-
 ## Hint
 
 $$Var(\hat{\boldsymbol{\beta}}) = \frac{\sigma^2}{n}\Big(\frac{1}{n}\mathbf{X}^\mathsf{T}\mathbf{X}\Big)^{-1}$$
