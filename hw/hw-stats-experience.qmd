@@ -1,5 +1,5 @@
 ---
-title: "HW 06: Statistics Experience"
+title: "HW: Statistics Experience"
 editor: visual
 ---
 
