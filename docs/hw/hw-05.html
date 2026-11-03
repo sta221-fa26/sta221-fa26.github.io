@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 05 – STA 221 - Fall 2026</title>
+<title>HW 05: Multiple linear regression – STA 221 - Fall 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -76,6 +130,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -370,15 +453,42 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  </ul></li>
+  <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI disclosure</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-25-points" id="toc-grading-25-points" class="nav-link" data-scroll-target="#grading-25-points">Grading (25 points)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hw/hw-01.html">Homework</a></li><li class="breadcrumb-item"><a href="../hw/hw-05.html">HW 05</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HW 05</h1>
+<h1 class="title">HW 05: Multiple linear regression</h1>
+<p class="subtitle lead">Maximum Likelihood Estimatin</p>
 </div>
 
 
@@ -395,12 +505,312 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assignment is due on <strong>Tuesday, November 10 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<ul>
+<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
+<li>Final <code>.pdf</code> file submitted on Gradescope</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this assignment, you will derive estimators using maximum likelihood estimators, interpret models with log-transformed variables, and explore model conditions and diagnostics.</p>
+</section>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>In this assignment, you will…</p>
+<ul>
+<li>fit and interpret models with transformed variables.</li>
+<li>derive MLEs for linear regression models</li>
+<li>use model diagnostics to evaluate model fit.</li>
+</ul>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>Go to the <a href="https://github.com/sta221-fa26">sta221-fa26</a> organization on GitHub. Click on the repo with the prefix <strong>hw-05.</strong> It contains the starter documents you need to complete the assignment.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in this assignment:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.</p>
+<p><strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<!--# from spring 2026-->
+<p><em>Exercise adapted from <span class="citation" data-cites="montgomery2021introduction">Montgomery et al. (<a href="#ref-montgomery2021introduction" role="doc-biblioref">2021</a>)</span>.</em></p>
+<p>Suppose we have the weighted least-squares model</p>
+<p><span class="math display">\[
+y_i =\beta_{1} x_i + \epsilon_i, \quad \epsilon_i \sim N(0, \sigma^2_\epsilon x_i^2)
+\]</span></p>
+<ol type="a">
+<li>Write the log-likelihood for this model.</li>
+<li>Use the result from part (a) to derive <span class="math inline">\(\tilde{\beta}_{WLS}\)</span> , the maximum likelihood estimator for weighted least-squares regression.</li>
+<li>Show that <span class="math inline">\(\tilde{\beta}_{WLS}\)</span> is unbiased.</li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Suppose there are <span class="math inline">\(n\)</span> observations, such that each <span class="math inline">\(y_i\)</span> is generated from <span class="math inline">\(x_i\)</span> based on the linear model</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \hspace{8mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
+\]</span></p>
+<p>such that <span class="math inline">\(\epsilon_i\)</span> are i.i.d.</p>
+<p>The model is reparameterized (redefined) as</p>
+<p><span class="math display">\[
+y_i = \beta^{\prime}_0 + \beta^{\prime}_1(x_i - \bar{x}) + \epsilon_i
+\]</span></p>
+<p>such that <span class="math inline">\(\epsilon_i\)</span> follows the same distribution as the original model.</p>
+<ol type="a">
+<li>Show that the MLE of <span class="math inline">\(\beta^{\prime}_1\)</span> is equal to the MLE of <span class="math inline">\(\beta_1\)</span>.</li>
+<li>Show that the MLE of <span class="math inline">\(\beta^{\prime}_0\)</span> is <u><b>not</b></u> equal to the MLE of <span class="math inline">\(\beta_0\)</span>.</li>
+<li>The predictor in the reparameterized model is <strong>mean-centered</strong>, i.e., the predictor is shifted by its mean value. Based on your responses to parts (a) and (b), what is one potential benefit for using mean-centered predictors in the model?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You do not need to derive the MLEs for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>. You may use the results from the notes.</p>
+<p>You do need to show your work / explain your reasoning to get the MLEs for <span class="math inline">\(\beta^{\prime}_0\)</span> and <span class="math inline">\(\beta^{\prime}_1\)</span> .</p>
+</div>
+</div>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<!--# from spring 2026-->
+<p>For each of the following regression models, state whether it can be expressed in the form of a linear model by applying a suitable transformation to both sides of the equation. If so, write the equation for the transformed model.</p>
+<ol type="a">
+<li><p><span class="math inline">\(y_i = \log(\beta_1x_{i1}) + \beta_2x_{i2} + \epsilon_i\)</span> such that <span class="math inline">\(\beta_1 &gt; 0\)</span> and <span class="math inline">\(x_{i1} &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\(y_i = [1 + e^{(\beta_0 + \beta_1x_{i1} + \epsilon_i)}]^{-1}\)</span></p></li>
+</ol>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Consider the likelihood function for the simple linear regression model:</p>
+<p><span class="math display">\[
+L(\beta_0, \beta_1, \sigma^2 | x_1, \ldots, x_n, y_1, \ldots, y_n)
+= (2\pi\sigma^2)^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}
+\]</span></p>
+<p>Describe how each of the four assumptions of ordinary least-squares regression is necessary to produce this likelihood function.</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Suppose we have a linear regression model</p>
+<p><span class="math display">\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon} \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2\mathbf{I})
+\]</span></p>
+<p>Show that the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is consistent by showing</p>
+<ul>
+<li><p><span class="math inline">\(\lim_{n \to \infty} Bias(\hat{\boldsymbol{\beta}}) = 0\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = 0\)</span></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[Var(\hat{\boldsymbol{\beta}}) = \frac{\sigma^2}{n}\Big(\frac{1}{n}\mathbf{X}^\mathsf{T}\mathbf{X}\Big)^{-1}\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="applied-exercises" class="level1">
+<h1>Applied exercises</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises focus on using the methods from the course to analyze data and answer questions about real-world phenomena.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document. Remember to render, commit, and push your work to GitHub regularly.</strong></p>
+<p>Write all narrative responses using complete sentences. Include informative axis labels and titles on all visualizations.</p>
+</div>
+</div>
+<p>Recall the NCAA athletics program expenditure data from <a href="../labs/lab-05.html">Lab 05</a>. We will evaluate the model performance and interpret coefficients to describe the relationship between total revenue and institutional factors.</p>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<ol type="a">
+<li>Prepare the data for modeling by using the same data processing from Lab 05.
+<ul>
+<li>Rescale the response variable <code>total_rev_menwomen</code> and the primary predictor variable <code>total_exp_menwomen</code>, so that they are in terms of $100K (100 thousand dollars). Then transform the rescale variables using a log transformation. Name the log-transformed variables <code>log_rev</code> and <code>log_exp</code>, respectively.</li>
+<li>Rescale the predictor variable <code>ef_total_count</code> , so it is in terms of thousands of students. Name the new variable <code>students_1k</code>.</li>
+<li>Create an indicator variable that takes value <code>1</code> if the sport is basketball or football and <code>0</code> otherwise. Name the variable <code>bball_football</code>.</li>
+<li>Create a new data frame by filtering out observations for which expenditures and revenues are exactly equal. Call the new data frame <code>sports_nolinear</code>.</li>
+</ul></li>
+<li>Use the code to fit the model <code>sports_fit_2</code>. See Ex 4 in Lab 05 for a reminder about the model code.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sports_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_rev <span class="sc">~</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> sports <span class="sc">+</span> students_1k <span class="sc">+</span> sector_name <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                     sum_partic_men <span class="sc">+</span> sum_partic_women <span class="sc">+</span> log_exp <span class="sc">+</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                     log_exp<span class="sc">*</span>bball_football <span class="sc">-</span> bball_football,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> sports_nolinear)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="a">
+<li>Let’s assess the model performance. Comment on the model’s predictive power, using any relevant statistics to support your evaluation.</li>
+</ol>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>In Lab 05, you examined the residuals versus fitted values for 20 randomly selected institutions. Below are three general observations based on an examination of the residuals:</p>
+<ul>
+<li><p>There seems to be two groups of observations.</p></li>
+<li><p>Institutions with larger fitted values correspond to lower variance in the residuals compared to the others.</p></li>
+<li><p>There are institutions with lower fitted values that have large negative residuals, potentially indicating outliers and/or influential points.</p></li>
+</ul>
+<p>We are concerned that these observations may indicate some model misspecification (i.e., the model does not accurately reflect the trends in the data).</p>
+<p>Therefore, we take a look at the residuals a different way.</p>
+<ol type="a">
+<li><p>Plot the standardized residual versus the fitted values. In the plot, color the points based Cook’s distance, and use shape to indicate whether the sport is basketball or football.</p></li>
+<li><p>Describe what you observe from the plot and how your observations compare to the list above.</p></li>
+<li><p>Does the plot in part (a) suggest the model is an appropriate fit for the data or that the model misspecified? Briefly explain.</p></li>
+</ol>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Use the model from <a href="#exercise-6">Exercise 6</a> to</p>
+<ol type="a">
+<li><p>Interpret the coefficient of <code>sector_namePublic, 4-year or above</code> in the context of the data in terms of revenue (not log(revenue)).</p></li>
+<li><p>Interpret the coefficient of expenditure in the context of the data in terms of revenue (not log(revenue)). Write the interpretation in terms of 10% increase in expenditure.</p></li>
+</ol>
+</section>
+</section>
+<section id="ai-disclosure" class="level1">
+<h1>AI disclosure</h1>
+<p>Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste <u><strong>all</strong></u> statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps me learn how students are most effectively using AI.</p>
+<ul>
+<li>I didn’t use an LLM / Generative AI tool.</li>
+<li>I asked it to clarify one or more exercises.</li>
+<li>I asked it clarifying questions to better understand a concept.</li>
+<li>I asked it to help write code to complete an exercise.</li>
+<li>I gave it my code and asked it to help me fix it.</li>
+<li>I asked it about an error or why code would do something I didn’t want.</li>
+<li>I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.</li>
+<li>I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.</li>
+<li>Other:______</li>
+</ul>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<ul>
+<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/84458">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your assignment should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> and “AI Disclosure” sections.</p></li>
+</ul>
+</section>
+<section id="grading-25-points" class="level1">
+<h1>Grading (25 points)</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Selected conceptual exercise</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Selected applied exercise</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Completing AI Disclosure</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Workflow &amp; formatting</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code, along with your name and the date updated in the YAML.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-montgomery2021introduction" class="csl-entry" role="listitem">
+Montgomery, Douglas C, Elizabeth A Peck, and G Geoffrey Vining. 2021. <em>Introduction to Linear Regression Analysis</em>. John Wiley &amp; Sons.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -821,7 +1231,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

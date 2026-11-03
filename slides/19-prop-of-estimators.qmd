@@ -46,7 +46,7 @@ knitr::opts_chunk$set(
 options(scipen=999)
 ```
 
-## Announcements 
+## Announcements
 
 - HW 05 - due November 10 at 11:59pm
 
@@ -66,7 +66,7 @@ options(scipen=999)
 
 - Properties of maximum likelihood estimators
 
-# Maximum likelihood estimation 
+# Maximum likelihood estimation
 
 ## Side note: Multivariate normal distribution {background-color="#ccddeb"}
 
@@ -128,7 +128,7 @@ Suppose you throw darts at a target. Select the label for each of the four outco
 
 ![](images/bias-variance-no-label.png){fig-align="center"}
 
-## Your turn 
+## Your turn
 
 ::: question
 Suppose you throw darts at a target. Select the label for each of the four outcomes.
