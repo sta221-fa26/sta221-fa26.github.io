@@ -1,6 +1,6 @@
 ---
 title: "HW 05: Multiple linear regression"
-subtitle: "MLE & Properties of Estimator"
+subtitle: "MLE & Properties of Estimators"
 bibliography: references.bib
 ---
 
