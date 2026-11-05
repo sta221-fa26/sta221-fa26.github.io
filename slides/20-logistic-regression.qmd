@@ -1,0 +1,485 @@
+---
+title: "Logistic regression"
+author: "Prof. Maria Tackett"
+date: "November 5, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 20-logistic-regression-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements {.midi}
+
+- HW 05 - due November 10 at 11:59pm
+
+- Exam 02 - November 12
+
+  - Lecture recordings available until start of exam
+
+- Statistics experience - due November 24 at 11:59pm
+
+- Spring 2027 House Course: Statistical Methods in Research - See [Ed Discussion](https://edstem.org/us/courses/101204/discussion/8483067) for details
+
+## Topics
+
+- Introduce logistic regression for binary response variable
+
+- Use maximum likelihood estimation to derive $\hat{\boldsymbol{\beta}}$
+
+- Interpret coefficients of logistic regression model
+
+## Computational setup
+
+```{r}
+#| warning: false
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(Stat2Data) #contains data set
+library(patchwork)
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Risk of coronary heart disease {.midi}
+
+This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.
+
+- `high_risk`: 1 = High risk of having heart disease in next 10 years, 0 = Not high risk of having heart disease in next 10 years
+
+- `age`: Age at exam time (in years)
+
+- `education`: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College
+
+```{r}
+#| echo: false
+
+heart_disease <- read_csv(here::here("slides", "data/framingham.csv"))|>
+  select(age, education, TenYearCHD) |>
+  drop_na() |>
+  mutate(high_risk = as_factor(TenYearCHD), 
+         education = as_factor(education), 
+         )
+```
+
+## Data: `heart_disease`
+
+```{r}
+#| echo: false
+heart_disease <- heart_disease |>
+  mutate(
+    high_risk_names = if_else(high_risk == "1", "High risk", "Not high risk"),
+    education_names = case_when(
+      education == "1" ~ "Some high school",
+      education == "2" ~ "High school or GED",
+      education == "3" ~ "Some college or vocational school",
+      education == "4" ~ "College"
+    ),
+    education_names = fct_relevel(education_names, "Some high school", "High school or GED", "Some college or vocational school", "College")
+  )
+
+
+heart_disease |>
+  select(age, education, high_risk)
+```
+
+## Univariate EDA
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(heart_disease, aes(x = high_risk)) +
+  geom_bar(fill = "steelblue", color = "black")+
+  labs(x = "",
+       title = "High risk of heart disease")
+
+p2 <- ggplot(heart_disease, aes(x = age)) +
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 2) +
+  labs(x = "",
+       title = "Age")
+
+p3 <- ggplot(heart_disease, aes(x = education)) +
+  geom_bar(fill = "steelblue", color = "black")+
+  labs(x = "",
+       title = "Education")
+
+p1  + (p2 / p3)
+```
+
+## Bivariate EDA
+
+```{r}
+#| code-fold: true
+
+p1 <- ggplot(heart_disease, aes(x = high_risk, y = age)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(x = "High risk",
+       y = "Age", 
+       title = "High risk vs. age") + 
+  coord_flip()
+
+p2 <- ggplot(heart_disease, aes(x = education, fill = high_risk)) +
+  geom_bar(position = "fill", color = "black") +
+  labs(x = "Education",
+    fill = "High risk", 
+    title = "High risk vs. education") +
+  scale_fill_viridis_d() +
+  theme(legend.position = "bottom")
+
+p1 + p2
+```
+
+## Linear model?
+
+Let's consider the linear model $\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}$
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+heart_disease <- heart_disease |> 
+  mutate(high_risk_num = as.numeric(high_risk))
+
+ggplot(data = heart_disease, aes(x = age, y = high_risk_num)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(x = "Age (in years)", 
+       y = "High risk for heart disease")
+```
+
+::: question
+Does the linear model make sense?
+:::
+
+## Binary response variable
+
+The response variable $Y$ is a binary random variable such that the probability that $y_i = 1$ is $\pi$.
+
+$$
+\begin{aligned}
+&P(y_i= 1) = \pi\\[8pt]
+&P(y_i = 0) = 1 - \pi
+\end{aligned}
+$$
+
+. . .
+
+Recall in linear regression, we modeled the expected value of $y_i$ given the predictors $E(\mathbf{y}|\mathbf{X}) = \mathbf{X}\boldsymbol{\beta}$
+
+. . .
+
+Now we have a response variable, such that $E(y_i | \pi) = \pi$
+
+## Let's try a new model
+
+::: question
+Let's say $\pi = 0.5$. What does $E(y_i | \pi) = \pi$ mean in the context of the data? Is this assumption realistic in practice?
+:::
+
+## Let's try a new model
+
+We want to compute probabilities $\pi$ based on the predictor variables (e.g., use an individual's age and education to evaluate their risk for heart disease).
+
+Suppose we try a model of the form
+
+$$
+\pi_i = \mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}
+$$
+
+where $x_i^\mathsf{T}$ is the $i^{th}$ row of the design matrix $\mathbf{X}$
+
+::: question
+What is wrong with using a model of this form?
+:::
+
+## Logit link function
+
+Instead of modeling $\pi_i$ directly, we will model $\text{logit}(\pi_i) = \text{log}\big(\frac{\pi_i}{1 - \pi_i}\big)$ such that
+
+$$
+\text{logit}(\pi_i) = \text{log}\Big(\frac{\pi_i}{1 - \pi_i}\Big) = \mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}
+$$
+
+. . .
+
+The logit function links $E(y_i | \pi)$ to the predictors, so the logit is a **link function*.***
+
+## Logit function
+
+The logit function is
+
+$$
+\text{logit}(\pi_i) = \text{log}\Big(\frac{\pi_i}{1 - \pi_i}\Big) $$
+
+::: question
+- What happens to $\text{logit}(\pi_i)$ as $\pi_i \rightarrow 0$?
+
+- What happens as $\pi_i \rightarrow 1$?
+:::
+
+## From logit to probability {.midi}
+
+**Logistic model** $$\text{logit}(\pi_i) = \log\big(\frac{\pi_i}{1-\pi_i}\big) = \mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}$$
+
+. . .
+
+**Odds** $$\exp\big\{\log\big(\frac{\pi_i}{1 - \pi_i}\big)\big\} = \frac{\pi_i}{1-\pi_i}$$
+
+. . .
+
+**Probability**
+
+$$\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}} = \frac{1}{\exp\{-\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\} + 1}$$
+
+## Sigmoid function
+
+We call this function relating the probability to the predictors a **sigmoid function** $$
+\sigma(z) = \frac{\exp\{z\}}{1 + \exp\{z\}}= \frac{1}{1+\text{exp}\{-z\}}.$$
+
+This is the "S" curve produced by logistic regression.
+
+## Sigmoid function
+
+```{r}
+#| echo: false
+sigmoid <- function(x) {
+  1 / (1 + exp(-x))
+}
+
+# Generate data for plotting
+x_values <- seq(-10, 10, by = 0.1)
+y_values <- sigmoid(x_values)
+data <- data.frame(x = x_values, y = y_values)
+
+# Plot the sigmoid function
+ggplot(data, aes(x = x, y = y)) +
+  geom_line(color = "blue") +
+  labs(x = expression(x[i]^T * beta), y = expression(pi[i] == sigma(x[i]^T * beta))) +
+  ggtitle("Sigmoid Function")
+```
+
+## Logistic regression
+
+We want to use our data to find $\hat{\boldsymbol{\beta}}$, so that we can predict the probability that $y_i = 1$ given the predictors
+
+$$
+\hat\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T}\hat{\boldsymbol\beta}\}}{ 1 + \exp\{\mathbf{x}_i^\mathsf{T}\hat{\boldsymbol\beta}\}}
+$$
+
+. . .
+
+We derive $\hat{\boldsymbol{\beta}}$ using **maximum likelihood estimation**
+
+## Likelihood {.midi}
+
+For an individual observation**:**
+
+$$p(y_i | \mathbf{X}, \boldsymbol{\beta}) = \pi^{y_i}_i (1-\pi_i)^{1-y_i}$$
+
+. . .
+
+The likelihood is the joint density of $y_1, \ldots, y_n$ as a function of the unknown $\boldsymbol{\beta}$
+
+. . .
+
+$$\begin{aligned}L(\boldsymbol{\beta} | \mathbf{X}, \mathbf{y}) &= p(y_1, \dots, y_n | \mathbf{X}, \boldsymbol{\beta}) \\[8pt]
+& = \prod_{i=1}^n p(y_i | \mathbf{X}, \boldsymbol{\beta})  \\[8pt]
+ & = \prod_{i=1}^n \pi_i^{y_i} (1-\pi_i)^{1-y_i}\end{aligned}$$
+
+## Log-likelihood
+
+We use the log-likelihood to find the MLE for $\boldsymbol{\beta}$
+
+The log-likelihood function for $\boldsymbol\beta$ is
+
+$$
+\begin{aligned}
+\log L(\boldsymbol{\beta} \mid \mathbf{X}, \mathbf{y}) 
+&= \sum_{i=1}^n \log\left(\pi_i^{y_i}(1-\pi_i)^{1-y_i}\right) \\[8pt]
+&= \sum_{i=1}^n y_i \log(\pi_i) + (1-y_i)\log(1-\pi_i)
+\end{aligned}
+$$
+
+## Log-likelihood {.midi}
+
+Plugging in $\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T} \boldsymbol\beta\}}{1+\exp\{\mathbf{x}_i^\mathsf{T} \boldsymbol\beta\}}$, we get
+
+$$
+\begin{aligned}
+\log L(\boldsymbol{\beta} \mid \mathbf{X}, \mathbf{y}) = \sum_{i=1}^n &y_i \log\left(\frac{\exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}\right) \\
+&+ (1 - y_i)\log\left(\frac{1}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}\right) \end{aligned} $$ <br>
+
+$$= \sum_{i=1}^n y_i \mathbf{x}_i^\mathsf{T} \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{\mathbf{x}_i^\mathsf{T} \boldsymbol{\beta}\})$$
+
+## Finding the MLE
+
+- Taking the derivative:
+
+$$
+\begin{aligned}
+\frac{\partial \log L}{\partial \boldsymbol\beta} =\sum_{i=1}^n y_i \mathbf{x}_i^\mathsf{T}
+&- \sum_{i=1}^n \frac{\exp\{\mathbf{x}_i^\mathsf{T} \boldsymbol\beta\} \mathbf{x}_i^\mathsf{T}}{1+\exp\{\mathbf{x}_i^\mathsf{T} \boldsymbol\beta\}}
+\end{aligned}
+$$
+
+. . .
+
+- If we set this to zero, there is no closed form solution.
+
+. . .
+
+- R uses numerical approximation to find the MLE.
+
+## Logistic regression in R
+
+```{r}
+heart_disease_fit <- glm(high_risk ~ age + education, 
+                         data  = heart_disease, 
+                         family = "binomial", 
+                        control = glm.control(trace = TRUE)) # just to show estimation 
+```
+
+<br>
+
+```{r}
+#stop printing for future models
+untrace(glm.fit)
+```
+
+## Logistic regression in R
+
+::: small
+```{r}
+#| echo: true
+#| code-line-numbers: "1|2|3"
+
+heart_disease_fit <- glm(high_risk ~ age + education, 
+                         data  = heart_disease, 
+                         family = "binomial")
+```
+
+```{r}
+#| label: heart-edu-age-tidy
+#| echo: false
+tidy(heart_disease_fit) |>
+  kable(digits = 3)
+```
+
+$$
+\begin{aligned}
+\log\Big(\frac{\hat{\pi}_i}{1-\hat{\pi}_i}\Big) =& -5.385 + 0.073 \times \text{age}_i - 0.242\times \text{education2}_i \\
+&- 0.235\times\text{education3}_i - 0.020 \times\text{education4}_i
+\end{aligned}
+$$ where $\hat{\pi}_i$ is the predicted probability an individual is high risk of having heart disease in the next 10 years
+:::
+
+## Interpretation in terms of log-odds
+
+::: small
+```{r}
+#| ref.label: heart-edu-age-tidy
+#| echo: false
+```
+:::
+
+`education4`: The predicted **log-odds** of being high risk for heart disease are 0.020 less for those with a college degree compared to those with some high school, **holding age constant.**
+
+. . .
+
+::: callout-warning
+## Interpretation in practice
+
+We generally do not use the log-odds interpretation in practice.
+:::
+
+## Interpretation in terms of log-odds
+
+::: small
+```{r}
+#| ref.label: heart-edu-age-tidy
+#| echo: false
+```
+:::
+
+`age`: For each additional year in age, the predicted log-odds of being high risk for heart disease increase by 0.073, **holding education level constant.**
+
+. . .
+
+::: callout-warning
+## Interpretation in practice
+
+We generally do not use the log-odds interpretation in practice.
+:::
+
+## Your turn - Interpretation
+
+::: {}
+```{r}
+#| ref.label: heart-edu-age-tidy
+#| echo: false
+```
+:::
+
+::: question
+Interpret the coefficient of `age` (0.073) in terms of the odds.
+:::
+
+## Your turn - Interpretation
+
+::: question
+Interpret the coefficient of `age` (0.073) in terms of the odds.
+:::
+
+![](images/november-5-lecture.png){fig-align="center" width="30%"}
+
+::: center
+<https://app.wooclap.com/RPOSTLS>
+:::
+
+## Interpretation in terms of odds {.midi}
+
+- $\exp\{\hat{\beta}_j\}$ is the **(adjusted) odds ratio**
+
+  - Level $k$ versus the baseline for categorical predictors
+
+  - $x_{j + 1}$ versus $x_j$ for quantitative predictors
+
+- We can also interpret the odds ratio in terms of a percent difference
+
+  "Odds multiplying by $\exp\{\hat{\beta}_j\}$" is equivalent to "the odds changing by $(\exp\{\hat{\beta}_j\} - 1) \times 100$ %"
+
+## Recap
+
+- Introduced logistic regression for binary response variable
+
+- Used maximum likelihood estimation to derive $\hat{\boldsymbol{\beta}}$
+
+- Interpreted coefficients of logistic regression model
+
+## Next class
+
+- No prepare assignment
