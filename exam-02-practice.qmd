@@ -1,0 +1,144 @@
+---
+title: Exam 02 practice
+---
+
+::: callout-important
+This page contains practice problems to help prepare for Exam 02. Exam 02 covers content from October 8 (Data Science Ethics) - November 5 (Logistic Regression). This set of practice problems is <u>**not**</u> comprehensive. You should review these [study tips](https://sta221-fa26.github.io/slides/12-exam-01-review.html#/tips-for-studying) as you prepare for the exam.\
+\
+There is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.
+:::
+
+# Maximum likelihood estimation
+
+## Exercise 1
+
+Given the simple linear regression model
+
+$$y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})$$
+
+Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of $\beta_0$, $\beta_1$, and $\sigma^2_{\epsilon}$ are of the form shown on [this slide](https://sta221-fa26.github.io/slides/18-mle.html#/mle-for-beta_0-2) $(\tilde{\beta}_0)$ and [this slide](https://sta221-fa26.github.io/slides/18-mle.html#/mle-for-beta_1-and-sigma2) $(\tilde{\beta}_1, \tilde{\sigma}^2_{\epsilon})$ .
+
+## Exercise 2
+
+Given the linear regression model
+
+$$
+\mathbf{y}  = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon} \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+$$
+
+Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ are
+
+$$
+\tilde{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} \hspace{10mm} \tilde{\sigma}^2_{\epsilon} = \frac{1}{n}(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})^T(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})
+$$
+
+## Exercise 3
+
+Given the logistic regression model
+
+$$
+\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}
+$$
+
+- Write the likelihood and the log-likelihood function
+
+- Show the steps to get the derivative on [this slide](https://sta221-fa26.github.io/slides/20-logistic-regression.html#/finding-the-mle).
+
+## Exercise 4
+
+Suppose $Y_1, \ldots, Y_n$ are an independent and identically distributed (iid) sample from some distribution
+
+$$f_Y(y) = \theta(1 - \theta)^{y-1}$$
+
+such that $y$ takes on positive integer values and $0 < \theta < 1$. Show that the MLE for $\theta^{-1}$ is $\frac{1}{n}\sum_{i=1}^n y_i$ .
+
+## Exercise 5
+
+Rework the conceptual exercises in [HW 05](https://sta221-fa26.github.io/hw/hw-05.html).
+
+# Multiple linear regression (diagnostics, multicollinearity, variable transformations, comparison)
+
+## Exercise 6
+
+Suppose we fit a linear model with a log transformation on the response variable, i.e.,
+
+$$
+\widehat{\log(y_i)} = \hat{\beta}_0 + \hat{\beta}_1x_1 + \dots + \hat{\beta}_p x_p
+$$
+
+- Show mathematically why the slope for $x_j$ and intercept are interpreted in terms of $y$ as shown on [this slide](https://sta221-fa26.github.io/slides/16-variable-transformations.html#/model-interpretation-in-terms-of-mathbfy).
+
+- Show how $y$ is expected to change if $x_j$ increases by $t$ units.
+
+## Exercise 7
+
+Suppose we fit a linear model with a log transformation on one predictor variable, i.e.,
+
+$$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1\log (x_1) + \dots + \hat{\beta}_p x_p
+$$
+
+Show mathematically why the slope and intercept are interpreted as shown on [this slide](https://sta221-fa26.github.io/slides/16-variable-transformations.html#/model-interpretation) when $x$ is multiplied by a factor $C$.
+
+## Exercise 8
+
+Rework conceptual exercises in [HW 04](https://sta221-fa26.github.io/hw/hw-04.html).
+
+## Exercise 9
+
+Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of $Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}$. One of the [impacts of multicollinearity](https://sta221-fa26.github.io/slides/15-diagnostics-multicollinearity.html#/how-multicollinearity-impacts-model) is that the model coefficients will have large variances. Explain why.
+
+## Exercise 10
+
+Suppose you fit a simple linear regression model.
+
+- Draw a scatterplot that contains an observation with large leverage but low Cook's distance.
+
+- Draw a scatterplot that contains an observation with large leverage and high Cook's distance.
+
+- Draw a scatterplot that contains an observation with a large studentized residual.
+
+## Exercise 11
+
+- What is an advantage of examining a plot of studentized residuals vs. fitted values rather than using the raw residuals?
+
+- Explain what is measured by Cook's distance. You don't need to memorize the formula but rather describe what the formula is quantifying for each observation. [Click here](https://sta221-fa26.github.io/slides/15-diagnostics-multicollinearity.html#/cooks-distance-1) for the formula (slide also contains the solution).
+
+# Logistic regression
+
+## Exercise 12[^1]
+
+[^1]: From *Introduction to Statistical Learning*.
+
+- On average, what fraction of people with an odds of 0.37 of defaulting on their credit card payment will in fact default?
+
+- Suppose an individual has a 16% chance of defaulting on their credit card payment. What are the odds they will default?
+
+## Exercise 13
+
+Recall the model using age and education to predict odds of being high risk for heart disease.
+
+- Show mathematically why the interpretation for the slope for `age` in terms of the log-odds is in the form shown on [this slide](https://sta221-fa26.github.io/slides/20-logistic-regression.html#/interpretation-in-terms-of-log-odds-1).
+
+- Show mathematically why the interpretation for the slope of `age` in terms of the odds is in the form discussed on [this slide](https://sta221-fa26.github.io/slides/20-logistic-regression.html#/interpretation-in-terms-of-odds).
+
+## Exercise 16
+
+Recall the model using age and education to predict odds of being high risk for heart disease.
+
+- Show mathematically why the interpretation for the slope for `education4` in terms of the log-odds is in the form shown on [this slide](https://sta221-fa26.github.io/slides/20-logistic-regression.html#/interpretation-in-terms-of-log-odds).
+
+- Show mathematically why the interpretation for the slope of `education4`in terms of the odds is in the form discussed on [this slide](https://sta221-fa26.github.io/slides/20-logistic-regression.html#/interpretation-in-terms-of-odds).
+
+## Exercise 17
+
+Explain why the slope of the logistic regression model is called the Adjusted Odds Ratio (or just Odds Ratio if there is one predictor).
+
+# Relevant assignments
+
+The following assignments cover Exam 02 content. Ask yourself "why" questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.
+
+- HW 04, HW 05
+
+- Lab 05, Lab 06, Lab 07
+
+- Prepare readings October 8 - November 5

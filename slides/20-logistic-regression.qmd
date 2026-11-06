@@ -253,7 +253,7 @@ $$
 
 **Probability**
 
-$$\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}} = \frac{1}{\exp\{-\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\} + 1}$$
+$$\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}} = \frac{1}{1+ \exp\{-\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}$$
 
 ## Sigmoid function
 

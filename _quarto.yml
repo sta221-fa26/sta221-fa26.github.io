@@ -109,8 +109,8 @@ website:
      #   text: Lecture recording request
       - href: exam-01-practice.qmd
         text: Exam 01 Practice
-    #  - href: exam-02-practice.qmd
-     #   text: Exam 02 Practice
+      - href: exam-02-practice.qmd
+        text: Exam 02 Practice
       - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=363a0255-5193-41c3-a809-b4a601301869
         text: Lecture recordings
       - href: math-rules.qmd
