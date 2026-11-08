@@ -598,6 +598,52 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 <li>We check the model conditions and determine we need to log-transform <code>respiratory\_rate</code> to better fit the data. Draw a sketch of the EDA and model conditions plots that could have led to this conclusion.</li>
 <li>The output for the model using <span class="math inline">\(\log(\text{respiratory\_rate})\)</span> with 95% confidence intervals is</li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">304.500</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3.82</td>
+<td style="text-align: right;">3.870</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">-0.019</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">-25.839</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.018</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Interpret the 95% confidence interval <code>Age</code> in the context of the data.</p>
 <ol start="3" type="a">
 <li>What is the predicted respiratory rate for a child who is 20 months old?</li>
@@ -617,6 +663,50 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(Rate <span class="sc">~</span> <span class="fu">log</span>(Age), <span class="at">data =</span> ex0824) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">50.135</td>
+<td style="text-align: right;">0.632</td>
+<td style="text-align: right;">79.330</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">48.893</td>
+<td style="text-align: right;">51.376</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">log(Age)</td>
+<td style="text-align: right;">-5.982</td>
+<td style="text-align: right;">0.263</td>
+<td style="text-align: right;">-22.781</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-6.498</td>
+<td style="text-align: right;">-5.467</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>Interpret the 95% confidence interval for the expected change when <code>Age</code> increases by 10%.</p>
 <ol start="3" type="a">
@@ -631,6 +721,44 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 <li><p><code>is_repeated_guest</code>: whether or not the booking’s guest is a repeat customer at the hotel.</p></li>
 </ul>
 <p>The data are from the <code>hotel_bookings</code> data set in the <strong>bayesrules</strong> <span class="citation" data-cites="bayesrules">(<a href="#ref-bayesrules" role="doc-biblioref">Dogucu et al. 2021</a>)</span> R package. The model output is below:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-1.113</td>
+<td style="text-align: right;">0.102</td>
+<td style="text-align: right;">-10.913</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lead_time</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">7.884</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">is_repeated_guest</td>
+<td style="text-align: right;">-0.300</td>
+<td style="text-align: right;">0.440</td>
+<td style="text-align: right;">-0.680</td>
+<td style="text-align: right;">0.496</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <ol type="1">
 <li>Explain why we use a logistic model, instead of a linear regression model.</li>
 <li>Interpret the coefficient of <code>lead_time</code> in the context of the data.</li>

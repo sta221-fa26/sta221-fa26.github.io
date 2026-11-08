@@ -3,7 +3,6 @@ title: "Lab 07: Exam 02 Review"
 execute:
   freeze: auto
   echo: true
-  eval: false
   warning: false
   message: false
 format: html
