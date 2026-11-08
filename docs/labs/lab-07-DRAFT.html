@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 07 – STA 221 - Fall 2026</title>
+<title>Lab 07: Exam 02 Review – STA 221 - Fall 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -36,8 +90,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project.html" rel="next">
-<link href="../labs/lab-06.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,6 +128,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -88,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 07: Exam 02 Review</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -261,13 +342,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-00.html" class="sidebar-item-text sidebar-link">
@@ -312,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/lab-07.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 07</span></a>
   </div>
 </li>
@@ -376,15 +457,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-30-pts" id="toc-grading-30-pts" class="nav-link" data-scroll-target="#grading-30-pts">Grading (30 pts)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 07</h1>
+<h1 class="title">Lab 07: Exam 02 Review</h1>
 </div>
 
 
@@ -401,12 +499,181 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br></p>
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is nothing to turn in for this lab. This lab will be graded based on attendance only.</p>
+<p>You can write your responses on your own paper / tablet and use them to study for the exam.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This lab is a review for Exam 02. Each group will be assigned one exercise to work on and present to the class. If you finish early, you are encouraged to work on other exercises.</p>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Suppose we use a simple linear regression model to predict a home’s monthly electricity use from a it’s total area. Consider three homes:</p>
+<ul>
+<li><p><strong>Home A:</strong> Its area is close to the sample mean, but its electricity use is much higher than the model predicts.</p></li>
+<li><p><strong>Home B:</strong> Its area is much larger than that of every other home, but its electricity use is close to the fitted regression line.</p></li>
+<li><p><strong>Home C:</strong> Its area is much larger than that of every other home, and its electricity use is far below the fitted regression line.</p></li>
+</ul>
+<ol type="1">
+<li>Which home(s) would you expect to have high leverage? Explain.</li>
+<li>Which home(s) would you expect to have large magnitude standardized residuals? Explain.</li>
+<li>Which home would you investigate first for potentially having a large Cook’s distance? Explain.</li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Suppose you fit a linear regression model of the form</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3} + \epsilon_i
+\]</span></p>
+<p>The Variance Inflation Factors (VIFs) for the predictors are</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Predictor</th>
+<th>VIF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_1\)</span></td>
+<td>1.2</td>
+</tr>
+<tr class="even">
+<td><p><span class="math inline">\(x_2\)</span></p>
+<p><span class="math inline">\(x_3\)</span></p></td>
+<td><p>8.5</p>
+<p>12.4</p></td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Compute <span class="math inline">\(R_j^2\)</span> for predictor <span class="math inline">\(x_3\)</span>. Interpret this value in the context of the data.</li>
+<li>About how much is the standard error for <span class="math inline">\(x_3\)</span> inflated in this model compared to the standard error of <span class="math inline">\(x_3\)</span> if it was uncorrelated with the other predictors?</li>
+<li>Suppose for <span class="math inline">\(x_3\)</span>, the estimated coefficient is <span class="math inline">\(\hat{\beta}_3 = 2.4\)</span> and the standard error is <span class="math inline">\(SE_{x_3}\)</span> = 1.5. What is the test statistic?</li>
+<li>Use the responses from (b) and (c) to compute the test statistic if <span class="math inline">\(x_3\)</span> was uncorrelated with the other predictors. How do the test statistics compare? What does this show about a potential impact of multicollinearity?</li>
+</ol>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<ol type="a">
+<li><p>Sketch a plot showing the linearity condition is met but the equal variance condition is <u><strong>not</strong></u> met.</p></li>
+<li><p>Sketch a plot showing the linearity condition is <u><strong>not</strong></u> met but the linearity condition is met.</p></li>
+<li><p>Show a plot of showing serial correlation, i.e., the residuals correlated based on the order in which the data were collected.</p></li>
+<li><p>Explain why inference on <span class="math inline">\(\boldsymbol{\beta}\)</span> is robust to violations of the normality condition.</p></li>
+</ol>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p><em>This exercise is adapted from <span class="citation" data-cites="casella2024statistical">(<a href="#ref-casella2024statistical" role="doc-biblioref"><strong>casella2024statistical?</strong></a>)</span>.</em></p>
+<p>Suppose there are <span class="math inline">\(n\)</span> observations <span class="math inline">\((x_1, y_1), \ldots, (x_n, y_n)\)</span>, such that the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> can be summarized as <span class="math display">\[
+y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
+\]</span></p>
+<ul>
+<li><p>Find the maximum likelihood estimator of <span class="math inline">\(\beta\)</span> .</p></li>
+<li><p>Is the MLE unbiased?</p></li>
+</ul>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>The goal of this analysis is to understand the relationship between a child’s age (measured in months) and their respiratory rate (measured in breaths per minute). Using data from 618 children ages 15 days to 3 years (36 months) old, we fit a model of the form</p>
+<p><span class="math display">\[
+\text{respiratory\_rate} = \beta_0 + \beta_1 \text{age} + \epsilon
+\]</span></p>
+<ol type="a">
+<li>We check the model conditions and determine we need to log-transform <code>respiratory\_rate</code> to better fit the data. Draw a sketch of the EDA and model conditions plots that could have led to this conclusion.</li>
+<li>The output for the model using <span class="math inline">\(\log(\text{respiratory\_rate})\)</span> with 95% confidence intervals is</li>
+</ol>
+<p>Interpret the 95% confidence interval <code>Age</code> in the context of the data.</p>
+<ol start="3" type="a">
+<li>What is the predicted respiratory rate for a child who is 20 months old?</li>
+</ol>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>The goal of this analysis is to understand the relationship between a child’s age (measured in months) and their respiratory rate (measured in breaths per minute). Using data from 618 children ages 15 days to 3 years (36 months) old, we fit a model of the form</p>
+<p><span class="math display">\[
+\text{respiratory\_rate} = \beta_0 + \beta_1 \text{age} + \epsilon
+\]</span></p>
+<ol type="a">
+<li>We check the model conditions and determine we need to log-transform <span class="math inline">\(age\)</span> to better fit the data. Draw a sketch of the EDA and model conditions plots that could have led to this conclusion.</li>
+<li>The output for the model using <span class="math inline">\(\log(\text{age})\)</span> with 95% confidence intervals is</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(Rate <span class="sc">~</span> <span class="fu">log</span>(Age), <span class="at">data =</span> ex0824) <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Interpret the 95% confidence interval for the expected change when <code>Age</code> increases by 10%.</p>
+<ol start="3" type="a">
+<li>What is the predicted respiratory rate for a child who is 20 months old?</li>
+</ol>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>We fit a logistic regression model to predict the odds a hotel booking is canceled (<code>1</code>: canceled, <code>0</code>: not canceled) based on the following predictors:</p>
+<ul>
+<li><p><code>lead_time</code>: number of days between the booking and the scheduled arrival</p></li>
+<li><p><code>is_repeated_guest</code>: whether or not the booking’s guest is a repeat customer at the hotel.</p></li>
+</ul>
+<p>The data are from the <code>hotel_bookings</code> data set in the <strong>bayesrules</strong> <span class="citation" data-cites="bayesrules">(<a href="#ref-bayesrules" role="doc-biblioref">Dogucu et al. 2021</a>)</span> R package. The model output is below:</p>
+<ol type="1">
+<li>Explain why we use a logistic model, instead of a linear regression model.</li>
+<li>Interpret the coefficient of <code>lead_time</code> in the context of the data.</li>
+<li>Suppose there is a booking by a guest who is not a repeat customer that was booked 30 days before the scheduled arrival. Compute the following:
+<ol type="i">
+<li>Predicted log-odds</li>
+<li>Predicted odds</li>
+<li>Predicted probability</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>There is nothing to turn in for this lab.</p>
+</section>
+<section id="grading-30-pts" class="level1">
+<h1>Grading (30 pts)</h1>
+<p>This lab will be graded on attendance only.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bayesrules" class="csl-entry" role="listitem">
+Dogucu, Mine, Alicia Johnson, and Miles Ott. 2021. <em>Bayesrules: Datasets and Supplemental Functions from Bayes Rules! Book</em>. <a href="https://github.com/bayes-rules/bayesrules">https://github.com/bayes-rules/bayesrules</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -807,18 +1074,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../labs/lab-06.html" class="pagination-link" aria-label="Lab 06">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 06</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../project.html" class="pagination-link" aria-label="Instructions">
-        <span class="nav-page-text">Instructions</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -827,7 +1082,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa26/sta221-fa26.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
