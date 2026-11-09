@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -90,6 +55,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../project.html" rel="next">
+<link href="../labs/lab-06.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -169,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 07: Exam 02 Review</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -342,13 +309,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-00.html" class="sidebar-item-text sidebar-link">
@@ -393,7 +360,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-07.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 07</span></a>
   </div>
 </li>
@@ -480,7 +447,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Lab 07: Exam 02 Review</h1>
 </div>
@@ -518,20 +485,6 @@ window.Quarto = {
 <p>This lab is a review for Exam 02. Each group will be assigned one exercise to work on and present to the class. If you finish early, you are encouraged to work on other exercises.</p>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Suppose we use a simple linear regression model to predict a home’s monthly electricity use from a it’s total area. Consider three homes:</p>
-<ul>
-<li><p><strong>Home A:</strong> Its area is close to the sample mean, but its electricity use is much higher than the model predicts.</p></li>
-<li><p><strong>Home B:</strong> Its area is much larger than that of every other home, but its electricity use is close to the fitted regression line.</p></li>
-<li><p><strong>Home C:</strong> Its area is much larger than that of every other home, and its electricity use is far below the fitted regression line.</p></li>
-</ul>
-<ol type="1">
-<li>Which home(s) would you expect to have high leverage? Explain.</li>
-<li>Which home(s) would you expect to have large magnitude standardized residuals? Explain.</li>
-<li>Which home would you investigate first for potentially having a large Cook’s distance? Explain.</li>
-</ol>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <p>Suppose you fit a linear regression model of the form</p>
 <p><span class="math display">\[
 y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3} + \epsilon_i
@@ -539,8 +492,8 @@ y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3} + \epsilon_i
 <p>The Variance Inflation Factors (VIFs) for the predictors are</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 9%">
+<col style="width: 18%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -551,7 +504,7 @@ y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3} + \epsilon_i
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(x_1\)</span></td>
-<td>1.2</td>
+<td>4.9</td>
 </tr>
 <tr class="even">
 <td><p><span class="math inline">\(x_2\)</span></p>
@@ -562,41 +515,32 @@ y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3} + \epsilon_i
 </tbody>
 </table>
 <ol type="a">
-<li>Compute <span class="math inline">\(R_j^2\)</span> for predictor <span class="math inline">\(x_3\)</span>. Interpret this value in the context of the data.</li>
-<li>About how much is the standard error for <span class="math inline">\(x_3\)</span> inflated in this model compared to the standard error of <span class="math inline">\(x_3\)</span> if it was uncorrelated with the other predictors?</li>
-<li>Suppose for <span class="math inline">\(x_3\)</span>, the estimated coefficient is <span class="math inline">\(\hat{\beta}_3 = 2.4\)</span> and the standard error is <span class="math inline">\(SE_{x_3}\)</span> = 1.5. What is the test statistic?</li>
-<li>Use the responses from (b) and (c) to compute the test statistic if <span class="math inline">\(x_3\)</span> was uncorrelated with the other predictors. How do the test statistics compare? What does this show about a potential impact of multicollinearity?</li>
+<li><p>Compute <span class="math inline">\(R_j^2\)</span> for predictor <span class="math inline">\(x_3\)</span>. Interpret this value.</p></li>
+<li><p>About how much is the standard error for <span class="math inline">\(\hat{\beta}_3\)</span> inflated in this model compared to the standard error if <span class="math inline">\(x_3\)</span> if <span class="math inline">\(x_3\)</span> was uncorrelated with the other predictors? You can assume the estimated coefficients would not change.</p></li>
+<li><p>Suppose for <span class="math inline">\(x_3\)</span>, the estimated coefficient is <span class="math inline">\(\hat{\beta}_3 = 2.4\)</span> and the standard error is <span class="math inline">\(SE_{\hat{\beta}_3}\)</span> = 1.5. What is the test statistic associated with <span class="math inline">\(H_0: \beta_3 = 0\)</span>?</p></li>
+<li><p>Use the responses from (b) and (c) to compute the test statistic if <span class="math inline">\(x_3\)</span> was uncorrelated with the other predictors. How do the test statistics compare? What does this show about a potential impact of multicollinearity?</p></li>
+</ol>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p><em>This exercise is adapted from <span class="citation" data-cites="casella2024statistical">Casella and Berger (<a href="#ref-casella2024statistical" role="doc-biblioref">2024</a>)</span>.</em></p>
+<p>Suppose there are <span class="math inline">\(n\)</span> observations <span class="math inline">\((x_1, y_1), \ldots, (x_n, y_n)\)</span>, such that the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> can be summarized as <span class="math display">\[
+y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
+\]</span></p>
+<ol type="a">
+<li><p>Find the maximum likelihood estimator of <span class="math inline">\(\beta\)</span> .</p></li>
+<li><p>Is the MLE unbiased?</p></li>
 </ol>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<ol type="a">
-<li><p>Sketch a plot showing the linearity condition is met but the equal variance condition is <u><strong>not</strong></u> met.</p></li>
-<li><p>Sketch a plot showing the linearity condition is <u><strong>not</strong></u> met but the linearity condition is met.</p></li>
-<li><p>Show a plot of showing serial correlation, i.e., the residuals correlated based on the order in which the data were collected.</p></li>
-<li><p>Explain why inference on <span class="math inline">\(\boldsymbol{\beta}\)</span> is robust to violations of the normality condition.</p></li>
-</ol>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p><em>This exercise is adapted from <span class="citation" data-cites="casella2024statistical">(<a href="#ref-casella2024statistical" role="doc-biblioref"><strong>casella2024statistical?</strong></a>)</span>.</em></p>
-<p>Suppose there are <span class="math inline">\(n\)</span> observations <span class="math inline">\((x_1, y_1), \ldots, (x_n, y_n)\)</span>, such that the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> can be summarized as <span class="math display">\[
-y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
-\]</span></p>
-<ul>
-<li><p>Find the maximum likelihood estimator of <span class="math inline">\(\beta\)</span> .</p></li>
-<li><p>Is the MLE unbiased?</p></li>
-</ul>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>The goal of this analysis is to understand the relationship between a child’s age (measured in months) and their respiratory rate (measured in breaths per minute). Using data from 618 children ages 15 days to 3 years (36 months) old, we fit a model of the form</p>
 <p><span class="math display">\[
 \text{respiratory\_rate} = \beta_0 + \beta_1 \text{age} + \epsilon
 \]</span></p>
 <ol type="a">
-<li>We check the model conditions and determine we need to log-transform <code>respiratory\_rate</code> to better fit the data. Draw a sketch of the EDA and model conditions plots that could have led to this conclusion.</li>
-<li>The output for the model using <span class="math inline">\(\log(\text{respiratory\_rate})\)</span> with 95% confidence intervals is</li>
+<li>We check the model conditions and determine we need to log-transform <code>respiratory_rate</code> to better fit the data. Draw a sketch of EDA and model conditions plots that could have led to this conclusion.</li>
+<li>The output for the model using <span class="math inline">\(\log(\text{respiratory\_rate})\)</span> with 95% confidence intervals is below.</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -644,25 +588,22 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 </table>
 </div>
 </div>
-<p>Interpret the 95% confidence interval <code>Age</code> in the context of the data.</p>
+<p>Interpret the 95% confidence interval for <code>Age</code> in the context of the data.</p>
 <ol start="3" type="a">
 <li>What is the predicted respiratory rate for a child who is 20 months old?</li>
 </ol>
 </section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <p>The goal of this analysis is to understand the relationship between a child’s age (measured in months) and their respiratory rate (measured in breaths per minute). Using data from 618 children ages 15 days to 3 years (36 months) old, we fit a model of the form</p>
 <p><span class="math display">\[
 \text{respiratory\_rate} = \beta_0 + \beta_1 \text{age} + \epsilon
 \]</span></p>
 <ol type="a">
-<li>We check the model conditions and determine we need to log-transform <span class="math inline">\(age\)</span> to better fit the data. Draw a sketch of the EDA and model conditions plots that could have led to this conclusion.</li>
+<li>We check the model conditions and determine we need to log-transform <span class="math inline">\(age\)</span> to better fit the data. Draw a sketch of EDA and model conditions plots that could have led to this conclusion.</li>
 <li>The output for the model using <span class="math inline">\(\log(\text{age})\)</span> with 95% confidence intervals is</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(Rate <span class="sc">~</span> <span class="fu">log</span>(Age), <span class="at">data =</span> ex0824) <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -713,8 +654,8 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 <li>What is the predicted respiratory rate for a child who is 20 months old?</li>
 </ol>
 </section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>We fit a logistic regression model to predict the odds a hotel booking is canceled (<code>1</code>: canceled, <code>0</code>: not canceled) based on the following predictors:</p>
 <ul>
 <li><p><code>lead_time</code>: number of days between the booking and the scheduled arrival</p></li>
@@ -759,15 +700,37 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 </table>
 </div>
 </div>
-<ol type="1">
-<li>Explain why we use a logistic model, instead of a linear regression model.</li>
-<li>Interpret the coefficient of <code>lead_time</code> in the context of the data.</li>
-<li>Suppose there is a booking by a guest who is not a repeat customer that was booked 30 days before the scheduled arrival. Compute the following:
+<ol type="a">
+<li><p>Explain why we use logistic regression instead of a linear regression model.</p></li>
+<li><p>Interpret the coefficient of <code>lead_time</code> in the context of the data.</p></li>
+<li><p>Suppose there is a booking by a guest who is not a repeat customer that was booked 30 days before the scheduled arrival. Compute the following:</p>
 <ol type="i">
 <li>Predicted log-odds</li>
 <li>Predicted odds</li>
 <li>Predicted probability</li>
 </ol></li>
+</ol>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Suppose we use a simple linear regression model to predict a home’s monthly electricity use from a its total area. Consider three homes:</p>
+<ul>
+<li><p><strong>Home A:</strong> Its area is close to the sample mean, but its electricity use is much higher than the model predicts.</p></li>
+<li><p><strong>Home B:</strong> Its area is much larger than that of every other home, but its electricity use is close to the fitted regression line.</p></li>
+<li><p><strong>Home C:</strong> Its area is much larger than that of every other home, and its electricity use is far below the fitted regression line.</p></li>
+</ul>
+<ol type="a">
+<li><p>Which home(s) would you expect to have high leverage? Explain.</p></li>
+<li><p>Which home(s) would you expect to have large magnitude standardized residuals? Explain.</p></li>
+<li><p>Which home would you investigate first for potentially having a large Cook’s distance? Explain.</p></li>
+</ol>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<ol type="a">
+<li><p>Sketch a plot showing the linearity condition is met but the equal variance condition is <u><strong>not</strong></u> met.</p></li>
+<li><p>Sketch a plot showing the linearity condition is <u><strong>not</strong></u> met but the equal variance condition is met.</p></li>
+<li><p>Show a plot of showing serial correlation, i.e., the residuals correlated based on the order in which the data were collected.</p></li>
 </ol>
 </section>
 </section>
@@ -798,6 +761,9 @@ y_i = \beta x_i^2 + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0,\sigma^2)
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-casella2024statistical" class="csl-entry" role="listitem">
+Casella, George, and Roger Berger. 2024. <em>Statistical Inference</em>. Chapman; Hall/CRC.
+</div>
 <div id="ref-bayesrules" class="csl-entry" role="listitem">
 Dogucu, Mine, Alicia Johnson, and Miles Ott. 2021. <em>Bayesrules: Datasets and Supplemental Functions from Bayes Rules! Book</em>. <a href="https://github.com/bayes-rules/bayesrules">https://github.com/bayes-rules/bayesrules</a>.
 </div>
@@ -1202,6 +1168,18 @@ Dogucu, Mine, Alicia Johnson, and Miles Ott. 2021. <em>Bayesrules: Datasets and 
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-06.html" class="pagination-link" aria-label="Lab 06">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 06</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../project.html" class="pagination-link" aria-label="Instructions">
+        <span class="nav-page-text">Instructions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
