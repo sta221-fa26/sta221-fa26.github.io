@@ -77,6 +77,8 @@ This data set is from an ongoing cardiovascular study on residents of the town o
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
 
 heart_disease <- read_csv(here::here("slides", "data/framingham.csv"))|>
   select(age, education, TenYearCHD) |>

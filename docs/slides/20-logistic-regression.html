@@ -256,17 +256,6 @@ Prof.&nbsp;Maria Tackett
 <li><p><code>age</code>: Age at exam time (in years)</p></li>
 <li><p><code>education</code>: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College</p></li>
 </ul>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 4240 Columns: 16
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (16): male, age, education, currentSmoker, cigsPerDay, BPMeds, prevalent...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
 </section>
 <section id="data-heart_disease" class="slide level2">
 <h2>Data: <code>heart_disease</code></h2>
@@ -292,42 +281,37 @@ dbl (16): male, age, education, currentSmoker, cigsPerDay, BPMeds, prevalent...
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>
 
-<img data-src="20-logistic-regression_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="20-logistic-regression_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heart_disease, <span class="fu">aes</span>(<span class="at">x =</span> high_risk, <span class="at">y =</span> age)) <span class="sc">+</span></span>
-<span id="cb4-2"><a aria-label="2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a aria-label="3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"High risk"</span>,</span>
-<span id="cb4-4"><a aria-label="4"></a>       <span class="at">y =</span> <span class="st">"Age"</span>, </span>
-<span id="cb4-5"><a aria-label="5"></a>       <span class="at">title =</span> <span class="st">"High risk vs. age"</span>) <span class="sc">+</span> </span>
-<span id="cb4-6"><a aria-label="6"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb4-7"><a aria-label="7"></a></span>
-<span id="cb4-8"><a aria-label="8"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heart_disease, <span class="fu">aes</span>(<span class="at">x =</span> education, <span class="at">fill =</span> high_risk)) <span class="sc">+</span></span>
-<span id="cb4-9"><a aria-label="9"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb4-10"><a aria-label="10"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Education"</span>,</span>
-<span id="cb4-11"><a aria-label="11"></a>    <span class="at">fill =</span> <span class="st">"High risk"</span>, </span>
-<span id="cb4-12"><a aria-label="12"></a>    <span class="at">title =</span> <span class="st">"High risk vs. education"</span>) <span class="sc">+</span></span>
-<span id="cb4-13"><a aria-label="13"></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb4-14"><a aria-label="14"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb4-15"><a aria-label="15"></a></span>
-<span id="cb4-16"><a aria-label="16"></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heart_disease, <span class="fu">aes</span>(<span class="at">x =</span> high_risk, <span class="at">y =</span> age)) <span class="sc">+</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a aria-label="3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"High risk"</span>,</span>
+<span id="cb3-4"><a aria-label="4"></a>       <span class="at">y =</span> <span class="st">"Age"</span>, </span>
+<span id="cb3-5"><a aria-label="5"></a>       <span class="at">title =</span> <span class="st">"High risk vs. age"</span>) <span class="sc">+</span> </span>
+<span id="cb3-6"><a aria-label="6"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb3-7"><a aria-label="7"></a></span>
+<span id="cb3-8"><a aria-label="8"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heart_disease, <span class="fu">aes</span>(<span class="at">x =</span> education, <span class="at">fill =</span> high_risk)) <span class="sc">+</span></span>
+<span id="cb3-9"><a aria-label="9"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a aria-label="10"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Education"</span>,</span>
+<span id="cb3-11"><a aria-label="11"></a>    <span class="at">fill =</span> <span class="st">"High risk"</span>, </span>
+<span id="cb3-12"><a aria-label="12"></a>    <span class="at">title =</span> <span class="st">"High risk vs. education"</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a aria-label="13"></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a aria-label="14"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb3-15"><a aria-label="15"></a></span>
+<span id="cb3-16"><a aria-label="16"></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
-<img data-src="20-logistic-regression_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section>
+<img data-src="20-logistic-regression_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="linear-model" class="slide level2">
 <h2>Linear model?</h2>
 <p>Let’s consider the linear model <span class="math inline">\(\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}\)</span></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="20-logistic-regression_files/figure-html/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"><div class="question">
+<img data-src="20-logistic-regression_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
 <p>Does the linear model make sense?</p>
 </div>
 </section>
@@ -407,7 +391,7 @@ dbl (16): male, age, education, currentSmoker, cigsPerDay, BPMeds, prevalent...
 <section id="sigmoid-function-1" class="slide level2">
 <h2>Sigmoid function</h2>
 
-<img data-src="20-logistic-regression_files/figure-html/unnamed-chunk-7-1.png" width="672" class="r-stretch"></section>
+<img data-src="20-logistic-regression_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="logistic-regression" class="slide level2">
 <h2>Logistic regression</h2>
 <p>We want to use our data to find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, so that we can predict the probability that <span class="math inline">\(y_i = 1\)</span> given the predictors</p>
@@ -477,10 +461,10 @@ dbl (16): male, age, education, currentSmoker, cigsPerDay, BPMeds, prevalent...
 <section id="logistic-regression-in-r" class="slide level2">
 <h2>Logistic regression in R</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>heart_disease_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> education, </span>
-<span id="cb6-2"><a aria-label="2"></a>                         <span class="at">data  =</span> heart_disease, </span>
-<span id="cb6-3"><a aria-label="3"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb6-4"><a aria-label="4"></a>                        <span class="at">control =</span> <span class="fu">glm.control</span>(<span class="at">trace =</span> <span class="cn">TRUE</span>)) <span class="co"># just to show estimation </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>heart_disease_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> education, </span>
+<span id="cb4-2"><a aria-label="2"></a>                         <span class="at">data  =</span> heart_disease, </span>
+<span id="cb4-3"><a aria-label="3"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb4-4"><a aria-label="4"></a>                        <span class="at">control =</span> <span class="fu">glm.control</span>(<span class="at">trace =</span> <span class="cn">TRUE</span>)) <span class="co"># just to show estimation </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Deviance = 3336.175 Iterations - 1
 Deviance = 3300.661 Iterations - 2
@@ -491,17 +475,17 @@ Deviance = 3300.135 Iterations - 5</code></pre>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a><span class="co">#stop printing for future models</span></span>
-<span id="cb8-2"><a aria-label="2"></a><span class="fu">untrace</span>(glm.fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="co">#stop printing for future models</span></span>
+<span id="cb6-2"><a aria-label="2"></a><span class="fu">untrace</span>(glm.fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="logistic-regression-in-r-1" class="slide level2">
 <h2>Logistic regression in R</h2>
 <div class="small">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>heart_disease_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> education, </span>
-<span id="cb9-2"><a aria-label="2"></a>                         <span class="at">data  =</span> heart_disease, </span>
-<span id="cb9-3"><a aria-label="3"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>heart_disease_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> education, </span>
+<span id="cb7-2"><a aria-label="2"></a>                         <span class="at">data  =</span> heart_disease, </span>
+<span id="cb7-3"><a aria-label="3"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1025,6 +1009,44 @@ Deviance = 3300.135 Iterations - 5</code></pre>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

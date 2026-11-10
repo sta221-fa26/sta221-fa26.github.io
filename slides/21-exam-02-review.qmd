@@ -1,0 +1,236 @@
+---
+title: "Exam 02 review"
+author: "Prof. Maria Tackett"
+date: "November 10, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 21-exam-02-review-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+	fig.align = "center",
+	fig.height =5,
+	fig.width = 8,
+	message = FALSE,
+	warning = FALSE
+)
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(Stat2Data) #contains data set
+library(patchwork)
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+
+heart_disease <- read_csv(here::here("slides", "data/framingham.csv"))|>
+  select(age, education, TenYearCHD) |>
+  drop_na() |>
+  mutate(high_risk = as_factor(TenYearCHD), 
+         education = as_factor(education), 
+  )
+```
+
+## Announcements
+
+- HW 05 due TODAY at 11:59pm
+
+- Exam 02 on Thursday
+
+  - Lecture recordings available until start of exam
+
+## Exam 02
+
+- 75 minutes during November 12 lecture
+
+- If you miss the exam due to a reason documented by a Dean's excuse or other official university documentation (not a STINF), the final exam score will be imputed for the Exam 02 grade.
+
+## Exam 02 {.midi}
+
+- Bring pencil or pen. No calculator permitted.
+- One page (front and back) of handwritten notes permitted
+  - Notes must be written directly on paper. You may [**not**]{.underline} write notes on a tablet and print them out.
+- Possible question types:
+  - Short answer (show work / explain response/ interpretations)
+  - Derivations (show work)
+  - True/False
+  - Multiple choice
+- Will be provided all relevant R output and page of [math rules](../math-rules.html)
+- Can use results from notes and assignments. **State the results you're using!**
+
+## Tips for studying
+
+- Rework derivations from assignments and lecture notes
+- Ask “why” as you review your process and reasoning
+- Focus on understanding not memorization
+- Explain concepts / process to others
+- Ask questions in office hours
+- Review lecture recordings as needed
+
+## Content: Weeks
+
+::::: columns
+::: {.column width="50%"}
+- Data science ethics
+
+- Model conditions
+
+- Model diagnostics
+
+- Multicollinearity
+:::
+
+::: {.column width="50%"}
+- Variable transformations
+
+- Maximum likelihood estimation
+
+- Properties of estimators
+
+- Logistic regression
+:::
+:::::
+
+## Tips for studying {.midi}
+
+- Rework derivations from assignments and lecture notes
+
+- Review in-class activities and assignments, asking "why" as you review your process and reasoning
+
+- Focus on understanding not memorization
+
+- Explain concepts / process to others
+
+- Ask questions in office hours
+
+- Review prepare readings
+
+- Review lecture recordings (available until start of in-class exam)
+
+## Resources
+
+- Prepare readings
+
+- Lecture notes, AEs, labs, homework
+
+- Lecture recordings available until start of the exam (link in course website menu)
+
+- HW and lab assignments
+
+- Exam 02 practice problems (link in menu of course website)
+
+## Question 1
+
+::: question
+- Describe what it means for to be the maximum likelihood estimator.
+
+- What are properties of MLEs?
+:::
+
+## Question 2
+
+::: question
+Explain why
+
+$\lim_{n \rightarrow \infty}Var(\hat{\boldsymbol{\beta}}) = 0$ and $\lim_{n \rightarrow \infty} Bias(\hat{\boldsymbol{\beta}}) = 0$ means that $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
+:::
+
+## Question 3
+
+::: question
+You are fitting a regression model to predict insurance costs based on patient demographics, prior history of medical diagnoses, and other information. You identify 5 observations that have leverage values greater than $2(p+1)/n$. You consider removing these observations from the analysis data.
+
+Before deciding whether to remove them, what two pieces of information would you want to examine, and how would each piece of information affect your decision?
+:::
+
+## Your turn - Question 3
+
+::: question
+Enter one piece of information you'd want to examine.
+:::
+
+![](images/november-10-lecture.png){fig-align="center" width="35%"}
+
+::: center
+<https://app.wooclap.com/BOCOQPT>
+:::
+
+## Question 4
+
+Let's go back to [data](20-logistic-regression.html#/risk-of-coronary-heart-disease) collected in Framingham, MA to study the risk of coronary heart disease. A two-way table of the relationship between education and being high risk for heart disease is below.
+
+```{r}
+#| echo: false
+
+heart_disease |>
+  count(education, high_risk) |>
+  pivot_wider(names_from = high_risk, values_from = n) |>
+  kable(col.names = c("Education", "Not High Risk", "High Risk"))
+
+```
+
+## Question 4
+
+::: question
+a.  What is the probability a randomly selected individual with education level 4 (College) is high risk for heart disease?
+
+b.  What are the odds for this individual?
+
+c.  How do the odds of being high risk for an individual with education level 4 (College) compare to the odds for an individual from education level 1 (Some High School)?
+:::
+
+## Question 5
+
+We fit a model using `education` to predict the odds of being high risk for heart disease.
+
+```{r}
+#| echo: false
+
+glm(high_risk ~ education, data = heart_disease, family = "binomial") |>
+  tidy() |>
+  kable(digits = 2)
+```
+
+::: question
+- Interpret the coefficient of `education4` in terms of the odds of being high risk for heart disease.
+
+- How does this compare to the Question 3c?
+:::
+
+## Question 6
+
+::: question
+Suppose you fit a simple linear regression model.
+
+a.  Draw a scatterplot that contains an observation with high leverage but low Cook’s distance.
+
+b.  Draw a scatterplot that contains an observation with high leverage and high Cook’s distance.
+
+c.  Draw a scatterplot that contains an observation with a large magnitude standardized residual.
+:::
