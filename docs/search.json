@@ -9345,7 +9345,7 @@
     "href": "slides/21-exam-02-review-notes.html#question-2",
     "title": "Exam 02 review",
     "section": "Question 2",
-    "text": "Question 2\n\nExplain why\n\\(\\lim_{n \\rightarrow \\infty}Var(\\hat{\\boldsymbol{\\beta}}) = 0\\) and \\(\\lim_{n \\rightarrow \\infty} Bias(\\hat{\\boldsymbol{\\beta}}) = 0\\) means that \\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator."
+    "text": "Question 2\n\nExplain why\n\n\\(\\lim_{n \\rightarrow \\infty}Var(\\hat{\\boldsymbol{\\beta}}) = 0\\), and\n\\(\\lim_{n \\rightarrow \\infty} Bias(\\hat{\\boldsymbol{\\beta}}) = 0\\)\n\nmeans that \\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator."
   },
   {
     "objectID": "slides/21-exam-02-review-notes.html#question-3",
@@ -9450,7 +9450,7 @@
     "href": "slides/21-exam-02-review.html#question-2",
     "title": "Exam 02 review",
     "section": "Question 2",
-    "text": "Question 2\n\nExplain why\n\\(\\lim_{n \\rightarrow \\infty}Var(\\hat{\\boldsymbol{\\beta}}) = 0\\) and \\(\\lim_{n \\rightarrow \\infty} Bias(\\hat{\\boldsymbol{\\beta}}) = 0\\) means that \\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator."
+    "text": "Question 2\n\nExplain why\n\n\\(\\lim_{n \\rightarrow \\infty}Var(\\hat{\\boldsymbol{\\beta}}) = 0\\), and\n\\(\\lim_{n \\rightarrow \\infty} Bias(\\hat{\\boldsymbol{\\beta}}) = 0\\)\n\nmeans that \\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator."
   },
   {
     "objectID": "slides/21-exam-02-review.html#question-3",

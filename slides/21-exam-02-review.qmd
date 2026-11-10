@@ -145,6 +145,8 @@ heart_disease <- read_csv(here::here("slides", "data/framingham.csv"))|>
 
 - Exam 02 practice problems (link in menu of course website)
 
+# Questions?
+
 ## Question 1
 
 ::: question
@@ -158,7 +160,11 @@ heart_disease <- read_csv(here::here("slides", "data/framingham.csv"))|>
 ::: question
 Explain why
 
-$\lim_{n \rightarrow \infty}Var(\hat{\boldsymbol{\beta}}) = 0$ and $\lim_{n \rightarrow \infty} Bias(\hat{\boldsymbol{\beta}}) = 0$ means that $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
+- $\lim_{n \rightarrow \infty}Var(\hat{\boldsymbol{\beta}}) = 0$, and
+
+-  $\lim_{n \rightarrow \infty} Bias(\hat{\boldsymbol{\beta}}) = 0$
+
+means that $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 :::
 
 ## Question 3
