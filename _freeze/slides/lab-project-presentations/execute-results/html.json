@@ -1,0 +1,19 @@
+{
+  "hash": "25f3d32bda9e7fb4e31f3676cdefa594",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Project: Work on presentations \"\ndate: \"November 16, 2023\"\ndate-format: \"MMM DD, YYYY\"\nfooter: \"[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)\"\nlogo: \"../images/logo.png\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: false\n    transition: fade\n    slide-number: true\n    incremental: false \n    chalkboard: true\n    include-before: [ '<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']\nhtml-math-method:\n  method: mathjax\n  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\nexecute:\n  freeze: auto\n  echo: true\nknitr:\n  opts_chunk: \n    R.options:      \n    width: 200\nbibliography: references.bib\n---\n\n##  Project presentations\n\n- Each team will present in lab on November 23\n\n- Presentations are about 6 - 8 minutes; they may not exceed 8 minutes\n\n  - There will be 1 - 2 questions after each presentation\n\n- You will introduce your data and analysis question, key findings from the EDA, and initial modeling results (if you have some to share at this point)\n\n  - You are presenting work-in-progress and are not expected to have final results\n\n- Each student will provide feedback on two presentations\n\n## Goals for today's lab\n\n- Review and incorporate the feedback from the EDA\n\n- Make an outline for the presentation\n\n  - You will not have time to share everything, so think about what key details you want to share\n\n- Start working ahead to the draft report due November 30\n\n<center>🔗 <https://sta221-fa26.github.io/project></center>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

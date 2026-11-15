@@ -1,0 +1,53 @@
+---
+title: "Project: Work on presentations "
+date: "November 16, 2023"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+##  Project presentations
+
+- Each team will present in lab on November 23
+
+- Presentations are about 6 - 8 minutes; they may not exceed 8 minutes
+
+  - There will be 1 - 2 questions after each presentation
+
+- You will introduce your data and analysis question, key findings from the EDA, and initial modeling results (if you have some to share at this point)
+
+  - You are presenting work-in-progress and are not expected to have final results
+
+- Each student will provide feedback on two presentations
+
+## Goals for today's lab
+
+- Review and incorporate the feedback from the EDA
+
+- Make an outline for the presentation
+
+  - You will not have time to share everything, so think about what key details you want to share
+
+- Start working ahead to the draft report due November 30
+
+<center>🔗 <https://sta221-fa26.github.io/project></center>
