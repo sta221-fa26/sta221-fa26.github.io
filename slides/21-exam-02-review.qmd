@@ -162,7 +162,7 @@ Explain why
 
 - $\lim_{n \rightarrow \infty}Var(\hat{\boldsymbol{\beta}}) = 0$, and
 
--  $\lim_{n \rightarrow \infty} Bias(\hat{\boldsymbol{\beta}}) = 0$
+- $\lim_{n \rightarrow \infty} Bias(\hat{\boldsymbol{\beta}}) = 0$
 
 means that $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 :::

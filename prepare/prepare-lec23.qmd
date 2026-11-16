@@ -1,0 +1,16 @@
+---
+title: "Prepare for Lecture 23: Logistic regression - Inference + Model Selection"
+---
+
+<br>
+
+**Inference**\
+📖 Read [Section 11.5.2](https://intro-regression.github.io/11-logistic.html#sec-logistic-inf-theory)
+
+📖 Read [Section 11.6](https://intro-regression.github.io/11-logistic.html#sec-logistic-conditions)
+
+<br>
+
+**Model selection**
+
+📖 Read [Section 12.5](https://intro-regression.github.io/12-logistic-prediction.html#sec-logistic-model-eval)

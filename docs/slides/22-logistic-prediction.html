@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <title>STA 221 - Fall 2026 – Logistic regression</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-894178fba86c39910efe481f737b63a7.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Logistic regression</h1>
+  <p class="subtitle">Prediction + Assessment</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett
+</div>
+</div>
+</div>
+
+  <p class="date">Nov 17, 2026</p>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li><p>Project presentations in lab Monday, November 23</p></li>
+<li><p>Statistics experience due Tuesday, November 24</p></li>
+<li><p>Project draft + peer review in lab Monday, November 30</p></li>
+</ul>
+</section>
+<section id="computational-set-up" class="slide level2">
+<h2>Computational set up</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="fu">library</span>(pROC)       <span class="co"># make ROC curves</span></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-7"><a aria-label="7"></a></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-9"><a aria-label="9"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<ul>
+<li><p>Computing predicted probabilities from the logistic regression model</p></li>
+<li><p>Using predicted probabilities to classify observations</p></li>
+<li><p>Make decisions and assess model performance using</p>
+<ul>
+<li>Confusion matrix</li>
+<li>ROC curve</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-risk-of-coronary-heart-disease" class="slide level2">
+<h2>Data: Risk of coronary heart disease</h2>
+<p>This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.</p>
+<ul>
+<li><p><code>high_risk</code>: 1 = High risk of having heart disease in next 10 years, 0 = Not high risk of having heart disease in next 10 years</p></li>
+<li><p><code>age</code>: Age at exam time (in years)</p></li>
+<li><p><code>totChol</code>: Total cholesterol (in mg/dL)</p></li>
+<li><p><code>currentSmoker</code>: 0 = nonsmoker; 1 = smoker</p></li>
+</ul>
+</section>
+<section id="univariate-eda" class="slide level2">
+<h2>Univariate EDA</h2>
+
+<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="bivariate-eda" class="slide level2">
+<h2>Bivariate EDA</h2>
+
+<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="modeling-risk-of-coronary-heart-disease" class="slide level2 midi">
+<h2>Modeling risk of coronary heart disease</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-6.638</td>
+<td style="text-align: right;">0.372</td>
+<td style="text-align: right;">-17.860</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-7.374</td>
+<td style="text-align: right;">-5.917</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">14.430</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.093</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">totChol</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">2.001</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.004</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">currentSmoker1</td>
+<td style="text-align: right;">0.457</td>
+<td style="text-align: right;">0.092</td>
+<td style="text-align: right;">4.951</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.277</td>
+<td style="text-align: right;">0.639</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<div class="question">
+<ul>
+<li><p>Interpret <code>totChol</code> in terms of the odds of being high risk for heart disease.</p></li>
+<li><p>Interpret <code>currentSmoker1</code> in terms of the odds of being high risk for heart disease.</p></li>
+</ul>
+</div>
+</section>
+<section id="prediction-and-classification" class="slide level2 midi">
+<h2>Prediction and classification</h2>
+<ul>
+<li class="fragment"><p>We are often interested in using the model to classify observations, i.e., predict whether a given observation will have a 1 or 0 response</p></li>
+<li class="fragment"><p>For each observation</p>
+<ul>
+<li class="fragment">Use the logistic regression model to calculate the predicted log-odds the response for the <span class="math inline">\(i^{th}\)</span> observation is 1</li>
+<li class="fragment">Use the log-odds to calculate the predicted probability the <span class="math inline">\(i^{th}\)</span> observation is 1</li>
+<li class="fragment">Then, use the predicted probability to classify the observation as having a 1 or 0 response using some predefined threshold</li>
+</ul></li>
+</ul>
+</section>
+<section id="augmented-data-frame" class="slide level2">
+<h2>Augmented data frame</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">augment</span>(heart_disease_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,190 × 10
+   high_risk   age totChol currentSmoker .fitted .resid     .hat .sigma  .cooksd
+   &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;           &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+ 1 0            39     195 0              -3.06  -0.302 0.000594  0.890  6.94e-6
+ 2 0            46     250 0              -2.38  -0.420 0.000543  0.890  1.25e-5
+ 3 0            48     245 1              -1.77  -0.560 0.000527  0.890  2.24e-5
+ 4 1            61     225 1              -0.751  1.51  0.00164   0.889  8.70e-4
+ 5 0            46     285 1              -1.86  -0.539 0.000830  0.890  3.25e-5
+ 6 0            43     228 0              -2.67  -0.366 0.000546  0.890  9.43e-6
+ 7 1            63     205 0              -1.08   1.66  0.00154   0.889  1.15e-3
+ 8 0            45     313 1              -1.88  -0.532 0.00127   0.890  4.86e-5
+ 9 0            52     260 0              -1.87  -0.535 0.000542  0.890  2.08e-5
+10 0            43     225 1              -2.22  -0.454 0.000532  0.890  1.44e-5
+# ℹ 4,180 more rows
+# ℹ 1 more variable: .std.resid &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="predicted-log-odds" class="slide level2">
+<h2>Predicted log-odds</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>heart_disease_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(heart_disease_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  .fitted
+    &lt;dbl&gt;
+1  -3.06 
+2  -2.38 
+3  -1.77 
+4  -0.751
+5  -1.86 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Observation 1</strong></p>
+<p><span class="math display">\[
+\text{logit}(\hat{\pi}_i)  = \log\Big(\frac{\hat{\pi}_i}{1- \hat{\pi}_i}\Big) = -3.06
+\]</span></p>
+</div>
+</section>
+<section id="predicted-odds" class="slide level2">
+<h2>Predicted odds</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  .fitted
+    &lt;dbl&gt;
+1  -3.06 
+2  -2.38 
+3  -1.77 
+4  -0.751
+5  -1.86 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Observation 1</strong></p>
+<p><span class="math display">\[
+\text{predicted odds} =  \frac{\hat{\pi}_i}{1- \hat{\pi}_i} = \exp\{-3.06\} = 0.0469
+\]</span></p>
+</div>
+</section>
+<section id="predicted-probability" class="slide level2">
+<h2>Predicted probability</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  .fitted
+    &lt;dbl&gt;
+1  -3.06 
+2  -2.38 
+3  -1.77 
+4  -0.751
+5  -1.86 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Observation 1</strong></p>
+<p><span class="math display">\[\hat{\pi}_i = \frac{\hat{\text{odds}}_i}{1+\hat{\text{odds}}_i} = \frac{\exp\{-3.06\}}{1 + \exp\{-3.06\}}= 0.045
+\]</span></p>
+</div>
+</section>
+<section id="predicted-probabilities-in-r" class="slide level2">
+<h2>Predicted probabilities in R</h2>
+<p>Compute predicted probabilities by adding <code>type.predict = "response"</code> argument in <code>augment()</code></p>
+<p><br></p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>heart_disease_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(heart_disease_fit, <span class="at">type.predict =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Predicted probabilities for Observations 1 -5</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  .fitted
+    &lt;dbl&gt;
+1  0.0446
+2  0.0845
+3  0.145 
+4  0.321 
+5  0.135 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="classifying-observations" class="slide level2">
+<h2>Classifying observations</h2>
+<div class="midi">
+<div class="question">
+<ol type="1">
+<li>An individual has a predicted probability of 0.045. Would you consider this person high risk for heart disease?</li>
+<li>An individual has a predicted probability of 0.321. Would you consider this person high risk for heart disease?</li>
+</ol>
+</div>
+</div>
+
+<img data-src="images/november-17-qrcode.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><div class="center">
+<p><a href="https://app.wooclap.com/TRXXDUF" class="uri">https://app.wooclap.com/TRXXDUF</a></p>
+</div>
+</section>
+<section id="classifying-observations-1" class="slide level2">
+<h2>Classifying observations</h2>
+<div class="question">
+<p>You would like to determine a threshold for classifying individuals as high risk or not high risk.</p>
+<p>What considerations would you make in determining the threshold?</p>
+</div>
+</section>
+<section id="classify-using-0.5-as-threshold" class="slide level2">
+<h2>Classify using 0.5 as threshold</h2>
+<p>We can use a threshold of 0.5 to classify observations.</p>
+<ul>
+<li><p>If <span class="math inline">\(\hat{\pi}_i &gt; 0.5\)</span>, classify as 1</p></li>
+<li><p>If <span class="math inline">\(\hat{\pi}_i \leq 0.5\)</span>, classify as 0</p></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>heart_disease_aug <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">pred_class =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(.fitted <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  high_risk .fitted pred_class
+  &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;     
+1 0          0.0446 0         
+2 0          0.0845 0         
+3 0          0.145  0         
+4 1          0.321  0         
+5 0          0.135  0         </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="confusion-matrix" class="slide level2">
+<h2>Confusion matrix</h2>
+<p>A <strong>confusion matrix</strong> is a <span class="math inline">\(2 \times 2\)</span> table that compares the predicted and actual classes. We can produce this matrix using the <code>conf_mat()</code> function in the <strong>yardstick</strong> package (part of tidymodels).</p>
+<p><br></p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">conf_mat</span>(high_risk, pred_class) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    0    1
+         0 3553  635
+         1    2    0</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-confusion-matrix" class="slide level2">
+<h2>Visualize confusion matrix</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>heart_conf_mat <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">conf_mat</span>(high_risk, pred_class)</span>
+<span id="cb14-3"><a aria-label="3"></a></span>
+<span id="cb14-4"><a aria-label="4"></a><span class="fu">autoplot</span>(heart_conf_mat, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="using-the-confusion-matrix" class="slide level2">
+<h2>Using the confusion matrix</h2>
+<div class="center">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    0    1
+         0 3553  635
+         1    2    0</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>The <strong>accuracy</strong> of this model with a classification threshold of 0.5 is</p>
+<p><span class="math display">\[
+\text{accuracy} = \frac{3553 + 0}{3553 + 635 + 2 + 0} = 0.848
+\]</span></p>
+</div>
+</section>
+<section id="using-the-confusion-matrix-1" class="slide level2">
+<h2>Using the confusion matrix</h2>
+<div class="center">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    0    1
+         0 3553  635
+         1    2    0</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>The <strong>misclassification rate</strong> of this model with a threshold of 0.5 is</p>
+<p><span class="math display">\[
+\text{misclassification} = \frac{635 + 2}{3553 + 635 + 2 + 0} = 0.152
+\]</span></p>
+</div>
+</section>
+<section id="using-the-confusion-matrix-2" class="slide level2">
+<h2>Using the confusion matrix</h2>
+<div class="center">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    0    1
+         0 3553  635
+         1    2    0</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Accuracy is 0.848 and the misclassification rate is 0.152.</p>
+<div class="fragment">
+<div class="question">
+<ul>
+<li><p>What is the limitation of solely relying on accuracy and misclassification to assess the model performance?</p></li>
+<li><p>What is the limitation of using a single confusion matrix to assess the model performance?</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="sensitivity-and-specificity" class="title-slide slide level1 center">
+<h1>Sensitivity and specificity</h1>
+
+</section>
+<section id="truefalse-positivenegative" class="slide level2 midi">
+<h2>True/false positive/negative</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 21%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Not high risk <span class="math inline">\((y_i = 0)\)</span></th>
+<th>High risk <span class="math inline">\((y_i = 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classified</strong> <strong>not</strong> <strong>high risk</strong> <span class="math inline">\((\hat{\pi}_i \leq \text{threshold})\)</span></td>
+<td>True negative (TN)</td>
+<td>False negative (FN)</td>
+</tr>
+<tr class="even">
+<td><strong>Classified high risk</strong> <span class="math inline">\((\hat{\pi}_i &gt; \text{threshold})\)</span></td>
+<td>False positive (FP)</td>
+<td>True positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ul>
+<li><p><span class="math inline">\(\text{accuracy} = \frac{TN + TP}{TN + TP + FN + FP}\)</span></p></li>
+<li><p><span class="math inline">\(\text{misclassification} = \frac{FN + FP}{TN+ TP + FN + FP}\)</span></p></li>
+</ul>
+</section>
+<section id="false-negative-rate" class="slide level2 midi">
+<h2>False negative rate</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 22%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Not high risk <span class="math inline">\((y_i = 0)\)</span></th>
+<th>High risk <span class="math inline">\((y_i = 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classified not high risk</strong> <span class="math inline">\((\hat{\pi}_i \leq \text{threshold})\)</span></td>
+<td>True negative (TN)</td>
+<td>False negative (FN)</td>
+</tr>
+<tr class="even">
+<td><strong>Classified high risk</strong> <span class="math inline">\((\hat{\pi}_i &gt; \text{threshold})\)</span></td>
+<td>False positive (FP)</td>
+<td>True positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="fragment">
+<p><strong>False negative rate</strong>: Proportion of actual positives that were classified as negatives</p>
+<ul>
+<li>P(classified not high risk | high risk) = <span class="math inline">\(\frac{FN}{TP + FN}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="false-positive-rate" class="slide level2 midi">
+<h2>False positive rate</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 22%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Not high risk <span class="math inline">\((y_i = 0)\)</span></th>
+<th>High risk <span class="math inline">\((y_i = 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classified not high risk</strong> <span class="math inline">\((\hat{\pi}_i \leq \text{threshold})\)</span></td>
+<td>True negative (TN)</td>
+<td>False negative (FN)</td>
+</tr>
+<tr class="even">
+<td><strong>Classified high risk</strong> <span class="math inline">\((\hat{\pi}_i &gt; \text{threshold})\)</span></td>
+<td>False positive (FP)</td>
+<td>True positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="fragment">
+<p><strong>False positive rate</strong>: Proportion of actual negatives that were classified as positives</p>
+<ul>
+<li>P(classified high risk | not high risk) = <span class="math inline">\(\frac{FP}{TN + FP}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="sensitivity" class="slide level2 midi">
+<h2>Sensitivity</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 22%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Not high risk <span class="math inline">\((y_i = 0)\)</span></th>
+<th>High risk <span class="math inline">\((y_i = 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classified not high risk</strong> <span class="math inline">\((\hat{\pi}_i \leq \text{threshold})\)</span></td>
+<td>True negative (TN)</td>
+<td>False negative (FN)</td>
+</tr>
+<tr class="even">
+<td><strong>Classified high risk</strong> <span class="math inline">\((\hat{\pi}_i &gt; \text{threshold})\)</span></td>
+<td>False positive (FP)</td>
+<td>True positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="fragment">
+<p><strong>Sensitivity</strong>: Proportion of actual positives that were correctly classified as positive</p>
+<ul>
+<li><p>Also known as <em>true positive rate</em> (TPR) and <em>recall</em></p></li>
+<li><p><strong>P(classified high risk | high risk) = 1 − False negative rate</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="specificity" class="slide level2 midi">
+<h2>Specificity</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 22%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Not high risk <span class="math inline">\((y_i = 0)\)</span></th>
+<th>High risk <span class="math inline">\((y_i = 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classified not high risk</strong> <span class="math inline">\((\hat{\pi}_i \leq \text{threshold})\)</span></td>
+<td>True negative (TN)</td>
+<td>False negative (FN)</td>
+</tr>
+<tr class="even">
+<td><strong>Classified high risk</strong> <span class="math inline">\((\hat{\pi}_i &gt; \text{threshold})\)</span></td>
+<td>False positive (FP)</td>
+<td>True positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="fragment">
+<p><strong>Specificity</strong>: Proportion of actual negatives that were correctly classified as negative</p>
+<ul>
+<li><strong>P(classified not high risk | not high risk) = 1 − False positive rate</strong></li>
+</ul>
+</div>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<div class="center">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    0    1
+         0 3553  635
+         1    2    0</code></pre>
+</div>
+</div>
+</div>
+<div class="question">
+<p>Calculate the</p>
+<ul>
+<li>False negative rate</li>
+<li>False positive rate</li>
+<li>Sensitivity</li>
+<li>Specificity</li>
+</ul>
+</div>
+</section>
+<section id="using-metrics-to-select-model-and-threshold" class="slide level2 midi">
+<h2>Using metrics to select model and threshold</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Guidance for use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accuracy</td>
+<td><p>For balanced data, use only in combination with other metrics.</p>
+<p>Avoid using for imbalanced data.</p></td>
+</tr>
+<tr class="even">
+<td>Sensitivity (true positive rate)</td>
+<td>Use when false negatives are more “expensive” than false positives.</td>
+</tr>
+<tr class="odd">
+<td>False positive rate</td>
+<td>Use when false positives are more “expensive” than false negatives.</td>
+</tr>
+<tr class="even">
+<td>Precision = <span class="math inline">\(\frac{TP}{TP + FP}\)</span></td>
+<td>Use when it’s important for positive predictions to be accurate.</td>
+</tr>
+</tbody>
+</table>
+<div class="small">
+<p>This table is a modification of work created and shared by Google in the <a href="#/0">Google Machine Learning Crash Course</a>.</p>
+</div>
+</section>
+<section id="choosing-a-classification-threshold" class="slide level2">
+<h2>Choosing a classification threshold</h2>
+<div class="question">
+<p>A doctor plans to use your model to determine which patients are high risk for heart disease. The doctor will recommend a treatment plan for high risk patients.</p>
+<ul>
+<li><p>Would you want sensitivity to be high or low? What about specificity?</p></li>
+<li><p>What are the trade-offs associated with each decision?</p></li>
+</ul>
+</div>
+</section>
+<section id="roc-curve" class="slide level2 midi">
+<h2>ROC curve</h2>
+<p>So far the model assessment has depended on the model and selected threshold. The <strong>receiver operating characteristic (ROC) curve</strong> allows us to assess the model performance across a range of thresholds.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<ul>
+<li><p>x-axis: 1 - Specificity (False positive rate)</p></li>
+<li><p>y-axis: Sensitivity (True positive rate)</p></li>
+</ul>
+<p>Which corner of the plot indicates the best model performance?</p>
+</div></div>
+</div>
+</section>
+<section id="roc-curve-1" class="slide level2">
+<h2>ROC curve</h2>
+
+<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="roc-curve-in-r" class="slide level2 midi">
+<h2>ROC curve in R</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-label="1"></a><span class="co"># calculate sensitivity and specificity at each threshold</span></span>
+<span id="cb19-2"><a aria-label="2"></a>roc_curve_data <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a aria-label="3"></a>  <span class="fu">roc_curve</span>(high_risk, .fitted, </span>
+<span id="cb19-4"><a aria-label="4"></a>            <span class="at">event_level =</span> <span class="st">"second"</span>) </span>
+<span id="cb19-5"><a aria-label="5"></a></span>
+<span id="cb19-6"><a aria-label="6"></a><span class="co"># plot roc curve</span></span>
+<span id="cb19-7"><a aria-label="7"></a><span class="fu">autoplot</span>(roc_curve_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="roc-curve-in-r-1" class="slide level2">
+<h2>ROC curve in R</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Sample from <code>roc_curve_data</code></strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   .threshold specificity sensitivity
+        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+ 1     0.0544       0.103       0.980
+ 2     0.0658       0.181       0.959
+ 3     0.0829       0.304       0.910
+ 4     0.135        0.578       0.715
+ 5     0.191        0.749       0.509
+ 6     0.218        0.799       0.416
+ 7     0.218        0.799       0.413
+ 8     0.259        0.874       0.294
+ 9     0.267        0.895       0.265
+10     0.276        0.910       0.239</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="area-under-the-curve" class="slide level2">
+<h2>Area under the curve</h2>
+<p>The <strong>area under the curve (AUC)</strong> can be used to assess how well the logistic model fits the data</p>
+<ul>
+<li><p>AUC=0.5: model is a very bad fit (no better than a coin flip)</p></li>
+<li><p>AUC close to 1: model is a good fit</p></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-label="1"></a>heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a aria-label="2"></a>  <span class="fu">roc_auc</span>(high_risk, .fitted,</span>
+<span id="cb21-3"><a aria-label="3"></a>    <span class="at">event_level =</span> <span class="st">"second"</span></span>
+<span id="cb21-4"><a aria-label="4"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 roc_auc binary         0.696</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li><p>Calculated predicted probabilities from the logistic regression model</p></li>
+<li><p>Used predicted probabilities to classify observations</p></li>
+<li><p>Made decisions and assessed model performance using</p>
+<ul>
+<li>Confusion matrix</li>
+<li>ROC curve</li>
+</ul></li>
+</ul>
+</section>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
+<ul>
+<li>Complete Lecture 23 prepare</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://sta221-fa26.github.io">🔗 sta221-fa26.github.io</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/sta221-fa26\.github\.io");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
