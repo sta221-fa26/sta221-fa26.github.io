@@ -118,6 +118,11 @@ p1 <- ggplot(heart_disease, aes(x = high_risk)) +
     vjust = -0.5
   )
 
+p_age <- ggplot(heart_disease, aes(x = age)) +
+  geom_histogram(fill = "steelblue", color = "black") +
+  labs(x = "",
+       title = "Age")
+
 p2 <- ggplot(heart_disease, aes(x = totChol)) +
   geom_histogram(fill = "steelblue", color = "black") +
   labs(x = "",
@@ -128,7 +133,8 @@ p3 <- ggplot(heart_disease, aes(x = currentSmoker)) +
   labs(x = "",
        title = "Current Smoker")
 
-p1  + (p2 / p3)
+
+wrap_plots(p1, p_age, p2, p3)
 ```
 
 ## Bivariate EDA
@@ -136,14 +142,21 @@ p1  + (p2 / p3)
 ```{r}
 #| echo: false
 
-p4 <- ggplot(heart_disease, aes(x = high_risk, y = totChol)) +
+p4 <- ggplot(heart_disease, aes(x = high_risk, y = age)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(x = "High risk",
+       y = "Age", 
+       title = "High risk vs. Age") + 
+  coord_flip()
+
+p5 <- ggplot(heart_disease, aes(x = high_risk, y = totChol)) +
   geom_boxplot(fill = "steelblue") +
   labs(x = "High risk",
        y = "Total Cholesterol", 
        title = "High risk vs. Total Cholesterol") + 
   coord_flip()
 
-p5 <- ggplot(heart_disease, aes(x = currentSmoker, fill = high_risk)) +
+p6 <- ggplot(heart_disease, aes(x = currentSmoker, fill = high_risk)) +
   geom_bar(position = "fill", color = "black") +
   labs(x = "Current Smoker",
        fill = "High risk", 
@@ -151,7 +164,7 @@ p5 <- ggplot(heart_disease, aes(x = currentSmoker, fill = high_risk)) +
   scale_fill_viridis_d() +
   theme(legend.position = "bottom")
 
-p4 + p5
+wrap_plots(p4, p5, p6)
 ```
 
 ## Modeling risk of coronary heart disease {.midi}
