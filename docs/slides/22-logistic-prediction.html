@@ -262,11 +262,11 @@ Prof.&nbsp;Maria Tackett
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>
 
-<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 
-<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="modeling-risk-of-coronary-heart-disease" class="slide level2 midi">
 <h2>Modeling risk of coronary heart disease</h2>
 <div class="cell" data-layout-align="center">
@@ -542,7 +542,7 @@ Prediction    0    1
 <span id="cb14-4"><a aria-label="4"></a><span class="fu">autoplot</span>(heart_conf_mat, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="using-the-confusion-matrix" class="slide level2">
 <h2>Using the confusion matrix</h2>
 <div class="center">
@@ -869,7 +869,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>
@@ -886,7 +886,7 @@ Prediction    0    1
 <section id="roc-curve-1" class="slide level2">
 <h2>ROC curve</h2>
 
-<img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="roc-curve-in-r" class="slide level2 midi">
 <h2>ROC curve in R</h2>
 <div class="cell" data-layout-align="center">
@@ -926,7 +926,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="22-logistic-prediction_files/figure-html/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="22-logistic-prediction_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>
@@ -970,7 +970,7 @@ Prediction    0    1
 <section id="before-next-class" class="slide level2">
 <h2>Before next class</h2>
 <ul>
-<li>Complete Lecture 23 prepare</li>
+<li>Complete <a href="../prepare/prepare-lec23.html">Lecture 23 prepare</a></li>
 </ul>
 
 
@@ -1193,6 +1193,44 @@ Prediction    0    1
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -42,7 +42,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Announcements 
+## Announcements
 
 - Project presentations in lab Monday, November 23
 
@@ -269,7 +269,7 @@ heart_disease_aug <- augment(heart_disease_fit, type.predict = "response")
 heart_disease_aug |> select(.fitted) |> slice(1:5)
 ```
 
-## Classifying observations 
+## Classifying observations
 
 :::: midi
 ::: question
@@ -679,4 +679,4 @@ heart_disease_aug |>
 
 ## Before next class
 
-- Complete Lecture 23 prepare
+- Complete [Lecture 23 prepare](../prepare/prepare-lec23.html)
