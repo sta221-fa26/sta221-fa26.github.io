@@ -540,9 +540,9 @@ $$
 
 :::: midi
 ::: incremental
-- When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+- When $n$ is large, $G \sim \chi^2_{\Delta df}$, ( $G$ follows a Chi-square distribution with $\Delta df$ degrees of freedom), where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).
 
-- The p-value is computed as $P(\chi^2 > G)$ using a $\chi_{\Delta df}^2$ distribution, where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).
+- The p-value is computed as $P(\chi^2 > G)$ using a $\chi_{\Delta df}^2$ distribution
 
 - Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
 :::

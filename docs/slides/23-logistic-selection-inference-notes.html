@@ -1127,8 +1127,8 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <div class="midi">
 <div class="incremental">
 <ul class="incremental">
-<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
-<li><p>The p-value is computed as <span class="math inline">\(P(\chi^2 &gt; G)\)</span> using a <span class="math inline">\(\chi_{\Delta df}^2\)</span> distribution, where <span class="math inline">\(\Delta df\)</span> is the number of parameters being tested (the difference in number of parameters between the full and reduced model).</p></li>
+<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_{\Delta df}\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(\Delta df\)</span> degrees of freedom), where <span class="math inline">\(\Delta df\)</span> is the number of parameters being tested (the difference in number of parameters between the full and reduced model).</p></li>
+<li><p>The p-value is computed as <span class="math inline">\(P(\chi^2 &gt; G)\)</span> using a <span class="math inline">\(\chi_{\Delta df}^2\)</span> distribution</p></li>
 <li><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
 </ul>
 </div>

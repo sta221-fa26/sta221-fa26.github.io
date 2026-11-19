@@ -1643,7 +1643,7 @@
     "href": "slides/23-logistic-selection-inference.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_{\\Delta df}\\), ( \\(G\\) follows a Chi-square distribution with \\(\\Delta df\\) degrees of freedom), where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#example-include-education",
@@ -1986,7 +1986,7 @@
     "href": "slides/23-logistic-selection-inference-notes.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_{\\Delta df}\\), ( \\(G\\) follows a Chi-square distribution with \\(\\Delta df\\) degrees of freedom), where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#example-include-education",
