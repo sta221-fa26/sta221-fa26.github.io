@@ -53,6 +53,42 @@ knitr::opts_chunk$set(
 
   - Bring 2 printed copies of the draft to lab
 
+## Exam 02
+
+- Scores (out of 40)
+
+  - Mean: 31.74
+
+  - Median: 32
+
+- Answer key on Canvas
+
+- Regrade requests through November 30.
+
+## Exam 02: 2a
+
+Suppose there are two guinea pigs in the study that receive the same dose through the same supplement type.
+
+- **Guinea Pig A:** Has a large positive standardized residual based on the model from Question 1b
+
+- **Guinea Pig B:** Has a standardized residual close to zero based on the model from Question 1b
+
+How does the leverage for these two guinea pigs compare? Briefly explain.
+
+## Exam 02: 5a
+
+![](images/Screenshot 2026-11-19 at 10.47.52 AM.png){fig-align="center"}
+
+Suppose we fit a logistic regression model of the odds an individual made a recent donation using `reside` as the only predictor. What is the estimated coefficient for `Rural Domestic`? Use `Overseas` as the baseline.
+
+## Exam 02: 6
+
+Suppose we have a linear regression model with the usual assumptions on $\boldsymbol{\epsilon}$. We estimate the regression coefficients $\boldsymbol{\beta}$ using maximum likelihood estimation and another estimation method. Assume both estimators are unbiased.
+
+A colleague says, “Because the maximum likelihood estimator is more efficient, its estimate must be closer to the true coefficient for the data we collected.”
+
+Is this statement correct? If so, explain why. Otherwise, explain why not.
+
 ## Topics
 
 - Model selection using AIC and BIC
@@ -351,7 +387,7 @@ glance(high_risk_fit_full)$BIC
 Based on BIC, which model do you select?
 :::
 
-## Guidelines for using AIC and BIC 
+## Guidelines for using AIC and BIC
 
 | Strength of evidence in favor of $M_2$ | $AIC_{M_1} - AIC_{M_2}$[^3] | $BIC_{M_1} - BIC_{M_2}$[^4] |
 |--------------------------|-----------------------|------------------------|
@@ -461,8 +497,8 @@ Let $L_0$ and $L_a$ be the likelihood functions of the model under $H_0$ and $H_
 
 $$
 \begin{aligned}
-G = D_{0} - D_{a} &= (-2\log L_{0}) - (-2 \log L_{a) \\
-&= -2(\log L_{0} - \log L_{a})
+G = D_0 - D_a &= (-2 \log L_0) - (-2 \log L_a) \\
+& = -2(\log L_0 - \log L_a)
 \end{aligned}
 $$
 
@@ -488,6 +524,7 @@ $$
 
 . . .
 
+:::: midi
 ::: incremental
 - When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
 
@@ -495,6 +532,7 @@ $$
 
 - Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
 :::
+::::
 
 ## Example: Include `education`?
 
@@ -548,8 +586,6 @@ full_model <- glm(high_risk ~ age + totChol + currentSmoker + education,
 pchisq(G, df = 3, lower.tail = FALSE)
 ```
 
-<br>
-
 . . .
 
 ::: midi
@@ -561,7 +597,7 @@ tidy(high_risk_fit_full, conf.int = TRUE) |>
 ```
 :::
 
-## Your turn 
+## Your turn
 
 ::: question
 Would you add `education` to the model?
@@ -583,7 +619,7 @@ anova(reduced_model, full_model, test = "Chisq") |>
   kable(digits = 3)
 ```
 
-## Add interactions with `currentSmoker`? {.midi}
+## Use drop-in-deviance test for interactions {.midi}
 
 ```{r}
 #| echo: false
@@ -600,31 +636,29 @@ anova(reduced_model, new_model, test = "Chisq") |>
 
 ## Distribution of $\hat{\boldsymbol{\beta}}$
 
+When $n$ is large,
+
+$$
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \qquad Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
+$$
+
+where $\mathbf{V}$ is a $n\times n$ diagonal matrix, such that $V_{ii}$ is the estimated variance for the $i^{th}$ observation
+
+## Distribution of $\hat{\boldsymbol{\beta}}$
+
 When $n$ is large, $\hat{\boldsymbol{\beta}}$ is normally distributed
 
 <br>
 
 ::: question
-How do we know $\hat{\boldsymbol{\beta}}$ is normally for large $n$?
+How do we know $\hat{\boldsymbol{\beta}}$ is normally distributed for large $n$?
 :::
 
-## Properties of $\hat{\boldsymbol{\beta}}$
-
-$\hat{\boldsymbol{\beta}}$ is a consistent estimator
-
-$$
-\lim_{n \rightarrow \infty} P(|\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}| \geq c) = 0 \hspace{8mm} \forall ~ c > 0
-$$
+<br>
 
 . . .
 
-When $n$ is large, $Var(\hat{\boldsymbol{\beta}})$, the matrix of variances and covariances between estimators
-
-$$
-Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
-$$
-
-where $\mathbf{V}$ is a $n\times n$ diagonal matrix, such that $V_{ii}$ is the estimated variance for the $i^{th}$ observation
+$$\hat{\boldsymbol{\beta}} \hspace{1mm} \overset{\text{approx}}{\sim} N(\boldsymbol{\beta}, (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}) $$
 
 ## Test for a single coefficient
 

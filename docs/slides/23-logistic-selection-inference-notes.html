@@ -466,6 +466,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#exam-02" id="toc-exam-02" class="nav-link" data-scroll-target="#exam-02">Exam 02</a></li>
+  <li><a href="#exam-02-2a" id="toc-exam-02-2a" class="nav-link" data-scroll-target="#exam-02-2a">Exam 02: 2a</a></li>
+  <li><a href="#exam-02-5a" id="toc-exam-02-5a" class="nav-link" data-scroll-target="#exam-02-5a">Exam 02: 5a</a></li>
+  <li><a href="#exam-02-6" id="toc-exam-02-6" class="nav-link" data-scroll-target="#exam-02-6">Exam 02: 6</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model selection</a>
   <ul class="collapse">
@@ -504,12 +508,12 @@ window.Quarto = {
   <li><a href="#example-add-education" id="toc-example-add-education" class="nav-link" data-scroll-target="#example-add-education">Example: Add <code>education</code>?</a></li>
   <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your turn</a></li>
   <li><a href="#drop-in-deviance-test-in-r" id="toc-drop-in-deviance-test-in-r" class="nav-link" data-scroll-target="#drop-in-deviance-test-in-r">Drop-in-deviance test in R</a></li>
-  <li><a href="#add-interactions-with-currentsmoker" id="toc-add-interactions-with-currentsmoker" class="nav-link" data-scroll-target="#add-interactions-with-currentsmoker">Add interactions with <code>currentSmoker</code>?</a></li>
+  <li><a href="#use-drop-in-deviance-test-for-interactions" id="toc-use-drop-in-deviance-test-for-interactions" class="nav-link" data-scroll-target="#use-drop-in-deviance-test-for-interactions">Use drop-in-deviance test for interactions</a></li>
   </ul></li>
   <li><a href="#inference-for-an-individual-coefficient" id="toc-inference-for-an-individual-coefficient" class="nav-link" data-scroll-target="#inference-for-an-individual-coefficient">Inference for an individual coefficient</a>
   <ul class="collapse">
   <li><a href="#distribution-of-hatboldsymbolbeta" id="toc-distribution-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#distribution-of-hatboldsymbolbeta">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
-  <li><a href="#properties-of-hatboldsymbolbeta" id="toc-properties-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#properties-of-hatboldsymbolbeta">Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
+  <li><a href="#distribution-of-hatboldsymbolbeta-1" id="toc-distribution-of-hatboldsymbolbeta-1" class="nav-link" data-scroll-target="#distribution-of-hatboldsymbolbeta-1">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
   <li><a href="#test-for-a-single-coefficient" id="toc-test-for-a-single-coefficient" class="nav-link" data-scroll-target="#test-for-a-single-coefficient">Test for a single coefficient</a></li>
   <li><a href="#coefficient-for-age" id="toc-coefficient-for-age" class="nav-link" data-scroll-target="#coefficient-for-age">Coefficient for <code>age</code></a></li>
   <li><a href="#coefficient-for-age-1" id="toc-coefficient-for-age-1" class="nav-link" data-scroll-target="#coefficient-for-age-1">Coefficient for <code>age</code></a></li>
@@ -571,6 +575,42 @@ window.Quarto = {
 <li>Bring 2 printed copies of the draft to lab</li>
 </ul></li>
 </ul>
+</section>
+<section id="exam-02" class="level2">
+<h2 class="anchored" data-anchor-id="exam-02">Exam 02</h2>
+<ul>
+<li><p>Scores (out of 40)</p>
+<ul>
+<li><p>Mean: 31.74</p></li>
+<li><p>Median: 32</p></li>
+</ul></li>
+<li><p>Answer key on Canvas</p></li>
+<li><p>Regrade requests through November 30.</p></li>
+</ul>
+</section>
+<section id="exam-02-2a" class="level2">
+<h2 class="anchored" data-anchor-id="exam-02-2a">Exam 02: 2a</h2>
+<p>Suppose there are two guinea pigs in the study that receive the same dose through the same supplement type.</p>
+<ul>
+<li><p><strong>Guinea Pig A:</strong> Has a large positive standardized residual based on the model from Question 1b</p></li>
+<li><p><strong>Guinea Pig B:</strong> Has a standardized residual close to zero based on the model from Question 1b</p></li>
+</ul>
+<p>How does the leverage for these two guinea pigs compare? Briefly explain.</p>
+</section>
+<section id="exam-02-5a" class="level2">
+<h2 class="anchored" data-anchor-id="exam-02-5a">Exam 02: 5a</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2026-11-19 at 10.47.52 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Suppose we fit a logistic regression model of the odds an individual made a recent donation using <code>reside</code> as the only predictor. What is the estimated coefficient for <code>Rural Domestic</code>? Use <code>Overseas</code> as the baseline.</p>
+</section>
+<section id="exam-02-6" class="level2">
+<h2 class="anchored" data-anchor-id="exam-02-6">Exam 02: 6</h2>
+<p>Suppose we have a linear regression model with the usual assumptions on <span class="math inline">\(\boldsymbol{\epsilon}\)</span>. We estimate the regression coefficients <span class="math inline">\(\boldsymbol{\beta}\)</span> using maximum likelihood estimation and another estimation method. Assume both estimators are unbiased.</p>
+<p>A colleague says, “Because the maximum likelihood estimator is more efficient, its estimate must be closer to the true coefficient for the data we collected.”</p>
+<p>Is this statement correct? If so, explain why. Otherwise, explain why not.</p>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
@@ -1037,8 +1077,8 @@ D = -2 \log L
 <p>Let <span class="math inline">\(L_0\)</span> and <span class="math inline">\(L_a\)</span> be the likelihood functions of the model under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>, respectively. The <strong>test statistic</strong> is</p>
 <p><span class="math display">\[
 \begin{aligned}
-G = D_{0} - D_{a} &amp;= (-2\log L_{0}) - (-2 \log L_{a) \\
-&amp;= -2(\log L_{0} - \log L_{a})
+G = D_0 - D_a &amp;= (-2 \log L_0) - (-2 \log L_a) \\
+&amp; = -2(\log L_0 - \log L_a)
 \end{aligned}
 \]</span></p>
 </section>
@@ -1059,12 +1099,14 @@ G = D_0 - D_a &amp;= (-2\log L_0) - (-2\log L_a)\\[5pt]
 G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
 \]</span></p>
 <p>. . .</p>
+<div class="midi">
 <div class="incremental">
 <ul class="incremental">
 <li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
 <li><p>The p-value is computed as <span class="math inline">\(P(\chi^2 &gt; G)\)</span> using a <span class="math inline">\(\chi_{\Delta df}^2\)</span> distribution, where <span class="math inline">\(\Delta df\)</span> is the number of parameters being tested (the difference in number of parameters between the full and reduced model).</p></li>
 <li><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="example-include-education" class="level2">
@@ -1121,7 +1163,6 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <pre><code>[1] 0.06543567</code></pre>
 </div>
 </div>
-<p><br></p>
 <p>. . .</p>
 <div class="midi">
 <div class="cell" data-layout-align="center">
@@ -1280,8 +1321,8 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 </div>
 </div>
 </section>
-<section id="add-interactions-with-currentsmoker" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="add-interactions-with-currentsmoker">Add interactions with <code>currentSmoker</code>?</h2>
+<section id="use-drop-in-deviance-test-for-interactions" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="use-drop-in-deviance-test-for-interactions">Use drop-in-deviance test for interactions</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1330,24 +1371,22 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <h1>Inference for an individual coefficient</h1>
 <section id="distribution-of-hatboldsymbolbeta" class="level2">
 <h2 class="anchored" data-anchor-id="distribution-of-hatboldsymbolbeta">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p>When <span class="math inline">\(n\)</span> is large,</p>
+<p><span class="math display">\[
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \qquad Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
+\]</span></p>
+<p>where <span class="math inline">\(\mathbf{V}\)</span> is a <span class="math inline">\(n\times n\)</span> diagonal matrix, such that <span class="math inline">\(V_{ii}\)</span> is the estimated variance for the <span class="math inline">\(i^{th}\)</span> observation</p>
+</section>
+<section id="distribution-of-hatboldsymbolbeta-1" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-hatboldsymbolbeta-1">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normally distributed</p>
 <p><br></p>
 <div class="question">
-<p>How do we know <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normally for large <span class="math inline">\(n\)</span>?</p>
+<p>How do we know <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normally distributed for large <span class="math inline">\(n\)</span>?</p>
 </div>
-</section>
-<section id="properties-of-hatboldsymbolbeta" class="level2">
-<h2 class="anchored" data-anchor-id="properties-of-hatboldsymbolbeta">Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
-<p><span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is a consistent estimator</p>
-<p><span class="math display">\[
-\lim_{n \rightarrow \infty} P(|\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}| \geq c) = 0 \hspace{8mm} \forall ~ c &gt; 0
-\]</span></p>
+<p><br></p>
 <p>. . .</p>
-<p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators</p>
-<p><span class="math display">\[
-Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{V}\)</span> is a <span class="math inline">\(n\times n\)</span> diagonal matrix, such that <span class="math inline">\(V_{ii}\)</span> is the estimated variance for the <span class="math inline">\(i^{th}\)</span> observation</p>
+<p><span class="math display">\[\hat{\boldsymbol{\beta}} \hspace{1mm} \overset{\text{approx}}{\sim} N(\boldsymbol{\beta}, (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}) \]</span></p>
 </section>
 <section id="test-for-a-single-coefficient" class="level2">
 <h2 class="anchored" data-anchor-id="test-for-a-single-coefficient">Test for a single coefficient</h2>

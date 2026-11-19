@@ -1450,6 +1450,34 @@
     "text": "Announcements\n\nProject presentations in lab Monday, November 23\nPost PDF of slides or link to slides in presentation folder of the project repo\nStatistics experience due Tuesday, November 24\nProject draft + peer review in lab Monday, November 30\n\nBring 2 printed copies of the draft to lab"
   },
   {
+    "objectID": "slides/23-logistic-selection-inference.html#exam-02",
+    "href": "slides/23-logistic-selection-inference.html#exam-02",
+    "title": "Logistic Regression",
+    "section": "Exam 02",
+    "text": "Exam 02\n\nScores (out of 40)\n\nMean: 31.74\nMedian: 32\n\nAnswer key on Canvas\nRegrade requests through November 30."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference.html#exam-02-2a",
+    "href": "slides/23-logistic-selection-inference.html#exam-02-2a",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 2a",
+    "text": "Exam 02: 2a\nSuppose there are two guinea pigs in the study that receive the same dose through the same supplement type.\n\nGuinea Pig A: Has a large positive standardized residual based on the model from Question 1b\nGuinea Pig B: Has a standardized residual close to zero based on the model from Question 1b\n\nHow does the leverage for these two guinea pigs compare? Briefly explain."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference.html#exam-02-5a",
+    "href": "slides/23-logistic-selection-inference.html#exam-02-5a",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 5a",
+    "text": "Exam 02: 5a\n\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference.html#exam-02-6",
+    "href": "slides/23-logistic-selection-inference.html#exam-02-6",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 6",
+    "text": "Exam 02: 6\nSuppose we have a linear regression model with the usual assumptions on \\(\\boldsymbol{\\epsilon}\\). We estimate the regression coefficients \\(\\boldsymbol{\\beta}\\) using maximum likelihood estimation and another estimation method. Assume both estimators are unbiased.\nA colleague says, “Because the maximum likelihood estimator is more efficient, its estimate must be closer to the true coefficient for the data we collected.”\nIs this statement correct? If so, explain why. Otherwise, explain why not."
+  },
+  {
     "objectID": "slides/23-logistic-selection-inference.html#topics",
     "href": "slides/23-logistic-selection-inference.html#topics",
     "title": "Logistic Regression",
@@ -1601,7 +1629,7 @@
     "href": "slides/23-logistic-selection-inference.html#drop-in-deviance-test-statistic",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nLet \\(L_0\\) and \\(L_a\\) be the likelihood functions of the model under \\(H_0\\) and \\(H_a\\), respectively. The test statistic is\n\\[\n\\begin{aligned}\nG = D_{0} - D_{a} &= (-2\\log L_{0}) - (-2 \\log L_{a) \\\\\n&= -2(\\log L_{0} - \\log L_{a})\n\\end{aligned}\n\\]"
+    "text": "Drop-in-deviance test statistic\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nLet \\(L_0\\) and \\(L_a\\) be the likelihood functions of the model under \\(H_0\\) and \\(H_a\\), respectively. The test statistic is\n\\[\n\\begin{aligned}\nG = D_0 - D_a &= (-2 \\log L_0) - (-2 \\log L_a) \\\\\n& = -2(\\log L_0 - \\log L_a)\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#test-statistic",
@@ -1615,7 +1643,7 @@
     "href": "slides/23-logistic-selection-inference.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#example-include-education",
@@ -1636,7 +1664,7 @@
     "href": "slides/23-logistic-selection-inference.html#example-add-education",
     "title": "Logistic Regression",
     "section": "Example: Add education?",
-    "text": "Example: Add education?\nCompute p-value\n\npchisq(G, df = 3, lower.tail = FALSE)\n\n[1] 0.06543567\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.456\n0.391\n-16.533\n0.000\n-7.230\n-5.698\n\n\nage\n0.080\n0.006\n13.571\n0.000\n0.068\n0.091\n\n\ntotChol\n0.002\n0.001\n2.086\n0.037\n0.000\n0.004\n\n\ncurrentSmoker1\n0.445\n0.094\n4.747\n0.000\n0.262\n0.630\n\n\neducation2\n-0.270\n0.113\n-2.379\n0.017\n-0.494\n-0.049\n\n\neducation3\n-0.232\n0.135\n-1.714\n0.086\n-0.501\n0.029\n\n\neducation4\n-0.035\n0.150\n-0.232\n0.817\n-0.335\n0.255"
+    "text": "Example: Add education?\nCompute p-value\n\npchisq(G, df = 3, lower.tail = FALSE)\n\n[1] 0.06543567\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.456\n0.391\n-16.533\n0.000\n-7.230\n-5.698\n\n\nage\n0.080\n0.006\n13.571\n0.000\n0.068\n0.091\n\n\ntotChol\n0.002\n0.001\n2.086\n0.037\n0.000\n0.004\n\n\ncurrentSmoker1\n0.445\n0.094\n4.747\n0.000\n0.262\n0.630\n\n\neducation2\n-0.270\n0.113\n-2.379\n0.017\n-0.494\n-0.049\n\n\neducation3\n-0.232\n0.135\n-1.714\n0.086\n-0.501\n0.029\n\n\neducation4\n-0.035\n0.150\n-0.232\n0.817\n-0.335\n0.255"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#your-turn",
@@ -1653,25 +1681,25 @@
     "text": "Drop-in-deviance test in R\nConduct the drop-in-deviance test using the anova() function in R with option test = \"Chisq\"\n\nanova(reduced_model, full_model, test = \"Chisq\") |&gt; \n  tidy() |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + education\n4079\n3217.600\n3\n7.212\n0.065"
   },
   {
-    "objectID": "slides/23-logistic-selection-inference.html#add-interactions-with-currentsmoker",
-    "href": "slides/23-logistic-selection-inference.html#add-interactions-with-currentsmoker",
+    "objectID": "slides/23-logistic-selection-inference.html#use-drop-in-deviance-test-for-interactions",
+    "href": "slides/23-logistic-selection-inference.html#use-drop-in-deviance-test-for-interactions",
     "title": "Logistic Regression",
-    "section": "Add interactions with currentSmoker?",
-    "text": "Add interactions with currentSmoker?\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + currentSmoker * age + currentSmoker * totChol\n4080\n3222.377\n2\n2.435\n0.296"
+    "section": "Use drop-in-deviance test for interactions",
+    "text": "Use drop-in-deviance test for interactions\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + currentSmoker * age + currentSmoker * totChol\n4080\n3222.377\n2\n2.435\n0.296"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#distribution-of-hatboldsymbolbeta",
     "href": "slides/23-logistic-selection-inference.html#distribution-of-hatboldsymbolbeta",
     "title": "Logistic Regression",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large, \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed\n\n\nHow do we know \\(\\hat{\\boldsymbol{\\beta}}\\) is normally for large \\(n\\)?"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large,\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\qquad Var(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
-    "objectID": "slides/23-logistic-selection-inference.html#properties-of-hatboldsymbolbeta",
-    "href": "slides/23-logistic-selection-inference.html#properties-of-hatboldsymbolbeta",
+    "objectID": "slides/23-logistic-selection-inference.html#distribution-of-hatboldsymbolbeta-1",
+    "href": "slides/23-logistic-selection-inference.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression",
-    "section": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator\n\\[\n\\lim_{n \\rightarrow \\infty} P(|\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta}| \\geq c) = 0 \\hspace{8mm} \\forall ~ c &gt; 0\n\\]\n\nWhen \\(n\\) is large, \\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large, \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed\n\n\nHow do we know \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed for large \\(n\\)?\n\n\n\n\\[\\hat{\\boldsymbol{\\beta}} \\hspace{1mm} \\overset{\\text{approx}}{\\sim} N(\\boldsymbol{\\beta}, (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}) \\]"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#test-for-a-single-coefficient",
@@ -1763,6 +1791,34 @@
     "title": "Logistic Regression",
     "section": "",
     "text": "Project presentations in lab Monday, November 23\nPost PDF of slides or link to slides in presentation folder of the project repo\nStatistics experience due Tuesday, November 24\nProject draft + peer review in lab Monday, November 30\n\nBring 2 printed copies of the draft to lab"
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference-notes.html#exam-02",
+    "href": "slides/23-logistic-selection-inference-notes.html#exam-02",
+    "title": "Logistic Regression",
+    "section": "Exam 02",
+    "text": "Exam 02\n\nScores (out of 40)\n\nMean: 31.74\nMedian: 32\n\nAnswer key on Canvas\nRegrade requests through November 30."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference-notes.html#exam-02-2a",
+    "href": "slides/23-logistic-selection-inference-notes.html#exam-02-2a",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 2a",
+    "text": "Exam 02: 2a\nSuppose there are two guinea pigs in the study that receive the same dose through the same supplement type.\n\nGuinea Pig A: Has a large positive standardized residual based on the model from Question 1b\nGuinea Pig B: Has a standardized residual close to zero based on the model from Question 1b\n\nHow does the leverage for these two guinea pigs compare? Briefly explain."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference-notes.html#exam-02-5a",
+    "href": "slides/23-logistic-selection-inference-notes.html#exam-02-5a",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 5a",
+    "text": "Exam 02: 5a\n\n\n\n\n\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline."
+  },
+  {
+    "objectID": "slides/23-logistic-selection-inference-notes.html#exam-02-6",
+    "href": "slides/23-logistic-selection-inference-notes.html#exam-02-6",
+    "title": "Logistic Regression",
+    "section": "Exam 02: 6",
+    "text": "Exam 02: 6\nSuppose we have a linear regression model with the usual assumptions on \\(\\boldsymbol{\\epsilon}\\). We estimate the regression coefficients \\(\\boldsymbol{\\beta}\\) using maximum likelihood estimation and another estimation method. Assume both estimators are unbiased.\nA colleague says, “Because the maximum likelihood estimator is more efficient, its estimate must be closer to the true coefficient for the data we collected.”\nIs this statement correct? If so, explain why. Otherwise, explain why not."
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#topics",
@@ -1916,7 +1972,7 @@
     "href": "slides/23-logistic-selection-inference-notes.html#drop-in-deviance-test-statistic",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n. . .\nLet \\(L_0\\) and \\(L_a\\) be the likelihood functions of the model under \\(H_0\\) and \\(H_a\\), respectively. The test statistic is\n\\[\n\\begin{aligned}\nG = D_{0} - D_{a} &= (-2\\log L_{0}) - (-2 \\log L_{a) \\\\\n&= -2(\\log L_{0} - \\log L_{a})\n\\end{aligned}\n\\]"
+    "text": "Drop-in-deviance test statistic\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n. . .\nLet \\(L_0\\) and \\(L_a\\) be the likelihood functions of the model under \\(H_0\\) and \\(H_a\\), respectively. The test statistic is\n\\[\n\\begin{aligned}\nG = D_0 - D_a &= (-2 \\log L_0) - (-2 \\log L_a) \\\\\n& = -2(\\log L_0 - \\log L_a)\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#test-statistic",
@@ -1930,7 +1986,7 @@
     "href": "slides/23-logistic-selection-inference-notes.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is computed as \\(P(\\chi^2 &gt; G)\\) using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#example-include-education",
@@ -1951,7 +2007,7 @@
     "href": "slides/23-logistic-selection-inference-notes.html#example-add-education",
     "title": "Logistic Regression",
     "section": "Example: Add education?",
-    "text": "Example: Add education?\nCompute p-value\n\npchisq(G, df = 3, lower.tail = FALSE)\n\n[1] 0.06543567\n\n\n\n. . .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.456\n0.391\n-16.533\n0.000\n-7.230\n-5.698\n\n\nage\n0.080\n0.006\n13.571\n0.000\n0.068\n0.091\n\n\ntotChol\n0.002\n0.001\n2.086\n0.037\n0.000\n0.004\n\n\ncurrentSmoker1\n0.445\n0.094\n4.747\n0.000\n0.262\n0.630\n\n\neducation2\n-0.270\n0.113\n-2.379\n0.017\n-0.494\n-0.049\n\n\neducation3\n-0.232\n0.135\n-1.714\n0.086\n-0.501\n0.029\n\n\neducation4\n-0.035\n0.150\n-0.232\n0.817\n-0.335\n0.255"
+    "text": "Example: Add education?\nCompute p-value\n\npchisq(G, df = 3, lower.tail = FALSE)\n\n[1] 0.06543567\n\n\n. . .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.456\n0.391\n-16.533\n0.000\n-7.230\n-5.698\n\n\nage\n0.080\n0.006\n13.571\n0.000\n0.068\n0.091\n\n\ntotChol\n0.002\n0.001\n2.086\n0.037\n0.000\n0.004\n\n\ncurrentSmoker1\n0.445\n0.094\n4.747\n0.000\n0.262\n0.630\n\n\neducation2\n-0.270\n0.113\n-2.379\n0.017\n-0.494\n-0.049\n\n\neducation3\n-0.232\n0.135\n-1.714\n0.086\n-0.501\n0.029\n\n\neducation4\n-0.035\n0.150\n-0.232\n0.817\n-0.335\n0.255"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#your-turn",
@@ -1968,25 +2024,25 @@
     "text": "Drop-in-deviance test in R\nConduct the drop-in-deviance test using the anova() function in R with option test = \"Chisq\"\n\nanova(reduced_model, full_model, test = \"Chisq\") |&gt; \n  tidy() |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + education\n4079\n3217.600\n3\n7.212\n0.065"
   },
   {
-    "objectID": "slides/23-logistic-selection-inference-notes.html#add-interactions-with-currentsmoker",
-    "href": "slides/23-logistic-selection-inference-notes.html#add-interactions-with-currentsmoker",
+    "objectID": "slides/23-logistic-selection-inference-notes.html#use-drop-in-deviance-test-for-interactions",
+    "href": "slides/23-logistic-selection-inference-notes.html#use-drop-in-deviance-test-for-interactions",
     "title": "Logistic Regression",
-    "section": "Add interactions with currentSmoker?",
-    "text": "Add interactions with currentSmoker?\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + currentSmoker * age + currentSmoker * totChol\n4080\n3222.377\n2\n2.435\n0.296"
+    "section": "Use drop-in-deviance test for interactions",
+    "text": "Use drop-in-deviance test for interactions\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + currentSmoker * age + currentSmoker * totChol\n4080\n3222.377\n2\n2.435\n0.296"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#distribution-of-hatboldsymbolbeta",
     "href": "slides/23-logistic-selection-inference-notes.html#distribution-of-hatboldsymbolbeta",
     "title": "Logistic Regression",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large, \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed\n\n\nHow do we know \\(\\hat{\\boldsymbol{\\beta}}\\) is normally for large \\(n\\)?"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large,\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\qquad Var(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
-    "objectID": "slides/23-logistic-selection-inference-notes.html#properties-of-hatboldsymbolbeta",
-    "href": "slides/23-logistic-selection-inference-notes.html#properties-of-hatboldsymbolbeta",
+    "objectID": "slides/23-logistic-selection-inference-notes.html#distribution-of-hatboldsymbolbeta-1",
+    "href": "slides/23-logistic-selection-inference-notes.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression",
-    "section": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\(\\hat{\\boldsymbol{\\beta}}\\) is a consistent estimator\n\\[\n\\lim_{n \\rightarrow \\infty} P(|\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta}| \\geq c) = 0 \\hspace{8mm} \\forall ~ c &gt; 0\n\\]\n. . .\nWhen \\(n\\) is large, \\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large, \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed\n\n\nHow do we know \\(\\hat{\\boldsymbol{\\beta}}\\) is normally distributed for large \\(n\\)?\n\n\n. . .\n\\[\\hat{\\boldsymbol{\\beta}} \\hspace{1mm} \\overset{\\text{approx}}{\\sim} N(\\boldsymbol{\\beta}, (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}) \\]"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#test-for-a-single-coefficient",
