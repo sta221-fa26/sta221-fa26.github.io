@@ -1,0 +1,771 @@
+---
+title: "Logistic Regression"
+subtitle: "Model selection + Inference"
+author: "Prof. Maria Tackett"
+date: "November 19, 2026"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 sta221-fa26.github.io](https://sta221-fa26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 23-logistic-selection-inference-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+	fig.align = "center",
+	fig.height =5,
+	fig.width = 8,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+## Announcements {.midi}
+
+- Project presentations in lab Monday, November 23
+
+- Post PDF of slides or link to slides in `presentation` folder of the project repo
+
+- Statistics experience due Tuesday, November 24
+
+- Project draft + peer review in lab Monday, November 30
+
+  - Bring 2 printed copies of the draft to lab
+
+## Topics
+
+- Model selection using AIC and BIC
+
+- Inference for logistic regression
+
+# Model selection
+
+## Computational setup
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+
+library(tidyverse)
+library(tidymodels)
+library(pROC)      
+library(knitr)
+library(kableExtra)
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Risk of coronary heart disease {.midi}
+
+This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.
+
+- `high_risk`:
+
+  - 1: High risk of having heart disease in next 10 years
+  - 0: Not high risk of having heart disease in next 10 years
+
+- `age`: Age at exam time (in years)
+
+- `totChol`: Total cholesterol (in mg/dL)
+
+- `currentSmoker`: 0 = nonsmoker, 1 = smoker
+
+- `education`: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+heart_disease <- read_csv("data/framingham.csv") |>
+  select(age, education, TenYearCHD, totChol, currentSmoker) |>
+  drop_na() |>
+  mutate(
+    high_risk = as_factor(TenYearCHD),
+    education = as_factor(education),
+    currentSmoker = as_factor(currentSmoker)
+  )
+```
+
+## Modeling risk of coronary heart disease
+
+Using `age`, `totChol`, and `currentSmoker`
+
+```{r}
+#| echo: false
+high_risk_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
+              data = heart_disease, family = "binomial")
+
+high_risk_fit2 <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+              data = heart_disease, family = "binomial")
+
+tidy(high_risk_fit, conf.int = TRUE) |> 
+  kable(format = "markdown", digits = 3)
+```
+
+## Review: ROC Curve + Model fit
+
+```{r}
+#| echo: false
+high_risk_aug <- augment(high_risk_fit)
+
+roc_curve_data <- high_risk_aug |>
+  roc_curve(high_risk, .fitted, event_level = "second")
+
+autoplot(roc_curve_data)
+
+#calculate AUC
+high_risk_aug |>
+  roc_auc(high_risk, .fitted, event_level = "second")
+```
+
+## Review: Classification
+
+We will use a threshold of 0.2 to classify observations
+
+```{r}
+#| echo: false
+#compute predicted probabilities
+pred_prob <- predict.glm(high_risk_fit, type = "response")
+high_risk_aug <- high_risk_aug |> 
+  bind_cols(pred_prob = pred_prob) |>
+  mutate(pred_class = factor(if_else(pred_prob > 0.2, 1, 0)))
+
+# compute confusion matrix
+high_risk_aug |>
+  conf_mat(high_risk, pred_class) |>
+  autoplot(type = "heatmap")
+```
+
+## Review: Classification {.midi}
+
+```{r}
+#| echo: false
+
+high_risk_aug |>
+  conf_mat(high_risk, pred_class) |>
+  autoplot(type = "heatmap")
+```
+
+::: question
+1.  Compute sensitivity and explain what it means in the context of the data.
+
+2.  Compute specificity and explain what it means in the context of the data.
+:::
+
+# Model selection
+
+## Which model do we choose?
+
+```{r}
+#| echo: false
+
+high_risk_fit2 <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+              data = heart_disease, family = "binomial")
+```
+
+::::: columns
+::: {.column width="50%"}
+<center>**Model 1**</center>
+
+```{r}
+#| echo: false
+
+tidy(high_risk_fit) |> 
+  select(term, estimate) |>
+  kable(digits = 3)
+
+```
+:::
+
+::: {.column width="50%"}
+<center>**Model 2**</center>
+
+```{r}
+#| echo: false
+
+tidy(high_risk_fit2) |> 
+  select(term, estimate) |>
+  kable(digits = 3)
+```
+:::
+:::::
+
+## Log-Likelihood
+
+Recall the log-likelihood function
+
+$$
+\begin{aligned}
+\log L&(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
+\end{aligned}
+$$
+
+where $\pi_i = \frac{\exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}$
+
+## AIC & BIC
+
+Estimators of prediction error and *relative* quality of models:
+
+. . .
+
+**Akaike's Information Criterion (AIC)**[^1]: $$AIC = -2\log L + 2 (p+1)$$
+
+[^1]: Akaike, Hirotugu. ["A new look at the statistical model identification."](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1100705) *IEEE transactions on automatic control* 19.6 (1974): 716-723.
+
+. . .
+
+**Schwarz's Bayesian Information Criterion (BIC)**[^2]: $$ BIC = -2\log L + \log(n)\times(p+1)$$
+
+[^2]: Schwarz, Gideon. ["Estimating the dimension of a model."](https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faos%2F1176344136) *The annals of statistics* (1978): 461-464.
+
+## AIC & BIC
+
+$$
+\begin{aligned} 
+& AIC = \color{blue}{-2\log L}  \color{black}{+ 2(p+1)} \\
+& BIC = \color{blue}{-2\log L}  + \color{black}{\log(n)\times(p+1)}
+\end{aligned}
+$$
+
+. . .
+
+<br>
+
+First Term: Decreases as *p* increases
+
+## AIC & BIC
+
+$$
+\begin{aligned} & AIC = -2\log L  + \color{blue}{2(p+1)} \\
+& BIC = -2\log L + \color{blue}{\log(n)\times (p+1)} 
+\end{aligned}
+$$
+
+<br>
+
+Second term: Increases as *p* increases
+
+## Using AIC & BIC
+
+$$
+\begin{aligned} & AIC = -2\log L  + \color{red}{2(p+1)} \\
+& BIC = -2 \log L  + \color{red}{\log(n)\times(p+1)} 
+\end{aligned}
+$$
+
+- Choose model with the smaller value of AIC or BIC
+
+- If $n \geq 8$, the **penalty** for BIC is larger than that of AIC, so BIC tends to favor *more parsimonious* models (i.e. models with fewer terms)
+
+## AIC from the `glance()` function
+
+Let's look at the AIC for the model that includes `age`, `totChol`, and `currentSmoker`
+
+```{r}
+glance(high_risk_fit)$AIC
+```
+
+<br>
+
+. . .
+
+**Computing AIC**
+
+```{r}
+- 2 * glance(high_risk_fit)$logLik + 2 * (3 + 1)
+```
+
+## Comparing the models using AIC
+
+Let's compare the full and reduced models using AIC.
+
+```{r}
+#| echo: false
+
+# AIC reduced model 
+high_risk_fit_reduced <- high_risk_fit
+
+# AIC full model
+high_risk_fit_full <- high_risk_fit2
+
+```
+
+```{r}
+# AIC reduced model 
+glance(high_risk_fit_reduced)$AIC
+
+# AIC full model
+glance(high_risk_fit_full)$AIC
+```
+
+<br>
+
+::: question
+Based on AIC, which model do you select?
+:::
+
+## Comparing the models using BIC
+
+Let's compare the full and reduced models using BIC
+
+```{r}
+#| echo: true
+
+# BIC reduced model
+glance(high_risk_fit_reduced)$BIC
+
+# BIC full model
+glance(high_risk_fit_full)$BIC
+```
+
+<br>
+
+::: question
+Based on BIC, which model do you select?
+:::
+
+## Guidelines for using AIC and BIC 
+
+| Strength of evidence in favor of $M_2$ | $AIC_{M_1} - AIC_{M_2}$[^3] | $BIC_{M_1} - BIC_{M_2}$[^4] |
+|--------------------------|-----------------------|------------------------|
+| None | 0 - 2 | 0 - 2 |
+| Weak | 2 - 7 | 2 - 6 |
+| Strong | 7 - 10 | 6 - 10 |
+| Very strong | $>$ 10 | $>$ 10 |
+
+[^3]: Based on [@kass1995bayes]
+
+[^4]: Based on [@burnham2002model, pg. 70]
+
+::: aside
+Source: [Introduction to Regression Analysis: A Data Science Approach](https://intro-regression.github.io/10-model-eval.html#sec-aic-bic)
+:::
+
+# Inference
+
+# Drop-in-deviance test
+
+## Drop-in-deviance test
+
+We can use the **drop-in-deviance test** (aka Likelihood Ratio Test) to test
+
+- the overall statistical significance of a logistic regression model
+
+- **the statistical significance of a subset of coefficients in the model**
+
+## Deviance {.midi}
+
+The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
+
+In logistic regression,
+
+$$
+D = -2 \log L 
+$$
+
+<br>
+
+$D \sim \chi^2_{n - p - 1}$ ($D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)[^5]
+
+[^5]: See @wilks1935likelihood for explanation of why -2 is included.
+
+<br>
+
+Note: $n - p - 1$ = the degrees of freedom associated with the error in the model (like residuals)
+
+## $\chi^2$ distribution
+
+```{r}
+#| echo: false
+#| fig-height: 6
+
+x <- seq(from =0, to = 10, length = 100)
+
+# Evaluate the densities
+y_1 <- dchisq(x, 1)
+y_2 <- dchisq(x,2)
+y_3 <- dchisq(x,3)
+y_4 <- dchisq(x,5)
+
+# Plot the densities
+plot(x, y_1, col = 1, type = "l", ylab="",lwd=3, ylim = c(0, 0.5), 
+     main  = "Chi-square Distribution")
+lines(x,y_2, col = 2,lwd=3)
+lines(x, y_3, col = 3,lwd=3)
+lines(x, y_4, col = 4,lwd=3)
+
+# Add the legend
+legend("topright",
+       c("df = 1", "df = 2 ", "df = 3", "df = 5"), 
+       col = c(1, 2, 3, 4), lty = 1)
+```
+
+## Testing a subset of coefficients
+
+- Suppose there are two models:
+
+  - **Reduced Model** $(H_0)$: includes predictors $x_1, \ldots, x_q$
+
+  - **Full Model** $(H_a)$: includes predictors $x_1, \ldots, x_q, x_{q+1}, \ldots, x_p$
+
+- We can use a **drop-in-deviance test** to determine if any of the new predictors are useful
+
+. . .
+
+$$
+\begin{aligned}
+&H_0: \beta_{q+1} = \dots = \beta_p = 0\\
+&H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+$$
+
+## Drop-in-deviance test statistic {.midi}
+
+$$
+\begin{aligned}
+&H_0: \beta_{q+1} = \dots = \beta_p = 0\\
+&H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+$$
+
+. . .
+
+Let $L_0$ and $L_a$ be the likelihood functions of the model under $H_0$ and $H_a$, respectively. The **test statistic** is
+
+$$
+\begin{aligned}
+G = D_{0} - D_{a} &= (-2\log L_{0}) - (-2 \log L_{a) \\
+&= -2(\log L_{0} - \log L_{a})
+\end{aligned}
+$$
+
+## Test statistic
+
+$$
+\begin{aligned}
+G = D_0 - D_a &= (-2\log L_0) - (-2\log L_a)\\[5pt] 
+& = -2(\log L_0 - \log L_a) \\[5pt]
+&= -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+\end{aligned}
+$$
+
+where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{\mathbf{x}_i^\mathsf{T}\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^6]
+
+[^6]: See @wilks1935likelihood for explanation of why -2 is included.
+
+## Drop-in-deviance test statistic
+
+$$
+G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+$$
+
+. . .
+
+::: incremental
+- When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+
+- The p-value is computed as $P(\chi^2 > G)$ using a $\chi_{\Delta df}^2$ distribution, where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).
+
+- Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
+:::
+
+## Example: Include `education`?
+
+Do we want to include `education` in the model?
+
+- Reduced model: `age`, `totChol`, `currentSmoker`
+
+- Full model: `age`, `totChol`, `currentSmoker` , `education`
+
+. . .
+
+$$
+\begin{aligned}
+&H_0: \beta_{ed2} = \beta_{ed3} = \beta_{ed4} = 0 \\
+&H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+$$
+
+## Example: Include `education`?
+
+```{r}
+reduced_model <- glm(high_risk ~ age + totChol + currentSmoker, 
+              data = heart_disease, family = "binomial")
+
+full_model <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+              data = heart_disease, family = "binomial")
+```
+
+. . .
+
+**Compute deviances**
+
+```{r}
+(deviance_reduced <- -2 * glance(reduced_model)$logLik)
+(deviance_full <- -2 * glance(full_model)$logLik)
+```
+
+. . .
+
+**Compute test statistic**
+
+```{r}
+(G <- deviance_reduced - deviance_full)
+```
+
+## Example: Add `education`?
+
+**Compute p-value**
+
+```{r}
+pchisq(G, df = 3, lower.tail = FALSE)
+```
+
+<br>
+
+. . .
+
+::: midi
+```{r}
+#| echo: false
+
+tidy(high_risk_fit_full, conf.int = TRUE) |> 
+  kable(digits = 3) 
+```
+:::
+
+## Your turn 
+
+::: question
+Would you add `education` to the model?
+:::
+
+![](images/november-19-qrcode.png){fig-align="center" width="30%"}
+
+::: center
+<https://app.wooclap.com/YSMKXQC>
+:::
+
+## Drop-in-deviance test in R {.midi}
+
+Conduct the drop-in-deviance test using the `anova()` function in R with option `test = "Chisq"`
+
+```{r}
+anova(reduced_model, full_model, test = "Chisq") |> 
+  tidy() |> 
+  kable(digits = 3)
+```
+
+## Add interactions with `currentSmoker`? {.midi}
+
+```{r}
+#| echo: false
+
+new_model <- glm(high_risk ~ age + totChol + currentSmoker + currentSmoker*age + currentSmoker * totChol, data = heart_disease, family = "binomial")
+
+anova(reduced_model, new_model, test = "Chisq") |>
+  tidy() |>
+  kable(digits = 3)
+
+```
+
+# Inference for an individual coefficient
+
+## Distribution of $\hat{\boldsymbol{\beta}}$
+
+When $n$ is large, $\hat{\boldsymbol{\beta}}$ is normally distributed
+
+<br>
+
+::: question
+How do we know $\hat{\boldsymbol{\beta}}$ is normally for large $n$?
+:::
+
+## Properties of $\hat{\boldsymbol{\beta}}$
+
+$\hat{\boldsymbol{\beta}}$ is a consistent estimator
+
+$$
+\lim_{n \rightarrow \infty} P(|\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}| \geq c) = 0 \hspace{8mm} \forall ~ c > 0
+$$
+
+. . .
+
+When $n$ is large, $Var(\hat{\boldsymbol{\beta}})$, the matrix of variances and covariances between estimators
+
+$$
+Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
+$$
+
+where $\mathbf{V}$ is a $n\times n$ diagonal matrix, such that $V_{ii}$ is the estimated variance for the $i^{th}$ observation
+
+## Test for a single coefficient
+
+**Hypotheses:** $H_0: \beta_j = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_j \neq 0$, given the other variables in the model
+
+. . .
+
+**(Wald) Test Statistic:** $$z = \frac{\hat{\beta}_j - 0}{SE_{\hat{\beta}_j}}$$
+
+where $SE_{\hat{\beta}_j}$ is the square root of the $j^{th}$ diagonal element of $Var(\hat{\boldsymbol{\beta}})$
+
+. . .
+
+**P-value:** $P(|Z| > |z|)$, where $Z \sim N(0, 1)$, the Standard Normal distribution
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| label: risk-model-age-highlight
+#| echo: false
+
+heart_disease_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
+              data = heart_disease, family = "binomial")
+
+tidy(heart_disease_fit, conf.int = TRUE) |> 
+  kable(digits = 4) |>
+  row_spec(2, background = "#D9E3E4")
+```
+
+. . .
+
+**Hypotheses:**
+
+$$
+H_0: \beta_{age} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{age} \neq 0
+$$, given total cholesterol and smoking status are in the model.
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**Test statistic:**
+
+$$z = \frac{ 0.0825  - 0}{0.0057} 
+$$
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**P-value:**
+
+$$P(|Z| > |14.343|) \approx 0
+$$
+
+. . .
+
+```{r}
+2 * pnorm(14.343,lower.tail = FALSE)
+```
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**Conclusion:**
+
+The p-value is very small, so we reject $H_0$. The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for total cholesterol and smoking status.
+
+## Confidence interval for $\beta_j$
+
+We can calculate the **C% confidence interval** for $\beta_j$ as the following:
+
+$$
+\Large{\hat{\beta}_j \pm z^* \times SE_{\hat{\beta}_j}}
+$$
+
+where $z^*$ is calculated from the $N(0,1)$ distribution
+
+. . .
+
+This is an interval for the change in the log-odds for every one unit increase in $x_j$
+
+## Interpretation in terms of the odds
+
+The change in **odds** for every one unit increase in $x_j$.
+
+$$
+\Large{\exp\{\hat{\beta}_j \pm z^* \times SE_{\hat{\beta}_j}\}}
+$$
+
+. . .
+
+**Interpretation:** We are $C\%$ confident that for every one unit increase in $x_j$, the odds multiply by a factor of $\exp\{\hat{\beta}_j - z^* \times SE_{\hat{\beta}_j}\}$ to $\exp\{\hat{\beta}_j + z^* \times SE_{\hat{\beta}_j}\}$, holding all else constant.
+
+## CI for `age`
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+::: question
+Interpret the 95% confidence interval for `age` in terms of the **odds** of being high risk for heart disease.
+:::
+
+## Overview of testing coefficients
+
+**Test a single coefficient**
+
+- Drop-in-deviance test
+
+- Wald hypothesis test and confidence interval
+
+. . .
+
+**Test a subset of coefficients**
+
+- Drop-in-deviance test
+
+. . .
+
+Can use AIC and BIC to compare models in both scenarios
+
+## Recap
+
+- Model selection for logistic regression
+
+- Inference for logistic regression
+
+  - Inference for a subset of coefficients
+
+  - Inference fo ran individual coefficient
+
+## References
