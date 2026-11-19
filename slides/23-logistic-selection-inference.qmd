@@ -77,9 +77,23 @@ How does the leverage for these two guinea pigs compare? Briefly explain.
 
 ## Exam 02: 5a
 
-![](images/Screenshot 2026-11-19 at 10.47.52 AM.png){fig-align="center"}
-
 Suppose we fit a logistic regression model of the odds an individual made a recent donation using `reside` as the only predictor. What is the estimated coefficient for `Rural Domestic`? Use `Overseas` as the baseline.
+
+```{r}
+#| echo: false
+
+library(peopleanalyticsdata)
+library(tidyverse)
+library(knitr)
+library(broom)
+
+
+charity_donation |>
+  mutate(donation_names = if_else(recent_donation == "1", "Donated", "Did not donate")) |>
+  count(reside, donation_names) |>
+  pivot_wider(names_from = donation_names, values_from = n) |>
+  kable(col.names = c("Residence", "Did not donate", "Donated"))
+```
 
 ## Exam 02: 6
 

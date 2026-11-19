@@ -271,8 +271,37 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="exam-02-5a" class="slide level2">
 <h2>Exam 02: 5a</h2>
-
-<img data-src="images/Screenshot 2026-11-19 at 10.47.52 AM.png" class="quarto-figure quarto-figure-center r-stretch"><p>Suppose we fit a logistic regression model of the odds an individual made a recent donation using <code>reside</code> as the only predictor. What is the estimated coefficient for <code>Rural Domestic</code>? Use <code>Overseas</code> as the baseline.</p>
+<p>Suppose we fit a logistic regression model of the odds an individual made a recent donation using <code>reside</code> as the only predictor. What is the estimated coefficient for <code>Rural Domestic</code>? Use <code>Overseas</code> as the baseline.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Residence</th>
+<th style="text-align: right;">Did not donate</th>
+<th style="text-align: right;">Donated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Overseas</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rural Domestic</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urban Domestic</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">24</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="exam-02-6" class="slide level2">
 <h2>Exam 02: 6</h2>
@@ -399,16 +428,16 @@ Prof.&nbsp;Maria Tackett
 1 roc_auc binary         0.697</code></pre>
 </div>
 </div>
-<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="review-classification" class="slide level2">
 <h2>Review: Classification</h2>
 <p>We will use a threshold of 0.2 to classify observations</p>
 
-<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="review-classification-1" class="slide level2 midi">
 <h2>Review: Classification</h2>
 
-<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"><div class="question">
+<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"><div class="question">
 <ol type="1">
 <li><p>Compute sensitivity and explain what it means in the context of the data.</p></li>
 <li><p>Compute specificity and explain what it means in the context of the data.</p></li>
@@ -696,7 +725,7 @@ D = -2 \log L
 <section id="chi2-distribution" class="slide level2">
 <h2><span class="math inline">\(\chi^2\)</span> distribution</h2>
 
-<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="23-logistic-selection-inference_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="testing-a-subset-of-coefficients" class="slide level2">
 <h2>Testing a subset of coefficients</h2>
 <ul>

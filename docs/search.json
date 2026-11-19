@@ -1468,7 +1468,7 @@
     "href": "slides/23-logistic-selection-inference.html#exam-02-5a",
     "title": "Logistic Regression",
     "section": "Exam 02: 5a",
-    "text": "Exam 02: 5a\n\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline."
+    "text": "Exam 02: 5a\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline.\n\n\n\n\n\nResidence\nDid not donate\nDonated\n\n\n\n\nOverseas\n101\n14\n\n\nRural Domestic\n88\n45\n\n\nUrban Domestic\n82\n24"
   },
   {
     "objectID": "slides/23-logistic-selection-inference.html#exam-02-6",
@@ -1811,7 +1811,7 @@
     "href": "slides/23-logistic-selection-inference-notes.html#exam-02-5a",
     "title": "Logistic Regression",
     "section": "Exam 02: 5a",
-    "text": "Exam 02: 5a\n\n\n\n\n\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline."
+    "text": "Exam 02: 5a\nSuppose we fit a logistic regression model of the odds an individual made a recent donation using reside as the only predictor. What is the estimated coefficient for Rural Domestic? Use Overseas as the baseline.\n\n\n\n\n\nResidence\nDid not donate\nDonated\n\n\n\n\nOverseas\n101\n14\n\n\nRural Domestic\n88\n45\n\n\nUrban Domestic\n82\n24"
   },
   {
     "objectID": "slides/23-logistic-selection-inference-notes.html#exam-02-6",
